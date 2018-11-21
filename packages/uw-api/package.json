@@ -1,0 +1,42 @@
+{
+  "name": "@uw/api",
+  "private": true,
+  "version": "0.0.1",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "echo '@uw/api' && tsc",
+    "dev": "ts-node-dev src/index.ts",
+    "lint": "tslint 'src/**/*.ts'",
+    "start:api": "node build/dist/index.js",
+    "watch": "tsc -w"
+  },
+  "dependencies": {
+    "@uw/domain": "0.0.1",
+    "@uw/logging": "0.0.1",
+    "@uw/utils": "0.0.1",
+    "async": "2.6.1",
+    "axios": "0.18.0",
+    "body-parser": "1.18.3",
+    "cookie-parser": "1.4.3",
+    "core-js": "2.5.7",
+    "cors": "2.8.4",
+    "dotenv": "6.0.0",
+    "express": "4.16.3",
+    "express-async-errors": "3.0.0",
+    "mongodb": "3.1.6",
+    "mongoose": "5.3.0",
+    "mongoose-paginate-v2": "1.0.12",
+    "uuid": "3.3.2",
+    "winston": "3.1.0"
+  },
+  "devDependencies": {
+    "@types/axios": "0.14.0",
+    "@types/body-parser": "1.17.0",
+    "@types/cookie-parser": "1.4.1",
+    "@types/cors": "2.8.4",
+    "@types/dotenv": "4.0.3",
+    "@types/express": "4.16.0",
+    "@types/supertest": "2.0.6",
+    "supertest": "3.3.0"
+  }
+}

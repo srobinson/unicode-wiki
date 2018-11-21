@@ -1,0 +1,20 @@
+steps:
+- name: 'docker/compose:1.19.0'
+  args: ['build']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/unicode-wiki/uw-api:$TAG_NAME']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/unicode-wiki/uw-app:$TAG_NAME']
+- name: 'gcr.io/cloud-builders/kubectl'
+  args: ['set', 'image', 'deployment/uw-api-web', 'uw-api-web=gcr.io/unicode-wiki/uw-api:$TAG_NAME']
+  env:
+  - 'CLOUDSDK_COMPUTE_ZONE=us-east1-b'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=uw-cluster'
+- name: 'gcr.io/cloud-builders/kubectl'
+  args: ['set', 'image', 'deployment/uw-app-web', 'uw-app-web=gcr.io/unicode-wiki/uw-app:$TAG_NAME']
+  env:
+  - 'CLOUDSDK_COMPUTE_ZONE=us-east1-b'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=uw-cluster'
+images:
+  - 'gcr.io/unicode-wiki/uw-api:$TAG_NAME'
+  - 'gcr.io/unicode-wiki/uw-app:$TAG_NAME'

@@ -1,0 +1,25 @@
+{
+  "name": "@uw/store",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "scripts": {
+    "lint": "tslint 'src/**/*.ts'",
+    "prepare": "echo '@uw/store' && tsc",
+    "watch": "tsc -w"
+  },
+  "dependencies": {
+    "@uw/domain": "0.0.1",
+    "connected-react-router": "4.5.0",
+    "core-js": "2.5.7",
+    "history": "4.7.2",
+    "redux": "4.0.1",
+    "redux-devtools-extension": "2.13.5",
+    "react-router-redux": "4.0.8"
+  },
+  "devDependencies": {
+    "@types/react-router-redux": "5.0.16",
+    "@types/history": "4.7.2"
+  }
+}

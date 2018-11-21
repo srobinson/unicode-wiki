@@ -1,0 +1,62 @@
+{
+  "extends": ["../../tslint.json", "tslint-react"],
+  "tslint.enable": true,
+  "rules": {
+    // "arrow-return-shorthand": [false],
+    // "comment-format": [true, "check-space"],
+    // "import-blacklist": [true],
+    // "interface-over-type-literal": false,
+    // "interface-name": false,
+    "jsx-boolean-value": false,
+    "jsx-no-multiline-js": false,
+    // "max-line-length": [true, 120],
+    // "member-access": false,
+    // "member-ordering": [true, { "order": "fields-first" }],
+    // "newline-before-return": false,
+    "no-any": false,
+    // "no-empty-interface": false,
+    // "no-import-side-effect": [false],
+    // "no-inferrable-types": [true, "ignore-params", "ignore-properties"],
+    // "no-invalid-this": [true, "check-function-in-method"],
+    // "no-namespace": false,
+    // "no-null-keyword": false,
+    // "no-require-imports": false,
+    // "no-submodule-imports": false,
+    // "no-this-assignment": [true, { "allow-destructuring": true }],
+    // "no-trailing-whitespace": true,
+    // "object-literal-sort-keys": true,
+    // "object-literal-shorthand": true,
+    // "one-variable-per-declaration": [false],
+    // "only-arrow-functions": [true, "allow-declarations"],
+    // "ordered-imports": [false],
+    // "prefer-method-signature": false,
+    // "prefer-template": [true, "allow-single-concat"],
+    // "quotemark": [true, "double"],
+    // "semicolon": [true, "never"],
+    // "switch-default": false,
+    // "trailing-comma": [
+    //   true,
+    //   {
+    //     "singleline": "never",
+    //     "multiline": {
+    //       "objects": "always",
+    //       "arrays": "always",
+    //       "functions": "ignore",
+    //       "typeLiterals": "ignore"
+    //     },
+    //     "esSpecCompliant": true
+    //   }
+    // ],
+    // "triple-equals": [true, "allow-null-check"],
+    // "type-literal-delimiter": false,
+    // "typedef": [true, "parameter", "property-declaration"],
+    // "variable-name": [
+    //   true,
+    //   "ban-keywords",
+    //   "check-format",
+    //   "allow-pascal-case"
+    // ],
+    // "jsx-no-multiline-js": false,
+    "jsx-no-lambda": false
+  }
+}

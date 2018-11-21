@@ -1,0 +1,111 @@
+
+:root {
+  --body-background: #fafafa;
+  --body-background: #2d2e33;
+  --main-background: #fff;
+
+  --explorer-navigation-background: #fff;
+  --explorer-navigation-border-top: 1px solid #eee;
+  --explorer-navigation-border-bottom: 1px solid #eee;
+
+  --ucd-range-background: #fff;
+  --ucd-range-border-top: 1px solid #eee;
+
+  --drop-down-list-item-background: #ddd;
+
+  --explorer-navigation-list-item-background: linear-gradient(to bottom,  #feda71, #febb4a);
+  --explorer-navigation-list-item-border: 1px solid;
+  --explorer-navigation-list-item-border-color: #f5b74e #e5a73e #d6982f;
+  --explorer-navigation-list-item-box-shadow: 0 1px 1px #d3d3d3, inset 0 1px 0 #fee395;
+  --explorer-navigation-list-item-text-shadow:0 1px 0 #fedd9b;
+  --explorer-navigation-list-item-color: #996633;
+
+  --explorer-navigation-list-item-hover-border-color: #d29a3a #cc9436 #c89133;
+  --explorer-navigation-list-item-hover-text-shadow: 0px 1px 1px rgba(0,0,0,0.2);
+
+  --explorer-navigation-list-item-green-background: linear-gradient(to bottom, #a9db80, #96c56f);
+  --explorer-navigation-list-item-green-border: 1px solid;
+  --explorer-navigation-list-item-green-border-color: #80ab5d;
+  --explorer-navigation-list-item-green-box-shadow: 0px 1px 1px rgba(255,255,255,0.8) inset, 1px 1px 3px rgba(0,0,0,0.2);
+  --explorer-navigation-list-item-green-text-shadow: none;
+  --explorer-navigation-list-item-green-color: #fff;
+
+  --explorer-navigation-list-item-ative-background: linear-gradient(to bottom,  #fec354, #fecd61);
+  --explorer-navigation-list-item-ative-border-color: #d29a3a #cc9436 #c89133;
+  --explorer-navigation-list-item-ative-box-shadow: 0 1px 1px #d4d4d4, inset 0 1px 0 #fed17e;
+  --explorer-navigation-list-item-active-text-shadow: 0px 1px 1px rgba(0,0,0,0.2);
+  --explorer-navigation-list-item-ative-color: #fff;
+
+  --explorer-navigation-list-item-green-hover-box-shadow: 0px 1px 1px rgba(255,255,255,0.8) inset, 1px 1px 5px rgba(0,0,0,0.4);
+  --explorer-navigation-list-item-green-hover-border-color: #80ab5d;
+
+  --explorer-navigation-list-item-green-ative-background: #80ab5d;
+  --explorer-navigation-list-item-green-ative-border-color: #a9db80;
+  --explorer-navigation-list-item-green-ative-box-shadow: 1px 1px 2px rgba(0,0,0,0.4) inset;
+
+  --explorer-navigation-pagination-color: #fff;
+
+  --glyph-navigation-background: #eee;
+
+  --search-background: #eee;
+  --serch-border-bottom: 1px solid #aaa;
+  --search-input-color: #aaa;
+
+  --site-header-color: #95A5A6;
+
+  --tabbed-panel-list-item-background: #eee;
+  --tabbed-panel-list-item-color: #aaa;
+  --tabbed-panel-panel-background: #fff;
+
+  --card-background: linear-gradient(to top, #80a9da 0%, #6f97c5 100%);
+  --card-border: 1px solid #5d81ab;
+  --card-box-shadow: 0px 1px 1px rgba(255,255,255,0.8) inset, 1px 1px 3px rgba(0,0,0,0.2);
+  --card-color: #fff;
+
+  --card-active-border-color: #fff;
+  --card-active-background: #fff;
+  --card-active-color: #5d81ab;
+
+  --card-inner-background: #fff;
+
+  --card-header-background: #80a9da;
+  --card-header-color: #fff;
+
+  --card-section-color: #fff;
+  --card-active-section-color: #5d81ab;
+
+}
+
+body[data-theme=night] {
+  --body-background: #2d2e33;
+  --main-background: #28292e;
+
+  --explorer-navigation-background: transparent;
+  --explorer-navigation-border-top: 1px solid #eee;
+  --explorer-navigation-border-bottom: 1px solid #eee;
+
+  --ucd-range-border-top: 0;
+
+  --drop-down-list-item-background: #ddd;
+
+}
+
+body[data-theme=mauve] {
+  --body-background: #2d2e33;
+  --main-background: #301631;
+
+  --explorer-navigation-background: transparent;
+  --explorer-navigation-border-top: 1px solid #eee;
+  --explorer-navigation-border-bottom: 1px solid #eee;
+
+  --ucd-range-background: transparent;
+  --ucd-range-border-top: 0;
+
+  --drop-down-list-item-background: #ddd;
+
+  --tabbed-panel-list-item-background: #b0606d;
+  --tabbed-panel-list-item-color: #fff;
+  --tabbed-panel-panel-background: #b0606d;
+
+
+}

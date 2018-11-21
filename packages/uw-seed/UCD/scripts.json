@@ -1,0 +1,1858 @@
+[
+  {
+    "parent": 33,
+    "index": 36,
+    "key": "aegean-numbers",
+    "title": "Aegean Numbers",
+    "range": { "from": "10100", "to": "1013F" }
+  },
+  {
+    "parent": 0,
+    "index": 54,
+    "key": "african-scripts",
+    "title": "African Scripts",
+    "childRanges": [
+      { "from": "A6A0", "to": "A6FF" },
+      { "from": "16800", "to": "16A3F" },
+      { "from": "16AD0", "to": "16AFF" },
+      { "from": "2C80", "to": "2CFF" },
+      { "from": "102E0", "to": "102FF" },
+      { "from": "03E2", "to": "03EF" },
+      { "from": "13000", "to": "1342F" },
+      { "from": "1200", "to": "137F" },
+      { "from": "2D80", "to": "2DDF" },
+      { "from": "AB00", "to": "AB2F" },
+      { "from": "1380", "to": "139F" },
+      { "from": "1E800", "to": "1E8DF" },
+      { "from": "109A0", "to": "109FF" },
+      { "from": "10980", "to": "1099F" },
+      { "from": "07C0", "to": "07FF" },
+      { "from": "10480", "to": "104AF" },
+      { "from": "2D30", "to": "2D7F" },
+      { "from": "A500", "to": "A63F" }
+    ]
+  },
+  {
+    "parent": 111,
+    "index": 112,
+    "key": "ahom",
+    "title": "Ahom",
+    "range": { "from": "11700", "to": "1173F" }
+  },
+  {
+    "parent": 217,
+    "index": 218,
+    "key": "alphabetic-presentation-forms",
+    "title": "Alphabetic Presentation Forms",
+    "range": { "from": "FB00", "to": "FB4F" }
+  },
+  {
+    "parent": 0,
+    "index": 211,
+    "key": "american-scripts",
+    "title": "American Scripts",
+    "childRanges": [
+      { "from": "13A0", "to": "13FF" },
+      { "from": "AB70", "to": "ABBF" },
+      { "from": "10400", "to": "1044F" },
+      { "from": "1400", "to": "167F" },
+      { "from": "18B0", "to": "18FF" }
+    ]
+  },
+  {
+    "parent": 74,
+    "index": 75,
+    "key": "anatolian-hieroglyphs",
+    "title": "Anatolian Hieroglyphs",
+    "range": { "from": "14400", "to": "1467F" }
+  },
+  {
+    "parent": 15,
+    "index": 17,
+    "key": "ancient-greek-numbers",
+    "title": "Ancient Greek Numbers",
+    "range": { "from": "10140", "to": "1018F" }
+  },
+  {
+    "parent": 74,
+    "index": 76,
+    "key": "arabic",
+    "title": "Arabic",
+    "range": { "from": "0600", "to": "06FF" },
+    "childRanges": [
+      { "from": "08A0", "to": "08FF" },
+      { "from": "FB50", "to": "FDFF" },
+      { "from": "FE70", "to": "FEFF" },
+      { "from": "0750", "to": "077F" }
+    ]
+  },
+  {
+    "parent": 76,
+    "index": 78,
+    "key": "arabic-extended-a",
+    "title": "Arabic Extended-A",
+    "range": { "from": "08A0", "to": "08FF" }
+  },
+  {
+    "parent": 76,
+    "index": 79,
+    "key": "arabic-presentation-forms-a",
+    "title": "Arabic Presentation Forms-A",
+    "range": { "from": "FB50", "to": "FDFF" }
+  },
+  {
+    "parent": 76,
+    "index": 80,
+    "key": "arabic-presentation-forms-b",
+    "title": "Arabic Presentation Forms-B",
+    "range": { "from": "FE70", "to": "FEFF" }
+  },
+  {
+    "parent": 76,
+    "index": 77,
+    "key": "arabic-supplement",
+    "title": "Arabic Supplement",
+    "range": { "from": "0750", "to": "077F" }
+  },
+  {
+    "parent": 74,
+    "index": 81,
+    "key": "aramaic-imperial",
+    "title": " Aramaic, Imperial",
+    "range": { "from": "10840", "to": "1085F" }
+  },
+  {
+    "parent": 1,
+    "index": 2,
+    "key": "armenian",
+    "title": "Armenian",
+    "range": { "from": "0530", "to": "058F" },
+    "childRanges": [{ "from": "FB13", "to": "FB17" }]
+  },
+  {
+    "parent": 2,
+    "index": 3,
+    "key": "armenian-ligatures",
+    "title": "Armenian Ligatures",
+    "range": { "from": "FB13", "to": "FB17" }
+  },
+  {
+    "parent": 217,
+    "index": 219,
+    "key": "ascii-characters",
+    "title": "ASCII Characters",
+    "range": { "from": "0000", "to": "007F" }
+  },
+  {
+    "parent": 74,
+    "index": 82,
+    "key": "avestan",
+    "title": "Avestan",
+    "range": { "from": "10B00", "to": "10B3F" }
+  },
+  {
+    "parent": 167,
+    "index": 168,
+    "key": "balinese",
+    "title": "Balinese",
+    "range": { "from": "1B00", "to": "1B7F" }
+  },
+  {
+    "parent": 54,
+    "index": 55,
+    "key": "bamum",
+    "title": "Bamum",
+    "range": { "from": "A6A0", "to": "A6FF" },
+    "childRanges": [{ "from": "16800", "to": "16A3F" }]
+  },
+  {
+    "parent": 55,
+    "index": 56,
+    "key": "bamum-supplement",
+    "title": "Bamum Supplement",
+    "range": { "from": "16800", "to": "16A3F" }
+  },
+  {
+    "parent": 18,
+    "index": 19,
+    "key": "basic-latin",
+    "title": "Basic Latin (ASCII)",
+    "range": { "from": "0000", "to": "007F" }
+  },
+  {
+    "parent": 54,
+    "index": 57,
+    "key": "bassa-vah",
+    "title": "Bassa Vah",
+    "range": { "from": "16AD0", "to": "16AFF" }
+  },
+  {
+    "parent": 167,
+    "index": 169,
+    "key": "batak",
+    "title": "Batak",
+    "range": { "from": "1BC0", "to": "1BFF" }
+  },
+  {
+    "parent": 111,
+    "index": 113,
+    "key": "bengali-and-assamese",
+    "title": "Bengali and Assamese",
+    "range": { "from": "0980", "to": "09FF" }
+  },
+  {
+    "parent": 179,
+    "index": 180,
+    "key": "bopomofo",
+    "title": "Bopomofo",
+    "range": { "from": "3100", "to": "312F" },
+    "childRanges": [{ "from": "31A0", "to": "31BF" }]
+  },
+  {
+    "parent": 180,
+    "index": 181,
+    "key": "bopomofo-extended",
+    "title": "Bopomofo Extended",
+    "range": { "from": "31A0", "to": "31BF" }
+  },
+  {
+    "parent": 111,
+    "index": 114,
+    "key": "brahmi",
+    "title": "Brahmi",
+    "range": { "from": "11000", "to": "1107F" }
+  },
+  {
+    "parent": 167,
+    "index": 170,
+    "key": "buginese",
+    "title": "Buginese",
+    "range": { "from": "1A00", "to": "1A1F" }
+  },
+  {
+    "parent": 167,
+    "index": 171,
+    "key": "buhid",
+    "title": "Buhid",
+    "range": { "from": "1740", "to": "175F" }
+  },
+  {
+    "parent": 74,
+    "index": 83,
+    "key": "carian",
+    "title": "Carian",
+    "range": { "from": "102A0", "to": "102DF" }
+  },
+  {
+    "parent": 1,
+    "index": 4,
+    "key": "caucasian-albanian",
+    "title": "Caucasian Albanian",
+    "range": { "from": "10530", "to": "1056F" }
+  },
+  {
+    "parent": 0,
+    "index": 105,
+    "key": "central-asian-scripts",
+    "title": "Central Asian Scripts",
+    "childRanges": [
+      { "from": "10AC0", "to": "10AFF" },
+      { "from": "1800", "to": "18AF" },
+      { "from": "10C00", "to": "10C4F" },
+      { "from": "A840", "to": "A877" },
+      { "from": "0F00", "to": "0FFF" }
+    ]
+  },
+  {
+    "parent": 111,
+    "index": 115,
+    "key": "chakma",
+    "title": "Chakma",
+    "range": { "from": "11100", "to": "1114F" }
+  },
+  {
+    "parent": 151,
+    "index": 152,
+    "key": "cham",
+    "title": "Cham",
+    "range": { "from": "AA00", "to": "AA5F" }
+  },
+  {
+    "parent": 211,
+    "index": 212,
+    "key": "cherokee",
+    "title": "Cherokee",
+    "range": { "from": "13A0", "to": "13FF" },
+    "childRanges": [{ "from": "AB70", "to": "ABBF" }]
+  },
+  {
+    "parent": 212,
+    "index": 213,
+    "key": "cherokee-supplement",
+    "title": "Cherokee Supplement",
+    "range": { "from": "AB70", "to": "ABBF" }
+  },
+  {
+    "parent": 179,
+    "index": 188,
+    "key": "cjk-compatibility-ideographs",
+    "title": "CJK Compatibility Ideographs",
+    "range": { "from": "F900", "to": "FAFF" },
+    "childRanges": [{ "from": "2F800", "to": "2FA1F" }]
+  },
+  {
+    "parent": 188,
+    "index": 189,
+    "key": "cjk-compatibility-ideographs-supplement",
+    "title": "CJK Compatibility Ideographs Supplement",
+    "range": { "from": "2F800", "to": "2FA1F" }
+  },
+  {
+    "parent": 182,
+    "index": 183,
+    "key": "cjk-extension-a",
+    "title": "CJK Extension-A",
+    "range": { "from": "3400", "to": "4DBF" }
+  },
+  {
+    "parent": 182,
+    "index": 184,
+    "key": "cjk-extension-b",
+    "title": "CJK Extension B",
+    "range": { "from": "20000", "to": "2A6DF" }
+  },
+  {
+    "parent": 182,
+    "index": 185,
+    "key": "cjk-extension-c",
+    "title": "CJK Extension C",
+    "range": { "from": "2A700", "to": "2B73F" }
+  },
+  {
+    "parent": 182,
+    "index": 186,
+    "key": "cjk-extension-d",
+    "title": "CJK Extension D",
+    "range": { "from": "2B740", "to": "2B81F" }
+  },
+  {
+    "parent": 182,
+    "index": 187,
+    "key": "cjk-extension-e",
+    "title": "CJK Extension E",
+    "range": { "from": "2B820", "to": "2CEAF" }
+  },
+  {
+    "parent": 179,
+    "index": 190,
+    "key": "cjk-radicals-kangxi-radicals",
+    "title": " CJK Radicals / KangXi Radicals",
+    "range": { "from": "2F00", "to": "2FDF" },
+    "childRanges": [
+      { "from": "2E80", "to": "2EFF" },
+      { "from": "31C0", "to": "31EF" },
+      { "from": "2FF0", "to": "2FFF" }
+    ]
+  },
+  {
+    "parent": 190,
+    "index": 191,
+    "key": "cjk-radicals-supplement",
+    "title": "CJK Radicals Supplement",
+    "range": { "from": "2E80", "to": "2EFF" }
+  },
+  {
+    "parent": 190,
+    "index": 192,
+    "key": "cjk-strokes",
+    "title": "CJK Strokes",
+    "range": { "from": "31C0", "to": "31EF" }
+  },
+  {
+    "parent": 179,
+    "index": 182,
+    "key": "cjk-unified-ideographs-han",
+    "title": "CJK Unified Ideographs (Han)",
+    "range": { "from": "4E00", "to": "9FFF" },
+    "childRanges": [
+      { "from": "3400", "to": "4DBF" },
+      { "from": "20000", "to": "2A6DF" },
+      { "from": "2A700", "to": "2B73F" },
+      { "from": "2B740", "to": "2B81F" },
+      { "from": "2B820", "to": "2CEAF" }
+    ]
+  },
+  {
+    "parent": 48,
+    "index": 49,
+    "key": "combining-diacritical-marks",
+    "title": "Combining Diacritical Marks",
+    "range": { "from": "0300", "to": "036F" },
+    "childRanges": [
+      { "from": "1AB0", "to": "1AFF" },
+      { "from": "1DC0", "to": "1DFF" }
+    ]
+  },
+  {
+    "parent": 49,
+    "index": 50,
+    "key": "combining-diacritical-marks-extended",
+    "title": "Combining Diacritical Marks Extended",
+    "range": { "from": "1AB0", "to": "1AFF" }
+  },
+  {
+    "parent": 48,
+    "index": 52,
+    "key": "combining-diacritical-marks-for-symbols",
+    "title": "Combining Diacritical Marks for Symbols",
+    "range": { "from": "20D0", "to": "20FF" }
+  },
+  {
+    "parent": 49,
+    "index": 51,
+    "key": "combining-diacritical-marks-supplement",
+    "title": "Combining Diacritical Marks Supplement",
+    "range": { "from": "1DC0", "to": "1DFF" }
+  },
+  {
+    "parent": 48,
+    "index": 53,
+    "key": "combining-half-marks",
+    "title": "Combining Half Marks",
+    "range": { "from": "FE20", "to": "FE2F" }
+  },
+  {
+    "parent": 0,
+    "index": 48,
+    "key": "combining-marks",
+    "title": "Combining Marks",
+    "childRanges": [
+      { "from": "0300", "to": "036F" },
+      { "from": "1AB0", "to": "1AFF" },
+      { "from": "1DC0", "to": "1DFF" },
+      { "from": "20D0", "to": "20FF" },
+      { "from": "FE20", "to": "FE2F" }
+    ]
+  },
+  {
+    "parent": 54,
+    "index": 58,
+    "key": "coptic",
+    "title": "Coptic",
+    "range": { "from": "2C80", "to": "2CFF" },
+    "childRanges": [
+      { "from": "102E0", "to": "102FF" },
+      { "from": "03E2", "to": "03EF" }
+    ]
+  },
+  {
+    "parent": 58,
+    "index": 60,
+    "key": "coptic-epact-numbers",
+    "title": "Coptic Epact Numbers",
+    "range": { "from": "102E0", "to": "102FF" }
+  },
+  {
+    "parent": 58,
+    "index": 59,
+    "key": "coptic-in-greek-block",
+    "title": "Coptic in Greek block",
+    "range": { "from": "03E2", "to": "03EF" }
+  },
+  {
+    "parent": 74,
+    "index": 84,
+    "key": "cuneiform",
+    "title": "Cuneiform",
+    "range": { "from": "12000", "to": "123FF" },
+    "childRanges": [
+      { "from": "12400", "to": "1247F" },
+      { "from": "12480", "to": "1254F" },
+      { "from": "103A0", "to": "103DF" },
+      { "from": "10380", "to": "1039F" }
+    ]
+  },
+  {
+    "parent": 84,
+    "index": 85,
+    "key": "cuneiform-numbers-and-punctuation",
+    "title": "Cuneiform Numbers and Punctuation",
+    "range": { "from": "12400", "to": "1247F" }
+  },
+  {
+    "parent": 1,
+    "index": 5,
+    "key": "cypriot-syllabary",
+    "title": "Cypriot Syllabary",
+    "range": { "from": "10800", "to": "1083F" }
+  },
+  {
+    "parent": 1,
+    "index": 6,
+    "key": "cyrillic",
+    "title": "Cyrillic",
+    "range": { "from": "0400", "to": "04FF" },
+    "childRanges": [
+      { "from": "2DE0", "to": "2DFF" },
+      { "from": "A640", "to": "A69F" },
+      { "from": "0500", "to": "052F" }
+    ]
+  },
+  {
+    "parent": 6,
+    "index": 8,
+    "key": "cyrillic-extended-a",
+    "title": "Cyrillic Extended-A",
+    "range": { "from": "2DE0", "to": "2DFF" }
+  },
+  {
+    "parent": 6,
+    "index": 9,
+    "key": "cyrillic-extended-b",
+    "title": "Cyrillic Extended-B",
+    "range": { "from": "A640", "to": "A69F" }
+  },
+  {
+    "parent": 6,
+    "index": 7,
+    "key": "cyrillic-supplement",
+    "title": "Cyrillic Supplement",
+    "range": { "from": "0500", "to": "052F" }
+  },
+  {
+    "parent": 211,
+    "index": 214,
+    "key": "deseret",
+    "title": "Deseret",
+    "range": { "from": "10400", "to": "1044F" }
+  },
+  {
+    "parent": 111,
+    "index": 116,
+    "key": "devanagari",
+    "title": "Devanagari",
+    "range": { "from": "0900", "to": "097F" },
+    "childRanges": [{ "from": "A8E0", "to": "A8FF" }]
+  },
+  {
+    "parent": 116,
+    "index": 117,
+    "key": "devanagari-extended",
+    "title": "Devanagari Extended",
+    "range": { "from": "A8E0", "to": "A8FF" }
+  },
+  {
+    "parent": 84,
+    "index": 86,
+    "key": "early-dynastic-cuneiform",
+    "title": "Early Dynastic Cuneiform",
+    "range": { "from": "12480", "to": "1254F" }
+  },
+  {
+    "parent": 0,
+    "index": 179,
+    "key": "east-asian-scripts",
+    "title": "East Asian Scripts",
+    "childRanges": [
+      { "from": "3100", "to": "312F" },
+      { "from": "31A0", "to": "31BF" },
+      { "from": "F900", "to": "FAFF" },
+      { "from": "2F800", "to": "2FA1F" },
+      { "from": "2F00", "to": "2FDF" },
+      { "from": "2E80", "to": "2EFF" },
+      { "from": "31C0", "to": "31EF" },
+      { "from": "2FF0", "to": "2FFF" },
+      { "from": "4E00", "to": "9FFF" },
+      { "from": "3400", "to": "4DBF" },
+      { "from": "20000", "to": "2A6DF" },
+      { "from": "2A700", "to": "2B73F" },
+      { "from": "2B740", "to": "2B81F" },
+      { "from": "2B820", "to": "2CEAF" },
+      { "from": "1100", "to": "11FF" },
+      { "from": "FFA0", "to": "FFDC" },
+      { "from": "3130", "to": "318F" },
+      { "from": "A960", "to": "A97F" },
+      { "from": "D7B0", "to": "D7FF" },
+      { "from": "AC00", "to": "D7AF" },
+      { "from": "3040", "to": "309F" },
+      { "from": "3190", "to": "319F" },
+      { "from": "30A0", "to": "30FF" },
+      { "from": "FF65", "to": "FF9F" },
+      { "from": "1B000", "to": "1B0FF" },
+      { "from": "31F0", "to": "31FF" },
+      { "from": "A4D0", "to": "A4FF" },
+      { "from": "16F00", "to": "16F9F" },
+      { "from": "A490", "to": "A4CF" },
+      { "from": "A000", "to": "A48F" }
+    ]
+  },
+  {
+    "parent": 54,
+    "index": 61,
+    "key": "egyptian-hieroglyphs",
+    "title": "Egyptian Hieroglyphs",
+    "range": { "from": "13000", "to": "1342F" }
+  },
+  {
+    "parent": 1,
+    "index": 10,
+    "key": "elbasan",
+    "title": "Elbasan",
+    "range": { "from": "10500", "to": "1052F" }
+  },
+  {
+    "parent": 54,
+    "index": 62,
+    "key": "ethiopic",
+    "title": "Ethiopic",
+    "range": { "from": "1200", "to": "137F" },
+    "childRanges": [
+      { "from": "2D80", "to": "2DDF" },
+      { "from": "AB00", "to": "AB2F" },
+      { "from": "1380", "to": "139F" }
+    ]
+  },
+  {
+    "parent": 62,
+    "index": 64,
+    "key": "ethiopic-extended",
+    "title": "Ethiopic Extended",
+    "range": { "from": "2D80", "to": "2DDF" }
+  },
+  {
+    "parent": 62,
+    "index": 65,
+    "key": "ethiopic-extended-a",
+    "title": "Ethiopic Extended-A",
+    "range": { "from": "AB00", "to": "AB2F" }
+  },
+  {
+    "parent": 62,
+    "index": 63,
+    "key": "ethiopic-supplement",
+    "title": "Ethiopic Supplement",
+    "range": { "from": "1380", "to": "139F" }
+  },
+  {
+    "parent": 0,
+    "index": 1,
+    "key": "european-scripts",
+    "title": "European Scripts",
+    "childRanges": [
+      { "from": "0530", "to": "058F" },
+      { "from": "FB13", "to": "FB17" },
+      { "from": "10530", "to": "1056F" },
+      { "from": "10800", "to": "1083F" },
+      { "from": "0400", "to": "04FF" },
+      { "from": "2DE0", "to": "2DFF" },
+      { "from": "A640", "to": "A69F" },
+      { "from": "0500", "to": "052F" },
+      { "from": "10500", "to": "1052F" },
+      { "from": "10A0", "to": "10FF" },
+      { "from": "2D00", "to": "2D2F" },
+      { "from": "2C00", "to": "2C5F" },
+      { "from": "10330", "to": "1034F" },
+      { "from": "0370", "to": "03FF" },
+      { "from": "10140", "to": "1018F" },
+      { "from": "1F00", "to": "1FFF" },
+      { "from": "0000", "to": "007F" },
+      { "from": "0000", "to": "007F" },
+      { "from": "FF00", "to": "FF5E" },
+      { "from": "0250", "to": "02AF" },
+      { "from": "0080", "to": "00FF" },
+      { "from": "0100", "to": "017F" },
+      { "from": "1E00", "to": "1EFF" },
+      { "from": "0180", "to": "024F" },
+      { "from": "2C60", "to": "2C7F" },
+      { "from": "A720", "to": "A7FF" },
+      { "from": "AB30", "to": "AB6F" },
+      { "from": "FB00", "to": "FB06" },
+      { "from": "1D00", "to": "1D7F" },
+      { "from": "1D80", "to": "1DBF" },
+      { "from": "10600", "to": "1077F" },
+      { "from": "10100", "to": "1013F" },
+      { "from": "10080", "to": "100FF" },
+      { "from": "10000", "to": "1007F" },
+      { "from": "1680", "to": "169F" },
+      { "from": "10C80", "to": "10CFF" },
+      { "from": "10300", "to": "1032F" },
+      { "from": "10350", "to": "1037F" },
+      { "from": "101D0", "to": "101FF" },
+      { "from": "16A0", "to": "16FF" },
+      { "from": "10450", "to": "1047F" }
+    ]
+  },
+  {
+    "parent": 18,
+    "index": 28,
+    "key": "fullwidth-latin-letters",
+    "title": "Fullwidth Latin Letters",
+    "range": { "from": "FF00", "to": "FF5E" }
+  },
+  {
+    "parent": 1,
+    "index": 11,
+    "key": "georgian",
+    "title": "Georgian",
+    "range": { "from": "10A0", "to": "10FF" },
+    "childRanges": [{ "from": "2D00", "to": "2D2F" }]
+  },
+  {
+    "parent": 11,
+    "index": 12,
+    "key": "georgian-supplement",
+    "title": "Georgian Supplement",
+    "range": { "from": "2D00", "to": "2D2F" }
+  },
+  {
+    "parent": 1,
+    "index": 13,
+    "key": "glagolitic",
+    "title": "Glagolitic",
+    "range": { "from": "2C00", "to": "2C5F" }
+  },
+  {
+    "parent": 1,
+    "index": 14,
+    "key": "gothic",
+    "title": "Gothic",
+    "range": { "from": "10330", "to": "1034F" }
+  },
+  {
+    "parent": 111,
+    "index": 118,
+    "key": "grantha",
+    "title": "Grantha",
+    "range": { "from": "11300", "to": "1137F" }
+  },
+  {
+    "parent": 1,
+    "index": 15,
+    "key": "greek",
+    "title": "Greek",
+    "range": { "from": "0370", "to": "03FF" },
+    "childRanges": [
+      { "from": "10140", "to": "1018F" },
+      { "from": "1F00", "to": "1FFF" }
+    ]
+  },
+  {
+    "parent": 15,
+    "index": 16,
+    "key": "greek-extended",
+    "title": "Greek Extended",
+    "range": { "from": "1F00", "to": "1FFF" }
+  },
+  {
+    "parent": 111,
+    "index": 119,
+    "key": "gujarati",
+    "title": "Gujarati",
+    "range": { "from": "0A80", "to": "0AFF" }
+  },
+  {
+    "parent": 111,
+    "index": 120,
+    "key": "gurmukhi",
+    "title": "Gurmukhi",
+    "range": { "from": "0A00", "to": "0A7F" }
+  },
+  {
+    "parent": 217,
+    "index": 220,
+    "key": "halfwidth-and-fullwidth-forms",
+    "title": "Halfwidth and Fullwidth Forms",
+    "range": { "from": "FF00", "to": "FFEF" }
+  },
+  {
+    "parent": 194,
+    "index": 198,
+    "key": "halfwidth-jamo",
+    "title": "Halfwidth Jamo",
+    "range": { "from": "FFA0", "to": "FFDC" }
+  },
+  {
+    "parent": 201,
+    "index": 204,
+    "key": "halfwidth-katakana",
+    "title": "Halfwidth Katakana",
+    "range": { "from": "FF65", "to": "FF9F" }
+  },
+  {
+    "parent": 194,
+    "index": 197,
+    "key": "hangul-compatibility-jamo",
+    "title": "Hangul Compatibility Jamo",
+    "range": { "from": "3130", "to": "318F" }
+  },
+  {
+    "parent": 179,
+    "index": 194,
+    "key": "hangul-jamo",
+    "title": "Hangul Jamo",
+    "range": { "from": "1100", "to": "11FF" },
+    "childRanges": [
+      { "from": "FFA0", "to": "FFDC" },
+      { "from": "3130", "to": "318F" },
+      { "from": "A960", "to": "A97F" },
+      { "from": "D7B0", "to": "D7FF" }
+    ]
+  },
+  {
+    "parent": 194,
+    "index": 195,
+    "key": "hangul-jamo-extended-a",
+    "title": "Hangul Jamo Extended-A",
+    "range": { "from": "A960", "to": "A97F" }
+  },
+  {
+    "parent": 194,
+    "index": 196,
+    "key": "hangul-jamo-extended-b",
+    "title": "Hangul Jamo Extended-B",
+    "range": { "from": "D7B0", "to": "D7FF" }
+  },
+  {
+    "parent": 179,
+    "index": 199,
+    "key": "hangul-syllables",
+    "title": "Hangul Syllables",
+    "range": { "from": "AC00", "to": "D7AF" }
+  },
+  {
+    "parent": 167,
+    "index": 172,
+    "key": "hanunoo",
+    "title": "Hanunoo",
+    "range": { "from": "1720", "to": "173F" }
+  },
+  {
+    "parent": 74,
+    "index": 89,
+    "key": "hatran",
+    "title": "Hatran",
+    "range": { "from": "108E0", "to": "108FF" }
+  },
+  {
+    "parent": 74,
+    "index": 90,
+    "key": "hebrew",
+    "title": "Hebrew",
+    "range": { "from": "0590", "to": "05FF" },
+    "childRanges": [{ "from": "FB1D", "to": "FB4F" }]
+  },
+  {
+    "parent": 90,
+    "index": 91,
+    "key": "hebrew-presentation-forms",
+    "title": "Hebrew Presentation Forms",
+    "range": { "from": "FB1D", "to": "FB4F" }
+  },
+  {
+    "parent": 179,
+    "index": 200,
+    "key": "hiragana",
+    "title": "Hiragana",
+    "range": { "from": "3040", "to": "309F" }
+  },
+  {
+    "parent": 190,
+    "index": 193,
+    "key": "ideographic-description-characters",
+    "title": "Ideographic Description Characters",
+    "range": { "from": "2FF0", "to": "2FFF" }
+  },
+  {
+    "parent": 0,
+    "index": 167,
+    "key": "indonesia-oceania-scripts",
+    "title": "Indonesia & Oceania Scripts",
+    "childRanges": [
+      { "from": "1B00", "to": "1B7F" },
+      { "from": "1BC0", "to": "1BFF" },
+      { "from": "1A00", "to": "1A1F" },
+      { "from": "1740", "to": "175F" },
+      { "from": "1720", "to": "173F" },
+      { "from": "A980", "to": "A9DF" },
+      { "from": "A930", "to": "A95F" },
+      { "from": "A930", "to": "A95F" },
+      { "from": "1CC0", "to": "1CCF" },
+      { "from": "1700", "to": "171F" },
+      { "from": "1760", "to": "177F" }
+    ]
+  },
+  {
+    "parent": 18,
+    "index": 29,
+    "key": "ipa-extensions",
+    "title": "IPA Extensions",
+    "range": { "from": "0250", "to": "02AF" }
+  },
+  {
+    "parent": 167,
+    "index": 173,
+    "key": "javanese",
+    "title": "Javanese",
+    "range": { "from": "A980", "to": "A9DF" }
+  },
+  {
+    "parent": 111,
+    "index": 121,
+    "key": "kaithi",
+    "title": "Kaithi",
+    "range": { "from": "11080", "to": "110CF" }
+  },
+  {
+    "parent": 201,
+    "index": 203,
+    "key": "kana-supplement",
+    "title": "Kana Supplement",
+    "range": { "from": "1B000", "to": "1B0FF" }
+  },
+  {
+    "parent": 179,
+    "index": 205,
+    "key": "kanbun",
+    "title": "Kanbun",
+    "range": { "from": "3190", "to": "319F" }
+  },
+  {
+    "parent": 111,
+    "index": 122,
+    "key": "kannada",
+    "title": "Kannada",
+    "range": { "from": "0C80", "to": "0CFF" }
+  },
+  {
+    "parent": 179,
+    "index": 201,
+    "key": "katakana",
+    "title": "Katakana",
+    "range": { "from": "30A0", "to": "30FF" },
+    "childRanges": [
+      { "from": "FF65", "to": "FF9F" },
+      { "from": "1B000", "to": "1B0FF" },
+      { "from": "31F0", "to": "31FF" }
+    ]
+  },
+  {
+    "parent": 201,
+    "index": 202,
+    "key": "katakana-phonetic-extensions",
+    "title": "Katakana Phonetic Extensions",
+    "range": { "from": "31F0", "to": "31FF" }
+  },
+  {
+    "parent": 151,
+    "index": 153,
+    "key": "kayah-li",
+    "title": "Kayah Li",
+    "range": { "from": "A900", "to": "A92F" }
+  },
+  {
+    "parent": 111,
+    "index": 123,
+    "key": "kharoshthi",
+    "title": "Kharoshthi",
+    "range": { "from": "10A00", "to": "10A5F" }
+  },
+  {
+    "parent": 151,
+    "index": 154,
+    "key": "khmer",
+    "title": "Khmer",
+    "range": { "from": "1780", "to": "17FF" },
+    "childRanges": [{ "from": "19E0", "to": "19FF" }]
+  },
+  {
+    "parent": 154,
+    "index": 155,
+    "key": "khmer-symbols",
+    "title": "Khmer Symbols",
+    "range": { "from": "19E0", "to": "19FF" }
+  },
+  {
+    "parent": 111,
+    "index": 124,
+    "key": "khojki",
+    "title": "Khojki",
+    "range": { "from": "11200", "to": "1124F" }
+  },
+  {
+    "parent": 111,
+    "index": 125,
+    "key": "khudawadi",
+    "title": "Khudawadi",
+    "range": { "from": "112B0", "to": "112FF" }
+  },
+  {
+    "parent": 151,
+    "index": 156,
+    "key": "lao",
+    "title": "Lao",
+    "range": { "from": "0E80", "to": "0EFF" }
+  },
+  {
+    "parent": 1,
+    "index": 18,
+    "key": "latin",
+    "title": "Latin",
+    "range": { "from": "0000", "to": "007F" },
+    "childRanges": [
+      { "from": "0000", "to": "007F" },
+      { "from": "FF00", "to": "FF5E" },
+      { "from": "0250", "to": "02AF" },
+      { "from": "0080", "to": "00FF" },
+      { "from": "0100", "to": "017F" },
+      { "from": "1E00", "to": "1EFF" },
+      { "from": "0180", "to": "024F" },
+      { "from": "2C60", "to": "2C7F" },
+      { "from": "A720", "to": "A7FF" },
+      { "from": "AB30", "to": "AB6F" },
+      { "from": "FB00", "to": "FB06" },
+      { "from": "1D00", "to": "1D7F" },
+      { "from": "1D80", "to": "1DBF" }
+    ]
+  },
+  {
+    "parent": 18,
+    "index": 20,
+    "key": "latin-1-supplement",
+    "title": "Latin-1 Supplement",
+    "range": { "from": "0080", "to": "00FF" }
+  },
+  {
+    "parent": 18,
+    "index": 21,
+    "key": "latin-extended-a",
+    "title": "Latin Extended-A",
+    "range": { "from": "0100", "to": "017F" }
+  },
+  {
+    "parent": 18,
+    "index": 26,
+    "key": "latin-extended-additional",
+    "title": "Latin Extended Additional",
+    "range": { "from": "1E00", "to": "1EFF" }
+  },
+  {
+    "parent": 18,
+    "index": 22,
+    "key": "latin-extended-b",
+    "title": "Latin Extended-B",
+    "range": { "from": "0180", "to": "024F" }
+  },
+  {
+    "parent": 18,
+    "index": 23,
+    "key": "latin-extended-c",
+    "title": "Latin Extended-C",
+    "range": { "from": "2C60", "to": "2C7F" }
+  },
+  {
+    "parent": 18,
+    "index": 24,
+    "key": "latin-extended-d",
+    "title": "Latin Extended-D",
+    "range": { "from": "A720", "to": "A7FF" }
+  },
+  {
+    "parent": 18,
+    "index": 25,
+    "key": "latin-extended-e",
+    "title": "Latin Extended-E",
+    "range": { "from": "AB30", "to": "AB6F" }
+  },
+  {
+    "parent": 18,
+    "index": 27,
+    "key": "latin-ligatures",
+    "title": "Latin Ligatures",
+    "range": { "from": "FB00", "to": "FB06" }
+  },
+  {
+    "parent": 111,
+    "index": 126,
+    "key": "lepcha",
+    "title": "Lepcha",
+    "range": { "from": "1C00", "to": "1C4F" }
+  },
+  {
+    "parent": 111,
+    "index": 127,
+    "key": "limbu",
+    "title": "Limbu",
+    "range": { "from": "1900", "to": "194F" }
+  },
+  {
+    "parent": 1,
+    "index": 32,
+    "key": "linear-a",
+    "title": "Linear A",
+    "range": { "from": "10600", "to": "1077F" }
+  },
+  {
+    "parent": 1,
+    "index": 33,
+    "key": "linear-b",
+    "title": "Linear B",
+    "childRanges": [
+      { "from": "10100", "to": "1013F" },
+      { "from": "10080", "to": "100FF" },
+      { "from": "10000", "to": "1007F" }
+    ]
+  },
+  {
+    "parent": 33,
+    "index": 35,
+    "key": "linear-b-ideograms",
+    "title": "Linear B Ideograms",
+    "range": { "from": "10080", "to": "100FF" }
+  },
+  {
+    "parent": 33,
+    "index": 34,
+    "key": "linear-b-syllabary",
+    "title": "Linear B Syllabary",
+    "range": { "from": "10000", "to": "1007F" }
+  },
+  {
+    "parent": 179,
+    "index": 206,
+    "key": "lisu",
+    "title": "Lisu",
+    "range": { "from": "A4D0", "to": "A4FF" }
+  },
+  {
+    "parent": 74,
+    "index": 92,
+    "key": "lycian",
+    "title": "Lycian",
+    "range": { "from": "10280", "to": "1029F" }
+  },
+  {
+    "parent": 74,
+    "index": 93,
+    "key": "lydian",
+    "title": "Lydian",
+    "range": { "from": "10920", "to": "1093F" }
+  },
+  {
+    "parent": 111,
+    "index": 128,
+    "key": "mahajani",
+    "title": "Mahajani",
+    "range": { "from": "11150", "to": "1117F" }
+  },
+  {
+    "parent": 111,
+    "index": 129,
+    "key": "malayalam",
+    "title": "Malayalam",
+    "range": { "from": "0D00", "to": "0D7F" }
+  },
+  {
+    "parent": 74,
+    "index": 94,
+    "key": "mandaic",
+    "title": "Mandaic",
+    "range": { "from": "0840", "to": "085F" }
+  },
+  {
+    "parent": 105,
+    "index": 106,
+    "key": "manichaean",
+    "title": "Manichaean",
+    "range": { "from": "10AC0", "to": "10AFF" }
+  },
+  {
+    "parent": 111,
+    "index": 130,
+    "key": "meetei-mayek",
+    "title": "Meetei Mayek",
+    "range": { "from": "ABC0", "to": "ABFF" },
+    "childRanges": [{ "from": "AAE0", "to": "AAFF" }]
+  },
+  {
+    "parent": 130,
+    "index": 131,
+    "key": "meetei-mayek-extensions",
+    "title": "Meetei Mayek Extensions",
+    "range": { "from": "AAE0", "to": "AAFF" }
+  },
+  {
+    "parent": 54,
+    "index": 66,
+    "key": "mende-kikakui",
+    "title": "Mende Kikakui",
+    "range": { "from": "1E800", "to": "1E8DF" }
+  },
+  {
+    "parent": 54,
+    "index": 67,
+    "key": "meroitic",
+    "title": "Meroitic",
+    "childRanges": [
+      { "from": "109A0", "to": "109FF" },
+      { "from": "10980", "to": "1099F" }
+    ]
+  },
+  {
+    "parent": 67,
+    "index": 68,
+    "key": "meroitic-cursive",
+    "title": "Meroitic Cursive",
+    "range": { "from": "109A0", "to": "109FF" }
+  },
+  {
+    "parent": 67,
+    "index": 69,
+    "key": "meroitic-hieroglyphs",
+    "title": "Meroitic Hieroglyphs",
+    "range": { "from": "10980", "to": "1099F" }
+  },
+  {
+    "parent": 179,
+    "index": 207,
+    "key": "miao",
+    "title": "Miao",
+    "range": { "from": "16F00", "to": "16F9F" }
+  },
+  {
+    "parent": 0,
+    "index": 74,
+    "key": "middle-eastern-scripts",
+    "title": "Middle Eastern Scripts",
+    "childRanges": [
+      { "from": "14400", "to": "1467F" },
+      { "from": "0600", "to": "06FF" },
+      { "from": "08A0", "to": "08FF" },
+      { "from": "FB50", "to": "FDFF" },
+      { "from": "FE70", "to": "FEFF" },
+      { "from": "0750", "to": "077F" },
+      { "from": "10840", "to": "1085F" },
+      { "from": "10B00", "to": "10B3F" },
+      { "from": "102A0", "to": "102DF" },
+      { "from": "12000", "to": "123FF" },
+      { "from": "12400", "to": "1247F" },
+      { "from": "12480", "to": "1254F" },
+      { "from": "103A0", "to": "103DF" },
+      { "from": "10380", "to": "1039F" },
+      { "from": "108E0", "to": "108FF" },
+      { "from": "0590", "to": "05FF" },
+      { "from": "FB1D", "to": "FB4F" },
+      { "from": "10280", "to": "1029F" },
+      { "from": "10920", "to": "1093F" },
+      { "from": "0840", "to": "085F" },
+      { "from": "10880", "to": "108AF" },
+      { "from": "10A80", "to": "10A9F" },
+      { "from": "10A60", "to": "10A7F" },
+      { "from": "10B60", "to": "10B7F" },
+      { "from": "10B80", "to": "10BAF" },
+      { "from": "10860", "to": "1087F" },
+      { "from": "10B40", "to": "10B5F" },
+      { "from": "10900", "to": "1091F" },
+      { "from": "0800", "to": "083F" },
+      { "from": "0700", "to": "074F" }
+    ]
+  },
+  {
+    "parent": 111,
+    "index": 132,
+    "key": "modi",
+    "title": "Modi",
+    "range": { "from": "11600", "to": "1165F" }
+  },
+  {
+    "parent": 0,
+    "index": 44,
+    "key": "modifier-letters",
+    "title": "Modifier Letters",
+    "childRanges": [
+      { "from": "A700", "to": "A71F" },
+      { "from": "02B0", "to": "02FF" },
+      { "from": "2070", "to": "209F" }
+    ]
+  },
+  {
+    "parent": 44,
+    "index": 45,
+    "key": "modifier-tone-letters",
+    "title": "Modifier Tone Letters",
+    "range": { "from": "A700", "to": "A71F" }
+  },
+  {
+    "parent": 105,
+    "index": 107,
+    "key": "mongolian",
+    "title": "Mongolian",
+    "range": { "from": "1800", "to": "18AF" }
+  },
+  {
+    "parent": 111,
+    "index": 133,
+    "key": "mro",
+    "title": "Mro",
+    "range": { "from": "16A40", "to": "16A6F" }
+  },
+  {
+    "parent": 111,
+    "index": 134,
+    "key": "multani",
+    "title": "Multani",
+    "range": { "from": "11280", "to": "112AF" }
+  },
+  {
+    "parent": 151,
+    "index": 157,
+    "key": "myanmar",
+    "title": "Myanmar",
+    "range": { "from": "1000", "to": "109F" },
+    "childRanges": [
+      { "from": "AA60", "to": "AA7F" },
+      { "from": "A9E0", "to": "A9FF" }
+    ]
+  },
+  {
+    "parent": 157,
+    "index": 158,
+    "key": "myanmar-extended-a",
+    "title": "Myanmar Extended-A",
+    "range": { "from": "AA60", "to": "AA7F" }
+  },
+  {
+    "parent": 157,
+    "index": 159,
+    "key": "myanmar-extended-b",
+    "title": "Myanmar Extended-B",
+    "range": { "from": "A9E0", "to": "A9FF" }
+  },
+  {
+    "parent": 74,
+    "index": 95,
+    "key": "nabataean",
+    "title": "Nabataean",
+    "range": { "from": "10880", "to": "108AF" }
+  },
+  {
+    "parent": 151,
+    "index": 160,
+    "key": "new-tai-lue",
+    "title": "New Tai Lue",
+    "range": { "from": "1980", "to": "19DF" }
+  },
+  {
+    "parent": 54,
+    "index": 70,
+    "key": "nko",
+    "title": "N'Ko",
+    "range": { "from": "07C0", "to": "07FF" }
+  },
+  {
+    "parent": 1,
+    "index": 37,
+    "key": "ogham",
+    "title": "Ogham",
+    "range": { "from": "1680", "to": "169F" }
+  },
+  {
+    "parent": 111,
+    "index": 135,
+    "key": "ol-chiki",
+    "title": "Ol Chiki",
+    "range": { "from": "1C50", "to": "1C7F" }
+  },
+  {
+    "parent": 1,
+    "index": 38,
+    "key": "old-hungarian",
+    "title": "Old Hungarian",
+    "range": { "from": "10C80", "to": "10CFF" }
+  },
+  {
+    "parent": 1,
+    "index": 39,
+    "key": "old-italic",
+    "title": "Old Italic",
+    "range": { "from": "10300", "to": "1032F" }
+  },
+  {
+    "parent": 74,
+    "index": 96,
+    "key": "old-north-arabian",
+    "title": "Old North Arabian",
+    "range": { "from": "10A80", "to": "10A9F" }
+  },
+  {
+    "parent": 1,
+    "index": 40,
+    "key": "old-permic",
+    "title": "Old Permic",
+    "range": { "from": "10350", "to": "1037F" }
+  },
+  {
+    "parent": 84,
+    "index": 87,
+    "key": "old-persian",
+    "title": "Old Persian",
+    "range": { "from": "103A0", "to": "103DF" }
+  },
+  {
+    "parent": 74,
+    "index": 97,
+    "key": "old-south-arabian",
+    "title": "Old South Arabian",
+    "range": { "from": "10A60", "to": "10A7F" }
+  },
+  {
+    "parent": 105,
+    "index": 108,
+    "key": "old-turkic",
+    "title": "Old Turkic",
+    "range": { "from": "10C00", "to": "10C4F" }
+  },
+  {
+    "parent": 111,
+    "index": 136,
+    "key": "oriya-odia",
+    "title": "Oriya (Odia)",
+    "range": { "from": "0B00", "to": "0B7F" }
+  },
+  {
+    "parent": 54,
+    "index": 71,
+    "key": "osmanya",
+    "title": "Osmanya",
+    "range": { "from": "10480", "to": "104AF" }
+  },
+  {
+    "parent": 0,
+    "index": 217,
+    "key": "other",
+    "title": "Other",
+    "childRanges": [
+      { "from": "FB00", "to": "FB4F" },
+      { "from": "0000", "to": "007F" },
+      { "from": "FF00", "to": "FFEF" }
+    ]
+  },
+  {
+    "parent": 151,
+    "index": 161,
+    "key": "pahawh-hmong",
+    "title": "Pahawh Hmong",
+    "range": { "from": "16B00", "to": "16B8F" }
+  },
+  {
+    "parent": 74,
+    "index": 98,
+    "key": "pahlavi-inscriptional",
+    "title": " Pahlavi, Inscriptional",
+    "range": { "from": "10B60", "to": "10B7F" }
+  },
+  {
+    "parent": 74,
+    "index": 99,
+    "key": "pahlavi-psalter",
+    "title": " Pahlavi, Psalter",
+    "range": { "from": "10B80", "to": "10BAF" }
+  },
+  {
+    "parent": 74,
+    "index": 100,
+    "key": "palmyrene",
+    "title": " Palmyrene",
+    "range": { "from": "10860", "to": "1087F" }
+  },
+  {
+    "parent": 74,
+    "index": 101,
+    "key": "parthian-inscriptional",
+    "title": " Parthian, Inscriptional",
+    "range": { "from": "10B40", "to": "10B5F" }
+  },
+  {
+    "parent": 151,
+    "index": 162,
+    "key": "pau-cin-hau",
+    "title": "Pau Cin Hau",
+    "range": { "from": "11AC0", "to": "11AFF" }
+  },
+  {
+    "parent": 105,
+    "index": 109,
+    "key": "phags-pa",
+    "title": "Phags-Pa",
+    "range": { "from": "A840", "to": "A877" }
+  },
+  {
+    "parent": 1,
+    "index": 41,
+    "key": "phaistos-disc",
+    "title": "Phaistos Disc",
+    "range": { "from": "101D0", "to": "101FF" }
+  },
+  {
+    "parent": 74,
+    "index": 102,
+    "key": "phoenician",
+    "title": "Phoenician",
+    "range": { "from": "10900", "to": "1091F" }
+  },
+  {
+    "parent": 18,
+    "index": 30,
+    "key": "phonetic-extensions",
+    "title": "Phonetic Extensions",
+    "range": { "from": "1D00", "to": "1D7F" }
+  },
+  {
+    "parent": 18,
+    "index": 31,
+    "key": "phonetic-extensions-supplement",
+    "title": "Phonetic Extensions Supplement",
+    "range": { "from": "1D80", "to": "1DBF" }
+  },
+  {
+    "parent": 167,
+    "index": 174,
+    "key": "rejang",
+    "title": "Rejang",
+    "range": { "from": "A930", "to": "A95F" }
+  },
+  {
+    "parent": 1,
+    "index": 42,
+    "key": "runic",
+    "title": "Runic",
+    "range": { "from": "16A0", "to": "16FF" }
+  },
+  {
+    "parent": 74,
+    "index": 103,
+    "key": "samaritan",
+    "title": "Samaritan",
+    "range": { "from": "0800", "to": "083F" }
+  },
+  {
+    "parent": 111,
+    "index": 137,
+    "key": "saurashtra",
+    "title": "Saurashtra",
+    "range": { "from": "A880", "to": "A8DF" }
+  },
+  {
+    "parent": 111,
+    "index": 138,
+    "key": "sharada",
+    "title": "Sharada",
+    "range": { "from": "11180", "to": "111DF" }
+  },
+  {
+    "parent": 1,
+    "index": 43,
+    "key": "shavian",
+    "title": "Shavian",
+    "range": { "from": "10450", "to": "1047F" }
+  },
+  {
+    "parent": 111,
+    "index": 139,
+    "key": "siddham",
+    "title": "Siddham",
+    "range": { "from": "11580", "to": "115FF" }
+  },
+  {
+    "parent": 111,
+    "index": 140,
+    "key": "sinhala",
+    "title": "Sinhala",
+    "range": { "from": "0D80", "to": "0DFF" },
+    "childRanges": [{ "from": "111E0", "to": "111FF" }]
+  },
+  {
+    "parent": 140,
+    "index": 141,
+    "key": "sinhala-archaic-numbers",
+    "title": "Sinhala Archaic Numbers",
+    "range": { "from": "111E0", "to": "111FF" }
+  },
+  {
+    "parent": 111,
+    "index": 142,
+    "key": "sora-sompeng",
+    "title": "Sora Sompeng",
+    "range": { "from": "110D0", "to": "110FF" }
+  },
+  {
+    "parent": 0,
+    "index": 111,
+    "key": "south-asian-scripts",
+    "title": "South Asian Scripts",
+    "childRanges": [
+      { "from": "11700", "to": "1173F" },
+      { "from": "0980", "to": "09FF" },
+      { "from": "11000", "to": "1107F" },
+      { "from": "11100", "to": "1114F" },
+      { "from": "0900", "to": "097F" },
+      { "from": "A8E0", "to": "A8FF" },
+      { "from": "11300", "to": "1137F" },
+      { "from": "0A80", "to": "0AFF" },
+      { "from": "0A00", "to": "0A7F" },
+      { "from": "11080", "to": "110CF" },
+      { "from": "0C80", "to": "0CFF" },
+      { "from": "10A00", "to": "10A5F" },
+      { "from": "11200", "to": "1124F" },
+      { "from": "112B0", "to": "112FF" },
+      { "from": "1C00", "to": "1C4F" },
+      { "from": "1900", "to": "194F" },
+      { "from": "11150", "to": "1117F" },
+      { "from": "0D00", "to": "0D7F" },
+      { "from": "ABC0", "to": "ABFF" },
+      { "from": "AAE0", "to": "AAFF" },
+      { "from": "11600", "to": "1165F" },
+      { "from": "16A40", "to": "16A6F" },
+      { "from": "11280", "to": "112AF" },
+      { "from": "1C50", "to": "1C7F" },
+      { "from": "0B00", "to": "0B7F" },
+      { "from": "A880", "to": "A8DF" },
+      { "from": "11180", "to": "111DF" },
+      { "from": "11580", "to": "115FF" },
+      { "from": "0D80", "to": "0DFF" },
+      { "from": "111E0", "to": "111FF" },
+      { "from": "110D0", "to": "110FF" },
+      { "from": "A800", "to": "A82F" },
+      { "from": "11680", "to": "116CF" },
+      { "from": "0B80", "to": "0BFF" },
+      { "from": "0C00", "to": "0C7F" },
+      { "from": "0780", "to": "07BF" },
+      { "from": "11480", "to": "114DF" },
+      { "from": "1CD0", "to": "1CFF" },
+      { "from": "118A0", "to": "118FF" }
+    ]
+  },
+  {
+    "parent": 0,
+    "index": 151,
+    "key": "southeast-asian-scripts",
+    "title": "Southeast Asian Scripts",
+    "childRanges": [
+      { "from": "AA00", "to": "AA5F" },
+      { "from": "A900", "to": "A92F" },
+      { "from": "1780", "to": "17FF" },
+      { "from": "19E0", "to": "19FF" },
+      { "from": "0E80", "to": "0EFF" },
+      { "from": "1000", "to": "109F" },
+      { "from": "AA60", "to": "AA7F" },
+      { "from": "A9E0", "to": "A9FF" },
+      { "from": "1980", "to": "19DF" },
+      { "from": "16B00", "to": "16B8F" },
+      { "from": "11AC0", "to": "11AFF" },
+      { "from": "1950", "to": "197F" },
+      { "from": "1A20", "to": "1AAF" },
+      { "from": "AA80", "to": "AADF" },
+      { "from": "0E00", "to": "0E7F" }
+    ]
+  },
+  {
+    "parent": 44,
+    "index": 46,
+    "key": "spacing-modifier-letters",
+    "title": "Spacing Modifier Letters",
+    "range": { "from": "02B0", "to": "02FF" }
+  },
+  {
+    "parent": 167,
+    "index": 175,
+    "key": "sundanese",
+    "title": "Sundanese",
+    "range": { "from": "A930", "to": "A95F" },
+    "childRanges": [{ "from": "1CC0", "to": "1CCF" }]
+  },
+  {
+    "parent": 175,
+    "index": 176,
+    "key": "sundanese-supplement",
+    "title": "Sundanese Supplement",
+    "range": { "from": "1CC0", "to": "1CCF" }
+  },
+  {
+    "parent": 44,
+    "index": 47,
+    "key": "superscripts-and-subscripts",
+    "title": "Superscripts and Subscripts",
+    "range": { "from": "2070", "to": "209F" }
+  },
+  {
+    "parent": 111,
+    "index": 143,
+    "key": "syloti-nagri",
+    "title": "Syloti Nagri",
+    "range": { "from": "A800", "to": "A82F" }
+  },
+  {
+    "parent": 74,
+    "index": 104,
+    "key": "syriac",
+    "title": "Syriac",
+    "range": { "from": "0700", "to": "074F" }
+  },
+  {
+    "parent": 167,
+    "index": 177,
+    "key": "tagalog",
+    "title": "Tagalog",
+    "range": { "from": "1700", "to": "171F" }
+  },
+  {
+    "parent": 167,
+    "index": 178,
+    "key": "tagbanwa",
+    "title": "Tagbanwa",
+    "range": { "from": "1760", "to": "177F" }
+  },
+  {
+    "parent": 151,
+    "index": 163,
+    "key": "tai-le",
+    "title": "Tai Le",
+    "range": { "from": "1950", "to": "197F" }
+  },
+  {
+    "parent": 151,
+    "index": 164,
+    "key": "tai-tham",
+    "title": "Tai Tham",
+    "range": { "from": "1A20", "to": "1AAF" }
+  },
+  {
+    "parent": 151,
+    "index": 165,
+    "key": "tai-viet",
+    "title": "Tai Viet",
+    "range": { "from": "AA80", "to": "AADF" }
+  },
+  {
+    "parent": 111,
+    "index": 144,
+    "key": "takri",
+    "title": "Takri",
+    "range": { "from": "11680", "to": "116CF" }
+  },
+  {
+    "parent": 111,
+    "index": 145,
+    "key": "tamil",
+    "title": "Tamil",
+    "range": { "from": "0B80", "to": "0BFF" }
+  },
+  {
+    "parent": 111,
+    "index": 146,
+    "key": "telugu",
+    "title": "Telugu",
+    "range": { "from": "0C00", "to": "0C7F" }
+  },
+  {
+    "parent": 111,
+    "index": 147,
+    "key": "thaana",
+    "title": "Thaana",
+    "range": { "from": "0780", "to": "07BF" }
+  },
+  {
+    "parent": 151,
+    "index": 166,
+    "key": "thai",
+    "title": "Thai",
+    "range": { "from": "0E00", "to": "0E7F" }
+  },
+  {
+    "parent": 105,
+    "index": 110,
+    "key": "tibetan",
+    "title": "Tibetan",
+    "range": { "from": "0F00", "to": "0FFF" }
+  },
+  {
+    "parent": 54,
+    "index": 72,
+    "key": "tifinagh",
+    "title": "Tifinagh",
+    "range": { "from": "2D30", "to": "2D7F" }
+  },
+  {
+    "parent": 111,
+    "index": 148,
+    "key": "tirhuta",
+    "title": "Tirhuta",
+    "range": { "from": "11480", "to": "114DF" }
+  },
+  {
+    "parent": 215,
+    "index": 216,
+    "key": "ucas-extended",
+    "title": "UCAS Extended",
+    "range": { "from": "18B0", "to": "18FF" }
+  },
+  {
+    "parent": 84,
+    "index": 88,
+    "key": "ugaritic",
+    "title": "Ugaritic",
+    "range": { "from": "10380", "to": "1039F" }
+  },
+  {
+    "parent": 211,
+    "index": 215,
+    "key": "unified-canadian-aboriginal-syllabics",
+    "title": "Unified Canadian Aboriginal Syllabics",
+    "range": { "from": "1400", "to": "167F" },
+    "childRanges": [{ "from": "18B0", "to": "18FF" }]
+  },
+  {
+    "parent": 54,
+    "index": 73,
+    "key": "vai",
+    "title": "Vai",
+    "range": { "from": "A500", "to": "A63F" }
+  },
+  {
+    "parent": 111,
+    "index": 149,
+    "key": "vedic-extensions",
+    "title": "Vedic Extensions",
+    "range": { "from": "1CD0", "to": "1CFF" }
+  },
+  {
+    "parent": 111,
+    "index": 150,
+    "key": "warang-citi",
+    "title": "Warang Citi",
+    "range": { "from": "118A0", "to": "118FF" }
+  },
+  {
+    "parent": 179,
+    "index": 208,
+    "key": "yi",
+    "title": "Yi",
+    "childRanges": [
+      { "from": "A490", "to": "A4CF" },
+      { "from": "A000", "to": "A48F" }
+    ]
+  },
+  {
+    "parent": 208,
+    "index": 210,
+    "key": "yi-radicals",
+    "title": "Yi Radicals",
+    "range": { "from": "A490", "to": "A4CF" }
+  },
+  {
+    "parent": 208,
+    "index": 209,
+    "key": "yi-syllables",
+    "title": "Yi Syllables",
+    "range": { "from": "A000", "to": "A48F" }
+  }
+]

@@ -1,0 +1,16 @@
+!!*
+_*
+.nyc_output
+build
+coverage
+dist
+image_history
+lerna-debug.log
+node_modules
+NOTES
+npm-debug.log
+tmp
+uw_db
+yarn-error.log
+yarn.error.log
+ZNOTES

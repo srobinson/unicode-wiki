@@ -1,0 +1,1572 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <style type="text/css" onwaiting="() => console.log(10000)">
+      @font-face {
+        font-family: 'emoji-sets';
+        src: url("%PUBLIC_URL%/fonts/emoji-sets.eot");
+        src: url("%PUBLIC_URL%/fonts/emoji-sets.eot?#iefix") format('embedded-opentype'), url("%PUBLIC_URL%/fonts/emoji-sets.woff2") format('woff2'), url("%PUBLIC_URL%/fonts/emoji-sets.woff") format('woff'), url("%PUBLIC_URL%/fonts/emoji-sets.ttf") format('truetype'), url("%PUBLIC_URL%/fonts/emoji-sets.svg") format('svg');
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u0000';
+        src: url("%PUBLIC_URL%/fonts/u0000.eot");
+        src: url("%PUBLIC_URL%/fonts/u0000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u0000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u0000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u0000.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u0400';
+        src: url("%PUBLIC_URL%/fonts/u0400.eot");
+        src: url("%PUBLIC_URL%/fonts/u0400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u0400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u0400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u0400.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u0800';
+        src: url("%PUBLIC_URL%/fonts/u0800.eot");
+        src: url("%PUBLIC_URL%/fonts/u0800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u0800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u0800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u0800.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u0c00';
+        src: url("%PUBLIC_URL%/fonts/u0c00.eot");
+        src: url("%PUBLIC_URL%/fonts/u0c00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u0c00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u0c00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u0c00.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u1000';
+        src: url("%PUBLIC_URL%/fonts/u1000.eot");
+        src: url("%PUBLIC_URL%/fonts/u1000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1000.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u1400';
+        src: url("%PUBLIC_URL%/fonts/u1400.eot");
+        src: url("%PUBLIC_URL%/fonts/u1400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1400.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u1800';
+        src: url("%PUBLIC_URL%/fonts/u1800.eot");
+        src: url("%PUBLIC_URL%/fonts/u1800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1800.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u1c00';
+        src: url("%PUBLIC_URL%/fonts/u1c00.eot");
+        src: url("%PUBLIC_URL%/fonts/u1c00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1c00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1c00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1c00.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u2000';
+        src: url("%PUBLIC_URL%/fonts/u2000.eot");
+        src: url("%PUBLIC_URL%/fonts/u2000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u2000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u2000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u2000.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u2400';
+        src: url("%PUBLIC_URL%/fonts/u2400.eot");
+        src: url("%PUBLIC_URL%/fonts/u2400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u2400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u2400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u2400.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u2800';
+        src: url("%PUBLIC_URL%/fonts/u2800.eot");
+        src: url("%PUBLIC_URL%/fonts/u2800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u2800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u2800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u2800.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u2c00';
+        src: url("%PUBLIC_URL%/fonts/u2c00.eot");
+        src: url("%PUBLIC_URL%/fonts/u2c00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u2c00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u2c00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u2c00.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u3000';
+        src: url("%PUBLIC_URL%/fonts/u3000.eot");
+        src: url("%PUBLIC_URL%/fonts/u3000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u3000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u3000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u3000.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u3400';
+        src: url("%PUBLIC_URL%/fonts/u3400.eot");
+        src: url("%PUBLIC_URL%/fonts/u3400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u3400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u3400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u3400.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u3800';
+        src: url("%PUBLIC_URL%/fonts/u3800.eot");
+        src: url("%PUBLIC_URL%/fonts/u3800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u3800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u3800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u3800.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u3c00';
+        src: url("%PUBLIC_URL%/fonts/u3c00.eot");
+        src: url("%PUBLIC_URL%/fonts/u3c00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u3c00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u3c00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u3c00.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u4000';
+        src: url("%PUBLIC_URL%/fonts/u4000.eot");
+        src: url("%PUBLIC_URL%/fonts/u4000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u4000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u4000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u4000.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u4400';
+        src: url("%PUBLIC_URL%/fonts/u4400.eot");
+        src: url("%PUBLIC_URL%/fonts/u4400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u4400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u4400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u4400.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u4800';
+        src: url("%PUBLIC_URL%/fonts/u4800.eot");
+        src: url("%PUBLIC_URL%/fonts/u4800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u4800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u4800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u4800.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u4c00';
+        src: url("%PUBLIC_URL%/fonts/u4c00.eot");
+        src: url("%PUBLIC_URL%/fonts/u4c00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u4c00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u4c00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u4c00.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u5000';
+        src: url("%PUBLIC_URL%/fonts/u5000.eot");
+        src: url("%PUBLIC_URL%/fonts/u5000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u5000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u5000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u5000.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u5400';
+        src: url("%PUBLIC_URL%/fonts/u5400.eot");
+        src: url("%PUBLIC_URL%/fonts/u5400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u5400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u5400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u5400.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u5800';
+        src: url("%PUBLIC_URL%/fonts/u5800.eot");
+        src: url("%PUBLIC_URL%/fonts/u5800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u5800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u5800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u5800.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u5c00';
+        src: url("%PUBLIC_URL%/fonts/u5c00.eot");
+        src: url("%PUBLIC_URL%/fonts/u5c00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u5c00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u5c00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u5c00.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u6000';
+        src: url("%PUBLIC_URL%/fonts/u6000.eot");
+        src: url("%PUBLIC_URL%/fonts/u6000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u6000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u6000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u6000.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u6400';
+        src: url("%PUBLIC_URL%/fonts/u6400.eot");
+        src: url("%PUBLIC_URL%/fonts/u6400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u6400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u6400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u6400.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u6800';
+        src: url("%PUBLIC_URL%/fonts/u6800.eot");
+        src: url("%PUBLIC_URL%/fonts/u6800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u6800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u6800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u6800.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u6c00';
+        src: url("%PUBLIC_URL%/fonts/u6c00.eot");
+        src: url("%PUBLIC_URL%/fonts/u6c00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u6c00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u6c00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u6c00.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u7000';
+        src: url("%PUBLIC_URL%/fonts/u7000.eot");
+        src: url("%PUBLIC_URL%/fonts/u7000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u7000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u7000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u7000.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u7400';
+        src: url("%PUBLIC_URL%/fonts/u7400.eot");
+        src: url("%PUBLIC_URL%/fonts/u7400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u7400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u7400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u7400.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u7800';
+        src: url("%PUBLIC_URL%/fonts/u7800.eot");
+        src: url("%PUBLIC_URL%/fonts/u7800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u7800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u7800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u7800.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u7c00';
+        src: url("%PUBLIC_URL%/fonts/u7c00.eot");
+        src: url("%PUBLIC_URL%/fonts/u7c00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u7c00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u7c00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u7c00.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u8000';
+        src: url("%PUBLIC_URL%/fonts/u8000.eot");
+        src: url("%PUBLIC_URL%/fonts/u8000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u8000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u8000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u8000.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u8400';
+        src: url("%PUBLIC_URL%/fonts/u8400.eot");
+        src: url("%PUBLIC_URL%/fonts/u8400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u8400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u8400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u8400.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u8800';
+        src: url("%PUBLIC_URL%/fonts/u8800.eot");
+        src: url("%PUBLIC_URL%/fonts/u8800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u8800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u8800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u8800.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u8c00';
+        src: url("%PUBLIC_URL%/fonts/u8c00.eot");
+        src: url("%PUBLIC_URL%/fonts/u8c00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u8c00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u8c00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u8c00.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u9000';
+        src: url("%PUBLIC_URL%/fonts/u9000.eot");
+        src: url("%PUBLIC_URL%/fonts/u9000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u9000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u9000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u9000.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u9400';
+        src: url("%PUBLIC_URL%/fonts/u9400.eot");
+        src: url("%PUBLIC_URL%/fonts/u9400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u9400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u9400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u9400.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u9800';
+        src: url("%PUBLIC_URL%/fonts/u9800.eot");
+        src: url("%PUBLIC_URL%/fonts/u9800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u9800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u9800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u9800.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u9c00';
+        src: url("%PUBLIC_URL%/fonts/u9c00.eot");
+        src: url("%PUBLIC_URL%/fonts/u9c00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u9c00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u9c00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u9c00.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'ua000';
+        src: url("%PUBLIC_URL%/fonts/ua000.eot");
+        src: url("%PUBLIC_URL%/fonts/ua000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/ua000.woff") format("woff"), url("%PUBLIC_URL%/fonts/ua000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/ua000.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'ua400';
+        src: url("%PUBLIC_URL%/fonts/ua400.eot");
+        src: url("%PUBLIC_URL%/fonts/ua400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/ua400.woff") format("woff"), url("%PUBLIC_URL%/fonts/ua400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/ua400.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'ua800';
+        src: url("%PUBLIC_URL%/fonts/ua800.eot");
+        src: url("%PUBLIC_URL%/fonts/ua800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/ua800.woff") format("woff"), url("%PUBLIC_URL%/fonts/ua800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/ua800.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'uac00';
+        src: url("%PUBLIC_URL%/fonts/uac00.eot");
+        src: url("%PUBLIC_URL%/fonts/uac00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/uac00.woff") format("woff"), url("%PUBLIC_URL%/fonts/uac00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/uac00.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'ub000';
+        src: url("%PUBLIC_URL%/fonts/ub000.eot");
+        src: url("%PUBLIC_URL%/fonts/ub000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/ub000.woff") format("woff"), url("%PUBLIC_URL%/fonts/ub000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/ub000.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'ub400';
+        src: url("%PUBLIC_URL%/fonts/ub400.eot");
+        src: url("%PUBLIC_URL%/fonts/ub400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/ub400.woff") format("woff"), url("%PUBLIC_URL%/fonts/ub400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/ub400.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'ub800';
+        src: url("%PUBLIC_URL%/fonts/ub800.eot");
+        src: url("%PUBLIC_URL%/fonts/ub800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/ub800.woff") format("woff"), url("%PUBLIC_URL%/fonts/ub800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/ub800.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'ubc00';
+        src: url("%PUBLIC_URL%/fonts/ubc00.eot");
+        src: url("%PUBLIC_URL%/fonts/ubc00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/ubc00.woff") format("woff"), url("%PUBLIC_URL%/fonts/ubc00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/ubc00.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'uc000';
+        src: url("%PUBLIC_URL%/fonts/uc000.eot");
+        src: url("%PUBLIC_URL%/fonts/uc000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/uc000.woff") format("woff"), url("%PUBLIC_URL%/fonts/uc000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/uc000.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'uc400';
+        src: url("%PUBLIC_URL%/fonts/uc400.eot");
+        src: url("%PUBLIC_URL%/fonts/uc400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/uc400.woff") format("woff"), url("%PUBLIC_URL%/fonts/uc400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/uc400.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'uc800';
+        src: url("%PUBLIC_URL%/fonts/uc800.eot");
+        src: url("%PUBLIC_URL%/fonts/uc800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/uc800.woff") format("woff"), url("%PUBLIC_URL%/fonts/uc800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/uc800.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'ucc00';
+        src: url("%PUBLIC_URL%/fonts/ucc00.eot");
+        src: url("%PUBLIC_URL%/fonts/ucc00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/ucc00.woff") format("woff"), url("%PUBLIC_URL%/fonts/ucc00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/ucc00.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'ud000';
+        src: url("%PUBLIC_URL%/fonts/ud000.eot");
+        src: url("%PUBLIC_URL%/fonts/ud000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/ud000.woff") format("woff"), url("%PUBLIC_URL%/fonts/ud000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/ud000.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'ud400';
+        src: url("%PUBLIC_URL%/fonts/ud400.eot");
+        src: url("%PUBLIC_URL%/fonts/ud400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/ud400.woff") format("woff"), url("%PUBLIC_URL%/fonts/ud400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/ud400.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'ud800';
+        src: url("%PUBLIC_URL%/fonts/ud800.eot");
+        src: url("%PUBLIC_URL%/fonts/ud800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/ud800.woff") format("woff"), url("%PUBLIC_URL%/fonts/ud800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/ud800.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'udc00';
+        src: url("%PUBLIC_URL%/fonts/udc00.eot");
+        src: url("%PUBLIC_URL%/fonts/udc00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/udc00.woff") format("woff"), url("%PUBLIC_URL%/fonts/udc00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/udc00.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'ue000';
+        src: url("%PUBLIC_URL%/fonts/ue000.eot");
+        src: url("%PUBLIC_URL%/fonts/ue000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/ue000.woff") format("woff"), url("%PUBLIC_URL%/fonts/ue000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/ue000.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'ue400';
+        src: url("%PUBLIC_URL%/fonts/ue400.eot");
+        src: url("%PUBLIC_URL%/fonts/ue400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/ue400.woff") format("woff"), url("%PUBLIC_URL%/fonts/ue400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/ue400.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'ue800';
+        src: url("%PUBLIC_URL%/fonts/ue800.eot");
+        src: url("%PUBLIC_URL%/fonts/ue800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/ue800.woff") format("woff"), url("%PUBLIC_URL%/fonts/ue800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/ue800.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'uec00';
+        src: url("%PUBLIC_URL%/fonts/uec00.eot");
+        src: url("%PUBLIC_URL%/fonts/uec00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/uec00.woff") format("woff"), url("%PUBLIC_URL%/fonts/uec00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/uec00.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'uf000';
+        src: url("%PUBLIC_URL%/fonts/uf000.eot");
+        src: url("%PUBLIC_URL%/fonts/uf000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/uf000.woff") format("woff"), url("%PUBLIC_URL%/fonts/uf000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/uf000.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'uf400';
+        src: url("%PUBLIC_URL%/fonts/uf400.eot");
+        src: url("%PUBLIC_URL%/fonts/uf400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/uf400.woff") format("woff"), url("%PUBLIC_URL%/fonts/uf400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/uf400.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'uf800';
+        src: url("%PUBLIC_URL%/fonts/uf800.eot");
+        src: url("%PUBLIC_URL%/fonts/uf800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/uf800.woff") format("woff"), url("%PUBLIC_URL%/fonts/uf800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/uf800.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'ufc00';
+        src: url("%PUBLIC_URL%/fonts/ufc00.eot");
+        src: url("%PUBLIC_URL%/fonts/ufc00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/ufc00.woff") format("woff"), url("%PUBLIC_URL%/fonts/ufc00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/ufc00.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u10000';
+        src: url("%PUBLIC_URL%/fonts/u10000.eot");
+        src: url("%PUBLIC_URL%/fonts/u10000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u10000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u10000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u10000.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u10400';
+        src: url("%PUBLIC_URL%/fonts/u10400.eot");
+        src: url("%PUBLIC_URL%/fonts/u10400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u10400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u10400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u10400.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u10800';
+        src: url("%PUBLIC_URL%/fonts/u10800.eot");
+        src: url("%PUBLIC_URL%/fonts/u10800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u10800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u10800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u10800.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u10c00';
+        src: url("%PUBLIC_URL%/fonts/u10c00.eot");
+        src: url("%PUBLIC_URL%/fonts/u10c00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u10c00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u10c00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u10c00.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u11000';
+        src: url("%PUBLIC_URL%/fonts/u11000.eot");
+        src: url("%PUBLIC_URL%/fonts/u11000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u11000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u11000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u11000.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u11400';
+        src: url("%PUBLIC_URL%/fonts/u11400.eot");
+        src: url("%PUBLIC_URL%/fonts/u11400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u11400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u11400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u11400.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u11800';
+        src: url("%PUBLIC_URL%/fonts/u11800.eot");
+        src: url("%PUBLIC_URL%/fonts/u11800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u11800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u11800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u11800.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u11c00';
+        src: url("%PUBLIC_URL%/fonts/u11c00.eot");
+        src: url("%PUBLIC_URL%/fonts/u11c00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u11c00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u11c00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u11c00.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u12000';
+        src: url("%PUBLIC_URL%/fonts/u12000.eot");
+        src: url("%PUBLIC_URL%/fonts/u12000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u12000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u12000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u12000.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u12400';
+        src: url("%PUBLIC_URL%/fonts/u12400.eot");
+        src: url("%PUBLIC_URL%/fonts/u12400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u12400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u12400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u12400.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u12800';
+        src: url("%PUBLIC_URL%/fonts/u12800.eot");
+        src: url("%PUBLIC_URL%/fonts/u12800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u12800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u12800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u12800.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u12c00';
+        src: url("%PUBLIC_URL%/fonts/u12c00.eot");
+        src: url("%PUBLIC_URL%/fonts/u12c00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u12c00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u12c00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u12c00.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u13000';
+        src: url("%PUBLIC_URL%/fonts/u13000.eot");
+        src: url("%PUBLIC_URL%/fonts/u13000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u13000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u13000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u13000.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u13400';
+        src: url("%PUBLIC_URL%/fonts/u13400.eot");
+        src: url("%PUBLIC_URL%/fonts/u13400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u13400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u13400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u13400.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u13800';
+        src: url("%PUBLIC_URL%/fonts/u13800.eot");
+        src: url("%PUBLIC_URL%/fonts/u13800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u13800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u13800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u13800.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u13c00';
+        src: url("%PUBLIC_URL%/fonts/u13c00.eot");
+        src: url("%PUBLIC_URL%/fonts/u13c00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u13c00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u13c00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u13c00.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u14000';
+        src: url("%PUBLIC_URL%/fonts/u14000.eot");
+        src: url("%PUBLIC_URL%/fonts/u14000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u14000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u14000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u14000.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u14400';
+        src: url("%PUBLIC_URL%/fonts/u14400.eot");
+        src: url("%PUBLIC_URL%/fonts/u14400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u14400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u14400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u14400.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u14800';
+        src: url("%PUBLIC_URL%/fonts/u14800.eot");
+        src: url("%PUBLIC_URL%/fonts/u14800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u14800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u14800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u14800.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u14c00';
+        src: url("%PUBLIC_URL%/fonts/u14c00.eot");
+        src: url("%PUBLIC_URL%/fonts/u14c00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u14c00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u14c00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u14c00.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u15000';
+        src: url("%PUBLIC_URL%/fonts/u15000.eot");
+        src: url("%PUBLIC_URL%/fonts/u15000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u15000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u15000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u15000.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u15400';
+        src: url("%PUBLIC_URL%/fonts/u15400.eot");
+        src: url("%PUBLIC_URL%/fonts/u15400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u15400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u15400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u15400.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u15800';
+        src: url("%PUBLIC_URL%/fonts/u15800.eot");
+        src: url("%PUBLIC_URL%/fonts/u15800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u15800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u15800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u15800.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u15c00';
+        src: url("%PUBLIC_URL%/fonts/u15c00.eot");
+        src: url("%PUBLIC_URL%/fonts/u15c00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u15c00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u15c00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u15c00.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u16000';
+        src: url("%PUBLIC_URL%/fonts/u16000.eot");
+        src: url("%PUBLIC_URL%/fonts/u16000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u16000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u16000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u16000.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u16400';
+        src: url("%PUBLIC_URL%/fonts/u16400.eot");
+        src: url("%PUBLIC_URL%/fonts/u16400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u16400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u16400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u16400.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u16800';
+        src: url("%PUBLIC_URL%/fonts/u16800.eot");
+        src: url("%PUBLIC_URL%/fonts/u16800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u16800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u16800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u16800.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u16c00';
+        src: url("%PUBLIC_URL%/fonts/u16c00.eot");
+        src: url("%PUBLIC_URL%/fonts/u16c00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u16c00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u16c00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u16c00.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u17000';
+        src: url("%PUBLIC_URL%/fonts/u17000.eot");
+        src: url("%PUBLIC_URL%/fonts/u17000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u17000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u17000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u17000.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u17400';
+        src: url("%PUBLIC_URL%/fonts/u17400.eot");
+        src: url("%PUBLIC_URL%/fonts/u17400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u17400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u17400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u17400.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u17800';
+        src: url("%PUBLIC_URL%/fonts/u17800.eot");
+        src: url("%PUBLIC_URL%/fonts/u17800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u17800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u17800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u17800.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u17c00';
+        src: url("%PUBLIC_URL%/fonts/u17c00.eot");
+        src: url("%PUBLIC_URL%/fonts/u17c00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u17c00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u17c00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u17c00.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u18000';
+        src: url("%PUBLIC_URL%/fonts/u18000.eot");
+        src: url("%PUBLIC_URL%/fonts/u18000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u18000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u18000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u18000.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u18400';
+        src: url("%PUBLIC_URL%/fonts/u18400.eot");
+        src: url("%PUBLIC_URL%/fonts/u18400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u18400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u18400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u18400.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u18800';
+        src: url("%PUBLIC_URL%/fonts/u18800.eot");
+        src: url("%PUBLIC_URL%/fonts/u18800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u18800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u18800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u18800.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u18c00';
+        src: url("%PUBLIC_URL%/fonts/u18c00.eot");
+        src: url("%PUBLIC_URL%/fonts/u18c00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u18c00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u18c00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u18c00.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u19000';
+        src: url("%PUBLIC_URL%/fonts/u19000.eot");
+        src: url("%PUBLIC_URL%/fonts/u19000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u19000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u19000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u19000.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u19400';
+        src: url("%PUBLIC_URL%/fonts/u19400.eot");
+        src: url("%PUBLIC_URL%/fonts/u19400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u19400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u19400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u19400.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u19800';
+        src: url("%PUBLIC_URL%/fonts/u19800.eot");
+        src: url("%PUBLIC_URL%/fonts/u19800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u19800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u19800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u19800.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u19c00';
+        src: url("%PUBLIC_URL%/fonts/u19c00.eot");
+        src: url("%PUBLIC_URL%/fonts/u19c00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u19c00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u19c00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u19c00.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u1a000';
+        src: url("%PUBLIC_URL%/fonts/u1a000.eot");
+        src: url("%PUBLIC_URL%/fonts/u1a000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1a000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1a000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1a000.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u1a400';
+        src: url("%PUBLIC_URL%/fonts/u1a400.eot");
+        src: url("%PUBLIC_URL%/fonts/u1a400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1a400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1a400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1a400.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u1a800';
+        src: url("%PUBLIC_URL%/fonts/u1a800.eot");
+        src: url("%PUBLIC_URL%/fonts/u1a800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1a800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1a800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1a800.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u1ac00';
+        src: url("%PUBLIC_URL%/fonts/u1ac00.eot");
+        src: url("%PUBLIC_URL%/fonts/u1ac00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1ac00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1ac00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1ac00.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u1b000';
+        src: url("%PUBLIC_URL%/fonts/u1b000.eot");
+        src: url("%PUBLIC_URL%/fonts/u1b000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1b000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1b000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1b000.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u1b400';
+        src: url("%PUBLIC_URL%/fonts/u1b400.eot");
+        src: url("%PUBLIC_URL%/fonts/u1b400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1b400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1b400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1b400.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u1b800';
+        src: url("%PUBLIC_URL%/fonts/u1b800.eot");
+        src: url("%PUBLIC_URL%/fonts/u1b800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1b800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1b800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1b800.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u1bc00';
+        src: url("%PUBLIC_URL%/fonts/u1bc00.eot");
+        src: url("%PUBLIC_URL%/fonts/u1bc00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1bc00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1bc00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1bc00.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u1c000';
+        src: url("%PUBLIC_URL%/fonts/u1c000.eot");
+        src: url("%PUBLIC_URL%/fonts/u1c000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1c000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1c000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1c000.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u1c400';
+        src: url("%PUBLIC_URL%/fonts/u1c400.eot");
+        src: url("%PUBLIC_URL%/fonts/u1c400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1c400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1c400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1c400.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u1c800';
+        src: url("%PUBLIC_URL%/fonts/u1c800.eot");
+        src: url("%PUBLIC_URL%/fonts/u1c800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1c800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1c800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1c800.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u1cc00';
+        src: url("%PUBLIC_URL%/fonts/u1cc00.eot");
+        src: url("%PUBLIC_URL%/fonts/u1cc00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1cc00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1cc00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1cc00.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u1d000';
+        src: url("%PUBLIC_URL%/fonts/u1d000.eot");
+        src: url("%PUBLIC_URL%/fonts/u1d000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1d000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1d000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1d000.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u1d400';
+        src: url("%PUBLIC_URL%/fonts/u1d400.eot");
+        src: url("%PUBLIC_URL%/fonts/u1d400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1d400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1d400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1d400.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u1d800';
+        src: url("%PUBLIC_URL%/fonts/u1d800.eot");
+        src: url("%PUBLIC_URL%/fonts/u1d800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1d800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1d800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1d800.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u1dc00';
+        src: url("%PUBLIC_URL%/fonts/u1dc00.eot");
+        src: url("%PUBLIC_URL%/fonts/u1dc00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1dc00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1dc00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1dc00.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u1e000';
+        src: url("%PUBLIC_URL%/fonts/u1e000.eot");
+        src: url("%PUBLIC_URL%/fonts/u1e000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1e000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1e000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1e000.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u1e400';
+        src: url("%PUBLIC_URL%/fonts/u1e400.eot");
+        src: url("%PUBLIC_URL%/fonts/u1e400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1e400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1e400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1e400.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u1e800';
+        src: url("%PUBLIC_URL%/fonts/u1e800.eot");
+        src: url("%PUBLIC_URL%/fonts/u1e800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1e800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1e800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1e800.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u1ec00';
+        src: url("%PUBLIC_URL%/fonts/u1ec00.eot");
+        src: url("%PUBLIC_URL%/fonts/u1ec00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1ec00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1ec00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1ec00.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u1f000';
+        src: url("%PUBLIC_URL%/fonts/u1f000.eot");
+        src: url("%PUBLIC_URL%/fonts/u1f000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1f000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1f000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1f000.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u1f400';
+        src: url("%PUBLIC_URL%/fonts/u1f400.eot");
+        src: url("%PUBLIC_URL%/fonts/u1f400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1f400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1f400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1f400.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u1f800';
+        src: url("%PUBLIC_URL%/fonts/u1f800.eot");
+        src: url("%PUBLIC_URL%/fonts/u1f800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1f800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1f800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1f800.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'u1fc00';
+        src: url("%PUBLIC_URL%/fonts/u1fc00.eot");
+        src: url("%PUBLIC_URL%/fonts/u1fc00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1fc00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1fc00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1fc00.svg#universaliaregular") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      .u0000 {
+        font-family: u0000;
+      }
+
+      .u0400 {
+        font-family: u0400;
+      }
+
+      .u0800 {
+        font-family: u0800;
+      }
+
+      .u0c00 {
+        font-family: u0c00;
+      }
+
+      .u1000 {
+        font-family: u1000;
+      }
+
+      .u1400 {
+        font-family: u1400;
+      }
+
+      .u1800 {
+        font-family: u1800;
+      }
+
+      .u1c00 {
+        font-family: u1c00;
+      }
+
+      .u2000 {
+        font-family: u2000;
+      }
+
+      .u2400 {
+        font-family: u2400;
+      }
+
+      .u2800 {
+        font-family: u2800;
+      }
+
+      .u2c00 {
+        font-family: u2c00;
+      }
+
+      .u3000 {
+        font-family: u3000;
+      }
+
+      .u3400 {
+        font-family: u3400;
+      }
+
+      .u3800 {
+        font-family: u3800;
+      }
+
+      .u3c00 {
+        font-family: u3c00;
+      }
+
+      .u4000 {
+        font-family: u4000;
+      }
+
+      .u4400 {
+        font-family: u4400;
+      }
+
+      .u4800 {
+        font-family: u4800;
+      }
+
+      .u4c00 {
+        font-family: u4c00;
+      }
+
+      .u5000 {
+        font-family: u5000;
+      }
+
+      .u5400 {
+        font-family: u5400;
+      }
+
+      .u5800 {
+        font-family: u5800;
+      }
+
+      .u5c00 {
+        font-family: u5c00;
+      }
+
+      .u6000 {
+        font-family: u6000;
+      }
+
+      .u6400 {
+        font-family: u6400;
+      }
+
+      .u6800 {
+        font-family: u6800;
+      }
+
+      .u6c00 {
+        font-family: u6c00;
+      }
+
+      .u7000 {
+        font-family: u7000;
+      }
+
+      .u7400 {
+        font-family: u7400;
+      }
+
+      .u7800 {
+        font-family: u7800;
+      }
+
+      .u7c00 {
+        font-family: u7c00;
+      }
+
+      .u8000 {
+        font-family: u8000;
+      }
+
+      .u8400 {
+        font-family: u8400;
+      }
+
+      .u8800 {
+        font-family: u8800;
+      }
+
+      .u8c00 {
+        font-family: u8c00;
+      }
+
+      .u9000 {
+        font-family: u9000;
+      }
+
+      .u9400 {
+        font-family: u9400;
+      }
+
+      .u9800 {
+        font-family: u9800;
+      }
+
+      .u9c00 {
+        font-family: u9c00;
+      }
+
+      .ua000 {
+        font-family: ua000;
+      }
+
+      .ua400 {
+        font-family: ua400;
+      }
+
+      .ua800 {
+        font-family: ua800;
+      }
+
+      .uac00 {
+        font-family: uac00;
+      }
+
+      .ub000 {
+        font-family: ub000;
+      }
+
+      .ub400 {
+        font-family: ub400;
+      }
+
+      .ub800 {
+        font-family: ub800;
+      }
+
+      .ubc00 {
+        font-family: ubc00;
+      }
+
+      .uc000 {
+        font-family: uc000;
+      }
+
+      .uc400 {
+        font-family: uc400;
+      }
+
+      .uc800 {
+        font-family: uc800;
+      }
+
+      .ucc00 {
+        font-family: ucc00;
+      }
+
+      .ud000 {
+        font-family: ud000;
+      }
+
+      .ud400 {
+        font-family: ud400;
+      }
+
+      .ud800 {
+        font-family: ud800;
+      }
+
+      .udc00 {
+        font-family: udc00;
+      }
+
+      .ue000 {
+        font-family: ue000;
+      }
+
+      .ue400 {
+        font-family: ue400;
+      }
+
+      .ue800 {
+        font-family: ue800;
+      }
+
+      .uec00 {
+        font-family: uec00;
+      }
+
+      .uf000 {
+        font-family: uf000;
+      }
+
+      .uf400 {
+        font-family: uf400;
+      }
+
+      .uf800 {
+        font-family: uf800;
+      }
+
+      .ufc00 {
+        font-family: ufc00;
+      }
+
+      .u10000 {
+        font-family: u10000;
+      }
+
+      .u10400 {
+        font-family: u10400;
+      }
+
+      .u10800 {
+        font-family: u10800;
+      }
+
+      .u10c00 {
+        font-family: u10c00;
+      }
+
+      .u11000 {
+        font-family: u11000;
+      }
+
+      .u11400 {
+        font-family: u11400;
+      }
+
+      .u11800 {
+        font-family: u11800;
+      }
+
+      .u11c00 {
+        font-family: u11c00;
+      }
+
+      .u12000 {
+        font-family: u12000;
+      }
+
+      .u12400 {
+        font-family: u12400;
+      }
+
+      .u12800 {
+        font-family: u12800;
+      }
+
+      .u12c00 {
+        font-family: u12c00;
+      }
+
+      .u13000 {
+        font-family: u13000;
+      }
+
+      .u13400 {
+        font-family: u13400;
+      }
+
+      .u13800 {
+        font-family: u13800;
+      }
+
+      .u13c00 {
+        font-family: u13c00;
+      }
+
+      .u14000 {
+        font-family: u14000;
+      }
+
+      .u14400 {
+        font-family: u14400;
+      }
+
+      .u14800 {
+        font-family: u14800;
+      }
+
+      .u14c00 {
+        font-family: u14c00;
+      }
+
+      .u15000 {
+        font-family: u15000;
+      }
+
+      .u15400 {
+        font-family: u15400;
+      }
+
+      .u15800 {
+        font-family: u15800;
+      }
+
+      .u15c00 {
+        font-family: u15c00;
+      }
+
+      .u16000 {
+        font-family: u16000;
+      }
+
+      .u16400 {
+        font-family: u16400;
+      }
+
+      .u16800 {
+        font-family: u16800;
+      }
+
+      .u16c00 {
+        font-family: u16c00;
+      }
+
+      .u17000 {
+        font-family: u17000;
+      }
+
+      .u17400 {
+        font-family: u17400;
+      }
+
+      .u17800 {
+        font-family: u17800;
+      }
+
+      .u17c00 {
+        font-family: u17c00;
+      }
+
+      .u18000 {
+        font-family: u18000;
+      }
+
+      .u18400 {
+        font-family: u18400;
+      }
+
+      .u18800 {
+        font-family: u18800;
+      }
+
+      .u18c00 {
+        font-family: u18c00;
+      }
+
+      .u19000 {
+        font-family: u19000;
+      }
+
+      .u19400 {
+        font-family: u19400;
+      }
+
+      .u19800 {
+        font-family: u19800;
+      }
+
+      .u19c00 {
+        font-family: u19c00;
+      }
+
+      .u1a000 {
+        font-family: u1a000;
+      }
+
+      .u1a400 {
+        font-family: u1a400;
+      }
+
+      .u1a800 {
+        font-family: u1a800;
+      }
+
+      .u1ac00 {
+        font-family: u1ac00;
+      }
+
+      .u1b000 {
+        font-family: u1b000;
+      }
+
+      .u1b400 {
+        font-family: u1b400;
+      }
+
+      .u1b800 {
+        font-family: u1b800;
+      }
+
+      .u1bc00 {
+        font-family: u1bc00;
+      }
+
+      .u1c000 {
+        font-family: u1c000;
+      }
+
+      .u1c400 {
+        font-family: u1c400;
+      }
+
+      .u1c800 {
+        font-family: u1c800;
+      }
+
+      .u1cc00 {
+        font-family: u1cc00;
+      }
+
+      .u1d000 {
+        font-family: u1d000;
+      }
+
+      .u1d400 {
+        font-family: u1d400;
+      }
+
+      .u1d800 {
+        font-family: u1d800;
+      }
+
+      .u1dc00 {
+        font-family: u1dc00;
+      }
+
+      .u1e000 {
+        font-family: u1e000;
+      }
+
+      .u1e400 {
+        font-family: u1e400;
+      }
+
+      .u1e800 {
+        font-family: u1e800;
+      }
+
+      .u1ec00 {
+        font-family: u1ec00;
+      }
+
+      .u1f000 {
+        font-family: u1f000;
+      }
+
+      .u1f400 {
+        font-family: u1f400;
+      }
+
+      .u1f800 {
+        font-family: u1f800;
+      }
+
+      .u1fc00 {
+        font-family: u1fc00;
+      }
+    </style>
+    <title>Unicode-Wiki Browser</title>
+  </head>
+  <body>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+</html>

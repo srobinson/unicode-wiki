@@ -1,0 +1,10 @@
+# helm install --name uw-mongo -f .kubernetes/uw-mongo.yaml stable/mongodb --namespace=helm-deploy
+usePassword: false
+securityContext:
+  enabled: true
+  fsGroup: 0
+  runAsUser: 0
+livenessProbe:
+  periodSeconds: 60
+readinessProbe:
+  periodSeconds: 60

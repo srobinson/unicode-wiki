@@ -1,0 +1,27 @@
+{
+  "editor.insertSpaces": true,
+  "editor.renderWhitespace": "boundary",
+  "editor.rulers": [
+    100
+  ],
+  "editor.tabSize": 2,
+  "files.encoding": "utf8",
+  "files.trimTrailingWhitespace": true,
+  "files.useExperimentalFileWatcher": true,
+  "files.insertFinalNewline": true,
+  "prettier.semi": false,
+  "search.exclude": {
+    "**/.cache/**": true,
+    "**/dist/**": true,
+    "**/public/**": true,
+  },
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.formatOnSave": true
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": true
+  }
+}

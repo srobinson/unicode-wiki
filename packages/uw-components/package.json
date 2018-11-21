@@ -1,0 +1,24 @@
+{
+  "name": "@uw/components",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./dist/index",
+  "module": "./dist/index",
+  "typings": "./dist/index",
+  "scripts": {
+    "lint": "tslint 'src/**/*.ts'",
+    "prepare": "echo '@uw/components' && tsc",
+    "watch": "tsc -w"
+  },
+  "dependencies": {
+    "@uw/domain": "0.0.1",
+    "@uw/utils": "0.0.1",
+    "react": "16.5.2",
+    "react-dom": "16.5.2",
+    "react-emotion": "9.2.12"
+  },
+  "devDependencies": {
+    "@types/react": "16.4.14",
+    "@types/react-dom": "16.0.8"
+  }
+}

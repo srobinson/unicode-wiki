@@ -1,0 +1,70 @@
+version: "3"
+services:
+  # reverse-proxy:
+  #   image: traefik
+  #   command: --api --docker.exposedbydefault=false
+  #   ports:
+  #     - "80:80"
+  #     - "8080:8080"
+  #   volumes:
+  #     - /var/run/docker.sock:/var/run/docker.sock
+  uw-app:
+    container_name: uw-app
+    build:
+      context: .
+      dockerfile: Dockerfile.ui
+    image: gcr.io/unicode-wiki/uw-app:$VERSION_UI
+    depends_on:
+      - uw-api
+    environment:
+        - GET_HOSTS_FROM=dns
+        - NODE_ENV=production
+        - NODE_PORT=3001
+        - PORT=80
+        - REACT_APP_API_BASE_URL=http://35.231.180.226/api
+    labels:
+      - "traefik.enable=true"
+      - "traefik.frontend.rule=Host:uw-app.docker.localhost"
+      - "kompose.service.type=nodeport"
+    links:
+      - uw-api
+    ports:
+      - "80:80"
+  uw-api:
+    container_name: uw-api
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    image: gcr.io/unicode-wiki/uw-api:$VERSION_API
+    depends_on:
+      - mongo
+    environment:
+        - GET_HOSTS_FROM=dns
+        - MONGO_URL=mongodb://10.35.252.11:27017
+        # - MONGO_URL=mongodb://mongo:27017
+        - NODE_PORT=3001
+        - NGINX_PORT=80
+        - NODE_ENV=production
+    labels:
+      - "traefik.backend.rule=Host:uw-api.docker.localhost"
+      - "kompose.service.type=LoadBalancer"
+    links:
+      - mongo
+    ports:
+      - "3001:3001"
+    restart: always
+    volumes:
+      - logs:/var/uw/logs/
+  mongo:
+    command: mongod
+    container_name: uw-api-mongo
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb:/data/db
+      - mongodb_config:/data/configdb
+volumes:
+  logs:
+  mongodb:
+  mongodb_config:

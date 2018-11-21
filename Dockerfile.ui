@@ -1,0 +1,37 @@
+FROM node:9-alpine as BUILD
+
+WORKDIR /build
+
+COPY package.json yarn.lock ./
+
+COPY packages/uw-utils ./packages/uw-utils
+COPY packages/uw-domain ./packages/uw-domain
+COPY packages/uw-store ./packages/uw-store
+COPY packages/uw-containers ./packages/uw-containers
+COPY packages/uw-components ./packages/uw-components
+COPY packages/uw-app ./packages/uw-app
+
+COPY tsconfig.json jest.config.js tslint.json lerna.json ./
+
+# ENV REACT_APP_API_BASE_URL=http://35.231.180.226/api
+ENV REACT_APP_API_BASE_URL=http://localhost/api:3001/api
+
+RUN yarn install --production=true \
+  && yarn global add lerna \
+  && lerna bootstrap \
+  && yarn build:app
+
+# COPY . .
+
+FROM nginx:stable
+# FROM sdelrio/docker-minimal-nginx
+
+WORKDIR /var/www
+EXPOSE 80
+
+ENV NODE_ENV=production
+
+COPY --from=BUILD /build/packages/uw-app/build/ .
+COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+
+ENTRYPOINT ["nginx", "-g", "daemon off;"]

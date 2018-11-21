@@ -1,0 +1,30 @@
+{
+  "name": "@uw/containers",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "scripts": {
+    "lint": "tslint 'src/**/*.ts'",
+    "prepare": "echo '@uw/containers' && tsc",
+    "watch": "tsc -w"
+  },
+  "dependencies": {
+    "@uw/components": "0.0.1",
+    "react": "16.5.2",
+    "react-dom": "16.5.2",
+    "react-redux": "5.0.7",
+    "react-router": "4.3.1",
+    "react-router-dom": "4.3.1",
+    "react-router-redux": "4.0.8",
+    "react-waypoint": "8.0.3"
+  },
+  "devDependencies": {
+    "@types/react": "16.4.14",
+    "@types/react-dom": "16.0.8",
+    "@types/react-redux": "6.0.9",
+    "@types/react-router": "4.0.32",
+    "@types/react-router-dom": "4.3.1",
+    "@types/react-router-redux": "5.0.16"
+  }
+}

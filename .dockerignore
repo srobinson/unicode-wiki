@@ -1,0 +1,11 @@
+_uw
+.build
+.git
+.npm-debug.log
+image_history
+node_modules
+**node_modules**
+README
+tmp
+yarn-error.log
+ZNOTES

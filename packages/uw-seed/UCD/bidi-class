@@ -1,0 +1,92 @@
+
+L
+Left To Right
+any strong left-to-right character
+
+R
+Right To Left
+any strong right-to-left (non-Arabic-type) character
+
+AL
+Arabic Letter
+any strong right-to-left (Arabic-type) character
+
+EN
+European Number
+any ASCII digit or Eastern Arabic-Indic digit
+
+ES
+European Separator
+plus and minus signs
+
+ET
+European Terminator
+a terminator in a numeric format context, includes currency signs
+
+AN
+Arabic Number
+any Arabic-Indic digit
+
+CS
+Common Separator
+commas, colons, and slashes
+
+NSM
+Nonspacing Mark
+any nonspacing mark
+
+BN
+Boundary Neutral
+most format characters, control codes, or noncharacters
+
+B
+Paragraph Separator
+various newline characters
+
+S
+Segment Separator
+various segment-related control codes
+
+WS
+White Space
+spaces
+
+ON
+Other Neutral
+most other symbols and punctuation marks
+
+LRE
+Left To Right Embedding
+U+202A: the LR embedding control
+
+LRO
+Left To Right Override
+U+202D: the LR override control
+
+RLE
+Right To Left Embedding
+U+202B: the RL embedding control
+
+RLO
+Right To Left Override
+U+202E: the RL override control
+
+PDF
+Pop Directional Format
+U+202C: terminates an embedding or override control
+
+LRI
+Left To Right Isolate
+U+2066: the LR isolate control
+
+RLI
+Right To Left Isolate
+U+2067: the RL isolate control
+
+FSI
+First Strong Isolate
+U+2068: the first strong isolate control
+
+PDI
+Pop Directional Isolate
+U+2069: terminates an isolate control

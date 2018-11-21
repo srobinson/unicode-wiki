@@ -1,0 +1,776 @@
+[
+  {
+    "parent": 47,
+    "index": 51,
+    "key": "additional-arrows",
+    "title": "Additional Arrows",
+    "range": { "from": "2B00", "to": "2BFF" }
+  },
+  {
+    "parent": 62,
+    "index": 63,
+    "key": "additional-shapes",
+    "title": "Additional Shapes",
+    "range": { "from": "2B00", "to": "2BFF" }
+  },
+  {
+    "parent": 28,
+    "index": 29,
+    "key": "additional-squared-symbols",
+    "title": "Additional Squared Symbols",
+    "range": { "from": "2100", "to": "214F" }
+  },
+  {
+    "parent": 75,
+    "index": 76,
+    "key": "alchemical-symbols",
+    "title": "Alchemical Symbols",
+    "range": { "from": "1F700", "to": "1F77F" }
+  },
+  {
+    "parent": 0,
+    "index": 19,
+    "key": "alphanumeric-symbols",
+    "title": "Alphanumeric Symbols",
+    "childRanges": [
+      { "from": "1EE00", "to": "1EEFF" },
+      { "from": "3300", "to": "33FF" },
+      { "from": "2100", "to": "214F" },
+      { "from": "2460", "to": "24FF" },
+      { "from": "1F100", "to": "1F1FF" },
+      { "from": "3200", "to": "32FF" },
+      { "from": "1F200", "to": "1F2FF" },
+      { "from": "2100", "to": "214F" },
+      { "from": "1D400", "to": "1D7FF" }
+    ]
+  },
+  {
+    "parent": 3,
+    "index": 4,
+    "key": "ancient-greek-musical-notation",
+    "title": "Ancient Greek Musical Notation",
+    "range": { "from": "1D200", "to": "1D24F" }
+  },
+  {
+    "parent": 75,
+    "index": 77,
+    "key": "ancient-symbols",
+    "title": "Ancient Symbols",
+    "range": { "from": "10190", "to": "101CF" }
+  },
+  {
+    "parent": 30,
+    "index": 31,
+    "key": "apl-symbols",
+    "title": "APL symbols",
+    "range": { "from": "2336", "to": "237A" }
+  },
+  {
+    "parent": 19,
+    "index": 23,
+    "key": "arabic-mathematical-alphabetic-symbols",
+    "title": "Arabic Mathematical Alphabetic Symbols",
+    "range": { "from": "1EE00", "to": "1EEFF" }
+  },
+  {
+    "parent": 46,
+    "index": 47,
+    "key": "arrows",
+    "title": "Arrows",
+    "range": { "from": "2190", "to": "21FF" },
+    "childRanges": [
+      { "from": "2B00", "to": "2BFF" },
+      { "from": "2B00", "to": "2BFF" },
+      { "from": "27F0", "to": "27FF" },
+      { "from": "2900", "to": "297F" },
+      { "from": "1F800", "to": "1F8FF" }
+    ]
+  },
+  {
+    "parent": 35,
+    "index": 36,
+    "key": "ascii-digits",
+    "title": "ASCII Digits",
+    "range": { "from": "0030", "to": "0039" },
+    "childRanges": [{ "from": "FF10", "to": "FF19" }]
+  },
+  {
+    "parent": 10,
+    "index": 11,
+    "key": "ascii-punctuation",
+    "title": "ASCII Punctuation",
+    "range": { "from": "0021", "to": "007F" }
+  },
+  {
+    "parent": 62,
+    "index": 65,
+    "key": "block-elements",
+    "title": "Block Elements",
+    "range": { "from": "2580", "to": "259F" }
+  },
+  {
+    "parent": 62,
+    "index": 64,
+    "key": "box-drawing",
+    "title": "Box Drawing",
+    "range": { "from": "2500", "to": "257F" }
+  },
+  {
+    "parent": 1,
+    "index": 2,
+    "key": "braille-patterns",
+    "title": "Braille Patterns",
+    "range": { "from": "2800", "to": "28FF" }
+  },
+  {
+    "parent": 3,
+    "index": 5,
+    "key": "byzantine-musical-symbols",
+    "title": "Byzantine Musical Symbols",
+    "range": { "from": "1D000", "to": "1D0FF" }
+  },
+  {
+    "parent": 79,
+    "index": 85,
+    "key": "card-suits",
+    "title": "Card suits",
+    "range": { "from": "2660", "to": "2667" }
+  },
+  {
+    "parent": 79,
+    "index": 80,
+    "key": "chess-checkersdraughts",
+    "title": "Chess, Checkers/Draughts",
+    "range": [
+      { "from": "2654", "to": "265F" },
+      { "from": "26C0", "to": "26C3" }
+    ]
+  },
+  {
+    "parent": 19,
+    "index": 28,
+    "key": "cjk-compatibility",
+    "title": "CJK Compatibility",
+    "range": { "from": "3300", "to": "33FF" },
+    "childRanges": [{ "from": "2100", "to": "214F" }]
+  },
+  {
+    "parent": 9,
+    "index": 15,
+    "key": "cjk-compatibility-forms",
+    "title": "CJK Compatibility Forms",
+    "range": { "from": "FE30", "to": "FE4F" },
+    "childRanges": [
+      { "from": "FF00", "to": "FFEF" },
+      { "from": "FE50", "to": "FE6F" },
+      { "from": "FE10", "to": "FE1F" }
+    ]
+  },
+  {
+    "parent": 9,
+    "index": 14,
+    "key": "cjk-symbols-and-punctuation",
+    "title": "CJK Symbols and Punctuation",
+    "range": { "from": "3000", "to": "303F" }
+  },
+  {
+    "parent": 35,
+    "index": 38,
+    "key": "common-indic-number-forms",
+    "title": "Common Indic Number Forms",
+    "range": { "from": "A830", "to": "A83F" }
+  },
+  {
+    "parent": 30,
+    "index": 32,
+    "key": "control-pictures",
+    "title": "Control Pictures",
+    "range": { "from": "2400", "to": "243F" }
+  },
+  {
+    "parent": 35,
+    "index": 39,
+    "key": "coptic-epact-numbers",
+    "title": "Coptic Epact Numbers",
+    "range": { "from": "102E0", "to": "102FF" }
+  },
+  {
+    "parent": 35,
+    "index": 40,
+    "key": "counting-rod-numerals",
+    "title": "Counting Rod Numerals",
+    "range": { "from": "1D360", "to": "1D37F" }
+  },
+  {
+    "parent": 35,
+    "index": 41,
+    "key": "cuneiform-numbers-and-punctuation",
+    "title": "Cuneiform Numbers and Punctuation",
+    "range": { "from": "12400", "to": "1247F" }
+  },
+  {
+    "parent": 75,
+    "index": 78,
+    "key": "currency-symbols",
+    "title": "Currency Symbols",
+    "range": { "from": "20A0", "to": "20CF" }
+  },
+  {
+    "parent": 67,
+    "index": 68,
+    "key": "dingbats",
+    "title": "Dingbats",
+    "range": { "from": "2700", "to": "27BF" },
+    "childRanges": [{ "from": "1F650", "to": "1F67F" }]
+  },
+  {
+    "parent": 79,
+    "index": 81,
+    "key": "domino-tiles",
+    "title": "Domino Tiles",
+    "range": { "from": "1F030", "to": "1F09F" }
+  },
+  {
+    "parent": 1,
+    "index": 6,
+    "key": "duployan",
+    "title": "Duployan",
+    "range": { "from": "1BC00", "to": "1BC9F" },
+    "childRanges": [{ "from": "1BCA0", "to": "1BCAF" }]
+  },
+  {
+    "parent": 0,
+    "index": 67,
+    "key": "emoji-pictographs",
+    "title": "Emoji & Pictographs",
+    "childRanges": [
+      { "from": "2700", "to": "27BF" },
+      { "from": "1F650", "to": "1F67F" },
+      { "from": "1F600", "to": "1F64F" },
+      { "from": "2600", "to": "26FF" },
+      { "from": "1F300", "to": "1F5FF" },
+      { "from": "1F900", "to": "1F9FF" },
+      { "from": "1F680", "to": "1F6FF" }
+    ]
+  },
+  {
+    "parent": 67,
+    "index": 70,
+    "key": "emoticons",
+    "title": "Emoticons",
+    "range": { "from": "1F600", "to": "1F64F" }
+  },
+  {
+    "parent": 24,
+    "index": 25,
+    "key": "enclosed-alphanumeric-supplement",
+    "title": "Enclosed Alphanumeric Supplement",
+    "range": { "from": "1F100", "to": "1F1FF" }
+  },
+  {
+    "parent": 19,
+    "index": 24,
+    "key": "enclosed-alphanumerics",
+    "title": "Enclosed Alphanumerics",
+    "range": { "from": "2460", "to": "24FF" },
+    "childRanges": [{ "from": "1F100", "to": "1F1FF" }]
+  },
+  {
+    "parent": 19,
+    "index": 26,
+    "key": "enclosed-cjk-letters-and-months",
+    "title": "Enclosed CJK Letters and Months",
+    "range": { "from": "3200", "to": "32FF" },
+    "childRanges": [{ "from": "1F200", "to": "1F2FF" }]
+  },
+  {
+    "parent": 26,
+    "index": 27,
+    "key": "enclosed-ideographic-supplement",
+    "title": "Enclosed Ideographic Supplement",
+    "range": { "from": "1F200", "to": "1F2FF" }
+  },
+  {
+    "parent": 56,
+    "index": 60,
+    "key": "floors-and-ceilings",
+    "title": "Floors and Ceilings",
+    "range": { "from": "2308", "to": "230B" }
+  },
+  {
+    "parent": 36,
+    "index": 37,
+    "key": "fullwidth-ascii-digits",
+    "title": "Fullwidth ASCII Digits",
+    "range": { "from": "FF10", "to": "FF19" }
+  },
+  {
+    "parent": 75,
+    "index": 79,
+    "key": "game-symbols",
+    "title": "Game Symbols",
+    "childRanges": [
+      { "from": "2660", "to": "2667" },
+      { "from": "2654", "to": "265F" },
+      { "from": "26C0", "to": "26C3" },
+      { "from": "1F030", "to": "1F09F" },
+      { "from": "2616", "to": "2617" },
+      { "from": "1F000", "to": "1F02F" },
+      { "from": "1FA00", "to": "1FA6F" },
+      { "from": "1F0A0", "to": "1F0FF" }
+    ]
+  },
+  {
+    "parent": 9,
+    "index": 10,
+    "key": "general-punctuation",
+    "title": "General Punctuation",
+    "range": { "from": "2000", "to": "206F" },
+    "childRanges": [
+      { "from": "0021", "to": "007F" },
+      { "from": "00A1", "to": "00BF" },
+      { "from": "2E00", "to": "2E7F" }
+    ]
+  },
+  {
+    "parent": 46,
+    "index": 62,
+    "key": "geometric-shapes",
+    "title": "Geometric Shapes",
+    "range": { "from": "25A0", "to": "25FF" },
+    "childRanges": [
+      { "from": "2B00", "to": "2BFF" },
+      { "from": "2580", "to": "259F" },
+      { "from": "2500", "to": "257F" },
+      { "from": "1F780", "to": "1F7FF" }
+    ]
+  },
+  {
+    "parent": 62,
+    "index": 66,
+    "key": "geometric-shapes-extended",
+    "title": "Geometric Shapes Extended",
+    "range": { "from": "1F780", "to": "1F7FF" }
+  },
+  {
+    "parent": 15,
+    "index": 16,
+    "key": "halfwidth-and-fullwidth-forms",
+    "title": "Halfwidth and Fullwidth Forms",
+    "range": { "from": "FF00", "to": "FFEF" }
+  },
+  {
+    "parent": 56,
+    "index": 61,
+    "key": "invisible-operators",
+    "title": "Invisible Operators",
+    "range": { "from": "2061", "to": "2064" }
+  },
+  {
+    "parent": 79,
+    "index": 82,
+    "key": "japanese-chess",
+    "title": "Japanese Chess",
+    "range": { "from": "2616", "to": "2617" }
+  },
+  {
+    "parent": 10,
+    "index": 12,
+    "key": "latin-1-punctuation",
+    "title": "Latin-1 Punctuation",
+    "range": { "from": "00A1", "to": "00BF" }
+  },
+  {
+    "parent": 53,
+    "index": 55,
+    "key": "letterlike-symbols",
+    "title": "Letterlike Symbols",
+    "range": { "from": "2100", "to": "214F" }
+  },
+  {
+    "parent": 19,
+    "index": 20,
+    "key": "letterlike-symbols",
+    "title": "Letterlike Symbols",
+    "range": { "from": "2100", "to": "214F" },
+    "childRanges": [{ "from": "10190", "to": "101CF" }]
+  },
+  {
+    "parent": 79,
+    "index": 83,
+    "key": "mahjong-tiles",
+    "title": "Mahjong Tiles",
+    "range": { "from": "1F000", "to": "1F02F" }
+  },
+  {
+    "parent": 19,
+    "index": 22,
+    "key": "mathematical-alphanumeric-symbols",
+    "title": "Mathematical Alphanumeric Symbols",
+    "range": { "from": "1D400", "to": "1D7FF" }
+  },
+  {
+    "parent": 46,
+    "index": 53,
+    "key": "mathematical-alphanumeric-symbols",
+    "title": "Mathematical Alphanumeric Symbols",
+    "range": { "from": "1D400", "to": "1D7FF" },
+    "childRanges": [
+      { "from": "1EE00", "to": "1EEFF" },
+      { "from": "2100", "to": "214F" }
+    ]
+  },
+  {
+    "parent": 46,
+    "index": 56,
+    "key": "mathematical-operators",
+    "title": "Mathematical Operators",
+    "range": { "from": "2200", "to": "22FF" },
+    "childRanges": [
+      { "from": "2308", "to": "230B" },
+      { "from": "2061", "to": "2064" },
+      { "from": "27C0", "to": "27EF" },
+      { "from": "2980", "to": "29FF" },
+      { "from": "2A00", "to": "2AFF" }
+    ]
+  },
+  {
+    "parent": 0,
+    "index": 46,
+    "key": "mathematical-symbols",
+    "title": " Mathematical Symbols",
+    "childRanges": [
+      { "from": "2190", "to": "21FF" },
+      { "from": "2B00", "to": "2BFF" },
+      { "from": "2B00", "to": "2BFF" },
+      { "from": "27F0", "to": "27FF" },
+      { "from": "2900", "to": "297F" },
+      { "from": "1F800", "to": "1F8FF" },
+      { "from": "25A0", "to": "25FF" },
+      { "from": "2B00", "to": "2BFF" },
+      { "from": "2580", "to": "259F" },
+      { "from": "2500", "to": "257F" },
+      { "from": "1F780", "to": "1F7FF" },
+      { "from": "1D400", "to": "1D7FF" },
+      { "from": "1EE00", "to": "1EEFF" },
+      { "from": "2100", "to": "214F" },
+      { "from": "2200", "to": "22FF" },
+      { "from": "2308", "to": "230B" },
+      { "from": "2061", "to": "2064" },
+      { "from": "27C0", "to": "27EF" },
+      { "from": "2980", "to": "29FF" },
+      { "from": "2A00", "to": "2AFF" }
+    ]
+  },
+  {
+    "parent": 56,
+    "index": 58,
+    "key": "miscellaneous-mathematical-symbols-a",
+    "title": "Miscellaneous Mathematical Symbols-A",
+    "range": { "from": "27C0", "to": "27EF" }
+  },
+  {
+    "parent": 56,
+    "index": 59,
+    "key": "miscellaneous-mathematical-symbols-b",
+    "title": "Miscellaneous Mathematical Symbols-B",
+    "range": { "from": "2980", "to": "29FF" }
+  },
+  {
+    "parent": 67,
+    "index": 71,
+    "key": "miscellaneous-symbols",
+    "title": "Miscellaneous Symbols",
+    "range": { "from": "2600", "to": "26FF" }
+  },
+  {
+    "parent": 47,
+    "index": 52,
+    "key": "miscellaneous-symbols-and-arrows",
+    "title": "Miscellaneous Symbols and Arrows",
+    "range": { "from": "2B00", "to": "2BFF" }
+  },
+  {
+    "parent": 75,
+    "index": 86,
+    "key": "miscellaneous-symbols-and-arrows",
+    "title": "Miscellaneous Symbols and Arrows",
+    "range": { "from": "2B00", "to": "2BFF" }
+  },
+  {
+    "parent": 67,
+    "index": 72,
+    "key": "miscellaneous-symbols-and-pictographs",
+    "title": "Miscellaneous Symbols And Pictographs",
+    "range": { "from": "1F300", "to": "1F5FF" }
+  },
+  {
+    "parent": 30,
+    "index": 33,
+    "key": "miscellaneous-technical",
+    "title": "Miscellaneous Technical",
+    "range": { "from": "2300", "to": "23FF" }
+  },
+  {
+    "parent": 1,
+    "index": 3,
+    "key": "musical-symbols",
+    "title": "Musical Symbols",
+    "range": { "from": "1D100", "to": "1D1FF" },
+    "childRanges": [
+      { "from": "1D200", "to": "1D24F" },
+      { "from": "1D000", "to": "1D0FF" }
+    ]
+  },
+  {
+    "parent": 0,
+    "index": 1,
+    "key": "notational-systems",
+    "title": "Notational Systems",
+    "childRanges": [
+      { "from": "2800", "to": "28FF" },
+      { "from": "1BC00", "to": "1BC9F" },
+      { "from": "1BCA0", "to": "1BCAF" },
+      { "from": "1D100", "to": "1D1FF" },
+      { "from": "1D200", "to": "1D24F" },
+      { "from": "1D000", "to": "1D0FF" },
+      { "from": "1D800", "to": "1DAAF" }
+    ]
+  },
+  {
+    "parent": 35,
+    "index": 42,
+    "key": "number-forms",
+    "title": "Number Forms",
+    "range": { "from": "2150", "to": "218F" }
+  },
+  {
+    "parent": 0,
+    "index": 35,
+    "key": "numbers-digits",
+    "title": "Numbers & Digits",
+    "childRanges": [
+      { "from": "0030", "to": "0039" },
+      { "from": "FF10", "to": "FF19" },
+      { "from": "A830", "to": "A83F" },
+      { "from": "102E0", "to": "102FF" },
+      { "from": "1D360", "to": "1D37F" },
+      { "from": "12400", "to": "1247F" },
+      { "from": "2150", "to": "218F" },
+      { "from": "10E60", "to": "10E7F" },
+      { "from": "111E0", "to": "111FF" },
+      { "from": "2070", "to": "209F" }
+    ]
+  },
+  {
+    "parent": 30,
+    "index": 34,
+    "key": "optical-character-recognition",
+    "title": "Optical Character Recognition (OCR)",
+    "range": { "from": "2440", "to": "245F" }
+  },
+  {
+    "parent": 68,
+    "index": 69,
+    "key": "ornamental-dingbats",
+    "title": "Ornamental Dingbats",
+    "range": { "from": "1F650", "to": "1F67F" }
+  },
+  {
+    "parent": 0,
+    "index": 75,
+    "key": "other-symbols",
+    "title": "Other Symbols",
+    "childRanges": [
+      { "from": "1F700", "to": "1F77F" },
+      { "from": "10190", "to": "101CF" },
+      { "from": "20A0", "to": "20CF" },
+      { "from": "2660", "to": "2667" },
+      { "from": "2654", "to": "265F" },
+      { "from": "26CO", "to": "26C3" },
+      { "from": "1F030", "to": "1F09F" },
+      { "from": "2616", "to": "2617" },
+      { "from": "1F000", "to": "1F02F" },
+      { "from": "1F0A0", "to": "1F0FF" },
+      { "from": "2B00", "to": "2BFF" },
+      { "from": "1D300", "to": "1D35F" },
+      { "from": "4DC0", "to": "4DFF" },
+      { "from": "268A", "to": "268F" },
+      { "from": "2630", "to": "2637" }
+    ]
+  },
+  {
+    "parent": 79,
+    "index": 84,
+    "key": "playing-cards",
+    "title": "Playing Cards",
+    "range": { "from": "1F0A0", "to": "1F0FF" }
+  },
+  {
+    "parent": 0,
+    "index": 9,
+    "key": "punctuation",
+    "title": "Punctuation",
+    "childRanges": [
+      { "from": "FE30", "to": "FE4F" },
+      { "from": "FF00", "to": "FFEF" },
+      { "from": "FE50", "to": "FE6F" },
+      { "from": "FE10", "to": "FE1F" },
+      { "from": "3000", "to": "303F" },
+      { "from": "2000", "to": "206F" },
+      { "from": "0021", "to": "007F" },
+      { "from": "00A1", "to": "00BF" },
+      { "from": "2E00", "to": "2E7F" }
+    ]
+  },
+  {
+    "parent": 20,
+    "index": 21,
+    "key": "roman-symbols",
+    "title": "Roman Symbols",
+    "range": { "from": "10190", "to": "101CF" }
+  },
+  {
+    "parent": 35,
+    "index": 43,
+    "key": "rumi-numeral-symbols",
+    "title": "Rumi Numeral Symbols",
+    "range": { "from": "10E60", "to": "10E7F" }
+  },
+  {
+    "parent": 6,
+    "index": 7,
+    "key": "shorthand-format-controls",
+    "title": "Shorthand Format Controls",
+    "range": { "from": "1BCA0", "to": "1BCAF" }
+  },
+  {
+    "parent": 35,
+    "index": 44,
+    "key": "sinhala-archaic-numbers",
+    "title": "Sinhala Archaic Numbers",
+    "range": { "from": "111E0", "to": "111FF" }
+  },
+  {
+    "parent": 15,
+    "index": 17,
+    "key": "small-form-variants",
+    "title": "Small Form Variants",
+    "range": { "from": "FE50", "to": "FE6F" }
+  },
+  {
+    "parent": 35,
+    "index": 45,
+    "key": "super-and-subscripts",
+    "title": "Super and Subscripts",
+    "range": { "from": "2070", "to": "209F" }
+  },
+  {
+    "parent": 47,
+    "index": 48,
+    "key": "supplemental-arrows-a",
+    "title": "Supplemental Arrows-A",
+    "range": { "from": "27F0", "to": "27FF" }
+  },
+  {
+    "parent": 47,
+    "index": 49,
+    "key": "supplemental-arrows-b",
+    "title": "Supplemental Arrows-B",
+    "range": { "from": "2900", "to": "297F" }
+  },
+  {
+    "parent": 47,
+    "index": 50,
+    "key": "supplemental-arrows-c",
+    "title": "Supplemental Arrows-C",
+    "range": { "from": "1F800", "to": "1F8FF" }
+  },
+  {
+    "parent": 56,
+    "index": 57,
+    "key": "supplemental-mathematical-operators",
+    "title": "Supplemental Mathematical Operators",
+    "range": { "from": "2A00", "to": "2AFF" }
+  },
+  {
+    "parent": 10,
+    "index": 13,
+    "key": "supplemental-punctuation",
+    "title": "Supplemental Punctuation",
+    "range": { "from": "2E00", "to": "2E7F" }
+  },
+  {
+    "parent": 67,
+    "index": 73,
+    "key": "supplemental-symbols-and-pictographs",
+    "title": "Supplemental Symbols and Pictographs",
+    "range": { "from": "1F900", "to": "1F9FF" }
+  },
+  {
+    "parent": 1,
+    "index": 8,
+    "key": "sutton-signwriting",
+    "title": "Sutton SignWriting",
+    "range": { "from": "1D800", "to": "1DAAF" }
+  },
+  {
+    "parent": 87,
+    "index": 90,
+    "key": "tai-xuan-jing-symbols",
+    "title": "Tai Xuan Jing Symbols",
+    "range": { "from": "1D300", "to": "1D35F" }
+  },
+  {
+    "parent": 0,
+    "index": 30,
+    "key": "technical-symbols",
+    "title": "Technical Symbols",
+    "childRanges": [
+      { "from": "2336", "to": "237A" },
+      { "from": "2400", "to": "243F" },
+      { "from": "2300", "to": "23FF" },
+      { "from": "2440", "to": "245F" }
+    ]
+  },
+  {
+    "parent": 67,
+    "index": 74,
+    "key": "transport-and-map-symbols",
+    "title": "Transport and Map Symbols",
+    "range": { "from": "1F680", "to": "1F6FF" }
+  },
+  {
+    "parent": 15,
+    "index": 18,
+    "key": "vertical-forms",
+    "title": "Vertical Forms",
+    "range": { "from": "FE10", "to": "FE1F" }
+  },
+  {
+    "parent": 87,
+    "index": 89,
+    "key": "yijing-hexagram-symbols",
+    "title": "Yijing Hexagram Symbols",
+    "range": { "from": "4DC0", "to": "4DFF" }
+  },
+  {
+    "parent": 87,
+    "index": 88,
+    "key": "yijing-mono-di-and-trigrams",
+    "title": "Yijing Mono, Di and Trigrams",
+    "range": [{ "from": "268A", "to": "268F" }, { "from": "2630", "to": "2637" }]
+  },
+  {
+    "parent": 75,
+    "index": 87,
+    "key": "yijing-symbols",
+    "title": "Yijing Symbols",
+    "childRanges": [
+      { "from": "1D300", "to": "1D35F" },
+      { "from": "4DC0", "to": "4DFF" },
+      { "from": "268A", "to": "268F" },
+      { "from": "2630", "to": "2637" }
+    ]
+  }
+]

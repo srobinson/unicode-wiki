@@ -1,0 +1,54 @@
+{
+  "rulesDirectory": ["tslint-config-prettier"],
+  "rules": {
+    "adjacent-overload-signatures": true,
+    "eofline": true,
+    "jsx-no-multiline-js": false,
+    "label-position": true,
+    "member-ordering": [
+      true,
+      {
+        "order": [
+          "public-static-field",
+          "private-static-field",
+          "public-instance-field",
+          "private-instance-field",
+          "public-constructor",
+          "private-constructor",
+          "public-instance-method",
+          "protected-instance-method",
+          "private-instance-method"
+        ]
+      }
+    ],
+    "no-any": true,
+    "no-arg": true,
+    "no-construct": true,
+    "no-duplicate-variable": true,
+    "no-invalid-this": true,
+    "no-misused-new": true,
+    "no-null-keyword": true,
+    "no-shadowed-variable": false,
+    "no-string-throw": true,
+    "no-unused-expression": true,
+    "no-var-keyword": true,
+    "object-literal-sort-keys": [
+      true, {
+        "order": [
+          "ignore-case",
+          "match-declaration-order",
+          "shorthand-first"
+        ]
+      }
+    ],
+		"prefer-for-of": true,
+    "quotemark": [true, "double"],
+		"semicolon": [true, "never"],
+    "triple-equals": [
+      true,
+      "allow-null-check",
+      "allow-undefined-check"
+    ],
+    "unified-signatures": true
+  }
+}
