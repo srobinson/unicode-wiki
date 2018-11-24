@@ -15,7 +15,7 @@ steps:
       - '-f'
       - 'Dockerfile.api'
       - '-t'
-      - 'gcr.io/${PROJECT_ID}/pipeline:${COMMIT_SHA}'
+      - 'gcr.io/${PROJECT_ID}/uw-api:${COMMIT_SHA}'
       - '.'
 
   - name: 'gcr.io/cloud-builders/docker'
@@ -24,7 +24,7 @@ steps:
       - '-f'
       - 'Dockerfile.app'
       - '-t'
-      - 'gcr.io/${PROJECT_ID}/pipeline:${COMMIT_SHA}'
+      - 'gcr.io/${PROJECT_ID}/uw-app:${COMMIT_SHA}'
       - '.'
 
   # Retrieve and decrypt the GitHub Hub configuration.
@@ -91,10 +91,10 @@ steps:
           template:
             spec:
               containers:
-                - name: pipeline-api
-                  image: gcr.io/${PROJECT_ID}/pipeline-api:${COMMIT_SHA}
-                - name: pipeline-app
-                  image: gcr.io/${PROJECT_ID}/pipeline-app:${COMMIT_SHA}
+                - name: uw-api
+                  image: gcr.io/${PROJECT_ID}/uw-api:${COMMIT_SHA}
+                - name: uw-app
+                  image: gcr.io/${PROJECT_ID}/uw-app:${COMMIT_SHA}
         EOF
 
         kubectl patch --local -o yaml \

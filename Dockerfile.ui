@@ -13,8 +13,8 @@ COPY packages/uw-app ./packages/uw-app
 
 COPY tsconfig.json jest.config.js tslint.json lerna.json ./
 
-# ENV REACT_APP_API_BASE_URL=http://35.231.180.226/api
-ENV REACT_APP_API_BASE_URL=http://localhost/api:3001/api
+ENV REACT_APP_API_BASE_URL=http://35.231.180.226/api
+# ENV REACT_APP_API_BASE_URL=http://localhost:3001/api
 
 RUN yarn install --production=true \
   && yarn global add lerna \

@@ -278,7 +278,6 @@ FFF0..FFFF; Specials
 1F780..1F7FF; Geometric Shapes Extended
 1F800..1F8FF; Supplemental Arrows-C
 1F900..1F9FF; Supplemental Symbols and Pictographs
-1FA00..1FA6F; Chess Symbols
 20000..2A6DF; CJK Unified Ideographs Extension B
 2A700..2B73F; CJK Unified Ideographs Extension C
 2B740..2B81F; CJK Unified Ideographs Extension D
