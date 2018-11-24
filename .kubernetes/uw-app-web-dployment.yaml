@@ -1,0 +1,60 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    run: uw-app-web
+  name: uw-app-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: uw-app-web
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        run: uw-app-web
+    spec:
+      containers:
+      - image: gcr.io/unicode-wiki/uw-app:0.0.0.1.2
+        imagePullPolicy: IfNotPresent
+        name: uw-app-web
+        ports:
+        - containerPort: 80
+          protocol: TCP
+        resources: {}
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+
+
+
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   labels:
+#     run: uw-app-web
+#   name: uw-app-web
+#   namespace: default
+# spec:
+#   clusterIP: 10.35.250.227
+#   externalTrafficPolicy: Cluster
+#   ports:
+#   - nodePort: 30644
+#     port: 80
+#     protocol: TCP
+#     targetPort: 80
+#   selector:
+#     run: uw-app-web
+#   sessionAffinity: None
+#   type: LoadBalancer
+# status:
+#   loadBalancer:
+#     ingress:
+#     - ip: 35.227.67.220

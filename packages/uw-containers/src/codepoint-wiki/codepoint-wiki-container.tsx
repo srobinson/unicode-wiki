@@ -6,6 +6,7 @@ import {connect} from "react-redux"
 import {Wiki} from "@uw/components"
 import {ApplicationState, loadWikiPage} from "@uw/store"
 import {CodepointWikiContainerProps, InstanceState, OtherProps} from "./types"
+import {generateClassName} from "@uw/utils"
 
 class CodepointWikiContainer extends React.PureComponent<CodepointWikiContainerProps & OtherProps> {
   state: InstanceState = {
@@ -47,13 +48,15 @@ class CodepointWikiContainer extends React.PureComponent<CodepointWikiContainerP
   }
 
   render() {
-    const {wikiPage} = this.props
+    const {codepoint, wikiPage} = this.props
     const {result, loading} = wikiPage
+    const className = codepoint && generateClassName(codepoint.cp)
+
     return (
-      <React.Fragment>
+      <div className={className}>
         {/* {loading && <ProgessLoader />} */}
         <Wiki content={result} loading={loading} />
-      </React.Fragment>
+      </div>
     )
   }
 }

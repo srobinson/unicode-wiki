@@ -8,6 +8,7 @@ import {LinkSchema} from "./link"
 export interface WikiSearch {
   category: string // collectionId
   key: string // groupId
+  title: string
   results: []
 }
 
@@ -21,7 +22,8 @@ export interface WikiSearchDocument extends ApiResponse, WikiSearch {}
  */
 export const WikiSearchSchema = new Schema({
   _links: LinkSchema,
-  collectionId: String,
-  groupId: String,
+  category: String,
+  key: String,
   results: Array,
+  title: String,
 })

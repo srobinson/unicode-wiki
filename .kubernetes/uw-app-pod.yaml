@@ -1,17 +1,17 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: uw-api-web
+  name: uw-app-web
   labels:
-    run: uw-api-web
+    run: uw-app-web
 spec:
   containers:
-  - image: gcr.io/unicode-wiki/uw-api:0.0.1
-    name: uw-api-web
+  - image: gcr.io/unicode-wiki/uw-app:0.0.1
+    name: uw-app-web
     ports:
     - containerPort: 3001
       protocol: TCP
   initContainers:
   - name: seed-db
-    image: gcr.io/unicode-wiki/uw-api:0.0.1
+    image: gcr.io/unicode-wiki/uw-app:0.0.1
     command: ["node", "/usr/src/app/packages/uw-seed/build/dist/index.js"]
