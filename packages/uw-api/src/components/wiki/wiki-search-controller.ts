@@ -9,6 +9,8 @@ export const search = async (req: Request, res: Response) => {
   const {category, key} = req.query
   const url = `https://en.wikipedia.org/w/api.php?format=json&action=opensearch&disabletoc=true&search=${key}`
 
+  // https://en.wikipedia.org/w/index.php?title=Special:Search&cirrusDumpResult=&search=%22african%22%20AND%20%22scripts%22
+
   console.log("<URL::WikiSearch>", url)
 
   try {
