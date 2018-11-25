@@ -1,0 +1,13 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: uw-app-web
+  labels:
+    run: uw-app-web
+spec:
+  containers:
+  - image: gcr.io/unicode-wiki/uw-app:0.0.1
+    name: uw-app-web
+    ports:
+    - containerPort: 3000
+      protocol: TCP

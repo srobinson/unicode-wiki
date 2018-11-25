@@ -1,5 +1,5 @@
-apiVersion: extensions/v1beta1
 kind: Deployment
+apiVersion: extensions/v1beta1
 metadata:
   labels:
     run: uw-app-web
@@ -32,29 +32,22 @@ spec:
       schedulerName: default-scheduler
       securityContext: {}
       terminationGracePeriodSeconds: 30
-
-
-
-# apiVersion: v1
-# kind: Service
-# metadata:
-#   labels:
-#     run: uw-app-web
-#   name: uw-app-web
-#   namespace: default
-# spec:
-#   clusterIP: 10.35.250.227
-#   externalTrafficPolicy: Cluster
-#   ports:
-#   - nodePort: 30644
-#     port: 80
-#     protocol: TCP
-#     targetPort: 80
-#   selector:
-#     run: uw-app-web
-#   sessionAffinity: None
-#   type: LoadBalancer
-# status:
-#   loadBalancer:
-#     ingress:
-#     - ip: 35.227.67.220
+---
+kind: Service
+apiVersion: v1
+metadata:
+  labels:
+    run: uw-api-web
+  name: uw-api-web
+spec:
+  # clusterIP: 10.35.245.6
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 3001
+  selector:
+    run: uw-api-web
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
