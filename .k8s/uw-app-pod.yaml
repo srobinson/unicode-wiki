@@ -6,7 +6,7 @@ metadata:
     run: uw-app-web
 spec:
   containers:
-  - image: gcr.io/unicode-wiki/uw-app:0.0.1
+  - image: gcr.io/unicode-wiki/uw-app:${TAG_NAME}
     name: uw-app-web
     ports:
     - containerPort: 3000
