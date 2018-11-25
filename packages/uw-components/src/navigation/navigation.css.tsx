@@ -16,7 +16,7 @@ const ExplorerNavigationKeyframes = keyframes`
 
 export const ExplorerNavigation = styled("div")`
   position: absolute;
-  left: 5rem;
+  left: 4.5rem;
   top: 1rem;
 
   font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
@@ -24,6 +24,11 @@ export const ExplorerNavigation = styled("div")`
   font-weight: 600;
   letter-spacing: 2px;
   user-select: none;
+
+  @media (max-width: 800px) {
+    left: 3.5rem;
+  }
+
   ${(props: any) =>
     (props.reveal &&
       `

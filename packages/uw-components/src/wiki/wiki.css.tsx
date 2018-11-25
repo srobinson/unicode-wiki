@@ -4,8 +4,10 @@ import styled from "../styled"
 
 export const Title = styled("h1")`
   position: absolute;
-  left: 5rem;
+  left: 4.5rem;
   top: -0.2rem;
+  right: 5rem;
+  min-width: 0;
 
   border: 0;
   color: #fff;
@@ -15,12 +17,24 @@ export const Title = styled("h1")`
   right: 0;
   text-transform: uppercase;
 
+  @media (max-width: 800px) {
+    left: 3.5rem;
+  }
+
   ${(props: any) =>
     props.expand &&
     `
       opacity: 1;
       transform: translateY(0);
     `};
+
+  span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    margin-right: 4rem;
+  }
 
   button {
     background: transparent;
