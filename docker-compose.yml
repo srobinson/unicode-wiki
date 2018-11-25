@@ -21,7 +21,7 @@ services:
         - NODE_ENV=production
         - NODE_PORT=3001
         - PORT=80
-        - REACT_APP_API_BASE_URL=http://35.231.180.226/api
+        - REACT_APP_API_BASE_URL=https://api.unicode.wiki/api
     labels:
       - "traefik.enable=true"
       - "traefik.frontend.rule=Host:uw-app.docker.localhost"
