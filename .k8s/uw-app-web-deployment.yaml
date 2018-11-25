@@ -20,7 +20,7 @@ spec:
         run: uw-app-web
     spec:
       containers:
-      - image: gcr.io/unicode-wiki/uw-app:0.0.0.1.2
+      - image: gcr.io/unicode-wiki/uw-app:${TAG_NAME}
         imagePullPolicy: IfNotPresent
         name: uw-app-web
         ports:
