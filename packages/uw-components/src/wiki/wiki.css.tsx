@@ -66,6 +66,9 @@ export const WikiPage = styled("article")`
   > div {
     opacity: 0;
     transition: opacity 150ms ease-in-out;
+    > div {
+      margin-bottom: 3rem;
+    }
   }
 
   transition: transform 120ms ease-in-out, opacity 150ms ease-in-out;
@@ -92,7 +95,10 @@ export const WikiPage = styled("article")`
       }
     `};
 `
-
+export const Message = styled("div")`
+  background: #eee;
+  padding: 2rem;
+`
 export const SearchHits = styled("div")``
 
 export const SearchHit = styled("div")`

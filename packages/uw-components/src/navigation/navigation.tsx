@@ -79,9 +79,10 @@ export class ExplorerNavigation extends React.PureComponent<NavigationComponentP
                   (child: Category) => child.parent === category.index,
                 )
                 return (
-                  <React.Fragment key={category.key}>
+                  <React.Fragment>
                     <Styled.MenuItem
                       isNavigationTypeMenuOpen={isNavigationTypeMenuOpen}
+                      key={category.key}
                       onClick={setCategory.bind(undefined, category.key)}
                       active={category.key === categoryKey}
                       innerRef={(category.key === categoryKey && activeNode) || undefined}
@@ -94,6 +95,7 @@ export class ExplorerNavigation extends React.PureComponent<NavigationComponentP
                           onClick={setCategory.bind(undefined, child.key)}
                           active={child.key === categoryKey}
                           innerRef={(child.key === categoryKey && activeNode) || undefined}
+                          key={child.key}
                         >
                           {child.title}
                         </Styled.ChildMenuItem>

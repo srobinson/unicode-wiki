@@ -17,6 +17,8 @@ class ExplorerPage extends React.PureComponent<WikiPageProps & OtherProps> {
     const isWikiPage = cp !== undefined
     const title = (isWikiPage && wikiPage.result && wikiPage.result.title) || ""
 
+    console.log("wikiPage==========", wikiPage)
+
     if (isWikiPage) {
       return <WikiTitle close={this.closeWikiPage} loading={wikiPage.loading} title={title} />
     }
@@ -50,7 +52,6 @@ class ExplorerPage extends React.PureComponent<WikiPageProps & OtherProps> {
 }
 
 const mapStateToProps = (state: ApplicationState) => {
-  console.log("STATE", state)
   return {
     loader: state.loader,
     wikiPage: state.wikiPage,

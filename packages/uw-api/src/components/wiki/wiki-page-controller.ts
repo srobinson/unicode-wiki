@@ -14,9 +14,8 @@ import {WikiPage} from "@uw/domain"
 import {isHex} from "@uw/utils"
 
 export const loadPage = async (req: Request, res: Response) => {
-  const {page, redirect} = req.query
-  const token =
-    (redirect && redirect) || (isHex(page) && encodeURIComponent(fromCharCode(page))) || page
+  const {cp, page, redirect} = req.query
+  const token = (redirect && redirect) || (isHex(cp) && encodeURIComponent(fromCharCode(cp))) || cp
   const url = `https://en.wikipedia.org/w/api.php?format=json&action=parse&disabletoc=true&page=${token}`
 
   console.log("<URL::Page>", url, res.statusCode, page, token)
@@ -38,28 +37,33 @@ export const loadPage = async (req: Request, res: Response) => {
 }
 
 const onError = async (req: Request, res: Response, data: any) => {
-  const {category, key, page} = req.query
+  const {category, cp, key, page} = req.query
   const {error} = data
 
-  // page not found -> try ONCE to load page with ${key}
+  // page not found -> try ONCE to load page with ${page} -> codepoint.name
   if (error.code === "missingtitle" && !req.query.redirect) {
-    req.query.redirect = key
+    const redirect = key
       .split("-")
       .map((part: string) => part)
       .join(" ")
+
+    console.log("redirect", redirect)
+
+    req.query.redirect = redirect
     await loadPage(req, res)
   } else {
     const wikiSearch = await doSearch(req, res)
     const wiki: WikiPage = {
       category,
-      cp: page,
+      cp,
       externalLinks: [],
       key,
       langlinks: [],
+      page,
       search: wikiSearch,
       text: error.info,
-      title: "Error: " + error.code,
-      type: "error",
+      title: `${error.code}: ${page}`,
+      type: "Error: " + error.code,
     }
     res.status(res.statusCode).json(wiki)
   }
@@ -85,6 +89,7 @@ const onSuccess = async (req: Request, res: Response, data: any) => {
       externalLinks: parse.externallinks,
       key,
       langlinks: parse.langlinks,
+      page,
       search: wikiSearch,
       text: text.replace(RELATIVE_URL_TEST, RELATIVE_URL_REPLACE).replace(INLINE_STYLES_TEST, ""),
       title: parse.displaytitle,
