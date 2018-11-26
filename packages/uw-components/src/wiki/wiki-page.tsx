@@ -37,10 +37,13 @@ export class Wiki extends React.PureComponent<WikiProps> {
     const {content, loading} = this.props
     const searchHits = parseSearchHits(content)
     const text = content && content.text
+    const html = text && parseHtml(text)
     return (
       <Styled.WikiPage className="wiki" expand={!loading}>
         <div>
-          {text && <div dangerouslySetInnerHTML={{__html: `${parsePage(text)}`}} />}
+          {(html && <div dangerouslySetInnerHTML={{__html: html}} />) || (
+            <Styled.Message>{text}</Styled.Message>
+          )}
           {searchHits && (
             <Styled.SearchHits>
               <h2>Similar Pages</h2>
@@ -75,7 +78,7 @@ const parseSearchHits = (content: WikiPage | undefined) =>
     ))) ||
   undefined
 
-const parsePage = (text: string) => {
+const parseHtml = (text: string) => {
   const node = htmlParser(text)
   const children = Array.from(node.childNodes)
   let src = ""

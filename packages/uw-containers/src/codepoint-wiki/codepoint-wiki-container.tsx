@@ -5,42 +5,27 @@ import {Dispatch} from "redux"
 import {connect} from "react-redux"
 import {Wiki} from "@uw/components"
 import {ApplicationState, loadWikiPage} from "@uw/store"
-import {CodepointWikiContainerProps, InstanceState, OtherProps} from "./types"
+import {CodepointWikiContainerProps, OtherProps} from "./types"
 import {generateClassName} from "@uw/utils"
 
 class CodepointWikiContainer extends React.PureComponent<CodepointWikiContainerProps & OtherProps> {
-  state: InstanceState = {
-    currentCodepoint: undefined,
-  }
-
-  static getDerivedStateFromProps(nextProps: OtherProps, prevState: InstanceState) {
-    if (
-      prevState.currentCodepoint &&
-      prevState.currentCodepoint.cp &&
-      nextProps.codepoint.cp !== prevState.currentCodepoint.cp
-    ) {
-      return {
-        currentCodepoint: nextProps.codepoint,
-      }
-    }
-    return {}
-  }
-
   componentDidMount() {
-    const {match} = this.props
+    const {codepoint, match} = this.props
     const {params} = match
     const {category, key, cp} = params
-    if (cp) {
-      this.props.loadWikiPage(category, key, cp)
-    }
+    const {name, name_v1} = codepoint
+    const page = name || name_v1 || key
+    this.props.loadWikiPage(category, key, cp, page)
   }
 
   componentDidUpdate(prevProps: OtherProps) {
-    const {match} = prevProps
-    const {params} = match
-    const {category, key, cp} = params
-    if (cp && this.props.match.params.cp !== cp) {
-      this.props.loadWikiPage(category, key, cp)
+    if (this.props.match.params.cp !== prevProps.match.params.cp) {
+      const {codepoint, match} = this.props
+      const {params} = match
+      const {category, key, cp} = params
+      const {name, name_v1} = codepoint
+      const page = name || name_v1 || key
+      this.props.loadWikiPage(category, key, cp, page)
     }
   }
 
@@ -50,7 +35,6 @@ class CodepointWikiContainer extends React.PureComponent<CodepointWikiContainerP
     const className = codepoint && generateClassName(codepoint.cp)
     return (
       <div className={className}>
-        {/* {loading && <ProgessLoader />} */}
         <Wiki content={result} loading={loading} />
       </div>
     )
@@ -65,8 +49,8 @@ const mapStateToProps = (state: ApplicationState) => {
 }
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  loadWikiPage: (category: string, key: string, cp: string) =>
-    dispatch(loadWikiPage(category, key, cp)),
+  loadWikiPage: (category: string, key: string, cp: string, page: string) =>
+    dispatch(loadWikiPage(category, key, cp, page)),
   push: (path: string) => dispatch(push(path)),
 })
 

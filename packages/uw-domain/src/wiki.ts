@@ -7,6 +7,7 @@ export interface WikiPage {
   externalLinks: []
   key: string
   langlinks: []
+  page: string
   search?: WikiSearch
   text: string
   title: string
