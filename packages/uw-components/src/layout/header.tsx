@@ -5,10 +5,10 @@ import * as Styled from "./header.css"
 
 // 0E1F u0800
 /** @augments {React.Component<object, object>} */
-export const Header: React.SFC<HeaderProps> = ({children}) => (
+export const Header: React.SFC<HeaderProps> = ({children, cp}) => (
   <Styled.Header>
     <Styled.HeaderInner>
-      <Logo />
+      <Logo cp={cp} />
       {children}
       <Menu />
     </Styled.HeaderInner>
@@ -17,6 +17,7 @@ export const Header: React.SFC<HeaderProps> = ({children}) => (
 
 interface HeaderProps {
   children?: React.ReactNode
+  cp?: string
 }
 
 export default Header

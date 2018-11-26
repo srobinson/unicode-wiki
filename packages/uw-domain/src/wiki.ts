@@ -19,6 +19,7 @@ export interface WikiPage {
 export interface WikiSearch {
   category: string
   key: string
+  text: string
   title: string
   hits: SearchHit[]
 }

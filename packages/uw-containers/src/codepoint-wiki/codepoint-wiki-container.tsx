@@ -14,7 +14,6 @@ class CodepointWikiContainer extends React.PureComponent<CodepointWikiContainerP
   }
 
   static getDerivedStateFromProps(nextProps: OtherProps, prevState: InstanceState) {
-    console.log("getDerivedStateFromProps")
     if (
       prevState.currentCodepoint &&
       prevState.currentCodepoint.cp &&
@@ -28,7 +27,6 @@ class CodepointWikiContainer extends React.PureComponent<CodepointWikiContainerP
   }
 
   componentDidMount() {
-    console.log("componentDidMount")
     const {match} = this.props
     const {params} = match
     const {category, key, cp} = params
@@ -38,7 +36,6 @@ class CodepointWikiContainer extends React.PureComponent<CodepointWikiContainerP
   }
 
   componentDidUpdate(prevProps: OtherProps) {
-    console.log("componentDidUpdate")
     const {match} = prevProps
     const {params} = match
     const {category, key, cp} = params
@@ -51,8 +48,6 @@ class CodepointWikiContainer extends React.PureComponent<CodepointWikiContainerP
     const {codepoint, wikiPage} = this.props
     const {result, loading} = wikiPage
     const className = codepoint && generateClassName(codepoint.cp)
-
-    console.log("wikiPage", wikiPage)
     return (
       <div className={className}>
         {/* {loading && <ProgessLoader />} */}

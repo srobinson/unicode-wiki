@@ -2,20 +2,21 @@
 import {Request, Response} from "express"
 import axios from "axios"
 import {ResourceNotFoundException} from "@uw/domain"
-import {fromCharCode} from "@uw/utils"
+import {
+  REDIRECT_TEST,
+  RELATIVE_URL_TEST,
+  RELATIVE_URL_REPLACE,
+  INLINE_STYLES_TEST,
+  fromCharCode,
+} from "@uw/utils"
 import {search} from "./wiki-search-controller"
 import {WikiPage} from "@uw/domain"
-import "express-async-errors"
-
-const REDIRECT_TEST =
-  '<div class=\\"redirectMsg\\"><p>Redirect to:</p><ul class=\\"redirectText\\"><li><a href=\\"/wiki/([0-9a-zA-Z_\\-()%/]*)'
-const RELATIVE_URL_TEST = /(href|src)=(\\?)"(\/(w|wiki)\/)/gi
-const RELATIVE_URL_REPLACE = 'target="_blank" $1="https://en.wikipedia.org$3'
-const INLINE_STYLES_TEST = /(<style.+<\/style>)/gi
+import {isHex} from "@uw/utils"
 
 export const loadPage = async (req: Request, res: Response) => {
   const {page, redirect} = req.query
-  const token = (redirect && redirect) || encodeURIComponent(fromCharCode(page))
+  const token =
+    (redirect && redirect) || (isHex(page) && encodeURIComponent(fromCharCode(page))) || page
   const url = `https://en.wikipedia.org/w/api.php?format=json&action=parse&disabletoc=true&page=${token}`
 
   console.log("<URL::Page>", url, res.statusCode, page, token)
@@ -39,24 +40,29 @@ export const loadPage = async (req: Request, res: Response) => {
 const onError = async (req: Request, res: Response, data: any) => {
   const {category, key, page} = req.query
   const {error} = data
-  const wiki: WikiPage = {
-    category,
-    cp: page,
-    externalLinks: [],
-    key,
-    langlinks: [],
-    text: error.info,
-    title: "Error: " + error.code,
-    type: "error",
-  }
 
-  if (error.code === "missingtitle") {
-    // page not found -> get page from search results
+  // page not found -> try ONCE to load page with ${key}
+  if (error.code === "missingtitle" && !req.query.redirect) {
+    req.query.redirect = key
+      .split("-")
+      .map((part: string) => part)
+      .join(" ")
+    await loadPage(req, res)
+  } else {
     const wikiSearch = await doSearch(req, res)
-    wiki.search = wikiSearch
+    const wiki: WikiPage = {
+      category,
+      cp: page,
+      externalLinks: [],
+      key,
+      langlinks: [],
+      search: wikiSearch,
+      text: error.info,
+      title: "Error: " + error.code,
+      type: "error",
+    }
+    res.status(res.statusCode).json(wiki)
   }
-
-  res.status(res.statusCode).json(wiki)
 }
 
 const onSuccess = async (req: Request, res: Response, data: any) => {
@@ -72,6 +78,7 @@ const onSuccess = async (req: Request, res: Response, data: any) => {
     await loadPage(req, res)
   } else {
     const wikiSearch = await doSearch(req, res)
+
     const wiki: WikiPage = {
       category,
       cp: page,
@@ -83,6 +90,7 @@ const onSuccess = async (req: Request, res: Response, data: any) => {
       title: parse.displaytitle,
       type: "page",
     }
+
     res.status(res.statusCode).json(wiki)
   }
 }

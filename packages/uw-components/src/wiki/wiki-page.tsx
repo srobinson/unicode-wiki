@@ -1,9 +1,7 @@
 // tslint:disable:no-any
 import * as React from "react"
-// import {fromCharCode} from "@uw/utils"
+import {SearchHit, WikiPage} from "@uw/domain"
 import * as Styled from "./wiki.css"
-import {WikiPage} from "@uw/domain"
-import {SearchHit} from "@uw/domain"
 
 type WikiTitleProps = {
   close: () => void
@@ -38,10 +36,11 @@ export class Wiki extends React.PureComponent<WikiProps> {
   render() {
     const {content, loading} = this.props
     const searchHits = parseSearchHits(content)
+    const text = content && content.text
     return (
       <Styled.WikiPage className="wiki" expand={!loading}>
         <div>
-          {content && <div dangerouslySetInnerHTML={{__html: parsePage(content.text)}} />}
+          {text && <div dangerouslySetInnerHTML={{__html: `${parsePage(text)}`}} />}
           {searchHits && (
             <Styled.SearchHits>
               <h2>Similar Pages</h2>
@@ -64,7 +63,13 @@ const parseSearchHits = (content: WikiPage | undefined) =>
         </a>
         {/* replace dodgy unicode character (Private Use Area: \uE000\u20\uE001) in highlight text */}
         {hit.highlight && (
-          <blockquote>"... {hit.highlight.toString().replace(/[|]/g, "")} ..."</blockquote>
+          <blockquote>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: `... ${hit.highlight.toString().replace(/[|]/g, "")} ...`,
+              }}
+            />
+          </blockquote>
         )}
       </Styled.SearchHit>
     ))) ||
