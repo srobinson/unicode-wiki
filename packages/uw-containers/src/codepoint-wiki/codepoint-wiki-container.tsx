@@ -52,6 +52,7 @@ class CodepointWikiContainer extends React.PureComponent<CodepointWikiContainerP
     const {result, loading} = wikiPage
     const className = codepoint && generateClassName(codepoint.cp)
 
+    console.log("wikiPage", wikiPage)
     return (
       <div className={className}>
         {/* {loading && <ProgessLoader />} */}

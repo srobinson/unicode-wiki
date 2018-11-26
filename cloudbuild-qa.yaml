@@ -15,7 +15,7 @@ steps:
       - '-f'
       - 'Dockerfile.api'
       - '-t'
-      - 'gcr.io/${PROJECT_ID}/uw-api:${COMMIT_SHA}'
+      - 'gcr.io/${PROJECT_ID}/uw-api:${TAG_NAME}'
       - '.'
 
   - name: 'gcr.io/cloud-builders/docker'
@@ -24,7 +24,7 @@ steps:
       - '-f'
       - 'Dockerfile.app'
       - '-t'
-      - 'gcr.io/${PROJECT_ID}/uw-app:${COMMIT_SHA}'
+      - 'gcr.io/${PROJECT_ID}/uw-app:${TAG_NAME}'
       - '.'
 
   # Retrieve and decrypt the GitHub Hub configuration.
@@ -36,11 +36,11 @@ steps:
         gsutil cp gs://${PROJECT_ID}-pipeline-configs/hub.enc hub.enc
 
         gcloud kms decrypt \
-          --ciphertext-file hub.enc \
-          --plaintext-file /config/hub \
-          --location global \
-          --keyring ${_KMS_KEYRING} \
-          --key ${_KMS_KEY}
+          --ciphertext-file=hub.enc \
+          --plaintext-file=/config/hub \
+          --location=global \
+          --keyring=${_KMS_KEYRING} \
+          --key=${_KMS_KEY}
     volumes:
       - name: 'config'
         path: /config
@@ -66,7 +66,8 @@ steps:
       - name: 'kube'
         path: /kube
 
-  # Clone the pipeline-infrastructure-staging repo.
+  # Clone the pipeline-infrastructure repo which holds the Kubernetes
+  # deployment manifests.
   - name: 'gcr.io/hightowerlabs/hub'
     env:
       - 'HUB_CONFIG=/config/hub'
@@ -82,9 +83,9 @@ steps:
         hub config --global user.email "$${ACTIVE_ACCOUNT}"
         hub config --global user.name "Google Container Builder"
 
-        hub clone "${_GITHUB_USERNAME}/pipeline-infrastructure-staging"
+        hub clone "https://github.com/${_GITHUB_USERNAME}/pipeline-infrastructure-qa.git"
 
-        cd pipeline-infrastructure-staging
+        cd pipeline-infrastructure-qa
 
         cat <<EOF > patch.yaml
         spec:
@@ -92,9 +93,9 @@ steps:
             spec:
               containers:
                 - name: uw-api
-                  image: gcr.io/${PROJECT_ID}/uw-api:${COMMIT_SHA}
+                  image: gcr.io/${PROJECT_ID}/pipeline-api:${TAG_NAME}
                 - name: uw-app
-                  image: gcr.io/${PROJECT_ID}/uw-app:${COMMIT_SHA}
+                  image: gcr.io/${PROJECT_ID}/pipeline-app:${TAG_NAME}
         EOF
 
         kubectl patch --local -o yaml \
@@ -111,8 +112,8 @@ steps:
 
         This commit updates the pipeline deployment container image to:
 
-            gcr.io/${PROJECT_ID}/pipeline-api:${COMMIT_SHA}.
-            gcr.io/${PROJECT_ID}/pipeline-app:${COMMIT_SHA}.
+            gcr.io/${PROJECT_ID}/uw-api:${TAG_NAME}.
+            gcr.io/${PROJECT_ID}/uw-app:${TAG_NAME}.
 
         Build ID: ${BUILD_ID}
         EOF
@@ -125,5 +126,5 @@ steps:
         path: /kube
 
 images:
-  - 'gcr.io/${PROJECT_ID}/pipeline-api:${COMMIT_SHA}'
-  - 'gcr.io/${PROJECT_ID}/pipeline-app:${COMMIT_SHA}'
+  - gcr.io/${PROJECT_ID}/uw-api:${TAG_NAME}
+  - gcr.io/${PROJECT_ID}/uw-app:${TAG_NAME}
