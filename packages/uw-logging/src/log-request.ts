@@ -1,5 +1,6 @@
 import {Request, NextFunction, Response} from "express"
 import {logger} from "./logger"
+import {jsonifyError} from "@uw/domain"
 
 const getLoggerForStatusCode = (statusCode: number) => {
   if (statusCode >= 500) {
@@ -60,7 +61,7 @@ export const logRequestMiddleware = (req: Request, res: Response, next: NextFunc
   // tslint:disable-next-line:no-any
   const errorFn = (err: any) => {
     cleanup()
-    logger.error(`Request pipeline error: ${err}`)
+    logger.error(`Request pipeline error: ${jsonifyError(err)}`)
   }
 
   res.on("finish", logFn) // successful pipeline (regardless of its response)

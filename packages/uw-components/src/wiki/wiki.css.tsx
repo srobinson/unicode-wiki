@@ -92,3 +92,23 @@ export const WikiPage = styled("article")`
       }
     `};
 `
+
+export const SearchHits = styled("div")``
+
+export const SearchHit = styled("div")`
+  margin: 0.5rem 1rem;
+  a {
+    display: block;
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+  }
+
+  blockquote {
+    background: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px 1px rgb(0, 0, 0, 0.1);
+    cursor: initial;
+    margin: 0.2rem 0 1rem;
+    padding: 1rem;
+  }
+`

@@ -3,6 +3,7 @@ import * as React from "react"
 // import {fromCharCode} from "@uw/utils"
 import * as Styled from "./wiki.css"
 import {WikiPage} from "@uw/domain"
+import {SearchHit} from "@uw/domain"
 
 type WikiTitleProps = {
   close: () => void
@@ -36,21 +37,45 @@ export class Wiki extends React.PureComponent<WikiProps> {
 
   render() {
     const {content, loading} = this.props
+    const searchHits = parseSearchHits(content)
     return (
       <Styled.WikiPage className="wiki" expand={!loading}>
-        {content && <div dangerouslySetInnerHTML={{__html: parse(content.text)}} />}
+        <div>
+          {content && <div dangerouslySetInnerHTML={{__html: parsePage(content.text)}} />}
+          {searchHits && (
+            <Styled.SearchHits>
+              <h2>Similar Pages</h2>
+              {searchHits}
+            </Styled.SearchHits>
+          )}
+        </div>
       </Styled.WikiPage>
     )
   }
 }
 
-const parse = (text: string) => {
+const parseSearchHits = (content: WikiPage | undefined) =>
+  (content &&
+    content.search &&
+    content.search.hits.map((hit: SearchHit) => (
+      <Styled.SearchHit key={hit.title}>
+        <a target="_blank" href={`https://en.wikipedia.org/wiki/${hit.title}`}>
+          {hit.title}
+        </a>
+        {/* replace dodgy unicode character (Private Use Area: \uE000\u20\uE001) in highlight text */}
+        {hit.highlight && (
+          <blockquote>"... {hit.highlight.toString().replace(/[|]/g, "")} ..."</blockquote>
+        )}
+      </Styled.SearchHit>
+    ))) ||
+  undefined
+
+const parsePage = (text: string) => {
   const node = htmlParser(text)
   const children = Array.from(node.childNodes)
   let src = ""
   children.forEach(node => {
     if (node.nodeType === 1) {
-      // removeStyleAttr(node)
       // @ts-ignore
       src += `<div>${node.outerHTML}</div>`
     }
@@ -66,15 +91,4 @@ const htmlParser = (htmlString: string) => {
     docfrag.appendChild(div.childNodes[0])
   }
   return docfrag
-}
-
-const removeStyleAttr = (node: any) => {
-  if (node.removeAttribute) {
-    node.removeAttribute("style")
-  }
-  node = node.firstChild
-  while (node) {
-    removeStyleAttr(node)
-    node = node.nextSibling
-  }
 }

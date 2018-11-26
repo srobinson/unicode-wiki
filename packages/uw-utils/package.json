@@ -11,8 +11,5 @@
   },
   "dependencies": {
     "@uw/domain": "0.0.1"
-  },
-  "devDependencies": {
-    "@types/jest": "23.3.8"
   }
 }
