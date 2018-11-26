@@ -7,14 +7,16 @@ import {ApplicationState} from "@uw/store"
 import {CodepointContainer, NavigationContainer} from "@uw/containers"
 import {Card, Header, InfinityLoader, Page, WikiTitle} from "@uw/components"
 import {WikiPageProps, OtherProps} from "./types"
-
 import * as Styled from "../styles.css"
 
 class ExplorerPage extends React.PureComponent<WikiPageProps & OtherProps> {
   renderNavBar = () => {
-    const {wikiPage} = this.props
-    const isWikiPage = this.props.match.params.cp !== undefined
+    const {match, wikiPage} = this.props
+    const {params} = match
+    const {cp} = params
+    const isWikiPage = cp !== undefined
     const title = (isWikiPage && wikiPage.result && wikiPage.result.title) || ""
+
     if (isWikiPage) {
       return <WikiTitle close={this.closeWikiPage} loading={wikiPage.loading} title={title} />
     }
@@ -29,10 +31,13 @@ class ExplorerPage extends React.PureComponent<WikiPageProps & OtherProps> {
   }
 
   render() {
+    const {match} = this.props
+    const {params} = match
+    const {cp} = params
     const navBarContent = this.renderNavBar()
     return (
       <React.Fragment>
-        <Header>
+        <Header cp={cp}>
           <Styled.NavigationBar>{navBarContent}</Styled.NavigationBar>
         </Header>
 
@@ -45,6 +50,7 @@ class ExplorerPage extends React.PureComponent<WikiPageProps & OtherProps> {
 }
 
 const mapStateToProps = (state: ApplicationState) => {
+  console.log("STATE", state)
   return {
     loader: state.loader,
     wikiPage: state.wikiPage,

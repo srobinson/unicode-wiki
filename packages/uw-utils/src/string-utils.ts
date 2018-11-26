@@ -1,3 +1,22 @@
+// tslint:disable:quotemark
+
+/**
+ * REGEX to pull out wikipedia redirect purl
+ */
+export const REDIRECT_TEST =
+  '<div class=\\"redirectMsg\\"><p>Redirect to:</p><ul class=\\"redirectText\\"><li><a href=\\"/wiki/([0-9a-zA-Z_\\-()%/]*)'
+
+/**
+ * REGEX matches all relative herf/src urls and replace with absolute urls
+ */
+export const RELATIVE_URL_TEST = /(href|src)=(\\?)"(\/(w|wiki)\/)/gi
+export const RELATIVE_URL_REPLACE = 'target="_blank" $1="https://en.wikipedia.org$3'
+
+/**
+ * REGEX matches all inline style blocks
+ */
+export const INLINE_STYLES_TEST = /(<style.+<\/style>)/gi
+
 /**
  * Parse a camel case string and insert token between each word
  *
