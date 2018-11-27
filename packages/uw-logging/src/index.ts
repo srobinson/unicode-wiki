@@ -1,15 +1,8 @@
-import {ExpressError, User} from "@uw/domain"
+import "./express"
 
-declare global {
-  namespace Express {
-    interface Request {
-      error?: ExpressError | object
-      requestId: string
-      user: User
-    }
-  }
-}
+// console.log(">>>", e)
 
+export * from "./api-logger"
 export * from "./enhanced-request"
 export * from "./error-handler"
 export * from "./log-request"

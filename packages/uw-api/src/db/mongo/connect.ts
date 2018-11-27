@@ -1,6 +1,7 @@
 import * as mongoose from "mongoose"
 import {logger} from "@uw/logging"
 import "../../config"
+import {jsonifyError} from "@uw/domain"
 
 export const DB_URL = `${process.env.MONGO_URL}/unicode-wiki`
 
@@ -16,11 +17,10 @@ export class MongoDb {
         )
         const connection = mongoose.connection
         connection.on("open", () => logger.info(`===>  Connected to ${DB_URL}`))
-        connection.on("error", (e: Error) => logger.error(DB_URL, e))
+        connection.on("error", (e: Error) => logger.error(jsonifyError))
         MongoDb.connection = connection
       } catch (e) {
-        console.log("error connecting...", e)
-        console.log("DB_URL...", DB_URL)
+        logger.error(jsonifyError(e))
         process.exit()
       }
     }

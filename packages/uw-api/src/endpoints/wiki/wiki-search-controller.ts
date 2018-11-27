@@ -10,9 +10,9 @@ export const search = async (req: Request, res: Response) => {
   // const url = `https://en.wikipedia.org/w/index.php?title=Special:Search&limit=10&cirrusDumpResult=&search=${query}`
   const url = `https://en.wikipedia.org/w/api.php?action=query&limit=20&origin=*&format=json&formatversion=2&utf8&list=search&srsearch=${query}`
 
-  console.log("<URL::WikiSearch>", url)
-
+  req.logger.info({"WikiSearch::URL": url})
   const response = await axios.get(url)
+
   if (response.status >= 400) {
     res.status(404)
     throw new ResourceNotFoundException(url)
@@ -25,8 +25,7 @@ export const search = async (req: Request, res: Response) => {
       .map((token: string) => `%22${token}%22`)
       .join("%20AND%20")
 
-    console.log("redirect", redirect)
-
+    req.logger.info({"WikiSearch::redirect": redirect})
     req.query.redirect = redirect
     await search(req, res)
   } else {
