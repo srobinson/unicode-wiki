@@ -1,51 +1,48 @@
-import {CODEPOINTS, FETCH_CODEPOINTS, SET_CODEPOINTS} from "./types"
-import {Link, PaginatedCodepointResult} from "@uw/domain"
+import {ApiSearchAction, Link, PaginatedCodepointResult, ApiSearchResponse} from "@uw/domain"
+import {CODEPOINTS, FETCH_CODEPOINTS, SET_CODEPOINTS} from "./constants"
 
-export const followLink = (link: Link) => {
-  return {
-    meta: {
-      feature: CODEPOINTS,
-      method: "GET",
-      url: link.href.replace("/api", ""),
-    },
-    type: FETCH_CODEPOINTS,
-  }
-}
+export const followLink = (link: Link): ApiSearchAction => ({
+  meta: {
+    feature: CODEPOINTS,
+    method: "GET",
+    success: setCodepoints,
+    url: link.href.replace("/api", ""),
+  },
+  type: FETCH_CODEPOINTS,
+})
 
-export const fetchCodepoints = (range?: string, search?: string) => {
-  return {
-    meta: {
-      feature: CODEPOINTS,
-      method: "GET",
-      url: `/codepoints/${range || undefined}${search}`,
-    },
-    type: FETCH_CODEPOINTS,
-  }
-}
+export const fetchCodepoints = (range?: string, search?: string): ApiSearchAction => ({
+  meta: {
+    feature: CODEPOINTS,
+    method: "GET",
+    success: setCodepoints,
+    url: `/codepoints/${range || undefined}${search}`,
+  },
+  type: FETCH_CODEPOINTS,
+})
 
-export const fetchCodepointsByCategory = (category: string, key: string, search?: string) => {
+export const fetchCodepointsByCategory = (
+  category: string,
+  key: string,
+  search?: string,
+): ApiSearchAction => {
   // convert plural to singular
   // eg: scripts => script
   category = category.substr(0, category.length - 1)
   return {
     meta: {
-      feature: `${CODEPOINTS}`,
+      feature: CODEPOINTS,
       method: "GET",
       purge: true,
+      success: setCodepoints,
       url: `/${category}/${key}/codepoints${search}`,
     },
     type: FETCH_CODEPOINTS,
   }
 }
 
-export const setCodepoints = ({
-  data,
-  purge,
-}: {
-  data: PaginatedCodepointResult
-  purge?: boolean
-}) => ({
-  meta: {feature: CODEPOINTS, purge},
-  payload: data,
+export const setCodepoints = (action: ApiSearchResponse) => ({
+  meta: {feature: CODEPOINTS, purge: action.meta.purge},
+  payload: <PaginatedCodepointResult>action.payload,
   type: SET_CODEPOINTS,
 })

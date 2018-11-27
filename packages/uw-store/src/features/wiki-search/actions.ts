@@ -1,19 +1,18 @@
-import {WIKI_SEARCH, FETCH_WIKI_SEARCH, SET_WIKI_SEARCH} from "./types"
-import {WikiSearch} from "@uw/domain"
+import {WikiSearch, ApiSearchResponse} from "@uw/domain"
+import {WIKI_SEARCH, FETCH_WIKI_SEARCH, SET_WIKI_SEARCH} from "./constants"
 
-export const search = (category: string, key: string) => {
-  return {
-    meta: {
-      feature: WIKI_SEARCH,
-      method: "GET",
-      url: `/wiki?category=${category}&key=${key}`,
-    },
-    type: FETCH_WIKI_SEARCH,
-  }
-}
+export const search = (category: string, key: string) => ({
+  meta: {
+    feature: WIKI_SEARCH,
+    method: "GET",
+    success: setWikiSearch,
+    url: `/wiki?category=${category}&key=${key}`,
+  },
+  type: FETCH_WIKI_SEARCH,
+})
 
-export const setWikiSearch = ({data}: {data: WikiSearch}) => ({
+export const setWikiSearch = (action: ApiSearchResponse) => ({
   meta: {feature: WIKI_SEARCH},
-  payload: data,
+  payload: <WikiSearch>action.payload,
   type: SET_WIKI_SEARCH,
 })

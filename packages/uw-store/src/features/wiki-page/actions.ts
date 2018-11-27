@@ -1,19 +1,18 @@
-import {WIKI_PAGE, FETCH_WIKI_PAGE, SET_WIKI_PAGE} from "./types"
-import {WikiPage} from "@uw/domain"
+import {WikiPage, ApiSearchResponse} from "@uw/domain"
+import {WIKI_PAGE, FETCH_WIKI_PAGE, SET_WIKI_PAGE} from "./constants"
 
-export const loadWikiPage = (category: string, key: string, cp: string, page: string) => {
-  return {
-    meta: {
-      feature: WIKI_PAGE,
-      method: "GET",
-      url: `/wiki/page?category=${category}&key=${key}&cp=${cp}&page=${encodeURIComponent(page)}`,
-    },
-    type: FETCH_WIKI_PAGE,
-  }
-}
+export const loadWikiPage = (category: string, key: string, cp: string, page: string) => ({
+  meta: {
+    feature: WIKI_PAGE,
+    method: "GET",
+    success: setWikiPage,
+    url: `/wiki/page?category=${category}&key=${key}&cp=${cp}&page=${encodeURIComponent(page)}`,
+  },
+  type: FETCH_WIKI_PAGE,
+})
 
-export const setWikiPage = ({data}: {data: WikiPage}) => ({
+export const setWikiPage = (action: ApiSearchResponse) => ({
   meta: {feature: WIKI_PAGE},
-  payload: data,
+  payload: <WikiPage>action.payload,
   type: SET_WIKI_PAGE,
 })

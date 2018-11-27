@@ -5,11 +5,11 @@ export const Header = styled("header")`
   border-bottom: 1px solid #29303d;
   box-shadow: 0 1rem 5rem -0.5rem #000;
   height: 4.5rem;
-  left: calc(100vw - 100%);
+  left: 0;
   position: fixed;
   transform: translateZ(0);
   top: 0;
-  width: 100%;
+  width: 100vw;
   z-index: 3;
 `
 

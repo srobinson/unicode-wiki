@@ -1,6 +1,6 @@
 // tslint:disable:no-any
 import * as React from "react"
-import {Category, CategoryTypeEnum} from "@uw/domain"
+import {Category, CategoryType} from "@uw/domain"
 import * as Styled from "./navigation.css"
 
 interface NavigationComponentProps {
@@ -16,7 +16,7 @@ interface NavigationComponentProps {
   openNavigationTypeMenu: () => void
   prev: any
   setCategory: (key: string) => void
-  setCategoryType: (type: CategoryTypeEnum) => void
+  setCategoryType: (type: CategoryType) => void
 }
 
 export class ExplorerNavigation extends React.PureComponent<NavigationComponentProps> {
@@ -59,13 +59,13 @@ export class ExplorerNavigation extends React.PureComponent<NavigationComponentP
         </Styled.NavigationCategory>
         {isNavigationTypeMenuOpen && (
           <Styled.NavigationMenu isNavigationTypeMenuOpen={isNavigationTypeMenuOpen}>
-            <Styled.MenuItem key="blocks" onClick={() => setCategoryType(CategoryTypeEnum.BLOCK)}>
+            <Styled.MenuItem key="blocks" onClick={() => setCategoryType("blocks")}>
               blocks
             </Styled.MenuItem>
-            <Styled.MenuItem key="scripts" onClick={() => setCategoryType(CategoryTypeEnum.SCRIPT)}>
+            <Styled.MenuItem key="scripts" onClick={() => setCategoryType("scripts")}>
               scripts
             </Styled.MenuItem>
-            <Styled.MenuItem key="symbols" onClick={() => setCategoryType(CategoryTypeEnum.SYMBOL)}>
+            <Styled.MenuItem key="symbols" onClick={() => setCategoryType("symbols")}>
               symbols
             </Styled.MenuItem>
           </Styled.NavigationMenu>
@@ -79,10 +79,10 @@ export class ExplorerNavigation extends React.PureComponent<NavigationComponentP
                   (child: Category) => child.parent === category.index,
                 )
                 return (
-                  <React.Fragment>
+                  <React.Fragment key={`fragment-${category.key}`}>
                     <Styled.MenuItem
                       isNavigationTypeMenuOpen={isNavigationTypeMenuOpen}
-                      key={category.key}
+                      key={`parent-${category.key}`}
                       onClick={setCategory.bind(undefined, category.key)}
                       active={category.key === categoryKey}
                       innerRef={(category.key === categoryKey && activeNode) || undefined}
@@ -95,7 +95,7 @@ export class ExplorerNavigation extends React.PureComponent<NavigationComponentP
                           onClick={setCategory.bind(undefined, child.key)}
                           active={child.key === categoryKey}
                           innerRef={(child.key === categoryKey && activeNode) || undefined}
-                          key={child.key}
+                          key={`child-${child.key}`}
                         >
                           {child.title}
                         </Styled.ChildMenuItem>

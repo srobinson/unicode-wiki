@@ -1,9 +1,9 @@
-// tslint:disable:no-any
+// import {Action, AnyAction, Dispatch, Store, applyMiddleware, createStore} from "redux"
+import {Store, applyMiddleware, createStore} from "redux"
 import {connectRouter, routerMiddleware} from "connected-react-router"
-import {History} from "history"
-import {Store, createStore, applyMiddleware} from "redux"
 import {composeWithDevTools} from "redux-devtools-extension"
-import {ApplicationState, coreMiddleware, featureMiddleware, rootReducer} from "./types"
+import {History} from "history"
+import {ApplicationState, coreMiddleware, rootReducer} from "./imports"
 
 export const configureStore = (
   history: History,
@@ -14,14 +14,14 @@ export const configureStore = (
   const store = createStore(
     connectRouter(history)(rootReducer),
     initialState,
-    composeEnhancers(
-      applyMiddleware(routerMiddleware(history), ...featureMiddleware, ...coreMiddleware),
-    ),
+    composeEnhancers(applyMiddleware(routerMiddleware(history), ...coreMiddleware)),
   )
 
   if (process.env.NODE_ENV !== "production") {
-    if ((module as any).hot) {
-      (module as any).hot.accept("./types", () => {
+    // tslint:disable-next-line:no-any
+    let m = module as any
+    if (m.hot) {
+      m.hot.accept("./types", () => {
         store.replaceReducer(rootReducer)
       })
     }
@@ -29,3 +29,7 @@ export const configureStore = (
 
   return store
 }
+
+// export interface ConnectedReduxProps<A extends Action = AnyAction> {
+//   dispatch: Dispatch<A>
+// }

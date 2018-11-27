@@ -1,12 +1,13 @@
 import {Reducer} from "redux"
-import {CODEPOINTS, CodepointState, SET_CODEPOINTS} from "./types"
+import {CodepointState} from "@uw/domain"
+import {CODEPOINTS, SET_CODEPOINTS} from "./constants"
 import {SET_LOADER} from "../loader"
 
 const initialState: CodepointState = {
   loading: false,
 }
 
-const reducer: Reducer<CodepointState> = (state = initialState, action) => {
+export const codepointReducer: Reducer<CodepointState> = (state = initialState, action) => {
   switch (action.type) {
     case SET_CODEPOINTS:
       const currentDocs = (state.result && state.result.docs) || []
@@ -28,5 +29,3 @@ const reducer: Reducer<CodepointState> = (state = initialState, action) => {
       return state
   }
 }
-
-export {reducer as codepointReducer}

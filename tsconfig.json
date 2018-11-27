@@ -8,7 +8,7 @@
     "downlevelIteration": true,
     "forceConsistentCasingInFileNames": true,
     "jsx": "react",
-    "lib": ["es5", "es6", "es7", "dom"],
+    "lib": ["es5", "es6", "es7", "es2017", "dom"],
     "noErrorTruncation": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,

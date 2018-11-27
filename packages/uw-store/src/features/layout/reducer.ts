@@ -1,11 +1,12 @@
 import {Reducer} from "redux"
-import {LayoutState, SET_THEME} from "./types"
+import {LayoutState} from "@uw/domain"
+import {SET_THEME} from "./constants"
 
 const initialState: LayoutState = {
   theme: "light",
 }
 
-const reducer: Reducer<LayoutState> = (state = initialState, action) => {
+export const layoutReducer: Reducer<LayoutState> = (state = initialState, action) => {
   switch (action.type) {
     case SET_THEME: {
       return {...state, theme: action.payload}
@@ -15,5 +16,3 @@ const reducer: Reducer<LayoutState> = (state = initialState, action) => {
     }
   }
 }
-
-export {reducer as layoutReducer}

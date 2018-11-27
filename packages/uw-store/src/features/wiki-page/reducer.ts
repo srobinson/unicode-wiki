@@ -1,12 +1,13 @@
 import {Reducer} from "redux"
-import {WIKI_PAGE, WikiPageState, SET_WIKI_PAGE} from "./types"
+import {WikiPageState} from "@uw/domain"
+import {WIKI_PAGE, SET_WIKI_PAGE} from "./constants"
 import {SET_LOADER} from "../loader"
 
 const initialState: WikiPageState = {
   loading: false,
 }
 
-const reducer: Reducer<WikiPageState> = (state = initialState, action) => {
+export const wikiPageReducer: Reducer<WikiPageState> = (state = initialState, action) => {
   switch (action.type) {
     case SET_WIKI_PAGE:
       const result = action.payload
@@ -25,5 +26,3 @@ const reducer: Reducer<WikiPageState> = (state = initialState, action) => {
       return state
   }
 }
-
-export {reducer as wikiPageReducer}

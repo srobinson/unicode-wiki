@@ -3,6 +3,22 @@ import {ApiResponse} from "./api"
 import {CodepointHexRange} from "./codepoint"
 import {LinkSchema} from "./link"
 
+export interface CategoryState {
+  readonly docs: Category[]
+  readonly loading: boolean
+}
+
+export interface BlockState extends CategoryState {}
+export interface ScriptState extends CategoryState {}
+export interface SymbolState extends CategoryState {}
+
+export interface ExplorerState {
+  readonly categoryType: CategoryType
+  readonly categoryTitle: string
+}
+
+export type CategoryType = "blocks" | "scripts" | "symbols" | "search"
+
 /**
  * Category entity definition
  */
@@ -41,8 +57,8 @@ export const CategorySchema = new Schema({
 /**
  * Supported category types definition
  */
-export enum CategoryTypeEnum {
-  BLOCK = "blocks",
-  SCRIPT = "scripts",
-  SYMBOL = "symbols",
+export enum CATEGORY_TYPE {
+  BLOCK = "BLOCKS",
+  SCRIPT = "SCRIPTS",
+  SYMBOL = "SYMBOLS",
 }

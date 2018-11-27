@@ -14,6 +14,32 @@ export type ApiSearchRequest = {
   url: string
 }
 
+export interface ApiSearchAction {
+  type: string
+  meta: ApiSearchMetadata
+}
+
+export interface ApiSearchMetadata {
+  body?: BodyInit | null
+  feature: string
+  label?: string
+  loading?: boolean
+  method: string
+  normalizeKey?: string
+  purge?: boolean
+  success: any
+  url: string
+}
+
+export interface ApiSearchResponse {
+  meta: {
+    feature: string
+    purge: boolean
+  }
+  payload: any
+  type: string
+}
+
 /**
  * Metadata encapsulating user's mobile device
  */

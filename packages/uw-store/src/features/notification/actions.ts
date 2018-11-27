@@ -1,4 +1,5 @@
-import {Notification, REMOVE_NOTIFICATION, SET_NOTIFICATION} from "./types"
+import {Notification} from "@uw/domain"
+import {REMOVE_NOTIFICATION, SET_NOTIFICATION} from "./constants"
 
 export const setNotification = ({message, feature}: {message: Notification; feature: string}) => ({
   meta: {feature},

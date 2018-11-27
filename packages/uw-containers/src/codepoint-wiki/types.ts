@@ -2,8 +2,7 @@
 import {RouterAction} from "connected-react-router"
 import {RouteComponentProps} from "react-router"
 import {Path} from "history"
-import {CodepointDocument} from "@uw/domain"
-import {Loadingstate, WikiPageState} from "@uw/store"
+import {CodepointDocument, Loadingstate, WikiPageState} from "@uw/domain"
 import * as wikiActions from "@uw/store"
 
 export interface InstanceState {

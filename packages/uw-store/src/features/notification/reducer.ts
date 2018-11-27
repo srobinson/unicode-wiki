@@ -1,19 +1,18 @@
 import {Reducer} from "redux"
-import {NotificationState, REMOVE_NOTIFICATION, SET_NOTIFICATION} from "./types"
+import {NotificationState} from "@uw/domain"
+import {REMOVE_NOTIFICATION, SET_NOTIFICATION} from "./constants"
 
 const initialState: NotificationState = []
 
-const reducer: Reducer<NotificationState> = (state = initialState, action) => {
+export const notificationReducer: Reducer<NotificationState> = (state = initialState, action) => {
   switch (true) {
-    case action.type.includes(SET_NOTIFICATION):
+    case action.type.indexOf(SET_NOTIFICATION) > -1:
       return [...state, action.payload]
 
-    case action.type.includes(REMOVE_NOTIFICATION):
+    case action.type.indexOf(REMOVE_NOTIFICATION) > -1:
       return state.filter(notification => notification.id !== action.payload)
 
     default:
       return state
   }
 }
-
-export {reducer as notificationReducer}

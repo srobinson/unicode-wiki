@@ -1,4 +1,4 @@
-import {SET_LOADER} from "./types"
+import {SET_LOADER} from "./constants"
 
 export const setLoader = ({state, feature}: {state: boolean; feature: string}) => ({
   meta: {feature},

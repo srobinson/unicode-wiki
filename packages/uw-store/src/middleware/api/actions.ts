@@ -1,34 +1,25 @@
-import {ApiSearchRequest, ApiResponse, ApiError} from "@uw/domain"
+import {ApiSearchResponse, ApiSearchMetadata, ApiError} from "@uw/domain"
 
 export const API_REQUEST = "API_REQUEST"
 export const API_SUCCESS = "API_SUCCESS"
 export const API_ERROR = "API_ERROR"
 export const DATA_NORMALIZED = "DATA_NORMALIZED"
 
-export const apiRequest = ({body, feature, method, purge, url}: ApiSearchRequest) => ({
-  meta: {feature, loading: true, method, purge, url},
-  payload: body,
-  type: `${feature}/${API_REQUEST}`,
+export const apiRequest = (meta: ApiSearchMetadata) => ({
+  meta: {...meta, loading: true},
+  type: `${meta.feature}/${API_REQUEST}`,
 })
 
-export const apiSuccess = ({
-  data,
-  feature,
-  purge,
-}: {
-  data: ApiResponse
-  feature: string
-  purge?: boolean
-}) => ({
-  meta: {feature, loading: false, purge},
-  payload: data,
-  type: `${feature}/${API_SUCCESS}`,
+export const apiSuccess = (action: ApiSearchResponse) => ({
+  meta: {...action.meta, loading: false},
+  payload: action.payload,
+  type: `${action.meta.feature}/${API_SUCCESS}`,
 })
 
-export const apiError = ({error, feature}: {error: ApiError; feature: string}) => ({
-  meta: {feature, loading: false},
+export const apiError = ({error, meta}: {error: ApiError; meta: ApiSearchMetadata}) => ({
+  meta: {...meta, loading: false},
   payload: error,
-  type: `${feature}/${API_ERROR}`,
+  type: `${meta.feature}/${API_ERROR}`,
 })
 
 export const dataNormalized = ({feature}: {feature: string}) => ({
