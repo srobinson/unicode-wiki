@@ -1,3 +1,13 @@
+export interface WikiPageState {
+  readonly loading: boolean
+  readonly result?: WikiPage
+}
+
+export interface WikiSearchState {
+  readonly loading: boolean
+  readonly result?: WikiSearch
+}
+
 /**
  * WikiPage entity definition
  */

@@ -6,9 +6,9 @@ import {isHex, fromCharCode} from "@uw/utils"
 
 export const search = async (req: Request, res: Response) => {
   const {category, cp, key, page, redirect} = req.query
-  const search = (redirect && redirect) || (isHex(cp) && encodeURIComponent(fromCharCode(cp))) || cp
-  // const url = `https://en.wikipedia.org/w/index.php?title=Special:Search&limit=10&cirrusDumpResult=&search=${search}`
-  const url = `https://en.wikipedia.org/w/api.php?action=query&limit=20&origin=*&format=json&formatversion=2&utf8&list=search&srsearch=${search}`
+  const query = (redirect && redirect) || (isHex(cp) && encodeURIComponent(fromCharCode(cp))) || cp
+  // const url = `https://en.wikipedia.org/w/index.php?title=Special:Search&limit=10&cirrusDumpResult=&search=${query}`
+  const url = `https://en.wikipedia.org/w/api.php?action=query&limit=20&origin=*&format=json&formatversion=2&utf8&list=search&srsearch=${query}`
 
   console.log("<URL::WikiSearch>", url)
 

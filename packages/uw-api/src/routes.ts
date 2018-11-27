@@ -4,11 +4,12 @@ import {
   codepointController as cpc,
   wikiPageController as wpc,
   wikiSearchController as wsc,
-} from "./components"
+} from "./endpoints"
 
-const router: Router = Router()
 export default class Routes {
   public static config() {
+    const router: Router = Router()
+
     router.get("/blocks/:id?", cc.getCategoriesByParent.bind(undefined, "block"))
     router.get("/block/:id", cc.getCategoryById.bind(undefined, "block"))
     router.get("/block/:id/codepoints", cc.getCodepointsByCategoryById.bind(undefined, "block"))

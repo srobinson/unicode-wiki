@@ -4,10 +4,11 @@ import {push} from "connected-react-router"
 import {withRouter} from "react-router-dom"
 import {connect} from "react-redux"
 import {Dispatch} from "redux"
-import {ApplicationState, CategoryType, fetchBlocks, fetchScripts, fetchSymbols} from "@uw/store"
+import {ApplicationState, fetchCategory} from "@uw/store"
 import {NavigationContainerProps, OtherProps, InstanceState} from "./types"
 import {ExplorerNavigation} from "@uw/components"
-import {Category} from "@uw/domain"
+import {Category, CATEGORY_TYPE} from "@uw/domain"
+import {CategoryType} from "@uw/domain"
 
 class NavigationContainer extends React.Component<NavigationContainerProps & OtherProps> {
   state: InstanceState = {
@@ -25,9 +26,9 @@ class NavigationContainer extends React.Component<NavigationContainerProps & Oth
 
   constructor(props: NavigationContainerProps & OtherProps) {
     super(props)
-    props.fetchBlocks()
-    props.fetchScripts()
-    props.fetchSymbols()
+    props.fetchCategory(CATEGORY_TYPE.BLOCK)
+    props.fetchCategory(CATEGORY_TYPE.SCRIPT)
+    props.fetchCategory(CATEGORY_TYPE.SYMBOL)
   }
 
   static getDerivedStateFromProps(nextProps: OtherProps, prevState: InstanceState) {
@@ -139,18 +140,14 @@ class NavigationContainer extends React.Component<NavigationContainerProps & Oth
   }
 }
 
-const mapStateToProps = (state: ApplicationState) => {
-  return {
-    blocks: state.blocks,
-    scripts: state.scripts,
-    symbols: state.symbols,
-  }
-}
+const mapStateToProps = (state: ApplicationState) => ({
+  blocks: state.blocks,
+  scripts: state.scripts,
+  symbols: state.symbols,
+})
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  fetchBlocks: () => dispatch(fetchBlocks()),
-  fetchScripts: () => dispatch(fetchScripts()),
-  fetchSymbols: () => dispatch(fetchSymbols()),
+  fetchCategory: (category: CATEGORY_TYPE) => dispatch(fetchCategory(category)),
   push: (path: string) => dispatch(push(path)),
 })
 

@@ -1,7 +1,8 @@
 import * as React from "react"
 import {connect} from "react-redux"
 import {Dispatch} from "redux"
-import {ApplicationState, ThemeColors, setTheme} from "@uw/store"
+import {ThemeColors} from "@uw/domain"
+import {ApplicationState, setTheme} from "@uw/store"
 import {LayoutContainerProps, OtherProps} from "./types"
 
 class LayoutContainer extends React.Component<LayoutContainerProps & OtherProps> {

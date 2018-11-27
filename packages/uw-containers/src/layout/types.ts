@@ -1,4 +1,5 @@
-import {ThemeColors, setTheme} from "@uw/store"
+import {setTheme} from "@uw/store"
+import {ThemeColors} from "@uw/domain"
 
 export interface PropsFromState {
   theme: ThemeColors

@@ -1,12 +1,13 @@
 import {Reducer} from "redux"
-import {ExplorerState, SET_CATEGORY_TYPE, SET_CATEGORY_TITLE} from "./types"
+import {ExplorerState} from "@uw/domain"
+import {SET_CATEGORY_TYPE, SET_CATEGORY_TITLE} from "./constants"
 
 const initialState: ExplorerState = {
   categoryTitle: "",
   categoryType: "blocks",
 }
 
-const reducer: Reducer<ExplorerState> = (state = initialState, action) => {
+export const explorerReducer: Reducer<ExplorerState> = (state = initialState, action) => {
   switch (action.type) {
     case SET_CATEGORY_TYPE: {
       return {...state, categoryType: action.payload, categoryTitle: ""}
@@ -19,5 +20,3 @@ const reducer: Reducer<ExplorerState> = (state = initialState, action) => {
     }
   }
 }
-
-export {reducer as explorerReducer}

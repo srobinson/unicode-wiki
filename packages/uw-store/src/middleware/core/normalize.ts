@@ -13,12 +13,12 @@ export const normalizeMiddleware: Middleware = ({dispatch}: MiddlewareAPI) => (
     // notify about the transformation
     dispatch(dataNormalized({feature: action.meta.feature}))
 
-    // const normalizedKey = action.meta.normalizeKey
+    const normalizedKey = action.meta.normalizeKey
 
     // transform the data structure
     // tslint:disable-next-line:no-any
     action.payload = action.payload.reduce((acc: {}, item: any) => {
-      acc[item[action.meta.normalizeKey || "_id"]] = item
+      acc[item[normalizedKey || "_id"]] = item
       return acc
     }, {})
 

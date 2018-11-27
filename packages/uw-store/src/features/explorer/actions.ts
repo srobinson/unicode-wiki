@@ -1,4 +1,5 @@
-import {SET_CATEGORY_TYPE, SET_CATEGORY_TITLE, CategoryType} from "./types"
+import {CategoryType} from "@uw/domain"
+import {SET_CATEGORY_TYPE, SET_CATEGORY_TITLE} from "./constants"
 
 export const setCategoryType = (categoryType: CategoryType) => ({
   payload: categoryType,

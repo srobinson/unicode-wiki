@@ -9,7 +9,8 @@ export const fetchMiddleware: Middleware = ({dispatch}: MiddlewareAPI) => (
   next(action)
 
   if (action.type.includes(API_REQUEST)) {
-    let {body, feature, method, purge, url} = action.meta
+    const {meta, type} = action
+    const {body, method, url} = meta
     const response = await fetch(`${BASE_URL}${url}`, {
       body: JSON.stringify(body),
       headers: {
@@ -20,18 +21,18 @@ export const fetchMiddleware: Middleware = ({dispatch}: MiddlewareAPI) => (
     })
 
     try {
-      const data = await response.json()
+      const payload = await response.json()
 
       if (response.status >= 400) {
         const error = {
-          message: data,
+          message: payload,
         }
-        dispatch(apiError({error, feature}))
+        dispatch(apiError({error, meta}))
       } else {
-        dispatch(apiSuccess({data, feature, purge}))
+        dispatch(apiSuccess({type, payload, meta}))
       }
     } catch (error) {
-      dispatch(apiError({error, feature}))
+      dispatch(apiError({error, meta}))
     }
   }
 }

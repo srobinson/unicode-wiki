@@ -2,16 +2,8 @@
 import {RouterAction} from "connected-react-router"
 import {RouteComponentProps} from "react-router"
 import {Path} from "history"
-import {Category} from "@uw/domain"
-
-import {
-  fetchBlocks,
-  fetchScripts,
-  fetchSymbols,
-  BlockState,
-  ScriptState,
-  SymbolState,
-} from "@uw/store"
+import {BlockState, Category, ScriptState, SymbolState} from "@uw/domain"
+import {fetchCategory} from "@uw/store"
 
 export interface InstanceState {
   categoryKey: string
@@ -31,9 +23,7 @@ export interface PropsFromState {
 }
 
 export interface PropsFromDispatch {
-  fetchBlocks: typeof fetchBlocks
-  fetchScripts: typeof fetchScripts
-  fetchSymbols: typeof fetchSymbols
+  fetchCategory: typeof fetchCategory
   push: (path: Path) => RouterAction
 }
 

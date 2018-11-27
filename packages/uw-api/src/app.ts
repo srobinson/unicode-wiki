@@ -5,7 +5,7 @@ import * as cors from "cors"
 import {enhanceRequestMiddleware, errorHandlerMiddleware, logRequestMiddleware} from "@uw/logging"
 import Routes from "./routes"
 import {MongoDb} from "./db"
-import {userMiddleware} from "./components"
+import {userMiddleware} from "./endpoints"
 import "express-async-errors"
 import "./config"
 

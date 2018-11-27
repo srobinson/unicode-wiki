@@ -3,6 +3,11 @@ import * as paginate from "mongoose-paginate-v2"
 import {ApiResponse, PaginatedApiResult} from "./api"
 import {LinkSchema} from "./link"
 
+export interface CodepointState {
+  readonly loading: boolean
+  readonly result?: PaginatedCodepointResult
+}
+
 export interface Codepoint {
   cp: string
   index: number
