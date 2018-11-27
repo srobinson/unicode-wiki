@@ -1,25 +1,23 @@
 // tslint:disable:quotemark no-any
 import {Request, Response} from "express"
 import axios from "axios"
-import {ResourceNotFoundException} from "@uw/domain"
+import {ResourceNotFoundException, WikiPage} from "@uw/domain"
 import {
+  fromCharCode,
+  isHex,
   REDIRECT_TEST,
   RELATIVE_URL_TEST,
   RELATIVE_URL_REPLACE,
   INLINE_STYLES_TEST,
-  fromCharCode,
 } from "@uw/utils"
 import {search} from "./wiki-search-controller"
-import {WikiPage} from "@uw/domain"
-import {isHex} from "@uw/utils"
 
 export const loadPage = async (req: Request, res: Response) => {
-  const {cp, page, redirect} = req.query
+  const {cp, redirect} = req.query
   const token = (redirect && redirect) || (isHex(cp) && encodeURIComponent(fromCharCode(cp))) || cp
   const url = `https://en.wikipedia.org/w/api.php?format=json&action=parse&disabletoc=true&page=${token}`
 
-  console.log("<URL::Page>", url, res.statusCode, page, token)
-
+  req.logger.info({"WikiPage::URL": url})
   const response = await axios.get(url)
 
   if (response.status >= 400) {
@@ -47,9 +45,9 @@ const onError = async (req: Request, res: Response, data: any) => {
       .map((part: string) => part)
       .join(" ")
 
-    console.log("redirect", redirect)
-
+    req.logger.info({"WikiPage::redirect": redirect})
     req.query.redirect = redirect
+
     await loadPage(req, res)
   } else {
     const wikiSearch = await doSearch(req, res)
@@ -78,6 +76,7 @@ const onSuccess = async (req: Request, res: Response, data: any) => {
   if (redirect) {
     // if wiki api returns a redirect document
     // -> follow the link
+    req.logger.info({"WikiPage::redirect": redirect[1]})
     req.query.redirect = redirect[1]
     await loadPage(req, res)
   } else {

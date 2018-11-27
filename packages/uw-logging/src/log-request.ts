@@ -17,17 +17,19 @@ const getLoggerForStatusCode = (statusCode: number) => {
 //   next()
 // }
 
+export const generateInfoMessage = (req: Request) => ({
+  request: {
+    method: req.method,
+    requestId: req.requestId,
+    url: req.originalUrl,
+    user: req.user || "guest",
+    userAgent: req.headers["user-agent"],
+  },
+})
+
 // tslint:disable:object-literal-sort-keys
 export const logRequestMiddleware = (req: Request, res: Response, next: NextFunction) => {
-  logger.info({
-    request: {
-      requestId: req.requestId,
-      method: req.method,
-      url: req.originalUrl,
-      user: req.user || "guest",
-      userAgent: req.headers["user-agent"],
-    },
-  })
+  logger.info(generateInfoMessage(req))
 
   const cleanup = () => {
     res.removeListener("finish", logFn)

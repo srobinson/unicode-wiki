@@ -5,6 +5,7 @@ import {
   wikiPageController as wpc,
   wikiSearchController as wsc,
 } from "./endpoints"
+import {ResourceNotFoundException} from "@uw/domain"
 
 export default class Routes {
   public static config() {
@@ -29,12 +30,10 @@ export default class Routes {
     router.get("/wiki", wsc.search)
     router.get("/wiki/page", wpc.loadPage)
 
-    router.get("*", (req: Request, res: Response) =>
-      res.status(404).json({
-        message: `ResourceNotFoundException: ${req.url}`,
-        status: 404,
-      }),
-    )
+    router.get("*", (req: Request, res: Response) => {
+      res.status(404)
+      throw new ResourceNotFoundException(req.originalUrl)
+    })
 
     return router
   }
