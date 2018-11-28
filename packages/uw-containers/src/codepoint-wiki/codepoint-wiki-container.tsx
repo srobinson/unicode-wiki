@@ -10,29 +10,25 @@ import {generateClassName} from "@uw/utils"
 
 class CodepointWikiContainer extends React.PureComponent<CodepointWikiContainerProps & OtherProps> {
   componentDidMount() {
-    const {codepoint, match} = this.props
+    const {match} = this.props
     const {params} = match
     const {category, key, cp} = params
-    const {name, name_v1} = codepoint
-    const page = name || name_v1 || key
-    this.props.loadWikiPage(category, key, cp, page)
+    this.props.loadWikiPage(category, key, cp, key)
   }
 
   componentDidUpdate(prevProps: OtherProps) {
+    const {match} = this.props
     if (this.props.match.params.cp !== prevProps.match.params.cp) {
-      const {codepoint, match} = this.props
       const {params} = match
       const {category, key, cp} = params
-      const {name, name_v1} = codepoint
-      const page = name || name_v1 || key
-      this.props.loadWikiPage(category, key, cp, page)
+      this.props.loadWikiPage(category, key, cp, key)
     }
   }
 
   render() {
-    const {codepoint, wikiPage} = this.props
+    const {wikiPage} = this.props
     const {result, loading} = wikiPage
-    const className = codepoint && generateClassName(codepoint.cp)
+    const className = generateClassName(this.props.match.params.cp)
     return (
       <div className={className}>
         <Wiki content={result} loading={loading} />

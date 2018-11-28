@@ -15,7 +15,7 @@ class ExplorerPage extends React.PureComponent<WikiPageProps & OtherProps> {
     const {params} = match
     const {cp} = params
     const isWikiPage = cp !== undefined
-    const title = (isWikiPage && wikiPage.result && wikiPage.result.title) || ""
+    const title = (isWikiPage && wikiPage.result && wikiPage.result.title) || "Loading..."
     if (isWikiPage) {
       return <WikiTitle close={this.closeWikiPage} loading={wikiPage.loading} title={title} />
     }
