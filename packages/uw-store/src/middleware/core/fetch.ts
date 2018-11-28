@@ -6,6 +6,8 @@ const BASE_URL = process.env.REACT_APP_API_BASE_URL
 export const fetchMiddleware: Middleware = ({dispatch}: MiddlewareAPI) => (
   next: Dispatch,
 ) => async action => {
+  next(action)
+
   if (action.type.includes(API_REQUEST)) {
     const {meta, type} = action
     const {body, method, url} = meta
@@ -32,7 +34,5 @@ export const fetchMiddleware: Middleware = ({dispatch}: MiddlewareAPI) => (
     } catch (error) {
       dispatch(apiError({error, meta}))
     }
-  } else {
-    next(action)
   }
 }

@@ -1,5 +1,4 @@
 import * as async from "async"
-import * as path from "path"
 import {CodePointDict, ExpandedValueDict} from "./file-parser/Dictionary"
 import LocalDictionary from "./file-parser/LocalDictionary"
 import LineByLineFileParser, {DELIMINATOR} from "./file-parser/ReadLineParser"
@@ -12,6 +11,7 @@ import NamesListLineParser from "./unicode-data-parser/NamesListLineParser"
 import PropertyAliasesLineParser from "./unicode-data-parser/PropertyAliasesLineParser"
 import PropertyAliasesValuesLineParser from "./unicode-data-parser/PropertyAliasesValuesLineParser"
 import UCDXMLParser from "./unicode-data-parser/UCDXMLParser"
+import {getUTCPath} from "./utils"
 
 const generalCategoryDict: ExpandedValueDict = new LocalDictionary()
 const propertyAliasesDict: ExpandedValueDict = new LocalDictionary()
@@ -19,8 +19,6 @@ const propertyAliasesValuesDict: ExpandedValueDict = new LocalDictionary()
 const bidiDict: ExpandedValueDict = new LocalDictionary()
 const blocksDict: ExpandedValueDict = new LocalDictionary()
 const codePointDict: CodePointDict = new LocalDictionary()
-
-export const UCDpath = path.join(__dirname, "../UCD/")
 
 class Runner {
   public static main() {
@@ -31,7 +29,7 @@ class Runner {
         new LineByLineFileParser(
           {
             DELIMINATOR: DELIMINATOR.SEMI,
-            PATH: path.join(UCDpath, "property-aliases"),
+            PATH: getUTCPath("property-aliases"),
           },
           propertyAliasesDict,
         ).parse(new PropertyAliasesLineParser(), cb)
@@ -40,7 +38,7 @@ class Runner {
         new LineByLineFileParser(
           {
             DELIMINATOR: DELIMINATOR.SEMI,
-            PATH: path.join(UCDpath, "property-aliases-values"),
+            PATH: getUTCPath("property-aliases-values"),
             START_LINE: 56,
           },
           propertyAliasesValuesDict,
@@ -49,7 +47,7 @@ class Runner {
       function parseGeneralCategoryFile(cb) {
         new LineByLineFileParser(
           {
-            PATH: path.join(UCDpath, "general-categories"),
+            PATH: getUTCPath("general-categories"),
           },
           generalCategoryDict,
         ).parse(new ExpandedValueLineParser(), cb)
@@ -57,7 +55,7 @@ class Runner {
       function parseBidiFile(cb) {
         new LineByLineFileParser(
           {
-            PATH: path.join(UCDpath, "bidi-class"),
+            PATH: getUTCPath("bidi-class"),
           },
           bidiDict,
         ).parse(new ExpandedValueLineParser(), cb)
@@ -67,7 +65,7 @@ class Runner {
         new LineByLineFileParser(
           {
             DELIMINATOR: DELIMINATOR.SEMI,
-            PATH: path.join(UCDpath, "blocks"),
+            PATH: getUTCPath("blocks"),
           },
           blocksDict,
         ).parse(new BlocksLineParser(), cb)
@@ -81,7 +79,7 @@ class Runner {
         new LineByLineFileParser(
           {
             DELIMINATOR: DELIMINATOR.TAB,
-            PATH: path.join(UCDpath, "names-list"),
+            PATH: getUTCPath("names-list"),
             START_LINE: 13,
           },
           codePointDict,
@@ -92,7 +90,7 @@ class Runner {
         new LineByLineFileParser(
           {
             DELIMINATOR: DELIMINATOR.SEMI,
-            PATH: path.join(UCDpath, "emoji"),
+            PATH: getUTCPath("emoji"),
             START_LINE: 25,
           },
           codePointDict,
