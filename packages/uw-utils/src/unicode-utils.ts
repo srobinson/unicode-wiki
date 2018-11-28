@@ -82,9 +82,11 @@ export const fromCharCode = (input: string) => {
  *
  * @param code the unicode point used to generate the class name
  */
-export const generateClassName = (code: string): string | undefined => {
-  const length = code.length
-  let token = code[code.length - 3]
-  token = token >= "C" ? "C" : token >= "8" ? "8" : token >= "4" ? "4" : "0"
-  return ("u" + code.substr(0, length - 3) + token + "00").toLowerCase()
+export const generateClassName = (code: string): string => {
+  const dec = parseInt(code, 16)
+  let hex = (Math.floor(dec / 1024) * 4).toString(16)
+  if (hex.length < 2) {
+    hex = "0" + hex
+  }
+  return "u" + hex + "00"
 }

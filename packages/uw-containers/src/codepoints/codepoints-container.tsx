@@ -37,10 +37,10 @@ class CodepointContainer extends React.PureComponent<CodepointContainerProps & O
   componentDidUpdate(prevProps: OtherProps) {
     const {match} = prevProps
     const {params} = match
-    let {key} = params
+    let {key: prevKey} = params
 
-    if (key && this.props.match.params.key !== key) {
-      // this.fetchCodepoints()
+    if (prevKey && this.props.match.params.key !== prevKey) {
+      this.fetchCodepoints()
     }
   }
 
