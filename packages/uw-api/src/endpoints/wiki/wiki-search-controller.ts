@@ -14,8 +14,7 @@ export const search = async (req: Request, res: Response) => {
   const response = await axios.get(url)
 
   if (response.status >= 400) {
-    res.status(404)
-    throw new ResourceNotFoundException(url)
+    throw new ResourceNotFoundException(req, res)
   }
   const data = await response.data
   const results = data.query.search

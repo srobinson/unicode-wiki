@@ -11,29 +11,29 @@ export default class Routes {
   public static config() {
     const router: Router = Router()
 
-    router.get("/blocks/:id?", cc.getCategoriesByParent.bind(undefined, "block"))
-    router.get("/block/:id", cc.getCategoryById.bind(undefined, "block"))
-    router.get("/block/:id/codepoints", cc.getCodepointsByCategoryById.bind(undefined, "block"))
+    router
+      .get("/blocks/:id?", cc.getCategoriesByParent.bind(undefined, "block"))
+      .get("/block/:id", cc.getCategoryById.bind(undefined, "block"))
+      .get("/block/:id/codepoints", cc.getCodepointsByCategoryById.bind(undefined, "block"))
 
-    router.get("/symbols/:id?", cc.getCategoriesByParent.bind(undefined, "symbol"))
-    router.get("/symbol/:id", cc.getCategoryById.bind(undefined, "symbol"))
-    router.get("/symbol/:id/codepoints", cc.getCodepointsByCategoryById.bind(undefined, "symbol"))
+      .get("/symbols/:id?", cc.getCategoriesByParent.bind(undefined, "symbol"))
+      .get("/symbol/:id", cc.getCategoryById.bind(undefined, "symbol"))
+      .get("/symbol/:id/codepoints", cc.getCodepointsByCategoryById.bind(undefined, "symbol"))
 
-    router.get("/scripts/:id?", cc.getCategoriesByParent.bind(undefined, "script"))
-    router.get("/script/:id", cc.getCategoryById.bind(undefined, "script"))
-    router.get("/script/:id/codepoints", cc.getCodepointsByCategoryById.bind(undefined, "script"))
+      .get("/scripts/:id?", cc.getCategoriesByParent.bind(undefined, "script"))
+      .get("/script/:id", cc.getCategoryById.bind(undefined, "script"))
+      .get("/script/:id/codepoints", cc.getCodepointsByCategoryById.bind(undefined, "script"))
 
-    router.get("/codepoint/:ucp", cpc.getCodepointByUCP)
-    router.get("/codepoints/:range?", cpc.getCodepointsByRange)
-    router.get("/codepoint-ranges/:ranges", cpc.getCodepointsByRanges)
+      .get("/codepoint/:ucp", cpc.getCodepointByUCP)
+      .get("/codepoints/:range?", cpc.getCodepointsByRange)
+      .get("/codepoint-ranges/:ranges", cpc.getCodepointsByRanges)
 
-    router.get("/wiki", wsc.search)
-    router.get("/wiki/page", wpc.loadPage)
+      .get("/wiki", wsc.search)
+      .get("/wiki/page", wpc.loadPage)
 
-    router.get("*", (req: Request, res: Response) => {
-      res.status(404)
-      throw new ResourceNotFoundException(req.originalUrl)
-    })
+      .get("*", (req: Request, res: Response) => {
+        throw new ResourceNotFoundException(req, res)
+      })
 
     return router
   }
