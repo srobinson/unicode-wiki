@@ -1,9 +1,10 @@
 import * as path from "path"
-import {UCDpath} from "./index"
 import {Category, CodepointHexRange} from "@uw/domain"
 import {loadJSONFile} from "@uw/utils"
 
-export const loadUTCFile = (name: string) => loadJSONFile(path.join(UCDpath, name))
+export const UCDpath = path.resolve(__dirname, "../../../../static/UCD/")
+export const getUTCPath = (name: string) => path.join(UCDpath, name)
+export const loadUTCFile = (name: string) => loadJSONFile(getUTCPath(name))
 
 export const updateCategoriesWithHasChildrenFlag = (file: string) => {
   const categories: Category[] = loadUTCFile(file)
