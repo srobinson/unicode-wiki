@@ -31,7 +31,7 @@ class CodepointContainer extends React.PureComponent<CodepointContainerProps & O
   }
 
   componentDidMount() {
-    this.fetchCodepoints()
+    // this.fetchCodepoints()
   }
 
   componentDidUpdate(prevProps: OtherProps) {
@@ -40,7 +40,7 @@ class CodepointContainer extends React.PureComponent<CodepointContainerProps & O
     let {key} = params
 
     if (key && this.props.match.params.key !== key) {
-      this.fetchCodepoints()
+      // this.fetchCodepoints()
     }
   }
 
@@ -152,27 +152,29 @@ class CodepointContainer extends React.PureComponent<CodepointContainerProps & O
     const {result} = codepoints
     const children = this.renderCodepoints()
     const loading = loader.loading
-    const selectedCodepoint = ((match.params.cp && result && result.docs) || []).filter(
-      (codepoint: CodepointDocument) => codepoint.cp === match.params.cp,
-    )
+    console.log("match.params.cp", match.params.cp)
+    console.log("codepoints", codepoints)
+    const selectedCodepoint =
+      match.params.cp &&
+      result &&
+      result.docs.filter((codepoint: CodepointDocument) => codepoint.cp === match.params.cp)
 
     return (
       <React.Fragment>
         {loading && <ProgessLoader />}
-        <LoadingContainer loading={loading} visible={selectedCodepoint.length === 0}>
+        <LoadingContainer
+          loading={loading}
+          visible={selectedCodepoint ? selectedCodepoint.length === 0 : true}
+        >
           {children}
         </LoadingContainer>
-        {selectedCodepoint &&
-          selectedCodepoint[0] && (
-            <Route
-              path="/c/:category/:key/:cp"
-              render={props => {
-                return (
-                  <CodepointWikiContainer codepoint={selectedCodepoint && selectedCodepoint[0]} />
-                )
-              }}
-            />
-          )}
+
+        <Route
+          path="/c/:category/:key/:cp"
+          render={() => {
+            return <CodepointWikiContainer />
+          }}
+        />
       </React.Fragment>
     )
   }

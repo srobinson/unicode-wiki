@@ -12,6 +12,8 @@ const history = createBrowserHistory()
 const initialState = window.initialReduxState
 const store = configureStore(history, initialState)
 
+console.log(process.env)
+
 const render = (Component: any) => {
   return ReactDOM.render(
     <Provider store={store}>

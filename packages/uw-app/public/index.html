@@ -8,1033 +8,1040 @@
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     <style type="text/css" onwaiting="() => console.log(10000)">
       @font-face {
+        font-family: 'Google sans';
+        src: url("https://fonts.googleapis.com/css?family=Google+Sans:400");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
         font-family: 'emoji-sets';
-        src: url("%PUBLIC_URL%/fonts/emoji-sets.eot");
-        src: url("%PUBLIC_URL%/fonts/emoji-sets.eot?#iefix") format('embedded-opentype'), url("%PUBLIC_URL%/fonts/emoji-sets.woff2") format('woff2'), url("%PUBLIC_URL%/fonts/emoji-sets.woff") format('woff'), url("%PUBLIC_URL%/fonts/emoji-sets.ttf") format('truetype'), url("%PUBLIC_URL%/fonts/emoji-sets.svg") format('svg');
+        src: url("%REACT_APP_FONTS_URL%/emoji-sets.eot");
+        src: url("%REACT_APP_FONTS_URL%/emoji-sets.eot?#iefix") format('embedded-opentype'), url("%REACT_APP_FONTS_URL%/emoji-sets.woff2") format('woff2'), url("%REACT_APP_FONTS_URL%/emoji-sets.woff") format('woff'), url("%REACT_APP_FONTS_URL%/emoji-sets.ttf") format('truetype'), url("%REACT_APP_FONTS_URL%/emoji-sets.svg") format('svg');
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u0000';
-        src: url("%PUBLIC_URL%/fonts/u0000.eot");
-        src: url("%PUBLIC_URL%/fonts/u0000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u0000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u0000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u0000.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u0000.eot");
+        src: url("%REACT_APP_FONTS_URL%/u0000.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u0000.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u0000.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u0000.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u0400';
-        src: url("%PUBLIC_URL%/fonts/u0400.eot");
-        src: url("%PUBLIC_URL%/fonts/u0400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u0400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u0400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u0400.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u0400.eot");
+        src: url("%REACT_APP_FONTS_URL%/u0400.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u0400.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u0400.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u0400.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u0800';
-        src: url("%PUBLIC_URL%/fonts/u0800.eot");
-        src: url("%PUBLIC_URL%/fonts/u0800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u0800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u0800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u0800.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u0800.eot");
+        src: url("%REACT_APP_FONTS_URL%/u0800.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u0800.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u0800.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u0800.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u0c00';
-        src: url("%PUBLIC_URL%/fonts/u0c00.eot");
-        src: url("%PUBLIC_URL%/fonts/u0c00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u0c00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u0c00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u0c00.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u0c00.eot");
+        src: url("%REACT_APP_FONTS_URL%/u0c00.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u0c00.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u0c00.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u0c00.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u1000';
-        src: url("%PUBLIC_URL%/fonts/u1000.eot");
-        src: url("%PUBLIC_URL%/fonts/u1000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1000.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u1000.eot");
+        src: url("%REACT_APP_FONTS_URL%/u1000.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u1000.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u1000.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u1000.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u1400';
-        src: url("%PUBLIC_URL%/fonts/u1400.eot");
-        src: url("%PUBLIC_URL%/fonts/u1400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1400.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u1400.eot");
+        src: url("%REACT_APP_FONTS_URL%/u1400.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u1400.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u1400.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u1400.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u1800';
-        src: url("%PUBLIC_URL%/fonts/u1800.eot");
-        src: url("%PUBLIC_URL%/fonts/u1800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1800.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u1800.eot");
+        src: url("%REACT_APP_FONTS_URL%/u1800.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u1800.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u1800.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u1800.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u1c00';
-        src: url("%PUBLIC_URL%/fonts/u1c00.eot");
-        src: url("%PUBLIC_URL%/fonts/u1c00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1c00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1c00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1c00.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u1c00.eot");
+        src: url("%REACT_APP_FONTS_URL%/u1c00.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u1c00.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u1c00.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u1c00.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u2000';
-        src: url("%PUBLIC_URL%/fonts/u2000.eot");
-        src: url("%PUBLIC_URL%/fonts/u2000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u2000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u2000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u2000.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u2000.eot");
+        src: url("%REACT_APP_FONTS_URL%/u2000.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u2000.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u2000.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u2000.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u2400';
-        src: url("%PUBLIC_URL%/fonts/u2400.eot");
-        src: url("%PUBLIC_URL%/fonts/u2400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u2400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u2400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u2400.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u2400.eot");
+        src: url("%REACT_APP_FONTS_URL%/u2400.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u2400.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u2400.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u2400.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u2800';
-        src: url("%PUBLIC_URL%/fonts/u2800.eot");
-        src: url("%PUBLIC_URL%/fonts/u2800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u2800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u2800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u2800.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u2800.eot");
+        src: url("%REACT_APP_FONTS_URL%/u2800.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u2800.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u2800.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u2800.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u2c00';
-        src: url("%PUBLIC_URL%/fonts/u2c00.eot");
-        src: url("%PUBLIC_URL%/fonts/u2c00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u2c00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u2c00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u2c00.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u2c00.eot");
+        src: url("%REACT_APP_FONTS_URL%/u2c00.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u2c00.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u2c00.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u2c00.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u3000';
-        src: url("%PUBLIC_URL%/fonts/u3000.eot");
-        src: url("%PUBLIC_URL%/fonts/u3000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u3000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u3000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u3000.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u3000.eot");
+        src: url("%REACT_APP_FONTS_URL%/u3000.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u3000.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u3000.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u3000.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u3400';
-        src: url("%PUBLIC_URL%/fonts/u3400.eot");
-        src: url("%PUBLIC_URL%/fonts/u3400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u3400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u3400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u3400.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u3400.eot");
+        src: url("%REACT_APP_FONTS_URL%/u3400.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u3400.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u3400.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u3400.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u3800';
-        src: url("%PUBLIC_URL%/fonts/u3800.eot");
-        src: url("%PUBLIC_URL%/fonts/u3800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u3800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u3800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u3800.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u3800.eot");
+        src: url("%REACT_APP_FONTS_URL%/u3800.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u3800.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u3800.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u3800.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u3c00';
-        src: url("%PUBLIC_URL%/fonts/u3c00.eot");
-        src: url("%PUBLIC_URL%/fonts/u3c00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u3c00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u3c00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u3c00.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u3c00.eot");
+        src: url("%REACT_APP_FONTS_URL%/u3c00.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u3c00.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u3c00.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u3c00.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u4000';
-        src: url("%PUBLIC_URL%/fonts/u4000.eot");
-        src: url("%PUBLIC_URL%/fonts/u4000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u4000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u4000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u4000.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u4000.eot");
+        src: url("%REACT_APP_FONTS_URL%/u4000.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u4000.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u4000.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u4000.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u4400';
-        src: url("%PUBLIC_URL%/fonts/u4400.eot");
-        src: url("%PUBLIC_URL%/fonts/u4400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u4400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u4400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u4400.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u4400.eot");
+        src: url("%REACT_APP_FONTS_URL%/u4400.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u4400.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u4400.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u4400.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u4800';
-        src: url("%PUBLIC_URL%/fonts/u4800.eot");
-        src: url("%PUBLIC_URL%/fonts/u4800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u4800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u4800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u4800.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u4800.eot");
+        src: url("%REACT_APP_FONTS_URL%/u4800.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u4800.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u4800.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u4800.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u4c00';
-        src: url("%PUBLIC_URL%/fonts/u4c00.eot");
-        src: url("%PUBLIC_URL%/fonts/u4c00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u4c00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u4c00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u4c00.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u4c00.eot");
+        src: url("%REACT_APP_FONTS_URL%/u4c00.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u4c00.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u4c00.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u4c00.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u5000';
-        src: url("%PUBLIC_URL%/fonts/u5000.eot");
-        src: url("%PUBLIC_URL%/fonts/u5000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u5000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u5000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u5000.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u5000.eot");
+        src: url("%REACT_APP_FONTS_URL%/u5000.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u5000.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u5000.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u5000.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u5400';
-        src: url("%PUBLIC_URL%/fonts/u5400.eot");
-        src: url("%PUBLIC_URL%/fonts/u5400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u5400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u5400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u5400.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u5400.eot");
+        src: url("%REACT_APP_FONTS_URL%/u5400.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u5400.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u5400.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u5400.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u5800';
-        src: url("%PUBLIC_URL%/fonts/u5800.eot");
-        src: url("%PUBLIC_URL%/fonts/u5800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u5800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u5800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u5800.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u5800.eot");
+        src: url("%REACT_APP_FONTS_URL%/u5800.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u5800.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u5800.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u5800.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u5c00';
-        src: url("%PUBLIC_URL%/fonts/u5c00.eot");
-        src: url("%PUBLIC_URL%/fonts/u5c00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u5c00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u5c00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u5c00.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u5c00.eot");
+        src: url("%REACT_APP_FONTS_URL%/u5c00.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u5c00.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u5c00.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u5c00.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u6000';
-        src: url("%PUBLIC_URL%/fonts/u6000.eot");
-        src: url("%PUBLIC_URL%/fonts/u6000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u6000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u6000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u6000.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u6000.eot");
+        src: url("%REACT_APP_FONTS_URL%/u6000.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u6000.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u6000.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u6000.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u6400';
-        src: url("%PUBLIC_URL%/fonts/u6400.eot");
-        src: url("%PUBLIC_URL%/fonts/u6400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u6400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u6400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u6400.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u6400.eot");
+        src: url("%REACT_APP_FONTS_URL%/u6400.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u6400.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u6400.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u6400.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u6800';
-        src: url("%PUBLIC_URL%/fonts/u6800.eot");
-        src: url("%PUBLIC_URL%/fonts/u6800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u6800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u6800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u6800.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u6800.eot");
+        src: url("%REACT_APP_FONTS_URL%/u6800.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u6800.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u6800.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u6800.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u6c00';
-        src: url("%PUBLIC_URL%/fonts/u6c00.eot");
-        src: url("%PUBLIC_URL%/fonts/u6c00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u6c00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u6c00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u6c00.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u6c00.eot");
+        src: url("%REACT_APP_FONTS_URL%/u6c00.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u6c00.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u6c00.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u6c00.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u7000';
-        src: url("%PUBLIC_URL%/fonts/u7000.eot");
-        src: url("%PUBLIC_URL%/fonts/u7000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u7000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u7000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u7000.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u7000.eot");
+        src: url("%REACT_APP_FONTS_URL%/u7000.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u7000.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u7000.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u7000.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u7400';
-        src: url("%PUBLIC_URL%/fonts/u7400.eot");
-        src: url("%PUBLIC_URL%/fonts/u7400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u7400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u7400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u7400.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u7400.eot");
+        src: url("%REACT_APP_FONTS_URL%/u7400.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u7400.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u7400.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u7400.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u7800';
-        src: url("%PUBLIC_URL%/fonts/u7800.eot");
-        src: url("%PUBLIC_URL%/fonts/u7800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u7800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u7800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u7800.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u7800.eot");
+        src: url("%REACT_APP_FONTS_URL%/u7800.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u7800.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u7800.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u7800.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u7c00';
-        src: url("%PUBLIC_URL%/fonts/u7c00.eot");
-        src: url("%PUBLIC_URL%/fonts/u7c00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u7c00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u7c00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u7c00.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u7c00.eot");
+        src: url("%REACT_APP_FONTS_URL%/u7c00.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u7c00.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u7c00.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u7c00.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u8000';
-        src: url("%PUBLIC_URL%/fonts/u8000.eot");
-        src: url("%PUBLIC_URL%/fonts/u8000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u8000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u8000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u8000.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u8000.eot");
+        src: url("%REACT_APP_FONTS_URL%/u8000.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u8000.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u8000.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u8000.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u8400';
-        src: url("%PUBLIC_URL%/fonts/u8400.eot");
-        src: url("%PUBLIC_URL%/fonts/u8400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u8400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u8400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u8400.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u8400.eot");
+        src: url("%REACT_APP_FONTS_URL%/u8400.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u8400.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u8400.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u8400.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u8800';
-        src: url("%PUBLIC_URL%/fonts/u8800.eot");
-        src: url("%PUBLIC_URL%/fonts/u8800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u8800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u8800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u8800.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u8800.eot");
+        src: url("%REACT_APP_FONTS_URL%/u8800.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u8800.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u8800.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u8800.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u8c00';
-        src: url("%PUBLIC_URL%/fonts/u8c00.eot");
-        src: url("%PUBLIC_URL%/fonts/u8c00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u8c00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u8c00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u8c00.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u8c00.eot");
+        src: url("%REACT_APP_FONTS_URL%/u8c00.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u8c00.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u8c00.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u8c00.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u9000';
-        src: url("%PUBLIC_URL%/fonts/u9000.eot");
-        src: url("%PUBLIC_URL%/fonts/u9000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u9000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u9000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u9000.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u9000.eot");
+        src: url("%REACT_APP_FONTS_URL%/u9000.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u9000.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u9000.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u9000.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u9400';
-        src: url("%PUBLIC_URL%/fonts/u9400.eot");
-        src: url("%PUBLIC_URL%/fonts/u9400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u9400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u9400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u9400.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u9400.eot");
+        src: url("%REACT_APP_FONTS_URL%/u9400.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u9400.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u9400.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u9400.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u9800';
-        src: url("%PUBLIC_URL%/fonts/u9800.eot");
-        src: url("%PUBLIC_URL%/fonts/u9800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u9800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u9800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u9800.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u9800.eot");
+        src: url("%REACT_APP_FONTS_URL%/u9800.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u9800.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u9800.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u9800.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u9c00';
-        src: url("%PUBLIC_URL%/fonts/u9c00.eot");
-        src: url("%PUBLIC_URL%/fonts/u9c00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u9c00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u9c00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u9c00.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u9c00.eot");
+        src: url("%REACT_APP_FONTS_URL%/u9c00.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u9c00.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u9c00.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u9c00.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'ua000';
-        src: url("%PUBLIC_URL%/fonts/ua000.eot");
-        src: url("%PUBLIC_URL%/fonts/ua000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/ua000.woff") format("woff"), url("%PUBLIC_URL%/fonts/ua000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/ua000.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/ua000.eot");
+        src: url("%REACT_APP_FONTS_URL%/ua000.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/ua000.woff") format("woff"), url("%REACT_APP_FONTS_URL%/ua000.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/ua000.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'ua400';
-        src: url("%PUBLIC_URL%/fonts/ua400.eot");
-        src: url("%PUBLIC_URL%/fonts/ua400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/ua400.woff") format("woff"), url("%PUBLIC_URL%/fonts/ua400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/ua400.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/ua400.eot");
+        src: url("%REACT_APP_FONTS_URL%/ua400.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/ua400.woff") format("woff"), url("%REACT_APP_FONTS_URL%/ua400.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/ua400.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'ua800';
-        src: url("%PUBLIC_URL%/fonts/ua800.eot");
-        src: url("%PUBLIC_URL%/fonts/ua800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/ua800.woff") format("woff"), url("%PUBLIC_URL%/fonts/ua800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/ua800.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/ua800.eot");
+        src: url("%REACT_APP_FONTS_URL%/ua800.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/ua800.woff") format("woff"), url("%REACT_APP_FONTS_URL%/ua800.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/ua800.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'uac00';
-        src: url("%PUBLIC_URL%/fonts/uac00.eot");
-        src: url("%PUBLIC_URL%/fonts/uac00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/uac00.woff") format("woff"), url("%PUBLIC_URL%/fonts/uac00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/uac00.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/uac00.eot");
+        src: url("%REACT_APP_FONTS_URL%/uac00.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/uac00.woff") format("woff"), url("%REACT_APP_FONTS_URL%/uac00.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/uac00.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'ub000';
-        src: url("%PUBLIC_URL%/fonts/ub000.eot");
-        src: url("%PUBLIC_URL%/fonts/ub000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/ub000.woff") format("woff"), url("%PUBLIC_URL%/fonts/ub000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/ub000.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/ub000.eot");
+        src: url("%REACT_APP_FONTS_URL%/ub000.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/ub000.woff") format("woff"), url("%REACT_APP_FONTS_URL%/ub000.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/ub000.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'ub400';
-        src: url("%PUBLIC_URL%/fonts/ub400.eot");
-        src: url("%PUBLIC_URL%/fonts/ub400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/ub400.woff") format("woff"), url("%PUBLIC_URL%/fonts/ub400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/ub400.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/ub400.eot");
+        src: url("%REACT_APP_FONTS_URL%/ub400.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/ub400.woff") format("woff"), url("%REACT_APP_FONTS_URL%/ub400.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/ub400.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'ub800';
-        src: url("%PUBLIC_URL%/fonts/ub800.eot");
-        src: url("%PUBLIC_URL%/fonts/ub800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/ub800.woff") format("woff"), url("%PUBLIC_URL%/fonts/ub800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/ub800.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/ub800.eot");
+        src: url("%REACT_APP_FONTS_URL%/ub800.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/ub800.woff") format("woff"), url("%REACT_APP_FONTS_URL%/ub800.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/ub800.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'ubc00';
-        src: url("%PUBLIC_URL%/fonts/ubc00.eot");
-        src: url("%PUBLIC_URL%/fonts/ubc00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/ubc00.woff") format("woff"), url("%PUBLIC_URL%/fonts/ubc00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/ubc00.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/ubc00.eot");
+        src: url("%REACT_APP_FONTS_URL%/ubc00.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/ubc00.woff") format("woff"), url("%REACT_APP_FONTS_URL%/ubc00.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/ubc00.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'uc000';
-        src: url("%PUBLIC_URL%/fonts/uc000.eot");
-        src: url("%PUBLIC_URL%/fonts/uc000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/uc000.woff") format("woff"), url("%PUBLIC_URL%/fonts/uc000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/uc000.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/uc000.eot");
+        src: url("%REACT_APP_FONTS_URL%/uc000.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/uc000.woff") format("woff"), url("%REACT_APP_FONTS_URL%/uc000.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/uc000.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'uc400';
-        src: url("%PUBLIC_URL%/fonts/uc400.eot");
-        src: url("%PUBLIC_URL%/fonts/uc400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/uc400.woff") format("woff"), url("%PUBLIC_URL%/fonts/uc400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/uc400.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/uc400.eot");
+        src: url("%REACT_APP_FONTS_URL%/uc400.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/uc400.woff") format("woff"), url("%REACT_APP_FONTS_URL%/uc400.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/uc400.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'uc800';
-        src: url("%PUBLIC_URL%/fonts/uc800.eot");
-        src: url("%PUBLIC_URL%/fonts/uc800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/uc800.woff") format("woff"), url("%PUBLIC_URL%/fonts/uc800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/uc800.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/uc800.eot");
+        src: url("%REACT_APP_FONTS_URL%/uc800.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/uc800.woff") format("woff"), url("%REACT_APP_FONTS_URL%/uc800.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/uc800.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'ucc00';
-        src: url("%PUBLIC_URL%/fonts/ucc00.eot");
-        src: url("%PUBLIC_URL%/fonts/ucc00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/ucc00.woff") format("woff"), url("%PUBLIC_URL%/fonts/ucc00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/ucc00.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/ucc00.eot");
+        src: url("%REACT_APP_FONTS_URL%/ucc00.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/ucc00.woff") format("woff"), url("%REACT_APP_FONTS_URL%/ucc00.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/ucc00.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'ud000';
-        src: url("%PUBLIC_URL%/fonts/ud000.eot");
-        src: url("%PUBLIC_URL%/fonts/ud000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/ud000.woff") format("woff"), url("%PUBLIC_URL%/fonts/ud000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/ud000.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/ud000.eot");
+        src: url("%REACT_APP_FONTS_URL%/ud000.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/ud000.woff") format("woff"), url("%REACT_APP_FONTS_URL%/ud000.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/ud000.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'ud400';
-        src: url("%PUBLIC_URL%/fonts/ud400.eot");
-        src: url("%PUBLIC_URL%/fonts/ud400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/ud400.woff") format("woff"), url("%PUBLIC_URL%/fonts/ud400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/ud400.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/ud400.eot");
+        src: url("%REACT_APP_FONTS_URL%/ud400.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/ud400.woff") format("woff"), url("%REACT_APP_FONTS_URL%/ud400.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/ud400.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'ud800';
-        src: url("%PUBLIC_URL%/fonts/ud800.eot");
-        src: url("%PUBLIC_URL%/fonts/ud800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/ud800.woff") format("woff"), url("%PUBLIC_URL%/fonts/ud800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/ud800.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/ud800.eot");
+        src: url("%REACT_APP_FONTS_URL%/ud800.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/ud800.woff") format("woff"), url("%REACT_APP_FONTS_URL%/ud800.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/ud800.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'udc00';
-        src: url("%PUBLIC_URL%/fonts/udc00.eot");
-        src: url("%PUBLIC_URL%/fonts/udc00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/udc00.woff") format("woff"), url("%PUBLIC_URL%/fonts/udc00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/udc00.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/udc00.eot");
+        src: url("%REACT_APP_FONTS_URL%/udc00.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/udc00.woff") format("woff"), url("%REACT_APP_FONTS_URL%/udc00.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/udc00.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'ue000';
-        src: url("%PUBLIC_URL%/fonts/ue000.eot");
-        src: url("%PUBLIC_URL%/fonts/ue000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/ue000.woff") format("woff"), url("%PUBLIC_URL%/fonts/ue000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/ue000.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/ue000.eot");
+        src: url("%REACT_APP_FONTS_URL%/ue000.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/ue000.woff") format("woff"), url("%REACT_APP_FONTS_URL%/ue000.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/ue000.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'ue400';
-        src: url("%PUBLIC_URL%/fonts/ue400.eot");
-        src: url("%PUBLIC_URL%/fonts/ue400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/ue400.woff") format("woff"), url("%PUBLIC_URL%/fonts/ue400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/ue400.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/ue400.eot");
+        src: url("%REACT_APP_FONTS_URL%/ue400.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/ue400.woff") format("woff"), url("%REACT_APP_FONTS_URL%/ue400.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/ue400.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'ue800';
-        src: url("%PUBLIC_URL%/fonts/ue800.eot");
-        src: url("%PUBLIC_URL%/fonts/ue800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/ue800.woff") format("woff"), url("%PUBLIC_URL%/fonts/ue800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/ue800.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/ue800.eot");
+        src: url("%REACT_APP_FONTS_URL%/ue800.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/ue800.woff") format("woff"), url("%REACT_APP_FONTS_URL%/ue800.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/ue800.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'uec00';
-        src: url("%PUBLIC_URL%/fonts/uec00.eot");
-        src: url("%PUBLIC_URL%/fonts/uec00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/uec00.woff") format("woff"), url("%PUBLIC_URL%/fonts/uec00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/uec00.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/uec00.eot");
+        src: url("%REACT_APP_FONTS_URL%/uec00.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/uec00.woff") format("woff"), url("%REACT_APP_FONTS_URL%/uec00.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/uec00.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'uf000';
-        src: url("%PUBLIC_URL%/fonts/uf000.eot");
-        src: url("%PUBLIC_URL%/fonts/uf000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/uf000.woff") format("woff"), url("%PUBLIC_URL%/fonts/uf000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/uf000.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/uf000.eot");
+        src: url("%REACT_APP_FONTS_URL%/uf000.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/uf000.woff") format("woff"), url("%REACT_APP_FONTS_URL%/uf000.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/uf000.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'uf400';
-        src: url("%PUBLIC_URL%/fonts/uf400.eot");
-        src: url("%PUBLIC_URL%/fonts/uf400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/uf400.woff") format("woff"), url("%PUBLIC_URL%/fonts/uf400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/uf400.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/uf400.eot");
+        src: url("%REACT_APP_FONTS_URL%/uf400.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/uf400.woff") format("woff"), url("%REACT_APP_FONTS_URL%/uf400.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/uf400.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'uf800';
-        src: url("%PUBLIC_URL%/fonts/uf800.eot");
-        src: url("%PUBLIC_URL%/fonts/uf800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/uf800.woff") format("woff"), url("%PUBLIC_URL%/fonts/uf800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/uf800.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/uf800.eot");
+        src: url("%REACT_APP_FONTS_URL%/uf800.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/uf800.woff") format("woff"), url("%REACT_APP_FONTS_URL%/uf800.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/uf800.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'ufc00';
-        src: url("%PUBLIC_URL%/fonts/ufc00.eot");
-        src: url("%PUBLIC_URL%/fonts/ufc00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/ufc00.woff") format("woff"), url("%PUBLIC_URL%/fonts/ufc00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/ufc00.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/ufc00.eot");
+        src: url("%REACT_APP_FONTS_URL%/ufc00.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/ufc00.woff") format("woff"), url("%REACT_APP_FONTS_URL%/ufc00.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/ufc00.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u10000';
-        src: url("%PUBLIC_URL%/fonts/u10000.eot");
-        src: url("%PUBLIC_URL%/fonts/u10000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u10000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u10000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u10000.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u10000.eot");
+        src: url("%REACT_APP_FONTS_URL%/u10000.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u10000.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u10000.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u10000.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u10400';
-        src: url("%PUBLIC_URL%/fonts/u10400.eot");
-        src: url("%PUBLIC_URL%/fonts/u10400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u10400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u10400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u10400.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u10400.eot");
+        src: url("%REACT_APP_FONTS_URL%/u10400.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u10400.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u10400.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u10400.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u10800';
-        src: url("%PUBLIC_URL%/fonts/u10800.eot");
-        src: url("%PUBLIC_URL%/fonts/u10800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u10800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u10800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u10800.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u10800.eot");
+        src: url("%REACT_APP_FONTS_URL%/u10800.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u10800.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u10800.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u10800.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u10c00';
-        src: url("%PUBLIC_URL%/fonts/u10c00.eot");
-        src: url("%PUBLIC_URL%/fonts/u10c00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u10c00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u10c00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u10c00.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u10c00.eot");
+        src: url("%REACT_APP_FONTS_URL%/u10c00.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u10c00.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u10c00.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u10c00.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u11000';
-        src: url("%PUBLIC_URL%/fonts/u11000.eot");
-        src: url("%PUBLIC_URL%/fonts/u11000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u11000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u11000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u11000.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u11000.eot");
+        src: url("%REACT_APP_FONTS_URL%/u11000.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u11000.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u11000.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u11000.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u11400';
-        src: url("%PUBLIC_URL%/fonts/u11400.eot");
-        src: url("%PUBLIC_URL%/fonts/u11400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u11400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u11400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u11400.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u11400.eot");
+        src: url("%REACT_APP_FONTS_URL%/u11400.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u11400.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u11400.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u11400.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u11800';
-        src: url("%PUBLIC_URL%/fonts/u11800.eot");
-        src: url("%PUBLIC_URL%/fonts/u11800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u11800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u11800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u11800.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u11800.eot");
+        src: url("%REACT_APP_FONTS_URL%/u11800.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u11800.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u11800.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u11800.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u11c00';
-        src: url("%PUBLIC_URL%/fonts/u11c00.eot");
-        src: url("%PUBLIC_URL%/fonts/u11c00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u11c00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u11c00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u11c00.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u11c00.eot");
+        src: url("%REACT_APP_FONTS_URL%/u11c00.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u11c00.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u11c00.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u11c00.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u12000';
-        src: url("%PUBLIC_URL%/fonts/u12000.eot");
-        src: url("%PUBLIC_URL%/fonts/u12000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u12000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u12000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u12000.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u12000.eot");
+        src: url("%REACT_APP_FONTS_URL%/u12000.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u12000.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u12000.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u12000.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u12400';
-        src: url("%PUBLIC_URL%/fonts/u12400.eot");
-        src: url("%PUBLIC_URL%/fonts/u12400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u12400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u12400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u12400.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u12400.eot");
+        src: url("%REACT_APP_FONTS_URL%/u12400.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u12400.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u12400.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u12400.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u12800';
-        src: url("%PUBLIC_URL%/fonts/u12800.eot");
-        src: url("%PUBLIC_URL%/fonts/u12800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u12800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u12800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u12800.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u12800.eot");
+        src: url("%REACT_APP_FONTS_URL%/u12800.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u12800.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u12800.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u12800.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u12c00';
-        src: url("%PUBLIC_URL%/fonts/u12c00.eot");
-        src: url("%PUBLIC_URL%/fonts/u12c00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u12c00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u12c00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u12c00.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u12c00.eot");
+        src: url("%REACT_APP_FONTS_URL%/u12c00.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u12c00.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u12c00.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u12c00.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u13000';
-        src: url("%PUBLIC_URL%/fonts/u13000.eot");
-        src: url("%PUBLIC_URL%/fonts/u13000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u13000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u13000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u13000.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u13000.eot");
+        src: url("%REACT_APP_FONTS_URL%/u13000.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u13000.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u13000.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u13000.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u13400';
-        src: url("%PUBLIC_URL%/fonts/u13400.eot");
-        src: url("%PUBLIC_URL%/fonts/u13400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u13400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u13400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u13400.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u13400.eot");
+        src: url("%REACT_APP_FONTS_URL%/u13400.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u13400.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u13400.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u13400.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u13800';
-        src: url("%PUBLIC_URL%/fonts/u13800.eot");
-        src: url("%PUBLIC_URL%/fonts/u13800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u13800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u13800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u13800.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u13800.eot");
+        src: url("%REACT_APP_FONTS_URL%/u13800.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u13800.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u13800.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u13800.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u13c00';
-        src: url("%PUBLIC_URL%/fonts/u13c00.eot");
-        src: url("%PUBLIC_URL%/fonts/u13c00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u13c00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u13c00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u13c00.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u13c00.eot");
+        src: url("%REACT_APP_FONTS_URL%/u13c00.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u13c00.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u13c00.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u13c00.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u14000';
-        src: url("%PUBLIC_URL%/fonts/u14000.eot");
-        src: url("%PUBLIC_URL%/fonts/u14000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u14000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u14000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u14000.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u14000.eot");
+        src: url("%REACT_APP_FONTS_URL%/u14000.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u14000.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u14000.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u14000.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u14400';
-        src: url("%PUBLIC_URL%/fonts/u14400.eot");
-        src: url("%PUBLIC_URL%/fonts/u14400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u14400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u14400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u14400.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u14400.eot");
+        src: url("%REACT_APP_FONTS_URL%/u14400.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u14400.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u14400.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u14400.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u14800';
-        src: url("%PUBLIC_URL%/fonts/u14800.eot");
-        src: url("%PUBLIC_URL%/fonts/u14800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u14800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u14800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u14800.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u14800.eot");
+        src: url("%REACT_APP_FONTS_URL%/u14800.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u14800.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u14800.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u14800.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u14c00';
-        src: url("%PUBLIC_URL%/fonts/u14c00.eot");
-        src: url("%PUBLIC_URL%/fonts/u14c00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u14c00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u14c00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u14c00.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u14c00.eot");
+        src: url("%REACT_APP_FONTS_URL%/u14c00.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u14c00.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u14c00.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u14c00.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u15000';
-        src: url("%PUBLIC_URL%/fonts/u15000.eot");
-        src: url("%PUBLIC_URL%/fonts/u15000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u15000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u15000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u15000.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u15000.eot");
+        src: url("%REACT_APP_FONTS_URL%/u15000.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u15000.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u15000.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u15000.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u15400';
-        src: url("%PUBLIC_URL%/fonts/u15400.eot");
-        src: url("%PUBLIC_URL%/fonts/u15400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u15400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u15400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u15400.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u15400.eot");
+        src: url("%REACT_APP_FONTS_URL%/u15400.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u15400.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u15400.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u15400.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u15800';
-        src: url("%PUBLIC_URL%/fonts/u15800.eot");
-        src: url("%PUBLIC_URL%/fonts/u15800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u15800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u15800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u15800.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u15800.eot");
+        src: url("%REACT_APP_FONTS_URL%/u15800.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u15800.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u15800.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u15800.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u15c00';
-        src: url("%PUBLIC_URL%/fonts/u15c00.eot");
-        src: url("%PUBLIC_URL%/fonts/u15c00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u15c00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u15c00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u15c00.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u15c00.eot");
+        src: url("%REACT_APP_FONTS_URL%/u15c00.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u15c00.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u15c00.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u15c00.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u16000';
-        src: url("%PUBLIC_URL%/fonts/u16000.eot");
-        src: url("%PUBLIC_URL%/fonts/u16000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u16000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u16000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u16000.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u16000.eot");
+        src: url("%REACT_APP_FONTS_URL%/u16000.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u16000.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u16000.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u16000.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u16400';
-        src: url("%PUBLIC_URL%/fonts/u16400.eot");
-        src: url("%PUBLIC_URL%/fonts/u16400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u16400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u16400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u16400.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u16400.eot");
+        src: url("%REACT_APP_FONTS_URL%/u16400.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u16400.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u16400.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u16400.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u16800';
-        src: url("%PUBLIC_URL%/fonts/u16800.eot");
-        src: url("%PUBLIC_URL%/fonts/u16800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u16800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u16800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u16800.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u16800.eot");
+        src: url("%REACT_APP_FONTS_URL%/u16800.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u16800.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u16800.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u16800.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u16c00';
-        src: url("%PUBLIC_URL%/fonts/u16c00.eot");
-        src: url("%PUBLIC_URL%/fonts/u16c00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u16c00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u16c00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u16c00.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u16c00.eot");
+        src: url("%REACT_APP_FONTS_URL%/u16c00.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u16c00.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u16c00.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u16c00.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u17000';
-        src: url("%PUBLIC_URL%/fonts/u17000.eot");
-        src: url("%PUBLIC_URL%/fonts/u17000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u17000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u17000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u17000.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u17000.eot");
+        src: url("%REACT_APP_FONTS_URL%/u17000.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u17000.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u17000.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u17000.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u17400';
-        src: url("%PUBLIC_URL%/fonts/u17400.eot");
-        src: url("%PUBLIC_URL%/fonts/u17400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u17400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u17400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u17400.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u17400.eot");
+        src: url("%REACT_APP_FONTS_URL%/u17400.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u17400.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u17400.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u17400.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u17800';
-        src: url("%PUBLIC_URL%/fonts/u17800.eot");
-        src: url("%PUBLIC_URL%/fonts/u17800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u17800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u17800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u17800.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u17800.eot");
+        src: url("%REACT_APP_FONTS_URL%/u17800.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u17800.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u17800.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u17800.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u17c00';
-        src: url("%PUBLIC_URL%/fonts/u17c00.eot");
-        src: url("%PUBLIC_URL%/fonts/u17c00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u17c00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u17c00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u17c00.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u17c00.eot");
+        src: url("%REACT_APP_FONTS_URL%/u17c00.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u17c00.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u17c00.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u17c00.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u18000';
-        src: url("%PUBLIC_URL%/fonts/u18000.eot");
-        src: url("%PUBLIC_URL%/fonts/u18000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u18000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u18000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u18000.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u18000.eot");
+        src: url("%REACT_APP_FONTS_URL%/u18000.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u18000.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u18000.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u18000.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u18400';
-        src: url("%PUBLIC_URL%/fonts/u18400.eot");
-        src: url("%PUBLIC_URL%/fonts/u18400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u18400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u18400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u18400.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u18400.eot");
+        src: url("%REACT_APP_FONTS_URL%/u18400.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u18400.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u18400.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u18400.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u18800';
-        src: url("%PUBLIC_URL%/fonts/u18800.eot");
-        src: url("%PUBLIC_URL%/fonts/u18800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u18800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u18800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u18800.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u18800.eot");
+        src: url("%REACT_APP_FONTS_URL%/u18800.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u18800.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u18800.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u18800.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u18c00';
-        src: url("%PUBLIC_URL%/fonts/u18c00.eot");
-        src: url("%PUBLIC_URL%/fonts/u18c00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u18c00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u18c00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u18c00.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u18c00.eot");
+        src: url("%REACT_APP_FONTS_URL%/u18c00.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u18c00.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u18c00.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u18c00.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u19000';
-        src: url("%PUBLIC_URL%/fonts/u19000.eot");
-        src: url("%PUBLIC_URL%/fonts/u19000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u19000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u19000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u19000.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u19000.eot");
+        src: url("%REACT_APP_FONTS_URL%/u19000.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u19000.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u19000.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u19000.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u19400';
-        src: url("%PUBLIC_URL%/fonts/u19400.eot");
-        src: url("%PUBLIC_URL%/fonts/u19400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u19400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u19400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u19400.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u19400.eot");
+        src: url("%REACT_APP_FONTS_URL%/u19400.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u19400.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u19400.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u19400.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u19800';
-        src: url("%PUBLIC_URL%/fonts/u19800.eot");
-        src: url("%PUBLIC_URL%/fonts/u19800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u19800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u19800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u19800.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u19800.eot");
+        src: url("%REACT_APP_FONTS_URL%/u19800.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u19800.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u19800.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u19800.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u19c00';
-        src: url("%PUBLIC_URL%/fonts/u19c00.eot");
-        src: url("%PUBLIC_URL%/fonts/u19c00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u19c00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u19c00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u19c00.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u19c00.eot");
+        src: url("%REACT_APP_FONTS_URL%/u19c00.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u19c00.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u19c00.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u19c00.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u1a000';
-        src: url("%PUBLIC_URL%/fonts/u1a000.eot");
-        src: url("%PUBLIC_URL%/fonts/u1a000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1a000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1a000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1a000.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u1a000.eot");
+        src: url("%REACT_APP_FONTS_URL%/u1a000.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u1a000.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u1a000.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u1a000.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u1a400';
-        src: url("%PUBLIC_URL%/fonts/u1a400.eot");
-        src: url("%PUBLIC_URL%/fonts/u1a400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1a400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1a400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1a400.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u1a400.eot");
+        src: url("%REACT_APP_FONTS_URL%/u1a400.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u1a400.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u1a400.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u1a400.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u1a800';
-        src: url("%PUBLIC_URL%/fonts/u1a800.eot");
-        src: url("%PUBLIC_URL%/fonts/u1a800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1a800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1a800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1a800.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u1a800.eot");
+        src: url("%REACT_APP_FONTS_URL%/u1a800.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u1a800.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u1a800.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u1a800.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u1ac00';
-        src: url("%PUBLIC_URL%/fonts/u1ac00.eot");
-        src: url("%PUBLIC_URL%/fonts/u1ac00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1ac00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1ac00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1ac00.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u1ac00.eot");
+        src: url("%REACT_APP_FONTS_URL%/u1ac00.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u1ac00.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u1ac00.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u1ac00.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u1b000';
-        src: url("%PUBLIC_URL%/fonts/u1b000.eot");
-        src: url("%PUBLIC_URL%/fonts/u1b000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1b000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1b000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1b000.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u1b000.eot");
+        src: url("%REACT_APP_FONTS_URL%/u1b000.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u1b000.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u1b000.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u1b000.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u1b400';
-        src: url("%PUBLIC_URL%/fonts/u1b400.eot");
-        src: url("%PUBLIC_URL%/fonts/u1b400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1b400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1b400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1b400.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u1b400.eot");
+        src: url("%REACT_APP_FONTS_URL%/u1b400.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u1b400.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u1b400.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u1b400.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u1b800';
-        src: url("%PUBLIC_URL%/fonts/u1b800.eot");
-        src: url("%PUBLIC_URL%/fonts/u1b800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1b800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1b800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1b800.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u1b800.eot");
+        src: url("%REACT_APP_FONTS_URL%/u1b800.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u1b800.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u1b800.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u1b800.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u1bc00';
-        src: url("%PUBLIC_URL%/fonts/u1bc00.eot");
-        src: url("%PUBLIC_URL%/fonts/u1bc00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1bc00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1bc00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1bc00.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u1bc00.eot");
+        src: url("%REACT_APP_FONTS_URL%/u1bc00.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u1bc00.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u1bc00.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u1bc00.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u1c000';
-        src: url("%PUBLIC_URL%/fonts/u1c000.eot");
-        src: url("%PUBLIC_URL%/fonts/u1c000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1c000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1c000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1c000.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u1c000.eot");
+        src: url("%REACT_APP_FONTS_URL%/u1c000.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u1c000.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u1c000.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u1c000.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u1c400';
-        src: url("%PUBLIC_URL%/fonts/u1c400.eot");
-        src: url("%PUBLIC_URL%/fonts/u1c400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1c400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1c400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1c400.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u1c400.eot");
+        src: url("%REACT_APP_FONTS_URL%/u1c400.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u1c400.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u1c400.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u1c400.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u1c800';
-        src: url("%PUBLIC_URL%/fonts/u1c800.eot");
-        src: url("%PUBLIC_URL%/fonts/u1c800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1c800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1c800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1c800.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u1c800.eot");
+        src: url("%REACT_APP_FONTS_URL%/u1c800.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u1c800.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u1c800.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u1c800.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u1cc00';
-        src: url("%PUBLIC_URL%/fonts/u1cc00.eot");
-        src: url("%PUBLIC_URL%/fonts/u1cc00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1cc00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1cc00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1cc00.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u1cc00.eot");
+        src: url("%REACT_APP_FONTS_URL%/u1cc00.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u1cc00.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u1cc00.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u1cc00.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u1d000';
-        src: url("%PUBLIC_URL%/fonts/u1d000.eot");
-        src: url("%PUBLIC_URL%/fonts/u1d000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1d000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1d000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1d000.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u1d000.eot");
+        src: url("%REACT_APP_FONTS_URL%/u1d000.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u1d000.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u1d000.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u1d000.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u1d400';
-        src: url("%PUBLIC_URL%/fonts/u1d400.eot");
-        src: url("%PUBLIC_URL%/fonts/u1d400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1d400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1d400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1d400.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u1d400.eot");
+        src: url("%REACT_APP_FONTS_URL%/u1d400.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u1d400.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u1d400.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u1d400.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u1d800';
-        src: url("%PUBLIC_URL%/fonts/u1d800.eot");
-        src: url("%PUBLIC_URL%/fonts/u1d800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1d800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1d800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1d800.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u1d800.eot");
+        src: url("%REACT_APP_FONTS_URL%/u1d800.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u1d800.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u1d800.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u1d800.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u1dc00';
-        src: url("%PUBLIC_URL%/fonts/u1dc00.eot");
-        src: url("%PUBLIC_URL%/fonts/u1dc00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1dc00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1dc00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1dc00.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u1dc00.eot");
+        src: url("%REACT_APP_FONTS_URL%/u1dc00.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u1dc00.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u1dc00.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u1dc00.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u1e000';
-        src: url("%PUBLIC_URL%/fonts/u1e000.eot");
-        src: url("%PUBLIC_URL%/fonts/u1e000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1e000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1e000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1e000.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u1e000.eot");
+        src: url("%REACT_APP_FONTS_URL%/u1e000.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u1e000.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u1e000.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u1e000.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u1e400';
-        src: url("%PUBLIC_URL%/fonts/u1e400.eot");
-        src: url("%PUBLIC_URL%/fonts/u1e400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1e400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1e400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1e400.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u1e400.eot");
+        src: url("%REACT_APP_FONTS_URL%/u1e400.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u1e400.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u1e400.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u1e400.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u1e800';
-        src: url("%PUBLIC_URL%/fonts/u1e800.eot");
-        src: url("%PUBLIC_URL%/fonts/u1e800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1e800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1e800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1e800.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u1e800.eot");
+        src: url("%REACT_APP_FONTS_URL%/u1e800.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u1e800.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u1e800.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u1e800.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u1ec00';
-        src: url("%PUBLIC_URL%/fonts/u1ec00.eot");
-        src: url("%PUBLIC_URL%/fonts/u1ec00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1ec00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1ec00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1ec00.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u1ec00.eot");
+        src: url("%REACT_APP_FONTS_URL%/u1ec00.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u1ec00.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u1ec00.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u1ec00.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u1f000';
-        src: url("%PUBLIC_URL%/fonts/u1f000.eot");
-        src: url("%PUBLIC_URL%/fonts/u1f000.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1f000.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1f000.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1f000.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u1f000.eot");
+        src: url("%REACT_APP_FONTS_URL%/u1f000.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u1f000.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u1f000.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u1f000.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u1f400';
-        src: url("%PUBLIC_URL%/fonts/u1f400.eot");
-        src: url("%PUBLIC_URL%/fonts/u1f400.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1f400.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1f400.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1f400.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u1f400.eot");
+        src: url("%REACT_APP_FONTS_URL%/u1f400.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u1f400.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u1f400.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u1f400.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u1f800';
-        src: url("%PUBLIC_URL%/fonts/u1f800.eot");
-        src: url("%PUBLIC_URL%/fonts/u1f800.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1f800.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1f800.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1f800.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u1f800.eot");
+        src: url("%REACT_APP_FONTS_URL%/u1f800.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u1f800.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u1f800.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u1f800.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'u1fc00';
-        src: url("%PUBLIC_URL%/fonts/u1fc00.eot");
-        src: url("%PUBLIC_URL%/fonts/u1fc00.eot?#iefix") format("embedded-opentype"), url("%PUBLIC_URL%/fonts/u1fc00.woff") format("woff"), url("%PUBLIC_URL%/fonts/u1fc00.ttf") format("truetype"), url("%PUBLIC_URL%/fonts/u1fc00.svg#universaliaregular") format("svg");
+        src: url("%REACT_APP_FONTS_URL%/u1fc00.eot");
+        src: url("%REACT_APP_FONTS_URL%/u1fc00.eot?#iefix") format("embedded-opentype"), url("%REACT_APP_FONTS_URL%/u1fc00.woff") format("woff"), url("%REACT_APP_FONTS_URL%/u1fc00.ttf") format("truetype"), url("%REACT_APP_FONTS_URL%/u1fc00.svg#universaliaregular") format("svg");
         font-weight: normal;
         font-style: normal;
       }
