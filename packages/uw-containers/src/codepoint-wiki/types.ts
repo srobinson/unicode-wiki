@@ -26,9 +26,7 @@ export interface PathParamsType {
   urlRange: string
 }
 
-export interface OtherProps extends RouteComponentProps<PathParamsType> {
-  codepoint: CodepointDocument
-}
+export interface OtherProps extends RouteComponentProps<PathParamsType> {}
 
 export type CodepointComponentProps = {}
 
