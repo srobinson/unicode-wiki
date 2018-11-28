@@ -31,10 +31,9 @@ export default class Routes {
       .get("/wiki", wsc.search)
       .get("/wiki/page", wpc.loadPage)
 
-    router.get("*", (req: Request, res: Response) => {
-      res.status(404)
-      throw new ResourceNotFoundException(req.originalUrl)
-    })
+      .get("*", (req: Request, res: Response) => {
+        throw new ResourceNotFoundException(req, res)
+      })
 
     return router
   }

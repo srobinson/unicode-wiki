@@ -1,9 +1,8 @@
 import App from "./app"
 import {jsonifyError} from "@uw/domain"
 import {logger} from "@uw/logging"
-// import "@uw/logging/src/express"
+import {MongoDb} from "./db"
 import "./config"
-import {jsonifyError} from "@uw/domain"
 
 process.on("unhandledRejection", error => {
   logger.error({unhandledRejection: jsonifyError(error)})
