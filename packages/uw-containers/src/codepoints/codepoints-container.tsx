@@ -31,7 +31,7 @@ class CodepointContainer extends React.PureComponent<CodepointContainerProps & O
   }
 
   componentDidMount() {
-    // this.fetchCodepoints()
+    this.fetchCodepoints()
   }
 
   componentDidUpdate(prevProps: OtherProps) {

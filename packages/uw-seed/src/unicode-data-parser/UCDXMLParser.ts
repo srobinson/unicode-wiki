@@ -1,14 +1,13 @@
 // tslint:disable
 import * as fs from "fs"
-import * as ora from "ora"
-import * as path from "path"
 import * as xml2js from "xml2js"
-
+import * as ora from "ora"
 import CodePoint from "./domain/CodePoint"
 import ExpandedValue from "./domain/ExpandedValue"
 import LocalDictionary from "../file-parser/LocalDictionary"
 import {CodePointDict, ExpandedValueDict} from "../file-parser/Dictionary"
 import {oraOpts} from "@uw/logging"
+import {getUTCPath} from "../utils"
 
 // http://unicode.org/reports/tr42/
 // https://www.unicode.org/Public/UCD/latest/ucd/PropertyAliases.txt
@@ -17,9 +16,9 @@ import {oraOpts} from "@uw/logging"
 //
 
 export default class UCDXMLParser {
-  static all = path.join(__dirname + "/../../UCD/ucd.all.flat.xml")
-  static unihan = path.join(__dirname + "/../../UCD/ucd.unihan.flat.xml")
-  static allgrouped = path.join(__dirname + "/../../UCD/ucd.all.grouped.xml")
+  static all = getUTCPath("ucd.all.flat.xml")
+  static unihan = getUTCPath("ucd.unihan.flat.xml")
+  static allgrouped = getUTCPath("ucd.all.grouped.xml")
 
   static ignoredAttrubutes = ["", "#", "0", "none", "nan", "no", "na"]
 
