@@ -2,6 +2,8 @@ FROM node:9-alpine AS BUILD
 
 WORKDIR /usr/src/app
 
+COPY static/UCD ./static/UCD
+
 COPY package.json yarn.lock ./
 COPY packages/uw-domain ./packages/uw-domain
 COPY packages/uw-logging ./packages/uw-logging

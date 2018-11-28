@@ -1,8 +1,16 @@
+# FROM scratch AS FONTS
+
+# WORKDIR /build
+
+# COPY static/fonts ./font
+
 FROM node:9-alpine as BUILD
 
 WORKDIR /build
 
 COPY package.json yarn.lock ./
+
+COPY static/fonts ./static/fonts
 
 COPY packages/uw-utils ./packages/uw-utils
 COPY packages/uw-domain ./packages/uw-domain
@@ -29,7 +37,9 @@ EXPOSE 80
 
 ENV NODE_ENV=production
 
-COPY --from=BUILD /build/packages/uw-app/build/ .
+COPY --from=BUILD /build/packages/uw-app/build .
+# COPY --from=FONTS /build/fonts ./packages/uw-app/public/fonts
+# COPY static/fonts ./var/www/packages/uw-app/public/fonts
 COPY ./nginx.conf /etc/nginx/nginx.conf
 
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
