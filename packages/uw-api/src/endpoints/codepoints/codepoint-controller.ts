@@ -9,8 +9,7 @@ export const getCodepointById = async (req: Request, res: Response) => {
   const index = req.params.id
   const cp = await CodepointDao.getById(index)
   if (!cp) {
-    res.status(404)
-    throw new ResourceNotFoundException(req.originalUrl)
+    throw new ResourceNotFoundException(req, res)
   }
   res.status(200).json(cp)
 }
@@ -19,8 +18,7 @@ export const getCodepointByUCP = async (req: Request, res: Response) => {
   const ucp = req.params.ucp
   const cp = await CodepointDao.getByUCP(ucp)
   if (!cp) {
-    res.status(404)
-    throw new ResourceNotFoundException(req.originalUrl)
+    throw new ResourceNotFoundException(req, res)
   }
   res.status(200).json(cp)
 }
@@ -46,8 +44,7 @@ export const findCodepoints = async (req: Request, res: Response, q: Object) => 
     index: 1,
   })
   if (!(cps && cps.docs.length)) {
-    res.status(404)
-    throw new ResourceNotFoundException(req.originalUrl)
+    throw new ResourceNotFoundException(req, res)
   }
   cps._links = generateLinks(req, cps)
   res.status(200).json(cps)

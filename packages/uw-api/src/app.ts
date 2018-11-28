@@ -4,34 +4,29 @@ import * as cookieParser from "cookie-parser"
 import * as cors from "cors"
 import {enhanceRequestMiddleware, errorHandlerMiddleware, logRequestMiddleware} from "@uw/logging"
 import Routes from "./routes"
-import {MongoDb} from "./db"
 import {userMiddleware} from "./endpoints"
 import "express-async-errors"
 import "./config"
 
-class App {
-  public app: express.Application
+class Express {
+  public static config(): express.Application {
+    const app: express.Application = express()
 
-  constructor() {
-    this.app = express()
-    this.config()
-    MongoDb.connect()
-  }
+    app
+      .set("port", process.env.NODE_PORT)
+      .use(cors())
+      .use(bodyParser.json())
+      .use(bodyParser.urlencoded({extended: true}))
+      .use(cookieParser())
+      .use(express.static("public"))
+      .use(userMiddleware)
+      .use(enhanceRequestMiddleware)
+      .use(logRequestMiddleware)
+      .use("/api", Routes.config())
+      .use(errorHandlerMiddleware)
 
-  private config(): void {
-    const app = this.app
-    app.set("port", process.env.NODE_PORT)
-    app.use(cors())
-    app.use(bodyParser.json())
-    app.use(bodyParser.urlencoded({extended: true}))
-    app.use(cookieParser())
-    app.use(express.static("public"))
-    app.use(userMiddleware)
-    app.use(enhanceRequestMiddleware)
-    app.use(logRequestMiddleware)
-    app.use("/api", Routes.config())
-    app.use(errorHandlerMiddleware)
+    return app
   }
 }
 
-export default new App().app
+export default Express.config()

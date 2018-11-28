@@ -1,3 +1,5 @@
+import {Request, Response} from "express"
+
 // tslint:disable:no-any
 abstract class DomainError extends Error {
   public message: string
@@ -9,16 +11,10 @@ abstract class DomainError extends Error {
   }
 }
 
-type ResourceNotFoundMeta = {
-  resource: string
-  query?: object
-}
-
 export class ResourceNotFoundException extends DomainError {
-  meta: ResourceNotFoundMeta
-  constructor(resource: string, query?: object) {
-    super(`Resource ${resource} was not found.`)
-    this.meta = {resource, query}
+  constructor(req: Request, res: Response) {
+    super(`Resource ${req.originalUrl} was not found.`)
+    res.status(404)
     Object.setPrototypeOf(this, ResourceNotFoundException.prototype)
   }
 }

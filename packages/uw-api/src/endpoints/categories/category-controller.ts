@@ -8,8 +8,7 @@ export const getCategoryById = async (modelType: string, req: Request, res: Resp
   const index = req.params.id
   const category = await Category.getById(modelType, index)
   if (!category) {
-    res.status(404)
-    throw new ResourceNotFoundException(req.originalUrl)
+    throw new ResourceNotFoundException(req, res)
   }
   res.status(200).json(category)
 }
@@ -18,8 +17,7 @@ export const getCategoriesByParent = async (modelType: string, req: Request, res
   const id = req.params.id
   const categories = await Category.getByParent(modelType, id)
   if (!(categories && categories.length)) {
-    res.status(404)
-    throw new ResourceNotFoundException(req.originalUrl)
+    throw new ResourceNotFoundException(req, res)
   }
   res.status(200).json(categories)
 }
@@ -38,8 +36,7 @@ export const getCodepointsByCategoryById = async (
   }
 
   if (!(category && (category.range || category.childRanges))) {
-    res.status(404)
-    throw new ResourceNotFoundException(req.originalUrl)
+    throw new ResourceNotFoundException(req, res)
   }
   const categoryRange: CodepointHexRange = category.get("range") || []
   const childRanges: CodepointHexRange[] = category.get("childRanges") || []
