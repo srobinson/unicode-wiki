@@ -182,5 +182,6 @@ export const MenuItem = styled("li")`
 export const ChildMenuItem = styled(MenuItem)`
   background: none;
   border-left: ${(props: any) => (props.active ? "1rem solid tomato" : ".5rem solid #004050")};
+  text-indent: ${(props: any) => (props.level === 2 ? "10px" : "inherit")};
   font-size: 0.8rem;
 `

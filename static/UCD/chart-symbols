@@ -18,7 +18,7 @@ sb;2E00-2E7F;Supplemental Punctuation
 mb;3000-303F;CJK Symbols and Punctuation
 sb;16FE0-16FFF;Ideographic Symbols and Punctuation
 mb;FE30-FE4F;CJK Compatibility Forms
-pb;FF01-FF60; Fullwidth ASCII Punctuation
+pb;FF01-FF60;Fullwidth ASCII Punctuation
 sb;FF00-FFEF;Halfwidth and Fullwidth Forms
 sb;FE50-FE6F;Small Form Variants
 sb;FE10-FE1F;Vertical Forms

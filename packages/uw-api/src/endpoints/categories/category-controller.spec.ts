@@ -18,8 +18,9 @@ describe(__filename, () => {
       _id: "5bd1e85d44964ea1f05fd5e2",
       index: 1,
       key: "basic-latin",
+      level: 0,
       parent: 0,
-      range: {from: "0000", to: "007F"},
+      range: [{from: "0000", to: "007F"}],
       title: "Basic Latin",
     }
 

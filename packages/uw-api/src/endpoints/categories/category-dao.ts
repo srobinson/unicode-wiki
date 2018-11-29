@@ -42,7 +42,12 @@ export const sortParentChild = (result: CategoryDocument[]) => {
       arr.push(category)
       result
         .filter((child: CategoryDocument) => child.parent === category.index)
-        .forEach((child: CategoryDocument) => arr.push(child))
+        .forEach((child: CategoryDocument) => {
+          arr.push(child)
+          result
+            .filter((child2: CategoryDocument) => child2.parent === child.index)
+            .forEach((child2: CategoryDocument) => arr.push(child2))
+        })
     })
   return arr
 }
