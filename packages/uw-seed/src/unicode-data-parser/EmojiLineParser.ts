@@ -1,7 +1,7 @@
 import Dictionary from "../file-parser/Dictionary"
 import LineParser from "../file-parser/LineParser"
 import CodePoint from "./domain/CodePoint"
-import {hexRange} from "@uw/utils"
+import {codepointIndexRange} from "@uw/utils"
 
 export default class EmojiLineParser<K, V extends CodePoint> implements LineParser<K, V> {
   private emojiCodePoints: number[] = []
@@ -11,7 +11,7 @@ export default class EmojiLineParser<K, V extends CodePoint> implements LinePars
       return
     }
     const range = cols[0].trim()
-    let {from, to} = hexRange(range)
+    let {from, to} = codepointIndexRange(range)
     for (let i = from; i <= (to || from); i++) {
       this.emojiCodePoints.push(i)
     }

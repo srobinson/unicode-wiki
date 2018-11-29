@@ -1,4 +1,4 @@
-import {isHex, hexRange, fromCharCode} from "./unicode-utils"
+import {isHex, codepointIndexRange, fromCharCode} from "./unicode-utils"
 
 describe("isHex utility", () => {
   it("Returns true for valid hex input", () => {
@@ -16,26 +16,26 @@ describe("isHex utility", () => {
   })
 })
 
-describe("hexRange utility", () => {
+describe("codepointIndexRange utility", () => {
   it("Returns valid hex range", () => {
-    expect(hexRange("0000")).toEqual({
+    expect(codepointIndexRange("0000")).toEqual({
       from: 0,
       to: 0,
     })
-    expect(hexRange("0000:0000")).toEqual({
+    expect(codepointIndexRange("0000:0000")).toEqual({
       from: 0,
       to: 0,
     })
-    expect(hexRange("0000:0005")).toEqual({
+    expect(codepointIndexRange("0000:0005")).toEqual({
       from: 0,
       to: 5,
     })
   })
 
   it("Throws error for invalid hex range", () => {
-    expect(() => hexRange("ZZZZ")).toThrowError("ZZZZ not a valid range")
-    expect(() => hexRange("0000:ZZZZ")).toThrowError("0000:ZZZZ not a valid range")
-    expect(() => hexRange("ZZZZ:0000")).toThrowError("ZZZZ:0000 not a valid range")
+    expect(() => codepointIndexRange("ZZZZ")).toThrowError("ZZZZ not a valid range")
+    expect(() => codepointIndexRange("0000:ZZZZ")).toThrowError("0000:ZZZZ not a valid range")
+    expect(() => codepointIndexRange("ZZZZ:0000")).toThrowError("ZZZZ:0000 not a valid range")
   })
 })
 

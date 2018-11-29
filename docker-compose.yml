@@ -21,7 +21,7 @@ services:
         - NODE_ENV=production
         - PORT=80
         - REACT_APP_API_BASE_URL=https://api.unicode.wiki/api
-        - REACT_APP_FONTS_URL=https://storage.googleapis.com/unicode-wiki/static/fonts
+        - REACT_APP_FONTS_URL=/static/fonts
     labels:
       - "traefik.enable=true"
       - "traefik.frontend.rule=Host:uw-app.docker.localhost"
@@ -41,7 +41,6 @@ services:
     environment:
         - GET_HOSTS_FROM=dns
         - MONGO_URL=mongodb://10.35.252.11:27017
-        # - MONGO_URL=mongodb://mongo:27017
         - NODE_PORT=3001
         - NGINX_PORT=80
         - NODE_ENV=production

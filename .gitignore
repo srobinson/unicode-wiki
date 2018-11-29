@@ -17,3 +17,5 @@ yarn.error.log
 ZNOTES
 
 static/f
+packages/uw-api/src/graphql
+packages/uw-api/src/db/elastic

@@ -51,6 +51,8 @@ class NavigationContainer extends React.Component<NavigationContainerProps & Oth
           const index = categoryList.findIndex((category: Category) => category.key === key)
           const prev = categoryList[index - 1] && categoryList[index - 1].key
           const next = categoryList[index + 1] && categoryList[index + 1].key
+          console.log("categoryList", categoryList)
+          console.log("index", index)
           return {
             categoryKey: key,
             categoryTitle: categoryList[index].title,
