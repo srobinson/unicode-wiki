@@ -38,9 +38,9 @@ export const getCodepointsByCategoryById = async (
   if (!(category && (category.range || category.childRanges))) {
     throw new ResourceNotFoundException(req, res)
   }
-  const categoryRange: CodepointHexRange = category.get("range") || []
+  const categoryRange: CodepointHexRange[] = category.get("range") || []
   const childRanges: CodepointHexRange[] = category.get("childRanges") || []
-  const ranges = [categoryRange, ...childRanges]
+  const ranges = [...categoryRange, ...childRanges]
     .filter(range => Object.keys(range).length)
     .map(range => `${range.from}:${range.to}`)
   const q = codepointIndexRangeOrQuery(ranges)

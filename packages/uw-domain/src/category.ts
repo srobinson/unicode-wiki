@@ -27,7 +27,7 @@ export interface Category {
   hasChildren?: boolean
   index: number
   key: string
-  level?: number
+  level: number
   parent: number
   range?: CodepointHexRange[]
   title: string
@@ -47,11 +47,14 @@ export const CategorySchema = new Schema({
   hasChildren: Boolean,
   index: Number,
   key: String,
+  level: Number,
   parent: Number,
-  range: {
-    from: String,
-    to: String,
-  },
+  range: [
+    {
+      from: String,
+      to: String,
+    },
+  ],
   title: String,
 })
 

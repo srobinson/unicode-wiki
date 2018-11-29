@@ -18,12 +18,12 @@
     "kill3001": "lsof -i TCP:3001 | grep LISTEN | awk '{print $2}' | xargs kill -9",
     "lint": "lerna run lint",
     "prepare": "yarn clean:dist && lerna run prepare",
-    "seed": "lerna run seed",
+    "seed": "lerna run seed --stream",
     "start:api": "lerna run start:api",
     "start:app": "lerna run start:app",
     "test": "jest",
     "update-version": "lerna publish --skip-git --skip-npm --force-publish '*'",
-    "watch": "lerna run --parallel watch"
+    "watch": "lerna run --parallel --concurrency=7 watch"
   },
   "dependencies": {
     "async": "2.6.1",

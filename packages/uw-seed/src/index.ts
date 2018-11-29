@@ -35,7 +35,7 @@ class Runner {
             PATH: getUTCPath("chart-scripts"),
           },
           scriptsEntryDict,
-        ).parse(new CategoryLineParser())
+        ).parse(new CategoryLineParser(), cb)
       },
       function parseScriptsFile(cb) {
         new LineByLineFileParser(
@@ -44,7 +44,7 @@ class Runner {
             PATH: getUTCPath("chart-symbols"),
           },
           symbolsEntryDict,
-        ).parse(new CategoryLineParser())
+        ).parse(new CategoryLineParser(), cb)
       },
       function parsePropertyAliasesFile(cb) {
         new LineByLineFileParser(
@@ -128,8 +128,8 @@ class Runner {
         )
       },
       async function() {
-        updateCategoriesWithHasChildrenFlag("chart-scripts", scriptsEntryDict)
-        updateCategoriesWithHasChildrenFlag("chart-symbols", symbolsEntryDict)
+        await updateCategoriesWithHasChildrenFlag("chart-scripts", scriptsEntryDict)
+        await updateCategoriesWithHasChildrenFlag("chart-symbols", symbolsEntryDict)
         await client.createCategories(blocksDict)
         await client.createCollection(codePointDict)
         await client.exitProcess()
