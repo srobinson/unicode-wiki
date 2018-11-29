@@ -60,6 +60,7 @@ const formatKey = (input: string) =>
     .replace("---", "-")
     .replace("--", "-")
     .replace("- ", "")
+    .toLowerCase()
 
 const generateRanges = (input: string) => {
   if (!input) {
@@ -68,14 +69,3 @@ const generateRanges = (input: string) => {
   const parts = input.split(",")
   return parts.map(part => codepointHexRange(part.trim()))
 }
-
-// const sortParentChild = (result: Category[]) => {
-//   const arr: Category[] = []
-//   result.filter((category: Category) => category.parent === 0).forEach((category: Category) => {
-//     arr.push(category)
-//     result
-//       .filter((child: Category) => child.parent === category.index)
-//       .forEach((child: Category) => arr.push(child))
-//   })
-//   return arr
-// }

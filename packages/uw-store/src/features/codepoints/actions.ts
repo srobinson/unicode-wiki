@@ -1,4 +1,10 @@
-import {ApiSearchAction, Link, PaginatedCodepointResult, ApiSearchResponse} from "@uw/domain"
+import {
+  ApiSearchAction,
+  Link,
+  PaginatedCodepointResult,
+  ApiSearchResponse,
+  CodepointHexRange,
+} from "@uw/domain"
 import {CODEPOINTS, FETCH_CODEPOINTS, SET_CODEPOINTS} from "./constants"
 
 export const followLink = (link: Link): ApiSearchAction => ({
@@ -11,12 +17,15 @@ export const followLink = (link: Link): ApiSearchAction => ({
   type: FETCH_CODEPOINTS,
 })
 
-export const fetchCodepoints = (range?: string, search?: string): ApiSearchAction => ({
+export const fetchCodepoints = (
+  ranges?: CodepointHexRange[],
+  search?: string,
+): ApiSearchAction => ({
   meta: {
     feature: CODEPOINTS,
     method: "GET",
     success: setCodepoints,
-    url: `/codepoints/${range || undefined}${search}`,
+    url: `/codepoint-ranges/${ranges || undefined}${search}`,
   },
   type: FETCH_CODEPOINTS,
 })

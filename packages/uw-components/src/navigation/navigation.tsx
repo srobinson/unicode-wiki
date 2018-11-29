@@ -74,11 +74,17 @@ export class ExplorerNavigation extends React.PureComponent<NavigationComponentP
           <Styled.NavigationMenu>
             {categoryList.map((category: Category) => {
               return (
-                <React.Fragment key={`fragment-${category.key}`}>
-                  {category.parent === 0 ? (
+                <React.Fragment
+                  key={`fragment-${category.level}=${category.parent}:${category.index}:${
+                    category.key
+                  }`}
+                >
+                  {category.level === 0 ? (
                     <Styled.MenuItem
                       isNavigationTypeMenuOpen={isNavigationTypeMenuOpen}
-                      key={`parent-${category.parent}:${category.index}:${category.key}`}
+                      key={`parent-${category.level}=${category.parent}:${category.index}:${
+                        category.key
+                      }`}
                       onClick={setCategory.bind(undefined, category.key)}
                       active={category.key === categoryKey}
                       innerRef={(category.key === categoryKey && activeNode) || undefined}
@@ -90,7 +96,10 @@ export class ExplorerNavigation extends React.PureComponent<NavigationComponentP
                       onClick={setCategory.bind(undefined, category.key)}
                       active={category.key === categoryKey}
                       innerRef={(category.key === categoryKey && activeNode) || undefined}
-                      key={`child-${category.parent}:${category.index}:${category.key}`}
+                      key={`child-${category.level}-${category.parent}:${category.index}:${
+                        category.key
+                      }`}
+                      level={category.level}
                     >
                       {`${category.parent}:${category.index}:${category.title}`}
                     </Styled.ChildMenuItem>

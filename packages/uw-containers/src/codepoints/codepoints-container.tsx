@@ -5,7 +5,7 @@ import {Dispatch} from "redux"
 import {connect} from "react-redux"
 import Waypoint from "react-waypoint"
 import {BlockTitle, LoadingContainer, ProgessLoader} from "@uw/components"
-import {CodepointHexRange, CodepointDocument, Link} from "@uw/domain"
+import {CodepointDocument, CodepointHexRange, Link} from "@uw/domain"
 import {ApplicationState, fetchCodepoints, fetchCodepointsByCategory, followLink} from "@uw/store"
 import {CodepointContainerProps, OtherProps, InstanceState} from "./types"
 import {CodepointWikiContainer} from "../codepoint-wiki"
@@ -60,18 +60,13 @@ class CodepointContainer extends React.PureComponent<CodepointContainerProps & O
   }
 
   fetchCodepoints = () => {
-    const {location, match, range} = this.props
+    const {location, match} = this.props
     const {search} = location
     const {params} = match
-    const {category, key, urlRange} = params
-    let propsRange: CodepointHexRange | string = range || "0000"
+    const {category, key} = params
     if (category) {
       window.scrollTo(0, 0)
       this.props.fetchCodepointsByCategory(category, key, search)
-    } else if (urlRange || typeof propsRange === "string") {
-      this.props.fetchCodepoints(`${urlRange || propsRange.toString()}`, search)
-    } else {
-      this.props.fetchCodepoints(`${propsRange.from}:${propsRange.to || undefined}`, search)
     }
   }
 
@@ -152,8 +147,6 @@ class CodepointContainer extends React.PureComponent<CodepointContainerProps & O
     const {result} = codepoints
     const children = this.renderCodepoints()
     const loading = loader.loading
-    console.log("match.params.cp", match.params.cp)
-    console.log("codepoints", codepoints)
     const selectedCodepoint =
       match.params.cp &&
       result &&
@@ -188,7 +181,8 @@ const mapStateToProps = (state: ApplicationState) => {
 }
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  fetchCodepoints: (range?: string, search?: string) => dispatch(fetchCodepoints(range, search)),
+  fetchCodepoints: (ranges?: CodepointHexRange[], search?: string) =>
+    dispatch(fetchCodepoints(ranges, search)),
   fetchCodepointsByCategory: (category: string, key: string, search?: string) =>
     dispatch(fetchCodepointsByCategory(category, key, search)),
   followLink: (link: Link) => dispatch(followLink(link)),
