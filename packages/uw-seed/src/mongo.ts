@@ -55,11 +55,8 @@ export default class DbClient {
   }
 
   public async createCategories(blockDict: ExpandedValueDict) {
-    // const scripts_json = updateCategoriesWithHasChildrenFlag("scripts.json")
-    // const symbols_json = updateCategoriesWithHasChildrenFlag("symbols.json")
-
-    const scripts_json = loadUTCFile("scripts.json")
-    const symbols_json = loadUTCFile("symbols.json")
+    const scripts_json = loadUTCFile("chart-scripts.json")
+    const symbols_json = loadUTCFile("chart-symbols.json")
 
     await this.connect()
 

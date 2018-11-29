@@ -1,11 +1,12 @@
 // tslint:disable:member-ordering
 import {DictionaryEntry} from "../../file-parser/Dictionary"
+import {Category} from "@uw/domain"
 
 /**
  * General POJO used for expanding abbreviated Unicode nomenclature
  */
-export default class ExpandedValue extends DictionaryEntry {
-  constructor(public key: string, public name: string, public value: string) {
+export default class CategoryEntry extends DictionaryEntry {
+  constructor(public category: Category) {
     super()
   }
 }

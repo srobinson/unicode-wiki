@@ -1,4 +1,4 @@
-import {hexRange} from "./unicode-utils"
+import {codepointIndexRange} from "./unicode-utils"
 
 /**
  * Generates a hex range query
@@ -13,8 +13,8 @@ import {hexRange} from "./unicode-utils"
  * @param range the range to transform
  * @return the generated query
  */
-export const hexRangeQuery = (range: string): {index: {$gte: number; $lte?: number}} => {
-  const {from, to} = hexRange(range)
+export const codepointIndexRangeQuery = (range: string): {index: {$gte: number; $lte?: number}} => {
+  const {from, to} = codepointIndexRange(range)
   const q = {$gte: from}
   if (to !== from) {
     Object.assign(q, {$lte: to})
@@ -41,7 +41,7 @@ export const hexRangeQuery = (range: string): {index: {$gte: number; $lte?: numb
  * @param ranges ranges to map of
  * @return the generates query
  */
-export const hexRangeOrQuery = (ranges: string[]) => {
-  const hexRanges = ranges.map((range: string) => hexRangeQuery(range))
-  return {$or: hexRanges}
+export const codepointIndexRangeOrQuery = (ranges: string[]) => {
+  const codepointIndexRanges = ranges.map((range: string) => codepointIndexRangeQuery(range))
+  return {$or: codepointIndexRanges}
 }

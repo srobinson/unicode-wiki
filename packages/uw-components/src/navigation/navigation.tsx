@@ -72,37 +72,32 @@ export class ExplorerNavigation extends React.PureComponent<NavigationComponentP
         )}
         {isNavigationTitleMenuOpen && (
           <Styled.NavigationMenu>
-            {categoryList
-              .filter((category: Category) => category.parent === 0)
-              .map((category: Category) => {
-                const children = categoryList.filter(
-                  (child: Category) => child.parent === category.index,
-                )
-                return (
-                  <React.Fragment key={`fragment-${category.key}`}>
+            {categoryList.map((category: Category) => {
+              return (
+                <React.Fragment key={`fragment-${category.key}`}>
+                  {category.parent === 0 ? (
                     <Styled.MenuItem
                       isNavigationTypeMenuOpen={isNavigationTypeMenuOpen}
-                      key={`parent-${category.key}`}
+                      key={`parent-${category.parent}:${category.index}:${category.key}`}
                       onClick={setCategory.bind(undefined, category.key)}
                       active={category.key === categoryKey}
                       innerRef={(category.key === categoryKey && activeNode) || undefined}
                     >
-                      {category.title}
+                      {`${category.parent}:${category.index}:${category.title}`}
                     </Styled.MenuItem>
-                    {children &&
-                      children.map((child: Category) => (
-                        <Styled.ChildMenuItem
-                          onClick={setCategory.bind(undefined, child.key)}
-                          active={child.key === categoryKey}
-                          innerRef={(child.key === categoryKey && activeNode) || undefined}
-                          key={`child-${child.key}`}
-                        >
-                          {child.title}
-                        </Styled.ChildMenuItem>
-                      ))}
-                  </React.Fragment>
-                )
-              })}
+                  ) : (
+                    <Styled.ChildMenuItem
+                      onClick={setCategory.bind(undefined, category.key)}
+                      active={category.key === categoryKey}
+                      innerRef={(category.key === categoryKey && activeNode) || undefined}
+                      key={`child-${category.parent}:${category.index}:${category.key}`}
+                    >
+                      {`${category.parent}:${category.index}:${category.title}`}
+                    </Styled.ChildMenuItem>
+                  )}
+                </React.Fragment>
+              )
+            })}
           </Styled.NavigationMenu>
         )}
       </Styled.ExplorerNavigation>

@@ -1,7 +1,7 @@
 import * as Category from "./category-dao"
 import {Request, Response} from "express"
 import {CategoryDocument, CodepointHexRange, ResourceNotFoundException} from "@uw/domain"
-import {hexRangeOrQuery} from "@uw/utils"
+import {codepointIndexRangeOrQuery} from "@uw/utils"
 import * as codepointController from "../codepoints"
 
 export const getCategoryById = async (modelType: string, req: Request, res: Response) => {
@@ -43,7 +43,7 @@ export const getCodepointsByCategoryById = async (
   const ranges = [categoryRange, ...childRanges]
     .filter(range => Object.keys(range).length)
     .map(range => `${range.from}:${range.to}`)
-  const q = hexRangeOrQuery(ranges)
+  const q = codepointIndexRangeOrQuery(ranges)
   const cps = await codepointController.findCodepoints(req, res, q)
   return cps
 }

@@ -1,0 +1,137 @@
+# http://unicode.org/charts/
+
+sg;;Notational Systems
+mb;2800-28FF;Braille Patterns
+mb;1D100-1D1FF;Musical Symbols
+sb;1D200-1D24F;Ancient Greek Musical Notation
+sb;1D000-1D0FF;Byzantine Musical Symbols
+mb;1BC00-1BC9F;Duployan
+sb;1BCA0-1BCAF;Shorthand Format Controls
+mb;1D800-1DAAF;Sutton SignWriting
+
+
+sg;;Punctuation
+mb;2000-206F;General Punctuation
+pb;0021-007F;ASCII Punctuation
+pb;00A1-00BF;Latin-1 Punctuation
+sb;2E00-2E7F;Supplemental Punctuation
+mb;3000-303F;CJK Symbols and Punctuation
+sb;16FE0-16FFF;Ideographic Symbols and Punctuation
+mb;FE30-FE4F;CJK Compatibility Forms
+pb;FF01-FF60; Fullwidth ASCII Punctuation
+sb;FF00-FFEF;Halfwidth and Fullwidth Forms
+sb;FE50-FE6F;Small Form Variants
+sb;FE10-FE1F;Vertical Forms
+
+
+sg;;Alphanumeric Symbols
+mb;2100-214F;Letterlike Symbols
+pb;10190-101CF;Roman Symbols
+mb;1D400-1D7FF;Mathematical Alphanumeric Symbols
+mb;1EE00-1EEFF;Arabic Mathematical Alphabetic Symbols
+mb;2460-24FF;Enclosed Alphanumerics
+sb;1F100-1F1FF;Enclosed Alphanumeric Supplement
+mb;3200-32FF;Enclosed CJK Letters and Months
+sb;1F200-1F2FF;Enclosed Ideographic Supplement
+mb;3300-33FF;CJK Compatibility
+pb;2100-214F;Additional Squared Symbols
+
+
+sg;;Technical Symbols
+pb;2336-237A;APL symbols
+sb;2400-243F;Control Pictures
+sb;2300-23FF;Miscellaneous Technical
+sb;2440-245F;Optical Character Recognition (OCR)
+
+sg;;Numbers & Digits
+mb;0030-0039;ASCII Digits
+pb;FF10-FF19;Fullwidth ASCII Digits
+mb;A830-A83F;Common Indic Number Forms
+mb;102E0-102FF;Coptic Epact Numbers
+mb;1D360-1D37F;Counting Rod Numerals
+mb;12400-1247F;Cuneiform Numbers and Punctuation
+mb;1EC70-1ECBF;Indic Siyaq Numbers
+mb;1D2E0-1D2FF;Mayan Numerals
+mb;2150-218F;Number Forms
+mb;10E60-10E7F;Rumi Numeral Symbols
+mb;111E0-111FF;Sinhala Archaic Numbers
+mb;2070-209F;Super and Subscripts
+
+
+sg;;Mathematical Symbols
+mb;2190-21FF;Arrows
+sb;27F0-27FF;Supplemental Arrows-A
+sb;2900-297F;Supplemental Arrows-B
+sb;1F800-1F8FF;Supplemental Arrows-C
+pb;2B00-2BFF;Additional Arrows
+sb;2B00-2BFF;Miscellaneous Symbols and Arrows
+mb;1D400-1D7FF;Mathematical Alphanumeric Symbols
+sb;1EE00-1EEFF;Arabic Mathematical Alphabetic Symbols
+sb;2100-214F;Letterlike Symbols
+mb;2200-22FF;Mathematical Operators
+sb;2A00-2AFF;Supplemental Mathematical Operators
+sb;27C0-27EF;Miscellaneous Mathematical Symbols-A
+sb;2980-29FF;Miscellaneous Mathematical Symbols-B
+pb;2308-230B;Floors and Ceilings
+pb;2061-2064;Invisible Operators
+mb;25A0-25FF;Geometric Shapes
+pb;2B00-2BFF;Additional Shapes
+sb;2500-257F;Box Drawing
+sb;2580-259F;Block Elements
+sb;1F780-1F7FF;Geometric Shapes Extended
+
+sg;;Emoji & Pictographs
+mb;2700-27BF;Dingbats
+sb;1F650-1F67F;Ornamental Dingbats
+mb;1F600-1F64F;Emoticons
+mb;2600-26FF;Miscellaneous Symbols
+mb;1F300-1F5FF;Miscellaneous Symbols And Pictographs
+mb;1F900-1F9FF;Supplemental Symbols and Pictographs
+mb;1F680-1F6FF;Transport and Map Symbols
+
+
+
+sg;;Other Symbols
+mb;1F700-1F77F;Alchemical Symbols
+mb;10190-101CF;Ancient Symbols
+mb;20A0-20CF;Currency Symbols
+
+mb;;Game Symbols
+pb;2654-265F, 26C0-26C3;Chess, Checkers/Draughts
+sb;1FA00-1FA6F;Chess Symbols
+sb;1F030-1F09F;Domino Tiles
+pb;2616-2617;Japanese Chess
+sb;1F000-1F02F;Mahjong Tiles
+sb;1F0A0-1F0FF;Playing Cards
+pb;2660-2667;Card suits
+mb;2B00-2BFF;Miscellaneous Symbols and Arrows
+mb;;Yijing Symbols
+pb;268A-268F, 2630-2637;Yijing Mono, Di and Trigrams
+sb;4DC0-4DFF;Yijing Hexagram Symbols
+sb;1D300-1D35F;Tai Xuan Jing Symbols
+
+sg;;Specials
+pb;0000-001F, 0080-009F;Controls
+pb;2000-206F;Layout Controls
+pb;2061-2064;Invisible Operators
+mb;FFF0-FFFF;Specials
+mb;E0000-E007F;Tags
+mb;FE00-FE0F;Variation Selectors
+sb;E0100-E01EF;Variation Selectors Supplement
+
+
+sg;;Private Use
+mb;E000-F8FF;Private Use Area
+mb;F0000-FFFFD;Supplementary Private Use Area-A
+mb;100000-10FFFD;Supplementary Private Use Area-B
+
+
+sg;;Surrogates
+mb;D800-DBFF;High Surrogates
+mb;DC00-DFFF;Low Surrogates
+
+sg;;Noncharacters
+pb;FDD0-FDEF;Arabic Presentation Forms-A
+pb;FFFE-FFFF;Specials
+
+

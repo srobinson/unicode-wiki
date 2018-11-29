@@ -1,5 +1,6 @@
 import CodePoint from "../unicode-data-parser/domain/CodePoint"
 import ExpandedValue from "../unicode-data-parser/domain/ExpandedValue"
+import CategoryEntry from "../unicode-data-parser/domain/CategoryEntry"
 
 /**
  * The Dictionary interface provides
@@ -14,6 +15,7 @@ export default interface Dictionary<K, V> {
 
 export type CodePointDict = Dictionary<string, CodePoint>
 export type ExpandedValueDict = Dictionary<string, ExpandedValue>
+export type CategoryEntryDict = Dictionary<string, CategoryEntry>
 export type StringDict = Dictionary<string, string>
 
 export abstract class DictionaryEntry {

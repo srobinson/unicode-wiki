@@ -1,21 +1,4 @@
-import {CodepointIndexRange} from "@uw/domain"
-
-
-
-
-// export const intToHex = (i) => {
-//   const hex = (i).toString(16).toUpperCase()
-//   return i < 65535 ? ('0000' + hex).slice(-4) : hex
-// }
-
-// export const family = (i) => {
-//   const range = 1024
-//   const multiplier = Math.floor((i * 2.56) / range)
-//   return 'u' + intToHex(multiplier * range)
-// }
-
-
-
+import {CodepointIndexRange, CodepointHexRange} from "@uw/domain"
 
 // Regex matches hex format [0000-FFFFFF]
 export const HEX_RE = /^([0-9a-fA-F]){4,6}$/
@@ -31,7 +14,61 @@ export const isHex = (input: string): boolean => {
 }
 
 /**
- * Trasnforms a colon delimited string of hex pairs
+ * Transforms an int into hex format
+ *
+ * @param int the int to transform
+ */
+export const intToHex = (int: number) => {
+  const hex = int.toString(16).toUpperCase()
+  return int < 65535 ? ("0000" + hex).slice(-4) : hex
+}
+
+/**
+ * Trasnforms a delimited string of hex pairs
+ * into a range of hexs'
+ *
+ * @see CodepointHexRange
+ *
+ * Example:
+ *
+ * "0000:0005" => {
+ *  from: "0000",
+ *  to: "0005",
+ * }
+ *
+ * "0000..0005" => {
+ *  from: "0000",
+ *  to: "0005",
+ * }
+ *
+ * "0000-0005" => {
+ *  from: "0000",
+ *  to: "0005",
+ * }
+ *
+ * "0000" => {
+ *  from: "0000",
+ *  to: "0000",
+ * }
+ *
+ * @param input the string to transform
+ * @return the transformed input @see CodepointHexRange
+ */
+export const codepointHexRange = (input: string): CodepointHexRange => {
+  // support string will be delimination by ".." or "-"
+  input = input.replace(/\.\.|\-/, ":")
+  const parts = input.split(":")
+  if (!isHex(parts[0])) {
+    throw new Error(`1: ${parts[0]} not a valid range`)
+  }
+  if (parts[1] && !isHex(parts[1])) {
+    throw new Error(`2: ${parts[1]} not a valid range`)
+  }
+  return {from: parts[0], to: parts[1] || parts[0]}
+}
+
+/**
+ * Trasnforms a delimited string of hex pairs
  * into a range of integers
  *
  * @see CodepointIndexRange
@@ -43,25 +80,35 @@ export const isHex = (input: string): boolean => {
  *  to: 5,
  * }
  *
+ * "0000..0005" => {
+ *  from: 0,
+ *  to: 5,
+ * }
+ *
+ * "0000-0005" => {
+ *  from: 0,
+ *  to: 5,
+ * }
+ *
+ * "0000-0005" => {
+ *  from: 0,
+ *  to: 5,
+ * }
+ *
  * @param input the string to transform
  * @return the transformed input @see CodepointIndexRange
  */
-export const hexRange = (input: string): CodepointIndexRange => {
-  // occasionally the string will be delimited by ".."
-  input = input.replace("..", ":")
-  const parts = input.split(":")
-  if (!isHex(parts[0])) {
-    throw new Error(`${input} not a valid range`)
-  }
-  const from = parseInt(parts[0], 16)
-  if (parts.length === 2 && parts[1].length) {
-    if (!isHex(parts[1])) {
-      throw new Error(`${input} not a valid range`)
-    }
-    const to = parseInt(parts[1], 16)
-    return {from, to}
-  }
-  return {from, to: from}
+export const codepointIndexRange = (input: string): CodepointIndexRange => {
+  const {from, to} = codepointHexRange(input)
+  return to
+    ? {
+        from: parseInt(from, 16),
+        to: parseInt(to, 16),
+      }
+    : {
+        from: parseInt(from, 16),
+        to: parseInt(from, 16),
+      }
 }
 
 /**

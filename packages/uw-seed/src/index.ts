@@ -1,9 +1,10 @@
 import * as async from "async"
-import {CodePointDict, ExpandedValueDict} from "./file-parser/Dictionary"
+import {CodePointDict, ExpandedValueDict, CategoryEntryDict} from "./file-parser/Dictionary"
 import LocalDictionary from "./file-parser/LocalDictionary"
 import LineByLineFileParser, {DELIMINATOR} from "./file-parser/ReadLineParser"
 import DbClient from "./mongo"
 import BlocksLineParser from "./unicode-data-parser/BlocksLineParser"
+import CategoryLineParser from "./unicode-data-parser/CategoryLineParser"
 import CodePoint from "./unicode-data-parser/domain/CodePoint"
 import EmojiLineParser from "./unicode-data-parser/EmojiLineParser"
 import ExpandedValueLineParser from "./unicode-data-parser/ExpandedValueLineParser"
@@ -11,7 +12,7 @@ import NamesListLineParser from "./unicode-data-parser/NamesListLineParser"
 import PropertyAliasesLineParser from "./unicode-data-parser/PropertyAliasesLineParser"
 import PropertyAliasesValuesLineParser from "./unicode-data-parser/PropertyAliasesValuesLineParser"
 import UCDXMLParser from "./unicode-data-parser/UCDXMLParser"
-import {getUTCPath} from "./utils"
+import {getUTCPath, updateCategoriesWithHasChildrenFlag} from "./utils"
 
 const generalCategoryDict: ExpandedValueDict = new LocalDictionary()
 const propertyAliasesDict: ExpandedValueDict = new LocalDictionary()
@@ -19,12 +20,32 @@ const propertyAliasesValuesDict: ExpandedValueDict = new LocalDictionary()
 const bidiDict: ExpandedValueDict = new LocalDictionary()
 const blocksDict: ExpandedValueDict = new LocalDictionary()
 const codePointDict: CodePointDict = new LocalDictionary()
+const scriptsEntryDict: CategoryEntryDict = new LocalDictionary()
+const symbolsEntryDict: CategoryEntryDict = new LocalDictionary()
 
 class Runner {
   public static main() {
     const client = new DbClient()
 
     async.series([
+      function parseScriptsFile(cb) {
+        new LineByLineFileParser(
+          {
+            DELIMINATOR: DELIMINATOR.SEMI,
+            PATH: getUTCPath("chart-scripts"),
+          },
+          scriptsEntryDict,
+        ).parse(new CategoryLineParser())
+      },
+      function parseScriptsFile(cb) {
+        new LineByLineFileParser(
+          {
+            DELIMINATOR: DELIMINATOR.SEMI,
+            PATH: getUTCPath("chart-symbols"),
+          },
+          symbolsEntryDict,
+        ).parse(new CategoryLineParser())
+      },
       function parsePropertyAliasesFile(cb) {
         new LineByLineFileParser(
           {
@@ -107,6 +128,8 @@ class Runner {
         )
       },
       async function() {
+        updateCategoriesWithHasChildrenFlag("chart-scripts", scriptsEntryDict)
+        updateCategoriesWithHasChildrenFlag("chart-symbols", symbolsEntryDict)
         await client.createCategories(blocksDict)
         await client.createCollection(codePointDict)
         await client.exitProcess()
