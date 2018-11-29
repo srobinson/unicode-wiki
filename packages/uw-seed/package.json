@@ -5,6 +5,7 @@
   "scripts": {
     "lint": "tslint 'src/**/*.ts'",
     "prepare": "tsc",
+    "watch": "tsc -w",
     "seed": "node build/dist/index.js"
   },
   "dependencies": {

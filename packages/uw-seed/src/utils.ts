@@ -1,17 +1,20 @@
 import * as path from "path"
+import * as fs from "fs"
 import {Category, CodepointHexRange} from "@uw/domain"
 import {loadJSONFile} from "@uw/utils"
+import {CategoryEntryDict} from "./file-parser/Dictionary"
+import CategoryEntry from "./unicode-data-parser/domain/CategoryEntry"
 
-export const UCDpath = path.resolve(__dirname, "../../../../static/UCD/")
+export const UCDpath = path.resolve("../../../static/UCD")
 export const getUTCPath = (name: string) => path.join(UCDpath, name)
 export const loadUTCFile = (name: string) => loadJSONFile(getUTCPath(name))
 
-export const updateCategoriesWithHasChildrenFlag = (file: string) => {
-  const categories: Category[] = loadUTCFile(file)
+export const updateCategoriesWithHasChildrenFlag = (name: string, dict: CategoryEntryDict) => {
+  const categories: Category[] = dict.getValues().map((entry: CategoryEntry) => entry.category)
   categories.forEach(category => {
     recurse(categories, category)
   })
-  return categories
+  fs.writeFileSync(path.join(UCDpath, `${name}.json`), JSON.stringify(categories, undefined, 2))
 }
 
 const recurse = (categories: Category[], category: Category) => {

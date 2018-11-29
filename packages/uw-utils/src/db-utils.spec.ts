@@ -1,13 +1,13 @@
-import {hexRangeQuery, hexRangeOrQuery} from "./db-utils"
+import {codepointIndexRangeQuery, codepointIndexRangeOrQuery} from "./db-utils"
 
-describe("hexRangeQuery utility", () => {
+describe("codepointIndexRangeQuery utility", () => {
   it("Should generate a valid query", () => {
-    expect(hexRangeQuery("0000")).toEqual({
+    expect(codepointIndexRangeQuery("0000")).toEqual({
       index: {
         $gte: 0,
       },
     })
-    expect(hexRangeQuery("0000:0005")).toEqual({
+    expect(codepointIndexRangeQuery("0000:0005")).toEqual({
       index: {
         $gte: 0,
         $lte: 5,
@@ -15,7 +15,7 @@ describe("hexRangeQuery utility", () => {
     })
     // this signature is supported however
     // the query will yield zero results
-    expect(hexRangeQuery("0005:0000")).toEqual({
+    expect(codepointIndexRangeQuery("0005:0000")).toEqual({
       index: {
         $gte: 5,
         $lte: 0,
@@ -24,15 +24,17 @@ describe("hexRangeQuery utility", () => {
   })
 
   it("Should blow up if invalid query", () => {
-    expect(() => hexRangeQuery("XXXXX")).toThrowError("XXXXX not a valid range")
-    expect(() => hexRangeQuery("XXXXX:YYYY")).toThrowError("XXXXX:YYYY not a valid range")
-    expect(() => hexRangeQuery("0000:XXXX")).toThrowError("0000:XXXX not a valid range")
+    expect(() => codepointIndexRangeQuery("XXXXX")).toThrowError("XXXXX not a valid range")
+    expect(() => codepointIndexRangeQuery("XXXXX:YYYY")).toThrowError(
+      "XXXXX:YYYY not a valid range",
+    )
+    expect(() => codepointIndexRangeQuery("0000:XXXX")).toThrowError("0000:XXXX not a valid range")
   })
 })
 
-describe("hexRangeOrQuery utility", () => {
+describe("codepointIndexRangeOrQuery utility", () => {
   it("Should generate a valid query", () => {
-    expect(hexRangeOrQuery(["0000:0005", "000A:000B"])).toEqual({
+    expect(codepointIndexRangeOrQuery(["0000:0005", "000A:000B"])).toEqual({
       $or: [
         {
           index: {
@@ -48,7 +50,7 @@ describe("hexRangeOrQuery utility", () => {
         },
       ],
     })
-    expect(hexRangeOrQuery(["0000:0005", "000A"])).toEqual({
+    expect(codepointIndexRangeOrQuery(["0000:0005", "000A"])).toEqual({
       $or: [
         {
           index: {
@@ -66,7 +68,7 @@ describe("hexRangeOrQuery utility", () => {
   })
 
   it("should blow up for an invalid range", () => {
-    expect(() => hexRangeOrQuery(["0000:0005", "XXXX:YYYY"])).toThrowError(
+    expect(() => codepointIndexRangeOrQuery(["0000:0005", "XXXX:YYYY"])).toThrowError(
       "XXXX:YYYY not a valid range",
     )
   })
