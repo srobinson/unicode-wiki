@@ -6,13 +6,11 @@ import {createBrowserHistory} from "history"
 import App from "./app"
 import {configureStore} from "@uw/store"
 import "./config"
-import registerServiceWorker from "./registerServiceWorker"
+// import registerServiceWorker from "./registerServiceWorker"
 
 const history = createBrowserHistory()
 const initialState = window.initialReduxState
 const store = configureStore(history, initialState)
-
-console.log(process.env)
 
 const render = (Component: any) => {
   return ReactDOM.render(
@@ -37,5 +35,5 @@ if (m.hot) {
 }
 
 if (process.env.NODE_ENV !== "development") {
-  registerServiceWorker()
+  // registerServiceWorker()
 }

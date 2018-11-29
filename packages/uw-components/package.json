@@ -7,7 +7,7 @@
   "typings": "./dist/index",
   "scripts": {
     "lint": "tslint 'src/**/*.ts'",
-    "prepare": "echo '@uw/components' && tsc",
+    "prepare": "tsc",
     "watch": "tsc -w"
   },
   "dependencies": {
