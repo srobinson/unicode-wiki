@@ -1,5 +1,6 @@
 !!*
 _*
+.gcloud
 .nyc_output
 build
 coverage

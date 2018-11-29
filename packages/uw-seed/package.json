@@ -3,9 +3,8 @@
   "private": true,
   "version": "0.0.1",
   "scripts": {
-    "copyfiles": "copyfiles UCD/* build",
     "lint": "tslint 'src/**/*.ts'",
-    "prepare": "echo '@uw/seed' && tsc && yarn copyfiles",
+    "prepare": "tsc",
     "seed": "node build/dist/index.js"
   },
   "dependencies": {
