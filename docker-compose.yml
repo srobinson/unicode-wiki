@@ -19,9 +19,9 @@ services:
     environment:
         - GET_HOSTS_FROM=dns
         - NODE_ENV=production
-        - NODE_PORT=3001
         - PORT=80
         - REACT_APP_API_BASE_URL=https://api.unicode.wiki/api
+        - REACT_APP_FONTS_URL=https://storage.googleapis.com/unicode-wiki/static/fonts
     labels:
       - "traefik.enable=true"
       - "traefik.frontend.rule=Host:uw-app.docker.localhost"

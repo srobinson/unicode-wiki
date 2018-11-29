@@ -1,25 +1,20 @@
 FROM node:9-alpine AS BUILD
-
 WORKDIR /usr/src/app
 
-COPY static/UCD ./static/UCD
-
 COPY package.json yarn.lock ./
+
+COPY static/UCD ./static/UCD
 COPY packages/uw-domain ./packages/uw-domain
 COPY packages/uw-logging ./packages/uw-logging
 COPY packages/uw-utils ./packages/uw-utils
 COPY packages/uw-api ./packages/uw-api
 COPY packages/uw-seed ./packages/uw-seed
+
 COPY .env tsconfig.json jest.config.js tslint.json lerna.json ./
 
-RUN yarn install --production=true \
-  && yarn global add lerna \
-  && lerna bootstrap
-
-# COPY . .
+RUN yarn global add lerna && lerna bootstrap
 
 FROM node:9-alpine
-
 WORKDIR /usr/src/app
 EXPOSE 3001
 

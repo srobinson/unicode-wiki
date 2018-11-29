@@ -1,5 +1,22 @@
 import {CodepointIndexRange} from "@uw/domain"
 
+
+
+
+// export const intToHex = (i) => {
+//   const hex = (i).toString(16).toUpperCase()
+//   return i < 65535 ? ('0000' + hex).slice(-4) : hex
+// }
+
+// export const family = (i) => {
+//   const range = 1024
+//   const multiplier = Math.floor((i * 2.56) / range)
+//   return 'u' + intToHex(multiplier * range)
+// }
+
+
+
+
 // Regex matches hex format [0000-FFFFFF]
 export const HEX_RE = /^([0-9a-fA-F]){4,6}$/
 
