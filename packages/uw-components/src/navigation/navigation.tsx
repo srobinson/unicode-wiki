@@ -1,5 +1,6 @@
 // tslint:disable:no-any
 import * as React from "react"
+import * as ReactDOM from "react-dom"
 import {Category, CategoryType} from "@uw/domain"
 import * as Styled from "./navigation.css"
 import {NavigationSearch} from "./navigation-search"
@@ -17,15 +18,19 @@ interface NavigationComponentProps {
 interface InternalState {
   isNavigationTitleMenuOpen: boolean
   isNavigationTypeMenuOpen: boolean
+  searchCategories: Category[] | undefined
 }
 
 export class ExplorerNavigation extends React.PureComponent<NavigationComponentProps> {
   state: InternalState = {
     isNavigationTitleMenuOpen: false,
     isNavigationTypeMenuOpen: false,
+    searchCategories: undefined,
   }
 
   private activeNode = React.createRef<any>()
+  // @ts-ignore
+  private menu: HTMLInputElement | undefined
 
   componentWillUnmount() {
     document.body.classList.toggle("is-locked", false)
@@ -42,6 +47,27 @@ export class ExplorerNavigation extends React.PureComponent<NavigationComponentP
         if (activeComponent) {
           document.body.classList.toggle("is-locked", true)
           activeComponent.scrollIntoView({behavior: "smooth", block: "center"})
+        }
+      },
+    )
+  }
+
+  searchCategories = (term: string) => {
+    const {categoryList} = this.props
+    const searchCategories = categoryList.filter((category: Category) =>
+      category.title.match(new RegExp(term, "gi")),
+    )
+    this.setState(
+      {
+        searchCategories,
+      },
+      () => {
+        if (this.menu) {
+          const node = ReactDOM.findDOMNode(this.menu)
+          if (node) {
+            // @ts-ignore
+            node.scrollTop = 0
+          }
         }
       },
     )
@@ -79,6 +105,7 @@ export class ExplorerNavigation extends React.PureComponent<NavigationComponentP
       {
         isNavigationTitleMenuOpen: false,
         isNavigationTypeMenuOpen: false,
+        searchCategories: undefined,
       },
       () => document.body.classList.toggle("is-locked", false),
     )
@@ -86,8 +113,8 @@ export class ExplorerNavigation extends React.PureComponent<NavigationComponentP
 
   render() {
     const {currentCategory, categoryList, categoryType, next, prev} = this.props
-    const {isNavigationTitleMenuOpen, isNavigationTypeMenuOpen} = this.state
-
+    const {isNavigationTitleMenuOpen, isNavigationTypeMenuOpen, searchCategories} = this.state
+    const categories = searchCategories ? searchCategories : categoryList
     return (
       <Styled.ExplorerNavigation reveal={categoryList && categoryList.length > 0}>
         <Styled.NavigationCategory>
@@ -134,10 +161,15 @@ export class ExplorerNavigation extends React.PureComponent<NavigationComponentP
           </Styled.NavigationMenu>
         )}
         {isNavigationTitleMenuOpen && (
-          <Styled.NavigationMenuContainer>
-            <NavigationSearch />
+          // tslint:disable-next-line:no-any
+          <Styled.NavigationMenuContainer ref={(ref: any) => (this.menu = ref)}>
+            <NavigationSearch searchCategories={this.searchCategories} />
             <Styled.NavigationMenu>
-              {categoryList.map((category: Category) => {
+              {searchCategories &&
+                !searchCategories.length && (
+                  <Styled.NoResults>No matches returned...</Styled.NoResults>
+                )}
+              {categories.map((category: Category) => {
                 return (
                   <React.Fragment
                     key={`fragment-${category.level}=${category.parent}:${category.index}:${
