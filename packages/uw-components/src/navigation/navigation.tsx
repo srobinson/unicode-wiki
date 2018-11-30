@@ -5,17 +5,10 @@ import * as Styled from "./navigation.css"
 import {NavigationSearch} from "./navigation-search"
 
 interface NavigationComponentProps {
-  // activeNode: React.RefObject<any>
   currentCategory: Category | undefined
-  // categoryKey: string
   categoryList: Category[]
-  // categoryTitle: string
   categoryType: string
-  // isNavigationTitleMenuOpen: boolean
-  // isNavigationTypeMenuOpen: boolean
   next: any
-  // openNavigationTitleMenu: () => void
-  // openNavigationTypeMenu: () => void
   prev: any
   setCategory: (key: string) => void
   setCategoryType: (type: CategoryType) => void
@@ -34,13 +27,6 @@ export class ExplorerNavigation extends React.PureComponent<NavigationComponentP
 
   private activeNode = React.createRef<any>()
 
-  componentWillUpdate() {
-    const {isNavigationTypeMenuOpen} = this.state
-    if (isNavigationTypeMenuOpen) {
-      document.body.classList.toggle("is-locked", true)
-    }
-  }
-
   componentWillUnmount() {
     document.body.classList.toggle("is-locked", false)
   }
@@ -54,6 +40,7 @@ export class ExplorerNavigation extends React.PureComponent<NavigationComponentP
       () => {
         const activeComponent = this.activeNode.current
         if (activeComponent) {
+          document.body.classList.toggle("is-locked", true)
           activeComponent.scrollIntoView({behavior: "smooth", block: "center"})
         }
       },
@@ -84,19 +71,21 @@ export class ExplorerNavigation extends React.PureComponent<NavigationComponentP
 
   prev = () => {
     this.close()
-    this.props.next()
+    this.props.prev()
   }
 
   close = () => {
-    this.setState({
-      isNavigationTitleMenuOpen: false,
-      isNavigationTypeMenuOpen: false,
-    })
+    this.setState(
+      {
+        isNavigationTitleMenuOpen: false,
+        isNavigationTypeMenuOpen: false,
+      },
+      () => document.body.classList.toggle("is-locked", false),
+    )
   }
 
   render() {
     const {currentCategory, categoryList, categoryType, next, prev} = this.props
-
     const {isNavigationTitleMenuOpen, isNavigationTypeMenuOpen} = this.state
 
     return (
@@ -121,13 +110,25 @@ export class ExplorerNavigation extends React.PureComponent<NavigationComponentP
         </Styled.NavigationCategory>
         {isNavigationTypeMenuOpen && (
           <Styled.NavigationMenu isNavigationTypeMenuOpen={isNavigationTypeMenuOpen}>
-            <Styled.MenuItem key="blocks" onClick={() => this.setCategoryType("blocks")}>
+            <Styled.MenuItem
+              isNavigationTypeMenuOpen={isNavigationTypeMenuOpen}
+              key="blocks"
+              onClick={() => this.setCategoryType("blocks")}
+            >
               blocks
             </Styled.MenuItem>
-            <Styled.MenuItem key="scripts" onClick={() => this.setCategoryType("scripts")}>
+            <Styled.MenuItem
+              isNavigationTypeMenuOpen={isNavigationTypeMenuOpen}
+              key="scripts"
+              onClick={() => this.setCategoryType("scripts")}
+            >
               scripts
             </Styled.MenuItem>
-            <Styled.MenuItem key="symbols" onClick={() => this.setCategoryType("symbols")}>
+            <Styled.MenuItem
+              isNavigationTypeMenuOpen={isNavigationTypeMenuOpen}
+              key="symbols"
+              onClick={() => this.setCategoryType("symbols")}
+            >
               symbols
             </Styled.MenuItem>
           </Styled.NavigationMenu>
@@ -145,13 +146,13 @@ export class ExplorerNavigation extends React.PureComponent<NavigationComponentP
                   >
                     <Styled.MenuItem
                       active={currentCategory && category.key === currentCategory.key}
+                      categoryType={categoryType}
                       innerRef={
                         (currentCategory &&
                           category.key === currentCategory.key &&
                           this.activeNode) ||
                         undefined
                       }
-                      isNavigationTypeMenuOpen={isNavigationTypeMenuOpen}
                       key={`parent-${category.level}=${category.parent}:${category.index}:${
                         category.key
                       }`}

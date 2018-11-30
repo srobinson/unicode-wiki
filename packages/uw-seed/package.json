@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "lint": "tslint 'src/**/*.ts'",
-    "prepare": "tsc",
+    "prepare": "echo '@uw/seed' && tsc",
     "seed": "node build/dist/index.js"
   },
   "dependencies": {
