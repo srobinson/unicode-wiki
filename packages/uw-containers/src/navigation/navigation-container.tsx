@@ -44,8 +44,8 @@ class NavigationContainer extends React.Component<NavigationContainerProps & Oth
           const index = categoryList.findIndex((category: Category) => category.key === key)
           return {
             currentCategory: categoryList[index],
-            next: categoryList[index - 1] && categoryList[index - 1].key,
-            prev: categoryList[index + 1] && categoryList[index + 1].key,
+            next: categoryList[index + 1] && categoryList[index + 1].key,
+            prev: categoryList[index - 1] && categoryList[index - 1].key,
           }
         }
       }

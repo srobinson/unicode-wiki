@@ -84,8 +84,6 @@ export const NavigationButton = styled("span")`
   padding: 0 1em;
   text-transform: uppercase;
 
-  // opacity: 0.7;
-
   ${(props: any) => ({disabled}) =>
     disabled &&
     css`
@@ -156,25 +154,22 @@ export const NavigationMenuContainer = styled("div")`
 `
 
 export const NavigationMenu = styled("ul")`
-
-  max-width: 72rem;
-  margin: 4.5rem auto 0;
-  /* height: 100vh; */
-
-
   background: #004050;
   border: 1px solid #000;
   display: block;
   font-size: ${(props: any) => (props.isNavigationTypeMenuOpen ? "0.8rem" : "1rem")};
   list-style-type: none;
-  /* margin: 0; */
-  /* max-height: 80vh; */
-  /* max-width: 58vw; */
-  /* overflow: auto; */
+  max-width: 72rem;
   padding: 0;
-  /* position: absolute; */
-  /* top: 2.5rem; */
-  /* width: ${props => (props.isNavigationTypeMenuOpen ? "15rem" : "48rem")}; */
+
+  ${(props: any) => ({isNavigationTypeMenuOpen}) =>
+    !isNavigationTypeMenuOpen
+      ? css`
+          margin: 4.5rem auto 0;
+        `
+      : css`
+          margin: -1rem 0 0;
+        `};
 `
 
 export const MenuItem = styled("li")`
@@ -188,16 +183,21 @@ export const MenuItem = styled("li")`
   padding: 8px 16px;
   text-transform: uppercase;
 
-  position: sticky;
-  top: 4.5rem;
+  ${(props: any) => ({isNavigationTypeMenuOpen}) =>
+    !isNavigationTypeMenuOpen
+      ? css`
+          position: sticky;
+          top: 4.5rem;
+        `
+      : css``};
 
   &:hover,
   &:active {
     color: #fff;
   }
 
-  ${(props: any) => ({active, level}) =>
-    level > 0 &&
+  ${(props: any) => ({active, categoryType, isNavigationTypeMenuOpen, level}) =>
+    (level > 0 || categoryType === "blocks" || isNavigationTypeMenuOpen) &&
     css`
       background: none;
       border-left: ${active ? "1rem solid tomato" : ".5rem solid #004050"};
