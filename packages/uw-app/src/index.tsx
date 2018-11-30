@@ -14,6 +14,9 @@ const history = createBrowserHistory()
 const initialState = window.initialReduxState
 const store = configureStore(history, initialState)
 
+// TODO: Optimised web app
+// https://www.netguru.co/codestories/few-tips-that-will-make-your-pwa-on-ios-feel-like-native
+
 const render = (Component: any) => {
   return ReactDOM.render(
     <Provider store={store}>
