@@ -6,12 +6,13 @@ import {BlockState, Category, ScriptState, SymbolState} from "@uw/domain"
 import {fetchCategory} from "@uw/store"
 
 export interface InstanceState {
-  categoryKey: string
+  // categoryKey: string
+  currentCategory: Category | undefined
   categoryList: Category[]
-  categoryTitle: string
+  // categoryTitle: string
   categoryType: string
-  isNavigationTypeMenuOpen: boolean
-  isNavigationTitleMenuOpen: boolean
+  // isNavigationTypeMenuOpen: boolean
+  // isNavigationTitleMenuOpen: boolean
   next: string
   prev: string
 }

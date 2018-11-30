@@ -12,6 +12,10 @@ body {
   font-size: 1rem;
 }
 
+.searchmatch {
+  background: #FFEB3B;
+}
+
 .infobox ul, .infobox li{
   list-style-type:none;
 }
@@ -723,7 +727,6 @@ body.mediawiki .compact-ambox table.mbox-small-left{
 }
 .check-icon a.new{
   display:none;
-  speak:none
 }
 .nounderlines a,.IPA a:link,.IPA a:visited{
   text-decoration:none !important
@@ -931,7 +934,6 @@ table#mw-prefixindex-list-table,table#mw-prefixindex-nav-table{
 }
 td .sortkey,th .sortkey{
   display:none;
-  speak:none
 }
 .inputbox-hidecheckboxes form .inputbox-element,.inputbox-hidecheckboxes .mw-ui-checkbox{
   display:none !important
