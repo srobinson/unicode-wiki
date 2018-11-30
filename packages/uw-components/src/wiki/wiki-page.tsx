@@ -24,10 +24,8 @@ type WikiProps = {
 }
 
 export class Wiki extends React.PureComponent<WikiProps> {
-  componentWillMount() {
-    setTimeout(() => {
-      document.body.classList.toggle("is-locked", true)
-    }, 1500)
+  componentDidMount() {
+    document.body.classList.toggle("is-locked", true)
   }
   componentWillUnmount() {
     document.body.classList.toggle("is-locked", false)
