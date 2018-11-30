@@ -160,6 +160,7 @@ export const NavigationMenu = styled("ul")`
   font-size: ${(props: any) => (props.isNavigationTypeMenuOpen ? "0.8rem" : "1rem")};
   list-style-type: none;
   max-width: 72rem;
+  min-height: 100%;
   padding: 0;
 
   ${(props: any) => ({isNavigationTypeMenuOpen}) =>
@@ -205,4 +206,9 @@ export const MenuItem = styled("li")`
       position: unset;
       text-indent: ${level === 2 ? "10px" : "inherit"};
     `};
+`
+
+export const NoResults = styled("div")`
+  color: #fff;
+  padding: 2rem;
 `

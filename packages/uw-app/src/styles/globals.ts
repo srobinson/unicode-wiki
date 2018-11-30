@@ -50,6 +50,7 @@ export default css`
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    outline: none;
   }
 
   input[type="checkbox"] {
