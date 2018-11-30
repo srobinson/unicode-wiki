@@ -36,8 +36,6 @@ export const loadPage = async (req: Request, res: Response) => {
 const onError = async (req: Request, res: Response, data: any) => {
   const {category, cp, key, page} = req.query
   const {error} = data
-
-  // page not found -> try ONCE to load page with ${page} -> codepoint.name
   const wikiSearch = await doSearch(req, res)
   const wiki: WikiPage = {
     category,
