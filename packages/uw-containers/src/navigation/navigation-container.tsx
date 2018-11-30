@@ -12,17 +12,12 @@ import {CategoryType} from "@uw/domain"
 
 class NavigationContainer extends React.Component<NavigationContainerProps & OtherProps> {
   state: InstanceState = {
-    categoryKey: "",
     categoryList: [],
-    categoryTitle: "",
     categoryType: "",
-    isNavigationTitleMenuOpen: false,
-    isNavigationTypeMenuOpen: false,
+    currentCategory: undefined,
     next: "",
     prev: "",
   }
-
-  private activeNode = React.createRef<any>()
 
   constructor(props: NavigationContainerProps & OtherProps) {
     super(props)
@@ -39,26 +34,18 @@ class NavigationContainer extends React.Component<NavigationContainerProps & Oth
       const categoryList = nextProps[category].docs
       if (categoryList.length) {
         if (category !== prevState.categoryType) {
-          key = categoryList[0].key
           return {
-            categoryKey: key,
             categoryList: categoryList,
-            categoryTitle: categoryList[0].title,
             categoryType: category,
+            currentCategory: categoryList[0],
             next: categoryList[1].key,
           }
-        } else if (key !== prevState.categoryKey) {
-          console.log("categoryList", categoryList)
-          console.log("key", key)
+        } else if (prevState.currentCategory && key !== prevState.currentCategory.key) {
           const index = categoryList.findIndex((category: Category) => category.key === key)
-          console.log("index", index)
-          const prev = categoryList[index - 1] && categoryList[index - 1].key
-          const next = categoryList[index + 1] && categoryList[index + 1].key
           return {
-            categoryKey: key,
-            categoryTitle: categoryList[index].title,
-            next,
-            prev,
+            currentCategory: categoryList[index],
+            next: categoryList[index - 1] && categoryList[index - 1].key,
+            prev: categoryList[index + 1] && categoryList[index + 1].key,
           }
         }
       }
@@ -66,74 +53,27 @@ class NavigationContainer extends React.Component<NavigationContainerProps & Oth
     return {}
   }
 
-  openNavigationTitleMenu = () => {
-    this.setState(
-      {
-        isNavigationTitleMenuOpen: !this.state.isNavigationTitleMenuOpen,
-        isNavigationTypeMenuOpen: false,
-      },
-      () => {
-        const activeComponent = this.activeNode.current
-        if (activeComponent) {
-          activeComponent.scrollIntoView(true)
-        }
-      },
-    )
-  }
-
-  openNavigationTypeMenu = () => {
-    this.setState({
-      isNavigationTitleMenuOpen: false,
-      isNavigationTypeMenuOpen: !this.state.isNavigationTypeMenuOpen,
-    })
-  }
-
   setCategory = (key: string) => {
     const {categoryType} = this.state
     const nextUrl = `/c/${categoryType}/${key}`
-    this.setState(
-      {
-        isNavigationTitleMenuOpen: false,
-      },
-      () => this.props.push(nextUrl),
-    )
+    this.props.push(nextUrl)
   }
 
   setCategoryType = (type: CategoryType) => {
     const docs = this.props[type].docs
     const category = docs[0]
     const nextUrl = `/c/${type}/${category.key}`
-    this.setState(
-      {
-        isNavigationTypeMenuOpen: false,
-      },
-      () => this.props.push(nextUrl),
-    )
+    this.props.push(nextUrl)
   }
 
   render() {
-    const {
-      categoryList,
-      categoryKey,
-      categoryTitle,
-      categoryType,
-      isNavigationTypeMenuOpen,
-      isNavigationTitleMenuOpen,
-      next,
-      prev,
-    } = this.state
+    const {categoryList, categoryType, currentCategory, next, prev} = this.state
 
     return (
       <ExplorerNavigation
-        activeNode={this.activeNode}
         categoryList={categoryList}
-        categoryKey={categoryKey}
-        categoryTitle={categoryTitle}
         categoryType={categoryType}
-        isNavigationTitleMenuOpen={isNavigationTitleMenuOpen}
-        isNavigationTypeMenuOpen={isNavigationTypeMenuOpen}
-        openNavigationTitleMenu={this.openNavigationTitleMenu}
-        openNavigationTypeMenu={this.openNavigationTypeMenu}
+        currentCategory={currentCategory}
         setCategory={this.setCategory}
         setCategoryType={this.setCategoryType}
         next={next ? () => this.setCategory(next) : undefined}

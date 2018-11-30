@@ -6,6 +6,8 @@ import {createBrowserHistory} from "history"
 import App from "./app"
 import {configureStore} from "@uw/store"
 import "./config"
+// https://medium.freecodecamp.org/how-to-build-a-pwa-with-create-react-app-and-custom-service-workers-376bd1fdc6d3
+// https://github.com/GoogleChromeLabs/sw-precache
 // import registerServiceWorker from "./registerServiceWorker"
 
 const history = createBrowserHistory()

@@ -146,20 +146,35 @@ export const Next = styled(NavigationButton)`
 
 export const Prev = styled(NavigationButton)``
 
+export const NavigationMenuContainer = styled("div")`
+  position: fixed;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  overflow-y: scroll;
+`
+
 export const NavigationMenu = styled("ul")`
+
+  max-width: 72rem;
+  margin: 4.5rem auto 0;
+  /* height: 100vh; */
+
+
   background: #004050;
   border: 1px solid #000;
   display: block;
   font-size: ${(props: any) => (props.isNavigationTypeMenuOpen ? "0.8rem" : "1rem")};
   list-style-type: none;
-  margin: 0;
-  max-height: 80vh;
-  max-width: 58vw;
-  overflow: auto;
+  /* margin: 0; */
+  /* max-height: 80vh; */
+  /* max-width: 58vw; */
+  /* overflow: auto; */
   padding: 0;
-  position: absolute;
-  top: 2.5rem;
-  width: ${props => (props.isNavigationTypeMenuOpen ? "15rem" : "48rem")};
+  /* position: absolute; */
+  /* top: 2.5rem; */
+  /* width: ${props => (props.isNavigationTypeMenuOpen ? "15rem" : "48rem")}; */
 `
 
 export const MenuItem = styled("li")`
@@ -173,15 +188,21 @@ export const MenuItem = styled("li")`
   padding: 8px 16px;
   text-transform: uppercase;
 
+  position: sticky;
+  top: 4.5rem;
+
   &:hover,
   &:active {
     color: #fff;
   }
-`
 
-export const ChildMenuItem = styled(MenuItem)`
-  background: none;
-  border-left: ${(props: any) => (props.active ? "1rem solid tomato" : ".5rem solid #004050")};
-  text-indent: ${(props: any) => (props.level === 2 ? "10px" : "inherit")};
-  font-size: 0.8rem;
+  ${(props: any) => ({active, level}) =>
+    level > 0 &&
+    css`
+      background: none;
+      border-left: ${active ? "1rem solid tomato" : ".5rem solid #004050"};
+      font-size: 0.8rem;
+      position: unset;
+      text-indent: ${level === 2 ? "10px" : "inherit"};
+    `};
 `
