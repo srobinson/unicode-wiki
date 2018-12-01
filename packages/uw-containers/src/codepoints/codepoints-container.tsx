@@ -8,7 +8,7 @@ import {BlockTitle, LoadingContainer, ProgessLoader} from "@uw/components"
 import {CodepointDocument, CodepointHexRange, Link} from "@uw/domain"
 import {ApplicationState, fetchCodepoints, fetchCodepointsByCategory, followLink} from "@uw/store"
 import {CodepointContainerProps, OtherProps, InstanceState} from "./types"
-import {CodepointWikiContainer} from "../codepoint-wiki"
+import {CodepointWikiContainer} from "../wiki"
 
 class CodepointContainer extends React.PureComponent<CodepointContainerProps & OtherProps> {
   state: InstanceState = {
@@ -22,7 +22,7 @@ class CodepointContainer extends React.PureComponent<CodepointContainerProps & O
   ) {
     const codepoints = nextProps.codepoints.result
     const state = {}
-    if (codepoints && codepoints.docs.length && codepoints.page !== prevState.currentPage) {
+    if (codepoints && codepoints.page !== prevState.currentPage) {
       Object.assign(state, {
         currentPage: codepoints.page,
       })
@@ -150,15 +150,12 @@ class CodepointContainer extends React.PureComponent<CodepointContainerProps & O
     const selectedCodepoint =
       match.params.cp &&
       result &&
-      result.docs.filter((codepoint: CodepointDocument) => codepoint.cp === match.params.cp)
+      result.docs.filter((codepoint: CodepointDocument) => codepoint.cp === match.params.cp)[0]
 
     return (
       <React.Fragment>
         {loading && <ProgessLoader />}
-        <LoadingContainer
-          loading={loading}
-          visible={selectedCodepoint ? selectedCodepoint.length === 0 : true}
-        >
+        <LoadingContainer loading={loading} visible={!selectedCodepoint}>
           {children}
         </LoadingContainer>
 

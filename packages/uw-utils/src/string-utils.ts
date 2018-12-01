@@ -15,7 +15,12 @@ export const RELATIVE_URL_REPLACE = 'target="_blank" $1="https://en.wikipedia.or
 /**
  * REGEX matches all inline style blocks
  */
-export const INLINE_STYLES_TEST = /(<style.+<\/style>)/gi
+export const INLINE_STYLE_BLOCK_TEST = /(<style.+<\/style>)/gi
+
+/**
+ * REGEX matches all inline font-family style properties
+ */
+export const INLINE_FONT_FAMILY_STYLES_TEST = /(font-family:(.+?));/gi
 
 /**
  * Parse a camel case string and insert token between each word

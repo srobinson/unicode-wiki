@@ -30,13 +30,10 @@ class ExplorerPage extends React.PureComponent<WikiPageProps & OtherProps> {
   }
 
   render() {
-    const {match} = this.props
-    const {params} = match
-    const {cp} = params
     const navBarContent = this.renderNavBar()
     return (
       <React.Fragment>
-        <Header cp={cp}>
+        <Header>
           <Styled.NavigationBar>{navBarContent}</Styled.NavigationBar>
         </Header>
 

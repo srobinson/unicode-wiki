@@ -2,6 +2,7 @@
 import * as React from "react"
 import {SearchHit, WikiPage} from "@uw/domain"
 import * as Styled from "./wiki.css"
+import {generateClassName, fromCharCode} from "@uw/utils"
 
 type WikiTitleProps = {
   close: () => void
@@ -20,7 +21,9 @@ export const WikiTitle = ({close, loading, title}: WikiTitleProps) => (
 
 type WikiProps = {
   content: WikiPage | undefined
+  cp: string
   loading: boolean
+  title: string | undefined
 }
 
 export class Wiki extends React.PureComponent<WikiProps> {
@@ -32,13 +35,21 @@ export class Wiki extends React.PureComponent<WikiProps> {
   }
 
   render() {
-    const {content, loading} = this.props
-    const searchHits = parseSearchHits(content)
+    const {content, cp, loading, title} = this.props
     const text = content && content.text
     const html = text && parseHtml(text)
+    const className = generateClassName(cp)
+    const searchHits = parseSearchHits(content)
     return (
       <Styled.WikiPage className="wiki" expand={!loading}>
-        <div>
+        <div className={className}>
+          <Styled.CodepointContainer>
+            <h2>{title}</h2>
+            <Styled.Codepoint>
+              <span>{fromCharCode(cp)}</span>
+            </Styled.Codepoint>
+          </Styled.CodepointContainer>
+          {html && <h2>From Wikipedia:</h2>}
           {(html && <div dangerouslySetInnerHTML={{__html: html}} />) || (
             <Styled.Message>{text}</Styled.Message>
           )}
