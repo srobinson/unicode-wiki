@@ -127,6 +127,7 @@ export default class UCDXMLParser {
       [name_v1 && "name_v1"]: name_v1,
       properties: this.sortProperties(propertyFields),
       script,
+      title: name || name_v1
     })
     this.codePointDict.put(cp, codePoint)
     return codePoint

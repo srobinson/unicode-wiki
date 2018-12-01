@@ -8,8 +8,10 @@ body {
 
 .wiki *, .wiki ::after, .wiki ::before {
   box-sizing: content-box;
-  font-family: "Google Sans", sans-serif;
-  font-size: 1rem;
+}
+
+.wiki {
+  font-size: 18px;
 }
 
 .searchmatch {

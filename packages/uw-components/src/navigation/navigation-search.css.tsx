@@ -17,8 +17,9 @@ export const InputContainer = styled("div")`
 
   > div {
     background: linear-gradient(#e6e6e6, #ffffff);
-    border: 1px inset #ccc;
     border-radius: 5px;
+    border: 1px inset #ccc;
+    left: 1rem;
     position: absolute;
     top: 1rem;
     width: 80%;

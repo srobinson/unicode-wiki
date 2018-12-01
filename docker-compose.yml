@@ -12,8 +12,8 @@ services:
     container_name: uw-app
     build:
       context: .
-      dockerfile: Dockerfile.ui
-    image: gcr.io/unicode-wiki/uw-app:$VERSION_UI
+      dockerfile: Dockerfile.app
+    image: gcr.io/unicode-wiki/uw-app:$VERSION_APP
     depends_on:
       - uw-api
     environment:

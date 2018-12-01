@@ -3,60 +3,61 @@ import {css} from "react-emotion"
 import styled from "../styled"
 
 export const Card = styled("article")`
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-  font-weight: lighter;
-  text-align: center;
-  cursor: pointer;
-  margin: 0 3px;
-
-  font-size: 4.75vw;
-  line-height: 11.5vw;
-  width: 11.5vw;
-
   background: var(--card-background);
+  border-radius: 4px;
   border: var(--card-border);
   box-shadow: var(--card-box-shadow);
   color: var(--card-color);
-
-  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 4.75vw;
+  font-weight: lighter;
+  line-height: 11.5vw;
+  margin: 0 3px;
   opacity: 0.8;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 11.5vw;
 
-  transition: all 0.2s linear;
+  /* transition: all 0.2s linear; */
 
-  @media (min-width: 1152px) {
-    font-size: 70px;
-    line-height: 140px;
-    width: 136px;
+  @media (max-width: 1440px) {
+    color: #fff;
+    font-size: 5.77vw;
+    line-height: 9.44vw;
+    width: 9.44vw;
   }
 
-  @media (max-width: 1060px) {
-    width: 11.7vw;
+  @media (max-width: 1024px) {
+    font-size: 9.88vw;
+    line-height: 24vw;
+    width: 24vw;
   }
 
   @media (max-width: 800px) {
-    width: 11.3vw;
+    line-height: 23.8vw;
+    width: 23.7vw;
   }
 
   @media (max-width: 600px) {
-    width: 11vw;
+    line-height: 23.3vw;
+    width: 23.3vw;
   }
 
   @media (max-width: 480px) {
-    width: 10.8vw;
+    line-height: 22.9vw;
+    width: 22.9vw;
   }
 
   @media (max-width: 414px) {
-    width: 10.5vw;
-  }
-
-  @media (max-width: 384px) {
-    width: 10.3vw;
+    line-height: 22.36vw;
+    width: 22.36vw;
   }
 
   @media (max-width: 320px) {
-    width: 10vw;
+    line-height: 22vw;
+    width: 22vw;
   }
 
   > div {

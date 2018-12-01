@@ -8,7 +8,8 @@ import {
   REDIRECT_TEST,
   RELATIVE_URL_TEST,
   RELATIVE_URL_REPLACE,
-  INLINE_STYLES_TEST,
+  INLINE_FONT_FAMILY_STYLES_TEST,
+  INLINE_STYLE_BLOCK_TEST,
 } from "@uw/utils"
 import {search} from "./wiki-search-controller"
 
@@ -77,7 +78,10 @@ const onSuccess = async (req: Request, res: Response, data: any) => {
       langlinks: parse.langlinks,
       page,
       search: wikiSearch,
-      text: text.replace(RELATIVE_URL_TEST, RELATIVE_URL_REPLACE).replace(INLINE_STYLES_TEST, ""),
+      text: text
+        .replace(RELATIVE_URL_TEST, RELATIVE_URL_REPLACE)
+        .replace(INLINE_STYLE_BLOCK_TEST, "")
+        .replace(INLINE_FONT_FAMILY_STYLES_TEST, ""),
       title: parse.displaytitle,
       type: "page",
     }

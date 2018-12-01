@@ -19,3 +19,5 @@ ZNOTES
 static/f
 packages/uw-api/src/graphql
 packages/uw-api/src/db/elastic
+packages/uw-api/src/endpoints/wiki/wiki-page-dao.ts
+.scratch
