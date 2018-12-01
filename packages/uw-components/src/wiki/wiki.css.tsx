@@ -5,7 +5,7 @@ import styled from "../styled"
 export const Title = styled("h1")`
   position: absolute;
   left: 4.5rem;
-  top: -0.2rem;
+  top: 0.6rem;
   right: 5rem;
   min-width: 0;
 
@@ -13,6 +13,7 @@ export const Title = styled("h1")`
   color: #fff;
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-size: 1.4rem;
+  height: 3rem;
   line-height: 32px;
   right: 0;
   text-transform: uppercase;
@@ -45,7 +46,7 @@ export const Title = styled("h1")`
     padding: 0 0.5rem;
     position: absolute;
     right: 1rem;
-    top: 6px;
+    top: 0;
   }
 
   button:focus {
@@ -116,18 +117,20 @@ export const Codepoint = styled("div")`
   margin: 0 auto;
   text-align: center;
   text-shadow: 2px 4px 10px rgb(0, 0, 0, 0.3);
-  width: 40vw;
+  width: 50vw;
 
   @media (min-width: 1024px) {
     font-size: 204.8px;
     line-height: 409.6px;
-    width: 409.6px;
+    width: 450.6px;
   }
 `
 
 export const WikiPage = styled("article")`
+  color: #000;
   height: 100vh;
   left: 0;
+  margin: 0;
   opacity: 0;
   position: fixed;
   top: 0;
@@ -164,6 +167,14 @@ export const WikiPage = styled("article")`
       }
     `};
 `
+
+export const Iframe = styled("iframe")`
+  border: 0;
+  min-height: 100%;
+  overflow: hidden;
+  width: 100%;
+`
+
 export const Message = styled("div")`
   background: #eee;
   margin-bottom: 3rem;
