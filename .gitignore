@@ -11,6 +11,7 @@ node_modules
 NOTES
 npm-debug.log
 tmp
+tmp2
 uw_db
 yarn-error.log
 yarn.error.log

@@ -30,6 +30,7 @@ export class Wiki extends React.PureComponent<WikiProps> {
   componentDidMount() {
     document.body.classList.toggle("is-locked", true)
   }
+
   componentWillUnmount() {
     document.body.classList.toggle("is-locked", false)
   }
@@ -37,11 +38,10 @@ export class Wiki extends React.PureComponent<WikiProps> {
   render() {
     const {content, cp, loading, title} = this.props
     const text = content && content.text
-    const html = text && parseHtml(text)
     const className = generateClassName(cp)
     const searchHits = parseSearchHits(content)
     return (
-      <Styled.WikiPage className="wiki" expand={!loading}>
+      <Styled.WikiPage className="wiki content" expand={!loading}>
         <div className={className}>
           <Styled.CodepointContainer>
             <h2>{title}</h2>
@@ -49,10 +49,7 @@ export class Wiki extends React.PureComponent<WikiProps> {
               <span>{fromCharCode(cp)}</span>
             </Styled.Codepoint>
           </Styled.CodepointContainer>
-          {html && <h2>From Wikipedia:</h2>}
-          {(html && <div dangerouslySetInnerHTML={{__html: html}} />) || (
-            <Styled.Message>{text}</Styled.Message>
-          )}
+          <Styled.Iframe height="100%" onLoad={resizeIframe.bind(this)} srcDoc={text} scrolling="no" />
           {searchHits && (
             <Styled.SearchHits>
               <h2>Similar Pages</h2>
@@ -63,6 +60,10 @@ export class Wiki extends React.PureComponent<WikiProps> {
       </Styled.WikiPage>
     )
   }
+}
+
+function resizeIframe(iframe: any) {
+  iframe.target.height = iframe.target.contentWindow.document.body.scrollHeight + 10 + "px"
 }
 
 const parseSearchHits = (content: WikiPage | undefined) =>
@@ -87,7 +88,7 @@ const parseSearchHits = (content: WikiPage | undefined) =>
     ))) ||
   undefined
 
-const parseHtml = (text: string) => {
+export const parseHtml = (text: string) => {
   const node = htmlParser(text)
   const children = Array.from(node.childNodes)
   let src = ""
@@ -100,7 +101,7 @@ const parseHtml = (text: string) => {
   return src
 }
 
-const htmlParser = (htmlString: string) => {
+export const htmlParser = (htmlString: string) => {
   let docfrag = document.createDocumentFragment()
   const div = document.createElement("DIV")
   div.innerHTML = htmlString

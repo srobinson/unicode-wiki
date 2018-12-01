@@ -21,12 +21,10 @@ export const Card = styled("article")`
   width: 11.5vw;
 
   /* transition: all 0.2s linear; */
-
-  @media (max-width: 1440px) {
-    color: #fff;
-    font-size: 5.77vw;
-    line-height: 9.44vw;
-    width: 9.44vw;
+  @media (min-width: 1152px) {
+    font-size: 70px;
+    line-height: 140px;
+    width: 136px;
   }
 
   @media (max-width: 1024px) {
