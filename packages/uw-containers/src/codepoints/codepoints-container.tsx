@@ -162,12 +162,14 @@ class CodepointContainer extends React.PureComponent<CodepointContainerProps & O
         <LoadingContainer loading={loading} visible={!selectedCodepoint}>
           <CodepointList>{children}</CodepointList>
         </LoadingContainer>
-        <Route
-          path="/c/:category/:key/:cp"
-          render={() => {
-            return <CodepointWikiContainer />
-          }}
-        />
+        {match.params.cp && (
+          <Route
+            path="/c/:category/:key/:cp?"
+            render={() => {
+              return <CodepointWikiContainer />
+            }}
+          />
+        )}
       </React.Fragment>
     )
   }

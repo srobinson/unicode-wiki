@@ -1,33 +1,38 @@
 // tslint:disable:no-any
-import {css} from "react-emotion"
+import {keyframes} from "react-emotion"
 import styled from "../styled"
 
 export const Title = styled("h1")`
-  position: absolute;
-  left: 4.5rem;
-  top: 0.6rem;
-  right: 5rem;
-  min-width: 0;
-
   border: 0;
   color: #fff;
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-size: 1.4rem;
   height: 3rem;
+  left: 4.5rem;
   line-height: 32px;
+  min-width: 0;
+  opacity: 0;
+  position: absolute;
   right: 0;
   text-transform: uppercase;
+  top: 0.6rem;
+  transform: translateX(-20px);
+
+  transition: transform 150ms ease-in-out, opacity 75ms linear;
 
   @media (max-width: 800px) {
     left: 3.5rem;
   }
 
-  ${(props: any) =>
-    props.expand &&
-    `
-      opacity: 1;
-      transform: translateY(0);
-    `};
+  body[data-animate="in"] & {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  body[data-animate="out"] & {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
 
   span {
     white-space: nowrap;
@@ -126,12 +131,29 @@ export const Codepoint = styled("div")`
   }
 `
 
+const WikiPageExitAnimation = keyframes`
+  0% {
+    transform: scale(0.9);
+    opacity: 0.9
+  }
+  10% {
+    opacity: 0.5
+  }
+  100% {
+    transform: translateY(-20%);
+    opacity: 0
+  }
+`
+
 export const WikiPage = styled("article")`
+  border: 0;
   color: #000;
+  cursor: default;
   height: 100vh;
   left: 0;
   margin: 0;
   opacity: 0;
+  overflow-y: scroll;
   position: fixed;
   top: 0;
   transform: translateY(10%);
@@ -139,33 +161,33 @@ export const WikiPage = styled("article")`
   z-index: 1;
 
   > div {
-    opacity: 0;
-    transition: opacity 150ms ease-in-out;
+    background: #fff;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: 4rem;
+    max-width: 72rem;
+    min-height: 100vh;
+    padding: 3rem 2rem 3em;
   }
 
-  transition: transform 120ms ease-in-out, opacity 150ms ease-in-out;
 
-  ${(props: any) =>
-    props.expand &&
-    css`
-      border: 0;
-      cursor: default;
-      opacity: 1;
-      overflow-y: scroll;
-      transform: translateY(0);
 
-      > div {
-        background: #fff;
-        box-sizing: border-box;
-        opacity: 1;
-        overflow: hidden;
-        margin: 0 auto;
-        margin-top: 4rem;
-        max-width: 72rem;
-        min-height: 100vh;
-        padding: 3rem 2rem 3em;
-      }
-    `};
+  body[data-animate="in"] & {
+    opacity: 1;
+    transform: translateY(0);
+    transition: transform 120ms ease-in-out, opacity 150ms ease-in-out;
+  }
+
+  body[data-animate="out"] & {
+    opacity: 0;
+    transform: scale(1.1);
+    transition: transform 120ms ease-in-out, opacity 150ms ease-in-out;
+    /* opacity: 0;
+    transform: scale(0.8);
+    transition: transform 120ms ease-in-out, opacity 150ms ease-in-out 120ms; */
+    /* animation: ${WikiPageExitAnimation} 250 ease-in; */
+  }
 `
 
 export const Iframe = styled("iframe")`

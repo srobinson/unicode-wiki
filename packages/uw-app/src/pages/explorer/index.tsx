@@ -8,8 +8,16 @@ import {CodepointContainer, NavigationContainer} from "@uw/containers"
 import {Card, Header, InfinityLoader, Page, WikiTitle} from "@uw/components"
 import {WikiPageProps, OtherProps} from "./types"
 import * as Styled from "../styles.css"
+import {delayedPush} from "@uw/utils"
 
 class ExplorerPage extends React.PureComponent<WikiPageProps & OtherProps> {
+  closeWikiPage = () => {
+    const {match, push} = this.props
+    const {params} = match
+    const {category, key} = params
+    delayedPush(() => push(`/c/${category}/${key}`), 100)
+  }
+
   renderNavBar = () => {
     const {match, wikiPage} = this.props
     const {params} = match
@@ -20,13 +28,6 @@ class ExplorerPage extends React.PureComponent<WikiPageProps & OtherProps> {
       return <WikiTitle close={this.closeWikiPage} loading={wikiPage.loading} title={title} />
     }
     return <NavigationContainer />
-  }
-
-  closeWikiPage = () => {
-    const {match, push} = this.props
-    const {params} = match
-    const {category, key} = params
-    push(`/c/${category}/${key}`)
   }
 
   render() {
