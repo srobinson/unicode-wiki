@@ -41,7 +41,7 @@ export class Wiki extends React.PureComponent<WikiProps> {
     const className = generateClassName(cp)
     const searchHits = parseSearchHits(content)
     return (
-      <Styled.WikiPage className="wiki content" expand={!loading}>
+      <Styled.WikiPage className="wiki content" expand={!loading && text}>
         <div className={className}>
           <Styled.CodepointContainer>
             <h2>{title}</h2>
@@ -49,7 +49,12 @@ export class Wiki extends React.PureComponent<WikiProps> {
               <span>{fromCharCode(cp)}</span>
             </Styled.Codepoint>
           </Styled.CodepointContainer>
-          <Styled.Iframe height="100%" onLoad={resizeIframe.bind(this)} srcDoc={text} scrolling="no" />
+          <Styled.Iframe
+            height="100%"
+            onLoad={resizeIframe.bind(this)}
+            srcDoc={text}
+            scrolling="no"
+          />
           {searchHits && (
             <Styled.SearchHits>
               <h2>Similar Pages</h2>
@@ -63,7 +68,7 @@ export class Wiki extends React.PureComponent<WikiProps> {
 }
 
 function resizeIframe(iframe: any) {
-  iframe.target.height = iframe.target.contentWindow.document.body.scrollHeight + 10 + "px"
+  iframe.target.height = iframe.target.contentWindow.document.body.scrollHeight + 50 + "px"
 }
 
 const parseSearchHits = (content: WikiPage | undefined) =>

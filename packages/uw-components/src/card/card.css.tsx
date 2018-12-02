@@ -10,34 +10,35 @@ export const Card = styled("article")`
   color: var(--card-color);
   cursor: pointer;
   display: inline-block;
-  font-size: 4.75vw;
+  flex: 0 1 calc(25% - 0.5vw);
   font-weight: lighter;
-  line-height: 11.5vw;
-  margin: 0 3px;
+  margin: 0.5vw 0;
   opacity: 0.8;
   overflow: hidden;
   position: relative;
   text-align: center;
-  width: 11.5vw;
 
-  /* transition: all 0.2s linear; */
-  @media (min-width: 1152px) {
-    font-size: 70px;
-    line-height: 140px;
-    width: 136px;
-  }
-
-  @media (max-width: 1024px) {
+  /* @media (max-width: 1024px) {
     font-size: 9.88vw;
-    line-height: 24vw;
-    width: 24vw;
+    line-height: 22.93vw;
+    width: 22.93vw;
+  }
+  */
+  @media (min-width: 600px) {
+    flex: 0 1 calc(12.5% - 0.5vw);
+    font-size: 5vw;
+    line-height: 12vw;
+    margin: 0.25vw;
   }
 
-  @media (max-width: 800px) {
-    line-height: 23.8vw;
-    width: 23.7vw;
+  @media (min-width: 1152px) {
+    flex: 0 0 138px;
+    font-size: 57.55px;
+    line-height: 115.1px;
+    margin: 2.8775px;
   }
 
+  /*
   @media (max-width: 600px) {
     line-height: 23.3vw;
     width: 23.3vw;
@@ -57,7 +58,7 @@ export const Card = styled("article")`
     line-height: 22vw;
     width: 22vw;
   }
-
+ */
   > div {
     border-radius: 4px;
     display: inline-block;
