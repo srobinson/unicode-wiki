@@ -18,12 +18,6 @@ export const Card = styled("article")`
   position: relative;
   text-align: center;
 
-  /* @media (max-width: 1024px) {
-    font-size: 9.88vw;
-    line-height: 22.93vw;
-    width: 22.93vw;
-  }
-  */
   @media (min-width: 600px) {
     flex: 0 1 calc(12.5% - 0.5vw);
     font-size: 5vw;
@@ -38,27 +32,6 @@ export const Card = styled("article")`
     margin: 2.8775px;
   }
 
-  /*
-  @media (max-width: 600px) {
-    line-height: 23.3vw;
-    width: 23.3vw;
-  }
-
-  @media (max-width: 480px) {
-    line-height: 22.9vw;
-    width: 22.9vw;
-  }
-
-  @media (max-width: 414px) {
-    line-height: 22.36vw;
-    width: 22.36vw;
-  }
-
-  @media (max-width: 320px) {
-    line-height: 22vw;
-    width: 22vw;
-  }
- */
   > div {
     border-radius: 4px;
     display: inline-block;
@@ -87,7 +60,6 @@ export const Card = styled("article")`
     !props.expand &&
     css`
       &:hover {
-        /*box-shadow: none;*/
         opacity: 1;
       }
 
