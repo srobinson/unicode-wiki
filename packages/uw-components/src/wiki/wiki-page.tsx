@@ -11,7 +11,7 @@ type WikiTitleProps = {
 }
 
 export const WikiTitle = ({close, loading, title}: WikiTitleProps) => (
-  <Styled.Title expand={true}>
+  <Styled.Title>
     <div>
       <button onClick={close}>X</button>
       {loading ? <span>Loading...</span> : <span>{title}</span>}
@@ -22,7 +22,6 @@ export const WikiTitle = ({close, loading, title}: WikiTitleProps) => (
 type WikiProps = {
   content: WikiPage | undefined
   cp: string
-  loading: boolean
   title: string | undefined
 }
 
@@ -36,12 +35,13 @@ export class Wiki extends React.PureComponent<WikiProps> {
   }
 
   render() {
-    const {content, cp, loading, title} = this.props
+    const {content, cp, title} = this.props
     const text = content && content.text
     const className = generateClassName(cp)
     const searchHits = parseSearchHits(content)
+
     return (
-      <Styled.WikiPage className="wiki content" expand={!loading && text}>
+      <Styled.WikiPage className="wiki">
         <div className={className}>
           <Styled.CodepointContainer>
             <h2>{title}</h2>

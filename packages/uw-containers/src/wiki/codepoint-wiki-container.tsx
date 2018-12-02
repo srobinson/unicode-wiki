@@ -17,26 +17,31 @@ class CodepointWikiContainer extends React.PureComponent<CodepointWikiContainerP
   }
 
   componentDidUpdate(prevProps: OtherProps) {
+    console.log("componentDidUpdate", prevProps, this.props)
+
     const {match} = this.props
     if (this.props.match.params.cp !== prevProps.match.params.cp) {
       const {params} = match
       const {category, key, cp} = params
       this.props.loadWikiPage(category, key, cp, key)
     }
+    setTimeout(() => document.body.setAttribute("data-animate", "in"))
+  }
+
+  componentWillUnmount() {
+    setTimeout(() => document.body.removeAttribute("data-animate"), 1000)
   }
 
   render() {
     const {codepoints, match, wikiPage} = this.props
     const {params} = match
     const {cp} = params
-    const {result, loading} = wikiPage
+    const {result} = wikiPage
     const codepoint =
       (codepoints.result &&
         codepoints.result.docs.filter((codepoint: Codepoint) => codepoint.cp === cp)) ||
       []
-    return (
-      <Wiki content={result} cp={cp} title={codepoint[0] && codepoint[0].name} loading={loading} />
-    )
+    return <Wiki content={result} cp={cp} title={codepoint[0] && codepoint[0].name} />
   }
 }
 

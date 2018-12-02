@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@uw/domain": "0.0.1",
+    "@uw/hoc": "0.0.1",
     "@uw/utils": "0.0.1"
   }
 }

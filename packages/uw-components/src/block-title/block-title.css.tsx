@@ -6,7 +6,7 @@ export const BlockTitle = styled("h3")`
   padding: 0.1vw 0.5vw;
   text-transform: uppercase;
 
-  /* @media (max-width: 800px) {
-    padding: 1rem 0.5rem;
-  } */
+  @media (min-width: 1152px) {
+    padding: 1.151px 5.5755px;
+  }
 `

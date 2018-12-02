@@ -10,25 +10,27 @@ export const Card = styled("article")`
   color: var(--card-color);
   cursor: pointer;
   display: inline-block;
-  flex: 0 1 calc(25% - 0.5vw);
+  flex: 0 1 calc(25% - 1vw);
   font-weight: lighter;
-  margin: 0.5vw 0;
+  margin: 0.5vw;
   opacity: 0.8;
   overflow: hidden;
   position: relative;
   text-align: center;
+  font-size: 10vw;
+  line-height: 24vw;
 
   @media (min-width: 600px) {
     flex: 0 1 calc(12.5% - 0.5vw);
-    font-size: 5vw;
+    font-size: 6vw;
     line-height: 12vw;
     margin: 0.25vw;
   }
 
   @media (min-width: 1152px) {
-    flex: 0 0 138px;
-    font-size: 57.55px;
-    line-height: 115.1px;
+    flex: 0 0 136px;
+    font-size: 69px;
+    line-height: 138px;
     margin: 2.8775px;
   }
 
