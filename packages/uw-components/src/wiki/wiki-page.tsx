@@ -53,7 +53,7 @@ export class Wiki extends React.PureComponent<WikiProps> {
             height="100%"
             onLoad={resizeIframe.bind(this)}
             srcDoc={text}
-            scrolling="no"
+            scrolling="auto"
           />
           {searchHits && (
             <Styled.SearchHits>
@@ -67,8 +67,10 @@ export class Wiki extends React.PureComponent<WikiProps> {
   }
 }
 
-function resizeIframe(iframe: any) {
-  iframe.target.height = iframe.target.contentWindow.document.body.scrollHeight + 50 + "px"
+export function resizeIframe(iframe: any) {
+  if (iframe) {
+    iframe.target.height = iframe.target.contentWindow.document.body.scrollHeight + "px"
+  }
 }
 
 const parseSearchHits = (content: WikiPage | undefined) =>

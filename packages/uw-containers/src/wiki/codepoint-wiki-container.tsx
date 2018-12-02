@@ -17,8 +17,6 @@ class CodepointWikiContainer extends React.PureComponent<CodepointWikiContainerP
   }
 
   componentDidUpdate(prevProps: OtherProps) {
-    console.log("componentDidUpdate", prevProps, this.props)
-
     const {match} = this.props
     if (this.props.match.params.cp !== prevProps.match.params.cp) {
       const {params} = match
@@ -26,10 +24,6 @@ class CodepointWikiContainer extends React.PureComponent<CodepointWikiContainerP
       this.props.loadWikiPage(category, key, cp, key)
     }
     setTimeout(() => document.body.setAttribute("data-animate", "in"))
-  }
-
-  componentWillUnmount() {
-    setTimeout(() => document.body.removeAttribute("data-animate"), 1000)
   }
 
   render() {

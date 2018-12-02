@@ -9,6 +9,7 @@ import {CodepointDocument, CodepointHexRange, Link} from "@uw/domain"
 import {ApplicationState, fetchCodepoints, fetchCodepointsByCategory, followLink} from "@uw/store"
 import {CodepointContainerProps, OtherProps, InstanceState} from "./types"
 import {CodepointWikiContainer} from "../wiki"
+import {delayedPush} from "@uw/utils"
 
 class CodepointContainer extends React.PureComponent<CodepointContainerProps & OtherProps> {
   state: InstanceState = {
@@ -79,7 +80,7 @@ class CodepointContainer extends React.PureComponent<CodepointContainerProps & O
       {
         showDetail: true,
       },
-      () => push(url),
+      () => delayedPush(() => push(url), 100),
     )
   }
 
