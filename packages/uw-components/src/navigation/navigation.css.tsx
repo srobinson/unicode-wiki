@@ -4,25 +4,22 @@ import styled from "../styled"
 
 const ExplorerNavigationKeyframes = keyframes`
   0% {
-    transform: translateY(-56px);
-  }
-  95% {
-    transform: translateY(-56px);
+    transform: translateX(15px);
   }
   100% {
-    transform: translateY(0);
+    transform: translateX(0);
+    opacity: 1;
   }
 `
 
 export const ExplorerNavigation = styled("div")`
-  position: absolute;
-  left: 4.5rem;
-  top: 1rem;
-
   font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
   font-size: 0.75em;
   font-weight: 600;
+  left: 4.5rem;
   letter-spacing: 2px;
+  position: absolute;
+  top: 1rem;
   user-select: none;
 
   @media (max-width: 800px) {
@@ -32,10 +29,11 @@ export const ExplorerNavigation = styled("div")`
   ${(props: any) =>
     (props.reveal &&
       `
-    animation: ${ExplorerNavigationKeyframes} 1s ease-in-out;
+    animation: ${ExplorerNavigationKeyframes} 120ms ease-in-out;
   `) ||
     `
-    transform: translateY(-56px);
+    transform: translateX(10px);
+    opacity: 0;
     `};
 `
 

@@ -21,9 +21,11 @@ class NavigationContainer extends React.Component<NavigationContainerProps & Oth
 
   constructor(props: NavigationContainerProps & OtherProps) {
     super(props)
-    props.fetchCategory(CATEGORY_TYPE.BLOCK)
-    props.fetchCategory(CATEGORY_TYPE.SCRIPT)
-    props.fetchCategory(CATEGORY_TYPE.SYMBOL)
+    if (!props.blocks.docs.length) {
+      props.fetchCategory(CATEGORY_TYPE.BLOCK)
+      props.fetchCategory(CATEGORY_TYPE.SCRIPT)
+      props.fetchCategory(CATEGORY_TYPE.SYMBOL)
+    }
   }
 
   static getDerivedStateFromProps(nextProps: OtherProps, prevState: InstanceState) {

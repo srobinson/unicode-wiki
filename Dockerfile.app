@@ -7,6 +7,7 @@ COPY static/fonts ./static/fonts
 COPY packages/uw-utils ./packages/uw-utils
 COPY packages/uw-domain ./packages/uw-domain
 COPY packages/uw-store ./packages/uw-store
+COPY packages/uw-hoc ./packages/uw-hoc
 COPY packages/uw-containers ./packages/uw-containers
 COPY packages/uw-components ./packages/uw-components
 COPY packages/uw-app ./packages/uw-app

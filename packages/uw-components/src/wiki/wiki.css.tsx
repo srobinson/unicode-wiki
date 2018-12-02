@@ -1,5 +1,4 @@
 // tslint:disable:no-any
-import {keyframes} from "react-emotion"
 import styled from "../styled"
 
 export const Title = styled("h1")`
@@ -11,35 +10,35 @@ export const Title = styled("h1")`
   left: 4.5rem;
   line-height: 32px;
   min-width: 0;
-  opacity: 0;
   position: absolute;
   right: 0;
   text-transform: uppercase;
   top: 0.6rem;
-  transform: translateX(-20px);
-
-  transition: transform 150ms ease-in-out, opacity 75ms linear;
 
   @media (max-width: 800px) {
     left: 3.5rem;
   }
 
-  body[data-animate="in"] & {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  body[data-animate="out"] & {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-
   span {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     display: block;
     margin-right: 4rem;
+    opacity: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transform: translateX(20px);
+    white-space: nowrap;
+
+    transition: transform 150ms ease-in-out, opacity 75ms linear;
+
+    body[data-animate="in"] & {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    body[data-animate="out"] & {
+      opacity: 0;
+      transform: translateX(20px);
+    }
   }
 
   button {
@@ -131,19 +130,19 @@ export const Codepoint = styled("div")`
   }
 `
 
-const WikiPageExitAnimation = keyframes`
-  0% {
-    transform: scale(0.9);
-    opacity: 0.9
-  }
-  10% {
-    opacity: 0.5
-  }
-  100% {
-    transform: translateY(-20%);
-    opacity: 0
-  }
-`
+// const WikiPageExitAnimation = keyframes`
+//   0% {
+//     transform: scale(0.9);
+//     opacity: 0.9
+//   }
+//   10% {
+//     opacity: 0.5
+//   }
+//   100% {
+//     transform: translateY(-20%);
+//     opacity: 0
+//   }
+// `
 
 export const WikiPage = styled("article")`
   border: 0;
@@ -156,7 +155,7 @@ export const WikiPage = styled("article")`
   overflow-y: scroll;
   position: fixed;
   top: 0;
-  transform: translateY(10%);
+  transform: scale(0.9);
   width: 100%;
   z-index: 1;
 
@@ -171,28 +170,21 @@ export const WikiPage = styled("article")`
     padding: 3rem 2rem 3em;
   }
 
-
-
   body[data-animate="in"] & {
     opacity: 1;
-    transform: translateY(0);
-    transition: transform 120ms ease-in-out, opacity 150ms ease-in-out;
+    transform: scale(1);
+    transition: transform 120ms ease-in-out 120ms, opacity 150ms ease-in-out 120ms;
   }
 
   body[data-animate="out"] & {
     opacity: 0;
-    transform: scale(1.1);
-    transition: transform 120ms ease-in-out, opacity 150ms ease-in-out;
-    /* opacity: 0;
-    transform: scale(0.8);
-    transition: transform 120ms ease-in-out, opacity 150ms ease-in-out 120ms; */
-    /* animation: ${WikiPageExitAnimation} 250 ease-in; */
+    transform: scale(0.9);
+    transition: transform 120ms ease-in, opacity 150ms ease-in;
   }
 `
 
 export const Iframe = styled("iframe")`
   border: 0;
-  min-height: 100%;
   overflow: hidden;
   width: 100%;
 `
