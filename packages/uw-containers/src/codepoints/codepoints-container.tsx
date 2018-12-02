@@ -4,7 +4,7 @@ import {push} from "connected-react-router"
 import {Dispatch} from "redux"
 import {connect} from "react-redux"
 import Waypoint from "react-waypoint"
-import {BlockTitle, LoadingContainer, ProgessLoader} from "@uw/components"
+import {BlockTitle, CodepointList, LoadingContainer, ProgessLoader} from "@uw/components"
 import {CodepointDocument, CodepointHexRange, Link} from "@uw/domain"
 import {ApplicationState, fetchCodepoints, fetchCodepointsByCategory, followLink} from "@uw/store"
 import {CodepointContainerProps, OtherProps, InstanceState} from "./types"
@@ -98,7 +98,11 @@ class CodepointContainer extends React.PureComponent<CodepointContainerProps & O
           key={codepoints.result.page}
         >
           {loader.loading && (
-            <div>
+            <div
+              style={{
+                flex: "100%",
+              }}
+            >
               <LoadingComponent />
             </div>
           )}
@@ -156,9 +160,8 @@ class CodepointContainer extends React.PureComponent<CodepointContainerProps & O
       <React.Fragment>
         {loading && <ProgessLoader />}
         <LoadingContainer loading={loading} visible={!selectedCodepoint}>
-          {children}
+          <CodepointList>{children}</CodepointList>
         </LoadingContainer>
-
         <Route
           path="/c/:category/:key/:cp"
           render={() => {
