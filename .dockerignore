@@ -2,10 +2,11 @@ _uw
 .build
 .git
 .npm-debug.log
+_*
 image_history
 node_modules
 packages/**/node_modules
 README
-tmp
+tmp*
 yarn-error.log
 ZNOTES
