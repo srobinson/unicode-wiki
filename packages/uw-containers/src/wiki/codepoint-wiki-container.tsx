@@ -10,38 +10,44 @@ import {Codepoint} from "@uw/domain"
 
 class CodepointWikiContainer extends React.PureComponent<CodepointWikiContainerProps & OtherProps> {
   componentDidMount() {
-    const {match} = this.props
-    const {params} = match
-    const {category, key, cp} = params
-    this.props.loadWikiPage(category, key, cp, key)
+    this.loadWiki()
   }
 
   componentDidUpdate(prevProps: OtherProps) {
-    const {match} = this.props
     if (this.props.match.params.cp !== prevProps.match.params.cp) {
-      const {params} = match
-      const {category, key, cp} = params
-      this.props.loadWikiPage(category, key, cp, key)
+      this.loadWiki()
     }
+  }
+
+  loadWiki = () => {
+    const {codepoint, match} = this.props
+    const {params} = match
+    const {category, key, cp} = params
+    this.props.loadWikiPage(category, key, cp, (codepoint && codepoint.name) || key)
     setTimeout(() => document.body.setAttribute("data-animate", "in"))
   }
 
   render() {
-    const {codepoints, match, wikiPage} = this.props
-    const {params} = match
-    const {cp} = params
+    const {cp, wikiPage} = this.props
     const {result} = wikiPage
-    const codepoint =
-      (codepoints.result &&
-        codepoints.result.docs.filter((codepoint: Codepoint) => codepoint.cp === cp)) ||
-      []
-    return <Wiki content={result} cp={cp} title={codepoint[0] && codepoint[0].name} />
+    return <Wiki content={result} cp={cp} />
   }
 }
 
-const mapStateToProps = (state: ApplicationState) => {
+const mapStateToProps = (state: ApplicationState, props: OtherProps) => {
+  const {codepoints} = state
+  const {match} = props
+  const {params} = match
+  const {cp} = params
+  const codepoint =
+    (codepoints.result &&
+      codepoints.result.docs.filter((codepoint: Codepoint) => codepoint.cp === cp)) ||
+    []
+
   return {
+    codepoint: (codepoint.length && codepoint[0]) || undefined,
     codepoints: state.codepoints,
+    cp,
     loader: state.loader,
     wikiPage: state.wikiPage,
   }

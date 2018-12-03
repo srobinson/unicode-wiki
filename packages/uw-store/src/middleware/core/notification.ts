@@ -1,6 +1,6 @@
 import {Dispatch, Middleware} from "redux"
 import {Notification} from "@uw/domain"
-import {removeNotification, SET_NOTIFICATION, setNotification} from "../../features/notification"
+import {SET_NOTIFICATION, setNotification} from "../../features/notification"
 
 export const notificationMiddleware: Middleware = () => (next: Dispatch) => action => {
   if (action.type.includes(SET_NOTIFICATION)) {
@@ -19,9 +19,9 @@ export const notificationMiddleware: Middleware = () => (next: Dispatch) => acti
     next(setNotification({message: notification, feature: meta.feature}))
 
     // dispatch a clear action after a given time
-    setTimeout(() => {
-      next(removeNotification({notificationId: id, feature: meta.feature}))
-    }, 5000)
+    // setTimeout(() => {
+    //   next(removeNotification({notificationId: id, feature: meta.feature}))
+    // }, 5000)
   } else {
     next(action)
   }

@@ -4,11 +4,12 @@ import styled from "../styled"
 
 const ExplorerNavigationKeyframes = keyframes`
   0% {
+    opacity: 0;
     transform: translateX(15px);
   }
   100% {
-    transform: translateX(0);
     opacity: 1;
+    transform: translateX(0);
   }
 `
 
@@ -35,6 +36,16 @@ export const ExplorerNavigation = styled("div")`
     transform: translateX(10px);
     opacity: 0;
     `};
+
+  body[data-animate="in"] & {
+    animation: ${ExplorerNavigationKeyframes} 120ms ease-in-out;
+  }
+
+  body[data-animate="out"] & {
+    transform: translateX(15px);
+    opacity: 0;
+    transition: transform 120ms ease-in, opacity 150ms ease-in 120ms;
+  }
 `
 
 export const NavigationCategory = styled("ul")`

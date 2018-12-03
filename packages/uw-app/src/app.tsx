@@ -9,20 +9,22 @@ import {ThemeColors} from "@uw/domain"
 import {ApplicationState} from "@uw/store"
 import * as themes from "styles/theme"
 import "styles"
+import {NotFound} from "./pages/404"
 
 class App extends React.Component<Props> {
   public render() {
-    const {theme} = this.props
+    const {notifications, theme} = this.props
 
     return (
       <ThemeProvider theme={themes[theme]}>
-        <Routes />
+        {(notifications.length && <NotFound />) || <Routes />}
       </ThemeProvider>
     )
   }
 }
 
-const mapStateToProps = ({layout}: ApplicationState) => ({
+const mapStateToProps = ({layout, notifications}: ApplicationState) => ({
+  notifications,
   theme: layout.theme,
 })
 

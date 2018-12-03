@@ -76,12 +76,7 @@ class CodepointContainer extends React.PureComponent<CodepointContainerProps & O
     const {params} = match
     const {category, key} = params
     const url = `/c/${category}/${key}/${cp}`
-    this.setState(
-      {
-        showDetail: true,
-      },
-      () => delayedPush(() => push(url), 100),
-    )
+    delayedPush(() => push(url), 100)
   }
 
   renderWaypoint = () => {

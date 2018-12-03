@@ -4,6 +4,8 @@ import {logger} from "@uw/logging"
 import {MongoDb} from "./db"
 import "./config"
 
+// https://github.com/Requarks/wiki/
+
 // npm node gracefully
 
 // global.winston.info('Starting HTTP/WS server on port ' + appconfig.port + '...')

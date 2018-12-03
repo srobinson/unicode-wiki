@@ -2,22 +2,37 @@
 import {Request, Response} from "express"
 import axios from "axios"
 import {WikiPage} from "@uw/domain"
-import {fromCharCode, isHex} from "@uw/utils"
+import {
+  fromCharCode,
+  isHex,
+  ABSOLUTE_URL_TEST,
+  ABSOLUTE_REPLACE,
+  HREF_TEST,
+  HREF_REPLACE,
+  RELATIVE_URL_TEST,
+  RELATIVE_URL_REPLACE,
+} from "@uw/utils"
 import {search} from "./wiki-search-controller"
 
 export const loadPage = async (req: Request, res: Response) => {
   const {cp, isMobile, redirect} = req.query
   const token = (redirect && redirect) || (isHex(cp) && encodeURIComponent(fromCharCode(cp))) || cp
-  const type = isMobile !== undefined ? "mobile-html" : "html"
-  const url = `https://en.wikipedia.org/api/rest_v1/page/${type}/${token}`
+  const mobile = isMobile !== undefined ? "mobile-html" : "html"
+  // const url = `https://en.wikipedia.org/w/api.php?format=json&mobileformat=true&action=parse&disabletoc=true&page=${token}`
+  const url = `https://en.wikipedia.org/api/rest_v1/page/${mobile}/${token}`
+
   req.logger.info({"WikiPage::URL": url})
 
   const response = await axios.get(url).catch((e: any) => {
+    console.log("EEE", e)
+
     return {
       data: e.response.data,
       status: e.response.status,
     }
   })
+
+  req.logger.info({"WikiPage::STATUS": response.status})
 
   const data = response.data
 
@@ -48,7 +63,12 @@ const onError = async (req: Request, res: Response, data: any) => {
 
 const onSuccess = async (req: Request, res: Response, data: any) => {
   const {category, cp, key, page} = req.query
+  const text = data
+    .replace(ABSOLUTE_URL_TEST, ABSOLUTE_REPLACE)
+    .replace(RELATIVE_URL_TEST, RELATIVE_URL_REPLACE)
+    .replace(HREF_TEST, HREF_REPLACE)
   const wikiSearch = await doSearch(req, res)
+
   const wiki: WikiPage = {
     category,
     cp,
@@ -57,8 +77,8 @@ const onSuccess = async (req: Request, res: Response, data: any) => {
     langlinks: [],
     page,
     search: wikiSearch,
-    text: data,
-    title: `${key}: ${cp}`,
+    text: text,
+    title: page,
     type: "page",
   }
 
