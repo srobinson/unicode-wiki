@@ -7,9 +7,9 @@ import {Store} from "redux"
 import Routes from "routes"
 import {ThemeColors} from "@uw/domain"
 import {ApplicationState} from "@uw/store"
+import {NotFound} from "./pages/404"
 import * as themes from "styles/theme"
 import "styles"
-import {NotFound} from "./pages/404"
 
 class App extends React.Component<Props> {
   public render() {

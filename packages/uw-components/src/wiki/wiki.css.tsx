@@ -130,20 +130,6 @@ export const Codepoint = styled("div")`
   }
 `
 
-// const WikiPageExitAnimation = keyframes`
-//   0% {
-//     transform: scale(0.9);
-//     opacity: 0.9
-//   }
-//   10% {
-//     opacity: 0.5
-//   }
-//   100% {
-//     transform: translateY(-20%);
-//     opacity: 0
-//   }
-// `
-
 export const WikiPage = styled("article")`
   border: 0;
   color: #000;

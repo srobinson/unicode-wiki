@@ -6,7 +6,7 @@ import {
   fromCharCode,
   isHex,
   ABSOLUTE_URL_TEST,
-  ABSOLUTE_REPLACE,
+  ABSOLUTE_URL_REPLACE,
   HREF_TEST,
   HREF_REPLACE,
   RELATIVE_URL_TEST,
@@ -24,8 +24,6 @@ export const loadPage = async (req: Request, res: Response) => {
   req.logger.info({"WikiPage::URL": url})
 
   const response = await axios.get(url).catch((e: any) => {
-    console.log("EEE", e)
-
     return {
       data: e.response.data,
       status: e.response.status,
@@ -64,7 +62,7 @@ const onError = async (req: Request, res: Response, data: any) => {
 const onSuccess = async (req: Request, res: Response, data: any) => {
   const {category, cp, key, page} = req.query
   const text = data
-    .replace(ABSOLUTE_URL_TEST, ABSOLUTE_REPLACE)
+    .replace(ABSOLUTE_URL_TEST, ABSOLUTE_URL_REPLACE)
     .replace(RELATIVE_URL_TEST, RELATIVE_URL_REPLACE)
     .replace(HREF_TEST, HREF_REPLACE)
   const wikiSearch = await doSearch(req, res)
