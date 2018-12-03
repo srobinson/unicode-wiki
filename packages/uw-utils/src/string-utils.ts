@@ -22,7 +22,7 @@ export const BODY_TEST = /(<body[^>]*>((.|[\n\r])*)<\/body>)/
 export const BODY_REPLACE = (className: string) => `<div class="${className}">$1</div>`
 export const TITLE_TEST = /(<title>(.+)<\/title>)/
 export const TITLE_REPLACE =
-  '$1<link href="https://unicode.wiki/static/css/unicode-fonts.css" rel="stylesheet">'
+  '$1<link href="https://unicode.wiki/unicode-fonts.css" rel="stylesheet">'
 
 export const STYLESHEET_RE = /<link rel="stylesheet" href="(?:(?!>).)*>/gm
 export const SCRIPT_RE = /<script(?:(?!><\/script>).)*><\/script>/gm

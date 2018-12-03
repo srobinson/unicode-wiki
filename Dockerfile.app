@@ -15,7 +15,7 @@ COPY packages/uw-app ./packages/uw-app
 COPY tsconfig.json jest.config.js tslint.json lerna.json ./
 
 ENV REACT_APP_API_BASE_URL=https://api.unicode.wiki/api
-ENV REACT_APP_FONTS_URL=/static/fonts
+ENV REACT_APP_FONTS_URL=/static
 
 RUN yarn global add lerna && lerna bootstrap && yarn build:app
 
