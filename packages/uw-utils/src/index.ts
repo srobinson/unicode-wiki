@@ -1,4 +1,5 @@
 export * from "./db-utils"
+export * from "./dom-utils"
 export * from "./fs-utils"
 export * from "./proc-utils"
 export * from "./router-utils"

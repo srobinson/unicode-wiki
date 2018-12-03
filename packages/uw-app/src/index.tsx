@@ -10,7 +10,9 @@ import "./config"
 // https://github.com/GoogleChromeLabs/sw-precache
 // import registerServiceWorker from "./registerServiceWorker"
 
-const history = createBrowserHistory()
+const history = createBrowserHistory({
+  basename: process.env.PUBLIC_URL,
+})
 const initialState = window.initialReduxState
 const store = configureStore(history, initialState)
 
