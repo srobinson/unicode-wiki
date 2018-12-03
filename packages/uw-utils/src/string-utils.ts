@@ -11,7 +11,7 @@ export const REDIRECT_TEST =
  */
 
 export const ABSOLUTE_URL_TEST = /(href|src)=(\\?)"(\/(w|wiki)\/)/gi
-export const ABSOLUTE_REPLACE = '$1="https://en.wikipedia.org$3'
+export const ABSOLUTE_URL_REPLACE = '$1="https://en.wikipedia.org$3'
 
 export const RELATIVE_URL_TEST = /(href|src)="(\.\/)/gi
 export const RELATIVE_URL_REPLACE = '$1="https://en.wikipedia.org/wiki/'

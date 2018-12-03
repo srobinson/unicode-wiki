@@ -15,11 +15,7 @@ export const delayUnmounting = <P extends object>(
     }
 
     componentDidUpdate(prevProps: UnmountingProps) {
-      console.log("prevProps.isMounted", prevProps.isMounted)
-      console.log("this.props.isMounted", this.props.isMounted)
       if (prevProps.isMounted && !this.props.isMounted) {
-        console.log("DELAY")
-
         setTimeout(() => this.setState({shouldRender: false}), this.props.delayTime)
       } else if (!prevProps.isMounted && this.props.isMounted) {
         this.setState({shouldRender: true})
