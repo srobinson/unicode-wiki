@@ -4,13 +4,17 @@ import axios from "axios"
 import {WikiPage} from "@uw/domain"
 import {
   fromCharCode,
+  generateClassName,
   isHex,
   ABSOLUTE_URL_TEST,
   ABSOLUTE_URL_REPLACE,
+  BODY_TEST,
   HREF_TEST,
   HREF_REPLACE,
   RELATIVE_URL_TEST,
   RELATIVE_URL_REPLACE,
+  TITLE_TEST,
+  TITLE_REPLACE,
 } from "@uw/utils"
 import {search} from "./wiki-search-controller"
 
@@ -61,7 +65,13 @@ const onError = async (req: Request, res: Response, data: any) => {
 
 const onSuccess = async (req: Request, res: Response, data: any) => {
   const {category, cp, key, page} = req.query
+
+  const BODY_CP_CLASSNAME = `<div class="${generateClassName(cp)}">$1</div>`
+  console.log("BODY_CP_CLASSNAME", BODY_CP_CLASSNAME)
+
   const text = data
+    .replace(TITLE_TEST, TITLE_REPLACE)
+    .replace(BODY_TEST, BODY_CP_CLASSNAME)
     .replace(ABSOLUTE_URL_TEST, ABSOLUTE_URL_REPLACE)
     .replace(RELATIVE_URL_TEST, RELATIVE_URL_REPLACE)
     .replace(HREF_TEST, HREF_REPLACE)
@@ -75,7 +85,7 @@ const onSuccess = async (req: Request, res: Response, data: any) => {
     langlinks: [],
     page,
     search: wikiSearch,
-    text: text,
+    text,
     title: page,
     type: "page",
   }

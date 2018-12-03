@@ -18,9 +18,11 @@ export const RELATIVE_URL_REPLACE = '$1="https://en.wikipedia.org/wiki/'
 
 export const HREF_TEST = /<a((?:(?!>).)*)>/gi
 export const HREF_REPLACE = '<a target="_blank"$1>'
-export const BODY_TEST = /<body[^>]*>((.|[\n\r])*)<\/body>/g
-export const BODY_REPLACE = '$1<div style="padding: 2rem 0">....</div>'
-export const TITLE_TEST = /(<title>(.+)<\/title>)/g
+export const BODY_TEST = /(<body[^>]*>((.|[\n\r])*)<\/body>)/
+export const BODY_REPLACE = (className: string) => `<div class="${className}">$1</div>`
+export const TITLE_TEST = /(<title>(.+)<\/title>)/
+export const TITLE_REPLACE =
+  '$1<link href="https://unicode.wiki/static/css/unicode-fonts.css" rel="stylesheet">'
 
 export const STYLESHEET_RE = /<link rel="stylesheet" href="(?:(?!>).)*>/gm
 export const SCRIPT_RE = /<script(?:(?!><\/script>).)*><\/script>/gm
