@@ -42,6 +42,8 @@ export const logRequestMiddleware = (req: Request, res: Response, next: NextFunc
     const message = {
       response: {
         requestId: req.requestId,
+        url: req.originalUrl,
+        user: req.user || "guest",
         status: res.statusCode,
         message: res.statusMessage,
         length: res.get("Content-Length") || 0,

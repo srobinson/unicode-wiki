@@ -8,6 +8,10 @@ process.on("unhandledRejection", error => {
   logger.error({unhandledRejection: jsonifyError(error)})
 })
 
+process.on("SIGINT", function() {
+  process.exit()
+})
+
 const PORT = process.env.NODE_PORT
 
 MongoDb.connect().then(() => {
