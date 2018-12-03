@@ -32,9 +32,6 @@ class NavigationContainer extends React.Component<NavigationContainerProps & Oth
     nextProps: NavigationContainerProps & OtherProps,
     prevState: InstanceState,
   ) {
-    console.log("nextProps", nextProps)
-    console.log("prevState", prevState)
-
     const {match} = nextProps
     const {params} = match
     let {category, key} = params
@@ -79,8 +76,6 @@ class NavigationContainer extends React.Component<NavigationContainerProps & Oth
 
   render() {
     const {categoryList, categoryType, currentCategory, next, prev} = this.state
-
-    console.log("this.state", this.state)
 
     return (
       <ExplorerNavigation

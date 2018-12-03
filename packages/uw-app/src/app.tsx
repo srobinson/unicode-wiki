@@ -7,11 +7,17 @@ import {Store} from "redux"
 import Routes from "routes"
 import {ThemeColors} from "@uw/domain"
 import {ApplicationState} from "@uw/store"
+import {loadAsyncImages} from "@uw/utils"
 import {NotFound} from "./pages/404"
 import * as themes from "styles/theme"
 import "styles"
 
 class App extends React.Component<Props> {
+  componentDidMount() {
+    console.log("App::componentDidMount")
+    loadAsyncImages()
+  }
+
   public render() {
     const {notifications, theme} = this.props
 

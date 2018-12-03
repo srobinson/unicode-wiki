@@ -111,6 +111,13 @@ export class ExplorerNavigation extends React.PureComponent<NavigationComponentP
     )
   }
 
+  cancelSearch = () => {
+    this.setState({
+      isNavigationTitleMenuOpen: false,
+      searchCategories: undefined,
+    })
+  }
+
   render() {
     const {currentCategory, categoryList, categoryType, next, prev} = this.props
     const {isNavigationTitleMenuOpen, isNavigationTypeMenuOpen, searchCategories} = this.state
@@ -163,7 +170,7 @@ export class ExplorerNavigation extends React.PureComponent<NavigationComponentP
         {isNavigationTitleMenuOpen && (
           // tslint:disable-next-line:no-any
           <Styled.NavigationMenuContainer ref={(ref: any) => (this.menu = ref)}>
-            <NavigationSearch searchCategories={this.searchCategories} />
+            <NavigationSearch cancel={this.cancelSearch} searchCategories={this.searchCategories} />
             <Styled.NavigationMenu>
               {searchCategories &&
                 !searchCategories.length && (
