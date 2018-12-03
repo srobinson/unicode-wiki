@@ -10,8 +10,7 @@ lerna-debug.log
 node_modules
 NOTES
 npm-debug.log
-tmp
-tmp2
+tmp*
 uw_db
 yarn-error.log
 yarn.error.log

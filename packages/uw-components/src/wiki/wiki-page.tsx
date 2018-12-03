@@ -22,12 +22,16 @@ export const WikiTitle = ({close, loading, title}: WikiTitleProps) => (
 type WikiProps = {
   content: WikiPage | undefined
   cp: string
-  title: string | undefined
 }
 
 export class Wiki extends React.PureComponent<WikiProps> {
   componentDidMount() {
     document.body.classList.toggle("is-locked", true)
+
+    // @ts-ignore
+    // const transformer = new pagelib.LazyLoadTransformer(window, 2)
+    // transformer.collectExistingPlaceholders(document.body)
+    // transformer.loadPlaceholders()
   }
 
   componentWillUnmount() {
@@ -35,20 +39,23 @@ export class Wiki extends React.PureComponent<WikiProps> {
   }
 
   render() {
-    const {content, cp, title} = this.props
+    const {content, cp} = this.props
     const text = content && content.text
+    // const html = text && parseHtml(text)
     const className = generateClassName(cp)
     const searchHits = parseSearchHits(content)
 
     return (
       <Styled.WikiPage className="wiki">
-        <div className={className}>
+        <div>
           <Styled.CodepointContainer>
-            <h2>{title}</h2>
             <Styled.Codepoint>
-              <span>{fromCharCode(cp)}</span>
+              <span className={className}>{fromCharCode(cp)}</span>
             </Styled.Codepoint>
           </Styled.CodepointContainer>
+          {/* {(html && <div dangerouslySetInnerHTML={{__html: html}} />) || (
+            <Styled.Message>{text}</Styled.Message>
+          )} */}
           <Styled.Iframe
             height="100%"
             onLoad={resizeIframe.bind(this)}

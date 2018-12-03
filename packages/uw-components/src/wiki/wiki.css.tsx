@@ -28,7 +28,7 @@ export const Title = styled("h1")`
     transform: translateX(20px);
     white-space: nowrap;
 
-    transition: transform 150ms ease-in-out, opacity 75ms linear;
+    transition: transform 150ms ease-in-out, opacity 75ms linear 75ms;
 
     body[data-animate="in"] & {
       opacity: 1;

@@ -2,23 +2,20 @@
 import {RouterAction} from "connected-react-router"
 import {RouteComponentProps} from "react-router"
 import {Path} from "history"
-import {BlockState, Category, ScriptState, SymbolState} from "@uw/domain"
+import {BlockState, Category, ScriptState, SymbolState, NotificationState} from "@uw/domain"
 import {fetchCategory} from "@uw/store"
 
 export interface InstanceState {
-  // categoryKey: string
   currentCategory: Category | undefined
   categoryList: Category[]
-  // categoryTitle: string
   categoryType: string
-  // isNavigationTypeMenuOpen: boolean
-  // isNavigationTitleMenuOpen: boolean
   next: string
   prev: string
 }
 
 export interface PropsFromState {
   blocks: BlockState
+  notifications: NotificationState
   scripts: ScriptState
   symbols: SymbolState
 }

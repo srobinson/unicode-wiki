@@ -28,27 +28,36 @@ class NavigationContainer extends React.Component<NavigationContainerProps & Oth
     }
   }
 
-  static getDerivedStateFromProps(nextProps: OtherProps, prevState: InstanceState) {
-    if (nextProps) {
-      const {match} = nextProps
-      const {params} = match
-      let {category, key} = params
+  static getDerivedStateFromProps(
+    nextProps: NavigationContainerProps & OtherProps,
+    prevState: InstanceState,
+  ) {
+    console.log("nextProps", nextProps)
+    console.log("prevState", prevState)
+
+    const {match} = nextProps
+    const {params} = match
+    let {category, key} = params
+    if (nextProps.notifications.length) {
+      // Handle 404
+      // TODO: refactor
+      category = "blocks"
+    }
+    if (nextProps && nextProps[category] && nextProps[category].docs.length) {
       const categoryList = nextProps[category].docs
-      if (categoryList.length) {
-        if (category !== prevState.categoryType) {
-          return {
-            categoryList: categoryList,
-            categoryType: category,
-            currentCategory: categoryList[0],
-            next: categoryList[1].key,
-          }
-        } else if (prevState.currentCategory && key !== prevState.currentCategory.key) {
-          const index = categoryList.findIndex((category: Category) => category.key === key)
-          return {
-            currentCategory: categoryList[index],
-            next: categoryList[index + 1] && categoryList[index + 1].key,
-            prev: categoryList[index - 1] && categoryList[index - 1].key,
-          }
+      if (category !== prevState.categoryType) {
+        return {
+          categoryList: categoryList,
+          categoryType: category,
+          currentCategory: categoryList[0],
+          next: categoryList[1].key,
+        }
+      } else if (prevState.currentCategory && key !== prevState.currentCategory.key) {
+        const index = categoryList.findIndex((category: Category) => category.key === key)
+        return {
+          currentCategory: categoryList[index],
+          next: categoryList[index + 1] && categoryList[index + 1].key,
+          prev: categoryList[index - 1] && categoryList[index - 1].key,
         }
       }
     }
@@ -71,6 +80,8 @@ class NavigationContainer extends React.Component<NavigationContainerProps & Oth
   render() {
     const {categoryList, categoryType, currentCategory, next, prev} = this.state
 
+    console.log("this.state", this.state)
+
     return (
       <ExplorerNavigation
         categoryList={categoryList}
@@ -87,6 +98,7 @@ class NavigationContainer extends React.Component<NavigationContainerProps & Oth
 
 const mapStateToProps = (state: ApplicationState) => ({
   blocks: state.blocks,
+  notifications: state.notifications,
   scripts: state.scripts,
   symbols: state.symbols,
 })

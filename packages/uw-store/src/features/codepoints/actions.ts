@@ -37,6 +37,7 @@ export const fetchCodepointsByCategory = (
 ): ApiSearchAction => {
   // convert plural to singular
   // eg: scripts => script
+  // TODO: refactor
   category = category.substr(0, category.length - 1)
   return {
     meta: {

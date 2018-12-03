@@ -17,7 +17,7 @@ export const LoadingContainer = styled("section")`
     `};
 
   body[data-animate="out"] & {
-    opacity: 0;
+    opacity: 0.85;
     transform: scale(0.995);
     transition: transform 120ms ease-in-out, opacity 120ms ease-in-out;
   }
