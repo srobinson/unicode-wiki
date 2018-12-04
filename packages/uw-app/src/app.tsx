@@ -14,7 +14,6 @@ import "styles"
 
 class App extends React.Component<Props> {
   componentDidUpdate() {
-    console.log("App::componentDidUpdate")
     loadAsyncImages()
   }
 

@@ -1,6 +1,6 @@
 import {keyframes} from "react-emotion"
 import styled from "../styled"
-// @import url('https://fonts.googleapis.com/css?family=Exo+2:900');
+
 const wobble = keyframes`
 	33% {
 		transform: translateX(-50px);
