@@ -2,7 +2,7 @@
 import {RouterAction} from "connected-react-router"
 import {RouteComponentProps} from "react-router"
 import {Path} from "history"
-import {CodepointHexRange, CodepointDocument, CodepointState, Loadingstate} from "@uw/domain"
+import {CodepointHexRange, CodepointDocument, CodepointState, LoadingState} from "@uw/domain"
 import * as codepointsActions from "@uw/store"
 
 export interface InstanceState {
@@ -12,7 +12,7 @@ export interface InstanceState {
 
 export interface PropsFromState {
   codepoints: CodepointState
-  loader: Loadingstate
+  loader: LoadingState
 }
 
 export interface PropsFromDispatch {

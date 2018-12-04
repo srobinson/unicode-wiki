@@ -1,7 +1,7 @@
 // tslint:disable:quotemark no-any
 import {Request, Response} from "express"
 import axios from "axios"
-import {WikiPage} from "@uw/domain"
+import {WikiPage, ResourceNotFoundException} from "@uw/domain"
 import {
   fromCharCode,
   generateClassName,
@@ -26,6 +26,10 @@ export const loadPage = async (req: Request, res: Response) => {
   const url = `https://en.wikipedia.org/api/rest_v1/page/${mobile}/${token}`
 
   req.logger.info({"WikiPage::URL": url})
+
+  if (!isHex(cp)) {
+    throw new ResourceNotFoundException(req, res)
+  }
 
   const response = await axios.get(url).catch((e: any) => {
     return {

@@ -3,17 +3,17 @@ import * as Styled from "./bubbles.css"
 import {Logo} from "../layout"
 
 export class Bubbles extends React.PureComponent {
-  componentDidMount() {
-    console.log("this.props", this.props)
-  }
-
   render() {
     return (
       <Styled.Container
         className="asyncImage"
         data-src={`${process.env.PUBLIC_URL}/images/underwater-1.jpg`}
       >
-        <Logo />
+        <Logo
+          style={{
+            left: "1rem",
+          }}
+        />
         <Styled.BubblesContainer>
           <Styled.Bubbles
             xmlns="http://www.w3.org/2000/svg"
@@ -105,7 +105,7 @@ export class Bubbles extends React.PureComponent {
 
         <Styled.Message>
           <h1>404 Not Found</h1>
-          <p>Please wait while we redirect you...</p>
+          <p>Hang tight while we redirect you...</p>
         </Styled.Message>
       </Styled.Container>
     )

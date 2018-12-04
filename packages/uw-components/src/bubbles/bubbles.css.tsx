@@ -27,13 +27,10 @@ const up = keyframes`
 `
 
 export const Container = styled("div")`
-  align-content: center;
   background-blend-mode: multiply;
   background-image: url(./images/underwater-1.min.jpg);
   background-size: cover;
-  display: flex;
   height: 100vh;
-  justify-content: center;
   left: 0;
   overflow: hidden;
   position: fixed;
@@ -66,8 +63,9 @@ export const Container = styled("div")`
 `
 
 export const Message = styled("div")`
-  margin: 25% 0;
-  min-width: 25%;
+  bottom: 7.5vw;
+  left: 7.5vw;
+  position: absolute;
 `
 
 export const BubblesContainer = styled("div")`

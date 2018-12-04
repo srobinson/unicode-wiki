@@ -13,7 +13,7 @@ import {
   BlockState,
   CodepointState,
   LayoutState,
-  Loadingstate,
+  LoadingState,
   NotificationState,
   ScriptState,
   SymbolState,
@@ -25,7 +25,7 @@ export interface ApplicationState {
   blocks: BlockState
   codepoints: CodepointState
   layout: LayoutState
-  loader: Loadingstate
+  loader: LoadingState
   notifications: NotificationState
   router: RouterState
   scripts: ScriptState

@@ -5,8 +5,9 @@ import {Dispatch} from "redux"
 import {connect} from "react-redux"
 import {Wiki} from "@uw/components"
 import {ApplicationState, loadWikiPage} from "@uw/store"
-import {CodepointWikiContainerProps, OtherProps} from "./types"
 import {Codepoint} from "@uw/domain"
+import {isHex} from "@uw/utils"
+import {CodepointWikiContainerProps, OtherProps} from "./types"
 
 class CodepointWikiContainer extends React.PureComponent<CodepointWikiContainerProps & OtherProps> {
   componentDidMount() {
@@ -30,7 +31,7 @@ class CodepointWikiContainer extends React.PureComponent<CodepointWikiContainerP
   render() {
     const {cp, wikiPage} = this.props
     const {result} = wikiPage
-    return <Wiki content={result} cp={cp} />
+    return <React.Fragment>{isHex(cp) && <Wiki content={result} cp={cp} />}</React.Fragment>
   }
 }
 
