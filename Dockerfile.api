@@ -2,8 +2,7 @@ FROM node:9-alpine AS BUILD
 WORKDIR /usr/src/app
 
 COPY package.json yarn.lock ./
-
-COPY static/UCD ./static/UCD
+COPY assets/UCD ./assets/UCD
 COPY packages/uw-domain ./packages/uw-domain
 COPY packages/uw-logging ./packages/uw-logging
 COPY packages/uw-utils ./packages/uw-utils
@@ -23,6 +22,7 @@ ENV NODE_ENV=production
 ENV NODE_PORT=3001
 
 COPY --from=BUILD /usr/src/app /usr/src/app
+# COPY assets/UCD /usr/src/app/packages/uw-seed/build/dist/UCD
 
 ENTRYPOINT ["node", "/usr/src/app/packages/uw-api/build/dist/index.js"]
 

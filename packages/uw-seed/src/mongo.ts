@@ -17,6 +17,11 @@ export default class DbClient {
   public static readonly BLOCKS_COLLECTION = "blocks"
   public db!: Db
 
+  public async getConnection(): Promise<Db> {
+    await this.connect()
+    return this.db
+  }
+
   public async createCollection(codePointDict: CodePointDict) {
     try {
       await this.connect()

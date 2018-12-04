@@ -13,6 +13,7 @@ import PropertyAliasesLineParser from "./unicode-data-parser/PropertyAliasesLine
 import PropertyAliasesValuesLineParser from "./unicode-data-parser/PropertyAliasesValuesLineParser"
 import UCDXMLParser from "./unicode-data-parser/UCDXMLParser"
 import {getUTCPath, updateCategoriesWithHasChildrenFlag} from "./utils"
+import EsClient from "./elastic"
 
 const generalCategoryDict: ExpandedValueDict = new LocalDictionary()
 const propertyAliasesDict: ExpandedValueDict = new LocalDictionary()
@@ -132,6 +133,7 @@ class Runner {
         await updateCategoriesWithHasChildrenFlag("chart-symbols", symbolsEntryDict)
         await client.createCategories(blocksDict)
         await client.createCollection(codePointDict)
+        await EsClient.bulkInsert()
         await client.exitProcess()
       },
     ])
