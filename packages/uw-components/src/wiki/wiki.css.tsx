@@ -92,22 +92,6 @@ export const CodepointContainer = styled("div")`
   margin-bottom: 0;
   right: -2rem;
   top: -2.5rem;
-
-  h2 {
-    border: 0;
-    color: #fff;
-    font-size: 5vw;
-    line-height: 6vw;
-    padding: 1rem;
-    padding: 1rem;
-    text-align: center;
-    text-transform: uppercase;
-
-    @media (min-width: 1024px) {
-      font-size: 51.2px;
-      line-height: 61.44px;
-    }
-  }
 `
 
 export const Codepoint = styled("div")`
@@ -115,18 +99,20 @@ export const Codepoint = styled("div")`
   border-radius: 50%;
   border: 20px solid #eee;
   color: #000;
-  font-size: 20vw;
+  font-size: 30vw;
   font-weight: bold;
+  height: 40vw;
   line-height: 40vw;
   margin: 0 auto;
   text-align: center;
   text-shadow: 2px 4px 10px rgb(0, 0, 0, 0.3);
-  width: 50vw;
+  width: 40vw;
 
   @media (min-width: 1024px) {
-    font-size: 204.8px;
-    line-height: 409.6px;
-    width: 450.6px;
+    font-size: 300px;
+    height: 400px;
+    line-height: 400px;
+    width: 400px;
   }
 `
 
