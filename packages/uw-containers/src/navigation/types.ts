@@ -31,6 +31,8 @@ export interface PathParamsType {
   urlRange: string
 }
 
-export interface OtherProps extends RouteComponentProps<PathParamsType> {}
+export interface OtherProps extends RouteComponentProps<PathParamsType> {
+  cb?: () => any
+}
 
 export type NavigationContainerProps = PropsFromState & PropsFromDispatch

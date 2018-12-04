@@ -1,13 +1,13 @@
 import {Reducer} from "redux"
 import {SET_LOADER} from "./constants"
-import {ApiSearchRequest, Loadingstate} from "@uw/domain"
+import {ApiSearchRequest, LoadingState} from "@uw/domain"
 
-const initialState: Loadingstate = {
+const initialState: LoadingState = {
   loaders: [],
   loading: false,
 }
 
-export const loaderReducer: Reducer<Loadingstate> = (state = initialState, action) => {
+export const loaderReducer: Reducer<LoadingState> = (state = initialState, action) => {
   switch (true) {
     case action.type.includes(SET_LOADER):
       const meta: ApiSearchRequest = action.meta

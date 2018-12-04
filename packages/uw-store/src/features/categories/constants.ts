@@ -1,3 +1,4 @@
+export const CATEGORY_TYPE = "@@Category"
 export const BLOCKS = "@@Category/Blocks"
 export const FETCH_BLOCKS = `${BLOCKS}/FETCH`
 export const SET_BLOCKS = `${BLOCKS}/SET`

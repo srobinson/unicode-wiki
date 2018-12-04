@@ -1,6 +1,6 @@
 import {Reducer} from "redux"
 import {NotificationState} from "@uw/domain"
-import {REMOVE_NOTIFICATION, SET_NOTIFICATION} from "./constants"
+import {CLEAR_NOTIFICATIONS, REMOVE_NOTIFICATION, SET_NOTIFICATION} from "./constants"
 
 const initialState: NotificationState = []
 
@@ -11,6 +11,9 @@ export const notificationReducer: Reducer<NotificationState> = (state = initialS
 
     case action.type.indexOf(REMOVE_NOTIFICATION) > -1:
       return state.filter(notification => notification.id !== action.payload)
+
+    case action.type === CLEAR_NOTIFICATIONS:
+      return initialState
 
     default:
       return state

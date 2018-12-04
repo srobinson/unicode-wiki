@@ -6,9 +6,9 @@ import {push} from "connected-react-router"
 import {ApplicationState} from "@uw/store"
 import {CodepointContainer, NavigationContainer} from "@uw/containers"
 import {Card, Header, InfinityLoader, Page, WikiTitle} from "@uw/components"
+import {delayedPush} from "@uw/utils"
 import {WikiPageProps, OtherProps} from "./types"
 import * as Styled from "../styles.css"
-import {delayedPush} from "@uw/utils"
 
 class ExplorerPage extends React.PureComponent<WikiPageProps & OtherProps> {
   closeWikiPage = () => {

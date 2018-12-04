@@ -1,5 +1,5 @@
 import {Notification} from "@uw/domain"
-import {REMOVE_NOTIFICATION, SET_NOTIFICATION} from "./constants"
+import {CLEAR_NOTIFICATIONS, REMOVE_NOTIFICATION, SET_NOTIFICATION} from "./constants"
 
 export const setNotification = ({message, feature}: {message: Notification; feature: string}) => ({
   meta: {feature},
@@ -17,4 +17,8 @@ export const removeNotification = ({
   meta: {feature},
   payload: notificationId,
   type: `${feature}/${REMOVE_NOTIFICATION}`,
+})
+
+export const clearNotifications = () => ({
+  type: CLEAR_NOTIFICATIONS,
 })

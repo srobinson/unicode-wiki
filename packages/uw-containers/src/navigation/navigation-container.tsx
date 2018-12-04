@@ -62,16 +62,24 @@ class NavigationContainer extends React.Component<NavigationContainerProps & Oth
   }
 
   setCategory = (key: string) => {
+    const {cb} = this.props
     const {categoryType} = this.state
     const nextUrl = `/c/${categoryType}/${key}`
     this.props.push(nextUrl)
+    if (cb) {
+      cb()
+    }
   }
 
   setCategoryType = (type: CategoryType) => {
+    const {cb} = this.props
     const docs = this.props[type].docs
     const category = docs[0]
     const nextUrl = `/c/${type}/${category.key}`
     this.props.push(nextUrl)
+    if (cb) {
+      cb()
+    }
   }
 
   render() {

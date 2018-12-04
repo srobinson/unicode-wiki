@@ -4,7 +4,7 @@ export interface LayoutState {
   readonly theme: ThemeColors
 }
 
-export interface Loadingstate {
+export interface LoadingState {
   readonly loaders: string[]
   readonly loading: boolean
 }
