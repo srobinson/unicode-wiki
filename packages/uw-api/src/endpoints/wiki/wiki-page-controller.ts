@@ -61,25 +61,22 @@ const onError = async (req: Request, res: Response, data: any) => {
     page,
     search: wikiSearch,
     text: data.detail,
-    title: `${data.title} ${page}`,
-    type: `Error: ${data.type}`,
+    title: page,
+    type: `Error: ${data.type}: ${data.title}`,
   }
   res.status(res.statusCode).json(wiki)
 }
 
 const onSuccess = async (req: Request, res: Response, data: any) => {
   const {category, cp, key, page} = req.query
-
   const BODY_CP_CLASSNAME = `<div class="${generateClassName(cp)}">$1</div>`
-  console.log("BODY_CP_CLASSNAME", BODY_CP_CLASSNAME)
-
+  const wikiSearch = await doSearch(req, res)
   const text = data
     .replace(TITLE_TEST, TITLE_REPLACE)
     .replace(BODY_TEST, BODY_CP_CLASSNAME)
     .replace(ABSOLUTE_URL_TEST, ABSOLUTE_URL_REPLACE)
     .replace(RELATIVE_URL_TEST, RELATIVE_URL_REPLACE)
     .replace(HREF_TEST, HREF_REPLACE)
-  const wikiSearch = await doSearch(req, res)
 
   const wiki: WikiPage = {
     category,
@@ -90,7 +87,7 @@ const onSuccess = async (req: Request, res: Response, data: any) => {
     page,
     search: wikiSearch,
     text,
-    title: page,
+    title: `${cp}: ${page}`,
     type: "page",
   }
 
