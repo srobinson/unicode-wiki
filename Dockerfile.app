@@ -1,21 +1,21 @@
 FROM node:9-alpine as BUILD
 WORKDIR /build
 
+COPY assets/www/ assets/www/
 COPY package.json yarn.lock ./
 
-COPY assets/www ./www
-COPY packages/uw-utils ./packages/uw-utils
-COPY packages/uw-domain ./packages/uw-domain
-COPY packages/uw-store ./packages/uw-store
-COPY packages/uw-hoc ./packages/uw-hoc
-COPY packages/uw-containers ./packages/uw-containers
-COPY packages/uw-components ./packages/uw-components
-COPY packages/uw-app ./packages/uw-app
+COPY packages/uw-utils packages/uw-utils
+COPY packages/uw-domain packages/uw-domain
+COPY packages/uw-store packages/uw-store
+COPY packages/uw-hoc packages/uw-hoc
+COPY packages/uw-containers packages/uw-containers
+COPY packages/uw-components packages/uw-components
+COPY packages/uw-app packages/uw-app
 
 COPY tsconfig.json jest.config.js tslint.json lerna.json ./
 
 ENV REACT_APP_API_BASE_URL=https://api.unicode.wiki/api
-ENV REACT_APP_FONTS_URL=./static/fonts
+ENV REACT_APP_FONTS_URL=/fonts
 
 RUN yarn global add lerna && lerna bootstrap && yarn build:app
 
@@ -27,9 +27,9 @@ EXPOSE 80
 
 ENV NODE_ENV=production
 
-COPY --from=BUILD /build/packages/uw-app/build .
-COPY --from=BUILD /build/www/facicons/* .
-COPY --from=BUILD /build/www/fonts ./static/fonts
+# COPY assets/www/facicons/* .
+# COPY assets/www/fonts static/fonts
+COPY --from=BUILD build/packages/uw-app/build .
 COPY ./nginx.conf /etc/nginx/nginx.conf
 
 ENTRYPOINT ["nginx", "-g", "daemon off;"]

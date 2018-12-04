@@ -3,6 +3,7 @@ import {ResourceNotFoundException} from "@uw/domain"
 import {codepointIndexRangeQuery, codepointIndexRangeOrQuery} from "@uw/utils"
 import {generateLinks} from "../../utils/rest"
 import * as CodepointDao from "./codepoint-dao"
+import * as queries from "../../db/elastic/queries/codepoint"
 import {PER_PAGE} from "./defaults"
 
 export const getCodepointById = async (req: Request, res: Response) => {
@@ -50,9 +51,15 @@ export const findCodepoints = async (req: Request, res: Response, q: Object) => 
   res.status(200).json(cps)
 }
 
+export const suggest = async (req: Request, res: Response) => {
+  const term = req.params.term
+  queries.suggest(term).then(terms => res.json(terms))
+}
+
 export default {
   findCodepoints,
   getCodepointByUCP,
   getCodepointsByRange,
   getCodepointsByRanges,
+  suggest,
 }

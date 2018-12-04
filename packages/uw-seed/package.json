@@ -5,7 +5,8 @@
   "scripts": {
     "lint": "tslint 'src/**/*.ts'",
     "prepare": "echo '@uw/seed' && tsc",
-    "seed": "node build/dist/index.js"
+    "seed": "node build/dist/index.js",
+    "watch": "tsc -w"
   },
   "dependencies": {
     "@uw/domain": "0.0.1",

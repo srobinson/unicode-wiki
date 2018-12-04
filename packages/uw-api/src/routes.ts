@@ -27,6 +27,7 @@ export default class Routes {
       .get("/codepoint/:ucp", cpc.getCodepointByUCP)
       .get("/codepoints/:range?", cpc.getCodepointsByRange)
       .get("/codepoint-ranges/:ranges", cpc.getCodepointsByRanges)
+      .get("/codepoints/suggest/:term", cpc.suggest)
 
       .get("/wiki", wsc.search)
       .get("/wiki/page", wpc.loadPage)
