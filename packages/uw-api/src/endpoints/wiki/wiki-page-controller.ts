@@ -27,7 +27,7 @@ export const loadPage = async (req: Request, res: Response) => {
 
   req.logger.info({"WikiPage::URL": url})
 
-  if (!isHex(cp)) {
+  if (!(cp && isHex(cp))) {
     throw new ResourceNotFoundException(req, res)
   }
 

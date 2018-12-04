@@ -3,7 +3,7 @@ WORKDIR /build
 
 COPY package.json yarn.lock ./
 
-COPY static/fonts ./static/fonts
+COPY assets/www ./www
 COPY packages/uw-utils ./packages/uw-utils
 COPY packages/uw-domain ./packages/uw-domain
 COPY packages/uw-store ./packages/uw-store
@@ -28,7 +28,8 @@ EXPOSE 80
 ENV NODE_ENV=production
 
 COPY --from=BUILD /build/packages/uw-app/build .
-COPY --from=BUILD /build/static/fonts ./static/fonts
+COPY --from=BUILD /build/www/facicons/* .
+COPY --from=BUILD /build/www/fonts ./static/fonts
 COPY ./nginx.conf /etc/nginx/nginx.conf
 
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
