@@ -1,13 +1,13 @@
 // tslint:disable:no-any
 import {SearchResponse} from "elasticsearch"
 import {CodepointHexRange, jsonifyError} from "@uw/domain"
-import client, {formatResponse} from "../client"
 import {logger} from "@uw/logging"
+import {client, formatResponse} from "../client"
 
-const index = "unicode-wiki"
 const type = "codepoints"
+const index = "unicode-wiki"
 
-export const getById = (id: number) =>
+export const getById = async (id: number) =>
   client
     .search({
       body: {
@@ -23,12 +23,12 @@ export const getById = (id: number) =>
     .then((result: SearchResponse<{}>) => formatResponse(result))
     .catch(e => logger.error(jsonifyError(e)))
 
-export const getByUCP = (ucp: string) => {
+export const getByUCP = async (ucp: string) => {
   const cp = parseInt(ucp, 16)
   return getById(cp)
 }
 
-export const getByRange = (
+export const getByRange = async (
   range: CodepointHexRange = {from: "0000", to: "A000"},
   page = 1,
   perPage = 20,
@@ -60,35 +60,35 @@ export const getByRange = (
     .catch(e => logger.error(jsonifyError(e)))
 }
 
-export const suggest = (text: string) =>
-  client
-    .suggest({
-      body: {
+export const suggest = async (text: string) => {
+  const response = await client.search({
+    body: {
+      _source: ["suggest"],
+      suggest: {
         suggest: {
           completion: {
             field: "suggest",
             size: 20,
-            unicode_aware: true,
+            skip_duplicates: true,
           },
-          text,
+          prefix: text,
         },
       },
-      index,
-    })
-    .then(response => {
-      const suggestions = response.suggest[0].options
-      const results = suggestions
-        .sort((a: any, b: any) => {
-          if (a.text === b.text) return 0
-          return a.text > b.text ? 1 : -1
-        })
-        .map((suggestion: any) => suggestion.text)
-      return results
-    })
-    .catch(e => logger.error(jsonifyError(e)))
+    },
+  })
+
+  // @ts-ignore
+  const results = response.suggest.suggest[0].options.sort((a: any, b: any) => {
+    if (a.text === b.text) return 0
+    return a.text > b.text ? 1 : -1
+  })
+
+  return results
+}
 
 export default {
   getById,
   getByRange,
   getByUCP,
+  suggest,
 }

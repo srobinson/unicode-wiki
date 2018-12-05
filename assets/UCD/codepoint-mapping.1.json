@@ -1,0 +1,166 @@
+{
+  "settings": {
+    "index": {
+      "number_of_shards": 1
+    }
+  },
+  "mappings": {
+    "codepoints2": {
+      "properties": {
+        "properties": {
+          "kCompatibilityVariant": {
+            "type": "string"
+          },
+          "kDefinition": {
+            "type": "string"
+          },
+          "kJapaneseKun": {
+            "type": "string"
+          },
+          "kJapaneseOn": {
+            "type": "string"
+          },
+          "kMandarin": {
+            "type": "string"
+          },
+          "kTang": {
+            "type": "string"
+          },
+          "kTotalStrokes": {
+            "type": "string"
+          },
+          "kTraditionalVariant": {
+            "type": "string"
+          },
+          "kVietnamese": {
+            "type": "string"
+          },
+          "age": {
+            "type": "text"
+          },
+          "bc": {
+            "type": "text"
+          },
+          "blk": {
+            "type": "text"
+          },
+          "ea": {
+            "type": "text"
+          },
+          "gc": {
+            "type": "text"
+          },
+          "GCB": {
+            "type": "text"
+          },
+          "hst": {
+            "type": "text"
+          },
+          "InSC": {
+            "type": "text"
+          },
+          "jg": {
+            "type": "text"
+          },
+          "jt": {
+            "type": "text"
+          },
+          "lb": {
+            "type": "text"
+          },
+          "NFC_QC": {
+            "type": "text"
+          },
+          "NFD_QC": {
+            "type": "text"
+          },
+          "NFKC_QC": {
+            "type": "text"
+          },
+          "NFKD_QC": {
+            "type": "text"
+          },
+          "Pat_WS": {
+            "type": "text"
+          },
+          "sc": {
+            "type": "text"
+          },
+          "scx": {
+            "type": "text"
+          },
+          "SB": {
+            "type": "text"
+          },
+          "na1": {
+            "type": "text"
+          },
+          "vo": {
+            "type": "text"
+          },
+          "WSpace": {
+            "type": "text"
+          },
+          "WB": {
+            "type": "text"
+          },
+          "cp": {
+            "type": "text"
+          }
+        },
+        "comments": {
+          "type": "text"
+        },
+        "cp": {
+          "type": "text"
+        },
+        "index": {
+          "type": "text"
+        },
+        "block": {
+          "properties": {
+            "blk": {
+              "type": "text"
+            }
+          }
+        },
+        "font": {
+          "type": "text"
+        },
+        "general_category": {
+          "properties": {
+            "name": {
+              "type": "text"
+            }
+          }
+        },
+        "key": {
+          "type": "text"
+        },
+        "name_v1": {
+          "type": "text"
+        },
+        "script": {
+          "properties": {
+            "name": {
+              "type": "text"
+            }
+          }
+        },
+        "block_header": {
+          "type": "text"
+        },
+        "block_subheader": {
+          "type": "text"
+        },
+        "suggest": {
+          "type": "completion",
+          "analyzer": "simple",
+          "preserve_separators": true,
+          "preserve_position_increments": true,
+          "max_input_length": 50
+        }
+      }
+    }
+  }
+}

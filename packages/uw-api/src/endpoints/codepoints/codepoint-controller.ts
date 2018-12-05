@@ -53,7 +53,11 @@ export const findCodepoints = async (req: Request, res: Response, q: Object) => 
 
 export const suggest = async (req: Request, res: Response) => {
   const term = req.params.term
-  queries.suggest(term).then(terms => res.json(terms))
+  if (!term) {
+    throw new ResourceNotFoundException(req, res)
+  }
+  const results = await queries.suggest(term)
+  res.status(200).json(results)
 }
 
 export default {
