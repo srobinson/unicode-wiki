@@ -21,6 +21,8 @@ interface InternalState {
   searchCategories: Category[] | undefined
 }
 
+const types: CategoryType[] = ["blocks", "scripts", "symbols"]
+
 export class ExplorerNavigation extends React.PureComponent<NavigationComponentProps> {
   state: InternalState = {
     isNavigationTitleMenuOpen: false,
@@ -137,27 +139,15 @@ export class ExplorerNavigation extends React.PureComponent<NavigationComponentP
         </Styled.NavigationCategory>
         {isNavigationTypeMenuOpen && (
           <Styled.NavigationMenu isNavigationTypeMenuOpen={isNavigationTypeMenuOpen}>
-            <Styled.MenuItem
-              isNavigationTypeMenuOpen={isNavigationTypeMenuOpen}
-              key="blocks"
-              onClick={() => this.setCategoryType("blocks")}
-            >
-              blocks
-            </Styled.MenuItem>
-            <Styled.MenuItem
-              isNavigationTypeMenuOpen={isNavigationTypeMenuOpen}
-              key="scripts"
-              onClick={() => this.setCategoryType("scripts")}
-            >
-              scripts
-            </Styled.MenuItem>
-            <Styled.MenuItem
-              isNavigationTypeMenuOpen={isNavigationTypeMenuOpen}
-              key="symbols"
-              onClick={() => this.setCategoryType("symbols")}
-            >
-              symbols
-            </Styled.MenuItem>
+            {types.map((type: CategoryType) => (
+              <Styled.MenuItem
+                isNavigationTypeMenuOpen={isNavigationTypeMenuOpen}
+                key={type}
+                onClick={() => this.setCategoryType(type)}
+              >
+                {type}
+              </Styled.MenuItem>
+            ))}
           </Styled.NavigationMenu>
         )}
         {isNavigationTitleMenuOpen && (

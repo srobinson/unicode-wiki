@@ -8,6 +8,11 @@ export interface CodepointState {
   readonly result?: PaginatedCodepointResult
 }
 
+export interface SuggestState {
+  readonly loading: boolean
+  readonly result: string[]
+}
+
 export interface Codepoint {
   cp: string
   index: number

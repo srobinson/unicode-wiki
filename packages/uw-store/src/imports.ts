@@ -6,6 +6,7 @@ import {codepointReducer} from "./features/codepoints"
 import {layoutReducer} from "./features/layout"
 import {loaderReducer} from "./features/loader"
 import {notificationReducer} from "./features/notification"
+import {suggestReducer} from "./features/suggest"
 import {wikiPageReducer} from "./features/wiki-page"
 import {wikiSearchReducer} from "./features/wiki-search"
 
@@ -16,6 +17,7 @@ import {
   LoadingState,
   NotificationState,
   ScriptState,
+  SuggestState,
   SymbolState,
   WikiPageState,
   WikiSearchState,
@@ -29,6 +31,7 @@ export interface ApplicationState {
   notifications: NotificationState
   router: RouterState
   scripts: ScriptState
+  suggest: SuggestState
   symbols: SymbolState
   wikiPage: WikiPageState
   wikiSearch: WikiSearchState
@@ -44,6 +47,7 @@ export const rootReducer: Reducer<ApplicationState> = combineReducers<Applicatio
   notifications: notificationReducer,
   router: routerReducer,
   scripts: scriptsReducer,
+  suggest: suggestReducer,
   symbols: symbolsReducer,
   wikiPage: wikiPageReducer,
   wikiSearch: wikiSearchReducer,
