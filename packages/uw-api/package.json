@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
-    "prepare": "echo '@uw/api' && tsc",
+    "prepare": "'@uw/api' && tsc",
     "dev": "ts-node-dev src/index.ts",
     "lint": "tslint 'src/**/*.ts'",
     "start:api": "node build/dist/index.js",

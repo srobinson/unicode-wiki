@@ -7,9 +7,11 @@ import {
 } from "./endpoints"
 import {ResourceNotFoundException} from "@uw/domain"
 
+// const DEBUG = process.env.NODE_ENV !== "production"
+
 export default class Routes {
-  public static config() {
-    const router: Router = Router()
+  public static api() {
+    const api: Router = Router()
 
     router
       .get("/", (req: Request, res: Response) => {
@@ -42,6 +44,6 @@ export default class Routes {
         throw new ResourceNotFoundException(req, res)
       })
 
-    return router
+    return api
   }
 }

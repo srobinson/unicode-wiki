@@ -10,9 +10,16 @@ import {userMiddleware} from "./endpoints"
 import "express-async-errors"
 import "./config"
 
+import {ApolloServer} from "apollo-server-express"
+
+import resolvers from "./graphql/resolvers"
+import schema from "./graphql/schema"
+
 class Express {
   public static config(): express.Application {
     const app: express.Application = express()
+    const graphServer = new ApolloServer({typeDefs: schema, resolvers})
+    graphServer.applyMiddleware({app})
 
     app
       .set("port", process.env.NODE_PORT)
@@ -25,7 +32,10 @@ class Express {
       .use(userMiddleware)
       .use(enhanceRequestMiddleware)
       .use(logRequestMiddleware)
-      .use("/api", Routes.config())
+      .use("/api", Routes.api())
+
+      // .use("/graphql", Routes.graphql())
+
       .use(errorHandlerMiddleware)
 
     return app
