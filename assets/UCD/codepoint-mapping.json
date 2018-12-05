@@ -1,0 +1,65 @@
+{
+  "settings": {
+    "index": {
+      "number_of_shards": 1
+    }
+  },
+  "mappings": {
+    "codepoints2": {
+      "properties": {
+        "comments": {
+          "type": "text"
+        },
+        "cp": {
+          "type": "text"
+        },
+        "index": {
+          "type": "text"
+        },
+        "block": {
+          "properties": {
+            "blk": {
+              "type": "text"
+            }
+          }
+        },
+        "font": {
+          "type": "text"
+        },
+        "general_category": {
+          "properties": {
+            "name": {
+              "type": "text"
+            }
+          }
+        },
+        "key": {
+          "type": "text"
+        },
+        "name_v1": {
+          "type": "text"
+        },
+        "script": {
+          "properties": {
+            "name": {
+              "type": "text"
+            }
+          }
+        },
+        "block_header": {
+          "type": "text"
+        },
+        "block_subheader": {
+          "type": "text"
+        },
+        "suggest": {
+          "type": "completion",
+          "analyzer": "simple",
+          "preserve_separators": true,
+          "preserve_position_increments": true,
+          "max_input_length": 50
+        }
+      }
+    }
+  }
+}
