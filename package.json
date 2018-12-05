@@ -25,6 +25,7 @@
     "watch": "lerna run watch --concurrency 20 --stream"
   },
   "dependencies": {
+    "apollo-server": "2.2.6",
     "async": "2.6.1",
     "axios": "0.18.0",
     "babel-plugin-emotion": "9.2.11",

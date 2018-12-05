@@ -35,6 +35,9 @@ class NavigationContainer extends React.Component<NavigationContainerProps & Oth
     const {match} = nextProps
     const {params} = match
     let {category, key} = params
+    if (category === "search") {
+      return {}
+    }
     if (nextProps.notifications.length) {
       // Handle 404
       // TODO: refactor
