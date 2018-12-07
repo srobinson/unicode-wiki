@@ -1,3 +1,5 @@
+#!/bin/bash
+
 path=$(pwd)
 for n in $(ls -d */)
 do
