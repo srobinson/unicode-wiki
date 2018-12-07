@@ -2,6 +2,7 @@ _uw
 .build
 .git
 .npm-debug.log
+.k8s-tmp
 _*
 image_history
 node_modules

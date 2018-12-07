@@ -10,5 +10,7 @@ services:
       - elk
     depends_on:
       - elasticsearch
+    # command: ["curl", ""]
+
 networks:
   elk:

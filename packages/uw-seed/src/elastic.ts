@@ -2,7 +2,7 @@
 // http.max_content_length: 500mb
 // https://github.com/elastic/elasticsearch/issues/2902
 import * as fs from "fs"
-import * as path from "path"
+import * as tmp from "tmp"
 import * as ora from "ora"
 import * as rimraf from "rimraf"
 import {Codepoint} from "@uw/domain"
@@ -14,7 +14,7 @@ const ES_URL = process.env.ES_URL || "localhost:9200"
 
 export default class EsClient {
   public static BULK_INDEX_URL = `${ES_URL}/_bulk?pretty`
-  public static BULK_FILE_PATH = path.resolve(__dirname, "./_bulk/")
+  public static BULK_FILE_TMP_PATH = tmp.dirSync().name
   public static MAPPING_INDEX_URL = `${ES_URL}/unicode-wiki`
   public static MAPPING_FILE_PATH = getUTCPath("codepoint-mapping.json")
 
@@ -22,11 +22,13 @@ export default class EsClient {
   private counter = 1
 
   bulkInsert = async () => {
-    await spawn(`curl -X DELETE -v ${EsClient.MAPPING_INDEX_URL}`, {stdio: "inherit", shell: true})
+    const spinner = ora(`Creating elasticsearch index`).start()
+    await spawn(`curl -X DELETE -v ${EsClient.MAPPING_INDEX_URL}`, {stderr: "inherit", shell: true})
     await this.createMapping()
     await this.createIndex()
-    rimraf.sync(EsClient.BULK_FILE_PATH)
-    console.log("EXIT::Index created succesfully")
+    spinner.info(`Cleaning up: Deleting tmp dir: ${EsClient.BULK_FILE_TMP_PATH}`)
+    rimraf.sync(EsClient.BULK_FILE_TMP_PATH)
+    spinner.succeed("Index created succesfully")
     process.exit(1)
   }
 
@@ -36,13 +38,12 @@ export default class EsClient {
       `curl -XPUT -v ${
         EsClient.MAPPING_INDEX_URL
       } -H 'Content-Type: application/json' --data-binary @${EsClient.MAPPING_FILE_PATH}`,
-      {stdio: "inherit", shell: true},
+      {stderr: "inherit", shell: true},
     )
-    spinner.succeed("Mapping generated")
+    spinner.succeed()
   }
 
   createIndex = async () => {
-    const spinner = ora(`Generating bulk import file`).start()
     const mongo = await this.mongo.getConnection()
     const collection = mongo.collection(DbClient.CODEPOINT_COLLECTION)
     const cursor = collection
@@ -52,8 +53,8 @@ export default class EsClient {
 
     let fileName = this.createBatchDirAndFile()
     let doc = undefined
-    spinner.info(`Generating ${fileName}`)
     for (doc = await cursor.next(); doc != undefined; doc = await cursor.next()) {
+      const spinner = ora(`Generating bulk import file ${fileName}`).start()
       fs.appendFileSync(
         fileName,
         JSON.stringify({
@@ -82,10 +83,11 @@ export default class EsClient {
         fileName = await this.generateNextBatchFile(fileName)
         spinner.info(`Generating ${fileName}`)
       }
+      spinner.succeed()
     }
     // push the last generated index
     await this.postBulkInsertFile(fileName)
-    spinner.succeed("Bulk inserts complete")
+    ora("Bulk inserts complete")
   }
 
   sanitizeDocument = (body: string) =>
@@ -96,11 +98,11 @@ export default class EsClient {
       .replace("_id", "mongo_id")
 
   createBatchDirAndFile = () => {
-    const fileName = `${EsClient.BULK_FILE_PATH}/index-${this.counter}`
-    if (fs.existsSync(EsClient.BULK_FILE_PATH)) {
-      rimraf.sync(EsClient.BULK_FILE_PATH)
+    const fileName = `${EsClient.BULK_FILE_TMP_PATH}/index-${this.counter}`
+    if (fs.existsSync(EsClient.BULK_FILE_TMP_PATH)) {
+      rimraf.sync(EsClient.BULK_FILE_TMP_PATH)
     }
-    fs.mkdirSync(EsClient.BULK_FILE_PATH)
+    fs.mkdirSync(EsClient.BULK_FILE_TMP_PATH)
     fs.writeFileSync(fileName, "", {
       encoding: "UTF-8",
     })
@@ -112,7 +114,7 @@ export default class EsClient {
       encoding: "UTF-8",
     })
     this.counter++
-    fileName = `${EsClient.BULK_FILE_PATH}/index-${this.counter}`
+    fileName = `${EsClient.BULK_FILE_TMP_PATH}/index-${this.counter}`
     fs.writeFileSync(fileName, "", {
       encoding: "UTF-8",
     })
@@ -125,7 +127,7 @@ export default class EsClient {
       `curl -X POST -v ${
         EsClient.BULK_INDEX_URL
       } -H 'Content-Type: application/json' --data-binary @${file}`,
-      {stdio: "inherit", shell: true},
+      {stderr: "inherit", shell: true},
     )
     spinner.info(`Bulk file ${file} pushed`)
   }

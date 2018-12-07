@@ -78,10 +78,12 @@ export const suggest = async (text: string) => {
   })
 
   // @ts-ignore
-  const results = response.suggest.suggest[0].options.sort((a: any, b: any) => {
-    if (a.text === b.text) return 0
-    return a.text > b.text ? 1 : -1
-  })
+  const results = response.suggest.suggest[0].options
+    .map((result: any) => result.text)
+    .sort((a: any, b: any) => {
+      if (a === b) return 0
+      return a > b ? 1 : -1
+    })
 
   return results
 }
