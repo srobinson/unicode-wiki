@@ -4,9 +4,13 @@ _uw
 .npm-debug.log
 .k8s-tmp
 _*
+build
+dist
 image_history
 node_modules
 packages/**/node_modules
+packages/**/build
+packages/**/dist
 README
 tmp*
 yarn-error.log

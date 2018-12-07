@@ -69,7 +69,7 @@ describe("codepointIndexRangeOrQuery utility", () => {
 
   it("should blow up for an invalid range", () => {
     expect(() => codepointIndexRangeOrQuery(["0000:0005", "XXXX:YYYY"])).toThrowError(
-      "XXXX:YYYY not a valid range",
+      "XXXX not a valid range",
     )
   })
 })

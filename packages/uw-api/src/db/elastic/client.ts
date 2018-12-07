@@ -5,7 +5,7 @@ import "../../config"
 console.log("process.env.ES_URL>>", process.env.ES_URL)
 
 export const client: elastic.Client = new elastic.Client({
-  host: "localhost:9200",
+  host: process.env.ES_URL || "localhost:9200",
   log: "trace",
 })
 
