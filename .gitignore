@@ -1,6 +1,7 @@
 !!*
 _*
 .gcloud
+.k8s-tmp
 .nyc_output
 build
 coverage

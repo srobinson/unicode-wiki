@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  labels:
+    addonmanager.kubernetes.io/mode: EnsureExists
+    k8s-app: kubernetes-dashboard
+  name: kubernetes-dashboard-settings
+  selfLink: /api/v1/namespaces/kube-system/configmaps/kubernetes-dashboard-settings

@@ -5,7 +5,7 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "rootDir": "src",
-    "outDir": "build/dist",
+    "outDir": "dist",
     "target": "es6",
   },
   "exclude": [

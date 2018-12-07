@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# https://matthiasnoback.nl/2017/03/bash-practices-input-validation-and-local-variables/
+
 # WAIT FOR IT
 # https://gist.github.com/rochacbruno/bdcad83367593fd52005
 

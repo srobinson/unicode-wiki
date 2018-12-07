@@ -5,7 +5,7 @@ import {loadJSONFile} from "@uw/utils"
 import {CategoryEntryDict} from "./file-parser/Dictionary"
 import CategoryEntry from "./unicode-data-parser/domain/CategoryEntry"
 
-export const UCDpath = path.join(__dirname, "../../UCD/")
+export const UCDpath = path.join(__dirname, "../UCD/")
 export const getUTCPath = (name: string) => path.join(UCDpath, name)
 export const loadUTCFile = (name: string) => loadJSONFile(getUTCPath(name))
 
