@@ -1,0 +1,19 @@
+version: "3"
+services:
+  logstash:
+    image: docker.elastic.co/logstash/logstash-oss:6.5.1
+    container_name: uw-logstash
+    volumes:
+      - ./config/logstash/logstash.yml:/usr/share/logstash/config/logstash.yml:ro
+      - ./config/logstash/pipeline:/usr/share/logstash/pipeline:ro
+    ports:
+      - "5000:5000"
+      - "9600:9600"
+    environment:
+      LS_JAVA_OPTS: "-Xmx256m -Xms256m"
+    networks:
+      - elk
+    depends_on:
+      - elasticsearch
+networks:
+  elk:

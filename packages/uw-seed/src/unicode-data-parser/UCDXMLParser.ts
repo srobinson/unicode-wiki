@@ -123,12 +123,16 @@ export default class UCDXMLParser {
       font: this.currentFont,
       general_category,
       key: cp,
-      [name && "name"]: name,
-      [name_v1 && "name_v1"]: name_v1,
       properties: this.sortProperties(propertyFields),
       script,
-      title: name || name_v1
+      title: name || name_v1,
     })
+    if (name) {
+      codePoint.patch({name})
+    }
+    if (name_v1) {
+      codePoint.patch({name_v1})
+    }
     this.codePointDict.put(cp, codePoint)
     return codePoint
   }
