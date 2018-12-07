@@ -133,7 +133,7 @@ class Runner {
         await updateCategoriesWithHasChildrenFlag("chart-symbols", symbolsEntryDict)
         await client.createCategories(blocksDict)
         await client.createCollection(codePointDict)
-        await EsClient.bulkInsert()
+        await new EsClient().bulkInsert()
         await client.exitProcess()
       },
     ])

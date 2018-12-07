@@ -1,7 +1,7 @@
 [
   {
     "index": 1,
-    "key": "European-Scripts",
+    "key": "european-scripts",
     "level": 0,
     "parent": 0,
     "title": "European Scripts",
@@ -198,7 +198,7 @@
   },
   {
     "index": 2,
-    "key": "Armenian",
+    "key": "armenian",
     "level": 1,
     "parent": 1,
     "title": "Armenian",
@@ -217,7 +217,7 @@
   },
   {
     "index": 3,
-    "key": "Armenian-Ligatures",
+    "key": "armenian-ligatures",
     "level": 2,
     "parent": 2,
     "title": "Armenian Ligatures",
@@ -230,7 +230,7 @@
   },
   {
     "index": 4,
-    "key": "Carian",
+    "key": "carian",
     "level": 1,
     "parent": 1,
     "title": "Carian",
@@ -243,7 +243,7 @@
   },
   {
     "index": 5,
-    "key": "Caucasian-Albanian",
+    "key": "caucasian-albanian",
     "level": 1,
     "parent": 1,
     "title": "Caucasian Albanian",
@@ -256,7 +256,7 @@
   },
   {
     "index": 6,
-    "key": "Cypriot-Syllabary",
+    "key": "cypriot-syllabary",
     "level": 1,
     "parent": 1,
     "title": "Cypriot Syllabary",
@@ -269,7 +269,7 @@
   },
   {
     "index": 7,
-    "key": "Cyrillic",
+    "key": "cyrillic",
     "level": 1,
     "parent": 1,
     "title": "Cyrillic",
@@ -300,7 +300,7 @@
   },
   {
     "index": 8,
-    "key": "Cyrillic-Supplement",
+    "key": "cyrillic-supplement",
     "level": 2,
     "parent": 7,
     "title": "Cyrillic Supplement",
@@ -313,7 +313,7 @@
   },
   {
     "index": 9,
-    "key": "Cyrillic-Extended-A",
+    "key": "cyrillic-extended-a",
     "level": 2,
     "parent": 7,
     "title": "Cyrillic Extended-A",
@@ -326,7 +326,7 @@
   },
   {
     "index": 10,
-    "key": "Cyrillic-Extended-B",
+    "key": "cyrillic-extended-b",
     "level": 2,
     "parent": 7,
     "title": "Cyrillic Extended-B",
@@ -339,7 +339,7 @@
   },
   {
     "index": 11,
-    "key": "Cyrillic-Extended-C",
+    "key": "cyrillic-extended-c",
     "level": 2,
     "parent": 7,
     "title": "Cyrillic Extended-C",
@@ -352,7 +352,7 @@
   },
   {
     "index": 12,
-    "key": "Elbasan",
+    "key": "elbasan",
     "level": 1,
     "parent": 1,
     "title": "Elbasan",
@@ -365,7 +365,7 @@
   },
   {
     "index": 13,
-    "key": "Georgian",
+    "key": "georgian",
     "level": 1,
     "parent": 1,
     "title": "Georgian",
@@ -388,7 +388,7 @@
   },
   {
     "index": 14,
-    "key": "Georgian-Extended",
+    "key": "georgian-extended",
     "level": 2,
     "parent": 13,
     "title": "Georgian Extended",
@@ -401,7 +401,7 @@
   },
   {
     "index": 15,
-    "key": "Georgian-Supplement",
+    "key": "georgian-supplement",
     "level": 2,
     "parent": 13,
     "title": "Georgian Supplement",
@@ -414,7 +414,7 @@
   },
   {
     "index": 16,
-    "key": "Glagolitic",
+    "key": "glagolitic",
     "level": 1,
     "parent": 1,
     "title": "Glagolitic",
@@ -433,7 +433,7 @@
   },
   {
     "index": 17,
-    "key": "Glagolitic-Supplement",
+    "key": "glagolitic-supplement",
     "level": 2,
     "parent": 16,
     "title": "Glagolitic Supplement",
@@ -446,7 +446,7 @@
   },
   {
     "index": 18,
-    "key": "Gothic",
+    "key": "gothic",
     "level": 1,
     "parent": 1,
     "title": "Gothic",
@@ -459,7 +459,7 @@
   },
   {
     "index": 19,
-    "key": "Greek",
+    "key": "greek",
     "level": 1,
     "parent": 1,
     "title": "Greek",
@@ -482,7 +482,7 @@
   },
   {
     "index": 20,
-    "key": "Greek-Extended",
+    "key": "greek-extended",
     "level": 2,
     "parent": 19,
     "title": "Greek Extended",
@@ -495,7 +495,7 @@
   },
   {
     "index": 21,
-    "key": "Ancient-Greek-Numbers",
+    "key": "ancient-greek-numbers",
     "level": 2,
     "parent": 19,
     "title": "Ancient Greek Numbers",
@@ -508,7 +508,7 @@
   },
   {
     "index": 22,
-    "key": "Latin",
+    "key": "latin",
     "level": 1,
     "parent": 1,
     "title": "Latin",
@@ -575,7 +575,7 @@
   },
   {
     "index": 23,
-    "key": "Basic-Latin-ASCII-",
+    "key": "basic-latin-ascii-",
     "level": 2,
     "parent": 22,
     "title": "Basic Latin (ASCII)",
@@ -588,7 +588,7 @@
   },
   {
     "index": 24,
-    "key": "Latin-1-Supplement",
+    "key": "latin-1-supplement",
     "level": 2,
     "parent": 22,
     "title": "Latin-1 Supplement",
@@ -601,7 +601,7 @@
   },
   {
     "index": 25,
-    "key": "Latin-Extended-A",
+    "key": "latin-extended-a",
     "level": 2,
     "parent": 22,
     "title": "Latin Extended-A",
@@ -614,7 +614,7 @@
   },
   {
     "index": 26,
-    "key": "Latin-Extended-B",
+    "key": "latin-extended-b",
     "level": 2,
     "parent": 22,
     "title": "Latin Extended-B",
@@ -627,7 +627,7 @@
   },
   {
     "index": 27,
-    "key": "Latin-Extended-C",
+    "key": "latin-extended-c",
     "level": 2,
     "parent": 22,
     "title": "Latin Extended-C",
@@ -640,7 +640,7 @@
   },
   {
     "index": 28,
-    "key": "Latin-Extended-D",
+    "key": "latin-extended-d",
     "level": 2,
     "parent": 22,
     "title": "Latin Extended-D",
@@ -653,7 +653,7 @@
   },
   {
     "index": 29,
-    "key": "Latin-Extended-E",
+    "key": "latin-extended-e",
     "level": 2,
     "parent": 22,
     "title": "Latin Extended-E",
@@ -666,7 +666,7 @@
   },
   {
     "index": 30,
-    "key": "Latin-Extended-Additional",
+    "key": "latin-extended-additional",
     "level": 2,
     "parent": 22,
     "title": "Latin Extended Additional",
@@ -679,7 +679,7 @@
   },
   {
     "index": 31,
-    "key": "Latin-Ligatures",
+    "key": "latin-ligatures",
     "level": 2,
     "parent": 22,
     "title": "Latin Ligatures",
@@ -692,7 +692,7 @@
   },
   {
     "index": 32,
-    "key": "Fullwidth-Latin-Letters",
+    "key": "fullwidth-latin-letters",
     "level": 2,
     "parent": 22,
     "title": "Fullwidth Latin Letters",
@@ -705,7 +705,7 @@
   },
   {
     "index": 33,
-    "key": "IPA-Extensions",
+    "key": "ipa-extensions",
     "level": 2,
     "parent": 22,
     "title": "IPA Extensions",
@@ -718,7 +718,7 @@
   },
   {
     "index": 34,
-    "key": "Phonetic-Extensions",
+    "key": "phonetic-extensions",
     "level": 2,
     "parent": 22,
     "title": "Phonetic Extensions",
@@ -731,7 +731,7 @@
   },
   {
     "index": 35,
-    "key": "Phonetic-Extensions-Supplement",
+    "key": "phonetic-extensions-supplement",
     "level": 2,
     "parent": 22,
     "title": "Phonetic Extensions Supplement",
@@ -744,7 +744,7 @@
   },
   {
     "index": 36,
-    "key": "Linear-A",
+    "key": "linear-a",
     "level": 1,
     "parent": 1,
     "title": "Linear A",
@@ -757,7 +757,7 @@
   },
   {
     "index": 37,
-    "key": "Linear-B",
+    "key": "linear-b",
     "level": 1,
     "parent": 1,
     "title": "Linear B",
@@ -778,7 +778,7 @@
   },
   {
     "index": 38,
-    "key": "Linear-B-Syllabary",
+    "key": "linear-b-syllabary",
     "level": 2,
     "parent": 37,
     "title": "Linear B Syllabary",
@@ -791,7 +791,7 @@
   },
   {
     "index": 39,
-    "key": "Linear-B-Ideograms",
+    "key": "linear-b-ideograms",
     "level": 2,
     "parent": 37,
     "title": "Linear B Ideograms",
@@ -804,7 +804,7 @@
   },
   {
     "index": 40,
-    "key": "Aegean-Numbers",
+    "key": "aegean-numbers",
     "level": 2,
     "parent": 37,
     "title": "Aegean Numbers",
@@ -817,7 +817,7 @@
   },
   {
     "index": 41,
-    "key": "Lycian",
+    "key": "lycian",
     "level": 1,
     "parent": 1,
     "title": "Lycian",
@@ -830,7 +830,7 @@
   },
   {
     "index": 42,
-    "key": "Lydian",
+    "key": "lydian",
     "level": 1,
     "parent": 1,
     "title": "Lydian",
@@ -843,7 +843,7 @@
   },
   {
     "index": 43,
-    "key": "Ogham",
+    "key": "ogham",
     "level": 1,
     "parent": 1,
     "title": "Ogham",
@@ -856,7 +856,7 @@
   },
   {
     "index": 44,
-    "key": "Old-Hungarian",
+    "key": "old-hungarian",
     "level": 1,
     "parent": 1,
     "title": "Old Hungarian",
@@ -869,7 +869,7 @@
   },
   {
     "index": 45,
-    "key": "Old-Italic",
+    "key": "old-italic",
     "level": 1,
     "parent": 1,
     "title": "Old Italic",
@@ -882,7 +882,7 @@
   },
   {
     "index": 46,
-    "key": "Old-Permic",
+    "key": "old-permic",
     "level": 1,
     "parent": 1,
     "title": "Old Permic",
@@ -895,7 +895,7 @@
   },
   {
     "index": 47,
-    "key": "Phaistos-Disc",
+    "key": "phaistos-disc",
     "level": 1,
     "parent": 1,
     "title": "Phaistos Disc",
@@ -908,7 +908,7 @@
   },
   {
     "index": 48,
-    "key": "Runic",
+    "key": "runic",
     "level": 1,
     "parent": 1,
     "title": "Runic",
@@ -921,7 +921,7 @@
   },
   {
     "index": 49,
-    "key": "Shavian",
+    "key": "shavian",
     "level": 1,
     "parent": 1,
     "title": "Shavian",
@@ -934,7 +934,7 @@
   },
   {
     "index": 50,
-    "key": "Modifier-Letters",
+    "key": "modifier-letters",
     "level": 0,
     "parent": 0,
     "title": "Modifier Letters",
@@ -955,7 +955,7 @@
   },
   {
     "index": 51,
-    "key": "Modifier-Tone-Letters",
+    "key": "modifier-tone-letters",
     "level": 1,
     "parent": 50,
     "title": "Modifier Tone Letters",
@@ -968,7 +968,7 @@
   },
   {
     "index": 52,
-    "key": "Spacing-Modifier-Letters",
+    "key": "spacing-modifier-letters",
     "level": 1,
     "parent": 50,
     "title": "Spacing Modifier Letters",
@@ -981,7 +981,7 @@
   },
   {
     "index": 53,
-    "key": "Superscripts-and-Subscripts",
+    "key": "superscripts-and-subscripts",
     "level": 1,
     "parent": 50,
     "title": "Superscripts and Subscripts",
@@ -994,7 +994,7 @@
   },
   {
     "index": 54,
-    "key": "Combining-Marks",
+    "key": "combining-marks",
     "level": 0,
     "parent": 0,
     "title": "Combining Marks",
@@ -1023,7 +1023,7 @@
   },
   {
     "index": 55,
-    "key": "Combining-Diacritical-Marks",
+    "key": "combining-diacritical-marks",
     "level": 1,
     "parent": 54,
     "title": "Combining Diacritical Marks",
@@ -1046,7 +1046,7 @@
   },
   {
     "index": 56,
-    "key": "Combining-Diacritical-Marks-Extended",
+    "key": "combining-diacritical-marks-extended",
     "level": 2,
     "parent": 55,
     "title": "Combining Diacritical Marks Extended",
@@ -1059,7 +1059,7 @@
   },
   {
     "index": 57,
-    "key": "Combining-Diacritical-Marks-Supplement",
+    "key": "combining-diacritical-marks-supplement",
     "level": 2,
     "parent": 55,
     "title": "Combining Diacritical Marks Supplement",
@@ -1072,7 +1072,7 @@
   },
   {
     "index": 58,
-    "key": "Combining-Diacritical-Marks-for-Symbols",
+    "key": "combining-diacritical-marks-for-symbols",
     "level": 1,
     "parent": 54,
     "title": "Combining Diacritical Marks for Symbols",
@@ -1085,7 +1085,7 @@
   },
   {
     "index": 59,
-    "key": "Combining-Half-Marks",
+    "key": "combining-half-marks",
     "level": 1,
     "parent": 54,
     "title": "Combining Half Marks",
@@ -1098,7 +1098,7 @@
   },
   {
     "index": 60,
-    "key": "African-Scripts",
+    "key": "african-scripts",
     "level": 0,
     "parent": 0,
     "title": "African Scripts",
@@ -1187,7 +1187,7 @@
   },
   {
     "index": 61,
-    "key": "Adlam",
+    "key": "adlam",
     "level": 1,
     "parent": 60,
     "title": "Adlam",
@@ -1200,7 +1200,7 @@
   },
   {
     "index": 62,
-    "key": "Bamum",
+    "key": "bamum",
     "level": 1,
     "parent": 60,
     "title": "Bamum",
@@ -1219,7 +1219,7 @@
   },
   {
     "index": 63,
-    "key": "Bamum-Supplement",
+    "key": "bamum-supplement",
     "level": 2,
     "parent": 62,
     "title": "Bamum Supplement",
@@ -1232,7 +1232,7 @@
   },
   {
     "index": 64,
-    "key": "Bassa-Vah",
+    "key": "bassa-vah",
     "level": 1,
     "parent": 60,
     "title": "Bassa Vah",
@@ -1245,7 +1245,7 @@
   },
   {
     "index": 65,
-    "key": "Coptic",
+    "key": "coptic",
     "level": 1,
     "parent": 60,
     "title": "Coptic",
@@ -1268,7 +1268,7 @@
   },
   {
     "index": 66,
-    "key": "Coptic-in-Greek-block",
+    "key": "coptic-in-greek-block",
     "level": 2,
     "parent": 65,
     "title": "Coptic in Greek block",
@@ -1281,7 +1281,7 @@
   },
   {
     "index": 67,
-    "key": "Coptic-Epact-Numbers",
+    "key": "coptic-epact-numbers",
     "level": 2,
     "parent": 65,
     "title": "Coptic Epact Numbers",
@@ -1294,7 +1294,7 @@
   },
   {
     "index": 68,
-    "key": "Egyptian-Hieroglyphs",
+    "key": "egyptian-hieroglyphs",
     "level": 1,
     "parent": 60,
     "title": "Egyptian Hieroglyphs",
@@ -1307,7 +1307,7 @@
   },
   {
     "index": 69,
-    "key": "Ethiopic",
+    "key": "ethiopic",
     "level": 1,
     "parent": 60,
     "title": "Ethiopic",
@@ -1334,7 +1334,7 @@
   },
   {
     "index": 70,
-    "key": "Ethiopic-Supplement",
+    "key": "ethiopic-supplement",
     "level": 2,
     "parent": 69,
     "title": "Ethiopic Supplement",
@@ -1347,7 +1347,7 @@
   },
   {
     "index": 71,
-    "key": "Ethiopic-Extended",
+    "key": "ethiopic-extended",
     "level": 2,
     "parent": 69,
     "title": "Ethiopic Extended",
@@ -1360,7 +1360,7 @@
   },
   {
     "index": 72,
-    "key": "Ethiopic-Extended-A",
+    "key": "ethiopic-extended-a",
     "level": 2,
     "parent": 69,
     "title": "Ethiopic Extended-A",
@@ -1373,7 +1373,7 @@
   },
   {
     "index": 73,
-    "key": "Medefaidrin",
+    "key": "medefaidrin",
     "level": 1,
     "parent": 60,
     "title": "Medefaidrin",
@@ -1386,7 +1386,7 @@
   },
   {
     "index": 74,
-    "key": "Mende-Kikakui",
+    "key": "mende-kikakui",
     "level": 1,
     "parent": 60,
     "title": "Mende Kikakui",
@@ -1399,7 +1399,7 @@
   },
   {
     "index": 75,
-    "key": "Meroitic",
+    "key": "meroitic",
     "level": 1,
     "parent": 60,
     "title": "Meroitic",
@@ -1416,7 +1416,7 @@
   },
   {
     "index": 76,
-    "key": "Meroitic-Cursive",
+    "key": "meroitic-cursive",
     "level": 2,
     "parent": 75,
     "title": "Meroitic Cursive",
@@ -1429,7 +1429,7 @@
   },
   {
     "index": 77,
-    "key": "Meroitic-Hieroglyphs",
+    "key": "meroitic-hieroglyphs",
     "level": 2,
     "parent": 75,
     "title": "Meroitic Hieroglyphs",
@@ -1442,7 +1442,7 @@
   },
   {
     "index": 78,
-    "key": "N-Ko",
+    "key": "n-ko",
     "level": 1,
     "parent": 60,
     "title": "N'Ko",
@@ -1455,7 +1455,7 @@
   },
   {
     "index": 79,
-    "key": "Osmanya",
+    "key": "osmanya",
     "level": 1,
     "parent": 60,
     "title": "Osmanya",
@@ -1468,7 +1468,7 @@
   },
   {
     "index": 80,
-    "key": "Tifinagh",
+    "key": "tifinagh",
     "level": 1,
     "parent": 60,
     "title": "Tifinagh",
@@ -1481,7 +1481,7 @@
   },
   {
     "index": 81,
-    "key": "Vai",
+    "key": "vai",
     "level": 1,
     "parent": 60,
     "title": "Vai",
@@ -1494,7 +1494,7 @@
   },
   {
     "index": 82,
-    "key": "Middle-Eastern-Scripts",
+    "key": "middle-eastern-scripts",
     "level": 0,
     "parent": 0,
     "title": "Middle Eastern Scripts",
@@ -1615,7 +1615,7 @@
   },
   {
     "index": 83,
-    "key": "Anatolian-Hieroglyphs",
+    "key": "anatolian-hieroglyphs",
     "level": 1,
     "parent": 82,
     "title": "Anatolian Hieroglyphs",
@@ -1628,7 +1628,7 @@
   },
   {
     "index": 84,
-    "key": "Arabic",
+    "key": "arabic",
     "level": 1,
     "parent": 82,
     "title": "Arabic",
@@ -1659,7 +1659,7 @@
   },
   {
     "index": 85,
-    "key": "Arabic-Supplement",
+    "key": "arabic-supplement",
     "level": 2,
     "parent": 84,
     "title": "Arabic Supplement",
@@ -1672,7 +1672,7 @@
   },
   {
     "index": 86,
-    "key": "Arabic-Extended-A",
+    "key": "arabic-extended-a",
     "level": 2,
     "parent": 84,
     "title": "Arabic Extended-A",
@@ -1685,7 +1685,7 @@
   },
   {
     "index": 87,
-    "key": "Arabic-Presentation-Forms-A",
+    "key": "arabic-presentation-forms-a",
     "level": 2,
     "parent": 84,
     "title": "Arabic Presentation Forms-A",
@@ -1698,7 +1698,7 @@
   },
   {
     "index": 88,
-    "key": "Arabic-Presentation-Forms-B",
+    "key": "arabic-presentation-forms-b",
     "level": 2,
     "parent": 84,
     "title": "Arabic Presentation Forms-B",
@@ -1711,7 +1711,7 @@
   },
   {
     "index": 89,
-    "key": "Aramaic-Imperial",
+    "key": "aramaic-imperial",
     "level": 1,
     "parent": 82,
     "title": "Aramaic, Imperial",
@@ -1724,7 +1724,7 @@
   },
   {
     "index": 90,
-    "key": "Avestan",
+    "key": "avestan",
     "level": 1,
     "parent": 82,
     "title": "Avestan",
@@ -1737,7 +1737,7 @@
   },
   {
     "index": 91,
-    "key": "Cuneiform",
+    "key": "cuneiform",
     "level": 1,
     "parent": 82,
     "title": "Cuneiform",
@@ -1768,7 +1768,7 @@
   },
   {
     "index": 92,
-    "key": "Cuneiform-Numbers-and-Punctuation",
+    "key": "cuneiform-numbers-and-punctuation",
     "level": 2,
     "parent": 91,
     "title": "Cuneiform Numbers and Punctuation",
@@ -1781,7 +1781,7 @@
   },
   {
     "index": 93,
-    "key": "Early-Dynastic-Cuneiform",
+    "key": "early-dynastic-cuneiform",
     "level": 2,
     "parent": 91,
     "title": "Early Dynastic Cuneiform",
@@ -1794,7 +1794,7 @@
   },
   {
     "index": 94,
-    "key": "Old-Persian",
+    "key": "old-persian",
     "level": 2,
     "parent": 91,
     "title": "Old Persian",
@@ -1807,7 +1807,7 @@
   },
   {
     "index": 95,
-    "key": "Ugaritic",
+    "key": "ugaritic",
     "level": 2,
     "parent": 91,
     "title": "Ugaritic",
@@ -1820,7 +1820,7 @@
   },
   {
     "index": 96,
-    "key": "Hatran",
+    "key": "hatran",
     "level": 1,
     "parent": 82,
     "title": "Hatran",
@@ -1833,7 +1833,7 @@
   },
   {
     "index": 97,
-    "key": "Hebrew",
+    "key": "hebrew",
     "level": 1,
     "parent": 82,
     "title": "Hebrew",
@@ -1852,7 +1852,7 @@
   },
   {
     "index": 98,
-    "key": "Hebrew-Presentation-Forms",
+    "key": "hebrew-presentation-forms",
     "level": 2,
     "parent": 97,
     "title": "Hebrew Presentation Forms",
@@ -1865,7 +1865,7 @@
   },
   {
     "index": 99,
-    "key": "Mandaic",
+    "key": "mandaic",
     "level": 1,
     "parent": 82,
     "title": "Mandaic",
@@ -1878,7 +1878,7 @@
   },
   {
     "index": 100,
-    "key": "Nabataean",
+    "key": "nabataean",
     "level": 1,
     "parent": 82,
     "title": "Nabataean",
@@ -1891,7 +1891,7 @@
   },
   {
     "index": 101,
-    "key": "Old-North-Arabian",
+    "key": "old-north-arabian",
     "level": 1,
     "parent": 82,
     "title": "Old North Arabian",
@@ -1904,7 +1904,7 @@
   },
   {
     "index": 102,
-    "key": "Old-South-Arabian",
+    "key": "old-south-arabian",
     "level": 1,
     "parent": 82,
     "title": "Old South Arabian",
@@ -1917,7 +1917,7 @@
   },
   {
     "index": 103,
-    "key": "Pahlavi-Inscriptional",
+    "key": "pahlavi-inscriptional",
     "level": 1,
     "parent": 82,
     "title": "Pahlavi, Inscriptional",
@@ -1930,7 +1930,7 @@
   },
   {
     "index": 104,
-    "key": "Pahlavi-Psalter",
+    "key": "pahlavi-psalter",
     "level": 1,
     "parent": 82,
     "title": "Pahlavi, Psalter",
@@ -1943,7 +1943,7 @@
   },
   {
     "index": 105,
-    "key": "Palmyrene",
+    "key": "palmyrene",
     "level": 1,
     "parent": 82,
     "title": "Palmyrene",
@@ -1956,7 +1956,7 @@
   },
   {
     "index": 106,
-    "key": "Parthian-Inscriptional",
+    "key": "parthian-inscriptional",
     "level": 1,
     "parent": 82,
     "title": "Parthian, Inscriptional",
@@ -1969,7 +1969,7 @@
   },
   {
     "index": 107,
-    "key": "Phoenician",
+    "key": "phoenician",
     "level": 1,
     "parent": 82,
     "title": "Phoenician",
@@ -1982,7 +1982,7 @@
   },
   {
     "index": 108,
-    "key": "Samaritan",
+    "key": "samaritan",
     "level": 1,
     "parent": 82,
     "title": "Samaritan",
@@ -1995,7 +1995,7 @@
   },
   {
     "index": 109,
-    "key": "Syriac",
+    "key": "syriac",
     "level": 1,
     "parent": 82,
     "title": "Syriac",
@@ -2014,7 +2014,7 @@
   },
   {
     "index": 110,
-    "key": "Syriac-Supplement",
+    "key": "syriac-supplement",
     "level": 2,
     "parent": 109,
     "title": "Syriac Supplement",
@@ -2027,7 +2027,7 @@
   },
   {
     "index": 111,
-    "key": "Central-Asian-Scripts",
+    "key": "central-asian-scripts",
     "level": 0,
     "parent": 0,
     "title": "Central Asian Scripts",
@@ -2080,7 +2080,7 @@
   },
   {
     "index": 112,
-    "key": "Manichaean",
+    "key": "manichaean",
     "level": 1,
     "parent": 111,
     "title": "Manichaean",
@@ -2093,7 +2093,7 @@
   },
   {
     "index": 113,
-    "key": "Marchen",
+    "key": "marchen",
     "level": 1,
     "parent": 111,
     "title": "Marchen",
@@ -2106,7 +2106,7 @@
   },
   {
     "index": 114,
-    "key": "Mongolian",
+    "key": "mongolian",
     "level": 1,
     "parent": 111,
     "title": "Mongolian",
@@ -2125,7 +2125,7 @@
   },
   {
     "index": 115,
-    "key": "Mongolian-Supplement",
+    "key": "mongolian-supplement",
     "level": 2,
     "parent": 114,
     "title": "Mongolian Supplement",
@@ -2138,7 +2138,7 @@
   },
   {
     "index": 116,
-    "key": "Old-Sogdian",
+    "key": "old-sogdian",
     "level": 1,
     "parent": 111,
     "title": "Old Sogdian",
@@ -2151,7 +2151,7 @@
   },
   {
     "index": 117,
-    "key": "Old-Turkic",
+    "key": "old-turkic",
     "level": 1,
     "parent": 111,
     "title": "Old Turkic",
@@ -2164,7 +2164,7 @@
   },
   {
     "index": 118,
-    "key": "Phags-Pa",
+    "key": "phags-pa",
     "level": 1,
     "parent": 111,
     "title": "Phags-Pa",
@@ -2177,7 +2177,7 @@
   },
   {
     "index": 119,
-    "key": "Sogdian",
+    "key": "sogdian",
     "level": 1,
     "parent": 111,
     "title": "Sogdian",
@@ -2190,7 +2190,7 @@
   },
   {
     "index": 120,
-    "key": "Soyombo",
+    "key": "soyombo",
     "level": 1,
     "parent": 111,
     "title": "Soyombo",
@@ -2203,7 +2203,7 @@
   },
   {
     "index": 121,
-    "key": "Tibetan",
+    "key": "tibetan",
     "level": 1,
     "parent": 111,
     "title": "Tibetan",
@@ -2216,7 +2216,7 @@
   },
   {
     "index": 122,
-    "key": "Zanabazar-Square",
+    "key": "zanabazar-square",
     "level": 1,
     "parent": 111,
     "title": "Zanabazar Square",
@@ -2229,7 +2229,7 @@
   },
   {
     "index": 123,
-    "key": "South-Asian-Scripts",
+    "key": "south-asian-scripts",
     "level": 0,
     "parent": 0,
     "title": "South Asian Scripts",
@@ -2414,7 +2414,7 @@
   },
   {
     "index": 124,
-    "key": "Ahom",
+    "key": "ahom",
     "level": 1,
     "parent": 123,
     "title": "Ahom",
@@ -2427,7 +2427,7 @@
   },
   {
     "index": 125,
-    "key": "Bengali-and-Assamese",
+    "key": "bengali-and-assamese",
     "level": 1,
     "parent": 123,
     "title": "Bengali and Assamese",
@@ -2440,7 +2440,7 @@
   },
   {
     "index": 126,
-    "key": "Bhaiksuki",
+    "key": "bhaiksuki",
     "level": 1,
     "parent": 123,
     "title": "Bhaiksuki",
@@ -2453,7 +2453,7 @@
   },
   {
     "index": 127,
-    "key": "Brahmi",
+    "key": "brahmi",
     "level": 1,
     "parent": 123,
     "title": "Brahmi",
@@ -2466,7 +2466,7 @@
   },
   {
     "index": 128,
-    "key": "Chakma",
+    "key": "chakma",
     "level": 1,
     "parent": 123,
     "title": "Chakma",
@@ -2479,7 +2479,7 @@
   },
   {
     "index": 129,
-    "key": "Devanagari",
+    "key": "devanagari",
     "level": 1,
     "parent": 123,
     "title": "Devanagari",
@@ -2498,7 +2498,7 @@
   },
   {
     "index": 130,
-    "key": "Devanagari-Extended",
+    "key": "devanagari-extended",
     "level": 2,
     "parent": 129,
     "title": "Devanagari Extended",
@@ -2511,7 +2511,7 @@
   },
   {
     "index": 131,
-    "key": "Dogra",
+    "key": "dogra",
     "level": 1,
     "parent": 123,
     "title": "Dogra",
@@ -2524,7 +2524,7 @@
   },
   {
     "index": 132,
-    "key": "Grantha",
+    "key": "grantha",
     "level": 1,
     "parent": 123,
     "title": "Grantha",
@@ -2537,7 +2537,7 @@
   },
   {
     "index": 133,
-    "key": "Gujarati",
+    "key": "gujarati",
     "level": 1,
     "parent": 123,
     "title": "Gujarati",
@@ -2550,7 +2550,7 @@
   },
   {
     "index": 134,
-    "key": "Gunjala-Gondi",
+    "key": "gunjala-gondi",
     "level": 1,
     "parent": 123,
     "title": "Gunjala Gondi",
@@ -2563,7 +2563,7 @@
   },
   {
     "index": 135,
-    "key": "Gurmukhi",
+    "key": "gurmukhi",
     "level": 1,
     "parent": 123,
     "title": "Gurmukhi",
@@ -2576,7 +2576,7 @@
   },
   {
     "index": 136,
-    "key": "Kaithi",
+    "key": "kaithi",
     "level": 1,
     "parent": 123,
     "title": "Kaithi",
@@ -2589,7 +2589,7 @@
   },
   {
     "index": 137,
-    "key": "Kannada",
+    "key": "kannada",
     "level": 1,
     "parent": 123,
     "title": "Kannada",
@@ -2602,7 +2602,7 @@
   },
   {
     "index": 138,
-    "key": "Kharoshthi",
+    "key": "kharoshthi",
     "level": 1,
     "parent": 123,
     "title": "Kharoshthi",
@@ -2615,7 +2615,7 @@
   },
   {
     "index": 139,
-    "key": "Khojki",
+    "key": "khojki",
     "level": 1,
     "parent": 123,
     "title": "Khojki",
@@ -2628,7 +2628,7 @@
   },
   {
     "index": 140,
-    "key": "Khudawadi",
+    "key": "khudawadi",
     "level": 1,
     "parent": 123,
     "title": "Khudawadi",
@@ -2641,7 +2641,7 @@
   },
   {
     "index": 141,
-    "key": "Lepcha",
+    "key": "lepcha",
     "level": 1,
     "parent": 123,
     "title": "Lepcha",
@@ -2654,7 +2654,7 @@
   },
   {
     "index": 142,
-    "key": "Limbu",
+    "key": "limbu",
     "level": 1,
     "parent": 123,
     "title": "Limbu",
@@ -2667,7 +2667,7 @@
   },
   {
     "index": 143,
-    "key": "Mahajani",
+    "key": "mahajani",
     "level": 1,
     "parent": 123,
     "title": "Mahajani",
@@ -2680,7 +2680,7 @@
   },
   {
     "index": 144,
-    "key": "Malayalam",
+    "key": "malayalam",
     "level": 1,
     "parent": 123,
     "title": "Malayalam",
@@ -2693,7 +2693,7 @@
   },
   {
     "index": 145,
-    "key": "Masaram-Gondi",
+    "key": "masaram-gondi",
     "level": 1,
     "parent": 123,
     "title": "Masaram Gondi",
@@ -2706,7 +2706,7 @@
   },
   {
     "index": 146,
-    "key": "Meetei-Mayek",
+    "key": "meetei-mayek",
     "level": 1,
     "parent": 123,
     "title": "Meetei Mayek",
@@ -2725,7 +2725,7 @@
   },
   {
     "index": 147,
-    "key": "Meetei-Mayek-Extensions",
+    "key": "meetei-mayek-extensions",
     "level": 2,
     "parent": 146,
     "title": "Meetei Mayek Extensions",
@@ -2738,7 +2738,7 @@
   },
   {
     "index": 148,
-    "key": "Modi",
+    "key": "modi",
     "level": 1,
     "parent": 123,
     "title": "Modi",
@@ -2751,7 +2751,7 @@
   },
   {
     "index": 149,
-    "key": "Mro",
+    "key": "mro",
     "level": 1,
     "parent": 123,
     "title": "Mro",
@@ -2764,7 +2764,7 @@
   },
   {
     "index": 150,
-    "key": "Multani",
+    "key": "multani",
     "level": 1,
     "parent": 123,
     "title": "Multani",
@@ -2777,7 +2777,7 @@
   },
   {
     "index": 151,
-    "key": "Newa",
+    "key": "newa",
     "level": 1,
     "parent": 123,
     "title": "Newa",
@@ -2790,7 +2790,7 @@
   },
   {
     "index": 152,
-    "key": "Ol-Chiki",
+    "key": "ol-chiki",
     "level": 1,
     "parent": 123,
     "title": "Ol Chiki",
@@ -2803,7 +2803,7 @@
   },
   {
     "index": 153,
-    "key": "Oriya-Odia-",
+    "key": "oriya-odia-",
     "level": 1,
     "parent": 123,
     "title": "Oriya (Odia)",
@@ -2816,7 +2816,7 @@
   },
   {
     "index": 154,
-    "key": "Saurashtra",
+    "key": "saurashtra",
     "level": 1,
     "parent": 123,
     "title": "Saurashtra",
@@ -2829,7 +2829,7 @@
   },
   {
     "index": 155,
-    "key": "Sharada",
+    "key": "sharada",
     "level": 1,
     "parent": 123,
     "title": "Sharada",
@@ -2842,7 +2842,7 @@
   },
   {
     "index": 156,
-    "key": "Siddham",
+    "key": "siddham",
     "level": 1,
     "parent": 123,
     "title": "Siddham",
@@ -2855,7 +2855,7 @@
   },
   {
     "index": 157,
-    "key": "Sinhala",
+    "key": "sinhala",
     "level": 1,
     "parent": 123,
     "title": "Sinhala",
@@ -2874,7 +2874,7 @@
   },
   {
     "index": 158,
-    "key": "Sinhala-Archaic-Numbers",
+    "key": "sinhala-archaic-numbers",
     "level": 2,
     "parent": 157,
     "title": "Sinhala Archaic Numbers",
@@ -2887,7 +2887,7 @@
   },
   {
     "index": 159,
-    "key": "Sora-Sompeng",
+    "key": "sora-sompeng",
     "level": 1,
     "parent": 123,
     "title": "Sora Sompeng",
@@ -2900,7 +2900,7 @@
   },
   {
     "index": 160,
-    "key": "Syloti-Nagri",
+    "key": "syloti-nagri",
     "level": 1,
     "parent": 123,
     "title": "Syloti Nagri",
@@ -2913,7 +2913,7 @@
   },
   {
     "index": 161,
-    "key": "Takri",
+    "key": "takri",
     "level": 1,
     "parent": 123,
     "title": "Takri",
@@ -2926,7 +2926,7 @@
   },
   {
     "index": 162,
-    "key": "Tamil",
+    "key": "tamil",
     "level": 1,
     "parent": 123,
     "title": "Tamil",
@@ -2939,7 +2939,7 @@
   },
   {
     "index": 163,
-    "key": "Telugu",
+    "key": "telugu",
     "level": 1,
     "parent": 123,
     "title": "Telugu",
@@ -2952,7 +2952,7 @@
   },
   {
     "index": 164,
-    "key": "Thaana",
+    "key": "thaana",
     "level": 1,
     "parent": 123,
     "title": "Thaana",
@@ -2965,7 +2965,7 @@
   },
   {
     "index": 165,
-    "key": "Tirhuta",
+    "key": "tirhuta",
     "level": 1,
     "parent": 123,
     "title": "Tirhuta",
@@ -2978,7 +2978,7 @@
   },
   {
     "index": 166,
-    "key": "Vedic-Extensions",
+    "key": "vedic-extensions",
     "level": 1,
     "parent": 123,
     "title": "Vedic Extensions",
@@ -2991,7 +2991,7 @@
   },
   {
     "index": 167,
-    "key": "Warang-Citi",
+    "key": "warang-citi",
     "level": 1,
     "parent": 123,
     "title": "Warang Citi",
@@ -3004,7 +3004,7 @@
   },
   {
     "index": 168,
-    "key": "Southeast-Asian-Scripts",
+    "key": "southeast-asian-scripts",
     "level": 0,
     "parent": 0,
     "title": "Southeast Asian Scripts",
@@ -3077,7 +3077,7 @@
   },
   {
     "index": 169,
-    "key": "Cham",
+    "key": "cham",
     "level": 1,
     "parent": 168,
     "title": "Cham",
@@ -3090,7 +3090,7 @@
   },
   {
     "index": 170,
-    "key": "Hanifi-Rohingya",
+    "key": "hanifi-rohingya",
     "level": 1,
     "parent": 168,
     "title": "Hanifi Rohingya",
@@ -3103,7 +3103,7 @@
   },
   {
     "index": 171,
-    "key": "Kayah-Li",
+    "key": "kayah-li",
     "level": 1,
     "parent": 168,
     "title": "Kayah Li",
@@ -3116,7 +3116,7 @@
   },
   {
     "index": 172,
-    "key": "Khmer",
+    "key": "khmer",
     "level": 1,
     "parent": 168,
     "title": "Khmer",
@@ -3135,7 +3135,7 @@
   },
   {
     "index": 173,
-    "key": "Khmer-Symbols",
+    "key": "khmer-symbols",
     "level": 2,
     "parent": 172,
     "title": "Khmer Symbols",
@@ -3148,7 +3148,7 @@
   },
   {
     "index": 174,
-    "key": "Lao",
+    "key": "lao",
     "level": 1,
     "parent": 168,
     "title": "Lao",
@@ -3161,7 +3161,7 @@
   },
   {
     "index": 175,
-    "key": "Myanmar",
+    "key": "myanmar",
     "level": 1,
     "parent": 168,
     "title": "Myanmar",
@@ -3184,7 +3184,7 @@
   },
   {
     "index": 176,
-    "key": "Myanmar-Extended-A",
+    "key": "myanmar-extended-a",
     "level": 2,
     "parent": 175,
     "title": "Myanmar Extended-A",
@@ -3197,7 +3197,7 @@
   },
   {
     "index": 177,
-    "key": "Myanmar-Extended-B",
+    "key": "myanmar-extended-b",
     "level": 2,
     "parent": 175,
     "title": "Myanmar Extended-B",
@@ -3210,7 +3210,7 @@
   },
   {
     "index": 178,
-    "key": "New-Tai-Lue",
+    "key": "new-tai-lue",
     "level": 1,
     "parent": 168,
     "title": "New Tai Lue",
@@ -3223,7 +3223,7 @@
   },
   {
     "index": 179,
-    "key": "Pahawh-Hmong",
+    "key": "pahawh-hmong",
     "level": 1,
     "parent": 168,
     "title": "Pahawh Hmong",
@@ -3236,7 +3236,7 @@
   },
   {
     "index": 180,
-    "key": "Pau-Cin-Hau",
+    "key": "pau-cin-hau",
     "level": 1,
     "parent": 168,
     "title": "Pau Cin Hau",
@@ -3249,7 +3249,7 @@
   },
   {
     "index": 181,
-    "key": "Tai-Le",
+    "key": "tai-le",
     "level": 1,
     "parent": 168,
     "title": "Tai Le",
@@ -3262,7 +3262,7 @@
   },
   {
     "index": 182,
-    "key": "Tai-Tham",
+    "key": "tai-tham",
     "level": 1,
     "parent": 168,
     "title": "Tai Tham",
@@ -3275,7 +3275,7 @@
   },
   {
     "index": 183,
-    "key": "Tai-Viet",
+    "key": "tai-viet",
     "level": 1,
     "parent": 168,
     "title": "Tai Viet",
@@ -3288,7 +3288,7 @@
   },
   {
     "index": 184,
-    "key": "Thai",
+    "key": "thai",
     "level": 1,
     "parent": 168,
     "title": "Thai",
@@ -3301,7 +3301,7 @@
   },
   {
     "index": 185,
-    "key": "Indonesia-&-Oceania-Scripts",
+    "key": "indonesia-&-oceania-scripts",
     "level": 0,
     "parent": 0,
     "title": "Indonesia & Oceania Scripts",
@@ -3358,7 +3358,7 @@
   },
   {
     "index": 186,
-    "key": "Balinese",
+    "key": "balinese",
     "level": 1,
     "parent": 185,
     "title": "Balinese",
@@ -3371,7 +3371,7 @@
   },
   {
     "index": 187,
-    "key": "Batak",
+    "key": "batak",
     "level": 1,
     "parent": 185,
     "title": "Batak",
@@ -3384,7 +3384,7 @@
   },
   {
     "index": 188,
-    "key": "Buginese",
+    "key": "buginese",
     "level": 1,
     "parent": 185,
     "title": "Buginese",
@@ -3397,7 +3397,7 @@
   },
   {
     "index": 189,
-    "key": "Buhid",
+    "key": "buhid",
     "level": 1,
     "parent": 185,
     "title": "Buhid",
@@ -3410,7 +3410,7 @@
   },
   {
     "index": 190,
-    "key": "Hanunoo",
+    "key": "hanunoo",
     "level": 1,
     "parent": 185,
     "title": "Hanunoo",
@@ -3423,7 +3423,7 @@
   },
   {
     "index": 191,
-    "key": "Javanese",
+    "key": "javanese",
     "level": 1,
     "parent": 185,
     "title": "Javanese",
@@ -3436,7 +3436,7 @@
   },
   {
     "index": 192,
-    "key": "Makasar",
+    "key": "makasar",
     "level": 1,
     "parent": 185,
     "title": "Makasar",
@@ -3449,7 +3449,7 @@
   },
   {
     "index": 193,
-    "key": "Rejang",
+    "key": "rejang",
     "level": 1,
     "parent": 185,
     "title": "Rejang",
@@ -3462,7 +3462,7 @@
   },
   {
     "index": 194,
-    "key": "Sundanese",
+    "key": "sundanese",
     "level": 1,
     "parent": 185,
     "title": "Sundanese",
@@ -3481,7 +3481,7 @@
   },
   {
     "index": 195,
-    "key": "Sundanese-Supplement",
+    "key": "sundanese-supplement",
     "level": 2,
     "parent": 194,
     "title": "Sundanese Supplement",
@@ -3494,7 +3494,7 @@
   },
   {
     "index": 196,
-    "key": "Tagalog",
+    "key": "tagalog",
     "level": 1,
     "parent": 185,
     "title": "Tagalog",
@@ -3507,7 +3507,7 @@
   },
   {
     "index": 197,
-    "key": "Tagbanwa",
+    "key": "tagbanwa",
     "level": 1,
     "parent": 185,
     "title": "Tagbanwa",
@@ -3520,7 +3520,7 @@
   },
   {
     "index": 198,
-    "key": "East-Asian-Scripts",
+    "key": "east-asian-scripts",
     "level": 0,
     "parent": 0,
     "title": "East Asian Scripts",
@@ -3669,7 +3669,7 @@
   },
   {
     "index": 199,
-    "key": "Bopomofo",
+    "key": "bopomofo",
     "level": 1,
     "parent": 198,
     "title": "Bopomofo",
@@ -3688,7 +3688,7 @@
   },
   {
     "index": 200,
-    "key": "Bopomofo-Extended",
+    "key": "bopomofo-extended",
     "level": 2,
     "parent": 199,
     "title": "Bopomofo Extended",
@@ -3701,7 +3701,7 @@
   },
   {
     "index": 201,
-    "key": "CJK-Unified-Ideographs-Han-",
+    "key": "cjk-unified-ideographs-han-",
     "level": 1,
     "parent": 198,
     "title": "CJK Unified Ideographs (Han)",
@@ -3740,7 +3740,7 @@
   },
   {
     "index": 202,
-    "key": "CJK-Extension-A",
+    "key": "cjk-extension-a",
     "level": 2,
     "parent": 201,
     "title": "CJK Extension-A",
@@ -3753,7 +3753,7 @@
   },
   {
     "index": 203,
-    "key": "CJK-Extension-C",
+    "key": "cjk-extension-c",
     "level": 2,
     "parent": 201,
     "title": "CJK Extension-C",
@@ -3766,7 +3766,7 @@
   },
   {
     "index": 204,
-    "key": "CJK-Extension-D",
+    "key": "cjk-extension-d",
     "level": 2,
     "parent": 201,
     "title": "CJK Extension-D",
@@ -3779,7 +3779,7 @@
   },
   {
     "index": 205,
-    "key": "CJK-Extension-E",
+    "key": "cjk-extension-e",
     "level": 2,
     "parent": 201,
     "title": "CJK Extension-E",
@@ -3792,7 +3792,7 @@
   },
   {
     "index": 206,
-    "key": "CJK-Extension-F",
+    "key": "cjk-extension-f",
     "level": 2,
     "parent": 201,
     "title": "CJK Extension-F",
@@ -3805,7 +3805,7 @@
   },
   {
     "index": 207,
-    "key": "CJK-Extension-B",
+    "key": "cjk-extension-b",
     "level": 2,
     "parent": 201,
     "title": "CJK Extension-B",
@@ -3818,7 +3818,7 @@
   },
   {
     "index": 208,
-    "key": "CJK-Compatibility-Ideographs",
+    "key": "cjk-compatibility-ideographs",
     "level": 1,
     "parent": 198,
     "title": "CJK Compatibility Ideographs",
@@ -3837,7 +3837,7 @@
   },
   {
     "index": 209,
-    "key": "CJK-Compatibility-Ideographs-Supplement",
+    "key": "cjk-compatibility-ideographs-supplement",
     "level": 2,
     "parent": 208,
     "title": "CJK Compatibility Ideographs Supplement",
@@ -3850,7 +3850,7 @@
   },
   {
     "index": 210,
-    "key": "CJK-Radicals-KangXi-Radicals",
+    "key": "cjk-radicals-kangxi-radicals",
     "level": 1,
     "parent": 198,
     "title": "CJK Radicals / KangXi Radicals",
@@ -3877,7 +3877,7 @@
   },
   {
     "index": 211,
-    "key": "CJK-Radicals-Supplement",
+    "key": "cjk-radicals-supplement",
     "level": 2,
     "parent": 210,
     "title": "CJK Radicals Supplement",
@@ -3890,7 +3890,7 @@
   },
   {
     "index": 212,
-    "key": "CJK-Strokes",
+    "key": "cjk-strokes",
     "level": 2,
     "parent": 210,
     "title": "CJK Strokes",
@@ -3903,7 +3903,7 @@
   },
   {
     "index": 213,
-    "key": "Ideographic-Description-Characters",
+    "key": "ideographic-description-characters",
     "level": 2,
     "parent": 210,
     "title": "Ideographic Description Characters",
@@ -3916,7 +3916,7 @@
   },
   {
     "index": 214,
-    "key": "Hangul-Jamo",
+    "key": "hangul-jamo",
     "level": 1,
     "parent": 198,
     "title": "Hangul Jamo",
@@ -3947,7 +3947,7 @@
   },
   {
     "index": 215,
-    "key": "Hangul-Jamo-Extended-A",
+    "key": "hangul-jamo-extended-a",
     "level": 2,
     "parent": 214,
     "title": "Hangul Jamo Extended-A",
@@ -3960,7 +3960,7 @@
   },
   {
     "index": 216,
-    "key": "Hangul-Jamo-Extended-B",
+    "key": "hangul-jamo-extended-b",
     "level": 2,
     "parent": 214,
     "title": "Hangul Jamo Extended-B",
@@ -3973,7 +3973,7 @@
   },
   {
     "index": 217,
-    "key": "Hangul-Compatibility-Jamo",
+    "key": "hangul-compatibility-jamo",
     "level": 2,
     "parent": 214,
     "title": "Hangul Compatibility Jamo",
@@ -3986,7 +3986,7 @@
   },
   {
     "index": 218,
-    "key": "Halfwidth-Jamo",
+    "key": "halfwidth-jamo",
     "level": 2,
     "parent": 214,
     "title": "Halfwidth Jamo",
@@ -3999,7 +3999,7 @@
   },
   {
     "index": 219,
-    "key": "Hangul-Syllables",
+    "key": "hangul-syllables",
     "level": 1,
     "parent": 198,
     "title": "Hangul Syllables",
@@ -4012,7 +4012,7 @@
   },
   {
     "index": 220,
-    "key": "Hiragana",
+    "key": "hiragana",
     "level": 1,
     "parent": 198,
     "title": "Hiragana",
@@ -4025,7 +4025,7 @@
   },
   {
     "index": 221,
-    "key": "Kana-Extended-A",
+    "key": "kana-extended-a",
     "level": 1,
     "parent": 198,
     "title": "Kana Extended-A",
@@ -4038,7 +4038,7 @@
   },
   {
     "index": 222,
-    "key": "Kana-Supplement",
+    "key": "kana-supplement",
     "level": 1,
     "parent": 198,
     "title": "Kana Supplement",
@@ -4051,7 +4051,7 @@
   },
   {
     "index": 223,
-    "key": "Kanbun",
+    "key": "kanbun",
     "level": 1,
     "parent": 198,
     "title": "Kanbun",
@@ -4064,7 +4064,7 @@
   },
   {
     "index": 224,
-    "key": "Katakana",
+    "key": "katakana",
     "level": 1,
     "parent": 198,
     "title": "Katakana",
@@ -4087,7 +4087,7 @@
   },
   {
     "index": 225,
-    "key": "Katakana-Phonetic-Extensions",
+    "key": "katakana-phonetic-extensions",
     "level": 2,
     "parent": 224,
     "title": "Katakana Phonetic Extensions",
@@ -4100,7 +4100,7 @@
   },
   {
     "index": 226,
-    "key": "Halfwidth-Katakana",
+    "key": "halfwidth-katakana",
     "level": 2,
     "parent": 224,
     "title": "Halfwidth Katakana",
@@ -4113,7 +4113,7 @@
   },
   {
     "index": 227,
-    "key": "Lisu",
+    "key": "lisu",
     "level": 1,
     "parent": 198,
     "title": "Lisu",
@@ -4126,7 +4126,7 @@
   },
   {
     "index": 228,
-    "key": "Miao",
+    "key": "miao",
     "level": 1,
     "parent": 198,
     "title": "Miao",
@@ -4139,7 +4139,7 @@
   },
   {
     "index": 229,
-    "key": "Nushu",
+    "key": "nushu",
     "level": 1,
     "parent": 198,
     "title": "Nushu",
@@ -4152,7 +4152,7 @@
   },
   {
     "index": 230,
-    "key": "Tangut",
+    "key": "tangut",
     "level": 1,
     "parent": 198,
     "title": "Tangut",
@@ -4171,7 +4171,7 @@
   },
   {
     "index": 231,
-    "key": "Tangut-Components",
+    "key": "tangut-components",
     "level": 2,
     "parent": 230,
     "title": "Tangut Components",
@@ -4184,7 +4184,7 @@
   },
   {
     "index": 232,
-    "key": "Yi",
+    "key": "yi",
     "level": 1,
     "parent": 198,
     "title": "Yi",
@@ -4201,7 +4201,7 @@
   },
   {
     "index": 233,
-    "key": "Yi-Syllables",
+    "key": "yi-syllables",
     "level": 2,
     "parent": 232,
     "title": "Yi Syllables",
@@ -4214,7 +4214,7 @@
   },
   {
     "index": 234,
-    "key": "Yi-Radicals",
+    "key": "yi-radicals",
     "level": 2,
     "parent": 232,
     "title": "Yi Radicals",
@@ -4227,7 +4227,7 @@
   },
   {
     "index": 235,
-    "key": "American-Scripts",
+    "key": "american-scripts",
     "level": 0,
     "parent": 0,
     "title": "American Scripts",
@@ -4260,7 +4260,7 @@
   },
   {
     "index": 236,
-    "key": "Cherokee",
+    "key": "cherokee",
     "level": 1,
     "parent": 235,
     "title": "Cherokee",
@@ -4279,7 +4279,7 @@
   },
   {
     "index": 237,
-    "key": "Cherokee-Supplement",
+    "key": "cherokee-supplement",
     "level": 2,
     "parent": 236,
     "title": "Cherokee Supplement",
@@ -4292,7 +4292,7 @@
   },
   {
     "index": 238,
-    "key": "Deseret",
+    "key": "deseret",
     "level": 1,
     "parent": 235,
     "title": "Deseret",
@@ -4305,7 +4305,7 @@
   },
   {
     "index": 239,
-    "key": "Osage",
+    "key": "osage",
     "level": 1,
     "parent": 235,
     "title": "Osage",
@@ -4318,7 +4318,7 @@
   },
   {
     "index": 240,
-    "key": "Unified-Canadian-Aboriginal-Syllabics",
+    "key": "unified-canadian-aboriginal-syllabics",
     "level": 1,
     "parent": 235,
     "title": "Unified Canadian Aboriginal Syllabics",
@@ -4337,7 +4337,7 @@
   },
   {
     "index": 241,
-    "key": "UCAS-Extended",
+    "key": "ucas-extended",
     "level": 2,
     "parent": 240,
     "title": "UCAS Extended",
@@ -4350,7 +4350,7 @@
   },
   {
     "index": 242,
-    "key": "Other",
+    "key": "other",
     "level": 0,
     "parent": 0,
     "title": "Other",
@@ -4371,7 +4371,7 @@
   },
   {
     "index": 243,
-    "key": "Alphabetic-Presentation-Forms",
+    "key": "alphabetic-presentation-forms",
     "level": 2,
     "parent": 242,
     "title": "Alphabetic Presentation Forms",
@@ -4384,7 +4384,7 @@
   },
   {
     "index": 244,
-    "key": "ASCII-Characters",
+    "key": "ascii-characters",
     "level": 2,
     "parent": 242,
     "title": "ASCII Characters",
@@ -4397,7 +4397,7 @@
   },
   {
     "index": 245,
-    "key": "Halfwidth-and-Fullwidth-Forms",
+    "key": "halfwidth-and-fullwidth-forms",
     "level": 2,
     "parent": 242,
     "title": "Halfwidth and Fullwidth Forms",

@@ -1,0 +1,18 @@
+version: "3"
+services:
+  mongo:
+    command: mongod
+    container_name: uw-mongo
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb:/data/db
+      - mongodb_config:/data/configdb
+volumes:
+  mongodb:
+    driver: local
+  mongodb_config:
+    driver: local
+networks:
+  elk:

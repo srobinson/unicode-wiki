@@ -1,11 +1,12 @@
+// tslint:disable
 import * as elastic from "elasticsearch"
+import "../../config"
+
+console.log("process.env.ES_URL>>", process.env.ES_URL)
 
 export const client: elastic.Client = new elastic.Client({
-  apiVersion: "6.5",
-  host: process.env.ES_URL || "127.0.0.1:9200",
-  log: "info",
-  sniffInterval: 60000,
-  sniffOnStart: true,
+  host: "localhost:9200",
+  log: "trace",
 })
 
 export const formatResponse = (response: elastic.SearchResponse<{}>) => {
