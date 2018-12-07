@@ -2,14 +2,7 @@ FROM node:9-alpine as BUILD
 WORKDIR /build
 
 # COPY assets/www/ assets/www/
-
-COPY package.json \
-     yarn.lock \
-     .env \
-     tsconfig.json \
-     jest.config.js \
-     tslint.json \
-     lerna.json ./
+COPY package.json yarn.lock ./
 
 COPY packages/uw-utils packages/uw-utils
 COPY packages/uw-domain packages/uw-domain

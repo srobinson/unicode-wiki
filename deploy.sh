@@ -22,5 +22,5 @@ function deploy() {
 }
 
 deploy api $(read_var VERSION_API .env)
-# deploy app $(read_var VERSION_APP .env)
+deploy app $(read_var VERSION_APP .env)
 

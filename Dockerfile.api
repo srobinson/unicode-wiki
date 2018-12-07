@@ -1,14 +1,6 @@
 FROM node:9-alpine AS BUILD
 WORKDIR /usr/src/app
 
-COPY package.json \
-     yarn.lock \
-     .env \
-     tsconfig.json \
-     jest.config.js \
-     tslint.json \
-     lerna.json ./
-
 COPY package.json yarn.lock ./
 # COPY assets/UCD ./assets/UCD
 COPY packages/uw-domain ./packages/uw-domain
@@ -17,6 +9,7 @@ COPY packages/uw-utils ./packages/uw-utils
 COPY packages/uw-api ./packages/uw-api
 COPY packages/uw-seed ./packages/uw-seed
 
+COPY .env tsconfig.json jest.config.js tslint.json lerna.json ./
 
 RUN yarn global add lerna && lerna bootstrap
 
@@ -32,4 +25,3 @@ COPY --from=BUILD /usr/src/app /usr/src/app
 # COPY assets/UCD /usr/src/app/packages/uw-seed/build/dist/UCD
 
 ENTRYPOINT ["node", "/usr/src/app/packages/uw-api/build/dist/index.js"]
-
