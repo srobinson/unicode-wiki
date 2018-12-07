@@ -59,10 +59,10 @@ export const codepointHexRange = (input: string): CodepointHexRange => {
   input = input.replace(/\.\.|\-/, ":")
   const parts = input.split(":")
   if (!isHex(parts[0])) {
-    throw new Error(`1: ${parts[0]} not a valid range`)
+    throw new Error(`${parts[0]} not a valid range`)
   }
   if (parts[1] && !isHex(parts[1])) {
-    throw new Error(`2: ${parts[1]} not a valid range`)
+    throw new Error(`${parts[1]} not a valid range`)
   }
   return {from: parts[0], to: parts[1] || parts[0]}
 }

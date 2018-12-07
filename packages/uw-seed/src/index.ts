@@ -27,6 +27,7 @@ const symbolsEntryDict: CategoryEntryDict = new LocalDictionary()
 class Runner {
   public static main() {
     const client = new DbClient()
+    const esClient = new EsClient()
 
     async.series([
       function parseScriptsFile(cb) {
@@ -133,7 +134,7 @@ class Runner {
         await updateCategoriesWithHasChildrenFlag("chart-symbols", symbolsEntryDict)
         await client.createCategories(blocksDict)
         await client.createCollection(codePointDict)
-        await new EsClient().bulkInsert()
+        await esClient.bulkInsert()
         await client.exitProcess()
       },
     ])

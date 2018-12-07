@@ -1,9 +1,9 @@
 FROM node:9-alpine as BUILD
 WORKDIR /build
 
-# COPY assets/www/ assets/www/
-COPY package.json yarn.lock ./
 
+COPY package.json yarn.lock ./
+# COPY assets/www/ assets/www/
 COPY packages/uw-utils packages/uw-utils
 COPY packages/uw-domain packages/uw-domain
 COPY packages/uw-store packages/uw-store
@@ -27,8 +27,8 @@ EXPOSE 80
 
 ENV NODE_ENV=production
 
-# COPY assets/www/facicons/* .
-# COPY assets/www/fonts static/fonts
+# COPY assets/www/facicons /facicons
+# COPY assets/www/fonts /fonts
 COPY --from=BUILD build/packages/uw-app/build .
 COPY ./nginx.conf /etc/nginx/nginx.conf
 

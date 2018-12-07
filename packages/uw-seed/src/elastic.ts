@@ -12,17 +12,18 @@ import DbClient from "./mongo"
 const spawn = require("child_process").spawnSync
 const ES_URL = process.env.ES_URL || "localhost:9200"
 
+const mongo = new DbClient()
+const spinner = ora(`Creating elasticsearch index`)
+let counter = 1
+
 export default class EsClient {
   public static BULK_INDEX_URL = `${ES_URL}/_bulk?pretty`
   public static BULK_FILE_TMP_PATH = tmp.dirSync().name
   public static MAPPING_INDEX_URL = `${ES_URL}/unicode-wiki`
   public static MAPPING_FILE_PATH = getUTCPath("codepoint-mapping.json")
 
-  private mongo = new DbClient()
-  private counter = 1
-
   bulkInsert = async () => {
-    const spinner = ora(`Creating elasticsearch index`).start()
+    spinner.start()
     await spawn(`curl -X DELETE -v ${EsClient.MAPPING_INDEX_URL}`, {stderr: "inherit", shell: true})
     await this.createMapping()
     await this.createIndex()
@@ -33,19 +34,19 @@ export default class EsClient {
   }
 
   createMapping = async () => {
-    const spinner = ora(`Generating mapping`).start()
+    spinner.info(`Generating mapping`)
     await spawn(
       `curl -XPUT -v ${
         EsClient.MAPPING_INDEX_URL
       } -H 'Content-Type: application/json' --data-binary @${EsClient.MAPPING_FILE_PATH}`,
       {stderr: "inherit", shell: true},
     )
-    spinner.succeed()
   }
 
   createIndex = async () => {
-    const mongo = await this.mongo.getConnection()
-    const collection = mongo.collection(DbClient.CODEPOINT_COLLECTION)
+    spinner.info("Create index")
+    const db = await mongo.getConnection()
+    const collection = db.collection(DbClient.CODEPOINT_COLLECTION)
     const cursor = collection
       .find()
       .sort({index: 1})
@@ -53,8 +54,8 @@ export default class EsClient {
 
     let fileName = this.createBatchDirAndFile()
     let doc = undefined
+    spinner.info(`Generating bulk import file ${fileName}`)
     for (doc = await cursor.next(); doc != undefined; doc = await cursor.next()) {
-      const spinner = ora(`Generating bulk import file ${fileName}`).start()
       fs.appendFileSync(
         fileName,
         JSON.stringify({
@@ -83,7 +84,6 @@ export default class EsClient {
         fileName = await this.generateNextBatchFile(fileName)
         spinner.info(`Generating ${fileName}`)
       }
-      spinner.succeed()
     }
     // push the last generated index
     await this.postBulkInsertFile(fileName)
@@ -98,11 +98,11 @@ export default class EsClient {
       .replace("_id", "mongo_id")
 
   createBatchDirAndFile = () => {
-    const fileName = `${EsClient.BULK_FILE_TMP_PATH}/index-${this.counter}`
     if (fs.existsSync(EsClient.BULK_FILE_TMP_PATH)) {
       rimraf.sync(EsClient.BULK_FILE_TMP_PATH)
     }
     fs.mkdirSync(EsClient.BULK_FILE_TMP_PATH)
+    const fileName = `${EsClient.BULK_FILE_TMP_PATH}/index-${counter}`
     fs.writeFileSync(fileName, "", {
       encoding: "UTF-8",
     })
@@ -113,8 +113,8 @@ export default class EsClient {
     fs.appendFileSync(fileName, "\n", {
       encoding: "UTF-8",
     })
-    this.counter++
-    fileName = `${EsClient.BULK_FILE_TMP_PATH}/index-${this.counter}`
+    counter++
+    fileName = `${EsClient.BULK_FILE_TMP_PATH}/index-${counter}`
     fs.writeFileSync(fileName, "", {
       encoding: "UTF-8",
     })
@@ -122,7 +122,7 @@ export default class EsClient {
   }
 
   postBulkInsertFile = async (file: string) => {
-    const spinner = ora(`PUTing ${file}`).start()
+    spinner.info(`PUTing ${file}`)
     await spawn(
       `curl -X POST -v ${
         EsClient.BULK_INDEX_URL
