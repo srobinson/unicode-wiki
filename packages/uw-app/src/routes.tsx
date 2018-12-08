@@ -9,6 +9,7 @@ const Routes: React.SFC = () => (
     <Switch>
       <Redirect path="/" exact to="/c/blocks/basic-latin" />
       <Route path="/c/:category/:key?/:cp?" component={ExplorerPage} />
+      <Route path="/search/:q?" component={ExplorerPage} />
       <Route component={NotFound} />
     </Switch>
   </Root>

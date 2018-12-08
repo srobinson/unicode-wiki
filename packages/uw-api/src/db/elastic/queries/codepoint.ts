@@ -61,6 +61,9 @@ export const getByRange = async (
 }
 
 export const suggest = async (text: string) => {
+  if (!text) {
+    return []
+  }
   const response = await client.search({
     body: {
       _source: ["suggest"],
@@ -86,6 +89,34 @@ export const suggest = async (text: string) => {
     })
 
   return results
+}
+
+export const search = async (q: string) => {
+  if (!q) {
+    return []
+  }
+  const response = await client.search({
+    body: {
+      query: {
+        bool: {
+          must: [
+            {
+              match: {
+                suggest: {
+                  operator: "and",
+                  query: q,
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+    index,
+    type,
+  })
+
+  return formatResponse(response)
 }
 
 export default {

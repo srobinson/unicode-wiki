@@ -136,7 +136,17 @@ export default class EsClient {
   generateSuggest = (codepoint: Codepoint) => {
     const name_v1 = (codepoint.name_v1 && codepoint.name_v1.replace(/\-/g, " ")) || ""
     const name = (codepoint.name && codepoint.name.replace(/\-/g, " ")) || ""
-    const titles = [...name.split(" "), ...name_v1.split(" ")]
+    const header = codepoint["block_header"] || ""
+    const subheader = codepoint["block_subheader"] || ""
+    const titles = [
+      ...name.split(" "),
+      ...name_v1.split(" "),
+      ...header.spint(" "),
+      ...subheader.split(" "),
+      ...codepoint["general_category"].value.split(" "),
+      ...codepoint["script"].value.split(" "),
+      ...codepoint["block"].value.split(" "),
+    ]
     const candidates: string[] = []
     const cache: string[] = []
 

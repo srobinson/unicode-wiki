@@ -6,7 +6,8 @@
   "module": "./dist/index.js",
   "scripts": {
     "lint": "tslint 'src/**/*.ts'",
-    "prepare": "echo '@uw/toc' && tsc"
+    "prepare": "echo '@uw/hoc' && tsc",
+    "watch": "tsc -w"
   },
   "dependencies": {
 

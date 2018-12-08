@@ -2,8 +2,6 @@
 import * as elastic from "elasticsearch"
 import "../../config"
 
-console.log("process.env.ES_URL>>", process.env.ES_URL)
-
 export const client: elastic.Client = new elastic.Client({
   host: process.env.ES_URL || "localhost:9200",
   log: "trace",

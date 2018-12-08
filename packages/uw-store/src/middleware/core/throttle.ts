@@ -1,6 +1,8 @@
+// tslint:disable:no-any
 import {Dispatch, Middleware} from "redux"
+import {sleep} from "@uw/utils/"
 
-const throttled = {}
+let throttled: any[] = []
 
 export const throttleMiddleware: Middleware = () => (next: Dispatch) => action => {
   const time = action.meta && action.meta.throttle
@@ -9,14 +11,17 @@ export const throttleMiddleware: Middleware = () => (next: Dispatch) => action =
     return next(action)
   }
 
-  // Just ignore the action if its already throttled
-  if (throttled[action.type]) {
-    return
-  }
+  console.log("throttled", time)
 
-  throttled[action.type] = true
+  throttled.push(action)
 
-  setTimeout(() => (throttled[action.type] = false), time)
+  sleep(time)
+
+  console.log("throttled", throttled)
+
+  action = throttled.pop()
+  throttled = []
+  // setTimeout(() => (throttled[action.type] = false), time)
 
   return next(action)
 }

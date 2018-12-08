@@ -25,9 +25,10 @@ export default class Routes {
       .get("/script/:id/codepoints", cc.getCodepointsByCategoryById.bind(undefined, "script"))
 
       .get("/codepoint/:ucp", cpc.getCodepointByUCP)
+      .get("/codepoints/suggest/:term?", cpc.suggest)
       .get("/codepoints/:range(!suggest)?", cpc.getCodepointsByRange)
-      .get("/codepoints/suggest/:term([a-zA-Z]+)", cpc.suggest)
       .get("/codepoint-ranges/:ranges", cpc.getCodepointsByRanges)
+      .get("/search/:q?", cpc.search)
 
       .get("/wiki", wsc.search)
       .get("/wiki/page", wpc.loadPage)
