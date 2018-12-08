@@ -1,26 +1,34 @@
-// tslint:disable:no-any
 import * as React from "react"
 import {connect} from "react-redux"
 import {Dispatch} from "redux"
-import {ApplicationState, suggest} from "@uw/store"
-import {SuggestContainerProps, OtherProps, InstanceState} from "./types"
+import {ApplicationState, searchCodepoints, fetchSuggest} from "@uw/store"
+import {TypeAheadSearch} from "@uw/components"
+import {debounce} from "@uw/utils"
+import {SuggestContainerProps, OtherProps} from "./types"
 
 class SuggestContainer extends React.Component<SuggestContainerProps & OtherProps> {
-  state: InstanceState = {}
+  fetchSuggests = debounce((prefix: string) => {
+    const {fetchSuggest} = this.props
+    fetchSuggest(prefix)
+  }, 500)
 
-  constructor(props: SuggestContainerProps & OtherProps) {
-    super(props)
-  }
-
-  static getDerivedStateFromProps(
-    nextProps: SuggestContainerProps & OtherProps,
-    prevState: InstanceState,
-  ) {
-    return {}
+  onSelect = (q: string) => {
+    console.log("search phrase:", q)
+    const {searchCodepoints} = this.props
+    searchCodepoints(q)
   }
 
   render() {
-    return <div>...</div>
+    const {suggest} = this.props
+    const {loading, result} = suggest
+    return (
+      <TypeAheadSearch
+        fetchSuggests={this.fetchSuggests}
+        items={result || []}
+        loading={loading}
+        onSelect={this.onSelect}
+      />
+    )
   }
 }
 
@@ -29,7 +37,8 @@ const mapStateToProps = (state: ApplicationState) => ({
 })
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  suggest: (prefix: string) => dispatch(suggest(prefix)),
+  fetchSuggest: (prefix: string) => dispatch(fetchSuggest(prefix)),
+  searchCodepoints: (q: string) => dispatch(searchCodepoints(q)),
 })
 
 const connected = connect(

@@ -4,16 +4,8 @@ import {Dispatch} from "redux"
 import {withRouter} from "react-router-dom"
 import {push} from "connected-react-router"
 import {ApplicationState} from "@uw/store"
-import {CodepointContainer, NavigationContainer} from "@uw/containers"
-import {
-  Card,
-  Header,
-  InfinityLoader,
-  ToolMenu,
-  TypeAheadSearch,
-  Page,
-  WikiTitle,
-} from "@uw/components"
+import {CodepointContainer, NavigationContainer, SuggestContainer} from "@uw/containers"
+import {Card, Header, InfinityLoader, ToolMenu, Page, WikiTitle} from "@uw/components"
 import {delayedPush} from "@uw/utils"
 import {WikiPageProps, OtherProps} from "./types"
 import * as Styled from "../styles.css"
@@ -28,9 +20,21 @@ class ExplorerPage extends React.PureComponent<WikiPageProps & OtherProps> {
   }
 
   toggleSearch = () => {
-    this.setState({
-      showSearch: !this.state.showSearch,
-    })
+    const {showSearch} = this.state
+    const {push} = this.props
+    this.setState(
+      {
+        showSearch: !showSearch,
+      },
+      () => {
+        console.log("PUSH IT", this.state.showSearch)
+        if (this.state.showSearch) {
+          push("/search")
+        } else {
+          this.closeWikiPage()
+        }
+      },
+    )
   }
 
   closeWikiPage = () => {
@@ -41,33 +45,41 @@ class ExplorerPage extends React.PureComponent<WikiPageProps & OtherProps> {
   }
 
   renderNavBar = () => {
-    const {match, wikiPage} = this.props
-    const {params} = match
-    const {cp} = params
-    const isWikiPage = cp !== undefined
-    const title = (isWikiPage && wikiPage.result && wikiPage.result.title) || "Loading..."
+    const isWikiPage = this.isWikiPage()
     if (isWikiPage) {
+      const {wikiPage} = this.props
+      const title = (wikiPage.result && wikiPage.result.title) || "Loading..."
       return <WikiTitle close={this.closeWikiPage} loading={wikiPage.loading} title={title} />
     }
     return <NavigationContainer />
   }
 
+  isWikiPage = () => {
+    const {match} = this.props
+    const {params} = match
+    const {cp} = params
+    return cp !== undefined
+  }
+
   render() {
     const {showSearch} = this.state
-    const navBarContent = this.renderNavBar()
+    const navBarContent = !showSearch && this.renderNavBar()
+    const isWikiPage = this.isWikiPage()
     return (
       <React.Fragment>
         <Header>
           {showSearch ? (
-            <TypeAheadSearch />
+            <SuggestContainer />
           ) : (
             <Styled.NavigationBar>{navBarContent}</Styled.NavigationBar>
           )}
-          <ToolMenu showSearch={showSearch} toggleSearch={this.toggleSearch} />
+          {!isWikiPage && <ToolMenu showSearch={showSearch} toggleSearch={this.toggleSearch} />}
         </Header>
 
         <Page>
-          <CodepointContainer cardComponent={Card} loadingComponent={InfinityLoader} />
+          {!showSearch && (
+            <CodepointContainer cardComponent={Card} loadingComponent={InfinityLoader} />
+          )}
         </Page>
       </React.Fragment>
     )

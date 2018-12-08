@@ -1,12 +1,16 @@
 // tslint:disable:no-any
-import {suggest} from "@uw/store"
+import {fetchSuggest, searchCodepoints} from "@uw/store"
+import {SuggestState} from "@uw/domain"
 
 export interface InstanceState {}
 
-export interface PropsFromState {}
+export interface PropsFromState {
+  suggest: SuggestState
+}
 
 export interface PropsFromDispatch {
-  suggest: typeof suggest
+  fetchSuggest: typeof fetchSuggest
+  searchCodepoints: typeof searchCodepoints
 }
 
 export interface OtherProps {}

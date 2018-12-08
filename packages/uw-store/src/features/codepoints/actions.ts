@@ -30,6 +30,16 @@ export const fetchCodepoints = (
   type: FETCH_CODEPOINTS,
 })
 
+export const searchCodepoints = (q: string): ApiSearchAction => ({
+  meta: {
+    feature: CODEPOINTS,
+    method: "GET",
+    success: setCodepoints,
+    url: `/search/${q}`,
+  },
+  type: FETCH_CODEPOINTS,
+})
+
 export const fetchCodepointsByCategory = (
   category: string,
   key: string,

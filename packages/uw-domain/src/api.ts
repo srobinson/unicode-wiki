@@ -28,6 +28,7 @@ export interface ApiSearchMetadata {
   normalizeKey?: string
   purge?: boolean
   success: any
+  throttle?: number
   url: string
 }
 

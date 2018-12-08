@@ -1,12 +1,12 @@
 import {ApiSearchAction, ApiSearchResponse} from "@uw/domain"
 import {SUGGEST, FETCH_SUGGEST, SET_SUGGEST} from "./constants"
 
-export const suggest = (prefix: string): ApiSearchAction => ({
+export const fetchSuggest = (prefix: string): ApiSearchAction => ({
   meta: {
     feature: SUGGEST,
     method: "GET",
     success: setSuggest,
-    url: `/codepoints/suggest/{prefix}`,
+    url: `/codepoints/suggest/${prefix}`,
   },
   type: FETCH_SUGGEST,
 })
