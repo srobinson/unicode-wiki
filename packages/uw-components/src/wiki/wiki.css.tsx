@@ -99,20 +99,20 @@ export const Codepoint = styled("div")`
   border-radius: 50%;
   border: 20px solid #eee;
   color: #000;
-  font-size: 30vw;
+  font-size: 25vw;
   font-weight: bold;
-  height: 40vw;
+  height: 50vw;
   line-height: 40vw;
   margin: 0 auto;
   text-align: center;
   text-shadow: 2px 4px 10px rgb(0, 0, 0, 0.3);
-  width: 40vw;
+  width: 50vw;
 
   @media (min-width: 1024px) {
-    font-size: 300px;
-    height: 400px;
+    font-size: 250px;
+    height: 500px;
     line-height: 400px;
-    width: 400px;
+    width: 500px;
   }
 `
 

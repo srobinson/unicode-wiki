@@ -5,12 +5,34 @@ import {withRouter} from "react-router-dom"
 import {push} from "connected-react-router"
 import {ApplicationState} from "@uw/store"
 import {CodepointContainer, NavigationContainer} from "@uw/containers"
-import {Card, Header, InfinityLoader, Page, WikiTitle} from "@uw/components"
+import {
+  Card,
+  Header,
+  InfinityLoader,
+  ToolMenu,
+  TypeAheadSearch,
+  Page,
+  WikiTitle,
+} from "@uw/components"
 import {delayedPush} from "@uw/utils"
 import {WikiPageProps, OtherProps} from "./types"
 import * as Styled from "../styles.css"
 
+interface InternalState {
+  showSearch: boolean
+}
+
 class ExplorerPage extends React.PureComponent<WikiPageProps & OtherProps> {
+  state: InternalState = {
+    showSearch: false,
+  }
+
+  toggleSearch = () => {
+    this.setState({
+      showSearch: !this.state.showSearch,
+    })
+  }
+
   closeWikiPage = () => {
     const {match, push} = this.props
     const {params} = match
@@ -31,11 +53,17 @@ class ExplorerPage extends React.PureComponent<WikiPageProps & OtherProps> {
   }
 
   render() {
+    const {showSearch} = this.state
     const navBarContent = this.renderNavBar()
     return (
       <React.Fragment>
         <Header>
-          <Styled.NavigationBar>{navBarContent}</Styled.NavigationBar>
+          {showSearch ? (
+            <TypeAheadSearch />
+          ) : (
+            <Styled.NavigationBar>{navBarContent}</Styled.NavigationBar>
+          )}
+          <ToolMenu showSearch={showSearch} toggleSearch={this.toggleSearch} />
         </Header>
 
         <Page>
