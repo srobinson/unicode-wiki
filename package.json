@@ -22,7 +22,7 @@
     "start:app": "lerna run start:app",
     "test": "jest",
     "update-version": "lerna publish --skip-git --skip-npm --force-publish '*'",
-    "watch": "lerna run watch --concurrency 20 --stream"
+    "watch": "lerna run watch --parallel"
   },
   "dependencies": {
     "apollo-server": "2.2.6",

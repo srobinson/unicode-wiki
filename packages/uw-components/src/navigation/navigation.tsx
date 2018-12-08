@@ -4,24 +4,7 @@ import * as ReactDOM from "react-dom"
 import {Category, CategoryType} from "@uw/domain"
 import * as Styled from "./navigation.css"
 import {NavigationSearch} from "./navigation-search"
-
-interface NavigationComponentProps {
-  currentCategory: Category | undefined
-  categoryList: Category[]
-  categoryType: string
-  next: any
-  prev: any
-  setCategory: (key: string) => void
-  setCategoryType: (type: CategoryType) => void
-}
-
-interface InternalState {
-  isNavigationTitleMenuOpen: boolean
-  isNavigationTypeMenuOpen: boolean
-  searchCategories: Category[] | undefined
-}
-
-const types: CategoryType[] = ["blocks", "scripts", "symbols"]
+import {categoryTypes, InternalState, NavigationComponentProps} from "./types"
 
 export class ExplorerNavigation extends React.PureComponent<NavigationComponentProps> {
   state: InternalState = {
@@ -139,7 +122,7 @@ export class ExplorerNavigation extends React.PureComponent<NavigationComponentP
         </Styled.NavigationCategory>
         {isNavigationTypeMenuOpen && (
           <Styled.NavigationMenu isNavigationTypeMenuOpen={isNavigationTypeMenuOpen}>
-            {types.map((type: CategoryType) => (
+            {categoryTypes.map((type: CategoryType) => (
               <Styled.MenuItem
                 isNavigationTypeMenuOpen={isNavigationTypeMenuOpen}
                 key={type}
