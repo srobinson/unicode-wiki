@@ -17,14 +17,15 @@ const spinner = ora(`Creating elasticsearch index`)
 let counter = 1
 
 export default class EsClient {
-  public static BULK_INDEX_URL = `${ES_URL}/_bulk?pretty`
+  public static INDEX_NAME = `unicode-wiki2`
+  public static MAPPING_INDEX_URL = `${ES_URL}/${EsClient.INDEX_NAME}`
+  public static BULK_INDEX_URL = `${EsClient.MAPPING_INDEX_URL}/_bulk?pretty`
   public static BULK_FILE_TMP_PATH = tmp.dirSync().name
-  public static MAPPING_INDEX_URL = `${ES_URL}/unicode-wiki`
   public static MAPPING_FILE_PATH = getUTCPath("codepoint-mapping.json")
 
   bulkInsert = async () => {
     spinner.start()
-    await spawn(`curl -X DELETE -v ${EsClient.MAPPING_INDEX_URL}`, {stderr: "inherit", shell: true})
+    await spawn(`curl -X DELETE -v ${EsClient.MAPPING_INDEX_URL}`, {stdio: "inherit", shell: true})
     await this.createMapping()
     await this.createIndex()
     spinner.info(`Cleaning up: Deleting tmp dir: ${EsClient.BULK_FILE_TMP_PATH}`)
@@ -39,7 +40,7 @@ export default class EsClient {
       `curl -XPUT -v ${
         EsClient.MAPPING_INDEX_URL
       } -H 'Content-Type: application/json' --data-binary @${EsClient.MAPPING_FILE_PATH}`,
-      {stderr: "inherit", shell: true},
+      {stdio: "inherit", shell: true},
     )
   }
 
@@ -61,7 +62,7 @@ export default class EsClient {
         JSON.stringify({
           index: {
             _id: doc.cp,
-            _index: "unicode-wiki",
+            _index: EsClient.INDEX_NAME,
             _type: "codepoints",
           },
         }) +
@@ -127,7 +128,7 @@ export default class EsClient {
       `curl -X POST -v ${
         EsClient.BULK_INDEX_URL
       } -H 'Content-Type: application/json' --data-binary @${file}`,
-      {stderr: "inherit", shell: true},
+      {stdio: "inherit", shell: true},
     )
     spinner.info(`Bulk file ${file} pushed`)
   }

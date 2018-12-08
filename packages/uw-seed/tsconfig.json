@@ -9,6 +9,6 @@
     "target": "es6",
   },
   "exclude": [
-    "build", "node_modules"
+    "dist", "node_modules"
   ]
 }

@@ -1,8 +1,10 @@
 !!*
 _*
 .gcloud
+.k8s/default/Secret.unicode-wiki-tls.yaml
 .k8s-tmp
 .nyc_output
+.scratch
 build
 coverage
 dist
@@ -20,4 +22,4 @@ ZNOTES
 static/f
 packages/uw-api/src/graphql
 packages/uw-api/src/endpoints/wiki/wiki-page-dao.ts
-.scratch
+

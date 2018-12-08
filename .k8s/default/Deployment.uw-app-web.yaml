@@ -2,7 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   annotations:
-    deployment.kubernetes.io/revision: "85"
+    deployment.kubernetes.io/revision: "86"
   creationTimestamp: null
   generation: 1
   labels:
@@ -27,7 +27,7 @@ spec:
         run: uw-app-web
     spec:
       containers:
-      - image: gcr.io/unicode-wiki/uw-app:dev3-0
+      - image: gcr.io/unicode-wiki/uw-app:dev4-0
         imagePullPolicy: IfNotPresent
         name: uw-app-web
         ports:

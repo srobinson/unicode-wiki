@@ -1,3 +1,5 @@
+ARG MONGO_URL
+ARG ES_URL
 FROM node:9-alpine AS BUILD
 WORKDIR /usr/src/app
 
@@ -17,20 +19,25 @@ COPY packages/uw-logging ./packages/uw-logging
 COPY packages/uw-utils ./packages/uw-utils
 COPY packages/uw-api ./packages/uw-api
 
-
 RUN yarn global add lerna && lerna bootstrap
 
 FROM node:9-alpine
 WORKDIR /usr/src/app
 EXPOSE 3001
 
-ENV MONGO_URL=mongodb://10.35.252.11:27017
-ENV ES_URL=10.35.253.0:9200
+ARG MONGO_URL
+ARG ES_URL
+
+RUN echo the value of MONGO_URL ${MONGO_URL}
+
+ENV MONGO_URL=${MONGO_URL}
+ENV ES_URL=${ES_URL}
 ENV NODE_ENV=production
 ENV NODE_PORT=3001
 
 COPY --from=BUILD /usr/src/app /usr/src/app
-# COPY assets/UCD /usr/src/app/packages/uw-seed/build/dist/UCD
+
+RUN apk update && apk add curl
 
 ENTRYPOINT ["node", "/usr/src/app/packages/uw-api/build/dist/index.js"]
 

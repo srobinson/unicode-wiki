@@ -1,45 +1,45 @@
 apiVersion: v1
 data:
   status: |+
-    Cluster-autoscaler status at 2018-12-07 15:02:20.855681528 +0000 UTC:
+    Cluster-autoscaler status at 2018-12-08 07:35:35.552233589 +0000 UTC:
     Cluster-wide:
       Health:      Healthy (ready=2 unready=0 notStarted=0 longNotStarted=0 registered=2 longUnregistered=0)
-                   LastProbeTime:      2018-12-07 15:02:19.285389996 +0000 UTC
+                   LastProbeTime:      2018-12-08 07:35:34.205222648 +0000 UTC
                    LastTransitionTime: 2018-12-07 13:43:02.387733256 +0000 UTC
       ScaleUp:     NoActivity (ready=2 registered=2)
-                   LastProbeTime:      2018-12-07 15:02:19.285389996 +0000 UTC
+                   LastProbeTime:      2018-12-08 07:35:34.205222648 +0000 UTC
                    LastTransitionTime: 2018-12-07 13:43:02.387733256 +0000 UTC
       ScaleDown:   NoCandidates (candidates=0)
-                   LastProbeTime:      2018-12-07 15:02:19.285389996 +0000 UTC
+                   LastProbeTime:      2018-12-08 07:35:34.205222648 +0000 UTC
                    LastTransitionTime: 2018-12-07 13:43:02.387733256 +0000 UTC
 
     NodeGroups:
       Name:        https://content.googleapis.com/compute/v1/projects/unicode-wiki/zones/us-east1-b/instanceGroups/gke-uw-cluster-default-pool-3cb00c9f-grp
       Health:      Healthy (ready=1 unready=0 notStarted=0 longNotStarted=0 registered=1 longUnregistered=0 cloudProviderTarget=1 (minSize=1, maxSize=1))
-                   LastProbeTime:      2018-12-07 15:02:19.285389996 +0000 UTC
+                   LastProbeTime:      2018-12-08 07:35:34.205222648 +0000 UTC
                    LastTransitionTime: 2018-12-07 13:43:02.387733256 +0000 UTC
       ScaleUp:     NoActivity (ready=1 cloudProviderTarget=1)
-                   LastProbeTime:      2018-12-07 15:02:19.285389996 +0000 UTC
+                   LastProbeTime:      2018-12-08 07:35:34.205222648 +0000 UTC
                    LastTransitionTime: 2018-12-07 13:43:02.387733256 +0000 UTC
       ScaleDown:   NoCandidates (candidates=0)
-                   LastProbeTime:      2018-12-07 15:02:19.285389996 +0000 UTC
+                   LastProbeTime:      2018-12-08 07:35:34.205222648 +0000 UTC
                    LastTransitionTime: 2018-12-07 13:43:02.387733256 +0000 UTC
 
       Name:        https://content.googleapis.com/compute/v1/projects/unicode-wiki/zones/us-east1-b/instanceGroups/gke-uw-cluster-uw-cluster-pool-b42e0e1a-grp
       Health:      Healthy (ready=1 unready=0 notStarted=0 longNotStarted=0 registered=1 longUnregistered=0 cloudProviderTarget=1 (minSize=1, maxSize=1))
-                   LastProbeTime:      2018-12-07 15:02:19.285389996 +0000 UTC
+                   LastProbeTime:      2018-12-08 07:35:34.205222648 +0000 UTC
                    LastTransitionTime: 2018-12-07 13:43:02.387733256 +0000 UTC
       ScaleUp:     NoActivity (ready=1 cloudProviderTarget=1)
-                   LastProbeTime:      2018-12-07 15:02:19.285389996 +0000 UTC
+                   LastProbeTime:      2018-12-08 07:35:34.205222648 +0000 UTC
                    LastTransitionTime: 2018-12-07 13:43:02.387733256 +0000 UTC
       ScaleDown:   NoCandidates (candidates=0)
-                   LastProbeTime:      2018-12-07 15:02:19.285389996 +0000 UTC
+                   LastProbeTime:      2018-12-08 07:35:34.205222648 +0000 UTC
                    LastTransitionTime: 2018-12-07 13:43:02.387733256 +0000 UTC
 
 kind: ConfigMap
 metadata:
   annotations:
-    cluster-autoscaler.kubernetes.io/last-updated: 2018-12-07 15:02:20.855681528 +0000
+    cluster-autoscaler.kubernetes.io/last-updated: 2018-12-08 07:35:35.552233589 +0000
       UTC
   creationTimestamp: null
   name: cluster-autoscaler-status
