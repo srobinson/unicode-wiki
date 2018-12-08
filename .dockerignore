@@ -1,5 +1,6 @@
 _uw
 .build
+.env-prod
 .git
 .npm-debug.log
 .k8s-tmp
