@@ -15,16 +15,14 @@ class CodepointWikiContainer extends React.PureComponent<CodepointWikiContainerP
   }
 
   componentDidUpdate(prevProps: OtherProps) {
-    if (this.props.match.params.cp !== prevProps.match.params.cp) {
+    if (this.props.location["query"].cp !== prevProps.location["query"].cp) {
       this.loadWiki()
     }
   }
 
   loadWiki = () => {
-    const {codepoint, match} = this.props
-    const {params} = match
-    const {category, key, cp} = params
-    this.props.loadWikiPage(category, key, cp, (codepoint && codepoint.name) || key)
+    const {codepoint, cp} = this.props
+    this.props.loadWikiPage(cp, (codepoint && codepoint["title"]) || "")
     setTimeout(() => document.body.setAttribute("data-animate", "in"))
   }
 
@@ -37,9 +35,7 @@ class CodepointWikiContainer extends React.PureComponent<CodepointWikiContainerP
 
 const mapStateToProps = (state: ApplicationState, props: OtherProps) => {
   const {codepoints} = state
-  const {match} = props
-  const {params} = match
-  const {cp} = params
+  const {cp} = props
   const codepoint =
     (codepoints.result &&
       codepoints.result.docs.filter((codepoint: Codepoint) => codepoint.cp === cp)) ||
@@ -55,8 +51,7 @@ const mapStateToProps = (state: ApplicationState, props: OtherProps) => {
 }
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  loadWikiPage: (category: string, key: string, cp: string, page: string) =>
-    dispatch(loadWikiPage(category, key, cp, page)),
+  loadWikiPage: (cp: string, page: string) => dispatch(loadWikiPage(cp, page)),
   push: (path: string) => dispatch(push(path)),
 })
 

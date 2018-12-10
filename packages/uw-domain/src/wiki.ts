@@ -12,10 +12,8 @@ export interface WikiSearchState {
  * WikiPage entity definition
  */
 export interface WikiPage {
-  category: string
   cp: string // codepoint
   externalLinks: []
-  key: string
   langlinks: []
   page: string
   search?: WikiSearch
@@ -28,8 +26,6 @@ export interface WikiPage {
  * WikiSearch entity definition
  */
 export interface WikiSearch {
-  category: string
-  key: string
   text: string
   title: string
   hits: SearchHit[]

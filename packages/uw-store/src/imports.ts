@@ -37,6 +37,7 @@ export interface ApplicationState {
   wikiSearch: WikiSearchState
 }
 
+// remove __esModule: true definition from array
 export const coreMiddleware = Object.values(core).splice(1)
 
 export const rootReducer: Reducer<ApplicationState> = combineReducers<ApplicationState>({

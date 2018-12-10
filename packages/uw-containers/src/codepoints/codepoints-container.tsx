@@ -6,10 +6,16 @@ import {connect} from "react-redux"
 import Waypoint from "react-waypoint"
 import {BlockTitle, CodepointList, LoadingContainer, ProgessLoader} from "@uw/components"
 import {CodepointDocument, CodepointHexRange, Link} from "@uw/domain"
-import {ApplicationState, fetchCodepoints, fetchCodepointsByCategory, followLink} from "@uw/store"
+import {
+  ApplicationState,
+  fetchCodepoints,
+  fetchCodepointsByCategory,
+  followLink,
+  searchCodepoints,
+} from "@uw/store"
+import {delayedPush, objectToString} from "@uw/utils"
 import {CodepointContainerProps, OtherProps, InstanceState} from "./types"
 import {CodepointWikiContainer} from "../wiki"
-import {delayedPush} from "@uw/utils"
 
 class CodepointContainer extends React.PureComponent<CodepointContainerProps & OtherProps> {
   state: InstanceState = {
@@ -32,15 +38,18 @@ class CodepointContainer extends React.PureComponent<CodepointContainerProps & O
   }
 
   componentDidMount() {
-    this.fetchCodepoints()
+    const {codepoints} = this.props
+    if (!codepoints.result) {
+      this.fetchCodepoints()
+    }
   }
 
   componentDidUpdate(prevProps: OtherProps) {
-    const {match} = prevProps
-    const {params} = match
-    let {key: prevKey} = params
-
-    if (prevKey && this.props.match.params.key !== prevKey) {
+    const prevKey = prevProps.match.params.key
+    const thisKey = this.props.match.params.key
+    const prevSearchQuery = prevProps.location["query"] && prevProps.location["query"].q
+    const thisSearchQuery = this.props.location["query"] && this.props.location["query"].q
+    if (prevKey !== thisKey || prevSearchQuery !== thisSearchQuery) {
       this.fetchCodepoints()
     }
   }
@@ -62,20 +71,28 @@ class CodepointContainer extends React.PureComponent<CodepointContainerProps & O
 
   fetchCodepoints = () => {
     const {location, match} = this.props
-    const {search} = location
+    const {pathname, search} = location
     const {params} = match
     const {category, key} = params
+    const searchQuery = location["query"]
     if (category) {
       window.scrollTo(0, 0)
       this.props.fetchCodepointsByCategory(category, key, search)
     }
+    // check if this is a search query
+    else if (pathname === "/search" && searchQuery && searchQuery.q) {
+      this.props.searchCodepoints(searchQuery.q)
+    }
   }
 
   onCardClick = (cp: string) => {
-    const {match, push} = this.props
-    const {params} = match
-    const {category, key} = params
-    const url = `/c/${category}/${key}/${cp}`
+    const {location, match, push} = this.props
+    const query = location["query"]
+    Object.assign(query, {
+      cp,
+    })
+    const queryString = objectToString(query)
+    const url = `${match.url}?${queryString}`
     delayedPush(() => push(url), 100)
   }
 
@@ -143,14 +160,14 @@ class CodepointContainer extends React.PureComponent<CodepointContainerProps & O
   }
 
   render() {
-    const {codepoints, loader, match} = this.props
+    const {codepoints, loader, location} = this.props
     const {result} = codepoints
     const children = this.renderCodepoints()
     const loading = loader.loading
     const selectedCodepoint =
-      match.params.cp &&
+      location["query"].cp &&
       result &&
-      result.docs.filter((codepoint: CodepointDocument) => codepoint.cp === match.params.cp)[0]
+      result.docs.filter((codepoint: CodepointDocument) => codepoint.cp === location["query"].cp)[0]
 
     return (
       <React.Fragment>
@@ -158,11 +175,10 @@ class CodepointContainer extends React.PureComponent<CodepointContainerProps & O
         <LoadingContainer loading={loading} visible={!selectedCodepoint}>
           <CodepointList>{children}</CodepointList>
         </LoadingContainer>
-        {match.params.cp && (
+        {location["query"].cp && (
           <Route
-            path="/c/:category/:key/:cp?"
             render={() => {
-              return <CodepointWikiContainer />
+              return <CodepointWikiContainer cp={location["query"].cp} />
             }}
           />
         )}
@@ -185,6 +201,7 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
     dispatch(fetchCodepointsByCategory(category, key, search)),
   followLink: (link: Link) => dispatch(followLink(link)),
   push: (path: string) => dispatch(push(path)),
+  searchCodepoints: (q: string) => dispatch(searchCodepoints(q)),
 })
 
 const connected = connect(

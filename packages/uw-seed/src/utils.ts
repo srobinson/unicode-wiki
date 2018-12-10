@@ -1,6 +1,6 @@
 import * as path from "path"
 import * as fs from "fs"
-import {Category, CodepointHexRange} from "@uw/domain"
+import {Category, Codepoint, CodepointHexRange} from "@uw/domain"
 import {loadJSONFile} from "@uw/utils"
 import {CategoryEntryDict} from "./file-parser/Dictionary"
 import CategoryEntry from "./unicode-data-parser/domain/CategoryEntry"
@@ -54,3 +54,49 @@ const recurse = async (categories: Category[], category: Category) => {
 //   })
 //   return arr
 // }
+
+export const generateSuggest = (codepoint: Codepoint) => {
+  const name_v1 = (codepoint.name_v1 && codepoint.name_v1.replace(/\-/g, " ")) || ""
+  const name = (codepoint.name && codepoint.name.replace(/\-/g, " ")) || ""
+  const header = codepoint["block_header"] || ""
+  const subheader = codepoint["block_subheader"] || ""
+  const titles = [
+    ...name.split(" "),
+    ...name_v1.split(" "),
+    ...header.split(" "),
+    ...subheader.split(" "),
+    ...codepoint["general_category"].value.split(" "),
+    ...codepoint["script"].value.split(" "),
+    ...codepoint["block"].value.split(" "),
+  ]
+  const candidates: string[] = []
+  const cache: string[] = []
+
+  titles.forEach((title: string) => {
+    title = title.split("-")[0]
+    // ignore number in names
+    if (!title.match(/([0-9])/g)) {
+      candidates.push(title)
+    }
+  })
+
+  const filtered = candidates
+    .map((candidate: string) => candidate.toLowerCase())
+    .filter((candidate: string) => {
+      if (
+        candidate.length > 1 &&
+        !candidate.match(/all|and|block|for|null|of|letter/) &&
+        cache.indexOf(candidate) === -1
+      ) {
+        cache.push(candidate)
+        return true
+      }
+      return false
+    })
+    .sort(function(a, b) {
+      if (a === b) return 0
+      return a > b ? 1 : -1
+    })
+
+  return filtered
+}

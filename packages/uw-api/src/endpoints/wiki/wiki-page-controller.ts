@@ -50,27 +50,30 @@ export const loadPage = async (req: Request, res: Response) => {
 }
 
 const onError = async (req: Request, res: Response, data: any) => {
-  const {category, cp, key, page} = req.query
+  const {cp, page} = req.query
+  // search wiki using cp
+  req.query.q = cp
   const wikiSearch = await doSearch(req, res)
   const wiki: WikiPage = {
-    category,
     cp,
     externalLinks: [],
-    key,
     langlinks: [],
     page,
     search: wikiSearch,
     text: data.detail,
-    title: page,
+    title: `${cp}: ${page || data.detail}`,
     type: `Error: ${data.type}: ${data.title}`,
   }
   res.status(res.statusCode).json(wiki)
 }
 
 const onSuccess = async (req: Request, res: Response, data: any) => {
-  const {category, cp, key, page} = req.query
+  const {cp, page} = req.query
   const BODY_CP_CLASSNAME = `<div class="${generateClassName(cp)}">$1</div>`
   const wikiSearch = await doSearch(req, res)
+  const titleMatch = data.match(TITLE_TEST)
+  const title = (titleMatch && titleMatch[2]) || ""
+
   const text = data
     .replace(TITLE_TEST, TITLE_REPLACE)
     .replace(BODY_TEST, BODY_CP_CLASSNAME)
@@ -79,15 +82,13 @@ const onSuccess = async (req: Request, res: Response, data: any) => {
     .replace(HREF_TEST, HREF_REPLACE)
 
   const wiki: WikiPage = {
-    category,
     cp,
     externalLinks: [],
-    key,
     langlinks: [],
     page,
     search: wikiSearch,
     text,
-    title: `${cp}: ${page}`,
+    title: `${cp}: ${page || title}`,
     type: "page",
   }
 

@@ -12,41 +12,57 @@ import * as Styled from "../styles.css"
 
 interface InternalState {
   showSearch: boolean
+  toggled: boolean
 }
 
 class ExplorerPage extends React.PureComponent<WikiPageProps & OtherProps> {
   state: InternalState = {
     showSearch: false,
+    toggled: false,
   }
+
+  static getDerivedStateFromProps = (
+    nextProps: WikiPageProps & OtherProps,
+    prevState: InternalState,
+  ) => {
+    console.log(prevState)
+    const query = nextProps.location["query"]
+    if (!prevState.toggled) {
+      return {
+        showSearch: query.q && !query.cp,
+      }
+    }
+    return {
+      toggled: !query.cp,
+    }
+  }
+
+  // componentDidMount() {
+  //   const {location} = this.props
+  //   if (location["query"].q && !location["query"].cp) {
+  //     this.setState({
+  //       showSearch: true,
+  //     })
+  //   }
+  // }
 
   toggleSearch = () => {
     const {showSearch} = this.state
-    const {push} = this.props
-    this.setState(
-      {
-        showSearch: !showSearch,
-      },
-      () => {
-        console.log("PUSH IT", this.state.showSearch)
-        if (this.state.showSearch) {
-          push("/search")
-        } else {
-          this.closeWikiPage()
-        }
-      },
-    )
+    this.setState({
+      showSearch: !showSearch,
+      toggled: true,
+    })
   }
 
   closeWikiPage = () => {
-    const {match, push} = this.props
-    const {params} = match
-    const {category, key} = params
-    delayedPush(() => push(`/c/${category}/${key}`), 100)
+    const {location, match, push} = this.props
+    const queryString = location.search.replace(/(&?)cp=[0-9a-fA-F]+/, "")
+    delayedPush(() => push(`${match.url}${queryString}`), 100)
   }
 
   renderNavBar = () => {
-    const isWikiPage = this.isWikiPage()
-    if (isWikiPage) {
+    const page = this.whatPage()
+    if (page === "wiki") {
       const {wikiPage} = this.props
       const title = (wikiPage.result && wikiPage.result.title) || "Loading..."
       return <WikiTitle close={this.closeWikiPage} loading={wikiPage.loading} title={title} />
@@ -54,17 +70,17 @@ class ExplorerPage extends React.PureComponent<WikiPageProps & OtherProps> {
     return <NavigationContainer />
   }
 
-  isWikiPage = () => {
-    const {match} = this.props
-    const {params} = match
-    const {cp} = params
-    return cp !== undefined
+  whatPage = () => {
+    const {location, match} = this.props
+    const query = location["query"]
+    const {path} = match
+    return query.cp !== undefined ? "wiki" : path === "/search" ? "search" : "explorer"
   }
 
   render() {
     const {showSearch} = this.state
     const navBarContent = !showSearch && this.renderNavBar()
-    const isWikiPage = this.isWikiPage()
+    const page = this.whatPage()
     return (
       <React.Fragment>
         <Header>
@@ -73,13 +89,11 @@ class ExplorerPage extends React.PureComponent<WikiPageProps & OtherProps> {
           ) : (
             <Styled.NavigationBar>{navBarContent}</Styled.NavigationBar>
           )}
-          {!isWikiPage && <ToolMenu showSearch={showSearch} toggleSearch={this.toggleSearch} />}
+          {page !== "wiki" && <ToolMenu showSearch={showSearch} toggleSearch={this.toggleSearch} />}
         </Header>
 
         <Page>
-          {!showSearch && (
-            <CodepointContainer cardComponent={Card} loadingComponent={InfinityLoader} />
-          )}
+          <CodepointContainer cardComponent={Card} loadingComponent={InfinityLoader} />
         </Page>
       </React.Fragment>
     )

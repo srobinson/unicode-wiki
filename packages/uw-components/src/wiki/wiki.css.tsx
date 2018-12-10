@@ -22,6 +22,7 @@ export const Title = styled("h1")`
   span {
     display: block;
     margin-right: 4rem;
+    line-height: 1.75rem;
     opacity: 0;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -50,7 +51,11 @@ export const Title = styled("h1")`
     padding: 0 0.5rem;
     position: absolute;
     right: 1rem;
-    top: 0;
+    top: -0.3rem;
+
+    @media (max-width: 719px) {
+      right: 0.5rem;
+    }
   }
 
   button:focus {

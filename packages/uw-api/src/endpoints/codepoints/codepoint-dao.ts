@@ -22,6 +22,8 @@ export const find = async (
   perPage: number = PER_PAGE,
   sort?: object,
 ): Promise<PaginatedCodepointResult> => {
+  console.log("qq", q)
+
   const result: PaginatedCodepointResult = await PaginatedCodepoint.paginate(q, {
     limit: perPage,
     page,

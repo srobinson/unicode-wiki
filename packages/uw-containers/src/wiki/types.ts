@@ -22,14 +22,11 @@ export interface PropsFromDispatch {
   push: (path: Path) => RouterAction
 }
 
-export interface PathParamsType {
-  category: string
-  cp: string
-  key: string
-  urlRange: string
-}
+export interface PathParamsType {}
 
-export interface OtherProps extends RouteComponentProps<PathParamsType> {}
+export interface OtherProps extends RouteComponentProps<PathParamsType> {
+  cp: string
+}
 
 export type CodepointComponentProps = {}
 

@@ -17,14 +17,14 @@ export const ExplorerNavigation = styled("div")`
   font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
   font-size: 0.75em;
   font-weight: 600;
-  left: 4.5rem;
+  left: 3.5rem;
   letter-spacing: 2px;
   position: absolute;
   top: 1rem;
   user-select: none;
 
   @media (max-width: 800px) {
-    left: 3.5rem;
+    /* left: 3.5rem; */
   }
 
   ${(props: any) =>
@@ -133,16 +133,27 @@ export const CategoryType = styled(NavigationButton)``
 
 export const CategoryTitle = styled(NavigationButton)`
   box-shadow: 1px 0px 1px rgba(255, 255, 255, 0.4) inset;
+  @media (max-width: 420px) {
+    display: none;
+  }
 
   span {
     display: block;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    width: 28vw;
+    width: 20vw;
+
+    @media (min-width: 480px) {
+      width: 22vw;
+    }
 
     @media (min-width: 600px) {
-      width: 42vw;
+      width: 46vw;
+    }
+
+    @media (min-width: 1024px) {
+      width: 455px;
     }
   }
 `
@@ -163,7 +174,10 @@ export const NavigationMenuContainer = styled("div")`
 `
 
 export const NavigationMenu = styled("ul")`
-  background: #004050;
+  /* background: #004050; */
+
+  background: #071f31;
+
   border: 1px solid #000;
   display: block;
   font-size: ${(props: any) => (props.isNavigationTypeMenuOpen ? "0.8rem" : "1rem")};
@@ -183,7 +197,7 @@ export const NavigationMenu = styled("ul")`
 `
 
 export const MenuItem = styled("li")`
-  background: linear-gradient(#003040, #002535);
+  background: ${(props: any) => (props.active ? "#1b7bbb" : "#0e314d")};
   border-left: ${(props: any) => (props.active ? "1rem solid tomato" : "0")};
   color: #ddd;
   cursor: pointer;
@@ -206,11 +220,22 @@ export const MenuItem = styled("li")`
     color: #fff;
   }
 
+  &:hover {
+    background: ${(props: any) => (props.active ? "#1b7bbb" : "#104469")};
+  }
+
+  &:active {
+    background: #196ba3;
+  }
+
   ${(props: any) => ({active, categoryType, isNavigationTypeMenuOpen, level}) =>
     (level > 0 || categoryType === "blocks" || isNavigationTypeMenuOpen) &&
     css`
-      background: none;
-      border-left: ${active ? "1rem solid tomato" : ".5rem solid #004050"};
+      border-left: ${active
+        ? "1rem solid tomato"
+        : level === 1
+          ? ".5rem solid #114468"
+          : "1rem solid #114468"};
       font-size: 0.8rem;
       position: unset;
       text-indent: ${level === 2 ? "10px" : "inherit"};

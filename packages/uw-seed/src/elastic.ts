@@ -5,8 +5,7 @@ import * as fs from "fs"
 import * as tmp from "tmp"
 import * as ora from "ora"
 import * as rimraf from "rimraf"
-import {Codepoint} from "@uw/domain"
-import {getUTCPath} from "./utils"
+import {getUTCPath, generateSuggest} from "./utils"
 import DbClient from "./mongo"
 
 const spawn = require("child_process").spawnSync
@@ -71,7 +70,7 @@ export default class EsClient {
             ...doc,
             id: doc.cp,
             suggest: {
-              input: this.generateSuggest(doc),
+              input: generateSuggest(doc),
             },
           }) +
           "\n",
@@ -131,51 +130,5 @@ export default class EsClient {
       {stdio: "inherit", shell: true},
     )
     spinner.info(`Bulk file ${file} pushed`)
-  }
-
-  generateSuggest = (codepoint: Codepoint) => {
-    const name_v1 = (codepoint.name_v1 && codepoint.name_v1.replace(/\-/g, " ")) || ""
-    const name = (codepoint.name && codepoint.name.replace(/\-/g, " ")) || ""
-    const header = codepoint["block_header"] || ""
-    const subheader = codepoint["block_subheader"] || ""
-    const titles = [
-      ...name.split(" "),
-      ...name_v1.split(" "),
-      ...header.spint(" "),
-      ...subheader.split(" "),
-      ...codepoint["general_category"].value.split(" "),
-      ...codepoint["script"].value.split(" "),
-      ...codepoint["block"].value.split(" "),
-    ]
-    const candidates: string[] = []
-    const cache: string[] = []
-
-    titles.forEach((title: string) => {
-      title = title.split("-")[0]
-      // ignore number in names
-      if (!title.match(/([0-9])/g)) {
-        candidates.push(title)
-      }
-    })
-
-    const filtered = candidates
-      .map((candidate: string) => candidate.toLowerCase())
-      .filter((candidate: string) => {
-        if (
-          candidate.length > 1 &&
-          !candidate.match(/all|and|block|for|null|of|letter/) &&
-          cache.indexOf(candidate) === -1
-        ) {
-          cache.push(candidate)
-          return true
-        }
-        return false
-      })
-      .sort(function(a, b) {
-        if (a === b) return 0
-        return a > b ? 1 : -1
-      })
-
-    return filtered
   }
 }

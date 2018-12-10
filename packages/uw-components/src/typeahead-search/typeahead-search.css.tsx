@@ -18,9 +18,17 @@ const TypeAheadSearchKeyframes = keyframes`
 
 export const TypeAheadSearch = styled("div")`
   position: absolute;
-  left: 4.5rem;
+  left: 3.5rem;
   top: 1rem;
-  width: 75vw;
+  width: 56vw;
+
+  @media (min-width: 600px) {
+    width: 66vw;
+  }
+
+  @media (min-width: 1024px) {
+    width: 636px;
+  }
 
   ${(props: any) =>
     (props.reveal &&

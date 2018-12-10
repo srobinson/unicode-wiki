@@ -8,7 +8,7 @@ export const loggerMiddleware: Middleware = ({getState}: MiddlewareAPI) => (
     // console.group(`${action.type}`)
     // console.group("CURRENT STATE:")
     // console.log(getState())
-    console.log("loggerMiddleware::action", action.type)
+    // console.log("loggerMiddleware::action", action.type)
     next(action)
     // console.group("NEXT STATE: ")
     // console.log(getState())

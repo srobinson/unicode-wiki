@@ -3,13 +3,13 @@ import styled from "../styled"
 
 export const Logo = styled("div")`
   cursor: pointer;
-  left: 1rem;
+  left: 0.35rem;
   position: absolute;
   user-select: none;
   top: 1rem;
 
   @media (max-width: 800px) {
-    left: 0.35rem;
+    /* left: 0.35rem; */
   }
 `
 

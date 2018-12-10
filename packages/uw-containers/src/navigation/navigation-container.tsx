@@ -32,42 +32,63 @@ class NavigationContainer extends React.Component<NavigationContainerProps & Oth
     nextProps: NavigationContainerProps & OtherProps,
     prevState: InstanceState,
   ) {
-    const {match} = nextProps
-    const {params} = match
-    let {category, key} = params
-    if (category === "search") {
+    if (
+      !(
+        nextProps.blocks.docs.length &&
+        nextProps.scripts.docs.length &&
+        nextProps.symbols.docs.length
+      )
+    ) {
       return {}
     }
-    if (nextProps.notifications.length) {
-      // Handle 404
-      // TODO: refactor
-      category = "blocks"
+    const {match} = nextProps
+    const {params: nextParams} = match
+    const categoryType = NavigationContainer.inferCategoryType(nextProps, prevState)
+    const categoryList = nextProps[categoryType].docs
+    const index =
+      categoryList.findIndex((category: Category) => category.key === nextParams.key) || 1
+    const state = {
+      categoryList: categoryList,
+      categoryType: categoryType,
+      currentCategory: categoryList[index],
+      next: categoryList[index + 1] && categoryList[index + 1].key,
     }
-    if (nextProps && nextProps[category] && nextProps[category].docs.length) {
-      const categoryList = nextProps[category].docs
-      if (category !== prevState.categoryType) {
-        return {
-          categoryList: categoryList,
-          categoryType: category,
-          currentCategory: categoryList[0],
-          next: categoryList[1].key,
-        }
-      } else if (prevState.currentCategory && key !== prevState.currentCategory.key) {
-        const index = categoryList.findIndex((category: Category) => category.key === key)
-        return {
-          currentCategory: categoryList[index],
-          next: categoryList[index + 1] && categoryList[index + 1].key,
-          prev: categoryList[index - 1] && categoryList[index - 1].key,
-        }
-      }
+    if (index > 0) {
+      Object.assign(state, {
+        prev: categoryList[index - 1] && categoryList[index - 1].key,
+      })
     }
-    return {}
+    return state
+  }
+
+  // if user selects category from navigation component
+  // - get categoryType from nextProps.match object
+  // if this is the 404 page
+  // - get possible categoryType from nextProps.pathname
+  static inferCategoryType = (
+    nextProps: NavigationContainerProps & OtherProps,
+    prevState: InstanceState,
+  ) => {
+    const {match} = nextProps
+    const {params: nextParams} = match
+    const categoryFromPathname =
+      (nextProps.location.pathname.split("/").length > 1 &&
+        nextProps.location.pathname.split("/")[1]) ||
+      ""
+    const categoryType =
+      nextParams.category ||
+      (Object.values(CATEGORY_TYPE).includes(categoryFromPathname.toUpperCase()) &&
+        categoryFromPathname) ||
+      prevState.categoryType ||
+      "blocks"
+
+    return categoryType
   }
 
   setCategory = (key: string) => {
     const {cb} = this.props
     const {categoryType} = this.state
-    const nextUrl = `/c/${categoryType}/${key}`
+    const nextUrl = `/${categoryType}/${key}`
     this.props.push(nextUrl)
     if (cb) {
       cb()
@@ -78,7 +99,7 @@ class NavigationContainer extends React.Component<NavigationContainerProps & Oth
     const {cb} = this.props
     const docs = this.props[type].docs
     const category = docs[0]
-    const nextUrl = `/c/${type}/${category.key}`
+    const nextUrl = `/${type}/${category.key}`
     this.props.push(nextUrl)
     if (cb) {
       cb()
@@ -87,7 +108,6 @@ class NavigationContainer extends React.Component<NavigationContainerProps & Oth
 
   render() {
     const {categoryList, categoryType, currentCategory, next, prev} = this.state
-
     return (
       <ExplorerNavigation
         categoryList={categoryList}

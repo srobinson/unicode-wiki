@@ -58,8 +58,15 @@ export const suggest = async (req: Request, res: Response) => {
 }
 
 export const search = async (req: Request, res: Response) => {
-  const q = req.params.q
-  const results = await queries.search(q)
+  const q = req.query.q
+
+  console.log("req.query", req.query)
+
+  const results = await CodepointDao.find({
+    suggest: q,
+  })
+  console.log("results", results)
+
   res.status(200).json(results)
 }
 
