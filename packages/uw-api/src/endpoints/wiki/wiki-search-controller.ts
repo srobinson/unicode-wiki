@@ -5,8 +5,8 @@ import {ResourceNotFoundException, SearchHit, WikiSearch} from "@uw/domain"
 import {isHex, fromCharCode} from "@uw/utils"
 
 export const search = async (req: Request, res: Response) => {
-  const {category, cp, isMobile, key, page, redirect} = req.query
-  const query = (redirect && redirect) || (isHex(cp) && encodeURIComponent(fromCharCode(cp))) || cp
+  const {isMobile, page, redirect, q} = req.query
+  const query = (redirect && redirect) || (isHex(q) && encodeURIComponent(fromCharCode(q))) || q
   const mobileFormat = isMobile ? "mobileformat&" : ""
   // const url = `https://en.wikipedia.org/w/index.php?title=Special:Search&limit=10&cirrusDumpResult=&search=${query}`
   const url = `https://en.wikipedia.org/w/api.php?${mobileFormat}action=query&limit=20&origin=*&format=json&formatversion=2&utf8&list=search&srsearch=${query}`
@@ -37,11 +37,9 @@ export const search = async (req: Request, res: Response) => {
       })) || []
 
     const wikiSearch: WikiSearch = {
-      category,
       hits,
-      key,
       text: ",",
-      title: key.replace(/\-/g, " "),
+      title: q,
     }
 
     if (req.query.return) {

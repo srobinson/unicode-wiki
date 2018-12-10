@@ -20,6 +20,7 @@ export interface PropsFromDispatch {
   fetchCodepointsByCategory: typeof codepointsActions.fetchCodepointsByCategory
   followLink: typeof codepointsActions.followLink
   push: (path: Path) => RouterAction
+  searchCodepoints: typeof codepointsActions.searchCodepoints
 }
 
 export interface PathParamsType {

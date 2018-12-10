@@ -7,9 +7,9 @@ import ExplorerPage from "./pages/explorer"
 const Routes: React.SFC = () => (
   <Root>
     <Switch>
-      <Redirect path="/" exact to="/c/blocks/basic-latin" />
-      <Route path="/c/:category/:key?/:cp?" component={ExplorerPage} />
-      <Route path="/search/:q?" component={ExplorerPage} />
+      <Redirect path="/" exact to="/blocks/basic-latin" />
+      <Route exact path="/search" component={ExplorerPage} />
+      <Route path="/:category(blocks|scripts|symbols)/:key?" component={ExplorerPage} />
       <Route component={NotFound} />
     </Switch>
   </Root>

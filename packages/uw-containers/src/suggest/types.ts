@@ -1,4 +1,5 @@
-// tslint:disable:no-any
+import {RouterAction} from "connected-react-router"
+import {Path} from "history"
 import {fetchSuggest, searchCodepoints} from "@uw/store"
 import {SuggestState} from "@uw/domain"
 
@@ -10,6 +11,7 @@ export interface PropsFromState {
 
 export interface PropsFromDispatch {
   fetchSuggest: typeof fetchSuggest
+  push: (path: Path) => RouterAction
   searchCodepoints: typeof searchCodepoints
 }
 

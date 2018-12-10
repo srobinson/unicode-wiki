@@ -115,7 +115,6 @@ export const search = async (q: string) => {
     index,
     type,
   })
-
   return formatResponse(response)
 }
 

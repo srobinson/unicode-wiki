@@ -34,8 +34,9 @@ export const searchCodepoints = (q: string): ApiSearchAction => ({
   meta: {
     feature: CODEPOINTS,
     method: "GET",
+    purge: true,
     success: setCodepoints,
-    url: `/search/${q}`,
+    url: `/search/?q=${q}`,
   },
   type: FETCH_CODEPOINTS,
 })

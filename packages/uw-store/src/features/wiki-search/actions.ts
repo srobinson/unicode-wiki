@@ -2,12 +2,12 @@ import {WikiSearch, ApiSearchResponse} from "@uw/domain"
 import {isMobile} from "@uw/utils"
 import {WIKI_SEARCH, FETCH_WIKI_SEARCH, SET_WIKI_SEARCH} from "./constants"
 
-export const search = (category: string, key: string) => ({
+export const search = (q: string) => ({
   meta: {
     feature: WIKI_SEARCH,
     method: "GET",
     success: setWikiSearch,
-    url: `/wiki?${isMobile() ? "isMobile&" : ""}category=${category}&key=${key}`,
+    url: `/wiki?${isMobile() ? "isMobile&" : ""}q=${q}`,
   },
   type: FETCH_WIKI_SEARCH,
 })

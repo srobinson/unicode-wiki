@@ -17,7 +17,16 @@ export interface ExplorerState {
   readonly categoryTitle: string
 }
 
-export type CategoryType = "blocks" | "scripts" | "symbols" | "search"
+/**
+ * Supported category types definition
+ */
+export enum CATEGORY_TYPE {
+  BLOCK = "BLOCKS",
+  SCRIPT = "SCRIPTS",
+  SYMBOL = "SYMBOLS",
+}
+
+export type CategoryType = "blocks" | "scripts" | "symbols"
 
 /**
  * Category entity definition
@@ -57,12 +66,3 @@ export const CategorySchema = new Schema({
   ],
   title: String,
 })
-
-/**
- * Supported category types definition
- */
-export enum CATEGORY_TYPE {
-  BLOCK = "BLOCKS",
-  SCRIPT = "SCRIPTS",
-  SYMBOL = "SYMBOLS",
-}
