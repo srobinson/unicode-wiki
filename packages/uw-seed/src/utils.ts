@@ -85,7 +85,7 @@ export const generateSuggest = (codepoint: Codepoint) => {
     .filter((candidate: string) => {
       if (
         candidate.length > 1 &&
-        !candidate.match(/all|and|block|for|null|of|letter/) &&
+        !candidate.match(/all|and|block|for|null|of|letter|with/) &&
         cache.indexOf(candidate) === -1
       ) {
         cache.push(candidate)

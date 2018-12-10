@@ -7,7 +7,7 @@ import ExpandedValue from "./domain/ExpandedValue"
 import LocalDictionary from "../file-parser/LocalDictionary"
 import {CodePointDict, ExpandedValueDict} from "../file-parser/Dictionary"
 import {oraOpts} from "@uw/logging"
-import {getUTCPath, generateSuggest} from "../utils"
+import {getUTCPath} from "../utils"
 
 // http://unicode.org/reports/tr42/
 // https://www.unicode.org/Public/UCD/latest/ucd/PropertyAliases.txt
@@ -133,8 +133,8 @@ export default class UCDXMLParser {
     if (name_v1) {
       codePoint.patch({name_v1})
     }
-    const suggest = generateSuggest(codePoint)
-    codePoint.patch({suggest})
+    // const suggest = generateSuggest(codePoint)
+    // codePoint.patch({suggest})
 
     this.codePointDict.put(cp, codePoint)
     return codePoint

@@ -13,9 +13,17 @@ export const NavigationTabs = styled("div")`
   z-index: 2;
 `
 export const InnerContainer = styled("div")`
-  margin: -8px auto 0;
+  margin: -1px auto 0;
   max-width: 72rem;
   position: relative;
+
+  @media (max-width: 719px) {
+    margin-top: -2px;
+  }
+
+  @media (max-width: 959px) {
+    margin-top: -8px;
+  }
 `
 export const Tab = styled(Button)`
   border-radius: 5px;
