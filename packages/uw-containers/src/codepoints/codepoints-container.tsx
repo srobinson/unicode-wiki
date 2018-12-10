@@ -126,7 +126,7 @@ class CodepointContainer extends React.PureComponent<CodepointContainerProps & O
   }
 
   renderCodepoints = () => {
-    const {codepoints} = this.props
+    const {codepoints, match} = this.props
     let categoryTile = ""
     let renderTitle = false
     if (codepoints.result) {
@@ -134,7 +134,7 @@ class CodepointContainer extends React.PureComponent<CodepointContainerProps & O
       const renderedCodepoints = codepoints.result.docs.map(
         (codepoint: CodepointDocument, index: number) => {
           const thisTitle = codepoint["block"].value
-          if (thisTitle !== categoryTile) {
+          if (match.params.category !== "blocks" && thisTitle !== categoryTile) {
             categoryTile = thisTitle
             renderTitle = true
           } else {

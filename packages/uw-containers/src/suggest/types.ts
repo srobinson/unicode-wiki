@@ -1,4 +1,5 @@
 import {RouterAction} from "connected-react-router"
+import {RouteComponentProps} from "react-router"
 import {Path} from "history"
 import {fetchSuggest, searchCodepoints} from "@uw/store"
 import {SuggestState} from "@uw/domain"
@@ -15,6 +16,8 @@ export interface PropsFromDispatch {
   searchCodepoints: typeof searchCodepoints
 }
 
-export interface OtherProps {}
+export interface PathParamsType {}
+
+export interface OtherProps extends RouteComponentProps<PathParamsType> {}
 
 export type SuggestContainerProps = PropsFromState & PropsFromDispatch

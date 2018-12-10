@@ -5,9 +5,13 @@ export const ToolMenu = styled("div")`
   display: flex;
   flex-wrap: wrap;
   position: absolute;
-  right: 0.5rem;
-  top: 1rem;
+  right: 0;
+  top: 0.55rem;
   z-index: 5;
+
+  @media (min-width: 500px) {
+    right: 0.5rem;
+  }
 `
 
 export const Icon = styled("span")`

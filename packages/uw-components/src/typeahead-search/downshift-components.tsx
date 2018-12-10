@@ -51,12 +51,8 @@ export const ActionButton = withDownshift(
 
 export const SearchInput = withDownshift(
   // @ts-ignore
-  ({downshift: {isOpen}}) => (
-    <DownshiftInput
-      component={Styled.Input}
-      placeholder="Search entire unicode database"
-      isOpen={isOpen}
-    />
+  ({inputValue: string, downshift: {isOpen}}) => (
+    <DownshiftInput component={Styled.Input} placeholder="Enter search phrase" isOpen={isOpen} />
   ),
 )
 

@@ -10,7 +10,8 @@ export const actionMiddleware: Middleware = () => (next: any) => action => {
 
   switch (action.type) {
     case `${feature}/FETCH`:
-      next([apiRequest(action.meta), setLoader({state: true, feature})])
+      const skipLoading = action.meta.skipLoading
+      next([apiRequest(action.meta), setLoader({state: skipLoading ? false : true, feature})])
       break
 
     case `${feature}/${API_SUCCESS}`:
