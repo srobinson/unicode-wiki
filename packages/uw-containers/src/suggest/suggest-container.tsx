@@ -1,6 +1,7 @@
 import * as React from "react"
 import {connect} from "react-redux"
 import {push} from "connected-react-router"
+import {withRouter} from "react-router-dom"
 import {Dispatch} from "redux"
 import {ApplicationState, searchCodepoints, fetchSuggest} from "@uw/store"
 import {TypeAheadSearch} from "@uw/components"
@@ -16,21 +17,16 @@ class SuggestContainer extends React.Component<SuggestContainerProps & OtherProp
   onSelect = (q: string) => {
     const {push} = this.props
     push(`/search?q=${q}`)
-    console.log("search phrase:", q)
-    // const {searchCodepoints} = this.props
-
-    // searchCodepoints(q)
   }
 
   render() {
-    const {suggest} = this.props
+    const {location, suggest} = this.props
     const {loading, result} = suggest
-
-    console.log("result", result)
 
     return (
       <TypeAheadSearch
         fetchSuggests={this.fetchSuggests}
+        inputValue={location["query"].q}
         items={result || []}
         loading={loading}
         onSelect={this.onSelect}
@@ -54,4 +50,4 @@ const connected = connect(
   mapDispatchToProps,
 )(SuggestContainer)
 
-export default connected
+export default withRouter(connected)

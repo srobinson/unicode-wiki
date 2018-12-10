@@ -3,7 +3,9 @@ import * as React from "react"
 import * as ReactDOM from "react-dom"
 import {Category, CategoryType} from "@uw/domain"
 import * as Styled from "./navigation.css"
+import {NavigationBar} from "./navigation-bar"
 import {NavigationSearch} from "./navigation-search"
+import {NavigationTabs} from "./navigation-tabs"
 import {categoryTypes, InternalState, NavigationComponentProps} from "./types"
 
 export class ExplorerNavigation extends React.PureComponent<NavigationComponentProps> {
@@ -46,15 +48,7 @@ export class ExplorerNavigation extends React.PureComponent<NavigationComponentP
       {
         searchCategories,
       },
-      () => {
-        if (this.menu) {
-          const node = ReactDOM.findDOMNode(this.menu)
-          if (node) {
-            // @ts-ignore
-            node.scrollTop = 0
-          }
-        }
-      },
+      () => this.scrollTop(),
     )
   }
 
@@ -70,9 +64,23 @@ export class ExplorerNavigation extends React.PureComponent<NavigationComponentP
     this.props.setCategory(key)
   }
 
-  setCategoryType = (type: CategoryType) => {
-    this.close()
+  setCategoryType = (type: CategoryType, close: boolean = true) => {
+    if (close) {
+      this.close()
+    } else {
+      this.scrollTop()
+    }
     this.props.setCategoryType(type)
+  }
+
+  scrollTop = () => {
+    if (this.menu) {
+      const node = ReactDOM.findDOMNode(this.menu)
+      if (node) {
+        // @ts-ignore
+        node.scrollTop = 0
+      }
+    }
   }
 
   next = () => {
@@ -102,24 +110,14 @@ export class ExplorerNavigation extends React.PureComponent<NavigationComponentP
     const categories = searchCategories ? searchCategories : categoryList
     return (
       <Styled.ExplorerNavigation reveal={categoryList && categoryList.length > 0}>
-        <Styled.NavigationCategory>
-          <Styled.TypeInnerContainer>
-            <Styled.CategoryType onClick={this.openNavigationTypeMenu}>
-              {categoryType}
-            </Styled.CategoryType>
-            <Styled.CategoryTitle onClick={this.openNavigationTitleMenu}>
-              <span>{currentCategory && currentCategory.title}</span>
-            </Styled.CategoryTitle>
-          </Styled.TypeInnerContainer>
-          <Styled.TitleInnerContainer>
-            <Styled.Prev disabled={!prev} onClick={this.prev}>
-              &lt;
-            </Styled.Prev>
-            <Styled.Next disabled={!next} onClick={this.next}>
-              &gt;
-            </Styled.Next>
-          </Styled.TitleInnerContainer>
-        </Styled.NavigationCategory>
+        <NavigationBar
+          categoryType={categoryType}
+          currentCategory={currentCategory}
+          next={next}
+          openNavigationTitleMenu={this.openNavigationTitleMenu}
+          openNavigationTypeMenu={this.openNavigationTypeMenu}
+          prev={prev}
+        />
         {isNavigationTypeMenuOpen && (
           <Styled.NavigationMenu isNavigationTypeMenuOpen={isNavigationTypeMenuOpen}>
             {categoryTypes.map((type: CategoryType) => (
@@ -138,6 +136,11 @@ export class ExplorerNavigation extends React.PureComponent<NavigationComponentP
           <Styled.NavigationMenuContainer ref={(ref: any) => (this.menu = ref)}>
             <NavigationSearch cancel={this.close} searchCategories={this.searchCategories} />
             <Styled.NavigationMenu>
+              <NavigationTabs
+                cancel={this.close}
+                categoryType={categoryType}
+                setCategoryType={this.setCategoryType}
+              />
               {searchCategories &&
                 !searchCategories.length && (
                   <Styled.NoResults>No matches returned...</Styled.NoResults>

@@ -1,4 +1,4 @@
-import styled from "../styled"
+import styled from "../../styled"
 
 export const NavigationSearch = styled("div")`
   background: #0e141f;

@@ -6,6 +6,7 @@ import * as Styled from "./typeahead-search.css"
 
 interface TypeAheadSearchProps {
   fetchSuggests: (suggest: string) => void
+  inputValue: string
   items: string[]
   loading: boolean
   onSelect: (item: string) => void
@@ -13,15 +14,16 @@ interface TypeAheadSearchProps {
 
 export class TypeAheadSearch extends React.PureComponent<TypeAheadSearchProps> {
   render() {
-    const {items = [], onSelect, fetchSuggests} = this.props
+    const {fetchSuggests, inputValue, items = [], onSelect} = this.props
     return (
       <Styled.TypeAheadSearch reveal={true}>
         <Downshift
+          initialInputValue={inputValue}
           onInputValueChange={fetchSuggests}
           onChange={(selection: any) => selection && onSelect(selection)}
         >
           <div style={{position: "relative"}}>
-            <SearchInput />
+            <SearchInput inputValue={inputValue} />
             <ActionButton />
           </div>
           <SearchResultsMenu items={items} />

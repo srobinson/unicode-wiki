@@ -42,7 +42,7 @@ export const loadPage = async (req: Request, res: Response) => {
 
   const data = response.data
 
-  if (data.title === "Not found.") {
+  if (data.type && data.type.match(/error/)) {
     onError(req, res, data)
   } else {
     onSuccess(req, res, data)

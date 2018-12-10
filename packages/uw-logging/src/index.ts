@@ -1,7 +1,5 @@
 import "./express"
 
-// console.log(">>>", e)
-
 export * from "./api-logger"
 export * from "./enhanced-request"
 export * from "./error-handler"
