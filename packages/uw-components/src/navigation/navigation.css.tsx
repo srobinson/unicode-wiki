@@ -23,10 +23,6 @@ export const ExplorerNavigation = styled("div")`
   top: 1rem;
   user-select: none;
 
-  @media (max-width: 800px) {
-    /* left: 3.5rem; */
-  }
-
   ${(props: any) =>
     (props.reveal &&
       `
@@ -174,10 +170,7 @@ export const NavigationMenuContainer = styled("div")`
 `
 
 export const NavigationMenu = styled("ul")`
-  /* background: #004050; */
-
   background: #071f31;
-
   border: 1px solid #000;
   display: block;
   font-size: ${(props: any) => (props.isNavigationTypeMenuOpen ? "0.8rem" : "1rem")};

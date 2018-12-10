@@ -39,6 +39,6 @@ then
   >&2 echo error
 fi
 
-deploy api $(read_var VERSION_API .env-prod) $(read_var MONGO_URL .env-prod) $(read_var ES_URL .env-prod)
-# deploy app $(read_var VERSION_APP .env-prod) $(read_var API_URL .env-prod) $(read_var FONTS_URL .env-prod)
+# deploy api $(read_var VERSION_API .env-prod) $(read_var MONGO_URL .env-prod) $(read_var ES_URL .env-prod)
+deploy app $(read_var VERSION_APP .env-prod) $(read_var API_URL .env-prod) $(read_var FONTS_URL .env-prod)
 

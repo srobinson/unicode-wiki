@@ -13,7 +13,7 @@ import PropertyAliasesLineParser from "./unicode-data-parser/PropertyAliasesLine
 import PropertyAliasesValuesLineParser from "./unicode-data-parser/PropertyAliasesValuesLineParser"
 import UCDXMLParser from "./unicode-data-parser/UCDXMLParser"
 import {getUTCPath, updateCategoriesWithHasChildrenFlag} from "./utils"
-// import EsClient from "./elastic"
+import EsClient from "./elastic"
 
 const generalCategoryDict: ExpandedValueDict = new LocalDictionary()
 const propertyAliasesDict: ExpandedValueDict = new LocalDictionary()
@@ -27,7 +27,7 @@ const symbolsEntryDict: CategoryEntryDict = new LocalDictionary()
 class Runner {
   public static main() {
     const client = new DbClient()
-    // const esClient = new EsClient()
+    const esClient = new EsClient()
 
     async.series([
       function parseScriptsFile(cb) {
@@ -134,7 +134,7 @@ class Runner {
         await updateCategoriesWithHasChildrenFlag("chart-symbols", symbolsEntryDict)
         await client.createCategories(blocksDict)
         await client.createCollection(codePointDict)
-        // await esClient.bulkInsert()
+        await esClient.bulkInsert()
         await client.exitProcess()
       },
     ])

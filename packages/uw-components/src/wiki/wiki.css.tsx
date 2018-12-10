@@ -21,8 +21,8 @@ export const Title = styled("h1")`
 
   span {
     display: block;
-    margin-right: 4rem;
     line-height: 1.75rem;
+    margin-right: 4rem;
     opacity: 0;
     overflow: hidden;
     text-overflow: ellipsis;
