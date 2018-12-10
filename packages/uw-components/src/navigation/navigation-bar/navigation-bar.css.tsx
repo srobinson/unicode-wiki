@@ -87,7 +87,7 @@ export const CategoryType = styled(NavigationButton)``
 
 export const CategoryTitle = styled(NavigationButton)`
   box-shadow: 1px 0px 1px rgba(255, 255, 255, 0.4) inset;
-  @media (max-width: 420px) {
+  @media (max-width: 339px) {
     display: none;
   }
 

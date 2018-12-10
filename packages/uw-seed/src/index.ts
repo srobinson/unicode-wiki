@@ -12,7 +12,7 @@ import NamesListLineParser from "./unicode-data-parser/NamesListLineParser"
 import PropertyAliasesLineParser from "./unicode-data-parser/PropertyAliasesLineParser"
 import PropertyAliasesValuesLineParser from "./unicode-data-parser/PropertyAliasesValuesLineParser"
 import UCDXMLParser from "./unicode-data-parser/UCDXMLParser"
-import {getUTCPath, updateCategoriesWithHasChildrenFlag} from "./utils"
+import {getUTCPath, updateCategoriesWithHasChildrenFlag, generateSuggest} from "./utils"
 import EsClient from "./elastic"
 
 const generalCategoryDict: ExpandedValueDict = new LocalDictionary()
@@ -129,6 +129,13 @@ class Runner {
           },
         )
       },
+      function generateSuggestions(cb) {
+        codePointDict.getValues().forEach(codepoint => {
+          codepoint["suggest"] = generateSuggest(codepoint)
+        })
+        cb()
+      },
+
       async function() {
         await updateCategoriesWithHasChildrenFlag("chart-scripts", scriptsEntryDict)
         await updateCategoriesWithHasChildrenFlag("chart-symbols", symbolsEntryDict)

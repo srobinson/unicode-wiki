@@ -115,7 +115,7 @@ export class ExplorerNavigation extends React.PureComponent<NavigationComponentP
           currentCategory={currentCategory}
           next={next}
           openNavigationTitleMenu={this.openNavigationTitleMenu}
-          openNavigationTypeMenu={this.openNavigationTypeMenu}
+          openNavigationTypeMenu={this.openNavigationTitleMenu}
           prev={prev}
         />
         {isNavigationTypeMenuOpen && (
