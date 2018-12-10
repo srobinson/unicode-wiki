@@ -19,9 +19,6 @@ class App extends React.Component<Props> {
 
   public render() {
     const {notifications, theme} = this.props
-
-    console.log("notifications", notifications)
-
     return (
       <ThemeProvider theme={themes[theme]}>
         {(notifications.length && <NotFound />) || <Routes />}

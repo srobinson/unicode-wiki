@@ -25,7 +25,6 @@ class ExplorerPage extends React.PureComponent<WikiPageProps & OtherProps> {
     nextProps: WikiPageProps & OtherProps,
     prevState: InternalState,
   ) => {
-    console.log(prevState)
     const query = nextProps.location["query"]
     if (!prevState.toggled) {
       return {
@@ -36,15 +35,6 @@ class ExplorerPage extends React.PureComponent<WikiPageProps & OtherProps> {
       toggled: !query.cp,
     }
   }
-
-  // componentDidMount() {
-  //   const {location} = this.props
-  //   if (location["query"].q && !location["query"].cp) {
-  //     this.setState({
-  //       showSearch: true,
-  //     })
-  //   }
-  // }
 
   toggleSearch = () => {
     const {showSearch} = this.state

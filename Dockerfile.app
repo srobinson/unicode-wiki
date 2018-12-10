@@ -6,11 +6,11 @@ WORKDIR /build
 ARG API_URL
 ARG FONTS_URL
 
-ENV NODE_ENV=production
 ENV REACT_APP_API_BASE_URL=${API_URL}
 ENV REACT_APP_FONTS_URL=${FONTS_URL}
 
 COPY package.json yarn.lock ./
+COPY assets/www assets/www
 COPY packages/uw-utils packages/uw-utils
 COPY packages/uw-domain packages/uw-domain
 COPY packages/uw-store packages/uw-store
@@ -21,7 +21,7 @@ COPY packages/uw-app packages/uw-app
 
 COPY tsconfig.json jest.config.js tslint.json lerna.json ./
 
-RUN yarn global add lerna && lerna bootstrap && yarn build:app
+RUN yarn global add lerna && lerna bootstrap --loglevel silly && yarn --verbose build:app
 
 # FROM sdelrio/docker-minimal-nginx
 FROM nginx:stable
