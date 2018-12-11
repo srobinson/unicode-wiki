@@ -65,7 +65,7 @@ export const generateSuggest = (codepoint: Codepoint) => {
     ...name_v1.split(" "),
     ...header.replace(/[^[a-zA-z0-9\s]]*/g, "").split(" "),
     ...subheader.replace(/[^[a-zA-z0-9\s]]*/g, "").split(" "),
-    ...codepoint["general_category"],
+    ...codepoint["general_category"].value.split(" "),
     ...codepoint["script"].value.split(" "),
     ...codepoint["block"].value.split(" "),
   ]
@@ -79,6 +79,10 @@ export const generateSuggest = (codepoint: Codepoint) => {
       candidates.push(title)
     }
   })
+
+  if (codepoint["emoji"]) {
+    candidates.push("emoji")
+  }
 
   const filtered = candidates
     .map((candidate: string) => candidate.toLowerCase())
