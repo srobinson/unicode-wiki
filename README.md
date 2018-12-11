@@ -22,7 +22,7 @@ References:
 * Browsable codepoints categorized following the unicode charts spec http://www.unicode.org/charts
 * Integration with wikipedia.org via api's
 * Responsive, mobile first design allowing easy browsing from any device
-* 
+
 
 ## Technology used
 
@@ -38,7 +38,6 @@ Given time/resources I wil add new features
 * Further test coverage
 * Improved elasticsearch index
 * Improved messaging
-* 
 * Addtional integration via google search and youtube
 * Persist codepoints to a favorite list
 * Generate/export font from list of codepoints
