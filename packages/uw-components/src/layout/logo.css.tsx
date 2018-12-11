@@ -7,10 +7,6 @@ export const Logo = styled("div")`
   position: absolute;
   user-select: none;
   top: 1rem;
-
-  @media (max-width: 800px) {
-    /* left: 0.35rem; */
-  }
 `
 
 export const Title = styled("h2")`

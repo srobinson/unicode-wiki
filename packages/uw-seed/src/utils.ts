@@ -63,9 +63,9 @@ export const generateSuggest = (codepoint: Codepoint) => {
   const titles = [
     ...name.split(" "),
     ...name_v1.split(" "),
-    ...header.split(" "),
-    ...subheader.split(" "),
-    ...codepoint["general_category"].value.split(" "),
+    ...header.replace(/[^[a-zA-z0-9\s]]*/g, "").split(" "),
+    ...subheader.replace(/[^[a-zA-z0-9\s]]*/g, "").split(" "),
+    ...codepoint["general_category"],
     ...codepoint["script"].value.split(" "),
     ...codepoint["block"].value.split(" "),
   ]

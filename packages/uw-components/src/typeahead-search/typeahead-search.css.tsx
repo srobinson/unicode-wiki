@@ -55,13 +55,7 @@ export const Loader = styled(InfinityLoader)`
 
 export const BaseMenu = styled("ul")`
   background-color: white;
-  border-bottom-width: 1;
-  border-color: #96c8da;
-  border-left-width: 1;
-  border-radius: 0 0 0.28571429rem 0.28571429rem;
-  border-right-width: 1;
-  border-style: solid;
-  border-top-width: 0;
+  border: none;
   box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
   margin: 0;
   max-height: 75vh;
@@ -72,12 +66,10 @@ export const BaseMenu = styled("ul")`
   position: absolute;
   transition: opacity 0.1s ease;
   width: 100%;
-  border: none;
 `
 
 export const Item = styled("li")`
   border: none;
-  border-top: none;
   box-shadow: none;
   color: rgba(0, 0, 0, 0.87);
   cursor: pointer;

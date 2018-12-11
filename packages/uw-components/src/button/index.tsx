@@ -4,15 +4,16 @@ import {ButtonProps} from "./types"
 
 export class Button extends React.PureComponent<ButtonProps> {
   render() {
-    const {active = false, children, onClick} = this.props
+    const {active = false, children, onClick, type = "Button"} = this.props
+    const ButtonType = Styled[type] || Styled.Button
     let buttonProps = {}
     if (onClick) {
       buttonProps = {onClick}
     }
     return (
-      <Styled.Button active={active} {...buttonProps}>
+      <ButtonType active={active} {...buttonProps}>
         {children && children}
-      </Styled.Button>
+      </ButtonType>
     )
   }
 }

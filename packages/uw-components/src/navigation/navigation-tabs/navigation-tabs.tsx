@@ -2,6 +2,7 @@ import * as React from "react"
 import * as Styled from "./navigation-tabs.css"
 import {CategoryType} from "@uw/domain"
 import {fromCharCode} from "@uw/utils"
+import {Button} from "../../button"
 
 interface NavigationTabsProps {
   cancel: () => void
@@ -15,27 +16,30 @@ export class NavigationTabs extends React.PureComponent<NavigationTabsProps> {
     return (
       <Styled.NavigationTabs>
         <Styled.InnerContainer>
-          <Styled.Tab
+          <Button
             active={categoryType === "blocks"}
             onClick={() => setCategoryType("blocks", false)}
+            type="Tab"
           >
             All
-          </Styled.Tab>
-          <Styled.Tab
+          </Button>
+          <Button
             active={categoryType === "scripts"}
             onClick={() => setCategoryType("scripts", false)}
+            type="Tab"
           >
             Scripts
-          </Styled.Tab>
-          <Styled.Tab
+          </Button>
+          <Button
             active={categoryType === "symbols"}
             onClick={() => setCategoryType("symbols", false)}
+            type="Tab"
           >
             Symbols
-          </Styled.Tab>
-          <Styled.Cancel onClick={cancel}>
+          </Button>
+          <Button onClick={cancel} type="Cancel">
             <span className="u2400">{fromCharCode("274C")}</span>
-          </Styled.Cancel>
+          </Button>
         </Styled.InnerContainer>
       </Styled.NavigationTabs>
     )

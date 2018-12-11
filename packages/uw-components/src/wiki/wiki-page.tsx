@@ -3,6 +3,7 @@ import * as React from "react"
 import {SearchHit, WikiPage} from "@uw/domain"
 import * as Styled from "./wiki.css"
 import {generateClassName, fromCharCode} from "@uw/utils"
+import {ProgressLoader} from "../loader/progress-loader.css"
 
 type WikiTitleProps = {
   close: () => void
@@ -33,15 +34,17 @@ export class Wiki extends React.PureComponent<WikiProps> {
     loading: true,
   }
 
-  componentDidMount() {
-    document.body.classList.toggle("is-locked", true)
-    setTimeout(
-      () =>
-        this.setState({
-          loading: false,
-        }),
-      3500,
-    )
+  componentDidUpdate() {
+    const {content, cp} = this.props
+    if (content && content.cp === cp) {
+      setTimeout(
+        () =>
+          this.setState({
+            loading: false,
+          }),
+        3500,
+      )
+    }
   }
 
   componentWillUnmount() {
@@ -54,7 +57,6 @@ export class Wiki extends React.PureComponent<WikiProps> {
     const text = content && content.text
     const className = generateClassName(cp)
     const searchHits = parseSearchHits(content)
-
     return (
       <Styled.WikiPage className="wiki">
         <div>
@@ -63,8 +65,20 @@ export class Wiki extends React.PureComponent<WikiProps> {
               <span className={className}>{fromCharCode(cp)}</span>
             </Styled.Codepoint>
           </Styled.CodepointContainer>
-          {loading && <div>Loading wikipedia...</div>}
-          <Styled.Iframe onLoad={resizeIframe.bind(this)} srcDoc={text} scrolling="auto" />
+          {loading && (
+            <React.Fragment>
+              <ProgressLoader
+                style={{
+                  position: "static",
+                }}
+              />
+              <p>Loading wikipedia...</p>
+            </React.Fragment>
+          )}
+          {content &&
+            content.cp === cp && (
+              <Styled.Iframe onLoad={resizeIframe.bind(this)} srcDoc={text} scrolling="auto" />
+            )}
           {searchHits && (
             <Styled.SearchHits>
               <h2>Similar Pages</h2>
