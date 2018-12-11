@@ -6,7 +6,7 @@ unicode.wiki is a fully indexed, browsable and searchable disctionary of unicode
 
 The idea behind the project has been lurking inside me for some years now, and was born out of an interest in unicode, languages and the origin or languages.
 
-I also wanted to experiment with the idea of organising repos into a monorepo and decided to use this as a means of testing out Lerna and yarn workspaces. The experience has taught me a lot and I hope to share the love in an upcoming blog. In addition, time allowing and given enough interest, I'd like to create a tutorial covering the design/development and deployment to kubernetes. Please star/watch if you are interested. 
+I also wanted to experiment with the idea of organising repos into a monorepo and decided to use this as a means of testing out Lerna and yarn workspaces. The excercise has taught me a lot! and I hope to share the love in an upcoming blog. In addition, time allowing and given enough interest, I'd like to create a tutorial covering the design/development and deployment to kubernetes. Please star/watch if you are interested. 
 
 References:
 
@@ -96,5 +96,5 @@ yarn start
 yarn seed
 ```
 
-That's all. 
+That's all for now... Thank you for wathing
 
