@@ -4,7 +4,6 @@ import {Link} from "./link"
 
 export type ApiError = Record<string, any>
 
-
 export interface ApiSearchAction {
   type: string
   meta: ApiSearchMetadata
@@ -18,7 +17,6 @@ export interface ApiSearchMetadata {
   method: string
   normalizeKey?: string
   purge?: boolean
-  skipLoading?: boolean
   success: any
   throttle?: number
   url: string

@@ -21,7 +21,7 @@ COPY packages/uw-app packages/uw-app
 
 COPY tsconfig.json jest.config.js tslint.json lerna.json ./
 
-RUN yarn global add lerna && lerna bootstrap --loglevel silly && yarn --verbose build:app
+RUN yarn global add lerna && lerna bootstrap && yarn build:app
 
 # FROM sdelrio/docker-minimal-nginx
 FROM nginx:stable

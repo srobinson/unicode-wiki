@@ -6,21 +6,6 @@ export const sleep = (ms: number) => {
   })
 }
 
-// export const sleep = (mills: number) => {
-//   const now = new Date().getTime()
-//   while (new Date().getTime() < now + mills) {
-//     // no-op
-//   }
-// }
-
-// export function debounce<F extends (...params: any[]) => void>(fn: F, delay: number) {
-//   let timeoutID: number | undefined = undefined
-//   return function(this: any, ...args: any[]) {
-//     clearTimeout(timeoutID)
-//     timeoutID = window.setTimeout(() => fn.apply(this, args), delay)
-//   } as F
-// }
-
 export function debounce<F extends Function>(func: F, wait: number): F {
   let timeoutID: number
 

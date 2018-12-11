@@ -5,7 +5,7 @@
   "scripts": {
     "lint": "tslint 'src/**/*.ts'",
     "prepare": "echo '@uw/seed' && tsc",
-    "seed": "node dist/index.js"
+    "seed": "node --max-old-space-size=4096 dist/index.js"
   },
   "dependencies": {
     "@uw/domain": "0.0.1",

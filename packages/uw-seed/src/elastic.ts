@@ -16,7 +16,7 @@ const spinner = ora(`Creating elasticsearch index`)
 let counter = 1
 
 export default class EsClient {
-  public static INDEX_NAME = `unicode-wiki2`
+  public static INDEX_NAME = `unicode-wiki`
   public static MAPPING_INDEX_URL = `${ES_URL}/${EsClient.INDEX_NAME}`
   public static BULK_INDEX_URL = `${EsClient.MAPPING_INDEX_URL}/_bulk?pretty`
   public static BULK_FILE_TMP_PATH = tmp.dirSync().name
