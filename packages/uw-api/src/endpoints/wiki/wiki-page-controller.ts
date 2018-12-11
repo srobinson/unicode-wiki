@@ -70,6 +70,8 @@ const onError = async (req: Request, res: Response, data: any) => {
 const onSuccess = async (req: Request, res: Response, data: any) => {
   const {cp, page} = req.query
   const BODY_CP_CLASSNAME = `<div class="${generateClassName(cp)}">$1</div>`
+  // search wiki using cp
+  req.query.q = cp
   const wikiSearch = await doSearch(req, res)
   const titleMatch = data.match(TITLE_TEST)
   const title = (titleMatch && titleMatch[2]) || ""

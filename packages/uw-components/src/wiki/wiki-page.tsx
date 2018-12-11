@@ -34,6 +34,10 @@ export class Wiki extends React.PureComponent<WikiProps> {
     loading: true,
   }
 
+  componentDidMount() {
+    document.body.classList.toggle("is-locked", true)
+  }
+
   componentDidUpdate() {
     const {content, cp} = this.props
     if (content && content.cp === cp) {
@@ -93,7 +97,7 @@ export class Wiki extends React.PureComponent<WikiProps> {
 
 export function resizeIframe(iframe: any) {
   const f = iframe.target
-  if (f) {
+  if (f && f.contentWindow) {
     setTimeout(() => (f.height = f.contentWindow.document.body.scrollHeight + 50 + "px"), 2000)
   }
 }
