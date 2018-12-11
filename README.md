@@ -6,22 +6,22 @@ unicode.wiki is a fully indexed, browsable and searchable disctionary of unicode
 
 The idea behind the project has been lurking inside me for some years now, and was born out of an interest in unicode, languages and the origin or languages.
 
-I also wanted to experiment with the idea of organising repos into a monorepo and decided to use this as a means of testing out Lerna and yarn workspaces. The experience has taught me a lot and I hope to share my experience in an upcoming blog. In addition, time allowing and given enough interest, I intend to create a tutorial covering the design/development and deployment to kubernetes. Please star/watch if you are interested. 
+I also wanted to experiment with the idea of organising repos into a monorepo and decided to use this as a means of testing out Lerna and yarn workspaces. The experience has taught me a lot and I hope to share the love in an upcoming blog. In addition, time allowing and given enough interest, I'd like to create a tutorial covering the design/development and deployment to kubernetes. Please star/watch if you are interested. 
 
 References:
 
-http://unicode.org/
-http://www.unicode.org/standard/WhatIsUnicode.html
-http://unicode.org/charts
-https://en.wikipedia.org/api/
+* http://unicode.org/
+* http://www.unicode.org/standard/WhatIsUnicode.html
+* http://unicode.org/charts
+* https://en.wikipedia.org/api/
 
 
 ## Project features
 
-* Indexed and searchable dictionary disctionary of unicode characters spanning the basic and supplementory places sourced from http://www.unicode.org/Public/UCD/latest/
+* Indexed and searchable dictionary of unicode characters spanning the basic and supplementory planes sourced from http://www.unicode.org/Public/UCD/latest/
 * Browsable codepoints categorized following the unicode charts spec http://www.unicode.org/charts
 * Integration with wikipedia.org via api's
-* Mobile first design allowing functional browsing from any device
+* Mobile first design allowing easy browsing from any device
 
 ## Technology used
 
@@ -31,17 +31,18 @@ see above...
 
 Given time/resources I will be adding new features
 
-* Documentation
-* Test coverage
-* Further integration with google search and youtube
+* Further documentation
+* Further test coverage
+* Addtional integration via google search and youtube
 * Persist codepoints to a favorite list
 * Generate/export font from list of codepoints
+* Any community feedback...
 
 # Local dev installation
 
 If you already have mongo and elasticsearch running locally, skip ahead..
 
-To quicly get a mongo/easticsearch environment running locally
+To quicly get a mongo/easticsearch environment up and running
 
 ```
 ./compose up
@@ -52,7 +53,7 @@ To quicly get a mongo/easticsearch environment running locally
 * mongo on localhost:27017
 * elasticsearch on localhost:0200
 * kibana on localhost:5601
-* logstash on localhost:500
+* logstash on localhost:5000
 
 Edit `compose.sh` if you do not want/require kibana/logstash
 
@@ -64,19 +65,19 @@ Edit `compose.sh` if you do not want/require kibana/logstash
     -f ./.docker-compose/logstash.yml \
 ```
 
-To cleanup after yourself:
+To cleanup after yourself when you are done:
 
 ```
 ./compose.sh down
 ```
 
-# Running dev installation
+# Starting the services
 
 ```
 # compile the source
 yarn bootstrap
 
-# run the development server
+# run the web app/api server
 yarn dev 
 
 # if you want to make edits with live reload
@@ -90,5 +91,5 @@ yarn start
 yarn seed
 ```
 
-
+That's all. 
 
