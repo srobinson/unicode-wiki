@@ -51,7 +51,7 @@ To quicly get a mongo/easticsearch environment up and running
 `compose.sh up` will install the following containers:
 
 * mongo on localhost:27017
-* elasticsearch on localhost:0200
+* elasticsearch on localhost:9200
 * kibana on localhost:5601
 * logstash on localhost:5000
 
@@ -72,6 +72,11 @@ To cleanup after yourself when you are done:
 ```
 
 # Starting the services
+
+If you are not running mongo/elasticsearch on the following addresses, update the config in `.env`
+
+* mongo on localhost:27017
+* elasticsearch on localhost:9200
 
 ```
 # compile the source
