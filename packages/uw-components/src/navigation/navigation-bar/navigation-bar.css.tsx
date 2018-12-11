@@ -83,31 +83,32 @@ export const NavigationButton = styled("span")`
     `};
 `
 
-export const CategoryType = styled(NavigationButton)``
+export const CategoryType = styled(NavigationButton)`
+  @media (max-width: 379px) {
+    display: none;
+  }
+`
 
 export const CategoryTitle = styled(NavigationButton)`
   box-shadow: 1px 0px 1px rgba(255, 255, 255, 0.4) inset;
-  @media (max-width: 339px) {
-    display: none;
-  }
 
   span {
     display: block;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    width: 20vw;
+    width: 38vw;
 
-    @media (min-width: 480px) {
-      width: 22vw;
+    @media (min-width: 380px) {
+      width: 28vw;
     }
 
-    @media (min-width: 600px) {
+    @media (min-width: 520px) {
       width: 46vw;
     }
 
     @media (min-width: 1024px) {
-      width: 455px;
+      width: 470px;
     }
   }
 `

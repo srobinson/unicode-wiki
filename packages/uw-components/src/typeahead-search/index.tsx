@@ -14,9 +14,10 @@ interface TypeAheadSearchProps {
 
 export class TypeAheadSearch extends React.PureComponent<TypeAheadSearchProps> {
   render() {
-    const {fetchSuggests, inputValue, items = [], onSelect} = this.props
+    const {fetchSuggests, inputValue, items = [], loading, onSelect} = this.props
     return (
       <Styled.TypeAheadSearch reveal={true}>
+        {loading && <Styled.Loader />}
         <Downshift
           initialInputValue={inputValue}
           onInputValueChange={fetchSuggests}

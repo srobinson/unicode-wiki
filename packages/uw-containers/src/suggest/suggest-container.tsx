@@ -12,7 +12,7 @@ class SuggestContainer extends React.Component<SuggestContainerProps & OtherProp
   fetchSuggests = debounce((prefix: string) => {
     const {fetchSuggest} = this.props
     fetchSuggest(prefix)
-  }, 500)
+  }, 250)
 
   onSelect = (q: string) => {
     const {push} = this.props
@@ -22,7 +22,6 @@ class SuggestContainer extends React.Component<SuggestContainerProps & OtherProp
   render() {
     const {location, suggest} = this.props
     const {loading, result} = suggest
-
     return (
       <TypeAheadSearch
         fetchSuggests={this.fetchSuggests}

@@ -90,12 +90,10 @@ class ExplorerPage extends React.PureComponent<WikiPageProps & OtherProps> {
   }
 }
 
-const mapStateToProps = (state: ApplicationState) => {
-  return {
-    loader: state.loader,
-    wikiPage: state.wikiPage,
-  }
-}
+const mapStateToProps = (state: ApplicationState) => ({
+  loader: state.loader,
+  wikiPage: state.wikiPage,
+})
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
   push: (path: string) => dispatch(push(path)),
