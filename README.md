@@ -21,7 +21,8 @@ References:
 * Indexed and searchable dictionary of unicode characters spanning the basic and supplementory planes sourced from http://www.unicode.org/Public/UCD/latest/
 * Browsable codepoints categorized following the unicode charts spec http://www.unicode.org/charts
 * Integration with wikipedia.org via api's
-* Mobile first design allowing easy browsing from any device
+* Responsive, mobile first design allowing easy browsing from any device
+* 
 
 ## Technology used
 
