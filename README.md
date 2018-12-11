@@ -29,10 +29,15 @@ see above...
 
 ## Future enhancement
 
-Given time/resources I will be adding new features
+Given time/resources I wil add new features
 
+* Create a homepage (would you like to contribute?)
+* i18n/l10n
 * Further documentation
 * Further test coverage
+* Improved elasticsearch index
+* Improved messaging
+* 
 * Addtional integration via google search and youtube
 * Persist codepoints to a favorite list
 * Generate/export font from list of codepoints
