@@ -49,7 +49,7 @@ export default class DbClient {
       await this.createIndex(
         unicodepoints,
         `${DbClient.UNICODE_DB}/${DbClient.CODEPOINT_COLLECTION}/suggest`,
-        {syggest: 1},
+        {suggest: 1},
       )
       await this.createIndex(
         unicodepoints,
