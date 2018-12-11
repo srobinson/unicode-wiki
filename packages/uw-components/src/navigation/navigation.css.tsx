@@ -48,8 +48,8 @@ export const NavigationMenuContainer = styled("div")`
   position: fixed;
   left: 0;
   width: 100vw;
-  height: 100vh;
-  top: 0;
+  height: calc(100vh - 8rem);
+  top: 8rem;
   overflow-y: scroll;
 `
 
@@ -61,12 +61,27 @@ export const NavigationMenu = styled("ul")`
   list-style-type: none;
   max-width: 72rem;
   min-height: 100%;
+  opacity: 0;
   padding: 0;
+  position: relative;
+  top: 10px;
+
+  body[data-animate="in"] & {
+    transition: opacity 150ms ease-in-out, top 150ms ease-in-out;
+    top: 0;
+    opacity: 1;
+  }
+
+  body[data-animate="nav-out"] & {
+    transition: opacity 150ms ease-in-out 150ms, top 150ms ease-in-out 150ms;
+    top: 10px;
+    opacity: 0;
+  }
 
   ${(props: any) => ({isNavigationTypeMenuOpen}) =>
     !isNavigationTypeMenuOpen
       ? css`
-          margin: 8rem auto 0;
+          margin: 0 auto 0;
         `
       : css`
           margin: -1rem 0 0;
@@ -84,13 +99,13 @@ export const MenuItem = styled("li")`
   padding: 8px 16px;
   text-transform: capitalize;
 
-  ${(props: any) => ({isNavigationTypeMenuOpen}) =>
-    !isNavigationTypeMenuOpen
+  ${(props: any) => ({isNavigationTypeMenuOpen, categoryType}) =>
+    !isNavigationTypeMenuOpen && categoryType !== "blocks"
       ? css`
           box-shadow: 0px 0px 1px 1px rgb(0, 0, 0, 0.5);
           padding: 1rem;
           position: sticky;
-          top: 8rem;
+          top: 0;
         `
       : css``};
 

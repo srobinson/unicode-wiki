@@ -13,16 +13,22 @@ export const NavigationTabs = styled("div")`
   z-index: 2;
 `
 export const InnerContainer = styled("div")`
-  margin: -1px auto 0;
+  margin: 2px auto 0;
+  margin-left: 20px;
   max-width: 72rem;
+  opacity: 0;
   position: relative;
 
-  @media (max-width: 719px) {
-    margin-top: -2px;
+  body[data-animate="in"] & {
+    transition: opacity 150ms ease-in-out 150ms, margin-left 150ms ease-in-out 150ms;
+    margin-left: 0;
+    opacity: 1;
   }
 
-  @media (max-width: 959px) {
-    margin-top: -8px;
+  body[data-animate="nav-out"] & {
+    transition: opacity 150ms ease-in-out, margin-left 150ms ease-in-out;
+    margin-left: 20px;
+    opacity: 0;
   }
 `
 export const Tab = styled(Button)`
@@ -34,18 +40,23 @@ export const Tab = styled(Button)`
   margin: 0 2px;
   padding: 0 12px;
   text-transform: uppercase;
-  width: 82px;
+  width: 26vw;
 
-  @media (min-width: 500px) {
+  @media (min-width: 1024px) {
+    width: 266px;
+  }
+
+  /* @media (min-width: 500px) {
     font-size: 1rem;
-    height: 46px;
+    height: 38px;
     padding: 3px 1rem;
     width: 26vw;
   }
 
   @media (min-width: 72rem) {
+    height: 42px;
     width: 266px;
-  }
+  } */
 `
 
 export const Cancel = styled(Button)`

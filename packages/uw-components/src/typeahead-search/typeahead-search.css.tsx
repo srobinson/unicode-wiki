@@ -2,6 +2,7 @@
 import {keyframes} from "react-emotion"
 import {css as emoCSS} from "emotion"
 import styled from "../styled"
+import {InfinityLoader} from "../loader/infinity-loader.css"
 
 export const css = (...args: []) => ({className: emoCSS(...args)})
 
@@ -39,6 +40,17 @@ export const TypeAheadSearch = styled("div")`
     transform: translateX(10px);
     opacity: 0;
     `};
+`
+
+export const Loader = styled(InfinityLoader)`
+  background: #ccc;
+  height: 14px;
+  left: 6px;
+  padding: 0;
+  position: absolute;
+  top: 12px;
+  width: 14px;
+  z-index: 3;
 `
 
 export const BaseMenu = styled("ul")`

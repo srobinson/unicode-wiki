@@ -134,7 +134,11 @@ class CodepointContainer extends React.PureComponent<CodepointContainerProps & O
       const renderedCodepoints = codepoints.result.docs.map(
         (codepoint: CodepointDocument, index: number) => {
           const thisTitle = codepoint["block"].value
-          if (match.params.category !== "blocks" && thisTitle !== categoryTile) {
+          if (
+            match.path !== "/search" &&
+            match.params.category !== "blocks" &&
+            thisTitle !== categoryTile
+          ) {
             categoryTile = thisTitle
             renderTitle = true
           } else {
@@ -160,10 +164,10 @@ class CodepointContainer extends React.PureComponent<CodepointContainerProps & O
   }
 
   render() {
-    const {codepoints, loader, location} = this.props
+    const {codepoints, location} = this.props
     const {result} = codepoints
     const children = this.renderCodepoints()
-    const loading = loader.loading
+    const {loading} = codepoints
     const selectedCodepoint =
       location["query"].cp &&
       result &&

@@ -4,7 +4,7 @@ import * as ReactDOM from "react-dom"
 import {Category, CategoryType} from "@uw/domain"
 import * as Styled from "./navigation.css"
 import {NavigationBar} from "./navigation-bar"
-import {NavigationSearch} from "./navigation-search"
+// import {NavigationSearch} from "./navigation-search"
 import {NavigationTabs} from "./navigation-tabs"
 import {categoryTypes, InternalState, NavigationComponentProps} from "./types"
 
@@ -35,6 +35,7 @@ export class ExplorerNavigation extends React.PureComponent<NavigationComponentP
           document.body.classList.toggle("is-locked", true)
           activeComponent.scrollIntoView({behavior: "smooth", block: "center"})
         }
+        setTimeout(() => document.body.setAttribute("data-animate", "in"))
       },
     )
   }
@@ -60,8 +61,7 @@ export class ExplorerNavigation extends React.PureComponent<NavigationComponentP
   }
 
   setCategory = (key: string) => {
-    this.close()
-    this.props.setCategory(key)
+    this.close(() => this.props.setCategory(key))
   }
 
   setCategoryType = (type: CategoryType, close: boolean = true) => {
@@ -93,15 +93,22 @@ export class ExplorerNavigation extends React.PureComponent<NavigationComponentP
     this.props.prev()
   }
 
-  close = () => {
-    this.setState(
-      {
-        isNavigationTitleMenuOpen: false,
-        isNavigationTypeMenuOpen: false,
-        searchCategories: undefined,
-      },
-      () => document.body.classList.toggle("is-locked", false),
-    )
+  close = (cb?: Function) => {
+    setTimeout(() => document.body.setAttribute("data-animate", "nav-out"))
+    setTimeout(() => {
+      if (cb && typeof cb === "function") {
+        cb()
+      }
+      document.body.removeAttribute("data-animate")
+      this.setState(
+        {
+          isNavigationTitleMenuOpen: false,
+          isNavigationTypeMenuOpen: false,
+          searchCategories: undefined,
+        },
+        () => document.body.classList.toggle("is-locked", false),
+      )
+    }, 250)
   }
 
   render() {
@@ -134,7 +141,7 @@ export class ExplorerNavigation extends React.PureComponent<NavigationComponentP
         {isNavigationTitleMenuOpen && (
           // tslint:disable-next-line:no-any
           <Styled.NavigationMenuContainer ref={(ref: any) => (this.menu = ref)}>
-            <NavigationSearch cancel={this.close} searchCategories={this.searchCategories} />
+            {/* <NavigationSearch cancel={this.close} searchCategories={this.searchCategories} /> */}
             <Styled.NavigationMenu>
               <NavigationTabs
                 cancel={this.close}

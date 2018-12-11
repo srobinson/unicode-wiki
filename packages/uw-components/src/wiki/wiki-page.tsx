@@ -24,9 +24,24 @@ type WikiProps = {
   cp: string
 }
 
+interface InternalState {
+  loading: boolean
+}
+
 export class Wiki extends React.PureComponent<WikiProps> {
+  state: InternalState = {
+    loading: true,
+  }
+
   componentDidMount() {
     document.body.classList.toggle("is-locked", true)
+    setTimeout(
+      () =>
+        this.setState({
+          loading: false,
+        }),
+      3500,
+    )
   }
 
   componentWillUnmount() {
@@ -34,6 +49,7 @@ export class Wiki extends React.PureComponent<WikiProps> {
   }
 
   render() {
+    const {loading} = this.state
     const {content, cp} = this.props
     const text = content && content.text
     const className = generateClassName(cp)
@@ -47,12 +63,8 @@ export class Wiki extends React.PureComponent<WikiProps> {
               <span className={className}>{fromCharCode(cp)}</span>
             </Styled.Codepoint>
           </Styled.CodepointContainer>
-          <Styled.Iframe
-            height="100%"
-            onLoad={resizeIframe.bind(this)}
-            srcDoc={text}
-            scrolling="auto"
-          />
+          {loading && <div>Loading wikipedia...</div>}
+          <Styled.Iframe onLoad={resizeIframe.bind(this)} srcDoc={text} scrolling="auto" />
           {searchHits && (
             <Styled.SearchHits>
               <h2>Similar Pages</h2>
@@ -66,8 +78,9 @@ export class Wiki extends React.PureComponent<WikiProps> {
 }
 
 export function resizeIframe(iframe: any) {
-  if (iframe) {
-    iframe.target.height = iframe.target.contentWindow.document.body.scrollHeight + "px"
+  const f = iframe.target
+  if (f) {
+    setTimeout(() => (f.height = f.contentWindow.document.body.scrollHeight + 50 + "px"), 2000)
   }
 }
 

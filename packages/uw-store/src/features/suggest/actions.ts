@@ -5,7 +5,7 @@ export const fetchSuggest = (prefix: string): ApiSearchAction => ({
   meta: {
     feature: SUGGEST,
     method: "GET",
-    skipLoading: true,
+    // skipLoading: true,
     success: setSuggest,
     url: `/codepoints/suggest/${prefix}`,
   },

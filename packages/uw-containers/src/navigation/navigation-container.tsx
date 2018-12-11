@@ -46,7 +46,7 @@ class NavigationContainer extends React.Component<NavigationContainerProps & Oth
     const categoryType = NavigationContainer.inferCategoryType(nextProps, prevState)
     const categoryList = nextProps[categoryType].docs
     const index =
-      categoryList.findIndex((category: Category) => category.key === nextParams.key) || 1
+      categoryList.findIndex((category: Category) => category.key === nextParams.key) || 0
     const state = {
       categoryList: categoryList,
       categoryType: categoryType,

@@ -1,6 +1,5 @@
 import * as React from "react"
 import * as Styled from "./tool-menu.css"
-import {Button} from "../button"
 import {fromCharCode} from "@uw/utils"
 
 interface ToolMenuProps {
@@ -13,11 +12,9 @@ export class ToolMenu extends React.PureComponent<ToolMenuProps> {
     const {showSearch, toggleSearch} = this.props
     return (
       <Styled.ToolMenu>
-        <Button onClick={toggleSearch} active={showSearch}>
-          <Styled.Icon active={showSearch} className="u1f400">
-            {fromCharCode("1F50D")}
-          </Styled.Icon>
-        </Button>
+        <Styled.Tool active={showSearch} onClick={toggleSearch}>
+          <span className="u1f400">{fromCharCode("1F50D")}</span>
+        </Styled.Tool>
       </Styled.ToolMenu>
     )
   }

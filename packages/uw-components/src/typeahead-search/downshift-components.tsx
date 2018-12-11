@@ -52,7 +52,14 @@ export const ActionButton = withDownshift(
 export const SearchInput = withDownshift(
   // @ts-ignore
   ({inputValue: string, downshift: {isOpen}}) => (
-    <DownshiftInput component={Styled.Input} placeholder="Enter search phrase" isOpen={isOpen} />
+    <DownshiftInput
+      style={{
+        paddingLeft: "22px",
+      }}
+      component={Styled.Input}
+      placeholder="Enter search phrase"
+      isOpen={isOpen}
+    />
   ),
 )
 

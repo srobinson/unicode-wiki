@@ -113,12 +113,6 @@ export default css`
     border-collapse: collapse;
   }
 
-  @media (min-width: 25em) {
-    html {
-      font-size: 16px;
-    }
-  }
-
   @media (min-width: 45em) {
     html {
       font-size: 14px;
