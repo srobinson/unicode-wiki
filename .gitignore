@@ -1,7 +1,7 @@
 !!*
 _*
-circle.yaml
 .env.prod
+.env-prod
 .gcloud
 .k8s
 .k8s-tmp
@@ -9,6 +9,7 @@ circle.yaml
 .scratch
 .travis.yaml
 build
+circle.yaml
 coverage
 dist
 image_history
