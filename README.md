@@ -49,7 +49,7 @@ This project is very early beta stage and serves as a proof of concept/explorati
 
 If you already have mongo and elasticsearch running locally, skip ahead..
 
-To quicly get a mongo/easticsearch environment up and running
+To quckly get a mongo/easticsearch environment up and running 
 
 ```
 ./compose up
