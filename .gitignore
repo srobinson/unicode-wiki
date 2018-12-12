@@ -2,7 +2,6 @@
 _*
 .deploy
 .env-prod
-.env-prod.1
 .gcloud
 .k8s
 .k8s-tmp
