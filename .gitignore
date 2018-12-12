@@ -1,15 +1,7 @@
-!!*
 _*
-.deploy
+!!*
 .env.prod
-.deploy.1
-.env.prod
-.env-prod
-.env-prod.1
 .gcloud
-.k8s
-.k8s.1
-.k8s-tmp
 .nyc_output
 .scratch
 .travis.yaml
@@ -23,8 +15,6 @@ node_modules
 NOTES
 npm-debug.log
 tmp*
-uw_db
-yarn-error.log
 yarn.error.log
 ZNOTES
 
