@@ -1,10 +1,12 @@
 !!*
 _*
+.deploy
 .gcloud
-.k8s/default/Secret.unicode-wiki-tls.yaml
+.k8s
 .k8s-tmp
 .nyc_output
 .scratch
+.travis.yaml
 build
 coverage
 dist
