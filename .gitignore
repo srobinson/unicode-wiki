@@ -1,6 +1,6 @@
 !!*
 _*
-.deploy
+circle.yaml
 .env.prod
 .gcloud
 .k8s
