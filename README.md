@@ -1,7 +1,5 @@
 # Unicode browser with wikipedia integration
 
-## Background and motivation
-
 unicode.wiki is a fully indexed, browsable and searchable dictionary of unicode characters spanning the basic and supplementary unicode planes. The project attempts to render all codepoints using sourced fonts, however in some cases you will see either a blank rendering or the missing glyph character `𞸁`. Integration with wikipedia.org is implemeted though the https://en.wikipedia.org/api/rest_v1 page api and https://en.wikipedia.org/w/api.php search api. Not all codepoints have a wiki page.
 
 The idea behind the project has been lurking inside me for some years now, and was born out of an interest in unicode, World travel and the origin or languages.
