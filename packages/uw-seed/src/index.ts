@@ -5,7 +5,6 @@ import LineByLineFileParser, {DELIMINATOR} from "./file-parser/ReadLineParser"
 import DbClient from "./mongo"
 import BlocksLineParser from "./unicode-data-parser/BlocksLineParser"
 import CategoryLineParser from "./unicode-data-parser/CategoryLineParser"
-import CodePoint from "./unicode-data-parser/domain/CodePoint"
 import EmojiLineParser from "./unicode-data-parser/EmojiLineParser"
 import ExpandedValueLineParser from "./unicode-data-parser/ExpandedValueLineParser"
 import NamesListLineParser from "./unicode-data-parser/NamesListLineParser"
@@ -112,22 +111,12 @@ class Runner {
       function parseEmoji(cb) {
         new LineByLineFileParser(
           {
-            DELIMINATOR: DELIMINATOR.SEMI,
-            PATH: getUTCPath("emoji"),
-            START_LINE: 25,
+            DELIMINATOR: DELIMINATOR.NONE,
+            PATH: getUTCPath("emoji-html"),
+            // VERBOSE: true,
           },
           codePointDict,
-        ).parse(
-          new EmojiLineParser(),
-          (
-            err: string,
-            dictionary: CodePointDict,
-            lineParser: EmojiLineParser<string, CodePoint>,
-          ) => {
-            lineParser.update(dictionary)
-            cb()
-          },
-        )
+        ).parse(new EmojiLineParser(), cb)
       },
       function generateSuggestions(cb) {
         codePointDict.getValues().forEach(codepoint => {

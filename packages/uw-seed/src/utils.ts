@@ -60,11 +60,15 @@ export const generateSuggest = (codepoint: Codepoint) => {
   const name = (codepoint.name && codepoint.name.replace(/\-/g, " ")) || ""
   const header = codepoint["block_header"] || ""
   const subheader = codepoint["block_subheader"] || ""
+  const emojiHeader = codepoint["emoji_header"] || ""
+  const emojiSubheader = codepoint["emoji_subheader"] || ""
   const titles = [
     ...name.split(" "),
     ...name_v1.split(" "),
     ...header.replace(/[^[a-zA-z0-9\s]]*/g, "").split(" "),
     ...subheader.replace(/[^[a-zA-z0-9\s]]*/g, "").split(" "),
+    ...emojiHeader.split(" "),
+    ...emojiSubheader.split(" "),
     ...codepoint["general_category"].value.split(" "),
     ...codepoint["script"].value.split(" "),
     ...codepoint["block"].value.split(" "),

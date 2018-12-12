@@ -1,26 +1,38 @@
 import Dictionary from "../file-parser/Dictionary"
 import LineParser from "../file-parser/LineParser"
 import CodePoint from "./domain/CodePoint"
-import {codepointIndexRange} from "@uw/utils"
 
-export default class EmojiLineParser<K, V extends CodePoint> implements LineParser<K, V> {
-  private emojiCodePoints: number[] = []
+export default class EmojiLineParser<K extends string, V extends CodePoint>
+  implements LineParser<K, V> {
+  private emojiHeader: string = ""
+  private emojiSubHeader: string = ""
 
-  parse(cols: string[], dictionary: Dictionary<K, V>) {
-    if (/^#|^$/.test(cols[0])) {
-      return
+  parse(cols: string[], dictionary: Dictionary<string, CodePoint>) {
+    const row = cols[0]
+    if (/<tr><th class="bighead"><a href="#([a-z_&amp;]+)/.test(row)) {
+      // @ts-ignore
+      const emojiHeader = row.match(/<tr><th class="bighead"><a href="#([a-z_&amp;]+)/)[1]
+      this.emojiHeader = emojiHeader.replace(/_&amp;_/, " ")
     }
-    const range = cols[0].trim()
-    let {from, to} = codepointIndexRange(range)
-    for (let i = from; i <= (to || from); i++) {
-      this.emojiCodePoints.push(i)
+    if (/name=\"([a-z-_&amp;]+)/.test(row)) {
+      // @ts-ignore
+      const emojiHeader = row.match(/name=\"([a-z-_&amp;]+)/)[1]
+      this.emojiSubHeader = emojiHeader.replace(/-/g, " ")
     }
-  }
-
-  update(dictionary: Dictionary<K, CodePoint>) {
-    dictionary
-      .getValues()
-      .filter(entry => this.emojiCodePoints.indexOf(entry.index) > -1)
-      .forEach(entry => (entry.emoji = true))
+    if (/href="emoji-list\.html#([0-9a-f\s_]+)"/.test(row)) {
+      // @ts-ignore
+      const match = row.match(/href="emoji-list\.html#([0-9a-f\s_]+)"/)[1]
+      const codepoints = match.split(/_|\s/)
+      codepoints.forEach((cp: string) => {
+        const entry: CodePoint = dictionary.get(cp.toUpperCase())
+        if (entry) {
+          entry.emoji = true
+          entry.emoji_header = this.emojiHeader
+          entry.emoji_subheader = this.emojiSubHeader
+        } else {
+          console.log("not-dound", cp)
+        }
+      })
+    }
   }
 }
