@@ -1,5 +1,6 @@
 _uw
 .build
+.deploy
 .env-prod
 .git
 .npm-debug.log
