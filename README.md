@@ -15,14 +15,12 @@ References:
 * http://unicode.org/charts
 * https://en.wikipedia.org/api/
 
-
 ## Project features
 
 * Indexed and searchable dictionary of unicode characters spanning the basic and supplementory planes sourced from http://www.unicode.org/Public/UCD/latest/
 * Browsable codepoints categorized following the unicode charts spec http://www.unicode.org/charts
 * Integration with wikipedia.org via api's
 * Responsive, mobile first design allowing easy browsing from any device
-
 
 ## Technology used
 
@@ -42,6 +40,10 @@ Given time/resources I wil add new features
 * Persist codepoints to a favorite list
 * Generate/export font from list of codepoints
 * Any community feedback...
+
+## Disclaimer
+
+This project is very early beta stage and serves as a proof of concept/exploration of Lerna monorepos. SHould you find any bugs please docreate an issue/pr
 
 # Local dev installation
 
@@ -97,9 +99,9 @@ yarn watch
 yarn start 
 
 # seed the dbs
-# this only needs to be done one time as the data in persisted to disk.
+# one time operation - seed data in persisted to disk
 yarn seed
 ```
 
-That's all for now... Thank you for wathing
+That's all for now... Thank you for reading
 
