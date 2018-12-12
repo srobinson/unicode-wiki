@@ -55,7 +55,7 @@ To quckly get a mongo/easticsearch environment up and running
 ./compose up
 ```
 
-`compose.sh up` will install the following containers:
+`compose.sh up` will install and make available the following containers:
 
 * mongo on localhost:27017
 * elasticsearch on localhost:9200
@@ -72,11 +72,14 @@ Edit `compose.sh` if you do not want/require kibana/logstash
     -f ./.docker-compose/logstash.yml \
 ```
 
-To cleanup after yourself when you are done:
+To cleanup when you are done:
 
 ```
+# shut down composed services
 ./compose.sh down
 ```
+
+
 
 # Starting the services
 
@@ -99,9 +102,9 @@ yarn watch
 yarn start 
 
 # seed the dbs
-# one time operation - seed data in persisted to disk
+# one time operation - seed data is persisted to disk
 yarn seed
 ```
 
-That's all for now... Thank you for reading
+That's all for now... Comments/questions welcome. Thank you for reading. 
 
