@@ -26,7 +26,7 @@ export class ExplorerNavigation extends React.PureComponent<NavigationComponentP
   openNavigationTitleMenu = () => {
     this.setState(
       {
-        isNavigationTitleMenuOpen: true,
+        isNavigationTitleMenuOpen: !this.state.isNavigationTitleMenuOpen,
         isNavigationTypeMenuOpen: false,
       },
       () => {

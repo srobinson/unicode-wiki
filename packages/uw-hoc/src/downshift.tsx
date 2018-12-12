@@ -12,7 +12,7 @@ const DownshiftContext = React.createContext({})
 const DownshiftInput = withDownshift(
   // @ts-ignore
   ({downshift: {getInputProps}, component: Comp = "input", ...rest}) => (
-    <Comp {...getInputProps(rest)} />
+    <Comp autoFocus={true} {...getInputProps(rest)} />
   ),
 )
 

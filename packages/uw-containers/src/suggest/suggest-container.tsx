@@ -17,6 +17,7 @@ class SuggestContainer extends React.Component<SuggestContainerProps & OtherProp
   onSelect = (q: string) => {
     const {push} = this.props
     push(`/search?q=${q}`)
+    window.scrollTo(0, 0)
   }
 
   render() {
