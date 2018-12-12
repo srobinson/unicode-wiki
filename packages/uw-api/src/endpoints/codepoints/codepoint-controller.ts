@@ -58,10 +58,18 @@ export const suggest = async (req: Request, res: Response) => {
 }
 
 export const search = async (req: Request, res: Response) => {
-  const q = req.query.q
-  const results = await CodepointDao.find({
-    suggest: q,
-  })
+  const {page = 1, perPage = PER_PAGE, q} = req.query
+  const results = await CodepointDao.find(
+    {
+      suggest: q,
+    },
+    parseInt(page, 10),
+    parseInt(perPage, 10),
+    {
+      cp: 1,
+    },
+  )
+  results._links = generateLinks(req, results)
   res.status(200).json(results)
 }
 

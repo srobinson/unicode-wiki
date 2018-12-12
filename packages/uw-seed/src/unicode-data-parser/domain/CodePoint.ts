@@ -59,4 +59,6 @@ export default class CodePoint extends DictionaryEntry implements Codepoint {
   // ftp://unicode.org/Public/emoji/11.0/emoji-data.txt
   // ./uw-seed/UCD/emoji
   emoji?: boolean
+  emoji_header?: string
+  emoji_subheader?: string
 }
