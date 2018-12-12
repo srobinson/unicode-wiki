@@ -1,4 +1,4 @@
-# Unicode Browser with Wikipedia integration
+# Unicode browser with wikipedia integration
 
 ## Background and motivation
 
