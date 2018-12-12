@@ -459,32 +459,6 @@
     ]
   },
   {
-    "index": 24,
-    "key": "mathematical-alphanumeric-symbols",
-    "level": 1,
-    "parent": 21,
-    "title": "Mathematical Alphanumeric Symbols",
-    "range": [
-      {
-        "from": "1D400",
-        "to": "1D7FF"
-      }
-    ]
-  },
-  {
-    "index": 25,
-    "key": "arabic-mathematical-alphabetic-symbols",
-    "level": 1,
-    "parent": 21,
-    "title": "Arabic Mathematical Alphabetic Symbols",
-    "range": [
-      {
-        "from": "1EE00",
-        "to": "1EEFF"
-      }
-    ]
-  },
-  {
     "index": 26,
     "key": "enclosed-alphanumerics",
     "level": 1,
@@ -1102,19 +1076,6 @@
     ]
   },
   {
-    "index": 59,
-    "key": "letterlike-symbols",
-    "level": 2,
-    "parent": 57,
-    "title": "Letterlike Symbols",
-    "range": [
-      {
-        "from": "2100",
-        "to": "214F"
-      }
-    ]
-  },
-  {
     "index": 60,
     "key": "mathematical-operators",
     "level": 1,
@@ -1198,19 +1159,6 @@
       {
         "from": "2308",
         "to": "230B"
-      }
-    ]
-  },
-  {
-    "index": 65,
-    "key": "invisible-operators",
-    "level": 2,
-    "parent": 60,
-    "title": "Invisible Operators",
-    "range": [
-      {
-        "from": "2061",
-        "to": "2064"
       }
     ]
   },
@@ -1680,19 +1628,6 @@
     ]
   },
   {
-    "index": 91,
-    "key": "miscellaneous-symbols-and-arrows",
-    "level": 1,
-    "parent": 79,
-    "title": "Miscellaneous Symbols and Arrows",
-    "range": [
-      {
-        "from": "2B00",
-        "to": "2BFF"
-      }
-    ]
-  },
-  {
     "index": 92,
     "key": "yijing-symbols",
     "level": 1,
@@ -1859,19 +1794,6 @@
     ]
   },
   {
-    "index": 100,
-    "key": "specials",
-    "level": 1,
-    "parent": 99,
-    "title": "Specials",
-    "range": [
-      {
-        "from": "FFF0",
-        "to": "FFFF"
-      }
-    ]
-  },
-  {
     "index": 101,
     "key": "tags",
     "level": 1,
@@ -2016,49 +1938,6 @@
       {
         "from": "DC00",
         "to": "DFFF"
-      }
-    ]
-  },
-  {
-    "index": 111,
-    "key": "noncharacters",
-    "level": 0,
-    "parent": 0,
-    "title": "Noncharacters",
-    "childRanges": [
-      {
-        "from": "FDD0",
-        "to": "FDEF"
-      },
-      {
-        "from": "FFFE",
-        "to": "FFFF"
-      }
-    ]
-  },
-  {
-    "index": 112,
-    "key": "arabic-presentation-forms-a",
-    "level": 2,
-    "parent": 111,
-    "title": "Arabic Presentation Forms-A",
-    "range": [
-      {
-        "from": "FDD0",
-        "to": "FDEF"
-      }
-    ]
-  },
-  {
-    "index": 113,
-    "key": "specials",
-    "level": 2,
-    "parent": 111,
-    "title": "Specials",
-    "range": [
-      {
-        "from": "FFFE",
-        "to": "FFFF"
       }
     ]
   }
