@@ -2,11 +2,13 @@
 
 ## Background and motivation
 
-unicode.wiki is a fully indexed, browsable and searchable dictionary of unicode characters spanning the basic and supplementary planes. The project attempts to render all codepoints using sourced fonts, however in some cases you will see either a blank rendering or the `missing glyph` character `𞸁`. Integration with wikipedia.org is implemeted though the https://en.wikipedia.org/api/rest_v1 page api and https://en.wikipedia.org/w/api.php search api. Not all codepoints have a wiki page.
+unicode.wiki is a fully indexed, browsable and searchable dictionary of unicode characters spanning the basic and supplementary unicode planes. The project attempts to render all codepoints using sourced fonts, however in some cases you will see either a blank rendering or the missing glyph character `𞸁`. Integration with wikipedia.org is implemeted though the https://en.wikipedia.org/api/rest_v1 page api and https://en.wikipedia.org/w/api.php search api. Not all codepoints have a wiki page.
 
-The idea behind the project has been lurking inside me for some years now, and was born out of an interest in unicode, languages and the origin or languages.
+The idea behind the project has been lurking inside me for some years now, and was born out of an interest in unicode, World travel and the origin or languages.
 
-I also wanted to experiment with the idea of organising repos into a monorepo and decided to use this as a means of testing out Lerna and yarn workspaces. The excercise has taught me a lot! and I hope to share the love in an upcoming blog. In addition, time allowing and given enough interest, I'd like to create a tutorial covering the design/development and deployment to kubernetes. Please star/watch if you are interested. 
+I also wanted to experiment with the idea of organizing repos in a monorepo and decided to use this as a means of testing out Lerna and yarn workspaces. The excercise has taught me a lot! and I will share the love in an upcoming blog. 
+
+In addition, time allowing and given enough interest, I will create a tutorial covering the design/development and deployment to kubernetes... star/watch if you are interested. 
 
 References:
 
