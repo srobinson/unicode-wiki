@@ -3,6 +3,7 @@ _*
 .deploy
 .env.prod
 .deploy.1
+.env.prod
 .env-prod
 .env-prod.1
 .gcloud
