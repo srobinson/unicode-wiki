@@ -4,9 +4,9 @@ unicode.wiki is a fully indexed, browsable and searchable dictionary of unicode 
 
 The idea behind the project has been lurking inside me for some years now, and was born out of an interest in unicode, World travel and the origin or languages.
 
-I also wanted to experiment with the idea of organizing repos in a monorepo and decided to use this as a means of testing out Lerna and yarn workspaces. The excercise has taught me a lot! and I will share the love in an upcoming blog. 
+I also wanted to experiment with the idea of organizing repos in a monorepo and decided to use this as a means of testing out Lerna and yarn workspaces. The excercise has taught me a lot! and I will share the love in an upcoming blog.
 
-In addition, time allowing and given enough interest, I will create a tutorial covering the design/development and deployment to kubernetes... star/watch if you are interested. 
+In addition, time allowing and given enough interest, I will create a tutorial covering the design/development and deployment to kubernetes... star/watch if you are interested.
 
 References:
 
@@ -22,9 +22,23 @@ References:
 * Integration with wikipedia.org via api's
 * Responsive, mobile first design allowing easy browsing from any device
 
-## Technology used
+## Core technology used
 
-see above...
+* [axios] (https://github.com/axios/axios)
+* [downshift] (https://github.com/paypal/downshift)
+* [elasticsearch] (https://github.com/elastic/elasticsearch)
+* [express] (https://github.com/expressjs/express)
+* [emotion] (https://github.com/emotion-js/emotion)
+* [jest] (https://github.com/facebook/jest)
+* [react-scripts-ts] (https://www.npmjs.com/package/react-scripts-ts)
+* [mongodb] (https://github.com/mongodb/mongo)
+* [mongoose] (https://github.com/Automattic/mongoose)
+* [react] (https://github.com/facebook/react)
+* [react-router] (https://github.com/ReactTraining/react-router)
+* [redux] (https://github.com/reduxjs/redux)
+* [supertest] (https://github.com/visionmedia/supertest)
+* [typescript] (http://www.typescriptlang.org/)
+* [winston] (https://github.com/Microsoft/TypeScript)
 
 ## Future enhancement
 
@@ -43,13 +57,13 @@ Given time/resources I wil add new features
 
 ## Disclaimer
 
-This project is very early beta stage and serves as a proof of concept/exploration of Lerna monorepos. SHould you find any bugs please docreate an issue/pr
+This project is very early beta stage and serves as a proof of concept/exploration of Lerna monorepos. Should you discover any bugs please do create an issue/pr
 
 # Local dev installation
 
 If you already have mongo and elasticsearch running locally, skip ahead..
 
-To quckly get a mongo/easticsearch environment up and running 
+To quckly get a mongo/easticsearch environment up and running
 
 ```
 ./compose up
@@ -79,8 +93,6 @@ To cleanup when you are done:
 ./compose.sh down
 ```
 
-
-
 # Starting the services
 
 If you are not running mongo/elasticsearch on the following addresses, update the config in `.env`
@@ -93,18 +105,18 @@ If you are not running mongo/elasticsearch on the following addresses, update th
 yarn bootstrap
 
 # run the web app/api server
-yarn dev 
+yarn dev
 
 # if you want to make edits with live reload
 yarn watch
 
 # alternatively run the production server
-yarn start 
+yarn start
 
 # seed the dbs
 # one time operation - seed data is persisted to disk
 yarn seed
 ```
 
-That's all for now... Comments/questions welcome. Thank you for reading. 
+That's all for now... Comments/questions welcome. Thank you for reading.
 

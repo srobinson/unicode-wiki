@@ -9,7 +9,15 @@ ARG FONTS_URL
 ENV REACT_APP_API_BASE_URL=${API_URL}
 ENV REACT_APP_FONTS_URL=${FONTS_URL}
 
-COPY package.json yarn.lock ./
+RUN yarn global add lerna
+
+COPY package.json \
+     yarn.lock \
+     tsconfig.json \
+     jest.config.js \
+     tslint.json \
+     lerna.json ./
+
 COPY assets/www assets/www
 COPY packages/uw-utils packages/uw-utils
 COPY packages/uw-domain packages/uw-domain
@@ -19,9 +27,7 @@ COPY packages/uw-containers packages/uw-containers
 COPY packages/uw-components packages/uw-components
 COPY packages/uw-app packages/uw-app
 
-COPY tsconfig.json jest.config.js tslint.json lerna.json ./
-
-RUN yarn global add lerna && lerna bootstrap && yarn build:app
+RUN lerna bootstrap && yarn build:app
 
 # FROM sdelrio/docker-minimal-nginx
 FROM nginx:stable

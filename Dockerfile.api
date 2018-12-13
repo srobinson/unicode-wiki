@@ -3,9 +3,10 @@ ARG ES_URL
 FROM node:9-alpine AS BUILD
 WORKDIR /usr/src/app
 
+RUN yarn global add lerna
+
 COPY package.json \
      yarn.lock \
-     .env \
      tsconfig.json \
      jest.config.js \
      tslint.json \
@@ -19,7 +20,7 @@ COPY packages/uw-logging ./packages/uw-logging
 COPY packages/uw-utils ./packages/uw-utils
 COPY packages/uw-api ./packages/uw-api
 
-RUN yarn global add lerna && lerna bootstrap
+RUN lerna bootstrap
 
 FROM node:9-alpine
 WORKDIR /usr/src/app
@@ -27,8 +28,6 @@ EXPOSE 3001
 
 ARG MONGO_URL
 ARG ES_URL
-
-RUN echo the value of MONGO_URL ${MONGO_URL}
 
 ENV MONGO_URL=${MONGO_URL}
 ENV ES_URL=${ES_URL}
@@ -40,4 +39,3 @@ COPY --from=BUILD /usr/src/app /usr/src/app
 RUN apk update && apk add curl
 
 ENTRYPOINT ["node", "/usr/src/app/packages/uw-api/build/dist/index.js"]
-
