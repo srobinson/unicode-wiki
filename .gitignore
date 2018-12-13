@@ -2,6 +2,8 @@ _*
 !!*
 .env.prod
 .gcloud
+.k8s/kube*
+.k8s/default/Secret.unicode-wiki-tls.yaml
 .nyc_output
 .scratch
 .travis.yaml

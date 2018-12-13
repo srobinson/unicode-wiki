@@ -37,8 +37,8 @@ References:
 * [react-router] (https://github.com/ReactTraining/react-router)
 * [redux] (https://github.com/reduxjs/redux)
 * [supertest] (https://github.com/visionmedia/supertest)
-* [typescript] (http://www.typescriptlang.org/)
-* [winston] (https://github.com/Microsoft/TypeScript)
+* [typescript] (https://github.com/Microsoft/TypeScript)
+* [winston] (https://github.com/winstonjs/winston)
 
 ## Future enhancement
 

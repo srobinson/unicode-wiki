@@ -13,8 +13,8 @@ COPY package.json \
      lerna.json ./
 
 COPY package.json yarn.lock ./
-COPY packages/uw-seed ./packages/uw-seed
 COPY assets/UCD ./assets/UCD
+COPY packages/uw-seed ./packages/uw-seed
 COPY packages/uw-domain ./packages/uw-domain
 COPY packages/uw-logging ./packages/uw-logging
 COPY packages/uw-utils ./packages/uw-utils
