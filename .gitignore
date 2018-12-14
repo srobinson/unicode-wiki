@@ -1,5 +1,5 @@
-_*
 !!*
+_data
 .env.prod
 .gcloud
 .k8s/kube*
@@ -16,11 +16,9 @@ lerna-debug.log
 node_modules
 NOTES
 npm-debug.log
+packages/uw-api/src/graphql
+packages/uw-api/src/endpoints/wiki/wiki-page-dao.ts
 tmp*
 yarn.error.log
 ZNOTES
-
-static/f
-packages/uw-api/src/graphql
-packages/uw-api/src/endpoints/wiki/wiki-page-dao.ts
 

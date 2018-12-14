@@ -13,16 +13,16 @@ export default class Routes {
 
     router
       .get("/blocks/:id?", cc.getCategoriesByParent.bind(undefined, "block"))
-      .get("/block/:id", cc.getCategoryById.bind(undefined, "block"))
+      .get("/block/:id([0-9]+)", cc.getCategoryById.bind(undefined, "block"))
       .get("/block/:id/codepoints", cc.getCodepointsByCategoryById.bind(undefined, "block"))
 
-      .get("/symbols/:id?", cc.getCategoriesByParent.bind(undefined, "symbol"))
-      .get("/symbol/:id", cc.getCategoryById.bind(undefined, "symbol"))
-      .get("/symbol/:id/codepoints", cc.getCodepointsByCategoryById.bind(undefined, "symbol"))
-
       .get("/scripts/:id?", cc.getCategoriesByParent.bind(undefined, "script"))
-      .get("/script/:id", cc.getCategoryById.bind(undefined, "script"))
+      .get("/script/:id([0-9]+)", cc.getCategoryById.bind(undefined, "script"))
       .get("/script/:id/codepoints", cc.getCodepointsByCategoryById.bind(undefined, "script"))
+
+      .get("/symbols/:id?", cc.getCategoriesByParent.bind(undefined, "symbol"))
+      .get("/symbol/:id([0-9]+)", cc.getCategoryById.bind(undefined, "symbol"))
+      .get("/symbol/:id/codepoints", cc.getCodepointsByCategoryById.bind(undefined, "symbol"))
 
       .get("/codepoint/:ucp", cpc.getCodepointByUCP)
       .get("/codepoints/suggest/:term?", cpc.suggest)

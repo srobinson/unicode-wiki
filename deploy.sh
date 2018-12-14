@@ -12,7 +12,7 @@ deploy() {
     if [ $1 == "api" ]; then
       docker build --no-cache --build-arg MONGO_URL=$3 --build-arg ES_URL=$4 -f Dockerfile.$1 -t gcr.io/unicode-wiki/uw-$1:$2 . || exit 3
     elif [ $1 == "app" ]; then
-      docker build --no-cache --build-arg API_URL=$3 --build-arg FONTS_URL=$4 -f Dockerfile.$1 -t gcr.io/unicode-wiki/uw-$1:$2 . || exit 3
+      docker build --no-cache --build-arg API_URL=$3 --build-arg FONTS_URL=$4 --build-arg ANALYTICS_ID=$5 -f Dockerfile.$1 -t gcr.io/unicode-wiki/uw-$1:$2 . || exit 3
     fi
     echo docker build gcr.io/unicode-wiki/uw-$1:$2 complete
   fi
@@ -30,6 +30,14 @@ then
   >&2 echo error
 fi
 
-deploy api $(read_var VERSION_API .env.prod) $(read_var MONGO_URL .env.prod) $(read_var ES_URL .env.prod)
-deploy app $(read_var VERSION_APP .env.prod) $(read_var API_URL .env.prod) $(read_var FONTS_URL .env.prod)
+deploy api \
+  $(read_var VERSION_API .env.prod) \
+  $(read_var MONGO_URL .env.prod) \
+  $(read_var ES_URL .env.prod)
+
+deploy app \
+  $(read_var VERSION_APP .env.prod) \
+  $(read_var API_URL .env.prod) \
+  $(read_var FONTS_URL .env.prod) \
+  $(read_var ANALYTICS_ID .env.prod)
 

@@ -1,7 +1,7 @@
-import * as Category from "./category-dao"
 import {Request, Response} from "express"
 import {CategoryDocument, CodepointHexRange, ResourceNotFoundException} from "@uw/domain"
 import {codepointIndexRangeOrQuery} from "@uw/utils"
+import * as Category from "./category-dao"
 import * as codepointController from "../codepoints"
 
 export const getCategoryById = async (modelType: string, req: Request, res: Response) => {

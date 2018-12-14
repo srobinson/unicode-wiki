@@ -1,6 +1,8 @@
 import * as express from "express"
 import * as bodyParser from "body-parser"
 import * as cookieParser from "cookie-parser"
+import * as compression from "compression"
+
 import * as cors from "cors"
 import {enhanceRequestMiddleware, errorHandlerMiddleware, logRequestMiddleware} from "@uw/logging"
 import Routes from "./routes"
@@ -15,9 +17,10 @@ class Express {
     app
       .set("port", process.env.NODE_PORT)
       .use(cors())
+      .use(bodyParser.urlencoded({extended: false}))
       .use(bodyParser.json())
-      .use(bodyParser.urlencoded({extended: true}))
       .use(cookieParser())
+      .use(compression())
       .use(express.static("public"))
       .use(userMiddleware)
       .use(enhanceRequestMiddleware)

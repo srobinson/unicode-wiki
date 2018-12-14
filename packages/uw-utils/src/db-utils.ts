@@ -1,3 +1,4 @@
+import {CodepointIndexRangeQuery, CodepointIndexRangeOrQuery} from "@uw/domain"
 import {codepointIndexRange} from "./unicode-utils"
 
 /**
@@ -13,7 +14,7 @@ import {codepointIndexRange} from "./unicode-utils"
  * @param range the range to transform
  * @return the generated query
  */
-export const codepointIndexRangeQuery = (range: string): {index: {$gte: number; $lte?: number}} => {
+export const codepointIndexRangeQuery = (range: string): CodepointIndexRangeQuery => {
   const {from, to} = codepointIndexRange(range)
   const q = {$gte: from}
   if (to !== from) {
@@ -30,10 +31,10 @@ export const codepointIndexRangeQuery = (range: string): {index: {$gte: number; 
  * ["0000:0005", "000A:000B"] => {
  *  $or: [
  *    index: {
- *      $gte:0, $gte: 5
+ *      $gte:0, $lte: 5
  *    },
  *    index: {
- *      $gte:10, $gte: 11
+ *      $gte:10, $lte: 11
  *    },
  *  ]
  * }
@@ -41,7 +42,10 @@ export const codepointIndexRangeQuery = (range: string): {index: {$gte: number; 
  * @param ranges ranges to map of
  * @return the generates query
  */
-export const codepointIndexRangeOrQuery = (ranges: string[]) => {
-  const codepointIndexRanges = ranges.map((range: string) => codepointIndexRangeQuery(range))
+
+export const codepointIndexRangeOrQuery = (ranges: string[]): CodepointIndexRangeOrQuery => {
+  const codepointIndexRanges: CodepointIndexRangeQuery[] = ranges.map((range: string) =>
+    codepointIndexRangeQuery(range),
+  )
   return {$or: codepointIndexRanges}
 }
