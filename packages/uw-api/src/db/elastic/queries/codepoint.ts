@@ -1,31 +1,30 @@
 // tslint:disable:no-any
 import {SearchResponse} from "elasticsearch"
-import {CodepointHexRange, jsonifyError} from "@uw/domain"
-import {logger} from "@uw/logging"
+import {CodepointHexRange} from "@uw/domain"
 import {client, formatResponse} from "../client"
 
 const type = "codepoints"
 const index = "unicode-wiki"
 
-export const getById = async (id: number) =>
-  client
-    .search({
-      body: {
-        query: {
-          ids: {
-            values: [id],
-          },
+export const getById = async (id: number) => {
+  const result: SearchResponse<{}> = await client.search({
+    body: {
+      query: {
+        match: {
+          index: id,
         },
       },
-      index,
-      type,
-    })
-    .then((result: SearchResponse<{}>) => formatResponse(result))
-    .catch(e => logger.error(jsonifyError(e)))
+    },
+    index,
+    type,
+  })
+
+  return formatResponse(result)
+}
 
 export const getByUCP = async (ucp: string) => {
   const cp = parseInt(ucp, 16)
-  return getById(cp)
+  return await getById(cp)
 }
 
 export const getByRange = async (
@@ -33,31 +32,27 @@ export const getByRange = async (
   page = 1,
   perPage = 20,
 ) => {
-  const from = parseInt(range.from, 16)
-  const to = (range.to && parseInt(range.to, 16)) || range.from
-  return client
-    .search({
-      body: {
-        query: {
-          constant_score: {
-            filter: {
-              range: {
-                cp: {
-                  gte: from,
-                  lte: to,
-                },
+  const result = await client.search({
+    body: {
+      query: {
+        constant_score: {
+          filter: {
+            range: {
+              cp: {
+                gte: range.from,
+                lte: range.to,
               },
             },
           },
         },
       },
-      from: (page - 1) * perPage,
-      index,
-      size: perPage,
-      type,
-    })
-    .then(result => formatResponse(result))
-    .catch(e => logger.error(jsonifyError(e)))
+    },
+    from: (page - 1) * perPage,
+    index,
+    size: perPage,
+    type,
+  })
+  return formatResponse(result)
 }
 
 export const suggest = async (text: string) => {
