@@ -20,7 +20,7 @@
     "seed": "lerna run seed --concurrency 20 --stream",
     "start:api": "lerna run start:api",
     "start:app": "lerna run start:app",
-    "test": "jest --runInBand --forceExit --env=node --colors",
+    "test": "NODE_ENV=test jest --runInBand --forceExit --env=node --colors",
     "update-version": "lerna publish --skip-git --skip-npm --force-publish '*'",
     "watch": "lerna run watch --parallel"
   },

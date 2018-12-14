@@ -1,4 +1,4 @@
-import {codepointIndexRangeQuery, codepointIndexRangeOrQuery} from "../src/db-utils"
+import {codepointIndexRangeQuery, codepointIndexRangeOrQuery} from "../src"
 
 describe("codepointIndexRangeQuery utility", () => {
   it("Should generate a valid query", () => {

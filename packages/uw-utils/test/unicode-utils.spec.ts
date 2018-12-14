@@ -1,4 +1,4 @@
-import {isHex, codepointHexRange, codepointIndexRange, fromCharCode} from "@uw/utils"
+import {isHex, codepointHexRange, codepointIndexRange, fromCharCode} from "../src"
 
 describe("isHex utility", () => {
   it("Returns true for valid hex input", () => {

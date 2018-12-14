@@ -19,7 +19,7 @@ const logger = createLogger({
   format: format(jsonFormatter)(),
   transports: [
     new transports.Console({
-      level: "info",
+      level: process.env.NODE_ENV === "test" ? "error" : "info",
       stderrLevels: [],
     }),
   ],

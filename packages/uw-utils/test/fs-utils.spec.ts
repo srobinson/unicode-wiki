@@ -1,5 +1,5 @@
 import {InternalException} from "@uw/domain"
-import {loadJSONFile} from "@uw/utils"
+import {loadJSONFile} from "../src"
 
 describe("loadJSONFile utility", () => {
   it("should happily read file and parse JSON", () => {
