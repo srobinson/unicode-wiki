@@ -36,7 +36,7 @@ export interface Category {
   hasChildren?: boolean
   index: number
   key: string
-  level: number
+  level?: number
   parent: number
   range?: CodepointHexRange[]
   title: string

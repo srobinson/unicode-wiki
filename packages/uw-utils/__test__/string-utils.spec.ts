@@ -1,4 +1,4 @@
-import {splitCamelCase, objectToString} from "./string-utils"
+import {splitCamelCase, objectToString} from "@uw/utils"
 
 describe("splitCamelCase utility", () => {
   it("Separates input with the default token", () => {

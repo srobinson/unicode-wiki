@@ -1,16 +1,17 @@
-import {Request} from "express"
-import {Link, LinkType} from "@uw/domain"
+import {ApiResponse, Link, LinkType} from "@uw/domain"
 import {objectToString} from "@uw/utils"
 import {PaginateResult} from "mongoose"
 
-// tslint:disable-next-line:no-any
-export const generateLinks = (req: Request, results: PaginateResult<any>): Link[] => {
+export const generateLinks = (
+  originalUrl: string,
+  query: {},
+  results: PaginateResult<ApiResponse>,
+): Link[] => {
   const links: Link[] = []
-  const originalUrl = req.originalUrl
-  const pathname = req.originalUrl.split("?")[0]
+  const pathname = originalUrl.split("?")[0]
 
   if (results.hasPrevPage) {
-    const newQuery = Object.assign({}, {...req.query}, {page: results.prevPage})
+    const newQuery = Object.assign({}, {...query}, {page: results.prevPage})
     links.push({
       href: `${pathname}?${objectToString(newQuery)}`,
       rel: "prev",
@@ -25,7 +26,7 @@ export const generateLinks = (req: Request, results: PaginateResult<any>): Link[
   })
 
   if (results.hasNextPage) {
-    const newQuery = Object.assign({}, {...req.query}, {page: results.nextPage})
+    const newQuery = Object.assign({}, {...query}, {page: results.nextPage})
     links.push({
       href: `${pathname}?${objectToString(newQuery)}`,
       rel: "next",

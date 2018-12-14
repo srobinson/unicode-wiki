@@ -1,4 +1,4 @@
-import {codepointIndexRangeQuery, codepointIndexRangeOrQuery} from "./db-utils"
+import {codepointIndexRangeQuery, codepointIndexRangeOrQuery} from "../src/db-utils"
 
 describe("codepointIndexRangeQuery utility", () => {
   it("Should generate a valid query", () => {
@@ -25,9 +25,7 @@ describe("codepointIndexRangeQuery utility", () => {
 
   it("Should blow up if invalid query", () => {
     expect(() => codepointIndexRangeQuery("XXXXX")).toThrowError("XXXXX not a valid range")
-    expect(() => codepointIndexRangeQuery("XXXXX:YYYY")).toThrowError(
-      "XXXXX not a valid range",
-    )
+    expect(() => codepointIndexRangeQuery("XXXXX:YYYY")).toThrowError("XXXXX not a valid range")
     expect(() => codepointIndexRangeQuery("0000:XXXX")).toThrowError("XXXX not a valid range")
   })
 })

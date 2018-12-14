@@ -22,3 +22,5 @@ MongoDb.connect().then(() => {
     return logger.info(`😊 Express server listening on port [${PORT}]`)
   })
 })
+
+export default App

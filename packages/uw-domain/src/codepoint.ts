@@ -30,6 +30,17 @@ export interface CodepointIndexRange {
   to?: number
 }
 
+export interface CodepointIndexRangeQuery {
+  index: {
+    $gte: number
+    $lte?: number
+  }
+}
+
+export interface CodepointIndexRangeOrQuery {
+  $or: CodepointIndexRangeQuery[]
+}
+
 export interface CodepointDocument extends ApiResponse, Codepoint {}
 
 export interface PaginatedCodepointResult extends PaginatedApiResult<CodepointDocument> {}

@@ -42,6 +42,16 @@ export interface MobileRequestData {
 }
 
 /**
+ * Mongo support for Pagination
+ */
+
+export interface PaginationQuery {
+  page: string | number
+  perPage: string | number
+  q?: string
+}
+
+/**
  * Mongo support for hateoas rel[self|prev|next] entity
  */
 export interface ApiResponse extends Document {
