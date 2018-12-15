@@ -8,11 +8,13 @@ export const client: elastic.Client = new elastic.Client({
   log: "trace",
 })
 
+export default client
+
 client.cluster.health({}, (err: any, resp: any) => {
   logger.info("-- Client Health --", resp)
 })
 
-export const formatResponse = (response: elastic.SearchResponse<{}>) => {
+export const formatResponse = (response: elastic.SearchResponse<any>) => {
   const hits = response.hits.hits
   const source = hits.map(hit => hit._source)
   return source

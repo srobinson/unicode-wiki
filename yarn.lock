@@ -3262,7 +3262,7 @@ es6-iterator@^2.0.1, es6-iterator@~2.0.1, es6-iterator@~2.0.3:
     es5-ext "^0.10.35"
     es6-symbol "^3.1.1"
 
-es6-map@^0.1.3:
+es6-map@^0.1.3, es6-map@^0.1.5:
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/es6-map/-/es6-map-0.1.5.tgz#9136e0503dcc06a301690f0bb14ff4e364e949f0"
   dependencies:
@@ -4747,6 +4747,11 @@ is-regex@^1.0.4:
   dependencies:
     has "^1.0.1"
 
+is-regexp@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/is-regexp/-/is-regexp-1.0.0.tgz#fd2d883545c46bac5a633e7b9a09e87fa2cb5069"
+  integrity sha1-/S2INUXEa6xaYz57mgnof6LLUGk=
+
 is-retry-allowed@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/is-retry-allowed/-/is-retry-allowed-1.1.0.tgz#11a060568b67339444033d0125a61a20d564fb34"
@@ -5983,7 +5988,7 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
-"lodash@>=3.5 <5", lodash@^4.13.1, lodash@^4.17.10, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.3.0:
+"lodash@>=3.5 <5", lodash@^4.13.1, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.3.0:
   version "4.17.11"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
 
@@ -7519,6 +7524,14 @@ querystringify@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-2.1.0.tgz#7ded8dfbf7879dcc60d0a644ac6754b283ad17ef"
 
+quibble@^0.5.5:
+  version "0.5.5"
+  resolved "https://registry.yarnpkg.com/quibble/-/quibble-0.5.5.tgz#669fb731520a923e0a98f8076b7eb55e409f73f9"
+  integrity sha512-cIePu3BtGlaTW1bjFgBcLT6QMxD8PtnZDCmPJUzO+RepIz8GuXsmZIEPGFjlPxzG9zfIj4nNLPxBDlUbvr9ESg==
+  dependencies:
+    lodash "^4.17.2"
+    resolve "^1.7.1"
+
 raf@3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/raf/-/raf-3.4.0.tgz#a28876881b4bc2ca9117d4138163ddb80f781575"
@@ -8062,7 +8075,7 @@ resolve@1.6.0:
   dependencies:
     path-parse "^1.0.5"
 
-resolve@^1.0.0, resolve@^1.1.7, resolve@^1.3.2, resolve@^1.8.1:
+resolve@^1.0.0, resolve@^1.1.7, resolve@^1.3.2, resolve@^1.7.1, resolve@^1.8.1:
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.8.1.tgz#82f1ec19a423ac1fbd080b0bab06ba36e84a7a26"
   dependencies:
@@ -8644,6 +8657,14 @@ string_decoder@~0.10.x:
   version "0.10.31"
   resolved "https://registry.yarnpkg.com/string_decoder/-/string_decoder-0.10.31.tgz#62e203bc41766c6c28c9fc84301dab1c5310fa94"
 
+stringify-object-es5@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/stringify-object-es5/-/stringify-object-es5-2.5.0.tgz#057c3c9a90a127339bb9d1704a290bb7bd0a1ec5"
+  integrity sha1-BXw8mpChJzObudFwSikLt70KHsU=
+  dependencies:
+    is-plain-obj "^1.0.0"
+    is-regexp "^1.0.0"
+
 strip-ansi@3.0.1, strip-ansi@^3.0.0, strip-ansi@^3.0.1:
   version "3.0.1"
   resolved "http://registry.npmjs.org/strip-ansi/-/strip-ansi-3.0.1.tgz#6a385fb8853d952d5ff05d0e8aaf94278dc63dcf"
@@ -8842,6 +8863,17 @@ test-exclude@^4.2.1:
     read-pkg-up "^1.0.1"
     require-main-filename "^1.0.1"
 
+testdouble@3.9.1:
+  version "3.9.1"
+  resolved "https://registry.yarnpkg.com/testdouble/-/testdouble-3.9.1.tgz#3c50f466e8b69836b6e94b140ab15474fceb75f4"
+  integrity sha512-GxbrMO8Fa58l+F1QODRh9FpKpb016ZqWte50HUoK9QvUgZQt9dxhx7NtYvvQzzsef2oBGSJxSsIaA3qBC0Bl6A==
+  dependencies:
+    es6-map "^0.1.5"
+    lodash "^4.17.11"
+    quibble "^0.5.5"
+    stringify-object-es5 "^2.5.0"
+    theredoc "^1.0.0"
+
 text-hex@1.0.x:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/text-hex/-/text-hex-1.0.0.tgz#69dc9c1b17446ee79a92bf5b884bb4b9127506f5"
@@ -8849,6 +8881,11 @@ text-hex@1.0.x:
 text-table@0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
+
+theredoc@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/theredoc/-/theredoc-1.0.0.tgz#bcace376af6feb1873efbdd0f91ed026570ff062"
+  integrity sha512-KU3SA3TjRRM932jpNfD3u4Ec3bSvedyo5ITPI7zgWYnKep7BwQQaxlhI9qbO+lKJoRnoAbEVfMcAHRuKVYikDA==
 
 throat@^3.0.0:
   version "3.2.0"
