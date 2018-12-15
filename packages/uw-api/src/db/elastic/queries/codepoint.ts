@@ -1,6 +1,6 @@
 // tslint:disable:no-any
 import {SearchResponse} from "elasticsearch"
-import {CodepointHexRange} from "@uw/domain"
+import {CodepointHexRange, InternalException} from "@uw/domain"
 import {client, formatResponse} from "../client"
 
 const type = "codepoints"
@@ -18,8 +18,15 @@ export const getById = async (id: number) => {
     index,
     type,
   })
-
-  return formatResponse(result)
+  const hits = formatResponse(result)
+  if (hits.length === 1) {
+    return hits[0]
+  } else if (hits.length > 1) {
+    throw new InternalException(
+      new Error(`getById::${id} returned ${hits.length} hits. Expected only 1 hit`),
+    )
+  }
+  return undefined
 }
 
 export const getByUCP = async (ucp: string) => {

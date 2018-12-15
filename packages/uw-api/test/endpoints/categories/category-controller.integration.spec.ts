@@ -1,17 +1,9 @@
 import {agent, SuperTest, Test, Response} from "supertest"
 import App from "../../../src/index"
 
-describe("category-controller::getCategoryById::/block", () => {
-  runGetCategoryById("block")
-})
-
-describe("category-controller::getCategoryById::/script", () => {
-  runGetCategoryById("script")
-})
-
-describe("category-controller::getCategoryById::/script", () => {
-  runGetCategoryById("symbol")
-})
+runGetCategoryById("block")
+runGetCategoryById("script")
+runGetCategoryById("symbol")
 
 function runGetCategoryById(type: string) {
   describe(`category-controller::getCategoryById::/${type}`, () => {

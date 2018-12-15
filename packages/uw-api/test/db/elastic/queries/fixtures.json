@@ -1,0 +1,29 @@
+{
+  "_single_hit": {
+    "hits": {
+      "hits": [
+        {
+          "_source": {
+            "index": 1
+          }
+        }
+      ]
+    }
+  },
+  "_duplicate_hits": {
+    "hits": {
+      "hits": [
+        {
+          "_source": {
+            "index": 1
+          }
+        },
+        {
+          "_source": {
+            "index": 1
+          }
+        }
+      ]
+    }
+  }
+}
