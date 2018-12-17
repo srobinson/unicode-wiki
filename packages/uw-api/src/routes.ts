@@ -12,6 +12,11 @@ export default class Routes {
     const router: Router = Router()
 
     router
+      .get("/", (req: Request, res: Response) => {
+        res.json({
+          status: "OK",
+        })
+      })
       .get("/blocks/:id?", cc.getCategoriesByParent.bind(undefined, "block"))
       .get("/block/:id([0-9]+)", cc.getCategoryById.bind(undefined, "block"))
       .get("/block/:id/codepoints", cc.getCodepointsByCategoryById.bind(undefined, "block"))

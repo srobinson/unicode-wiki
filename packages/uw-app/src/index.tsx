@@ -6,18 +6,12 @@ import {createBrowserHistory} from "history"
 import App from "./app"
 import {configureStore} from "@uw/store"
 import "./config"
-// https://medium.freecodecamp.org/how-to-build-a-pwa-with-create-react-app-and-custom-service-workers-376bd1fdc6d3
-// https://github.com/GoogleChromeLabs/sw-precache
-// import registerServiceWorker from "./registerServiceWorker"
 
 const history = createBrowserHistory({
   basename: process.env.PUBLIC_URL,
 })
 const initialState = window.initialReduxState
 const store = configureStore(history, initialState)
-
-// TODO: Optimised web app
-// https://www.netguru.co/codestories/few-tips-that-will-make-your-pwa-on-ios-feel-like-native
 
 const render = (Component: any) => {
   return ReactDOM.render(
@@ -32,10 +26,10 @@ const render = (Component: any) => {
 
 render(App)
 
-let m = module as any
-
-if (m.hot) {
-  m.hot.accept("./app", () => {
+// @ts-ignore
+if (module.hot) {
+  // @ts-ignore
+  module.hot.accept("./app", () => {
     const NextApp = require("./app").default
     render(NextApp)
   })

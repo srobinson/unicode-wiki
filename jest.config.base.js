@@ -1,9 +1,8 @@
 module.exports = {
-  roots: ["<rootDir>/src", "<rootDir>/test"],
-  transform: {
-    "^.+\\.ts$": "ts-jest",
-  },
-  testRegex: "(/test/.*.(test|spec)).(jsx?|tsx?)$",
-  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
+  preset: "ts-jest",
+  testEnvironment: "node",
   coveragePathIgnorePatterns: ["(test/.*.mock).(jsx?|tsx?)$"],
+  roots: ["<rootDir>/src", "<rootDir>/test"],
+  testPathIgnorePatterns: ["/node_modules/", "/_helpers/"],
+  modulePaths: ["<rootDir>"],
 }

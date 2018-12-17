@@ -19,7 +19,6 @@
       "@uw/*": ["./*/src"]
     },
     "pretty": true,
-    "resolveJsonModule": true,
     "skipLibCheck": true,
     "sourceMap": true,
     "sourceRoot": "./",

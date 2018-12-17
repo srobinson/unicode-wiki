@@ -1,6 +1,7 @@
-import client from "../../../../src/db/elastic/client"
-import * as queries from "../../../../src/db/elastic/queries/codepoint"
-import fixtures from "./fixtures.json"
+import client from "@uw/api/src/db/elastic/client"
+import * as queries from "@uw/api/src/db/elastic/queries/codepoint"
+// @ts-ignore
+import * as fixtures from "./fixtures.json"
 
 const _getById = (_resolve: {}) => new Promise(resolve => resolve(_resolve))
 

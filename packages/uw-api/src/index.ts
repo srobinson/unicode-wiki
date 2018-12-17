@@ -15,12 +15,14 @@ process.on("SIGINT", function() {
 const PORT = process.env.NODE_PORT
 
 MongoDb.connect().then(() => {
-  App.listen(PORT, (err: object) => {
-    if (err) {
-      return logger.error(jsonifyError(err))
-    }
-    return logger.info(`😊 Express server listening on port [${PORT}]`)
-  })
+  if (!module.parent) {
+    App.listen(PORT, (err: object) => {
+      if (err) {
+        return logger.error(jsonifyError(err))
+      }
+      return logger.info(`😊 Express server listening on port [${PORT}]`)
+    })
+  }
 })
 
 export default App
