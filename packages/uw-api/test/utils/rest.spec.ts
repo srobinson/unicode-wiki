@@ -1,6 +1,6 @@
 import {PaginateResult} from "mongoose"
 import {ApiResponse} from "@uw/domain"
-import {generateLinks} from "../../src/utils/rest"
+import {generateLinks} from "@uw/api/src/utils/rest"
 
 describe("Utils::Rest::generateLinks", () => {
   it("return next/self links", () => {
