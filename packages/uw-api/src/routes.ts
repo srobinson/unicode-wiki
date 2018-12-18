@@ -13,7 +13,7 @@ export default class Routes {
   public static api() {
     const api: Router = Router()
 
-    router
+    api
       .get("/", (req: Request, res: Response) => {
         res.json({
           status: "OK",
