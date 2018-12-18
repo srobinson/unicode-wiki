@@ -1,15 +1,6 @@
 import {CategoryDocument} from "@uw/domain"
 import {BlockDao, ScriptDao, SymbolDao} from "./models"
 
-export const getByType = async (modelType: string, id: number) => {
-  const model = getModel(modelType)
-  const result = await model.findOne({index: id})
-  if (!result) {
-    return undefined
-  }
-  return result
-}
-
 export const getById = async (modelType: string, id: number) => {
   const model = getModel(modelType)
   const result = await model.findOne({index: id})
