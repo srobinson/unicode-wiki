@@ -1,11 +1,11 @@
 import {Router, Request, Response} from "express"
+import {ResourceNotFoundException} from "@uw/domain"
 import {
   categoryController as cc,
   codepointController as cpc,
   wikiPageController as wpc,
   wikiSearchController as wsc,
 } from "./endpoints"
-import {ResourceNotFoundException} from "@uw/domain"
 
 // const DEBUG = process.env.NODE_ENV !== "production"
 

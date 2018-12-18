@@ -5,14 +5,8 @@ import {Dispatch} from "redux"
 import {connect} from "react-redux"
 import Waypoint from "react-waypoint"
 import {BlockTitle, CodepointList, LoadingContainer, ProgessLoader} from "@uw/components"
-import {CodepointDocument, CodepointHexRange, Link} from "@uw/domain"
-import {
-  ApplicationState,
-  fetchCodepoints,
-  fetchCodepointsByCategory,
-  followLink,
-  searchCodepoints,
-} from "@uw/store"
+import {CodepointDocument, Link} from "@uw/domain"
+import {ApplicationState, fetchCodepointsByCategory, followLink, searchCodepoints} from "@uw/store"
 import {delayedPush, objectToString} from "@uw/utils"
 import {CodepointContainerProps, OtherProps, InstanceState} from "./types"
 import {CodepointWikiContainer} from "../wiki"
@@ -199,8 +193,6 @@ const mapStateToProps = (state: ApplicationState) => {
 }
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  fetchCodepoints: (ranges?: CodepointHexRange[], search?: string) =>
-    dispatch(fetchCodepoints(ranges, search)),
   fetchCodepointsByCategory: (category: string, key: string, search?: string) =>
     dispatch(fetchCodepointsByCategory(category, key, search)),
   followLink: (link: Link) => dispatch(followLink(link)),

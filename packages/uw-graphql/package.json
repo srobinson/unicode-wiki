@@ -1,0 +1,13 @@
+{
+  "name": "@uw/graphql",
+  "private": true,
+  "version": "0.0.1",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "echo '@uw/graphql' && tsc",
+    "dev": "ts-node-dev src/index.ts",
+    "lint": "tslint 'src/**/*.ts'",
+    "start:api": "node dist/index.js",
+    "watch": "tsc -w"
+  }
+}

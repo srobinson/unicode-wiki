@@ -21,7 +21,7 @@ import {search} from "./wiki-search-controller"
 export const loadPage = async (req: Request, res: Response) => {
   const {cp, isMobile, redirect} = req.query
   const token = (redirect && redirect) || (isHex(cp) && encodeURIComponent(fromCharCode(cp))) || cp
-  const mobile = isMobile !== undefined ? "mobile-html" : "html"
+  const mobile = isMobile !== undefined && isMobile ? "mobile-html" : "html"
   // const url = `https://en.wikipedia.org/w/api.php?format=json&mobileformat=true&action=parse&disabletoc=true&page=${token}`
   const url = `https://en.wikipedia.org/api/rest_v1/page/${mobile}/${token}`
 
