@@ -1,8 +1,27 @@
 import {Request, Response} from "express"
-import {CategoryDocument, CodepointHexRange, ResourceNotFoundException} from "@uw/domain"
+import {
+  CATEGORY_TYPE,
+  CategoryDocument,
+  CodepointHexRange,
+  ResourceNotFoundException,
+} from "@uw/domain"
 import {codepointIndexRangeOrQuery} from "@uw/utils"
 import * as Category from "./category-dao"
 import * as codepointController from "../codepoints"
+
+export const getAll = async (req: Request, res: Response) => {
+  const blocks = await Category.getByParent(CATEGORY_TYPE.BLOCK.toLocaleLowerCase())
+  const scripts = await Category.getByParent(CATEGORY_TYPE.BLOCK.toLocaleLowerCase())
+  const symbols = await Category.getByParent(CATEGORY_TYPE.BLOCK.toLocaleLowerCase())
+  if (!(scripts && scripts && symbols)) {
+    throw new ResourceNotFoundException(req, res)
+  }
+  res.status(200).json({
+    blocks,
+    scripts,
+    symbols,
+  })
+}
 
 export const getCategoryById = async (modelType: string, req: Request, res: Response) => {
   const index = req.params.id
@@ -49,6 +68,7 @@ export const getCodepointsByCategoryById = async (
 }
 
 export default {
+  getAll,
   getCategoriesByParent,
   getCategoryById,
   getCodepointsByCategoryById,

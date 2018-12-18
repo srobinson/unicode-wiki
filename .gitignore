@@ -16,7 +16,6 @@ lerna-debug.log
 node_modules
 NOTES
 npm-debug.log
-packages/uw-api/src/graphql
 packages/uw-api/src/endpoints/wiki/wiki-page-dao.ts
 packages/uw-app/test
 tmp*

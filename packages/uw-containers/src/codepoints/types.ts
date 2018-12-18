@@ -16,7 +16,6 @@ export interface PropsFromState {
 }
 
 export interface PropsFromDispatch {
-  fetchCodepoints: typeof codepointsActions.fetchCodepoints
   fetchCodepointsByCategory: typeof codepointsActions.fetchCodepointsByCategory
   followLink: typeof codepointsActions.followLink
   push: (path: Path) => RouterAction

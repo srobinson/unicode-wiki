@@ -38,4 +38,4 @@ COPY --from=BUILD /usr/src/app /usr/src/app
 
 RUN apk update && apk add curl
 
-ENTRYPOINT ["node", "/usr/src/app/packages/uw-api/build/dist/index.js"]
+ENTRYPOINT ["node", "/usr/src/app/packages/uw-api/dist/index.js"]

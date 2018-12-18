@@ -1,5 +1,5 @@
-import {BlockDao, ScriptDao, SymbolDao} from "./models"
 import {CategoryDocument} from "@uw/domain"
+import {BlockDao, ScriptDao, SymbolDao} from "./models"
 
 export const getByType = async (modelType: string, id: number) => {
   const model = getModel(modelType)
@@ -28,7 +28,7 @@ export const getByKey = async (modelType: string, key: string) => {
   return result
 }
 
-export const getByParent = async (modelType: string, parent: number) => {
+export const getByParent = async (modelType: string, parent?: number) => {
   const model = getModel(modelType)
   const q = !parent ? {} : {parent}
   const sort = model === BlockDao ? "index" : "key"

@@ -1,6 +1,6 @@
-import App from "./app"
 import {jsonifyError} from "@uw/domain"
 import {logger} from "@uw/logging"
+import App from "./app"
 import {MongoDb} from "./db"
 import "./config"
 

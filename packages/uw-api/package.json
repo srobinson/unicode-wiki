@@ -4,10 +4,10 @@
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
-    "prepare": "'@uw/api' && tsc",
+    "prepare": "echo '@uw/api' && tsc",
     "dev": "ts-node-dev src/index.ts",
     "lint": "tslint 'src/**/*.ts'",
-    "start:api": "node build/dist/index.js",
+    "start:api": "node dist/index.js",
     "watch": "tsc -w"
   },
   "dependencies": {
