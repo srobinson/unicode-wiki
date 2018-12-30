@@ -24,11 +24,14 @@ References:
 
 ## Core technology used
 
+* [apollo-client] (https://github.com/apollographql/apollo-client)
+* [apollo-server] (https://github.com/apollographql/apollo-server)
 * [axios] (https://github.com/axios/axios)
 * [downshift] (https://github.com/paypal/downshift)
 * [elasticsearch] (https://github.com/elastic/elasticsearch)
 * [express] (https://github.com/expressjs/express)
 * [emotion] (https://github.com/emotion-js/emotion)
+* [graphql] (https://graphql.org)
 * [jest] (https://github.com/facebook/jest)
 * [react-scripts-ts] (https://www.npmjs.com/package/react-scripts-ts)
 * [mongodb] (https://github.com/mongodb/mongo)
