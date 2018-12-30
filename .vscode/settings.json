@@ -23,5 +23,6 @@
   },
   "[typescriptreact]": {
     "editor.formatOnSave": true
-  }
+  },
+  "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace"
 }

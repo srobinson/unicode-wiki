@@ -17,9 +17,11 @@ export interface ApiSearchMetadata {
   method: string
   normalizeKey?: string
   purge?: boolean
+  query?: string
+  queryResolver?: string
   success: any
   throttle?: number
-  url: string
+  url?: string
 }
 
 export interface ApiSearchResponse {

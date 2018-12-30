@@ -17,12 +17,12 @@ export class CodepointAPI extends RESTDataSource {
     return res
   }
 
-  public async getByCategoryId(
+  public async getByCategoryKey(
     category: string,
-    id: number,
+    key: string,
     page: number = 1,
   ): Promise<PaginatedCodepointResult> {
-    const res = await this.get(`${category}/${id}/codepoints?page=${page}`)
+    const res = await this.get(`${category}/${key}/codepoints?page=${page}`)
     return res
   }
 

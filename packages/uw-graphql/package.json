@@ -1,13 +1,17 @@
 {
   "name": "@uw/graphql",
-  "private": true,
   "version": "0.0.1",
-  "license": "MIT",
+  "private": true,
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
   "scripts": {
+    "dev": "ts-node-dev src/server.ts",
     "prepare": "echo '@uw/graphql' && tsc",
-    "dev": "ts-node-dev src/index.ts",
     "lint": "tslint 'src/**/*.ts'",
-    "start:api": "node dist/index.js",
+    "start:api": "node dist/server.js",
     "watch": "tsc -w"
+  },
+  "dependencies": {
+    "@uw/domain": "0.0.1"
   }
 }

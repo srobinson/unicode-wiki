@@ -16,12 +16,12 @@ export const resolvers = {
       return await dataSources.codepointAPI.getByUCP(ucp)
     },
 
-    async codepointsByCategoryId(
+    async codepointsByCategoryKey(
       _: any,
-      {category, id, page = 1}: any,
+      {category, key, page = 1}: any,
       {dataSources}: {dataSources: dataSource},
     ): Promise<PaginatedCodepointResult> {
-      return await dataSources.codepointAPI.getByCategoryId(category, id, page)
+      return await dataSources.codepointAPI.getByCategoryKey(category, key, page)
     },
 
     async suggest(
