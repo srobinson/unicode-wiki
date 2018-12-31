@@ -1,6 +1,6 @@
 import {WikiPage, ApiSearchResponse} from "@uw/domain"
 import {isMobile} from "@uw/utils"
-import {WIKI_PAGE_BY_UCP} from "@uw/graphql"
+import {WIKI_PAGE_BY_UCP} from "@uw/api-graph"
 import {WIKI_PAGE, FETCH_WIKI_PAGE, SET_WIKI_PAGE} from "./constants"
 
 export const loadWikiPage = (ucp: string, page: string) => ({

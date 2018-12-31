@@ -1,4 +1,4 @@
-import {CODEPOINTS_SEARCH, CODEPOINTS_BY_CATEGORY_KEY} from "@uw/graphql"
+import {CODEPOINTS_SEARCH, CODEPOINTS_BY_CATEGORY_KEY} from "@uw/api-graph"
 import {
   ApiSearchAction,
   InternalException,

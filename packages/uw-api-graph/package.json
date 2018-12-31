@@ -1,12 +1,12 @@
 {
-  "name": "@uw/graphql",
+  "name": "@uw/api-graph",
   "version": "0.0.1",
   "private": true,
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "scripts": {
     "dev": "ts-node-dev src/server.ts",
-    "prepare": "echo '@uw/graphql' && tsc",
+    "prepare": "echo '@uw/api-graph' && tsc",
     "lint": "tslint 'src/**/*.ts'",
     "start:api": "node dist/server.js",
     "watch": "tsc -w"

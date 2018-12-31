@@ -1,5 +1,5 @@
 import {ApiSearchResponse, Category, CATEGORY_TYPE} from "@uw/domain"
-import {CATEGORY_BY_TYPE} from "@uw/graphql"
+import {CATEGORY_BY_TYPE} from "@uw/api-graph"
 import * as constants from "./constants"
 
 export const fetchCategories = () => {

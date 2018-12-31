@@ -1,5 +1,5 @@
 import {Dispatch, Middleware, MiddlewareAPI} from "redux"
-import {apolloClient} from "@uw/graphql"
+import {apolloClient} from "@uw/api-graph"
 import {API_REQUEST, apiError, apiSuccess} from "../../middleware/api"
 
 const BASE_URL = process.env.REACT_APP_API_BASE_URL
