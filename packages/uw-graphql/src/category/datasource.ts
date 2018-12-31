@@ -13,7 +13,7 @@ export class CategoryAPI extends RESTDataSource {
   }
 
   public async getByType(type: string): Promise<CategoryDocument[]> {
-    const res = await this.get(`${type}`)
+    const res = await this.get(type)
     return res
   }
 }

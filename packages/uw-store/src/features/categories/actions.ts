@@ -1,5 +1,6 @@
 import {ApiSearchResponse, Category, CATEGORY_TYPE} from "@uw/domain"
 import * as constants from "./constants"
+import {CATEGORY_BY_TYPE} from "@uw/graphql"
 
 export const fetchCategories = () => {
   fetchCategory(CATEGORY_TYPE.BLOCK)
@@ -13,8 +14,9 @@ export const fetchCategory = (category: CATEGORY_TYPE) => ({
     feature: constants[category],
     label: category,
     method: "GET",
+    query: CATEGORY_BY_TYPE(category),
+    queryResolver: "categoryByType",
     success: setCategory,
-    url: `/${category.toLowerCase()}`,
   },
   type: constants[`FETCH_${category}`],
 })

@@ -13,13 +13,12 @@ export const typeDef = gql`
   }
 
   type Category {
-    childRanges: [CodepointHexRange]!
-    hasChildren: Boolean
+    childRanges: [CodepointHexRange]
     index: Int!
     key: String!
     level: Int
     parent: Int!
-    range: [CodepointHexRange]!
+    range: [CodepointHexRange]
     title: String!
   }
 

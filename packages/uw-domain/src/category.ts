@@ -8,10 +8,6 @@ export interface CategoryState {
   readonly loading: boolean
 }
 
-export interface BlockState extends CategoryState {}
-export interface ScriptState extends CategoryState {}
-export interface SymbolState extends CategoryState {}
-
 export interface ExplorerState {
   readonly categoryType: CategoryType
   readonly categoryTitle: string
@@ -33,7 +29,6 @@ export type CategoryType = "blocks" | "scripts" | "symbols"
  */
 export interface Category {
   childRanges?: CodepointHexRange[]
-  hasChildren?: boolean
   index: number
   key: string
   level?: number
@@ -53,7 +48,6 @@ export interface CategoryDocument extends ApiResponse, Category {}
  */
 export const CategorySchema = new Schema({
   _links: LinkSchema,
-  hasChildren: Boolean,
   index: Number,
   key: String,
   level: Number,
