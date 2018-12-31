@@ -22,6 +22,7 @@ export interface ApiSearchMetadata {
   success: any
   throttle?: number
   url?: string
+  variables?: object
 }
 
 export interface ApiSearchResponse {

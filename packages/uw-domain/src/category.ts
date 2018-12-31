@@ -8,6 +8,10 @@ export interface CategoryState {
   readonly loading: boolean
 }
 
+export interface BlockState extends CategoryState {}
+export interface ScriptState extends CategoryState {}
+export interface SymbolState extends CategoryState {}
+
 export interface ExplorerState {
   readonly categoryType: CategoryType
   readonly categoryTitle: string

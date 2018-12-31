@@ -1,10 +1,13 @@
 import {RESTDataSource} from "apollo-datasource-rest"
 import {WikiPage} from "@uw/domain"
+import "../config"
+
+const BASE_URL = process.env.REACT_APP_API_BASE_URL
 
 export class WikiAPI extends RESTDataSource {
   constructor() {
     super()
-    this.baseURL = "https://api.unicode.wiki/api/"
+    this.baseURL = BASE_URL
   }
 
   public async getPage(ucp: string, isMobile?: boolean): Promise<WikiPage> {

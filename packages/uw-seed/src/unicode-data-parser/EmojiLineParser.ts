@@ -30,7 +30,7 @@ export default class EmojiLineParser<K extends string, V extends CodePoint>
           entry.emoji_header = this.emojiHeader
           entry.emoji_subheader = this.emojiSubHeader
         } else {
-          console.log("not-dound", cp)
+          console.log("not-found", cp)
         }
       })
     }

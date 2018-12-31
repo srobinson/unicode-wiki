@@ -1,22 +1,22 @@
 import {gql} from "apollo-boost"
-import {CATEGORY_TYPE} from "@uw/domain"
 
-export const CATEGORY_BY_TYPE = (type: CATEGORY_TYPE) => gql`
+export const WIKI_PAGE_BY_UCP = (ucp: string, isMobile: boolean = false) => gql`
   query {
-    categoryByType(type: "${type}") {
-      childRanges {
-        from
-        to
-      }
-      index
-      key
-      level
-      parent
-      range {
-        from
-        to
-      }
+    wikiPage(ucp: "${ucp}", isMobile: ${isMobile ? true : false}) {
+      cp
+      page
+      text
       title
+      type
+      search {
+        text
+        title
+        hits {
+          highlight
+          redirect
+          title
+        }
+      }
     }
   }
 `

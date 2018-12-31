@@ -1,8 +1,8 @@
-// tslint:disable:object-literal-sort-keys no-any
 import {createLogger, format, transports} from "winston"
 
 const MESSAGE = Symbol.for("message")
 
+// tslint:disable-next-line:no-any
 const jsonFormatter = (logEntry: any) => {
   const base = {timestamp: new Date(), ...logEntry}
   logEntry[MESSAGE] = JSON.stringify(base, undefined, 2)

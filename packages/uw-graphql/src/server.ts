@@ -1,6 +1,7 @@
 import {ApolloServer} from "apollo-server"
 import {schema} from "./schema"
 import {dataSources} from "./datasources"
+import "./config"
 
 const server = new ApolloServer({
   dataSources,

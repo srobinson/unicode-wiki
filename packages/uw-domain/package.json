@@ -6,7 +6,8 @@
   "module": "./dist/index.js",
   "scripts": {
     "lint": "tslint 'src/**/*.ts'",
-    "prepare": "echo '@uw/domain' && tsc"
+    "prepare": "echo '@uw/domain' && tsc",
+    "watch": "tsc -w"
   },
   "devDependencies": {
     "@types/mongoose-paginate-v2": "file:./src/types/mongoose-paginate-v2"

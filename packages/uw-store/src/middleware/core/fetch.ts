@@ -11,10 +11,13 @@ export const fetchMiddleware: Middleware = ({dispatch}: MiddlewareAPI) => (
 
   if (action.type.includes(API_REQUEST)) {
     const {meta, type} = action
-    const {body, method, query, queryResolver, url} = meta
+    const {body, method, query, queryResolver, url, variables = {}} = meta
 
     if (query) {
-      const response = await apolloClient.query({query})
+      const response = await apolloClient.query({
+        query,
+        variables,
+      })
       try {
         const payload = await response.data[queryResolver]
         if (response.errors) {
@@ -28,8 +31,6 @@ export const fetchMiddleware: Middleware = ({dispatch}: MiddlewareAPI) => (
       } catch (error) {
         dispatch(apiError({error, meta}))
       }
-
-      // console.log("response>>>", response)
     } else {
       const response = await fetch(`${BASE_URL}${url}`, {
         body: JSON.stringify(body),

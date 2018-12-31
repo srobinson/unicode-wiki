@@ -23,7 +23,7 @@ export default css`
     color: #a89e8a;
     font-size: 14px;
     line-height: 1.5em;
-    font-family: "Google sans", "Helvetica Neue", Arial, sans-serif;
+    font-family: sans-serif;
   }
 
   body {
