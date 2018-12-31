@@ -65,13 +65,13 @@ class CodepointContainer extends React.PureComponent<CodepointContainerProps & O
 
   fetchCodepoints = () => {
     const {location, match} = this.props
-    const {pathname, search} = location
+    const {pathname} = location
     const {params} = match
     const {category, key} = params
     const searchQuery = location["query"]
     if (category) {
       window.scrollTo(0, 0)
-      this.props.fetchCodepointsByCategory(category, key, search)
+      this.props.fetchCodepointsByCategory(category, key)
     }
     // check if this is a search query
     else if (pathname === "/search" && searchQuery && searchQuery.q) {
@@ -193,8 +193,8 @@ const mapStateToProps = (state: ApplicationState) => {
 }
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  fetchCodepointsByCategory: (category: string, key: string, search?: string) =>
-    dispatch(fetchCodepointsByCategory(category, key, search)),
+  fetchCodepointsByCategory: (category: string, key: string, page?: number) =>
+    dispatch(fetchCodepointsByCategory(category, key, page)),
   followLink: (link: Link) => dispatch(followLink(link)),
   push: (path: string) => dispatch(push(path)),
   searchCodepoints: (q: string) => dispatch(searchCodepoints(q)),

@@ -7,8 +7,7 @@ import {Dispatch} from "redux"
 import {ApplicationState, fetchCategory} from "@uw/store"
 import {NavigationContainerProps, OtherProps, InstanceState} from "./types"
 import {ExplorerNavigation} from "@uw/components"
-import {Category, CATEGORY_TYPE} from "@uw/domain"
-import {CategoryType} from "@uw/domain"
+import {Category, CategoryType, CATEGORY_TYPE} from "@uw/domain"
 
 class NavigationContainer extends React.Component<NavigationContainerProps & OtherProps> {
   state: InstanceState = {
@@ -62,9 +61,9 @@ class NavigationContainer extends React.Component<NavigationContainerProps & Oth
   }
 
   // if user selects category from navigation component
-  // - get categoryType from nextProps.match object
-  // if this is the 404 page
-  // - get possible categoryType from nextProps.pathname
+  // -> get categoryType from nextProps.match object
+  // if this is the 404 page or search page
+  // -> get categoryType candidate from nextProps.location
   static inferCategoryType = (
     nextProps: NavigationContainerProps & OtherProps,
     prevState: InstanceState,

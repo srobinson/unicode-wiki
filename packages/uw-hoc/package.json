@@ -8,8 +8,5 @@
     "lint": "tslint 'src/**/*.ts'",
     "prepare": "echo '@uw/hoc' && tsc",
     "watch": "tsc -w"
-  },
-  "dependencies": {
-
   }
 }

@@ -1,13 +1,15 @@
 import {WikiPage, ApiSearchResponse} from "@uw/domain"
 import {isMobile} from "@uw/utils"
+import {WIKI_PAGE_BY_UCP} from "@uw/api-graph"
 import {WIKI_PAGE, FETCH_WIKI_PAGE, SET_WIKI_PAGE} from "./constants"
 
-export const loadWikiPage = (cp: string, page: string) => ({
+export const loadWikiPage = (ucp: string, page: string) => ({
   meta: {
     feature: WIKI_PAGE,
     method: "GET",
+    query: WIKI_PAGE_BY_UCP(ucp, isMobile()),
+    queryResolver: "wikiPage",
     success: setWikiPage,
-    url: `/wiki/page?${isMobile() ? "isMobile&" : ""}&cp=${cp}&page=${encodeURIComponent(page)}`,
   },
   type: FETCH_WIKI_PAGE,
 })

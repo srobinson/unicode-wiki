@@ -4,7 +4,7 @@ export const typeDef = gql`
   extend type Query {
     codepoints: PaginatedCodepointResult!
     codepointByUCP(ucp: String!): Codepoint
-    codepointsByCategoryId(category: String!, id: Int!, page: Int): PaginatedCodepointResult!
+    codepointsByCategoryKey(category: String!, key: String!, page: Int): PaginatedCodepointResult!
     suggest(prefix: String!): [String]!
     search(q: String!): PaginatedCodepointResult!
   }

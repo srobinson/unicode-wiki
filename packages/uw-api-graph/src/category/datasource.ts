@@ -1,10 +1,13 @@
 import {RESTDataSource} from "apollo-datasource-rest"
 import {CategoryDocument} from "@uw/domain"
+import "../config"
+
+const BASE_URL = process.env.REACT_APP_API_BASE_URL
 
 export class CategoryAPI extends RESTDataSource {
   constructor() {
     super()
-    this.baseURL = "https://api.unicode.wiki/api/"
+    this.baseURL = BASE_URL
   }
 
   public async getAll(): Promise<CategoryDocument[]> {
@@ -13,7 +16,7 @@ export class CategoryAPI extends RESTDataSource {
   }
 
   public async getByType(type: string): Promise<CategoryDocument[]> {
-    const res = await this.get(`${type}`)
+    const res = await this.get(type)
     return res
   }
 }

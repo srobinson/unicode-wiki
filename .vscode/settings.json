@@ -23,5 +23,6 @@
   },
   "[typescriptreact]": {
     "editor.formatOnSave": true
-  }
+  },
+  "editor.fontFamily": "Fira Code, Fira Code, Menlo, Monaco, 'Cmonospace"
 }

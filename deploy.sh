@@ -35,6 +35,10 @@ deploy api \
   $(read_var MONGO_URL .env.prod) \
   $(read_var ES_URL .env.prod)
 
+deploy api-graph \
+  $(read_var VERSION_API_GRAPH .env.prod) \
+  $(read_var API_URL .env.prod) \
+
 deploy app \
   $(read_var VERSION_APP .env.prod) \
   $(read_var API_URL .env.prod) \

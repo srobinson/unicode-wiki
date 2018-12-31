@@ -1,10 +1,13 @@
 import {RESTDataSource} from "apollo-datasource-rest"
 import {CodepointDocument, PaginatedCodepointResult} from "@uw/domain"
+import "../config"
+
+const BASE_URL = process.env.REACT_APP_API_BASE_URL
 
 export class CodepointAPI extends RESTDataSource {
   constructor() {
     super()
-    this.baseURL = "https://api.unicode.wiki/api/"
+    this.baseURL = BASE_URL
   }
 
   public async getByUCP(ucp: string): Promise<CodepointDocument> {
@@ -17,12 +20,12 @@ export class CodepointAPI extends RESTDataSource {
     return res
   }
 
-  public async getByCategoryId(
+  public async getByCategoryKey(
     category: string,
-    id: number,
+    key: string,
     page: number = 1,
   ): Promise<PaginatedCodepointResult> {
-    const res = await this.get(`${category}/${id}/codepoints?page=${page}`)
+    const res = await this.get(`${category}/${key}/codepoints?page=${page}`)
     return res
   }
 

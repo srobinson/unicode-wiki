@@ -1,4 +1,3 @@
-// import {Action, AnyAction, Dispatch, Store, applyMiddleware, createStore} from "redux"
 import {Store, applyMiddleware, createStore} from "redux"
 import {connectRouter, routerMiddleware} from "connected-react-router"
 import {composeWithDevTools} from "redux-devtools-extension"
@@ -17,11 +16,11 @@ export const configureStore = (
     composeEnhancers(applyMiddleware(routerMiddleware(history), ...coreMiddleware)),
   )
 
-  if (process.env.NODE_ENV !== "production") {
-    // tslint:disable-next-line:no-any
-    let m = module as any
-    if (m.hot) {
-      m.hot.accept("./types", () => {
+  if (process.env.NODE_ENV === "development") {
+    // @ts-ignore
+    if (module.hot) {
+      // @ts-ignore
+      module.hot.accept("./imports", () => {
         store.replaceReducer(rootReducer)
       })
     }
@@ -29,7 +28,3 @@ export const configureStore = (
 
   return store
 }
-
-// export interface ConnectedReduxProps<A extends Action = AnyAction> {
-//   dispatch: Dispatch<A>
-// }

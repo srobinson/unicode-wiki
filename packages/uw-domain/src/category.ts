@@ -33,7 +33,6 @@ export type CategoryType = "blocks" | "scripts" | "symbols"
  */
 export interface Category {
   childRanges?: CodepointHexRange[]
-  hasChildren?: boolean
   index: number
   key: string
   level?: number
@@ -53,7 +52,6 @@ export interface CategoryDocument extends ApiResponse, Category {}
  */
 export const CategorySchema = new Schema({
   _links: LinkSchema,
-  hasChildren: Boolean,
   index: Number,
   key: String,
   level: Number,
