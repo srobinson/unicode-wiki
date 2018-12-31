@@ -1,4 +1,5 @@
 import {ApolloServer} from "apollo-server"
+import * as fetch from "node-fetch"
 import {schema} from "./schema"
 import {dataSources} from "./datasources"
 import "./config"

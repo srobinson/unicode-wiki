@@ -37,11 +37,19 @@ spec:
           serviceName: uw-api-web
           servicePort: 80
         path: /
+  - host: graph.unicode.wiki
+    http:
+      paths:
+      - backend:
+          serviceName: uw-api-graph-web
+          servicePort: 80
+        path: /graphql
   tls:
   - hosts:
     - unicode.wiki
     - www.unicode.wiki
     - api.unicode.wiki
+    - graph.unicode.wiki
     secretName: unicode-wiki-tls
 status:
   loadBalancer: {}

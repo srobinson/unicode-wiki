@@ -23,6 +23,7 @@ COPY package.json \
 COPY assets/www assets/www
 COPY packages/uw-utils packages/uw-utils
 COPY packages/uw-domain packages/uw-domain
+COPY packages/uw-api-graph packages/uw-api-graph
 COPY packages/uw-store packages/uw-store
 COPY packages/uw-hoc packages/uw-hoc
 COPY packages/uw-containers packages/uw-containers

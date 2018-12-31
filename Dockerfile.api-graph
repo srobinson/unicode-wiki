@@ -1,10 +1,11 @@
 ARG API_URL
+ARG GRAPHQL_URL
 FROM node:9-alpine AS BUILD
 WORKDIR /usr/src/app
 
 ARG API_URL
-
 ENV REACT_APP_API_BASE_URL=${API_URL}
+ENV REACT_APP_GRAPHQL_URL=${GRAPHQL_URL}
 
 RUN yarn global add lerna
 
@@ -19,7 +20,6 @@ COPY packages/uw-domain ./packages/uw-domain
 COPY packages/uw-logging ./packages/uw-logging
 COPY packages/uw-api-graph ./packages/uw-api-graph
 
-
 RUN lerna bootstrap
 
 FROM node:9-alpine
@@ -27,8 +27,9 @@ WORKDIR /usr/src/app
 EXPOSE 4000
 
 ARG API_URL
-
+ARG GRAPHQL_URL
 ENV REACT_APP_API_BASE_URL=${API_URL}
+ENV REACT_APP_GRAPHQL_URL=${GRAPHQL_URL}
 
 COPY --from=BUILD /usr/src/app /usr/src/app
 
