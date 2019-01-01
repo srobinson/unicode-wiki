@@ -2,7 +2,7 @@ import {RESTDataSource} from "apollo-datasource-rest"
 import {WikiPage} from "@uw/domain"
 import "../config"
 
-const BASE_URL = process.env.REACT_APP_API_BASE_URL
+const BASE_URL = process.env.REACT_APP_WIKI_SERVICE_URL
 
 export class WikiAPI extends RESTDataSource {
   constructor() {

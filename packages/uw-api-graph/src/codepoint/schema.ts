@@ -5,7 +5,6 @@ export const typeDef = gql`
     codepoints: PaginatedCodepointResult!
     codepointByUCP(ucp: String!): Codepoint
     codepointsByCategoryKey(category: String!, key: String!, page: Int): PaginatedCodepointResult!
-    suggest(prefix: String!): [String]!
     search(q: String!): PaginatedCodepointResult!
   }
 

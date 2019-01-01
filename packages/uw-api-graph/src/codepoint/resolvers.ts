@@ -24,14 +24,6 @@ export const resolvers = {
       return await dataSources.codepointAPI.getByCategoryKey(category, key, page)
     },
 
-    async suggest(
-      _: any,
-      {prefix}: any,
-      {dataSources}: {dataSources: dataSource},
-    ): Promise<String[]> {
-      return await dataSources.codepointAPI.suggest(prefix)
-    },
-
     async search(
       _: any,
       {q}: any,

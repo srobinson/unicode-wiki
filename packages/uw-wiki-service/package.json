@@ -1,0 +1,21 @@
+{
+  "name": "@uw/wiki-service",
+  "private": true,
+  "version": "0.0.1",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "echo '@uw/wiki-service' && tsc",
+    "dev": "ts-node-dev src/index.ts",
+    "lint": "tslint 'src/**/*.ts'",
+    "start:wiki-service": "node dist/index.js",
+    "watch": "tsc -w"
+  },
+  "dependencies": {
+    "@uw/domain": "0.0.1",
+    "@uw/logging": "0.0.1",
+    "@uw/utils": "0.0.1"
+  },
+  "devDependencies": {
+    "@types/tmp": "0.0.33"
+  }
+}

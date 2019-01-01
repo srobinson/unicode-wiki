@@ -29,11 +29,6 @@ export class CodepointAPI extends RESTDataSource {
     return res
   }
 
-  public async suggest(prefix: string): Promise<String[]> {
-    const res = await this.get(`codepoints/suggest/${prefix}`)
-    return res
-  }
-
   public async search(q: string): Promise<PaginatedCodepointResult> {
     const res = await this.get(`search?q=${q}`)
     return res
