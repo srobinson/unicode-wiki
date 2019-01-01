@@ -30,15 +30,15 @@ then
   >&2 echo error
 fi
 
-# deploy api \
-#   $VERSION_API \
-#   $MONGO_URL \
-#   $ES_URL
+deploy api \
+  $VERSION_API \
+  $MONGO_URL \
+  $ES_URL
 
-# deploy api-graph \
-#   $VERSION_API_GRAPH \
-#   $API_URL \
-#   $GRAPHQL_PORT
+deploy api-graph \
+  $VERSION_API_GRAPH \
+  $API_URL \
+  $GRAPHQL_PORT
 
 deploy api-graph \
   $(read_var VERSION_API_GRAPH .env.prod) \
