@@ -1,6 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"run":"uw-api-graph-web"},"name":"uw-api-graph-web","namespace":"default","selfLink":"/api/v1/namespaces/default/services/uw-api-graph-web"},"spec":{"ports":[{"port":80,"protocol":"TCP","targetPort":4000}],"selector":{"run":"uw-api-graph-web"},"sessionAffinity":"None","type":"ClusterIP"},"status":{"loadBalancer":{}}}
+  creationTimestamp: null
   labels:
     run: uw-api-graph-web
   name: uw-api-graph-web

@@ -1,4 +1,4 @@
-ARG MONGO_URL
+ARG ES_URL
 FROM node:9-alpine AS BUILD
 WORKDIR /usr/src/app
 
@@ -11,12 +11,10 @@ COPY package.json \
      tslint.json \
      lerna.json ./
 
-COPY assets/UCD ./assets/UCD
-COPY packages/uw-seed ./packages/uw-seed
 COPY packages/uw-domain ./packages/uw-domain
 COPY packages/uw-logging ./packages/uw-logging
 COPY packages/uw-utils ./packages/uw-utils
-COPY packages/uw-api ./packages/uw-api
+COPY packages/uw-search-service ./packages/uw-search-service
 
 RUN lerna bootstrap
 
@@ -24,14 +22,14 @@ FROM node:9-alpine
 WORKDIR /usr/src/app
 EXPOSE 3001
 
-ARG MONGO_URL
+ARG ES_URL
 
-ENV MONGO_URL=${MONGO_URL}
+ENV ES_URL=${ES_URL}
 ENV NODE_ENV=production
-ENV NODE_PORT=3001
+ENV SEARCH_SERVICE_PORT=5001
 
 COPY --from=BUILD /usr/src/app /usr/src/app
 
 RUN apk update && apk add curl
 
-ENTRYPOINT ["node", "/usr/src/app/packages/uw-api/dist/index.js"]
+ENTRYPOINT ["node", "/usr/src/app/packages/uw-search-service/dist/index.js"]

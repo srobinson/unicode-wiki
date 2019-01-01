@@ -44,12 +44,28 @@ spec:
           serviceName: uw-api-graph-web
           servicePort: 80
         path: /
+  - host: search.unicode.wiki
+    http:
+      paths:
+      - backend:
+          serviceName: uw-search-service-web
+          servicePort: 80
+        path: /
+  - host: wiki.unicode.wiki
+    http:
+      paths:
+      - backend:
+          serviceName: uw-wiki-service-web
+          servicePort: 80
+        path: /
   tls:
   - hosts:
     - unicode.wiki
     - www.unicode.wiki
     - api.unicode.wiki
     - graph.unicode.wiki
+    - search.unicode.wiki
+    - wiki.unicode.wiki
     secretName: unicode-wiki-tls
 status:
   loadBalancer: {}

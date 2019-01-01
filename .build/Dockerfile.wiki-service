@@ -1,10 +1,5 @@
-ARG API_URL
 FROM node:9-alpine AS BUILD
 WORKDIR /usr/src/app
-
-ARG API_URL
-
-ENV REACT_APP_API_BASE_URL=${API_URL}
 
 RUN yarn global add lerna
 
@@ -17,21 +12,20 @@ COPY package.json \
 
 COPY packages/uw-domain ./packages/uw-domain
 COPY packages/uw-logging ./packages/uw-logging
-COPY packages/uw-api-graph ./packages/uw-api-graph
-
+COPY packages/uw-utils ./packages/uw-utils
+COPY packages/uw-wiki-service ./packages/uw-wiki-service
 
 RUN lerna bootstrap
 
 FROM node:9-alpine
 WORKDIR /usr/src/app
-EXPOSE 4000
+EXPOSE 6001
 
-ARG API_URL
-
-ENV REACT_APP_API_BASE_URL=${API_URL}
+ENV NODE_ENV=production
+ENV WIKI_SERVICE_PORT=6001
 
 COPY --from=BUILD /usr/src/app /usr/src/app
 
 RUN apk update && apk add curl
 
-ENTRYPOINT ["node", "/usr/src/app/packages/uw-api-graph/dist/index.js"]
+ENTRYPOINT ["node", "/usr/src/app/packages/uw-wiki-service/dist/index.js"]
