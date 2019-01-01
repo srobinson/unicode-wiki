@@ -13,7 +13,9 @@ metadata:
   name: uw-mongo-mongodb
   selfLink: /apis/extensions/v1beta1/namespaces/default/deployments/uw-mongo-mongodb
 spec:
+  progressDeadlineSeconds: 600
   replicas: 1
+  revisionHistoryLimit: 10
   selector:
     matchLabels:
       app: mongodb

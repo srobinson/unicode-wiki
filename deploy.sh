@@ -5,14 +5,18 @@ set -a
 set +a
 
 deploy() {
-  if ! docker images | grep -v 'grep' | grep "$1.*$2"; then
-    echo building gcr.io/unicode-wiki/uw-$1:$2 $3 $4 $5 ...
+  if ! docker images | grep -v 'grep' | grep "$1\s.*$2"; then
+    echo building gcr.io/unicode-wiki/uw-$1:$2 $3 $4 $5 $6 ...
     if [ $1 == "api" ]; then
-      docker build --no-cache --build-arg MONGO_URL=$3 --build-arg ES_URL=$4 -f Dockerfile.$1 -t gcr.io/unicode-wiki/uw-$1:$2 . || exit 3
+      docker build --no-cache --build-arg MONGO_URL=$3 -f .build/Dockerfile.$1 -t gcr.io/unicode-wiki/uw-$1:$2 . || exit 3
+    elif [ $1 == "search-service" ]; then
+      docker build --no-cache --build-arg ES_URL=$3 -f .build/Dockerfile.$1 -t gcr.io/unicode-wiki/uw-$1:$2 . || exit 3
+    elif [ $1 == "wiki-service" ]; then
+      docker build --no-cache -f .build/Dockerfile.$1 -t gcr.io/unicode-wiki/uw-$1:$2 . || exit 3
     elif [ $1 == "api-graph" ]; then
-      docker build --build-arg API_URL=$3 --build-arg GRAPHQL_PORT=$4 -f Dockerfile.$1 -t gcr.io/unicode-wiki/uw-$1:$2 . || exit 3
+      docker build --build-arg GRAPHQL_PORT=$3 --build-arg API_URL=$4 --build-arg SEARCH_URL=$5 --build-arg WIKI_URL=$6 -f .build/Dockerfile.$1 -t gcr.io/unicode-wiki/uw-$1:$2 . || exit 3
     elif [ $1 == "app" ]; then
-      docker build --no-cache --build-arg GRAPHQL_URL=$3 --build-arg FONTS_URL=$4 --build-arg ANALYTICS_ID=$5 -f Dockerfile.$1 -t gcr.io/unicode-wiki/uw-$1:$2 . || exit 3
+      docker build --no-cache --build-arg GRAPHQL_URL=$3 --build-arg FONTS_URL=$4 --build-arg ANALYTICS_ID=$5 -f .build/Dockerfile.$1 -t gcr.io/unicode-wiki/uw-$1:$2 . || exit 3
     fi
     echo docker build gcr.io/unicode-wiki/uw-$1:$2 complete
   fi
@@ -32,17 +36,21 @@ fi
 
 deploy api \
   $VERSION_API \
-  $MONGO_URL \
+  $MONGO_URL
+
+deploy search-service \
+  $VERSION_SEARCH_SERVICE \
   $ES_URL
+
+deploy wiki-service \
+  $VERSION_WIKI_SERVICE
 
 deploy api-graph \
   $VERSION_API_GRAPH \
+  $GRAPHQL_PORT \
   $API_URL \
-  $GRAPHQL_PORT
-
-deploy api-graph \
-  $(read_var VERSION_API_GRAPH .env.prod) \
-  $(read_var API_URL .env.prod) \
+  $SEARCH_URL \
+  $WIKI_URL
 
 deploy app \
   $VERSION_APP \

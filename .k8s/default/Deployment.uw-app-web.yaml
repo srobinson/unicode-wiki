@@ -2,7 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   annotations:
-    deployment.kubernetes.io/revision: "95"
+    deployment.kubernetes.io/revision: "98"
   creationTimestamp: null
   generation: 1
   labels:
@@ -10,7 +10,9 @@ metadata:
   name: uw-app-web
   selfLink: /apis/extensions/v1beta1/namespaces/default/deployments/uw-app-web
 spec:
+  progressDeadlineSeconds: 600
   replicas: 1
+  revisionHistoryLimit: 10
   selector:
     matchLabels:
       run: uw-app-web
@@ -27,13 +29,15 @@ spec:
         run: uw-app-web
     spec:
       containers:
-      - image: gcr.io/unicode-wiki/uw-app:dev6.0
+      - image: gcr.io/unicode-wiki/uw-app:dev10.1
         imagePullPolicy: IfNotPresent
         name: uw-app-web
         ports:
         - containerPort: 80
           protocol: TCP
-        resources: {}
+        resources:
+          requests:
+            cpu: 50m
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
       dnsPolicy: ClusterFirst

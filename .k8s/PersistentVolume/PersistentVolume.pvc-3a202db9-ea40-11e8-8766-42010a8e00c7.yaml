@@ -6,6 +6,8 @@ metadata:
     pv.kubernetes.io/bound-by-controller: "yes"
     pv.kubernetes.io/provisioned-by: kubernetes.io/gce-pd
   creationTimestamp: null
+  finalizers:
+  - kubernetes.io/pv-protection
   labels:
     failure-domain.beta.kubernetes.io/region: us-east1
     failure-domain.beta.kubernetes.io/zone: us-east1-b
