@@ -1,12 +1,16 @@
 # Unicode browser with wikipedia integration
 
+https://unicode.wiki
+
+![](assets/psd/screens.png?0.6562068735457673 )
+
+## Motivation
+
 unicode.wiki is a fully indexed, browsable and searchable dictionary of unicode characters spanning the basic and supplementary unicode planes. The project attempts to render all codepoints using sourced fonts, however in some cases you will see either a blank rendering or the missing glyph character `𞸁`. Integration with wikipedia.org is implemeted though the https://en.wikipedia.org/api/rest_v1 page api and https://en.wikipedia.org/w/api.php search api. Not all codepoints have a wiki page.
 
 The idea behind the project has been lurking inside me for some years now, and was born out of an interest in unicode, World travel and the origin or languages.
 
-I also wanted to experiment with the idea of organizing repos in a monorepo and decided to use this as a means of testing out Lerna and yarn workspaces. The excercise has taught me a lot! and I will share the love in an upcoming blog.
-
-In addition, time allowing and given enough interest, I will create a tutorial covering the design/development and deployment to kubernetes... star/watch if you are interested.
+I also wanted to experiment with a monorepo and decided to use this as a means of testing out Lerna and yarn workspaces. The excercise has taught me a great deal and I will be sharing my discoveries an upcoming blog.
 
 References:
 
@@ -23,6 +27,7 @@ References:
 * Responsive, mobile first design allowing easy browsing from any device
 
 ## Core technology used
+
 
 * [apollo-client] (https://github.com/apollographql/apollo-client)
 * [apollo-server] (https://github.com/apollographql/apollo-server)
@@ -43,24 +48,14 @@ References:
 * [typescript] (https://github.com/Microsoft/TypeScript)
 * [winston] (https://github.com/winstonjs/winston)
 
-## Future enhancement
-
-Given time/resources I wil add new features
-
-* Create a homepage (would you like to contribute?)
-* i18n/l10n
-* Further documentation
-* Further test coverage
-* Improved elasticsearch index
-* Improved messaging
-* Addtional integration via google search and youtube
-* Persist codepoints to a favorite list
-* Generate/export font from list of codepoints
-* Any community feedback...
-
 ## Disclaimer
 
+
 This project is very early beta stage and serves as a proof of concept/exploration of Lerna monorepos. Should you discover any bugs please do create an issue/pr
+
+## Deployment Diagram
+
+![](assets/psd/deployment-diagram.4k.png?0.36817197259025214 )
 
 # Local dev installation
 
@@ -98,10 +93,11 @@ To cleanup when you are done:
 
 # Starting the services
 
-If you are not running mongo/elasticsearch on the following addresses, update the config in `.env`
 
-* mongo on localhost:27017
-* elasticsearch on localhost:9200
+If you are not running mongo/elasticsearch on the following ports, update the config in `.env`
+
+* mongo: 27017
+* elasticsearch: 9200
 
 ```
 # compile the source

@@ -18,6 +18,7 @@ NOTES
 npm-debug.log
 packages/uw-api/src/endpoints/wiki/wiki-page-dao.ts
 packages/uw-app/test
+README_.md
 tmp*
 yarn.error.log
 ZNOTES
