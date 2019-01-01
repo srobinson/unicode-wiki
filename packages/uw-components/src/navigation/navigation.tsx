@@ -24,20 +24,25 @@ export class ExplorerNavigation extends React.PureComponent<NavigationComponentP
   }
 
   openNavigationTitleMenu = () => {
-    this.setState(
-      {
-        isNavigationTitleMenuOpen: !this.state.isNavigationTitleMenuOpen,
-        isNavigationTypeMenuOpen: false,
-      },
-      () => {
-        const activeComponent = this.activeNode.current
-        if (activeComponent) {
-          document.body.classList.toggle("is-locked", true)
-          activeComponent.scrollIntoView({behavior: "smooth", block: "center"})
-        }
-        setTimeout(() => document.body.setAttribute("data-animate", "in"))
-      },
-    )
+    const {isNavigationTitleMenuOpen} = this.state
+    if (isNavigationTitleMenuOpen) {
+      this.close()
+    } else {
+      this.setState(
+        {
+          isNavigationTitleMenuOpen: true,
+          isNavigationTypeMenuOpen: false,
+        },
+        () => {
+          const activeComponent = this.activeNode.current
+          if (activeComponent) {
+            document.body.classList.toggle("is-locked", true)
+            activeComponent.scrollIntoView({behavior: "smooth", block: "center"})
+          }
+          setTimeout(() => document.body.setAttribute("data-animate", "in"))
+        },
+      )
+    }
   }
 
   searchCategories = (term: string) => {
