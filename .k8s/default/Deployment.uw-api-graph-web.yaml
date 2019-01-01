@@ -1,0 +1,30 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    run: uw-api-graph-web
+  name: uw-api-graph-web
+  selfLink: /apis/extensions/v1beta1/namespaces/default/deployments/uw-api-graph-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: uw-api-graph-web
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        run: uw-api-graph-web
+    spec:
+      containers:
+      - image: gcr.io/unicode-wiki/uw-api-graph:dev10.0
+        imagePullPolicy: IfNotPresent
+        name: uw-api-graph-web
+        ports:
+        - containerPort: 4000
+          protocol: TCP
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      terminationGracePeriodSeconds: 30

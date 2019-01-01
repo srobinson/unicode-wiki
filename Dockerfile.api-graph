@@ -1,0 +1,35 @@
+ARG API_URL
+ARG GRAPHQL_PORT
+FROM node:9-alpine AS BUILD
+WORKDIR /usr/src/app
+
+RUN yarn global add lerna
+
+COPY package.json \
+     yarn.lock \
+     tsconfig.json \
+     jest.config.js \
+     tslint.json \
+     lerna.json ./
+
+COPY packages/uw-domain ./packages/uw-domain
+COPY packages/uw-logging ./packages/uw-logging
+COPY packages/uw-api-graph ./packages/uw-api-graph
+
+RUN lerna bootstrap
+
+FROM node:9-alpine
+WORKDIR /usr/src/app
+EXPOSE 4000
+
+ARG API_URL
+ARG GRAPHQL_PORT
+
+ENV REACT_APP_API_BASE_URL=${API_URL}
+ENV GRAPHQL_PORT=${GRAPHQL_PORT}
+
+COPY --from=BUILD /usr/src/app /usr/src/app
+
+RUN apk update && apk add curl
+
+ENTRYPOINT ["node", "/usr/src/app/packages/uw-api-graph/dist/server.js"]

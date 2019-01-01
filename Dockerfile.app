@@ -1,15 +1,16 @@
-ARG API_URL
+ARG GRAPHQL_URL
 ARG FONTS_URL
 ARG ANALYTICS_ID
 FROM node:9-alpine as BUILD
 WORKDIR /build
 
-ARG API_URL
+ARG GRAPHQL_URL
 ARG FONTS_URL
+ARG ANALYTICS_ID
 
-ENV REACT_APP_API_BASE_URL=${API_URL}
+ENV REACT_APP_GRAPHQL_URL=${GRAPHQL_URL}
 ENV REACT_APP_FONTS_URL=${FONTS_URL}
-ENV REACT_APP_GOOGLE_ANALYTICS_ID={ANALYTICS_ID}
+ENV REACT_APP_GOOGLE_ANALYTICS_ID=${ANALYTICS_ID}
 
 RUN yarn global add lerna
 
@@ -23,6 +24,7 @@ COPY package.json \
 COPY assets/www assets/www
 COPY packages/uw-utils packages/uw-utils
 COPY packages/uw-domain packages/uw-domain
+COPY packages/uw-api-graph packages/uw-api-graph
 COPY packages/uw-store packages/uw-store
 COPY packages/uw-hoc packages/uw-hoc
 COPY packages/uw-containers packages/uw-containers

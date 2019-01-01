@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    run: uw-api-graph-web
+  name: uw-api-graph-web
+  selfLink: /api/v1/namespaces/default/services/uw-api-graph-web
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 4000
+  selector:
+    run: uw-api-graph-web
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
