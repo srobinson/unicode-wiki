@@ -1,11 +1,7 @@
 ARG API_URL
-ARG GRAPHQL_URL
+ARG GRAPHQL_PORT
 FROM node:9-alpine AS BUILD
 WORKDIR /usr/src/app
-
-ARG API_URL
-ENV REACT_APP_API_BASE_URL=${API_URL}
-ENV REACT_APP_GRAPHQL_URL=${GRAPHQL_URL}
 
 RUN yarn global add lerna
 
@@ -27,12 +23,13 @@ WORKDIR /usr/src/app
 EXPOSE 4000
 
 ARG API_URL
-ARG GRAPHQL_URL
+ARG GRAPHQL_PORT
+
 ENV REACT_APP_API_BASE_URL=${API_URL}
-ENV REACT_APP_GRAPHQL_URL=${GRAPHQL_URL}
+ENV GRAPHQL_PORT=${GRAPHQL_PORT}
 
 COPY --from=BUILD /usr/src/app /usr/src/app
 
 RUN apk update && apk add curl
 
-ENTRYPOINT ["node", "/usr/src/app/packages/uw-api-graph/dist/index.js"]
+ENTRYPOINT ["node", "/usr/src/app/packages/uw-api-graph/dist/server.js"]

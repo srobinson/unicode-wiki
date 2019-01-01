@@ -10,9 +10,9 @@ deploy() {
     if [ $1 == "api" ]; then
       docker build --no-cache --build-arg MONGO_URL=$3 --build-arg ES_URL=$4 -f Dockerfile.$1 -t gcr.io/unicode-wiki/uw-$1:$2 . || exit 3
     elif [ $1 == "api-graph" ]; then
-      docker build --no-cache --build-arg API_URL=$3 --build-arg GRAPHQL_URL=$4 -f Dockerfile.$1 -t gcr.io/unicode-wiki/uw-$1:$2 . || exit 3
+      docker build --build-arg API_URL=$3 --build-arg GRAPHQL_PORT=$4 -f Dockerfile.$1 -t gcr.io/unicode-wiki/uw-$1:$2 . || exit 3
     elif [ $1 == "app" ]; then
-      docker build --no-cache --build-arg API_URL=$3 --build-arg FONTS_URL=$4 --build-arg ANALYTICS_ID=$5 -f Dockerfile.$1 -t gcr.io/unicode-wiki/uw-$1:$2 . || exit 3
+      docker build --no-cache --build-arg GRAPHQL_URL=$3 --build-arg FONTS_URL=$4 --build-arg ANALYTICS_ID=$5 -f Dockerfile.$1 -t gcr.io/unicode-wiki/uw-$1:$2 . || exit 3
     fi
     echo docker build gcr.io/unicode-wiki/uw-$1:$2 complete
   fi
@@ -35,14 +35,14 @@ fi
 #   $MONGO_URL \
 #   $ES_URL
 
-deploy api-graph \
-  $VERSION_API_GRAPH \
-  $API_URL \
-  $GRAPHQL_URL
-
-# deploy app \
-#   $VERSION_APP \
+# deploy api-graph \
+#   $VERSION_API_GRAPH \
 #   $API_URL \
-#   $FONTS_URL \
-#   $ANALYTICS_ID
+#   $GRAPHQL_PORT
+
+deploy app \
+  $VERSION_APP \
+  $GRAPHQL_URL \
+  $FONTS_URL \
+  $ANALYTICS_ID
 

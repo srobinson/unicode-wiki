@@ -43,7 +43,7 @@ spec:
       - backend:
           serviceName: uw-api-graph-web
           servicePort: 80
-        path: /graphql
+        path: /
   tls:
   - hosts:
     - unicode.wiki
