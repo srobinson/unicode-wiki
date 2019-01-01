@@ -15,4 +15,5 @@ export const apolloClient = new ApolloClient({
 
 export * from "./category/queries"
 export * from "./codepoint/queries"
+export * from "./search/queries"
 export * from "./wiki/queries"

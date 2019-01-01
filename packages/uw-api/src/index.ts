@@ -20,7 +20,7 @@ MongoDb.connect().then(() => {
       if (err) {
         return logger.error(jsonifyError(err))
       }
-      return logger.info(`😊 Express server listening on port [${PORT}]`)
+      return logger.info(`😊 api listening on port [${PORT}]`)
     })
   }
 })

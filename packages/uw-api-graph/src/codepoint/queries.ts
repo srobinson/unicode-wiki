@@ -47,9 +47,3 @@ export const CODEPOINTS_SEARCH = (q: string) => gql`
     }
   }
 `
-
-export const CODEPOINTS_SUGGEST = (prefix: string) => gql`
-  query {
-    suggest(prefix: "${prefix}")
-  }
-`
