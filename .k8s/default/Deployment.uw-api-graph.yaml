@@ -1,0 +1,30 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    run: uw-api-graph
+  name: uw-api-graph
+  selfLink: /apis/extensions/v1beta1/namespaces/default/deployments/uw-api-graph
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: uw-api-graph
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        run: uw-api-graph
+    spec:
+      containers:
+      - image: gcr.io/unicode-wiki/uw-api-graphql:dev6.0
+        imagePullPolicy: IfNotPresent
+        name: uw-api-graph
+        ports:
+        - containerPort: 4000
+          protocol: TCP
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      terminationGracePeriodSeconds: 30

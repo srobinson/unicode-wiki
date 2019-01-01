@@ -40,6 +40,10 @@ fi
 #   $API_URL \
 #   $GRAPHQL_PORT
 
+deploy api-graph \
+  $(read_var VERSION_API_GRAPH .env.prod) \
+  $(read_var API_URL .env.prod) \
+
 deploy app \
   $VERSION_APP \
   $GRAPHQL_URL \
