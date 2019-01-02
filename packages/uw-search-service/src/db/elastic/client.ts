@@ -8,7 +8,7 @@ export const client: elastic.Client = new elastic.Client({
   log: "trace",
 })
 
-export default client
+// export default client
 
 client.cluster.health({}, (err: any, resp: any) => {
   logger.info("-- Client Health --", resp)
