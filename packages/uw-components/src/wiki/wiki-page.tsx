@@ -123,26 +123,3 @@ const parseSearchHits = (content: WikiPage | undefined) =>
       </Styled.SearchHit>
     ))) ||
   undefined
-
-export const parseHtml = (text: string) => {
-  const node = htmlParser(text)
-  const children = Array.from(node.childNodes)
-  let src = ""
-  children.forEach(node => {
-    if (node.nodeType === 1) {
-      // @ts-ignore
-      src += `<div>${node.outerHTML}</div>`
-    }
-  })
-  return src
-}
-
-export const htmlParser = (htmlString: string) => {
-  let docfrag = document.createDocumentFragment()
-  const div = document.createElement("DIV")
-  div.innerHTML = htmlString
-  while (div.childNodes[0]) {
-    docfrag.appendChild(div.childNodes[0])
-  }
-  return docfrag
-}

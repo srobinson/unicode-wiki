@@ -1,3 +1,4 @@
+// "extends": ["tslint-config-security"],
 {
   "rulesDirectory": ["tslint-config-prettier"],
   "rules": {

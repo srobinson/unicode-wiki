@@ -91,7 +91,7 @@ export const CodepointContainer = styled("div")`
   background-origin: padding-box;
   background-clip: border-box;
   background-size: cover;
-  padding: 2rem 0 5rem;
+  padding: 2rem 0 2rem;
   position: relative;
   margin-left: -4rem;
   margin-bottom: 0;
@@ -115,9 +115,9 @@ export const Codepoint = styled("div")`
 
   @media (min-width: 1024px) {
     font-size: 250px;
-    height: 500px;
-    line-height: 400px;
-    width: 500px;
+    height: 325px;
+    line-height: 250px;
+    width: 325px;
   }
 `
 
@@ -132,7 +132,7 @@ export const WikiPage = styled("article")`
   overflow-y: scroll;
   position: fixed;
   top: 0;
-  transform: scale(0.9);
+  transform: scale(0.99);
   width: 100%;
   z-index: 1;
 
@@ -155,7 +155,7 @@ export const WikiPage = styled("article")`
 
   body[data-animate="out"] & {
     opacity: 0;
-    transform: scale(0.9);
+    transform: scale(0.99);
     transition: transform 120ms ease-in, opacity 150ms ease-in;
   }
 `

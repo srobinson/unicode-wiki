@@ -10,7 +10,7 @@ import {CODEPOINTS, FETCH_CODEPOINTS, SET_CODEPOINTS} from "./constants"
 
 export const followLink = (link: Link): ApiSearchAction => {
   const parts = link.href.match(
-    /\/api\/(symbol|script|block)\/([a-z-]+)\/codepoints\?page=([0-9]+)/,
+    /\/api\/(symbol|script|block)\/([a-z-&]+)\/codepoints\?page=([0-9]+)/,
   )
   if (!parts) {
     throw new InternalException(new Error(`Cannot match parts for ${link}`))

@@ -37,7 +37,7 @@ export class ExplorerNavigation extends React.PureComponent<NavigationComponentP
           const activeComponent = this.activeNode.current
           if (activeComponent) {
             document.body.classList.toggle("is-locked", true)
-            activeComponent.scrollIntoView({behavior: "smooth", block: "center"})
+            activeComponent.scrollIntoView({block: "center"})
           }
           setTimeout(() => document.body.setAttribute("data-animate", "in"))
         },

@@ -89,7 +89,7 @@ export const NavigationMenu = styled("ul")`
 `
 
 export const MenuItem = styled("li")`
-  background: ${(props: any) => (props.active ? "#1b7bbb" : "#0e314d")};
+  background: ${(props: any) => (props.active ? "#0e314d" : "#0e314d")};
   border-left: ${(props: any) => (props.active ? "1rem solid tomato" : "0")};
   color: #ddd;
   cursor: pointer;
@@ -99,23 +99,23 @@ export const MenuItem = styled("li")`
   padding: 8px 16px;
   text-transform: capitalize;
 
-  ${(props: any) => ({isNavigationTypeMenuOpen, categoryType}) =>
-    !isNavigationTypeMenuOpen && categoryType !== "blocks"
-      ? css`
-          box-shadow: 0px 0px 1px 1px rgb(0, 0, 0, 0.5);
-          padding: 1rem;
-          position: sticky;
-          top: 0;
-        `
-      : css``};
+  ${(props: any) => ({categoryType, level}) =>
+    categoryType !== "blocks" &&
+    level === 0 &&
+    css`
+      /* background: #104469; */
+      /* box-shadow: 0px 0px 1px 1px rgb(0, 0, 0, 0.5); */
+      border-bottom: 1px solid #0e141f;
+      border-top: 1px solid #0e141f;
+      margin: -1px;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+    `};
 
   &:hover,
   &:active {
     color: #fff;
-  }
-
-  &:hover {
-    background: ${(props: any) => (props.active ? "#1b7bbb" : "#104469")};
   }
 
   &:active {
@@ -125,8 +125,8 @@ export const MenuItem = styled("li")`
   ${(props: any) => ({active, categoryType, isNavigationTypeMenuOpen, level}) =>
     (level > 0 || categoryType === "blocks" || isNavigationTypeMenuOpen) &&
     css`
-      border-left: ${level === 1 ? ".5rem solid" : "1rem solid"};
-      border-left-color: ${active ? "tomato" : level === 1 ? "#114468" : "#114468"};
+      border-left: ${level === 1 ? "1rem solid" : "2rem solid"};
+      border-left-color: ${active ? "tomato" : "transparent"};
       font-size: 0.8rem;
       position: unset;
     `};

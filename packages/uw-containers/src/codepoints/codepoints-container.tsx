@@ -127,7 +127,7 @@ class CodepointContainer extends React.PureComponent<CodepointContainerProps & O
       const CardComponent = this.props.cardComponent
       const renderedCodepoints = codepoints.result.docs.map(
         (codepoint: CodepointDocument, index: number) => {
-          const thisTitle = codepoint["block"].value
+          const thisTitle = `${codepoint["block_header"]}: ${codepoint["block_subheader"]}`
           if (
             match.path !== "/search" &&
             match.params.category !== "blocks" &&
