@@ -1,24 +1,25 @@
 ARG MONGO_URL
-FROM node:9-alpine AS BUILD
+FROM gcr.io/unicode-wiki/uw-base AS BUILD
+
 WORKDIR /usr/src/app
 
-RUN yarn global add lerna
-
 COPY package.json \
-     yarn.lock \
      tsconfig.json \
      jest.config.js \
      tslint.json \
      lerna.json ./
 
-COPY assets/UCD ./assets/UCD
-COPY packages/uw-seed ./packages/uw-seed
+COPY --from=gcr.io/unicode-wiki/uw-packages /tmp/node_modules ./node_modules
+COPY --from=gcr.io/unicode-wiki/uw-assets /tmp/assets/UCD ./assets/UCD
+
 COPY packages/uw-domain ./packages/uw-domain
 COPY packages/uw-logging ./packages/uw-logging
 COPY packages/uw-utils ./packages/uw-utils
 COPY packages/uw-api ./packages/uw-api
+COPY packages/uw-seed ./packages/uw-seed
 
-RUN lerna bootstrap
+RUN yarn prepare
+
 
 FROM node:9-alpine
 WORKDIR /usr/src/app
@@ -31,7 +32,5 @@ ENV NODE_ENV=production
 ENV NODE_PORT=3001
 
 COPY --from=BUILD /usr/src/app /usr/src/app
-
-RUN apk update && apk add curl
 
 ENTRYPOINT ["node", "/usr/src/app/packages/uw-api/dist/index.js"]

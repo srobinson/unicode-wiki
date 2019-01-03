@@ -2,10 +2,9 @@ ARG GRAPHQL_PORT
 ARG API_URL
 ARG SEARCH_URL
 ARG WIKI_URL
-FROM node:9-alpine AS BUILD
-WORKDIR /usr/src/app
+FROM gcr.io/unicode-wiki/uw-base AS BUILD
 
-RUN yarn global add lerna
+WORKDIR /usr/src/app
 
 COPY package.json \
      yarn.lock \
@@ -14,11 +13,14 @@ COPY package.json \
      tslint.json \
      lerna.json ./
 
+COPY --from=gcr.io/unicode-wiki/uw-packages /tmp/node_modules ./node_modules
+
 COPY packages/uw-domain ./packages/uw-domain
 COPY packages/uw-logging ./packages/uw-logging
 COPY packages/uw-api-graph ./packages/uw-api-graph
 
-RUN lerna bootstrap
+RUN yarn prepare
+
 
 FROM node:9-alpine
 WORKDIR /usr/src/app

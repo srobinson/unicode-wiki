@@ -107,7 +107,7 @@ export const MenuItem = styled("li")`
       /* box-shadow: 0px 0px 1px 1px rgb(0, 0, 0, 0.5); */
       border-bottom: 1px solid #0e141f;
       border-top: 1px solid #0e141f;
-      margin: -1px;
+      margin: 1px;
       padding: 1rem;
       position: sticky;
       top: 0;
