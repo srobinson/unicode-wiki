@@ -1,7 +1,5 @@
 language: node_js
 before_install:
-  - sudo killall mongod
-  - sudo killall elastcsearch
   - ./compose.sh
   - yarn add global -W lerna
 install:
