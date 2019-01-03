@@ -131,7 +131,6 @@ class Runner {
         await client.createCategories(blocksDict)
         await client.createCollection(codePointDict)
         await esClient.bulkInsert()
-        await client.exitProcess()
       },
     ])
   }
