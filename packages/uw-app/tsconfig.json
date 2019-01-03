@@ -12,5 +12,6 @@
     "rootDir": "src",
     "target": "es5"
     },
-  "exclude": ["test", "build"]
+  "exclude": ["test", "build"],
+  "include": ["../../jest.config.base.js"]
 }
