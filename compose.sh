@@ -7,9 +7,6 @@ compose() {
     $1
 }
 
-# -f ./.docker-compose/kibana.yml \
-# -f ./.docker-compose/logstash.yml \
-
 compose ${1:-"up -d"}
 
 ERROR_CODE=$?
@@ -19,3 +16,6 @@ if [ $ERROR_CODE -eq 1 ]; then
   compose down
 fi
 
+# optional deps
+# -f ./.docker-compose/kibana.yml \
+# -f ./.docker-compose/logstash.yml \

@@ -133,6 +133,7 @@
     "react-scripts-ts": "3.1.0",
     "redux-mock-store": "1.5.3",
     "rimraf": "2.6.2",
+    "semantic-release": "15.13.2",
     "supertest": "3.3.0",
     "ts-jest": "23.10.4",
     "ts-loader": "5.2.2",
