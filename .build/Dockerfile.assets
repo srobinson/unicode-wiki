@@ -1,0 +1,3 @@
+FROM scratch
+WORKDIR /tmp
+COPY assets assets

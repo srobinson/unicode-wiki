@@ -1,0 +1,8 @@
+FROM node:9-alpine AS BUILD
+
+RUN yarn global add lerna \
+  && apk update \
+  && apk add yarn \
+  && apk add curl \
+  && apk add vim
+

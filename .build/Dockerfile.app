@@ -1,7 +1,8 @@
 ARG GRAPHQL_URL
 ARG FONTS_URL
 ARG ANALYTICS_ID
-FROM node:9-alpine as BUILD
+FROM gcr.io/unicode-wiki/uw-base AS BUILD
+
 WORKDIR /build
 
 ARG GRAPHQL_URL
@@ -12,8 +13,6 @@ ENV REACT_APP_GRAPHQL_URL=${GRAPHQL_URL}
 ENV REACT_APP_FONTS_URL=${FONTS_URL}
 ENV REACT_APP_GOOGLE_ANALYTICS_ID=${ANALYTICS_ID}
 
-RUN yarn global add lerna
-
 COPY package.json \
      yarn.lock \
      tsconfig.json \
@@ -21,21 +20,26 @@ COPY package.json \
      tslint.json \
      lerna.json ./
 
-COPY assets/www assets/www
+COPY --from=gcr.io/unicode-wiki/uw-packages /tmp/node_modules ./node_modules
+COPY --from=gcr.io/unicode-wiki/uw-assets /tmp/assets/www ./assets/www
+
 COPY packages/uw-utils packages/uw-utils
 COPY packages/uw-domain packages/uw-domain
-COPY packages/uw-api-graph packages/uw-api-graph
-COPY packages/uw-store packages/uw-store
+COPY packages/uw-components packages/uw-components
 COPY packages/uw-hoc packages/uw-hoc
 COPY packages/uw-containers packages/uw-containers
-COPY packages/uw-components packages/uw-components
+COPY packages/uw-api-graph packages/uw-api-graph
+COPY packages/uw-store packages/uw-store
 COPY packages/uw-app packages/uw-app
+COPY --from=gcr.io/unicode-wiki/uw-assets /tmp/assets/www ./assets/www
 
-RUN lerna bootstrap && yarn build:app
+RUN yarn prepare && yarn build:app
 
 # FROM sdelrio/docker-minimal-nginx
 FROM nginx:stable
+
 WORKDIR /var/www
+
 EXPOSE 80
 
 ENV NODE_ENV=production

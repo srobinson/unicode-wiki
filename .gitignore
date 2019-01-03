@@ -1,5 +1,6 @@
 !!*
 _data
+_tmp
 .env.prod
 .gcloud
 .k8s/kube*

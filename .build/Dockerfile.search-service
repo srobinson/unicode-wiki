@@ -1,15 +1,15 @@
 ARG ES_URL
-FROM node:9-alpine AS BUILD
+FROM gcr.io/unicode-wiki/uw-base AS BUILD
+
 WORKDIR /usr/src/app
 
-RUN yarn global add lerna
-
 COPY package.json \
-     yarn.lock \
      tsconfig.json \
      jest.config.js \
      tslint.json \
      lerna.json ./
+
+COPY --from=gcr.io/unicode-wiki/uw-packages /tmp/node_modules ./node_modules
 
 COPY packages/uw-domain ./packages/uw-domain
 COPY packages/uw-logging ./packages/uw-logging
@@ -29,7 +29,5 @@ ENV NODE_ENV=production
 ENV SEARCH_SERVICE_PORT=5001
 
 COPY --from=BUILD /usr/src/app /usr/src/app
-
-RUN apk update && apk add curl
 
 ENTRYPOINT ["node", "/usr/src/app/packages/uw-search-service/dist/index.js"]

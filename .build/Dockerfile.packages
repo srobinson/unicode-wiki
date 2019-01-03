@@ -1,0 +1,24 @@
+FROM lerna AS PACKAGES
+
+WORKDIR /tmp
+
+COPY package.json \
+     yarn.lock \
+     lerna.json ./
+
+COPY packages/uw-api/package.json packages/uw-api/package.json
+COPY packages/uw-api-graph/package.json packages/uw-api-graph/package.json
+COPY packages/uw-app/package.json packages/uw-app/package.json
+COPY packages/uw-components/package.json packages/uw-components/package.json
+COPY packages/uw-containers/package.json packages/uw-containers/package.json
+COPY packages/uw-domain/package.json packages/uw-domain/package.json
+COPY packages/uw-domain/src/types/mongoose-paginate-v2 ./packages/uw-domain/src/types/mongoose-paginate-v2
+COPY packages/uw-hoc/package.json packages/uw-hoc/package.json
+COPY packages/uw-logging/package.json packages/uw-logging/package.json
+COPY packages/uw-search-service/package.json packages/uw-search-service/package.json
+COPY packages/uw-seed/package.json packages/uw-seed/package.json
+COPY packages/uw-store/package.json packages/uw-store/package.json
+COPY packages/uw-utils/package.json packages/uw-utils/package.json
+COPY packages/uw-wiki-service/package.json packages/uw-wiki-service/package.json
+
+RUN yarn install --ignore-scripts
