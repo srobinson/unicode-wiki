@@ -12,7 +12,7 @@ process.on("SIGINT", function() {
   process.exit()
 })
 
-const PORT = process.env.NODE_PORT
+const PORT = process.env.API_PORT
 
 MongoDb.connect().then(() => {
   if (!module.parent) {

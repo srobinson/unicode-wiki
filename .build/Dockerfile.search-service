@@ -1,6 +1,7 @@
 ARG ES_URL
-FROM gcr.io/unicode-wiki/uw-base AS BUILD
+ARG SEARCH_SERVICE_PORT
 
+FROM gcr.io/unicode-wiki/uw-base AS BUILD
 WORKDIR /usr/src/app
 
 COPY package.json \
@@ -18,15 +19,19 @@ COPY packages/uw-search-service ./packages/uw-search-service
 
 RUN lerna bootstrap
 
+##
+
 FROM node:9-alpine
 WORKDIR /usr/src/app
-EXPOSE 3001
 
 ARG ES_URL
+ARG SEARCH_SERVICE_PORT
+
+EXPOSE ${SEARCH_SERVICE_PORT}
 
 ENV ES_URL=${ES_URL}
 ENV NODE_ENV=production
-ENV SEARCH_SERVICE_PORT=5001
+ENV SEARCH_SERVICE_PORT=${SEARCH_SERVICE_PORT}
 
 COPY --from=BUILD /usr/src/app /usr/src/app
 
