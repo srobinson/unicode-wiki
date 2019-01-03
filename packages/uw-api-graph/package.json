@@ -1,6 +1,6 @@
 {
   "name": "@uw/api-graph",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -12,6 +12,6 @@
     "watch": "tsc -w"
   },
   "dependencies": {
-    "@uw/domain": "0.0.1"
+    "@uw/domain": "^0.1.0"
   }
 }
