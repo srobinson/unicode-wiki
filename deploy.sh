@@ -14,17 +14,20 @@ build() {
       --label "image=$1" \
       --label "version=$2" \
       --build-arg ANALYTICS_ID=$ANALYTICS_ID \
+      --build-arg API_PORT=$API_PORT \
       --build-arg API_URL=$API_URL \
       --build-arg ES_URL=$ES_URL \
       --build-arg FONTS_URL=$FONTS_URL \
       --build-arg GRAPHQL_PORT=$GRAPHQL_PORT \
       --build-arg GRAPHQL_URL=$GRAPHQL_URL \
       --build-arg MONGO_URL=$MONGO_URL \
+      --build-arg SEARCH_SERVICE_PORT=$SEARCH_SERVICE_PORT \
       --build-arg SEARCH_URL=$SEARCH_URL \
       --build-arg VERSION_BASE=$VERSION_BASE \
       --build-arg VERSION_ASSETS=$VERSION_ASSETS \
       --build-arg VERSION_PACKAGES=0.0.1 \
       --build-arg WIKI_URL=$WIKI_URL \
+      --build-arg WIKI_SERVICE_PORT=$WIKI_SERVICE_PORT \
       -f .build/Dockerfile.$1 \
       -t gcr.io/unicode-wiki/uw-$1:$2 \
       . || exit 3

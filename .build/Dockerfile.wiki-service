@@ -1,5 +1,6 @@
-FROM gcr.io/unicode-wiki/uw-base AS BUILD
+ARG WIKI_SERVICE_PORT
 
+FROM gcr.io/unicode-wiki/uw-base AS BUILD
 WORKDIR /usr/src/app
 
 COPY package.json \
@@ -17,12 +18,17 @@ COPY packages/uw-wiki-service ./packages/uw-wiki-service
 
 RUN lerna bootstrap
 
+##
+
 FROM node:9-alpine
 WORKDIR /usr/src/app
-EXPOSE 6001
+
+ARG WIKI_SERVICE_PORT
+
+EXPOSE ${WIKI_SERVICE_PORT}
 
 ENV NODE_ENV=production
-ENV WIKI_SERVICE_PORT=6001
+ENV WIKI_SERVICE_PORT=${WIKI_SERVICE_PORT}
 
 COPY --from=BUILD /usr/src/app /usr/src/app
 

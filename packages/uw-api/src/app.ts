@@ -14,7 +14,7 @@ class Express {
     const app: express.Application = express()
 
     app
-      .set("port", process.env.NODE_PORT)
+      .set("port", process.env.API_PORT)
       .use(cors())
       .use(bodyParser.urlencoded({extended: false}))
       .use(bodyParser.json())

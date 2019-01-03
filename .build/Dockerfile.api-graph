@@ -1,9 +1,9 @@
-ARG GRAPHQL_PORT
 ARG API_URL
+ARG GRAPHQL_PORT
 ARG SEARCH_URL
 ARG WIKI_URL
-FROM gcr.io/unicode-wiki/uw-base AS BUILD
 
+FROM gcr.io/unicode-wiki/uw-base AS BUILD
 WORKDIR /usr/src/app
 
 COPY package.json \
@@ -21,15 +21,17 @@ COPY packages/uw-api-graph ./packages/uw-api-graph
 
 RUN yarn prepare
 
+##
 
 FROM node:9-alpine
 WORKDIR /usr/src/app
-EXPOSE 4000
 
-ARG GRAPHQL_PORT
 ARG API_URL
+ARG GRAPHQL_PORT
 ARG SEARCH_URL
 ARG WIKI_URL
+
+EXPOSE ${GRAPHQL_PORT}
 
 ENV GRAPHQL_PORT=${GRAPHQL_PORT}
 ENV REACT_APP_API_BASE_URL=${API_URL}

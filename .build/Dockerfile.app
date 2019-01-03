@@ -1,13 +1,13 @@
-ARG GRAPHQL_URL
-ARG FONTS_URL
 ARG ANALYTICS_ID
-FROM gcr.io/unicode-wiki/uw-base AS BUILD
+ARG FONTS_URL
+ARG GRAPHQL_URL
 
+FROM gcr.io/unicode-wiki/uw-base AS BUILD
 WORKDIR /build
 
-ARG GRAPHQL_URL
-ARG FONTS_URL
 ARG ANALYTICS_ID
+ARG FONTS_URL
+ARG GRAPHQL_URL
 
 ENV REACT_APP_GRAPHQL_URL=${GRAPHQL_URL}
 ENV REACT_APP_FONTS_URL=${FONTS_URL}
@@ -35,11 +35,11 @@ COPY --from=gcr.io/unicode-wiki/uw-assets /tmp/assets/www ./assets/www
 
 RUN yarn prepare && yarn build:app
 
+##
+
 # FROM sdelrio/docker-minimal-nginx
 FROM nginx:stable
-
 WORKDIR /var/www
-
 EXPOSE 80
 
 ENV NODE_ENV=production
