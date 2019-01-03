@@ -1,15 +1,15 @@
 #!/bin/bash
 
-compose {
+compose() {
 
   docker-compose \
     -f ./.docker-compose/mongo.yml \
     -f ./.docker-compose/elastic-search.yml \
-    -f ./.docker-compose/kibana.yml \
-    -f ./.docker-compose/logstash.yml \
     $1
     return 1
 }
+# -f ./.docker-compose/kibana.yml \
+# -f ./.docker-compose/logstash.yml \
 
 compose up
 

@@ -64,7 +64,7 @@ If you already have mongo and elasticsearch running locally, skip ahead..
 To quckly get a mongo/easticsearch environment up and running
 
 ```
-./compose up
+./compose.sh up
 ```
 
 `compose.sh up` will install and make available the following containers:

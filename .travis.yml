@@ -1,5 +1,13 @@
 language: node_js
+services:
+  - mongodb
+  - elasticsearch
 before_install:
-  - yarn add global lerna
+  - sudo killall mongod
+  - sudo killall elastcsearch
+  - ./compose.sh
+  - yarn add global -W lerna
 install:
-  - lerna bootstrap
+  - yarn install --ignore-scripts
+  - yarn prepare
+  - yarn seed
