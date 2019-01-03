@@ -30,7 +30,6 @@ export default class EsClient {
     spinner.info(`Cleaning up: Deleting tmp dir: ${EsClient.BULK_FILE_TMP_PATH}`)
     rimraf.sync(EsClient.BULK_FILE_TMP_PATH)
     spinner.succeed("Index created succesfully")
-    process.exit(1)
   }
 
   createMapping = async () => {
