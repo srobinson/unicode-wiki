@@ -1,7 +1,4 @@
 language: node_js
-services:
-  - mongodb
-  - elasticsearch
 before_install:
   - sudo killall mongod
   - sudo killall elastcsearch
