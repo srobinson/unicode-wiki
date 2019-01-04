@@ -4,10 +4,24 @@ set -a
 . .env.prod
 set +a
 
+workspace_status=$(npx oao status)
+packages_re='(@uw/[a-z-]+)\s+.{9}([0-9]+\.[0-9]+\.[0-9]+)'
+packages=$(echo $workspace_status | grep -oEi $packages_re | sed -r "s:\x1B\[[0-9;]*[mK]::g")
+packages_arr=($(echo $packages | tr " " "\n"))
+
+version() {
+  VERSION_PACKAGES=$(docker run gcr.io/unicode-wiki/uw-packages cat package.json | jq '.version' | sed 's/"//g')
+  cds=$(docker run gcr.io/unicode-wiki/uw-packages cat package.json | jq '.dependencies')
+  pds=$(cat package.json | jq '.dependencies')
+  diff=$(echo [$cds, $pds] | json_diff)
+  echo diff $diff
+  if [ $diff != "[]" ]; then
+    VERSION_PACKAGES=$(cat package.json | jq '.version' | sed 's/"//g')
+  fi
+}
+
 build() {
-
-  if ! docker images | grep -v 'grep' | grep "$1\s.*$2"; then
-
+  if  ! docker images | grep -v 'grep' | grep "uw-$1\s.*$2"; then
     echo building gcr.io/unicode-wiki/uw-$1:$2
 
     docker build \
@@ -23,9 +37,6 @@ build() {
       --build-arg MONGO_URL=$MONGO_URL \
       --build-arg SEARCH_SERVICE_PORT=$SEARCH_SERVICE_PORT \
       --build-arg SEARCH_URL=$SEARCH_URL \
-      --build-arg VERSION_BASE=$VERSION_BASE \
-      --build-arg VERSION_ASSETS=$VERSION_ASSETS \
-      --build-arg VERSION_PACKAGES=0.0.1 \
       --build-arg WIKI_URL=$WIKI_URL \
       --build-arg WIKI_SERVICE_PORT=$WIKI_SERVICE_PORT \
       -f .build/Dockerfile.$1 \
@@ -40,27 +51,41 @@ build() {
   fi
 }
 
-deploy() {
-  build "$@"
-
+push() {
   if ! gcloud container images list-tags gcr.io/unicode-wiki/uw-$1 | grep -v 'grep' | grep "$2"; then
-
     echo pushing gcr.io/unicode-wiki/uw-$1:$2
     docker push gcr.io/unicode-wiki/uw-$1:$2 || exit 3
-
     echo gcr.io/unicode-wiki/uw-$1:$2 pushed
-    kubectl set image deployment/uw-$1-web uw-$1-web=gcr.io/unicode-wiki/uw-$1:$2 || exit 3
-
-    echo gcr.io/unicode-wiki/uw-$1:$2 deployed
-
   fi
+}
 
+deploy() {
+  if ! kubectl get deploy/uw-app-web -o=json | jq '.spec.template.spec.containers[0].image' | grep -v 'grep' | grep "$2"; then
+    kubectl set image deployment/uw-$1-web uw-$1-web=gcr.io/unicode-wiki/uw-$1:$2 || exit 3
+    echo gcr.io/unicode-wiki/uw-$1:$2 deployed
+  fi
+}
+
+services() {
+  len=${#packages_arr[@]}
+  for (( i=0; i<=$len; i = i + 2 ))
+  do
+    package=${packages_arr[$i]#"@uw/"}
+    version=${packages_arr[$i+1]#}
+    if [[ ${#package} -gt 0 && $package =~ ^(.+)?(app|api|api-graph|-service)$ ]]; then
+      str="$1 $package $version"
+      eval $str
+    fi
+
+  done
 }
 
 if [ $? = 3 ]
 then
   >&2 echo error
 fi
+
+version
 
 build base \
   $VERSION_BASE \
@@ -74,18 +99,6 @@ build packages \
   $VERSION_PACKAGES \
   latest
 
-deploy api \
-  $VERSION_API
-
-deploy search-service \
-  $VERSION_SEARCH_SERVICE
-
-deploy wiki-service \
-  $VERSION_WIKI_SERVICE
-
-deploy api-graph \
-  $VERSION_API_GRAPH
-
-deploy app \
-  $VERSION_APP
-
+services build
+services push
+services deploy
