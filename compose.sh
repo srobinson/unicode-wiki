@@ -1,17 +1,13 @@
 #!/bin/bash
 
-compose {
-
+compose() {
   docker-compose \
     -f ./.docker-compose/mongo.yml \
     -f ./.docker-compose/elastic-search.yml \
-    -f ./.docker-compose/kibana.yml \
-    -f ./.docker-compose/logstash.yml \
     $1
-    return 1
 }
 
-compose up
+compose ${1:-"up -d"}
 
 ERROR_CODE=$?
 
@@ -20,3 +16,6 @@ if [ $ERROR_CODE -eq 1 ]; then
   compose down
 fi
 
+# optional deps
+# -f ./.docker-compose/kibana.yml \
+# -f ./.docker-compose/logstash.yml \

@@ -1,11 +1,11 @@
 {
   "name": "@uw/domain",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "scripts": {
-    "lint": "tslint 'src/**/*.ts'",
+    "lint": "tslint 'src/**/*.ts' -e \"**/types/**\"",
     "prepare": "echo '@uw/domain' && tsc",
     "watch": "tsc -w"
   },

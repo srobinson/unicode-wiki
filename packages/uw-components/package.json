@@ -1,6 +1,6 @@
 {
   "name": "@uw/components",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
   "main": "./dist/index",
   "module": "./dist/index",
@@ -11,8 +11,8 @@
     "watch": "tsc -w"
   },
   "dependencies": {
-    "@uw/domain": "0.0.1",
-    "@uw/hoc": "0.0.1",
-    "@uw/utils": "0.0.1"
+    "@uw/domain": "^0.1.0",
+    "@uw/hoc": "^0.1.0",
+    "@uw/utils": "^0.1.0"
   }
 }

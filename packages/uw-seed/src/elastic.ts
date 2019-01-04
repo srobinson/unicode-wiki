@@ -24,13 +24,12 @@ export default class EsClient {
 
   bulkInsert = async () => {
     spinner.start()
-    await spawn(`curl -X DELETE -v ${EsClient.MAPPING_INDEX_URL}`, {stdio: "inherit", shell: true})
+    await spawn(`curl -X DELETE -v ${EsClient.MAPPING_INDEX_URL}`, {stderr: "inherit", shell: true})
     await this.createMapping()
     await this.createIndex()
     spinner.info(`Cleaning up: Deleting tmp dir: ${EsClient.BULK_FILE_TMP_PATH}`)
     rimraf.sync(EsClient.BULK_FILE_TMP_PATH)
     spinner.succeed("Index created succesfully")
-    process.exit(1)
   }
 
   createMapping = async () => {
@@ -39,7 +38,7 @@ export default class EsClient {
       `curl -XPUT -v ${
         EsClient.MAPPING_INDEX_URL
       } -H 'Content-Type: application/json' --data-binary @${EsClient.MAPPING_FILE_PATH}`,
-      {stdio: "inherit", shell: true},
+      {stderr: "inherit", shell: true},
     )
   }
 
@@ -127,7 +126,7 @@ export default class EsClient {
       `curl -X POST -v ${
         EsClient.BULK_INDEX_URL
       } -H 'Content-Type: application/json' --data-binary @${file}`,
-      {stdio: "inherit", shell: true},
+      {stderr: "inherit", shell: true},
     )
     spinner.info(`Bulk file ${file} pushed`)
   }
