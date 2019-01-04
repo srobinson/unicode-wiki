@@ -1,0 +1,27 @@
+
+* Git status:
+
+    - Current branch: [36m[1mmaster[22m[39m
+    - Last tag: [36m[1mv0.1.1[22m[39m
+    - Uncommitted changes: [33m[1mYES[22m[39m
+    - Unpulled changes: [36m[1mno[22m[39m
+
+* Subpackage status: [[36m[1m15[22m[39m package/s, incl. root]
+
+[90m    Name                                     Version        Private Changes Dependencies[39m
+    @uw/api                                  [36m[1m0.1.0         [22m[39m [36m[1myes    [22m[39m [90m-      [39m [36m[1m3[22m[39m (+ [36m[1m1[22m[39m dev)
+    @uw/api-graph                            [36m[1m0.1.1         [22m[39m [36m[1myes    [22m[39m [90m-      [39m [36m[1m1[22m[39m
+    @uw/app                                  [36m[1m0.1.1         [22m[39m [36m[1myes    [22m[39m [90m-      [39m [36m[1m5[22m[39m (+ [36m[1m1[22m[39m dev)
+    @uw/components                           [36m[1m0.1.0         [22m[39m [36m[1myes    [22m[39m [90m-      [39m [36m[1m3[22m[39m
+    @uw/config                               [36m[1m0.1.0         [22m[39m [36m[1myes    [22m[39m [90m-      [39m [36m[1m0[22m[39m
+    @uw/containers                           [36m[1m0.1.1         [22m[39m [36m[1myes    [22m[39m [90m-      [39m [36m[1m1[22m[39m
+    @uw/domain                               [36m[1m0.1.1         [22m[39m [36m[1myes    [22m[39m [90m-      [39m [36m[1m0[22m[39m (+ [36m[1m1[22m[39m dev)
+    @uw/hoc                                  [36m[1m0.1.0         [22m[39m [36m[1myes    [22m[39m [90m-      [39m [36m[1m0[22m[39m
+    @uw/logging                              [36m[1m0.1.0         [22m[39m [36m[1myes    [22m[39m [90m-      [39m [36m[1m1[22m[39m
+    @uw/search-service                       [36m[1m0.1.0         [22m[39m [36m[1myes    [22m[39m [90m-      [39m [36m[1m3[22m[39m (+ [36m[1m1[22m[39m dev)
+    @uw/seed                                 [36m[1m0.1.0         [22m[39m [36m[1myes    [22m[39m [90m-      [39m [36m[1m3[22m[39m
+    @uw/store                                [36m[1m0.1.1         [22m[39m [36m[1myes    [22m[39m [90m-      [39m [36m[1m3[22m[39m
+    @uw/utils                                [36m[1m0.1.0         [22m[39m [36m[1myes    [22m[39m [90m-      [39m [36m[1m1[22m[39m
+    @uw/wiki-service                         [36m[1m0.1.1         [22m[39m [36m[1myes    [22m[39m [90m-      [39m [36m[1m3[22m[39m (+ [36m[1m1[22m[39m dev)
+    [3mRoot                                    [23m [36m[1m0.1.1         [22m[39m [36m[1myes    [22m[39m [90mN/A    [39m [36m[1m44[22m[39m (+ [36m[1m57[22m[39m dev)
+
