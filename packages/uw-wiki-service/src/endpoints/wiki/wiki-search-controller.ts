@@ -51,8 +51,6 @@ export const search = async (req: Request, res: Response) => {
   }
 }
 
-// 1F251
-
 export default {
   search,
 }
