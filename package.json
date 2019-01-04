@@ -1,12 +1,19 @@
 {
   "name": "unicode-wiki-workspace",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Unicode Explorer workspace home",
   "author": "Stuart Robinson",
   "homepage": "https://unicode.wiki/",
   "repository": "https://github.com/srobinson/unicode-wiki",
   "bugs": "https://github.com/srobinson/unicode-wiki/issues",
-  "keywords": ["unicode", "wikipedia", "characters", "fonts", "explore", "search"],
+  "keywords": [
+    "unicode",
+    "wikipedia",
+    "characters",
+    "fonts",
+    "explore",
+    "search"
+  ],
   "license": "MIT",
   "private": true,
   "workspaces": [
