@@ -2,17 +2,12 @@
 import {RouterAction} from "connected-react-router"
 import {RouteComponentProps} from "react-router"
 import {Path} from "history"
-import {CodepointDocument, LoadingState, WikiPageState, CodepointState, Codepoint} from "@uw/domain"
+import {Codepoint, LoadingState, WikiPageState} from "@uw/domain"
 import * as wikiActions from "@uw/store"
 
-export interface InstanceState {
-  currentCodepoint: CodepointDocument | undefined
-}
+export interface InstanceState {}
 
 export interface PropsFromState {
-  codepoints: CodepointState
-  codepoint: Codepoint | undefined
-  cp: string
   loader: LoadingState
   wikiPage: WikiPageState
 }
@@ -25,7 +20,7 @@ export interface PropsFromDispatch {
 export interface PathParamsType {}
 
 export interface OtherProps extends RouteComponentProps<PathParamsType> {
-  cp: string
+  codepoint: Codepoint
 }
 
 export type CodepointComponentProps = {}

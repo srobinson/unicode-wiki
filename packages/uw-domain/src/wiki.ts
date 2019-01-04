@@ -25,10 +25,10 @@ export interface WikiPage {
 /**
  * WikiSearch entity definition
  */
+
 export interface WikiSearch {
-  text: string
-  title: string
   hits: SearchHit[]
+  query: string
 }
 
 /**
@@ -37,5 +37,6 @@ export interface WikiSearch {
 export interface SearchHit {
   highlight: string
   redirect: string
+  snippet: string
   title: string
 }

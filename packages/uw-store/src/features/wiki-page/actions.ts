@@ -7,7 +7,7 @@ export const loadWikiPage = (ucp: string, page: string) => ({
   meta: {
     feature: WIKI_PAGE,
     method: "GET",
-    query: WIKI_PAGE_BY_UCP(ucp, isMobile()),
+    query: WIKI_PAGE_BY_UCP(ucp, page, isMobile()),
     queryResolver: "wikiPage",
     success: setWikiPage,
   },
