@@ -10,8 +10,8 @@ export class WikiAPI extends RESTDataSource {
     this.baseURL = BASE_URL
   }
 
-  public async getPage(ucp: string, isMobile?: boolean): Promise<WikiPage> {
-    let url = `wiki/page?cp=${ucp}`
+  public async getPage(ucp: string, page: string, isMobile?: boolean): Promise<WikiPage> {
+    let url = `wiki/page?cp=${ucp}&page=${page}`
     if (isMobile) {
       url += "&isMobile"
     }

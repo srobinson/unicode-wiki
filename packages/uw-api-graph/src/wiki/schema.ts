@@ -2,7 +2,7 @@ import {gql} from "apollo-server"
 
 export const typeDef = gql`
   extend type Query {
-    wikiPage(ucp: String!, isMobile: Boolean): WikiPage
+    wikiPage(ucp: String!, page: String, isMobile: Boolean): WikiPage
   }
 
   type WikiPage {
@@ -15,9 +15,8 @@ export const typeDef = gql`
   }
 
   type WikiSearch {
-    text: String!
-    title: String!
     hits: [WikiSearchHit]!
+    query: String!
   }
 
   type WikiSearchHit {

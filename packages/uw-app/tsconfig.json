@@ -13,5 +13,5 @@
     "target": "es5"
     },
   "exclude": ["test", "build"],
-  "include": ["../../jest.config.base.js"]
+  "files": ["../../jest.config.base.js"]
 }

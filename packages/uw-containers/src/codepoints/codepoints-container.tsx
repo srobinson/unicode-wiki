@@ -162,10 +162,9 @@ class CodepointContainer extends React.PureComponent<CodepointContainerProps & O
     const {result} = codepoints
     const children = this.renderCodepoints()
     const {loading} = codepoints
+    const cp = location["query"].cp
     const selectedCodepoint =
-      location["query"].cp &&
-      result &&
-      result.docs.filter((codepoint: CodepointDocument) => codepoint.cp === location["query"].cp)[0]
+      cp && result && result.docs.filter((codepoint: CodepointDocument) => codepoint.cp === cp)[0]
 
     return (
       <React.Fragment>
@@ -173,10 +172,10 @@ class CodepointContainer extends React.PureComponent<CodepointContainerProps & O
         <LoadingContainer loading={loading} visible={!selectedCodepoint}>
           <CodepointList>{children}</CodepointList>
         </LoadingContainer>
-        {location["query"].cp && (
+        {selectedCodepoint && (
           <Route
             render={() => {
-              return <CodepointWikiContainer cp={location["query"].cp} />
+              return <CodepointWikiContainer codepoint={selectedCodepoint} />
             }}
           />
         )}

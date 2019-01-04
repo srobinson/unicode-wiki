@@ -99,6 +99,7 @@ const onSuccess = async (req: Request, res: Response, data: any) => {
 
 const doSearch = async (req: Request, res: Response) => {
   req.query.return = true
+  req.query.q = req.query.page
   await search(req, res)
   return res.locals.wikiSearch
 }

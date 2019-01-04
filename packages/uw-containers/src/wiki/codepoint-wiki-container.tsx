@@ -5,7 +5,6 @@ import {Dispatch} from "redux"
 import {connect} from "react-redux"
 import {Wiki} from "@uw/components"
 import {ApplicationState, loadWikiPage} from "@uw/store"
-import {Codepoint} from "@uw/domain"
 import {isHex} from "@uw/utils"
 import {CodepointWikiContainerProps, OtherProps} from "./types"
 
@@ -21,30 +20,21 @@ class CodepointWikiContainer extends React.PureComponent<CodepointWikiContainerP
   }
 
   loadWiki = () => {
-    const {codepoint, cp} = this.props
-    this.props.loadWikiPage(cp, (codepoint && codepoint["title"]) || "")
+    const {codepoint, loadWikiPage} = this.props
+    loadWikiPage(codepoint.cp, codepoint["title"])
     setTimeout(() => document.body.setAttribute("data-animate", "in"))
   }
 
   render() {
-    const {cp, wikiPage} = this.props
+    const {codepoint, wikiPage} = this.props
+    const {cp} = codepoint
     const {result} = wikiPage
     return <React.Fragment>{isHex(cp) && <Wiki content={result} cp={cp} />}</React.Fragment>
   }
 }
 
 const mapStateToProps = (state: ApplicationState, props: OtherProps) => {
-  const {codepoints} = state
-  const {cp} = props
-  const codepoint =
-    (codepoints.result &&
-      codepoints.result.docs.filter((codepoint: Codepoint) => codepoint.cp === cp)) ||
-    []
-
   return {
-    codepoint: (codepoint.length && codepoint[0]) || undefined,
-    codepoints: state.codepoints,
-    cp,
     loader: state.loader,
     wikiPage: state.wikiPage,
   }

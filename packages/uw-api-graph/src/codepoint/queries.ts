@@ -24,6 +24,7 @@ const PAGINATED_CODEPOINTS = `
     }
     name
     name_v1
+    title
   }
   hasNextPage
   hasPrevPage

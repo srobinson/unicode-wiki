@@ -6,10 +6,10 @@ export const resolvers = {
   Query: {
     async wikiPage(
       _: any,
-      {ucp, isMobile}: any,
+      {ucp, page, isMobile}: any,
       {dataSources}: {dataSources: dataSource},
     ): Promise<WikiPage> {
-      return await dataSources.wikiAPI.getPage(ucp, isMobile)
+      return await dataSources.wikiAPI.getPage(ucp, page, isMobile)
     },
   },
 }
