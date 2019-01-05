@@ -17,7 +17,7 @@ COPY packages/uw-logging ./packages/uw-logging
 COPY packages/uw-utils ./packages/uw-utils
 COPY packages/uw-search-service ./packages/uw-search-service
 
-RUN lerna bootstrap
+RUN yarn prepare
 
 ##
 

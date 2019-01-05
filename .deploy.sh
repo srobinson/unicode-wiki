@@ -57,7 +57,7 @@ build() {
       -t gcr.io/unicode-wiki/uw-$1:$2 \
       . || exit 3
 
-    if [ $3 = "latest" ]; then
+    if [[ $3 == "latest" ]]; then
       docker tag gcr.io/unicode-wiki/uw-$1:$2 gcr.io/unicode-wiki/uw-$1:latest
     fi
 
@@ -74,7 +74,7 @@ push() {
 }
 
 deploy() {
-  if ! kubectl get deploy/uw-app-web -o=json | jq '.spec.template.spec.containers[0].image' | grep -v 'grep' | grep "$2"; then
+  if ! kubectl get deployment/uw-$1-web -o=json | jq '.spec.template.spec.containers[0].image' | grep -v 'grep' | grep "$2"; then
     kubectl set image deployment/uw-$1-web uw-$1-web=gcr.io/unicode-wiki/uw-$1:$2 || exit 3
     echo gcr.io/unicode-wiki/uw-$1:$2 deployed
   fi
