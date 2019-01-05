@@ -1,8 +1,10 @@
 #!/bin/bash
 
-set -a
-. .env.prod
-set +a
+if [ -e .env.prod ]; then
+  set -a
+  . .env.prod
+  set +a
+fi
 
 workspace_status=$(npx oao status)
 packages_re='(@uw/[a-z-]+)\s+.{9}([0-9]+\.[0-9]+\.[0-9]+)'
