@@ -7,16 +7,16 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   # L1v3rpooltravis-alphab
 
   echo "Access Token:" ${TRAVIS_TOKEN}
-  echo "Access Token:" 2520ab872380460dd0a720830d0391eee4ad3bde
+  echo "Access Token:" 371af91c609c740f3d66622d5679d97d8a44ab12
 
   git config --global user.email "travis@alphab.io"
   git config --global user.name "travis-alphab"
-  git config --global github.user "srobinson"
-  git config --global github.token 2520ab872380460dd0a720830d0391eee4ad3bde
+  # git config --global github.user "srobinson"
+  # git config --global github.token 2520ab872380460dd0a720830d0391eee4ad3bde
 
   git remote show origin
 
-  git remote set-url origin https://2520ab872380460dd0a720830d0391eee4ad3bde@github.com/srobinson/unicode-wiki.git
+  git remote set-url origin https://371af91c609c740f3d66622d5679d97d8a44ab12@github.com/srobinson/unicode-wiki.git
 
   git remote show origin
 
