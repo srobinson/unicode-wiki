@@ -1,25 +1,23 @@
 language: node_js
-env:
-  global:
-    secure: 8803fd7d58fe1d53002ad94162fdbfec1d4fb142
 branches:
   only:
   - master
-  - /^PR-.+$/
+  - "/^PR-.+$/"
 git:
   quiet: true
 cache:
   yarn: true
   directories:
-    - node_modules
+  - node_modules
 before_install:
-  - ./.version.sh
-  - ./compose.sh
-  - yarn add global -W lerna
+- "./.version.sh"
+- "./compose.sh"
+- yarn add global -W lerna
 install:
-  - yarn install --ignore-scripts
-  - yarn prepare
+- yarn install --ignore-scripts
+- yarn prepare
 before_script:
-  - yarn seed
-# after_success:
-#   - ./.version.sh
+- yarn seed
+env:
+  global:
+    secure: jW/bB+FIuf6JQNbl587ndlVJ7PYxlfeKGEl/+cWgQCVoxnvxKInhD9xVPg4pBf0UE7ISOpeqddl/ywj3IZvjmeGpcJK5DDSfp2RbhwESl7SSKdaDJcekOELj85i69DUvcleLvKiCwE+VRD0h/gH2YCyPU+ypFzOFl8xsRwOArL+d6eEUYNyZsl/8s5+saHaogc7SZJF5ICRhPKxVau2CCR5jTpDpTbZJ7X3Zjrg6J9caaiy69GESrEXzVtVbi1ghhPJ+w2qII8UYhqT7/oSa4xeIUTB42314XspydTAaDuQ4tYTrLGIEvVtdfILHLsWTaBkNKzjv+jwIOroFVl9veopnzrp83nxMQ0xpWHx7+ukp2Kl0uNmoApo8b2VFPNKW7qYY4EFa7zIW+gy6uZ5ZcLFEUBhD+qPVs9nH3wpGXa5qXKst5h95gMCHKGqGJM2HQOu7mkbgbh1YHKwuqeo/WuqZjINiHLg6GJZD2hrV8efjYmK9zYs/il09YYRB/5uK70+iERlpGgfoTKsE+9ii4C4bJtIW/c63K9/fQTCrD4+h0zxEQXoNFWm5IEEug0BZxBoLiE2nMui7Q/RIgXyBcV4RW2sX6gcinh0cyqMUJKvSZ9AkDZoRe9KI2HLPBtOziTDChA94/e6Y2qqeFhmPJERgXbo5O09O0Zpd5CMR7OU=
