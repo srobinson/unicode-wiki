@@ -4,32 +4,11 @@ echo TRAVIS_BRANCH: $TRAVIS_BRANCH
 
 if [[ $TRAVIS_BRANCH == 'master' ]]; then
 
-  # L1v3rpooltravis-alphab
+  git config --global user.email "travis@alphab.io"
+  git config --global user.name "travis-alphab"
 
-  # const token="444fc6019dc6e5358432e576f48f6a84cefdf378"
-
-  # echo "Access Token:" $TRAVIS_TOKEN
-  # echo "Access Token:" $token
-
-  # uw-travis: 444fc6019dc6e5358432e576f48f6a84cefdf378
-
-  # git config --global user.email "travis@alphab.io"
-  # git config --global user.name "travis-alphab"
-  # git config --global github.user "srobinson"
-  # git config --global github.token 444fc6019dc6e5358432e576f48f6a84cefdf378
-
-  # curl -H "Authorization: token 444fc6019dc6e5358432e576f48f6a84cefdf378" https://github.com/srobinson/unicode-wiki > /dev/null
-
-  # git remote show origin
-
-  echo ==================
-  git remote set-url origin https://srobinson:${TRAVIS_PASS}@github.com/srobinson/unicode-wiki.git
-  echo ==================
-
-  # git remote show origin
-
-  # get current version
   v=$(git describe --tags `git rev-list --tags --max-count=1`)
+
   # get last commit
   m=`git show --pretty`
 
@@ -41,23 +20,18 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
     nv=`./.increment_version.sh -p ${v#"v"}`
   fi
 
-  echo ======= $nv ===========
+  echo =======$nv===========
 
   echo "Fixing git setup for $TRAVIS_BRANCH"
   git checkout ${TRAVIS_BRANCH}
-  echo 1
   git branch -u origin/${TRAVIS_BRANCH}
-  echo 2
   git config branch.${TRAVIS_BRANCH}.remote origin
   git config branch.${TRAVIS_BRANCH}.merge refs/heads/${TRAVIS_BRANCH}
   git status
-  echo 3
   git stash
-  echo 4
 
+  git remote set-url origin https://srobinson:${TRAVIS_PASS}@github.com/srobinson/unicode-wiki.git
   npx oao publish --no-confirm --new-version v$nv
-  echo 5
-
   # ./deploy.sh
 
 fi
@@ -71,6 +45,4 @@ fi
 # perf: A code change that improves performance
 # test: Adding missing or correcting existing tests
 # chore: Changes to the build process or auxiliary tools and libraries such as documentation generation
-
-
-ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+# ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
