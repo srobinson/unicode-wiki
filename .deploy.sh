@@ -14,7 +14,15 @@ packages_arr=($(echo $packages | tr " " "\n"))
 
 auth() {
   echo HOME $HOME
+  echo CASHER_DIR $CASHER_DIR
+
   ls -l -- "$HOME"
+  ls -l -- "$CASHER_DIR"
+
+  ls -l -- "$HOME/docker"
+  ls -l -- "$HOME/build/srobinson/unicode-wiki/node_modules t"
+
+
   if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk; curl https://sdk.cloud.google.com | bash > /dev/null; fi
   source /home/travis/google-cloud-sdk/path.bash.inc
   gcloud version
@@ -37,6 +45,9 @@ version() {
 }
 
 build() {
+
+  docker images
+
   if  ! docker images | grep -v 'grep' | grep "uw-$1\s.*$2"; then
     echo building gcr.io/unicode-wiki/uw-$1:$2
 
