@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ $TRAVIS_BRANCH != 'master' ]]; then
+if [[ $TRAVIS_BRANCH == 'master' ]]; then
 
   git config --global user.email "travis@alphab.io"
   git config --global user.name "travis-alphab"
@@ -31,18 +31,19 @@ if [[ $TRAVIS_BRANCH != 'master' ]]; then
   git status
   git stash
 
-  # TODO: figure out why personal tokens are vanishing
-  git remote set-url origin https://srobinson:${TRAVIS_PASS}@github.com/srobinson/unicode-wiki.git
-
   # print status
   npx oao status
 
+  # TODO: figure out why personal tokens are vanishing
+  git remote set-url origin https://srobinson:${TRAVIS_PASS}@github.com/srobinson/unicode-wiki.git
+
   # create release
   npx oao publish --no-confirm --new-version $nv
-  # ./deploy.sh
 
   # sanity revert change for testing locally
   git remote set-url origin git@github.com:srobinson/unicode-wiki.git
+
+  # ./deploy.sh
 
 fi
 
@@ -55,4 +56,3 @@ fi
 # perf: A code change that improves performance
 # test: Adding missing or correcting existing tests
 # chore: Changes to the build process or auxiliary tools and libraries such as documentation generation
-# ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
