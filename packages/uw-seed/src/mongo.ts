@@ -22,6 +22,13 @@ export default class DbClient {
     return this.db
   }
 
+  public async isSeeded(): Promise<boolean> {
+    await this.connect()
+    const collection = await this.db.collection(DbClient.CODEPOINT_COLLECTION)
+    const count = await collection.find().count()
+    return Promise.resolve(count === 137439)
+  }
+
   public async createCollection(codePointDict: CodePointDict) {
     try {
       await this.connect()

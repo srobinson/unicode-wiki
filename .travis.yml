@@ -1,8 +1,21 @@
 language: node_js
+branches:
+  only:
+  - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
+  - /^PR-[0-9]+$/
+git:
+  quiet: true
+cache:
+  yarn: true
+  directories:
+    - node_modules
 before_install:
   - ./compose.sh
   - yarn add global -W lerna
 install:
   - yarn install --ignore-scripts
   - yarn prepare
+before_script:
   - yarn seed
+after_success:
+  - ./version.sh

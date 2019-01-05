@@ -24,9 +24,13 @@ const scriptsEntryDict: CategoryEntryDict = new LocalDictionary()
 const symbolsEntryDict: CategoryEntryDict = new LocalDictionary()
 
 class Runner {
-  public static main() {
+  public static async main() {
     const client = new DbClient()
     const esClient = new EsClient()
+
+    if (client.isSeeded()) {
+      process.exit()
+    }
 
     async.series([
       function parseScriptsFile(cb) {
