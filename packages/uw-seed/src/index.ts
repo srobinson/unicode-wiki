@@ -130,8 +130,6 @@ class Runner {
       },
 
       async function() {
-        await updateCategoriesWithHasChildrenFlag("chart-scripts", scriptsEntryDict)
-        await updateCategoriesWithHasChildrenFlag("chart-symbols", symbolsEntryDict)
         await client.createCategories(blocksDict)
         await client.createCollection(codePointDict)
         await esClient.bulkInsert()
