@@ -1,7 +1,7 @@
 !!*
 _data
 _tmp
-.env.prod
+.env.prod.secrets
 .gcloud
 .k8s/kube*
 .k8s/default/Secret.unicode-wiki-tls.yaml

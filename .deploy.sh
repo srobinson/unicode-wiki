@@ -1,10 +1,11 @@
 #!/bin/bash
 
-if [ -e .env.prod ]; then
-  set -a
-  . .env.prod
-  set +a
+set -a
+. .env.prod
+if [ -e .env.prod.secrets ]; then
+  . .env.prod.secrets
 fi
+set +a
 
 workspace_status=$(npx oao status)
 packages_re='(@uw/[a-z-]+)\s+.{9}([0-9]+\.[0-9]+\.[0-9]+)'

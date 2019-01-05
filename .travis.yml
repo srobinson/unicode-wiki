@@ -24,15 +24,4 @@ after_success:
 
 env:
   global:
-  - API_PORT=3001
-  - API_URL=https://api.unicode.wiki/api
-  - ES_URL=http://elastic-cluster.default.svc.cluster.local:9200
-  - FONTS_URL=/fonts
-  - GRAPHQL_PORT=4000
-  - GRAPHQL_URL=https://graph.unicode.wiki
-  - MONGO_URL=mongodb://uw-mongo-mongodb.default.svc.cluster.local:27017
-  - SEARCH_SERVICE_PORT=5001
-  - SEARCH_URL=https://search.unicode.wiki
-  - WIKI_SERVICE_PORT=6001
-  - WIKI_URL=https://wiki.unicode.wiki
   - secure: hkh92DkZ1zko11+fPcRNPvjq62FtkehQmYfN9O80RjvYUd6oDYKoE2lwdAYpEeM7FqXOQB5ShJrCDxLWyp/7RXbx5UlImYxWYhQgJAjL6zkJ11WmZTnX3kwdTpfn3eABkqLpoMVH9v0dvpjMqTYGXPuzR6K7u9kfiufPSezU2obeh8yKPjV3wxTRth6Tky9abhyFUjTcwzbIWXLiRNrhV9YhZCFu3RdfMcNfW9AXkHMhxaPGUKKjTFJD60rVlwb17of4S7SrjCWPO0KCxP7ERTWosD/LXToE7k7PbIOK821+O3Ze1nEdPDmuK6mkCnsIthnMOSP/4hpje31sz/0pXdktytkFbh4EDl+2nCKYMHLzqIfpbgAwr8wEyToY+G3MkFS/CdlnbhBCIRD3USng47wvFzrka39f7KZ2ycB0IKVbb0GDsfvrsXWBvzMdt/2ZTIwMSB7igzuu5YD7plqgniyB/ffE/L8+J1/X4m0Zjb/KiFeOa0eDDaFx4oOjg8NIJ8FE7tw3kGnxKK9deHbuvLze7Khfz7MFnBc3fB5fNjQKzXwCG9vs7/5/gTzRQw+oxVy2T5+qg+5ECtXj1cGCDz1hGStaMuBmQ9GANW9Zx6QF+RCOVcFiYxJCwee/UbqQ78puRJEjSPWL9Vedj2NC4AcusvivlptgGnskD1tLjhM=
