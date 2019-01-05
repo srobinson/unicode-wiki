@@ -17,7 +17,7 @@ install:
 - yarn prepare
 before_script:
 - yarn seed
-adter_success:
+after_success:
 - "./cli/version.sh"
 
 env:
