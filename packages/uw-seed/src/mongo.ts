@@ -26,8 +26,6 @@ export default class DbClient {
     await this.connect()
     const collection = await this.db.collection(DbClient.CODEPOINT_COLLECTION)
     const count = await collection.find().count()
-    console.log("count", count)
-
     return Promise.resolve(count === 137439)
   }
 
