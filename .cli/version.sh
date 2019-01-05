@@ -14,11 +14,11 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   m=`git show --pretty`
 
   if grep -q 'BREAKING\CHANGE:' <<< $m; then
-    nv=`./.increment_version.sh -M ${v#"vv"}`
+    nv=`./increment_version.sh -M ${v#"vv"}`
   elif grep -q feat\([a-z]*\): <<< $m; then
-    nv=`./.increment_version.sh -m ${v#"vv"}`
+    nv=`./increment_version.sh -m ${v#"vv"}`
   else
-    nv=`./.increment_version.sh -p ${v#"vv"}`
+    nv=`./increment_version.sh -p ${v#"vv"}`
   fi
 
   echo next version: $nv
