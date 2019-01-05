@@ -28,7 +28,7 @@ class Runner {
     const client = new DbClient()
     const esClient = new EsClient()
 
-    if (client.isSeeded()) {
+    if (await client.isSeeded()) {
       process.exit()
     }
 
