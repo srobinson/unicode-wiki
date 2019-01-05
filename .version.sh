@@ -6,23 +6,25 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
 
   # L1v3rpooltravis-alphab
 
-  # const token="20a3718a3b480b957b190f435ce07a091a98c008"
+  # const token="444fc6019dc6e5358432e576f48f6a84cefdf378"
 
   # echo "Access Token:" $TRAVIS_TOKEN
   # echo "Access Token:" $token
 
-  # uw-travis: 20a3718a3b480b957b190f435ce07a091a98c008
+  # uw-travis: 444fc6019dc6e5358432e576f48f6a84cefdf378
 
-  git config --global user.email "travis@alphab.io"
-  git config --global user.name "travis-alphab"
+  # git config --global user.email "travis@alphab.io"
+  # git config --global user.name "travis-alphab"
   # git config --global github.user "srobinson"
-  # git config --global github.token 20a3718a3b480b957b190f435ce07a091a98c008
+  # git config --global github.token 444fc6019dc6e5358432e576f48f6a84cefdf378
 
-  # curl -H "Authorization: token 20a3718a3b480b957b190f435ce07a091a98c008" https://github.com/srobinson/unicode-wiki > /dev/null
+  # curl -H "Authorization: token 444fc6019dc6e5358432e576f48f6a84cefdf378" https://github.com/srobinson/unicode-wiki > /dev/null
 
   # git remote show origin
 
+  echo ==================
   git remote set-url origin https://srobinson:${TRAVIS_PASS}@github.com/srobinson/unicode-wiki.git
+  echo ==================
 
   # git remote show origin
 
@@ -39,16 +41,23 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
     nv=`./.increment_version.sh -p ${v#"v"}`
   fi
 
+  echo ======= $nv ===========
+
   echo "Fixing git setup for $TRAVIS_BRANCH"
   git checkout ${TRAVIS_BRANCH}
+  echo 1
   git branch -u origin/${TRAVIS_BRANCH}
+  echo 2
   git config branch.${TRAVIS_BRANCH}.remote origin
   git config branch.${TRAVIS_BRANCH}.merge refs/heads/${TRAVIS_BRANCH}
   git status
+  echo 3
   git stash
-
+  echo 4
 
   npx oao publish --no-confirm --new-version v$nv
+  echo 5
+
   # ./deploy.sh
 
 fi
