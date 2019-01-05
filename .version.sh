@@ -16,7 +16,13 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   else
     nv=`./.increment_version.sh -p ${v#"v"}`
   fi
-  git checkout master
+
+  echo "Fixing git setup for $TRAVIS_BRANCH"
+  git checkout ${TRAVIS_BRANCH}
+  git branch -u origin/${TRAVIS_BRANCH}
+  git config branch.${TRAVIS_BRANCH}.remote origin
+  git config branch.${TRAVIS_BRANCH}.merge refs/heads/${TRAVIS_BRANCH}
+
   npx oao publish --no-confirm --new-version v$nv
   # ./deploy.sh
 
