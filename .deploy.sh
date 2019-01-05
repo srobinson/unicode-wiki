@@ -13,7 +13,7 @@ packages=$(echo $workspace_status | grep -oEi $packages_re | sed -r "s:\x1B\[[0-
 packages_arr=($(echo $packages | tr " " "\n"))
 
 auth() {
-  if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk; curl https://sdk.cloud.google.com | bash; fi
+  if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk; curl https://sdk.cloud.google.com | bash > /dev/null; fi
   # Add gcloud to $PATH
   source /home/travis/google-cloud-sdk/path.bash.inc
   gcloud version
@@ -23,7 +23,6 @@ auth() {
   gcloud auth activate-service-account $GCLOUD_EMAIL --key-file gcloud.p12
   ssh-keygen -f ~/.ssh/google_compute_engine -N ""
 }
-
 
 version() {
   VERSION_PACKAGES=$(docker run gcr.io/unicode-wiki/uw-packages cat package.json | jq '.version' | sed 's/"//g')
