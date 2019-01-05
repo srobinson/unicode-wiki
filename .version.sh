@@ -31,11 +31,18 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   git status
   git stash
 
+  # TODO: figure out why personal tokens are vanishing
   git remote set-url origin https://srobinson:${TRAVIS_PASS}@github.com/srobinson/unicode-wiki.git
+
+  # print status
+  npx oao status
 
   # create release
   npx oao publish --no-confirm --new-version $nv
   # ./deploy.sh
+
+  # sanity revert change for testing locally
+  git remote set-url origin git@github.com:srobinson/unicode-wiki.git
 
 fi
 
