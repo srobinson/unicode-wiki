@@ -14,6 +14,10 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
 
   git remote show origin
 
+  git remote set-url origin https://3062eada91aa85a445b1b6841768fe6dec436749@github.com/srobinson/unicode-wiki.git
+
+  git remote show origin
+
   # get current version
   v=$(git describe --tags `git rev-list --tags --max-count=1`)
   # get last commit
