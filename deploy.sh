@@ -76,7 +76,6 @@ services() {
       str="$1 $package $version"
       eval $str
     fi
-
   done
 }
 

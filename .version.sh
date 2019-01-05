@@ -9,7 +9,7 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   # get last commit
   m=`git show --pretty`
 
-  if grep -q 'BREAKING\sCHANGE:' <<< $m; then
+  if grep -q 'BREAKING\CHANGE:' <<< $m; then
     nv=`./.increment_version.sh -M ${v#"v"}`
   elif grep -q feat\([a-z]*\): <<< $m; then
     nv=`./.increment_version.sh -m ${v#"v"}`
