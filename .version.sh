@@ -32,6 +32,8 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   git stash
 
   git remote set-url origin https://srobinson:${TRAVIS_PASS}@github.com/srobinson/unicode-wiki.git
+
+  # create release
   npx oao publish --no-confirm --new-version $nv
   # ./deploy.sh
 
