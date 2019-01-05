@@ -9,7 +9,10 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   echo "Access Token:" ${TRAVIS_TOKEN}
   git config --global user.email "travis@alphab.io"
   git config --global user.name "travis-alphab"
-  git config --global github.token ${TRAVIS_TOKEN}
+  git config --global github.token 3062eada91aa85a445b1b6841768fe6dec436749
+  git config --global token 3062eada91aa85a445b1b6841768fe6dec436749
+
+  git remote show origin
 
   # get current version
   v=$(git describe --tags `git rev-list --tags --max-count=1`)
