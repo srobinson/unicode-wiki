@@ -10,7 +10,7 @@ cache:
   directories:
   - node_modules
 before_install:
-- "./ci/version.sh"
+- "./.version.sh"
 - "./compose.sh"
 - yarn add global -W lerna
 install:
@@ -19,7 +19,7 @@ install:
 before_script:
 - yarn seed
 # after_success:
-# - "./ci/version.sh"
+# - "./compose.sh"
 
 env:
   global:

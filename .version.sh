@@ -2,9 +2,6 @@
 
 if [[ $TRAVIS_BRANCH == 'master' ]]; then
 
-  # git config --global user.email "travis@alphab.io"
-  # git config --global user.name "travis-alphab"
-
   # get latest version
   v=$(git describe --tags `git rev-list --tags --max-count=1`)
 
@@ -14,11 +11,11 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   m=`git show --pretty`
 
   if grep -q 'BREAKING\CHANGE:' <<< $m; then
-    nv=`./increment_version.sh -M ${v#"vv"}`
+    nv=`./.increment_version.sh -M ${v#"vv"}`
   elif grep -q feat\([a-z]*\): <<< $m; then
-    nv=`./increment_version.sh -m ${v#"vv"}`
+    nv=`./.increment_version.sh -m ${v#"vv"}`
   else
-    nv=`./increment_version.sh -p ${v#"vv"}`
+    nv=`./.increment_version.sh -p ${v#"vv"}`
   fi
 
   echo next version: $nv
@@ -43,7 +40,7 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   # sanity revert change for testing locally
   git remote set-url origin git@github.com:srobinson/unicode-wiki.git
 
-  # ./deploy.sh
+  # ./.deploy.sh
 
 fi
 
