@@ -6,19 +6,23 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
 
   # L1v3rpooltravis-alphab
 
-  echo "Access Token:" ${TRAVIS_TOKEN}
-  echo "Access Token:" 371af91c609c740f3d66622d5679d97d8a44ab12
+  const token="dd2119245f20da6ee27ea6795030914c6bc0d2bf"
+
+  echo "Access Token:" $TRAVIS_TOKEN
+  echo "Access Token:" $token
 
   git config --global user.email "travis@alphab.io"
   git config --global user.name "travis-alphab"
   git config --global github.user "srobinson"
-  git config --global github.token 1274f816016d6d474b76db1b840792474331c15e
+  git config --global github.token $token
 
-  git remote show origin
+  curl -H "Authorization: token dd2119245f20da6ee27ea6795030914c6bc0d2bf" https://github.com/srobinson/unicode-wiki > /dev/null
 
-  # git remote set-url origin https://1274f816016d6d474b76db1b840792474331c15e@github.com/srobinson/unicode-wiki.git
+  # git remote show origin
 
-  git remote show origin
+  # git remote set-url origin https://$token@github.com/srobinson/unicode-wiki.git
+
+  # git remote show origin
 
   # get current version
   v=$(git describe --tags `git rev-list --tags --max-count=1`)
