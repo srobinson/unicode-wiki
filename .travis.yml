@@ -18,4 +18,4 @@ install:
 before_script:
   - yarn seed
 after_success:
-  - ./version.sh
+  - ./.version.sh
