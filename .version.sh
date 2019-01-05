@@ -4,6 +4,9 @@ echo TRAVIS_BRANCH: $TRAVIS_BRANCH
 
 if [[ $TRAVIS_BRANCH == 'master' ]]; then
 
+  git config --global user.email "travis@travis-ci.org"
+  git config --global user.name "Travis CI"
+
   # get current version
   v=$(git describe --tags `git rev-list --tags --max-count=1`)
   # get last commit
@@ -24,6 +27,7 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   git config branch.${TRAVIS_BRANCH}.merge refs/heads/${TRAVIS_BRANCH}
   git status
   git stash
+
 
   npx oao publish --no-confirm --new-version v$nv
   # ./deploy.sh
