@@ -16,9 +16,9 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   else
     nv=`./.increment_version.sh -p ${v#"v"}`
   fi
-
+  git checkout master
   npx oao publish --no-confirm --new-version v$nv
-  ./deploy.sh
+  # ./deploy.sh
 
 fi
 
