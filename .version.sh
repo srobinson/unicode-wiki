@@ -6,7 +6,7 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
 
   # L1v3rpooltravis-alphab
 
-  # const token="caa09f7e75edc6d50666bd6c5cc28c9f17a7ebf4"
+  # const token="a09ac657763fd8054625bacb88d503de362ff6e5"
 
   # echo "Access Token:" $TRAVIS_TOKEN
   # echo "Access Token:" $token
@@ -16,7 +16,7 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   # git config --global github.user "srobinson"
   # git config --global github.token $token
 
-  # curl -H "Authorization: token caa09f7e75edc6d50666bd6c5cc28c9f17a7ebf4" https://github.com/srobinson/unicode-wiki > /dev/null
+  curl -H "Authorization: token a09ac657763fd8054625bacb88d503de362ff6e5" https://github.com/srobinson/unicode-wiki > /dev/null
 
   # git remote show origin
 
