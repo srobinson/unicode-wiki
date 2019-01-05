@@ -7,6 +7,8 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   # L1v3rpooltravis-alphab
 
   echo "Access Token:" ${TRAVIS_TOKEN}
+  echo "Access Token:" 2520ab872380460dd0a720830d0391eee4ad3bde
+
   git config --global user.email "travis@alphab.io"
   git config --global user.name "travis-alphab"
   git config --global github.user "srobinson"
