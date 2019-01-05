@@ -19,11 +19,24 @@ auth() {
   ls -l -- "$HOME"
   ls -l -- "$CASHER_DIR"
 
+  echo "$HOME/docker"
   ls -l -- "$HOME/docker"
-  ls -l -- "$HOME/build/srobinson/unicode-wiki/node_modules t"
 
+  echo google-cloud-sdk
+  ls -l -- "$HOME/google-cloud-sdk"
+
+  echo "$HOME/build/srobinson/unicode-wiki/node_modules"
+  ls -l -- "$HOME/build/srobinson/unicode-wiki/node_modules"
+
+  echo /var/lib/docker
+  ls -l /var/lib/docker
 
   if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk; curl https://sdk.cloud.google.com | bash > /dev/null; fi
+
+  echo google-cloud-sdk
+  ls -l -- "$HOME/google-cloud-sdk"
+
+
   source /home/travis/google-cloud-sdk/path.bash.inc
   gcloud version
   gcloud --quiet components update kubectl
