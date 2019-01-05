@@ -4,10 +4,12 @@ echo TRAVIS_BRANCH: $TRAVIS_BRANCH
 
 if [[ $TRAVIS_BRANCH == 'master' ]]; then
 
-  echo "Access Token:" ${GH_TOKEN}
-  git config --global user.email "travis@travis-ci.org"
-  git config --global user.name "Travis CI"
-  git config --global github.token ${GH_TOKEN}
+  # L1v3rpooltravis-alphab
+
+  echo "Access Token:" ${TRAVIS_TOKEN}
+  git config --global user.email "travis@alphab.io"
+  git config --global user.name "travis-alphab"
+  git config --global github.token ${TRAVIS_TOKEN}
 
   # get current version
   v=$(git describe --tags `git rev-list --tags --max-count=1`)
