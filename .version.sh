@@ -16,13 +16,13 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   git config --global user.email "travis@alphab.io"
   git config --global user.name "travis-alphab"
   # git config --global github.user "srobinson"
-  git config --global github.token 20a3718a3b480b957b190f435ce07a091a98c008
+  # git config --global github.token 20a3718a3b480b957b190f435ce07a091a98c008
 
-  curl -H "Authorization: token 20a3718a3b480b957b190f435ce07a091a98c008" https://github.com/srobinson/unicode-wiki > /dev/null
+  # curl -H "Authorization: token 20a3718a3b480b957b190f435ce07a091a98c008" https://github.com/srobinson/unicode-wiki > /dev/null
 
   # git remote show origin
 
-  # git remote set-url origin https://$token@github.com/srobinson/unicode-wiki.git
+  git remote set-url origin https://srobinson:${TRAVIS_PASS}@github.com/srobinson/unicode-wiki.git
 
   # git remote show origin
 
