@@ -13,6 +13,8 @@ packages=$(echo $workspace_status | grep -oEi $packages_re | sed -r "s:\x1B\[[0-
 packages_arr=($(echo $packages | tr " " "\n"))
 
 auth() {
+  echo HOME $HOME
+  ls -l -- "$HOME"
   if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk; curl https://sdk.cloud.google.com | bash > /dev/null; fi
   source /home/travis/google-cloud-sdk/path.bash.inc
   gcloud version

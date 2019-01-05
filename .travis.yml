@@ -6,11 +6,11 @@ branches:
   - master
   - "/^PR-.+$/"
 cache:
-  yarn: true
   directories:
   - node_modules
   - "$HOME/google-cloud-sdk"
   - "$HOME/docker"
+  yarn: true
 services:
 - docker
 git:
