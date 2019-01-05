@@ -9,6 +9,19 @@ packages_re='(@uw/[a-z-]+)\s+.{9}([0-9]+\.[0-9]+\.[0-9]+)'
 packages=$(echo $workspace_status | grep -oEi $packages_re | sed -r "s:\x1B\[[0-9;]*[mK]::g")
 packages_arr=($(echo $packages | tr " " "\n"))
 
+auth() {
+  if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk; curl https://sdk.cloud.google.com | bash; fi
+  # Add gcloud to $PATH
+  source /home/travis/google-cloud-sdk/path.bash.inc
+  gcloud version
+  gcloud --quiet components update kubectl
+  # Auth flow
+  echo $GCLOUD_KEY | base64 --decode > gcloud.p12
+  gcloud auth activate-service-account $GCLOUD_EMAIL --key-file gcloud.p12
+  ssh-keygen -f ~/.ssh/google_compute_engine -N ""
+}
+
+
 version() {
   VERSION_PACKAGES=$(docker run gcr.io/unicode-wiki/uw-packages cat package.json | jq '.version' | sed 's/"//g')
   cds=$(docker run gcr.io/unicode-wiki/uw-packages cat package.json | jq '.dependencies')
@@ -84,6 +97,7 @@ then
   >&2 echo error
 fi
 
+auth
 version
 
 build base \
