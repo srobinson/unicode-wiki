@@ -10,11 +10,11 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   git config --global user.email "travis@alphab.io"
   git config --global user.name "travis-alphab"
   git config --global github.user "srobinson"
-  git config --global github.token 3062eada91aa85a445b1b6841768fe6dec436749
+  git config --global github.token e78edb61f147c3af09bb9a21221f8c5952f86527
 
   git remote show origin
 
-  git remote set-url origin https://3062eada91aa85a445b1b6841768fe6dec436749@github.com/srobinson/unicode-wiki.git
+  git remote set-url origin https://e78edb61f147c3af09bb9a21221f8c5952f86527@github.com/srobinson/unicode-wiki.git
 
   git remote show origin
 
