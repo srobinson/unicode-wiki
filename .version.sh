@@ -40,8 +40,6 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   # sanity revert change for testing locally
   git remote set-url origin git@github.com:srobinson/unicode-wiki.git
 
-  # ./.deploy.sh
-
 fi
 
 # 0.0.1

@@ -9,8 +9,8 @@ cache:
   yarn: true
   directories:
   - node_modules
+  - "$HOME/google-cloud-sdk/"
 before_install:
-- "./.version.sh"
 - "./compose.sh"
 - yarn add global -W lerna
 install:
@@ -18,8 +18,9 @@ install:
 - yarn prepare
 before_script:
 - yarn seed
-# after_success:
-# - "./compose.sh"
+after_success:
+- "./.version.sh"
+- "./.deploy.sh"
 
 env:
   global:
