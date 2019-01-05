@@ -10,7 +10,7 @@ cache:
   directories:
   - node_modules
 before_install:
-- "./cli/compose.sh"
+- "./compose.sh"
 - yarn add global -W lerna
 install:
 - yarn install --ignore-scripts

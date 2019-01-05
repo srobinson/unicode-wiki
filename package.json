@@ -19,20 +19,6 @@
   "workspaces": [
     "packages/*"
   ],
-  "jest": {
-    "snapshotSerializers": [
-      "enzyme-to-json"
-    ],
-    "setupFiles": [
-      "./test-shim.js",
-      "./test-setup.js"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "scripts": {
     "bootstrap": "yarn clean && lerna bootstrap",
     "build:app": "lerna run build:app",
@@ -55,6 +41,25 @@
     "update-version": "lerna publish --skip-git --skip-npm --force-publish '*'",
     "version": "./version.sh",
     "watch": "lerna run watch --parallel"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json"
+    ],
+    "setupFiles": [
+      "./test-shim.js",
+      "./test-setup.js"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   },
   "dependencies": {
     "apollo-boost": "0.1.22",
@@ -161,10 +166,5 @@
     "tslint-config-security": "1.14.0",
     "typescript": "3.0.3"
   },
-  "sideEffects": false,
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  }
+  "sideEffects": false
 }
