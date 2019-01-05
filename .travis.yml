@@ -8,9 +8,9 @@ branches:
 cache:
   directories:
   - node_modules
+  - docker
   - "$HOME/google-cloud-sdk"
   - "$HOME/docker"
-  - /var/lib/docker
   yarn: true
 services:
 - docker
