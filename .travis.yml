@@ -1,7 +1,7 @@
 language: node_js
 branches:
   only:
-  - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
+  - master
   - /^PR-.+$/
 git:
   quiet: true
