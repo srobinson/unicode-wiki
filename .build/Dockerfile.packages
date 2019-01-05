@@ -1,4 +1,4 @@
-FROM lerna AS PACKAGES
+FROM gcr.io/unicode-wiki/uw-base AS PACKAGES
 
 WORKDIR /tmp
 
