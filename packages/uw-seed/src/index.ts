@@ -28,6 +28,7 @@ class Runner {
     const client = new DbClient()
     const esClient = new EsClient()
 
+    // TODO: verify elasticsearch is seeded
     if (await client.isSeeded()) {
       process.exit()
     }

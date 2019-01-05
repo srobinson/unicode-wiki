@@ -1,8 +1,6 @@
 #!/bin/bash
 
-echo TRAVIS_BRANCH: $TRAVIS_BRANCH
-
-if [[ $TRAVIS_BRANCH == 'master' ]]; then
+if [[ $TRAVIS_BRANCH != 'master' ]]; then
 
   git config --global user.email "travis@alphab.io"
   git config --global user.name "travis-alphab"
@@ -10,18 +8,20 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   # get latest version
   v=$(git describe --tags `git rev-list --tags --max-count=1`)
 
+  echo current version: $v
+
   # get last commit
   m=`git show --pretty`
 
   if grep -q 'BREAKING\CHANGE:' <<< $m; then
-    nv=`./.increment_version.sh -M ${v#"v"}`
+    nv=`./.increment_version.sh -M ${v#"vv"}`
   elif grep -q feat\([a-z]*\): <<< $m; then
-    nv=`./.increment_version.sh -m ${v#"v"}`
+    nv=`./.increment_version.sh -m ${v#"vv"}`
   else
-    nv=`./.increment_version.sh -p ${v#"v"}`
+    nv=`./.increment_version.sh -p ${v#"vv"}`
   fi
 
-  echo =======$nv===========
+  echo next version: $nv
 
   echo "Fixing git setup for $TRAVIS_BRANCH"
   git checkout ${TRAVIS_BRANCH}
@@ -31,7 +31,7 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   git status
   git stash
 
-  # TODO: figure out why personal tokens are vanishing
+  # # TODO: figure out why personal tokens are vanishing
   git remote set-url origin https://srobinson:${TRAVIS_PASS}@github.com/srobinson/unicode-wiki.git
 
   # print status
@@ -41,7 +41,7 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   npx oao publish --no-confirm --new-version $nv
   # ./deploy.sh
 
-  # sanity revert change for testing locally
+  sanity revert change for testing locally
   git remote set-url origin git@github.com:srobinson/unicode-wiki.git
 
 fi
