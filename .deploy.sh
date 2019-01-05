@@ -31,6 +31,10 @@ auth() {
   gcloud auth activate-service-account $GCLOUD_EMAIL --key-file gcloud.p12
   gcloud auth configure-docker
   ssh-keygen -f ~/.ssh/google_compute_engine -N ""
+
+  echo DOCKER INFO
+  docker info
+
 }
 
 version() {
@@ -87,6 +91,8 @@ push() {
 }
 
 deploy() {
+  echo DEPLOYING..
+  echo kubectl get pods
   if ! kubectl get deployment/uw-$1-web -o=json | jq '.spec.template.spec.containers[0].image' | grep -v 'grep' | grep "$2"; then
     kubectl set image deployment/uw-$1-web uw-$1-web=gcr.io/unicode-wiki/uw-$1:$2 || exit 3
     echo gcr.io/unicode-wiki/uw-$1:$2 deployed
