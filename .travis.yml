@@ -2,6 +2,7 @@ language: node_js
 branches:
   only:
   - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
+  - /^PR-.+$/
 git:
   quiet: true
 cache:
