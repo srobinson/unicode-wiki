@@ -7,6 +7,7 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   git config --global user.email "travis@alphab.io"
   git config --global user.name "travis-alphab"
 
+  # get latest version
   v=$(git describe --tags `git rev-list --tags --max-count=1`)
 
   # get last commit
