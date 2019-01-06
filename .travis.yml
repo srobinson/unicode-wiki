@@ -1,15 +1,18 @@
 language: node_js
 node_js:
 - 9
+sudo: true
 branches:
   only:
   - master
-  - "/^PR-[0-9a-z-]+$/"
+  - "/^PR-.+$/"
 cache:
   directories:
   - $HOME/google-cloud-sdk
   - $HOME/docker
   - node_modules
+  - /var/lib/docker/volumes/unicode-wiki_mongodb/_data
+  - /var/lib/docker/volumes/unicode-wiki_esdata1/_data
   yarn: true
 services:
 - docker
@@ -22,9 +25,23 @@ env:
   - CLOUDSDK_CORE_PROJECT=$GCLOUD_PROJECT
   - secure: hkh92DkZ1zko11+fPcRNPvjq62FtkehQmYfN9O80RjvYUd6oDYKoE2lwdAYpEeM7FqXOQB5ShJrCDxLWyp/7RXbx5UlImYxWYhQgJAjL6zkJ11WmZTnX3kwdTpfn3eABkqLpoMVH9v0dvpjMqTYGXPuzR6K7u9kfiufPSezU2obeh8yKPjV3wxTRth6Tky9abhyFUjTcwzbIWXLiRNrhV9YhZCFu3RdfMcNfW9AXkHMhxaPGUKKjTFJD60rVlwb17of4S7SrjCWPO0KCxP7ERTWosD/LXToE7k7PbIOK821+O3Ze1nEdPDmuK6mkCnsIthnMOSP/4hpje31sz/0pXdktytkFbh4EDl+2nCKYMHLzqIfpbgAwr8wEyToY+G3MkFS/CdlnbhBCIRD3USng47wvFzrka39f7KZ2ycB0IKVbb0GDsfvrsXWBvzMdt/2ZTIwMSB7igzuu5YD7plqgniyB/ffE/L8+J1/X4m0Zjb/KiFeOa0eDDaFx4oOjg8NIJ8FE7tw3kGnxKK9deHbuvLze7Khfz7MFnBc3fB5fNjQKzXwCG9vs7/5/gTzRQw+oxVy2T5+qg+5ECtXj1cGCDz1hGStaMuBmQ9GANW9Zx6QF+RCOVcFiYxJCwee/UbqQ78puRJEjSPWL9Vedj2NC4AcusvivlptgGnskD1tLjhM=
 before_install:
-- pip -v
-- "./.auth-gcloud.sh"
+- if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf "$HOME/google-cloud-sdk"; curl https://sdk.cloud.google.com | bash > /dev/null; fi
+- source $HOME/google-cloud-sdk/path.bash.inc
+- gcloud --version
+- echo $GCLOUD_KEY | base64 --decode > gcloud.p12
+- export GOOGLE_APPLICATION_CREDENTIALS="gcloud.p12"
+- gcloud auth activate-service-account $GCLOUD_EMAIL --key-file gcloud.p12
+- ssh-keygen -f ~/.ssh/google_compute_engine -N ""
+- gcloud --quiet config set project $GCLOUD_PROJECT
+- gcloud --quiet config set container/cluster $GCLOUD_CLUSTER
+- gcloud --quiet config set compute/zone $GCLOUD_ZONE
+- gcloud --quiet config set container/use_application_default_credentials true
+- gcloud container clusters get-credentials uw-cluster --zone=$GCLOUD_ZONE
+- gcloud components install kubectl
+- gcloud components install docker-credential-gcr
+- gcloud auth configure-docker
 - "./compose.sh"
+- sudo pip install json_diff
 - yarn add global -W lerna
 install:
 - yarn install --ignore-scripts
