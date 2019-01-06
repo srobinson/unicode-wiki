@@ -42,6 +42,9 @@ auth() {
   gcloud auth activate-service-account $GCLOUD_EMAIL --key-file gcloud.p12
   ssh-keygen -f ~/.ssh/google_compute_engine -N ""
 
+  echo gcloud auth list
+  gcloud auth list
+
   # gcloud config list
   gcloud config list
 
@@ -63,6 +66,9 @@ auth() {
 
   echo kubectl version
   kubectl version
+
+  echo kubectl auth can-i get pods
+  kubectl auth can-i get pods
 
   echo kubectl get pods
   kubectl get pods
