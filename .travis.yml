@@ -10,8 +10,7 @@ cache:
   directories:
   - $HOME/google-cloud-sdk
   - $HOME/docker
-  - /var/lib/docker/volumes/dockercompose_mongodb/_data
-  - /var/lib/docker/volumes/dockercompose_esdata1/_data
+  - $HOME/_data
   - node_modules
   yarn: true
 services:

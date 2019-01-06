@@ -10,24 +10,21 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   # get last commit
   m=`git show --pretty`
 
-  if grep -q 'BREAKING\CHANGE:' <<< $m; then
-    nv=`./.increment_version.sh -M ${v#"vv"}`
+  if grep -q 'BREAKING\sCHANGE:' <<< $m; then
+    iv="major"
   elif grep -q feat\([a-z]*\): <<< $m; then
-    nv=`./.increment_version.sh -m ${v#"vv"}`
+    iv="minor"
   else
-    nv=`./.increment_version.sh -p ${v#"vv"}`
+    iv="patch"
   fi
 
-  echo next version: $nv
+  echo increment version: $iv
 
   echo "Fixing git setup for $TRAVIS_BRANCH"
   git checkout ${TRAVIS_BRANCH}
   git branch -u origin/${TRAVIS_BRANCH}
   git config branch.${TRAVIS_BRANCH}.remote origin
   git config branch.${TRAVIS_BRANCH}.merge refs/heads/${TRAVIS_BRANCH}
-  # stash generated gcloud.p12
-  git add .
-  git stash
 
   # print status
   npx oao status
@@ -36,9 +33,7 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   git remote set-url origin https://srobinson:${TRAVIS_PASS}@github.com/srobinson/unicode-wiki.git
 
   # create release
-  npx oao publish --no-confirm --new-version $nv
-
-  git stash pop
+  npx oao publish --no-confirm --no-check-uncommitted --increment-version-by $iv
 
   # sanity revert change for testing locally
   git remote set-url origin git@github.com:srobinson/unicode-wiki.git

@@ -13,8 +13,8 @@ packages=$(echo $workspace_status | grep -oEi $packages_re | sed -r "s:\x1B\[[0-
 packages_arr=($(echo $packages | tr " " "\n"))
 
 version() {
-  VERSION_PACKAGES=$(docker run gcr.io/unicode-wiki/uw-packages cat package.json | jq '.version' | sed 's/"//g')
-  cds=$(docker run gcr.io/unicode-wiki/uw-packages cat package.json | jq '.dependencies')
+  VERSION_PACKAGES=$(docker run --rm gcr.io/unicode-wiki/uw-packages cat package.json | jq '.version' | sed 's/"//g')
+  cds=$(docker run --rm gcr.io/unicode-wiki/uw-packages cat package.json | jq '.dependencies')
   pds=$(cat package.json | jq '.dependencies')
   diff=$(jd -set <(echo "$cds") <(echo "$pds"))
   echo diff $diff
@@ -60,11 +60,13 @@ build() {
 }
 
 push() {
-  if ! gcloud container images list-tags gcr.io/unicode-wiki/uw-$1 | grep -v 'grep' | grep "\s$2[\s|,]"; then
-    echo pushing gcr.io/unicode-wiki/uw-$1:$2
-    docker push gcr.io/unicode-wiki/uw-$1:$2
-    docker push gcr.io/unicode-wiki/uw-$1:latest
-    echo gcr.io/unicode-wiki/uw-$1:$2 pushed
+  if [[ $package =~ ^(.+)?(app|api|api-graph|assets|base|packages|-service)$ ]]; then
+    if ! gcloud container images list-tags gcr.io/unicode-wiki/uw-$1 | grep -v 'grep' | grep "\s$2[\s|,]"; then
+      echo pushing gcr.io/unicode-wiki/uw-$1:$2
+      docker push gcr.io/unicode-wiki/uw-$1:$2
+      docker push gcr.io/unicode-wiki/uw-$1:latest
+      echo gcr.io/unicode-wiki/uw-$1:$2 pushed
+    fi
   fi
 }
 

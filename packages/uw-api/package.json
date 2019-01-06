@@ -11,6 +11,7 @@
     "watch": "tsc -w"
   },
   "dependencies": {
+    "@uw/seed": "^0.1.0",
     "@uw/domain": "^0.1.0",
     "@uw/logging": "^0.1.0",
     "@uw/utils": "^0.1.0"
