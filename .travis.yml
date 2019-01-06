@@ -42,7 +42,6 @@ before_install:
 - gcloud components install docker-credential-gcr
 - gcloud auth configure-docker
 - "./compose.sh"
-- sudo pip install json_diff
 - yarn add global -W lerna
 - go get github.com/josephburnett/jd
 install:
