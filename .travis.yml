@@ -7,10 +7,10 @@ branches:
   - "/^PR-.+$/"
 cache:
   directories:
-  - node_modules
   - "$HOME/google-cloud-sdk"
   - "$HOME/docker"
   - /var/lib/docker
+  - node_modules
   yarn: true
 services:
 - docker

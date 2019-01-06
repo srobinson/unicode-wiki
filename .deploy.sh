@@ -25,9 +25,6 @@ auth() {
   echo google-cloud-sdk
   ls -l -- "$HOME/google-cloud-sdk"
 
-  echo "$HOME/build/srobinson/unicode-wiki/node_modules"
-  ls -l -- "$HOME/build/srobinson/unicode-wiki/node_modules"
-
   echo /var/lib/docker
   ls -l /var/lib/docker
 
@@ -54,12 +51,15 @@ auth() {
 
   gcloud auth configure-docker
 
-  # gcloud config list
+  echo gcloud config list
   gcloud config list
-
 
   echo DOCKER INFO
   docker info
+
+  echo kubectl get pods
+  kubectl get pods
+
 }
 
 version() {
@@ -117,7 +117,6 @@ push() {
 
 deploy() {
   echo DEPLOYING..
-  echo kubectl get pods
   if ! kubectl get deployment/uw-$1-web -o=json | jq '.spec.template.spec.containers[0].image' | grep -v 'grep' | grep "$2"; then
     kubectl set image deployment/uw-$1-web uw-$1-web=gcr.io/unicode-wiki/uw-$1:$2 || exit 3
     echo gcr.io/unicode-wiki/uw-$1:$2 deployed
