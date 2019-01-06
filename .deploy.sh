@@ -16,17 +16,14 @@ version() {
   VERSION_PACKAGES=$(docker run gcr.io/unicode-wiki/uw-packages cat package.json | jq '.version' | sed 's/"//g')
   cds=$(docker run gcr.io/unicode-wiki/uw-packages cat package.json | jq '.dependencies')
   pds=$(cat package.json | jq '.dependencies')
-  diff=$(echo [$cds, $pds] | json_diff)
+  diff=$(jd -set <(echo "$cds") <(echo "$pds"))
   echo diff $diff
-  if [ $diff != "[]" ]; then
+  if [ -n "$diff" ]; then
     VERSION_PACKAGES=$(cat package.json | jq '.version' | sed 's/"//g')
   fi
 }
 
 build() {
-
-  docker images
-
   if  ! docker images | grep -v 'grep' | grep "uw-$1\s.*$2"; then
     echo building gcr.io/unicode-wiki/uw-$1:$2
 
