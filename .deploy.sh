@@ -53,9 +53,7 @@ build() {
       -t gcr.io/unicode-wiki/uw-$1:$2 \
       . || exit 3
 
-    if [[ $3 == "latest" ]]; then
-      docker tag gcr.io/unicode-wiki/uw-$1:$2 gcr.io/unicode-wiki/uw-$1:latest
-    fi
+    docker tag gcr.io/unicode-wiki/uw-$1:$2 gcr.io/unicode-wiki/uw-$1:latest
 
     echo docker build gcr.io/unicode-wiki/uw-$1:$2 complete
   fi
@@ -64,7 +62,8 @@ build() {
 push() {
   if ! gcloud container images list-tags gcr.io/unicode-wiki/uw-$1 | grep -v 'grep' | grep "\s$2[\s|,]"; then
     echo pushing gcr.io/unicode-wiki/uw-$1:$2
-    docker push gcr.io/unicode-wiki/uw-$1:$2 || exit 3
+    docker push gcr.io/unicode-wiki/uw-$1:$2
+    docker push gcr.io/unicode-wiki/uw-$1:latest
     echo gcr.io/unicode-wiki/uw-$1:$2 pushed
   fi
 }
@@ -72,7 +71,7 @@ push() {
 deploy() {
   if [[ $package =~ ^(.+)?(app|api|api-graph|-service)$ ]]; then
     if ! kubectl get deployment/uw-$1-web -o=json | jq '.spec.template.spec.containers[0].image' | grep -v 'grep' | grep "$2"; then
-      kubectl set image deployment/uw-$1-web uw-$1-web=gcr.io/unicode-wiki/uw-$1:$2 || exit 3
+      kubectl set image deployment/uw-$1-web uw-$1-web=gcr.io/unicode-wiki/uw-$1:$2
       echo gcr.io/unicode-wiki/uw-$1:$2 deployed
     fi
   fi
