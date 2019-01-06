@@ -30,7 +30,7 @@ pull() {
 }
 
 build() {
-  if ! gcloud container images list-tags gcr.io/unicode-wiki/uw-$1 | grep -v 'grep' | grep "\s$2[\s|,]"; then
+  if ! gcloud container images list-tags gcr.io/unicode-wiki/uw-$1 | grep -v 'grep' | grep "\s$2[,| ]"; then
 
     echo building gcr.io/unicode-wiki/uw-$1:$2
 
@@ -60,7 +60,7 @@ build() {
 }
 
 push() {
-  if ! gcloud container images list-tags gcr.io/unicode-wiki/uw-$1 | grep -v 'grep' | grep "\s$2[\s|,]"; then
+  if ! gcloud container images list-tags gcr.io/unicode-wiki/uw-$1 | grep -v 'grep' | grep "\s$2[,| ]"; then
     echo pushing gcr.io/unicode-wiki/uw-$1:$2
     docker push gcr.io/unicode-wiki/uw-$1:$2
     docker push gcr.io/unicode-wiki/uw-$1:latest
