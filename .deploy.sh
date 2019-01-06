@@ -14,20 +14,20 @@ packages_arr=($(echo $packages | tr " " "\n"))
 
 auth() {
 
-  echo HOME $HOME
-  ls -l -- "$HOME"
+  # echo HOME $HOME
+  # ls -l -- "$HOME"
 
-  echo CASHER_DIR $CASHER_DIR
-  ls -l -- "$CASHER_DIR"
+  # echo CASHER_DIR $CASHER_DIR
+  # ls -l -- "$CASHER_DIR"
 
-  echo "$HOME/docker"
-  ls -l -- "$HOME/docker"
+  # echo "$HOME/docker"
+  # ls -l -- "$HOME/docker"
 
-  echo google-cloud-sdk
-  ls -l -- "$HOME/google-cloud-sdk"
+  # echo google-cloud-sdk
+  # ls -l -- "$HOME/google-cloud-sdk"
 
-  echo /var/lib/docker
-  ls -l /var/lib/docker
+  # echo /var/lib/docker
+  # ls -l /var/lib/docker
 
   # if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk; curl https://sdk.cloud.google.com | bash; fi
   if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk; curl https://sdk.cloud.google.com | bash > /dev/null; fi
@@ -42,9 +42,6 @@ auth() {
   gcloud auth activate-service-account $GCLOUD_EMAIL --key-file gcloud.p12
   ssh-keygen -f ~/.ssh/google_compute_engine -N ""
 
-  echo gcloud auth list
-  gcloud auth list
-
   # gcloud config list
   gcloud config list
 
@@ -53,16 +50,19 @@ auth() {
   gcloud --quiet config set compute/zone us-east1-b
   gcloud --quiet config set container/use_application_default_credentials true
   gcloud container clusters get-credentials uw-cluster --zone=us-east1-b
-
   gcloud auth configure-docker
 
-  echo gcloud config list
-  gcloud config list
-
-  echo DOCKER INFO
-  docker info
 
   curl "http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/token" -H "Metadata-Flavor: Google"
+
+  echo kubectl
+  kubectl
+
+  echo kubectl
+  kubectl
+
+  echo kubectl api-version
+  kubectl api-version
 
   echo kubectl version
   kubectl version
