@@ -29,7 +29,8 @@ auth() {
   echo /var/lib/docker
   ls -l /var/lib/docker
 
-  if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk; curl https://sdk.cloud.google.com | bash; fi
+  # if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk; curl https://sdk.cloud.google.com | bash; fi
+  if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk; curl https://sdk.cloud.google.com | bash > /dev/null; fi
 
   echo "$HOME/google-cloud-sdk"
   ls -l -- "$HOME/google-cloud-sdk"
@@ -59,6 +60,9 @@ auth() {
   docker info
 
   curl "http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/token" -H "Metadata-Flavor: Google"
+
+  echo kubectl version
+  kubectl version
 
   echo kubectl get pods
   kubectl get pods
