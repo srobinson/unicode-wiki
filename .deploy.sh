@@ -12,72 +12,6 @@ packages_re='(@uw/[a-z-]+)\s+.{9}([0-9]+\.[0-9]+\.[0-9]+)'
 packages=$(echo $workspace_status | grep -oEi $packages_re | sed -r "s:\x1B\[[0-9;]*[mK]::g")
 packages_arr=($(echo $packages | tr " " "\n"))
 
-auth() {
-
-  # echo HOME $HOME
-  # ls -l -- "$HOME"
-
-  # echo CASHER_DIR $CASHER_DIR
-  # ls -l -- "$CASHER_DIR"
-
-  # echo "$HOME/docker"
-  # ls -l -- "$HOME/docker"
-
-  # echo google-cloud-sdk
-  # ls -l -- "$HOME/google-cloud-sdk"
-
-  # echo /var/lib/docker
-  # ls -l /var/lib/docker
-
-  # if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk; curl https://sdk.cloud.google.com | bash; fi
-  if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk; curl https://sdk.cloud.google.com | bash > /dev/null; fi
-
-  echo "$HOME/google-cloud-sdk"
-  ls -l -- "$HOME/google-cloud-sdk"
-
-  source /home/travis/google-cloud-sdk/path.bash.inc
-  gcloud version
-  gcloud --quiet components update kubectl
-  echo $GCLOUD_KEY | base64 --decode > gcloud.p12
-  gcloud auth activate-service-account $GCLOUD_EMAIL --key-file gcloud.p12
-  ssh-keygen -f ~/.ssh/google_compute_engine -N ""
-
-  # gcloud config list
-  gcloud config list
-
-  gcloud --quiet config set project unicode-wiki
-  gcloud --quiet config set container/cluster uw-cluster
-  gcloud --quiet config set compute/zone us-east1-b
-  gcloud --quiet config set container/use_application_default_credentials true
-  gcloud container clusters get-credentials uw-cluster --zone=us-east1-b
-  gcloud auth configure-docker
-
-
-  curl "http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/token" -H "Metadata-Flavor: Google"
-
-  echo kubectl
-  kubectl
-
-  echo kubectl
-  kubectl
-
-  echo kubectl config current-context
-  kubectl config current-context
-
-  echo kubectl api-version
-  kubectl api-versions
-
-  echo kubectl version
-  kubectl version
-
-  echo kubectl auth can-i get pods
-  kubectl auth can-i get pods
-
-  echo kubectl get pods
-  kubectl get pods
-
-}
-
 version() {
   VERSION_PACKAGES=$(docker run gcr.io/unicode-wiki/uw-packages cat package.json | jq '.version' | sed 's/"//g')
   cds=$(docker run gcr.io/unicode-wiki/uw-packages cat package.json | jq '.dependencies')
@@ -157,7 +91,6 @@ then
   >&2 echo error
 fi
 
-auth
 version
 
 build base \
