@@ -51,4 +51,3 @@ before_script:
 - docker volume inspect dockercompose_mongodb
 after_success:
 - "./.version.sh"
-- "./.deploy.sh"

@@ -8,17 +8,17 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   echo current version: $v
 
   # get last commit
-  m=`git show --pretty`
+  m=`git log --format=%B -n 1`
 
   if grep -q 'BREAKING\sCHANGE:' <<< $m; then
     iv="major"
   elif grep -q feat\([a-z]*\): <<< $m; then
     iv="minor"
-  elif grep -q [chore|fix|perf]\([a-z]*\):
+  elif grep -q "[chore|fix|perf]\([a-z]*\):" <<< $m; then
     iv="patch"
   else
-    echo Nothing to build. Exiting.
-    exit 1
+    echo Nothing to build. Exiting....
+    travis_terminate 0
   fi
 
   if [ -n $iv ]; then
@@ -33,7 +33,7 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
     # print status
     npx oao status
 
-    # TODO: figure out why personal tokens are vanishing
+    # TODO: use personal access tokens for auth
     git remote set-url origin https://srobinson:${TRAVIS_PASS}@github.com/srobinson/unicode-wiki.git
 
     # create release
@@ -42,7 +42,10 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
     # sanity revert change for testing locally
     git remote set-url origin git@github.com:srobinson/unicode-wiki.git
 
+    . ./.deploy.sh
+
   elif
+
 fi
 
 # 0.0.1
