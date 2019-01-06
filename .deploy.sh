@@ -45,8 +45,6 @@ auth() {
   echo gcloud auth list
   gcloud auth list
 
-  gcloud config set account stuart@alphab.io
-
   # gcloud config list
   gcloud config list
 
