@@ -13,10 +13,11 @@ packages=$(echo $workspace_status | grep -oEi $packages_re | sed -r "s:\x1B\[[0-
 packages_arr=($(echo $packages | tr " " "\n"))
 
 auth() {
-  echo HOME $HOME
-  echo CASHER_DIR $CASHER_DIR
 
+  echo HOME $HOME
   ls -l -- "$HOME"
+
+  echo CASHER_DIR $CASHER_DIR
   ls -l -- "$CASHER_DIR"
 
   echo "$HOME/docker"
@@ -30,7 +31,7 @@ auth() {
 
   if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk; curl https://sdk.cloud.google.com | bash; fi
 
-  echo google-cloud-sdk
+  echo "$HOME/google-cloud-sdk"
   ls -l -- "$HOME/google-cloud-sdk"
 
   source /home/travis/google-cloud-sdk/path.bash.inc
@@ -58,6 +59,7 @@ auth() {
   docker info
 
   curl "http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/token" -H "Metadata-Flavor: Google"
+
   echo kubectl get pods
   kubectl get pods
 
