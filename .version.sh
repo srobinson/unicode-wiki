@@ -44,7 +44,7 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
 
     . ./.deploy.sh
 
-  elif
+  fi
 
 fi
 
