@@ -8,12 +8,12 @@ branches:
 cache:
   directories:
   - node_modules
-  - docker
+  # - docker
   - "$HOME/google-cloud-sdk"
   - "$HOME/docker"
   yarn: true
-services:
-- docker
+# services:
+# - docker
 git:
   quiet: true
 env:
