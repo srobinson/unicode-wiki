@@ -25,8 +25,9 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   git branch -u origin/${TRAVIS_BRANCH}
   git config branch.${TRAVIS_BRANCH}.remote origin
   git config branch.${TRAVIS_BRANCH}.merge refs/heads/${TRAVIS_BRANCH}
-  git reset --hard HEAD
-  git status
+  # stash generated gcloud.p12
+  git add .
+  git stash
 
   # print status
   npx oao status
