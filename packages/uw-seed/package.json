@@ -1,7 +1,7 @@
 {
   "name": "@uw/seed",
   "private": true,
-  "version": "v0.1.7",
+  "version": "0.1.7",
   "scripts": {
     "lint": "tslint 'src/**/*.ts'",
     "prepare": "echo '@uw/seed' && tsc",

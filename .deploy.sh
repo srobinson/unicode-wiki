@@ -23,8 +23,15 @@ version() {
   fi
 }
 
+pull() {
+  docker pull gcr.io/unicode-wiki/uw-base
+  docker pull gcr.io/unicode-wiki/uw-assets
+  docker pull gcr.io/unicode-wiki/uw-packages
+}
+
 build() {
-  if  ! docker images | grep -v 'grep' | grep "uw-$1\s.*$2"; then
+  if  ! gcloud container images list-tags gcr.io/unicode-wiki/uw-packages | grep -v 'grep' | grep "\s$2[\s|,]"; then
+
     echo building gcr.io/unicode-wiki/uw-$1:$2
 
     docker build \
@@ -55,7 +62,7 @@ build() {
 }
 
 push() {
-  if ! gcloud container images list-tags gcr.io/unicode-wiki/uw-$1 | grep -v 'grep' | grep "$2"; then
+  if ! gcloud container images list-tags gcr.io/unicode-wiki/uw-$1 | grep -v 'grep' | grep "\s$2[\s|,]"; then
     echo pushing gcr.io/unicode-wiki/uw-$1:$2
     docker push gcr.io/unicode-wiki/uw-$1:$2 || exit 3
     echo gcr.io/unicode-wiki/uw-$1:$2 pushed
@@ -63,10 +70,11 @@ push() {
 }
 
 deploy() {
-  echo DEPLOYING..
-  if ! kubectl get deployment/uw-$1-web -o=json | jq '.spec.template.spec.containers[0].image' | grep -v 'grep' | grep "$2"; then
-    kubectl set image deployment/uw-$1-web uw-$1-web=gcr.io/unicode-wiki/uw-$1:$2 || exit 3
-    echo gcr.io/unicode-wiki/uw-$1:$2 deployed
+  if [[ $package =~ ^(.+)?(app|api|api-graph|-service)$ ]]; then
+    if ! kubectl get deployment/uw-$1-web -o=json | jq '.spec.template.spec.containers[0].image' | grep -v 'grep' | grep "$2"; then
+      kubectl set image deployment/uw-$1-web uw-$1-web=gcr.io/unicode-wiki/uw-$1:$2 || exit 3
+      echo gcr.io/unicode-wiki/uw-$1:$2 deployed
+    fi
   fi
 }
 
@@ -76,7 +84,7 @@ services() {
   do
     package=${packages_arr[$i]#"@uw/"}
     version=${packages_arr[$i+1]#}
-    if [[ ${#package} -gt 0 && $package =~ ^(.+)?(app|api|api-graph|-service)$ ]]; then
+    if ${#package} -gt 0; then
       str="$1 $package $version"
       eval $str
     fi
@@ -89,6 +97,8 @@ then
 fi
 
 version
+
+pull
 
 build base \
   $VERSION_BASE \
