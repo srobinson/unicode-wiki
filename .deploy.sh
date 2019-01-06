@@ -61,8 +61,11 @@ auth() {
   echo kubectl
   kubectl
 
+  echo kubectl config current-context
+  kubectl config current-context
+
   echo kubectl api-version
-  kubectl api-version
+  kubectl api-versions
 
   echo kubectl version
   kubectl version
