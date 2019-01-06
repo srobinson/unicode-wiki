@@ -8,12 +8,12 @@ branches:
 cache:
   directories:
   - node_modules
-  # - docker
   - "$HOME/google-cloud-sdk"
   - "$HOME/docker"
+  - /var/lib/docker
   yarn: true
-# services:
-# - docker
+services:
+- docker
 git:
   quiet: true
 env:
@@ -35,6 +35,3 @@ before_script:
 # after_success:
 # - "./.version.sh"
 # - "./.deploy.sh"
-
-/home/travis/build/srobinson/unicode-wiki/node_modules
-/home/travis/build/srobinson/unicode-wiki/node_modules t

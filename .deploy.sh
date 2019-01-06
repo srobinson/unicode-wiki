@@ -36,18 +36,30 @@ auth() {
   echo google-cloud-sdk
   ls -l -- "$HOME/google-cloud-sdk"
 
-
   source /home/travis/google-cloud-sdk/path.bash.inc
   gcloud version
   gcloud --quiet components update kubectl
   echo $GCLOUD_KEY | base64 --decode > gcloud.p12
   gcloud auth activate-service-account $GCLOUD_EMAIL --key-file gcloud.p12
-  gcloud auth configure-docker
   ssh-keygen -f ~/.ssh/google_compute_engine -N ""
+
+  # gcloud config list
+  gcloud config list
+
+  gcloud --quiet config set project unicode-wiki
+  gcloud --quiet config set container/cluster uw-cluster
+  gcloud --quiet config set compute/zone us-east1-b
+  gcloud --quiet config set container/use_application_default_credentials true
+  gcloud container clusters get-credentials uw-cluster --zone=us-east1-b
+
+  gcloud auth configure-docker
+
+  # gcloud config list
+  gcloud config list
+
 
   echo DOCKER INFO
   docker info
-
 }
 
 version() {
