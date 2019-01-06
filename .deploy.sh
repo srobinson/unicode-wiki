@@ -79,13 +79,13 @@ services() {
   len=${#packages_arr[@]}
   for (( i=0; i<=$len; i = i + 2 ))
   do
-  if [[ ${#package} -gt 0 && $package =~ ^(.+)?(app|api|api-graph|-service)$ ]]; then
     package=${packages_arr[$i]#"@uw/"}
     version=${packages_arr[$i+1]#}
-    echo $1 $package $version
-    str="$1 $package $version"
-    eval $str
-  fi
+    if [[ ${#package} -gt 0 && $package =~ ^(.+)?(app|api|api-graph|-service)$ ]]; then
+      echo $1 $package $version
+      str="$1 $package $version"
+      eval $str
+    fi
   done
 }
 
