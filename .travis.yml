@@ -41,11 +41,10 @@ before_install:
 - gcloud components install docker-credential-gcr
 - gcloud auth configure-docker
 - "./compose.sh"
-- yarn add global -W lerna
+- yarn global add lerna
 - go get github.com/josephburnett/jd
 install:
-- yarn install --ignore-scripts
-- yarn prepare
+- yarn
 before_script:
 - yarn seed
 - docker volume ls
