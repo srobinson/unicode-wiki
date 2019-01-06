@@ -25,12 +25,14 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   git branch -u origin/${TRAVIS_BRANCH}
   git config branch.${TRAVIS_BRANCH}.remote origin
   git config branch.${TRAVIS_BRANCH}.merge refs/heads/${TRAVIS_BRANCH}
-  # commit generated gcloud.p12
+  # stash generated gcloud.p12
   git add .
-  git commit -m "add gcloud.p12"
+  git stash
 
   # print status
   npx oao status
+
+  git stash pop
 
   # TODO: figure out why personal tokens are vanishing
   git remote set-url origin https://srobinson:${TRAVIS_PASS}@github.com/srobinson/unicode-wiki.git

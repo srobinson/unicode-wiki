@@ -83,7 +83,7 @@ services() {
   do
     package=${packages_arr[$i]#"@uw/"}
     version=${packages_arr[$i+1]#}
-    if ${#package} -gt 0; then
+    if [[ ${#package} -gt 0 ]]; then
       str="$1 $package $version"
       eval $str
     fi
@@ -95,9 +95,9 @@ then
   >&2 echo error
 fi
 
-version
-
 pull
+
+version
 
 build base \
   $VERSION_BASE \
