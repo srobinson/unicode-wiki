@@ -31,7 +31,7 @@ else
 
   # deploy new versions
   if [[ $tag != $new_tag]]
-    . ./.deploy.sh
+    ./.deploy.sh
   fi
 
 fi
