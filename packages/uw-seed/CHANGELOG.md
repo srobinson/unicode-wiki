@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.12](https://github.com/srobinson/unicode-wiki/compare/@uw/seed@0.1.11...@uw/seed@0.1.12) (2019-01-07)
+
+**Note:** Version bump only for package @uw/seed
+
+
+
+
+
 ## [0.1.11](https://github.com/srobinson/unicode-wiki/compare/@uw/seed@0.1.10...@uw/seed@0.1.11) (2019-01-07)
 
 **Note:** Version bump only for package @uw/seed

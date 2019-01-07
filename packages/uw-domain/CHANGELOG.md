@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1](https://github.com/srobinson/unicode-wiki/compare/@uw/domain@1.0.0...@uw/domain@1.0.1) (2019-01-07)
+
+
+### Bug Fixes
+
+* **lerna:** test patch version ([1a153e5](https://github.com/srobinson/unicode-wiki/commit/1a153e5))
+
+
+
+
+
 # [1.0.0](https://github.com/srobinson/unicode-wiki/compare/@uw/domain@0.2.0...@uw/domain@1.0.0) (2019-01-07)
 
 
