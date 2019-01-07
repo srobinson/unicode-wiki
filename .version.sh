@@ -26,7 +26,7 @@ else
     iv="major"
   elif grep -q feat\([a-z]*\): <<< $m; then
     iv="minor"
-  elif grep -q "[chore|fix|perf]\([a-z]*\):" <<< $m; then
+  elif grep -q "[fix|perf]\([a-z]*\):" <<< $m; then
     iv="patch"
   else
     echo Nothing to build. Exiting....
