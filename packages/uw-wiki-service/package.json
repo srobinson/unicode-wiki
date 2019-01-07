@@ -1,7 +1,7 @@
 {
   "name": "@uw/wiki-service",
   "private": true,
-  "version": "0.3.3",
+  "version": "0.3.4",
   "license": "MIT",
   "scripts": {
     "prepare": "echo '@uw/wiki-service' && tsc",
@@ -11,9 +11,9 @@
     "watch": "tsc -w"
   },
   "dependencies": {
-    "@uw/domain": "0.1.2",
-    "@uw/logging": "0.1.1",
-    "@uw/utils": "0.1.1"
+    "@uw/domain": "0.2.0",
+    "@uw/logging": "0.1.2",
+    "@uw/utils": "0.1.2"
   },
   "devDependencies": {
     "@types/tmp": "0.0.33"

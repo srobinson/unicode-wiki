@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/srobinson/unicode-wiki/compare/@uw/domain@0.1.2...@uw/domain@0.2.0) (2019-01-07)
+
+
+### Features
+
+* **lerna:** test minor version ([c1499ea](https://github.com/srobinson/unicode-wiki/commit/c1499ea))
+
+
+
+
+
 ## 0.1.2 (2019-01-07)
 
 
