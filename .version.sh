@@ -33,16 +33,21 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   git stash
 
   # push new versions
-  lerna version --no-commit-hooks --conventional-commits --exact --sign-git-tag --yes --push
+  # --amend: generates git artifacts
+  lerna version --amend --no-commit-hooks --conventional-commits --exact --sign-git-tag --yes --push
+  git status
 
-  new_tag=$(git describe --tags `git rev-list --tags --max-count=1`)
+  # new_version=$(git status)
 
   # sanity revert change for testing locally
   git remote set-url origin git@github.com:srobinson/unicode-wiki.git
 
   # deploy new versions
-  if [[ $tag != $new_tag ]]; then
-    . ./.deploy.sh
-  fi
+  # if [[ $tag != $new_tag ]]; then
+  #   . ./.deploy.sh
+  #   # update release
+  #   git add .
+  #   git push origin master -f
+  # fi
 
 fi
