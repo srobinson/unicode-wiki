@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/username/projectname.svg?branch=master)](https://travis-ci.com/srobinson/unicode-wiki)
+
 # Unicode browser with wikipedia integration
 
 https://unicode.wiki

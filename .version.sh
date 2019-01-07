@@ -24,11 +24,11 @@ else
   # test: Adding missing or correcting existing tests 0.1.2
   # chore: Changes to the build process or auxiliary tools and libraries such as documentation generation 0.1.2
   # BREAKING CHANGE: 0.2.0
-  if [[ -n $(gawk '/BREAKING\sCHANGE:/' <<< $m) ]]; then
+  if [[ -n $(awk '/BREAKING\sCHANGE:/' <<< $m) ]]; then
     iv="major"
-  elif [[ -n $(gawk '/feat\([a-z]*\):/' <<< $m) ]]; then
+  elif [[ -n $(awk '/feat\([a-z]*\):/' <<< $m) ]]; then
     iv="minor"
-  elif [[ -n $(gawk '/[fix|perf]\([a-z]*\):/' <<< $m) ]]; then
+  elif [[ -n $(awk '/[fix|perf]\([a-z]*\):/' <<< $m) ]]; then
     iv="patch"
   else
     echo Nothing to release. Skipping build....
