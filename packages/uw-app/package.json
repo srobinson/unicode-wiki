@@ -27,7 +27,7 @@
     "@uw/components": "^0.1.0",
     "@uw/containers": "^0.1.0",
     "@uw/domain": "^0.1.0",
-    "@uw/store": "0.3.6",
+    "@uw/store": "0.3.2",
     "@uw/utils": "^0.1.0"
   },
   "devDependencies": {

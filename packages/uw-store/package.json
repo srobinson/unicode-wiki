@@ -10,7 +10,7 @@
     "watch": "tsc -w"
   },
   "dependencies": {
-    "@uw/api-graph": "0.9.0",
+    "@uw/api-graph": "0.4.1",
     "@uw/domain": "^0.1.0",
     "@uw/utils": "^0.1.0"
   }
