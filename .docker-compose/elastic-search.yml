@@ -14,13 +14,10 @@ services:
       - node.name=docker-node-1
       - processors=1
     volumes:
-      - esdata1:/usr/share/elasticsearch/data
+      - ~/_uw_esdata:/usr/share/elasticsearch/data
       - ./config/elasticsearch/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
     networks:
       - elk
-volumes:
-  esdata1:
-    driver: local
 networks:
   elk:
 

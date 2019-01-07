@@ -7,12 +7,7 @@ services:
     ports:
       - "27017:27017"
     volumes:
-      - mongodb:/data/db
-      - mongodb_config:/data/configdb
-volumes:
-  mongodb:
-    driver: local
-  mongodb_config:
-    driver: local
+      - ~/_uw_data:/data/db
+      - ~/_uw_config:/data/configdb
 networks:
   elk:

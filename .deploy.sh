@@ -35,6 +35,7 @@ build() {
     echo building gcr.io/unicode-wiki/uw-$1:$2
 
     docker build \
+      --quiet \
       --label "image=$1" \
       --label "version=$2" \
       --build-arg ANALYTICS_ID=$ANALYTICS_ID \
