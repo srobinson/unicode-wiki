@@ -9,6 +9,7 @@ import Routes from "./routes"
 import "express-async-errors"
 import "./config"
 
+// test broken build
 class Express {
   public static config(): express.Application {
     const app: express.Application = express()
