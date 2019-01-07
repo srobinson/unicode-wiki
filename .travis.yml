@@ -27,7 +27,7 @@ before_install:
 - mkdir -p ~/_uw_esdata
 - sudo chown -R 1000:1000 ~/_uw_esdata
 - ls -la $HOME
-- "./compose.sh up"
+- "./compose.sh"
 - if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then
     rm -rf "$HOME/google-cloud-sdk"; curl https://sdk.cloud.google.com | bash > /dev/null;
   fi
