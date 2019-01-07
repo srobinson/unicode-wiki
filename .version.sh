@@ -10,6 +10,16 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   # get last commit
   m=`git log --format=%B -n 1`
 
+  # 0.0.1
+  # feat: A new feature 0.1.0
+  # fix: A bug fix 0.1.1
+  # docs: Documentation only changes 0.1.1
+  # style: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc) 0.1.1
+  # refactor: A code change that neither fixes a bug nor adds a feature 0.1.1
+  # perf: A code change that improves performance 0.1.2
+  # test: Adding missing or correcting existing tests 0.1.2
+  # chore: Changes to the build process or auxiliary tools and libraries such as documentation generation 0.1.2
+  # BREAKING CHANGE: 0.2.0
   if grep -q 'BREAKING\sCHANGE:' <<< $m; then
     iv="major"
   elif grep -q feat\([a-z]*\): <<< $m; then
@@ -21,7 +31,7 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
     travis_terminate 0
   fi
 
-  if [ -n $iv ]; then
+  if [ ! -n $iv ]; then
     echo increment version: $iv
 
     echo "Fixing git setup for $TRAVIS_BRANCH"
@@ -47,13 +57,3 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   fi
 
 fi
-
-# 0.0.1
-# feat: A new feature 0.1.0
-# fix: A bug fix 0.1.1
-# docs: Documentation only changes 0.1.2
-# style: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc) 0.1.3
-# refactor: A code change that neither fixes a bug nor adds a feature
-# perf: A code change that improves performance
-# test: Adding missing or correcting existing tests
-# chore: Changes to the build process or auxiliary tools and libraries such as documentation generation
