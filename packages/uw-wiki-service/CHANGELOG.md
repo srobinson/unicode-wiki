@@ -3,6 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.3.2 (2019-01-07)
+
+
+
+## 0.3.1 (2019-01-07)
+
+
+
+## 0.1.11 (2019-01-07)
+
+
+### Bug Fixes
+
+* **wiki:** remove unregonised params from api url ([99a3fc3](https://github.com/srobinson/unicode-wiki/commit/99a3fc3))
+* **wiki:** remove unregonised params from api url ([01c696a](https://github.com/srobinson/unicode-wiki/commit/01c696a))
+
+
+
+## 0.1.1 (2019-01-04)
+
+
+### Bug Fixes
+
+* **wiki:** display enhanced wiki search results ([42bb3c9](https://github.com/srobinson/unicode-wiki/commit/42bb3c9)), closes [#39](https://github.com/srobinson/unicode-wiki/issues/39)
+
+
+
+
+
 ## 0.1.17 (2019-01-07)
 
 
