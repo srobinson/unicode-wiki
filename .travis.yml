@@ -50,7 +50,7 @@ before_install:
 - go get github.com/josephburnett/jd
 install:
 - yarn
-before_script:
 - yarn seed
-after_success:
+script:
+- yarn test
 - "./.version.sh"
