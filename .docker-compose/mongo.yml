@@ -8,9 +8,6 @@ services:
       - "27017:27017"
     volumes:
       - $HOME/_uw_data:/data/db
-      - mongodb_config:/data/configdb
-volumes:
-  mongodb_config:
-    driver: local
+      - $HOME/_config:/data/configdb
 networks:
   elk:

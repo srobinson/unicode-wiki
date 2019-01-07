@@ -41,7 +41,7 @@ before_install:
 - gcloud components install kubectl
 - gcloud components install docker-credential-gcr
 - gcloud auth configure-docker
-- "./compose.sh"
+- "./compose.sh up"
 - yarn global add lerna
 - go get github.com/josephburnett/jd
 install:
