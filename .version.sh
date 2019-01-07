@@ -36,7 +36,7 @@ else
 
   echo increment version: $iv
 
-  if [ -n $iv ]; then
+  if [[ -n $iv ]]; then
 
     echo "Fixing git setup for $TRAVIS_BRANCH"
     git checkout ${TRAVIS_BRANCH}

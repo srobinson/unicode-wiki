@@ -3,6 +3,7 @@ import {schema} from "./schema"
 import {dataSources} from "./datasources"
 import "./config"
 
+// BREAKING CHANGE
 const server = new ApolloServer({
   dataSources,
   introspection: true,
