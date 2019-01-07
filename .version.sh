@@ -23,6 +23,9 @@ else
   # TODO: use personal access tokens for auth
   git remote set-url origin https://srobinson:${TRAVIS_PASS}@github.com/srobinson/unicode-wiki.git
 
+  # get gpg key
+  gpg --import all.gpg
+
   # push new versions
   lerna version --no-commit-hooks --conventional-commits --exact --sign-git-tag --yes --push
 
