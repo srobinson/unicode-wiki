@@ -1,6 +1,6 @@
 {
   "name": "@uw/store",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "private": true,
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -10,8 +10,8 @@
     "watch": "tsc -w"
   },
   "dependencies": {
-    "@uw/api-graph": "0.4.1",
-    "@uw/domain": "^0.1.0",
-    "@uw/utils": "^0.1.0"
+    "@uw/api-graph": "0.4.2",
+    "@uw/domain": "0.1.2",
+    "@uw/utils": "0.1.1"
   }
 }

@@ -1,15 +1,15 @@
 {
   "name": "@uw/seed",
   "private": true,
-  "version": "0.1.8",
+  "version": "0.1.9",
   "scripts": {
     "lint": "tslint 'src/**/*.ts'",
     "prepare": "echo '@uw/seed' && tsc",
     "seed": "node --max-old-space-size=4096 dist/index.js"
   },
   "dependencies": {
-    "@uw/domain": "^0.1.0",
-    "@uw/logging": "^0.1.0",
-    "@uw/utils": "^0.1.0"
+    "@uw/domain": "0.1.2",
+    "@uw/logging": "0.1.1",
+    "@uw/utils": "0.1.1"
   }
 }

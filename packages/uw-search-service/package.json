@@ -1,7 +1,7 @@
 {
   "name": "@uw/search-service",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "scripts": {
     "prepare": "echo '@uw/search-service' && tsc",
@@ -11,9 +11,9 @@
     "watch": "tsc -w"
   },
   "dependencies": {
-    "@uw/domain": "^0.1.0",
-    "@uw/logging": "^0.1.0",
-    "@uw/utils": "^0.1.0"
+    "@uw/domain": "0.1.2",
+    "@uw/logging": "0.1.1",
+    "@uw/utils": "0.1.1"
   },
   "devDependencies": {
     "@types/tmp": "0.0.33"

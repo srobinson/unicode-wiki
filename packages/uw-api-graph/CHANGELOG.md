@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.2](https://github.com/srobinson/unicode-wiki/compare/@uw/api-graph@0.4.1...@uw/api-graph@0.4.2) (2019-01-07)
+
+**Note:** Version bump only for package @uw/api-graph
+
+
+
+
+
 ## [0.4.1](https://github.com/srobinson/unicode-wiki/compare/@uw/api-graph@0.4.0...@uw/api-graph@0.4.1) (2019-01-07)
 
 
