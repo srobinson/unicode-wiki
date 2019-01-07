@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.13](https://github.com/srobinson/unicode-wiki/compare/@uw/api@0.1.12...@uw/api@0.1.13) (2019-01-07)
+
+**Note:** Version bump only for package @uw/api
+
+
+
+
+
 ## [0.1.12](https://github.com/srobinson/unicode-wiki/compare/@uw/api@0.1.11...@uw/api@0.1.12) (2019-01-07)
 
 **Note:** Version bump only for package @uw/api
