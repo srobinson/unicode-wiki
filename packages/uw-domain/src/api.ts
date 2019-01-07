@@ -4,7 +4,7 @@ import {Link} from "./link"
 
 export type ApiError = Record<string, any>
 
-// test patch update: 0.1.1: --exact
+// test minor version
 export interface ApiSearchAction {
   type: string
   meta: ApiSearchMetadata
