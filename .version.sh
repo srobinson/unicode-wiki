@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 if [[ $TRAVIS_BRANCH != 'master' ]]; then
   echo $TRAVIS_BRANCH: nothing to deploy. Finishing build...
 else
@@ -30,8 +32,8 @@ else
   git remote set-url origin git@github.com:srobinson/unicode-wiki.git
 
   # deploy new versions
-  if [[ $tag != $new_tag]]
-    ./.deploy.sh
+  if [[ $tag != $new_tag ]]; then
+    . ./.deploy.sh
   fi
 
 fi

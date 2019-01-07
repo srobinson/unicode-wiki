@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 set -a
 . .env.prod
 if [ -e .env.prod.secrets ]; then
