@@ -7,7 +7,7 @@ services:
     ports:
       - "27017:27017"
     volumes:
-      - $HOME/_uw_data:/data/db
-      - $HOME/_config:/data/configdb
+      - ~/_uw_data:/data/db
+      - ~/_uw_config:/data/configdb
 networks:
   elk:
