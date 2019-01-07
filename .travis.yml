@@ -13,6 +13,9 @@ cache:
   - ~/_uw_esdata
   - node_modules
   yarn: true
+before_cache:
+  - sudo chown -R travis:travis ~/_uw_data
+  - sudo chown -R travis:travis ~/_uw_esdata
 services:
 - docker
 git:
