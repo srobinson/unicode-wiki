@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/srobinson/unicode-wiki.svg?branch=master)](https://travis-ci.com/srobinson/unicode-wiki)
+[![Build Status](https://travis-ci.org/srobinson/unicode-wiki.svg?branch=master)](https://travis-ci.org/srobinson/unicode-wiki)
 
 # Unicode browser with wikipedia integration
 
