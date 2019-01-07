@@ -9,7 +9,6 @@ branches:
 cache:
   directories:
   - $HOME/google-cloud-sdk
-  - $HOME/docker
   - $HOME/_uw_data
   - $HOME/_esdata
   - node_modules
@@ -25,6 +24,7 @@ env:
   - CLOUDSDK_CORE_PROJECT=$GCLOUD_PROJECT
   - secure: hkh92DkZ1zko11+fPcRNPvjq62FtkehQmYfN9O80RjvYUd6oDYKoE2lwdAYpEeM7FqXOQB5ShJrCDxLWyp/7RXbx5UlImYxWYhQgJAjL6zkJ11WmZTnX3kwdTpfn3eABkqLpoMVH9v0dvpjMqTYGXPuzR6K7u9kfiufPSezU2obeh8yKPjV3wxTRth6Tky9abhyFUjTcwzbIWXLiRNrhV9YhZCFu3RdfMcNfW9AXkHMhxaPGUKKjTFJD60rVlwb17of4S7SrjCWPO0KCxP7ERTWosD/LXToE7k7PbIOK821+O3Ze1nEdPDmuK6mkCnsIthnMOSP/4hpje31sz/0pXdktytkFbh4EDl+2nCKYMHLzqIfpbgAwr8wEyToY+G3MkFS/CdlnbhBCIRD3USng47wvFzrka39f7KZ2ycB0IKVbb0GDsfvrsXWBvzMdt/2ZTIwMSB7igzuu5YD7plqgniyB/ffE/L8+J1/X4m0Zjb/KiFeOa0eDDaFx4oOjg8NIJ8FE7tw3kGnxKK9deHbuvLze7Khfz7MFnBc3fB5fNjQKzXwCG9vs7/5/gTzRQw+oxVy2T5+qg+5ECtXj1cGCDz1hGStaMuBmQ9GANW9Zx6QF+RCOVcFiYxJCwee/UbqQ78puRJEjSPWL9Vedj2NC4AcusvivlptgGnskD1tLjhM=
 before_install:
+- ls -la $HOME
 - if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then
     rm -rf "$HOME/google-cloud-sdk"; curl https://sdk.cloud.google.com | bash > /dev/null;
   fi
@@ -49,6 +49,5 @@ install:
 before_script:
 - yarn seed
 - docker volume ls
-- docker volume inspect dockercompose_mongodb
 after_success:
 - "./.version.sh"
