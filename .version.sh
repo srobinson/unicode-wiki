@@ -31,11 +31,12 @@ else
   elif [[ -n $(gawk '/[fix|perf]\([a-z]*\):/' <<< $m) ]]; then
     iv="patch"
   else
-    echo Nothing to build. Exiting....
+    echo Nothing to release. Skipping build....
   fi
 
-  if [ ! -n $iv ]; then
-    echo increment version: $iv
+  echo increment version: $iv
+
+  if [ -n $iv ]; then
 
     echo "Fixing git setup for $TRAVIS_BRANCH"
     git checkout ${TRAVIS_BRANCH}
