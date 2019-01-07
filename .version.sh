@@ -1,6 +1,8 @@
 #!/bin/bash
 
-if [[ $TRAVIS_BRANCH == 'master' ]]; then
+if [[ $TRAVIS_BRANCH != 'master' ]]; then
+  echo $TRAVIS_BRANCH: nothing to deploy. Finishing build...
+elif
 
   # get latest version
   v=$(git describe --tags `git rev-list --tags --max-count=1`)
