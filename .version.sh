@@ -53,6 +53,8 @@ else
     # create release
     npx oao publish --no-confirm --no-check-uncommitted --increment-version-by $iv
 
+    git tag -s $(git describe --tags) -m $m -f
+
     # sanity revert change for testing locally
     git remote set-url origin git@github.com:srobinson/unicode-wiki.git
 
