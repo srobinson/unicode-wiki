@@ -2,20 +2,21 @@
 
 set -e
 
-if [[ $TRAVIS_BRANCH != 'master' ]]; then
-  echo $TRAVIS_BRANCH: nothing to deploy. Finishing build...
-else
-
-  # get latest tage
-  tag=$(git describe --tags `git rev-list --tags --max-count=1`)
-
-  echo latest tag: $tag
+if [[ $TRAVIS_BRANCH == 'master' ]]; then
 
   echo "Fixing git setup for $TRAVIS_BRANCH"
   git checkout ${TRAVIS_BRANCH}
   git branch -u origin/${TRAVIS_BRANCH}
   git config branch.${TRAVIS_BRANCH}.remote origin
   git config branch.${TRAVIS_BRANCH}.merge refs/heads/${TRAVIS_BRANCH}
+
+  CHANGES=$(git --no-pager diff --name-only FETCH_HEAD $(git merge-base FETCH_HEAD master))
+  echo CHANGES $CHANGES
+
+  # get latest tage
+  tag=$(git describe --tags `git rev-list --tags --max-count=1`)
+
+  echo latest tag: $tag
 
   # print status
   npx oao status
