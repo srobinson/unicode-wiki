@@ -29,9 +29,9 @@ class Runner {
     const esClient = new EsClient()
 
     // TODO: verify elasticsearch is seeded
-    // if (await client.isSeeded()) {
-    //   process.exit()
-    // }
+    if (await client.isSeeded()) {
+      process.exit()
+    }
 
     async.series([
       function parseScriptsFile(cb) {
