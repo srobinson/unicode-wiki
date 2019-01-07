@@ -25,7 +25,12 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   git remote set-url origin https://srobinson:${TRAVIS_PASS}@github.com/srobinson/unicode-wiki.git
 
   # get gpg key
+  openssl aes-256-cbc -K $encrypted_041d00b18b3a_key -iv $encrypted_041d00b18b3a_iv -in all.gpg.enc -out all.gpg -d
   gpg --import all.gpg
+
+  # stash artifacts created by build
+  git add .
+  git stash
 
   # push new versions
   lerna version --no-commit-hooks --conventional-commits --exact --sign-git-tag --yes --push
