@@ -1,7 +1,7 @@
 {
   "name": "@uw/wiki-service",
   "private": true,
-  "version": "0.1.17",
+  "version": "0.3.1",
   "license": "MIT",
   "scripts": {
     "prepare": "echo '@uw/wiki-service' && tsc",
