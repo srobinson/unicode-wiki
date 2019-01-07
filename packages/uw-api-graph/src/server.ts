@@ -3,7 +3,7 @@ import {schema} from "./schema"
 import {dataSources} from "./datasources"
 import "./config"
 
-// NEW FEAT TEST!! 0.3.1
+// NEW FEAT TEST!! 0.3.2
 const server = new ApolloServer({
   dataSources,
   introspection: true,
