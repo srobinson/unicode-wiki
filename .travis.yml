@@ -52,6 +52,5 @@ install:
 - yarn
 before_script:
 - yarn seed
-- docker volume ls
 after_success:
 - "./.version.sh"

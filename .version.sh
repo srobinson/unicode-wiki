@@ -12,6 +12,8 @@ else
   # get last commit
   m=`git log --format=%B -n 1`
 
+  echo $m
+
   # 0.0.1
   # feat: A new feature 0.1.0
   # fix: A bug fix 0.1.1
@@ -22,15 +24,14 @@ else
   # test: Adding missing or correcting existing tests 0.1.2
   # chore: Changes to the build process or auxiliary tools and libraries such as documentation generation 0.1.2
   # BREAKING CHANGE: 0.2.0
-  if grep -q 'BREAKING\sCHANGE:' <<< $m; then
+  if [[ -n $(gawk '/BREAKING\sCHANGE:/' <<< $m) ]]; then
     iv="major"
-  elif grep -q feat\([a-z]*\): <<< $m; then
+  elif [[ -n $(gawk '/feat\([a-z]*\):/' <<< $m) ]]; then
     iv="minor"
-  elif grep -q "[fix|perf]\([a-z]*\):" <<< $m; then
+  elif [[ -n $(gawk '/[fix|perf]\([a-z]*\):/' <<< $m) ]]; then
     iv="patch"
   else
     echo Nothing to build. Exiting....
-    travis_terminate 0
   fi
 
   if [ ! -n $iv ]; then
