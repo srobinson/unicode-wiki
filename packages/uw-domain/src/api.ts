@@ -4,7 +4,6 @@ import {Link} from "./link"
 
 export type ApiError = Record<string, any>
 
-// test no-op version 1
 export interface ApiSearchAction {
   type: string
   meta: ApiSearchMetadata
