@@ -8,7 +8,7 @@ export const search = async (req: Request, res: Response) => {
   const query = (redirect && redirect) || (isHex(q) && encodeURIComponent(fromCharCode(q))) || q
   const mobileFormat = isMobile ? "mobileformat&" : ""
   // const url = `https://en.wikipedia.org/w/index.php?title=Special:Search&limit=10&cirrusDumpResult=&search=${query}`
-  const url = `https://en.wikipedia.org/w/api.php?${mobileFormat}action=query&limit=20&origin=*&format=json&formatversion=2&utf8&list=search&srsearch=${query}`
+  const url = `https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&formatversion=2&utf8&list=search&srsearch=${query}`
 
   req.logger.info({"WikiSearch::URL": url})
   const response = await axios.get(url)
