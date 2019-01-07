@@ -38,8 +38,6 @@
     "start:app": "lerna run start:app",
     "test": "yarn lint && NODE_ENV=test jest --runInBand --forceExit --env=node --colors",
     "test:seed": "lerna run test:seed",
-    "update-version": "lerna publish --skip-git --skip-npm --force-publish '*'",
-    "version": "./version.sh",
     "watch": "lerna run watch --parallel"
   },
   "jest": {
