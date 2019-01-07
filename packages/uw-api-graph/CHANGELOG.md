@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.1](https://github.com/srobinson/unicode-wiki/compare/@uw/api-graph@0.4.0...@uw/api-graph@0.4.1) (2019-01-07)
+
+
+### Bug Fixes
+
+* **lerna:** test patch ([7589ff1](https://github.com/srobinson/unicode-wiki/commit/7589ff1))
+
+
+
+
+
 # 0.4.0 (2019-01-07)
 
 
