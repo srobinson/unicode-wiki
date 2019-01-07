@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.7](https://github.com/srobinson/unicode-wiki/compare/@uw/containers@0.1.6...@uw/containers@0.1.7) (2019-01-07)
+
+**Note:** Version bump only for package @uw/containers
+
+
+
+
+
 ## [0.1.6](https://github.com/srobinson/unicode-wiki/compare/@uw/containers@0.1.5...@uw/containers@0.1.6) (2019-01-07)
 
 **Note:** Version bump only for package @uw/containers
