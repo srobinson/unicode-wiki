@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/srobinson/unicode-wiki/compare/@uw/store@0.3.11...@uw/store@0.4.0) (2019-01-08)
+
+
+### Features
+
+* **travis:** test minor relaase ([946a4fc](https://github.com/srobinson/unicode-wiki/commit/946a4fc))
+
+
+
+
+
 ## [0.3.11](https://github.com/srobinson/unicode-wiki/compare/@uw/store@0.3.10...@uw/store@0.3.11) (2019-01-08)
 
 **Note:** Version bump only for package @uw/store

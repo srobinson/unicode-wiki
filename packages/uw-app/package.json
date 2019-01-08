@@ -1,7 +1,7 @@
 {
   "name": "@uw/app",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.1.0",
   "license": "MIT",
   "scripts": {
     "build:app": "react-scripts-ts build",
@@ -27,7 +27,7 @@
     "@uw/components": "0.1.7",
     "@uw/containers": "0.1.8",
     "@uw/domain": "1.0.4",
-    "@uw/store": "0.3.11",
+    "@uw/store": "0.4.0",
     "@uw/utils": "0.1.7"
   },
   "devDependencies": {

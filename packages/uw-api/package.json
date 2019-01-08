@@ -1,7 +1,7 @@
 {
   "name": "@uw/api",
   "private": true,
-  "version": "0.2.1",
+  "version": "0.2.2",
   "license": "MIT",
   "scripts": {
     "prepare": "echo '@uw/api' && tsc",
@@ -12,8 +12,8 @@
   },
   "dependencies": {
     "@uw/domain": "1.0.4",
-    "@uw/logging": "2.0.0",
-    "@uw/seed": "0.1.16",
+    "@uw/logging": "2.1.0",
+    "@uw/seed": "0.1.17",
     "@uw/utils": "0.1.7"
   },
   "devDependencies": {
