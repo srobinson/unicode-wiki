@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.10](https://github.com/srobinson/unicode-wiki/compare/@uw/wiki-service@0.3.9...@uw/wiki-service@0.3.10) (2019-01-08)
+
+**Note:** Version bump only for package @uw/wiki-service
+
+
+
+
+
 ## [0.3.9](https://github.com/srobinson/unicode-wiki/compare/@uw/wiki-service@0.3.8...@uw/wiki-service@0.3.9) (2019-01-07)
 
 **Note:** Version bump only for package @uw/wiki-service

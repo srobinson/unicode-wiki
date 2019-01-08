@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/srobinson/unicode-wiki/compare/@uw/logging@1.0.4...@uw/logging@2.0.0) (2019-01-08)
+
+
+### Features
+
+* **logging:** test travis deploy breaking feature ([eb8728f](https://github.com/srobinson/unicode-wiki/commit/eb8728f))
+
+
+### BREAKING CHANGES
+
+* **logging:** breaks the world
+
+
+
+
+
 ## [1.0.4](https://github.com/srobinson/unicode-wiki/compare/@uw/logging@1.0.3...@uw/logging@1.0.4) (2019-01-07)
 
 **Note:** Version bump only for package @uw/logging
