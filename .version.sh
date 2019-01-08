@@ -34,7 +34,16 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   # lerna version --amend --no-commit-hooks --conventional-commits --exact --sign-git-tag --yes
   lerna version --no-commit-hooks --conventional-commits --exact --yes
 
+<<<<<<< Updated upstream
   new_tag=$(git describe --tags `git rev-list --tags --max-count=1`)
+=======
+
+  m=$(git status)
+  c=$(awk '/nothing to commit/' <<< $m)
+
+  echo mmm $m
+  echo ccc $c
+>>>>>>> Stashed changes
 
   # deploy new versions
   if [[ $tag != $new_tag ]]; then
