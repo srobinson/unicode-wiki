@@ -8,11 +8,11 @@ https://unicode.wiki
 
 ## Motivation
 
-unicode.wiki is a fully indexed, browsable and searchable dictionary of unicode characters spanning the basic and supplementary unicode planes. The project attempts to render all codepoints using sourced fonts, however in some cases you will see either a blank rendering or the missing glyph character `𞸁`. Integration with wikipedia.org is implemeted though the https://en.wikipedia.org/api/rest_v1 page api and https://en.wikipedia.org/w/api.php search api. Not all codepoints have a wiki page.
+unicode.wiki is a fully indexed, browsable and searchable dictionary of unicode characters spanning the basic and supplementary unicode planes. The project attempts to render all codepoints using sourced fonts, however in some cases you will see either a blank rendering or the missing glyph character `𞸁`. Integration with wikipedia.org is implemented though the https://en.wikipedia.org/api/rest_v1 page api and https://en.wikipedia.org/w/api.php search api. Not all codepoints have a wiki page.
 
 The idea behind the project has been lurking inside me for some years now, and was born out of an interest in unicode, World travel and the origin or languages.
 
-I also wanted to experiment with a monorepo and decided to use this as a means of testing out Lerna and yarn workspaces. The excercise has taught me a great deal and I will be sharing my discoveries an upcoming blog.
+I also wanted to experiment with a monorepo and decided to use this as a means of testing out Lerna and yarn workspaces. The exercise has taught me a great deal and I will be sharing my discoveries an upcoming blog.
 
 References:
 
@@ -23,7 +23,7 @@ References:
 
 ## Project features
 
-* Indexed and searchable dictionary of unicode characters spanning the basic and supplementory planes sourced from http://www.unicode.org/Public/UCD/latest/
+* Indexed and searchable dictionary of unicode characters spanning the basic and supplementary planes sourced from http://www.unicode.org/Public/UCD/latest/
 * Browsable codepoints categorized following the unicode charts spec http://www.unicode.org/charts
 * Integration with wikipedia.org via api's
 * Responsive, mobile first design allowing easy browsing from any device
@@ -69,11 +69,11 @@ The project consists of a web app, 3 core services and an apollo graphql server:
 Other packages include:
 
 * uw-components: React component lib
-* uw-containers: Connected redux coontainers
+* uw-containers: Connected redux containers
 * uw-domain: Typescript object model
 * uw-hoc: React higher order component lib
 * uw-logging: Common logging lib
-* uw-seed: Parses UCD docs and populages Mongo/Elasticsearch
+* uw-seed: Parses UCD docs and populates Mongo/Elasticsearch
 * uw-store: Redux store/actions/reducers
 * uw-utils: Common utils lib
 
@@ -85,7 +85,7 @@ PR branches are built/tested on Travis. Merges to master kicks off a versioning 
 
 If you already have mongo and elasticsearch running locally, skip ahead..
 
-To quckly get a mongo/easticsearch environment up and running
+To quickly get a mongo/elasticsearch environment up and running
 
 ```
 ./compose.sh up
