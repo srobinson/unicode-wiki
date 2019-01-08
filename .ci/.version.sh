@@ -15,20 +15,14 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   # print status
   npx oao status
 
-  echo lerna diff
-  lerna diff
-
-  echo lerna changed
-  lerna changed
-
   # stash artifacts created by build
   git add .
   git stash
 
-  # generate new package versions
+  echo generate new package versions
   lerna version --loglevel=silly --no-commit-hooks --conventional-commits --exact --yes
 
-  # deploy new versions
+  echo deploy new versions
   . ./.deploy.sh
 
   # sanity revert change for testing locally
