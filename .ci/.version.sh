@@ -2,7 +2,7 @@
 
 set -e
 
-if [[ $TRAVIS_BRANCH != 'master' ]]; then
+if [[ $TRAVIS_BRANCH == 'master' ]]; then
 
   echo "Fixing git setup for $TRAVIS_BRANCH"
   # git checkout ${TRAVIS_BRANCH}
