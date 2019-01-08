@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/srobinson/unicode-wiki/compare/@uw/api-graph@1.0.4...@uw/api-graph@1.1.0) (2019-01-08)
+
+
+### Features
+
+* **travis:** test new feat deploy ([656605a](https://github.com/srobinson/unicode-wiki/commit/656605a))
+
+
+
+
+
 ## [1.0.4](https://github.com/srobinson/unicode-wiki/compare/@uw/api-graph@1.0.3...@uw/api-graph@1.0.4) (2019-01-07)
 
 **Note:** Version bump only for package @uw/api-graph
