@@ -3,7 +3,7 @@
 set -e
 
 set -a
-. .env.prod
+. ../.env.prod
 if [ -e ../.env.prod.secrets ]; then
   . ../.env.prod.secrets
 fi
