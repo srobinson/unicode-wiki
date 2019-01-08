@@ -2,14 +2,7 @@
 
 set -e
 
-if [[ $TRAVIS_BRANCH != 'master' ]]; then
-  echo $TRAVIS_BRANCH: nothing to deploy. Finishing build...
-else
-
-  # get latest tage
-  tag=$(git describe --tags `git rev-list --tags --max-count=1`)
-
-  echo latest tag: $tag
+if [[ $TRAVIS_BRANCH == 'master' ]]; then
 
   echo "Fixing git setup for $TRAVIS_BRANCH"
   git checkout ${TRAVIS_BRANCH}
@@ -24,19 +17,28 @@ else
   git remote set-url origin https://srobinson:${TRAVIS_PASS}@github.com/srobinson/unicode-wiki.git
 
   # get gpg key
+  openssl aes-256-cbc -K $encrypted_041d00b18b3a_key -iv $encrypted_041d00b18b3a_iv -in all.gpg.enc -out all.gpg -d
   gpg --import all.gpg
 
-  # push new versions
-  lerna version --no-commit-hooks --conventional-commits --exact --sign-git-tag --yes --push
+  # stash artifacts created by build
+  git add .
+  git stash
 
-  new_tag=$(git describe --tags `git rev-list --tags --max-count=1`)
+  # generate new package versions
+  lerna version --amend --no-commit-hooks --conventional-commits --exact --sign-git-tag --yes
+  git status
 
   # sanity revert change for testing locally
   git remote set-url origin git@github.com:srobinson/unicode-wiki.git
 
+  m=$(git status)
+
   # deploy new versions
-  if [[ $tag != $new_tag ]]; then
+  if [[ -z $(awk '/nothing to commit/' <<< $m) ]]; then
     . ./.deploy.sh
+    # update release
+    git add .
+    git push origin master -f
   fi
 
 fi
