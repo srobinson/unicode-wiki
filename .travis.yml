@@ -44,7 +44,7 @@ before_install:
     yarn seed
     yarn test
   fi
-intall: true
+install: true
 
 # Optimise cache
 # https://www.randomerrata.com/articles/2013/travis-s3/

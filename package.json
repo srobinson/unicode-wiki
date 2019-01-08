@@ -38,7 +38,7 @@
     "start:app": "lerna run start:app",
     "test": "yarn lint && NODE_ENV=test jest --runInBand --forceExit --env=node --colors",
     "test:seed": "lerna run test:seed",
-    "watch": "lerna run watch --parallel"
+    "watch": "lerna run --parallel watch"
   },
   "jest": {
     "snapshotSerializers": [

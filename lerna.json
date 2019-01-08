@@ -12,6 +12,7 @@
   "packages": [
     "packages/*"
   ],
-  "version": "independent"
+  "version": "independent",
+  "independent": true
 }
 
