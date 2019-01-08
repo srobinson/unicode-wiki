@@ -10,6 +10,10 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   git config branch.${TRAVIS_BRANCH}.remote origin
   git config branch.${TRAVIS_BRANCH}.merge refs/heads/${TRAVIS_BRANCH}
 
+  # get latest tage
+  tag=$(git describe --tags `git rev-list --tags --max-count=1`)
+  echo latest tag: $tag
+
   # print status
   npx oao status
 
@@ -21,25 +25,19 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   # gpg --import all.gpg
 
   # stash artifacts created by build
+  echo git status
+  git status
   git add .
   git stash
 
-  echo git status
-  git status
-
   # generate new package versions
   # lerna version --amend --no-commit-hooks --conventional-commits --exact --sign-git-tag --yes
+  lerna version --no-commit-hooks --conventional-commits --exact --yes
 
-  lerna version --amend --no-commit-hooks --conventional-commits --exact --yes
-
-  m=$(git status)
-  c=$(awk '/nothing to commit/' <<< $m)
-
-  echo mmm $m
-  echo ccc $c
+  new_tag=$(git describe --tags `git rev-list --tags --max-count=1`)
 
   # deploy new versions
-  if [[ -z $c ]]; then
+  if [[ $tag != $new_tag ]]; then
     . ./.deploy.sh
     # update release
     git add .
