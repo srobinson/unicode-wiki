@@ -49,5 +49,5 @@ install: true
 notifications:
   slack: alphabio-workspace:$SLACK_TOKEN
   on_failure: change
-  on_pull_requests: false
+  on_pull_requests: never
   on_success: always
