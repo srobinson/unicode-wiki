@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/srobinson/unicode-wiki/compare/@uw/api@0.1.17...@uw/api@0.2.0) (2019-01-08)
+
+
+### Features
+
+* **api:** test deploy ([78ded3b](https://github.com/srobinson/unicode-wiki/commit/78ded3b))
+
+
+
+
+
 ## [0.1.19](https://github.com/srobinson/unicode-wiki/compare/@uw/api@0.1.17...@uw/api@0.1.19) (2019-01-08)
 
 **Note:** Version bump only for package @uw/api
