@@ -18,8 +18,8 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   echo lerna diff
   lerna diff
 
-  echo lerna changes
-  lerna changes
+  echo lerna changed
+  lerna changed
 
   # stash artifacts created by build
   git add .
