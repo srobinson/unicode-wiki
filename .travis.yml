@@ -10,9 +10,9 @@ cache:
   if: branch != master
   name: shared
   directories:
-  - $HOME/google-cloud-sdk
-  - ~/_uw_data
-  - ~/_uw_esdata
+  - "$HOME/google-cloud-sdk"
+  - "~/_uw_data"
+  - "~/_uw_esdata"
   - node_modules
   yarn: true
 services:
@@ -25,6 +25,7 @@ env:
   - CLOUDSDK_COMPUTE_ZONE=$GCLOUD_ZONE
   - CLOUDSDK_CORE_PROJECT=$GCLOUD_PROJECT
   - secure: Ho5L+pft+69TcWarsWIgj5tx6i/yyb1l7JQrLD0zZQSwEP4dFyCABbTIAUkXwnc03IWghpvR9taLLX9K/pW/Jkx5cWd1H8Dh9uhb2TDdeJWaa9h4D5rxwWuwOOUJaRA7U0VUYYk1zede6Fjv5D6UHH8lgwx9bEmSobMJ5CbnXSNFhejWU/Dvj9BfS2v5TPCA1wEa8OlX8DybFQB0uvn9dJ+FpVy9fTMTg/qHnTBMpb3cmZ53G2Vqbdu3jvq4yahSULA+V1n4ZWrxahMw9g9cbKBvLXU8ItXMxvDWi0gPJCE3kT1suBS8PfDYcajPBrfA3Mi7tcwHzJeMuEua1CI9fwOY0cpSBNUVfh+VayJgRJ3Tg1NAHtthByAXT9/yvuL+axwz0So6xST1jy4wdLpkamZ/mNqngJB+SwNbudn+J3LVOwFlzDWOg2+VSzEY4cO0oT37kO0p2B74E8nR6ECmdq1q4v8E/qYifL/h9CQD2IPI3yAnVP2/YOBgnSVfxtaAJK2htAwNx9czrTef+EPhsVwYsLFcq0quzjnuhd9cqFxcie77mbYcxzFmlnXRBYZJUKZuHSdYFVgdLjsGVPvWzeS0rq3a9AM62/2Ea+9cirwPU4MAML2kmoB1hmJdZcLkkLA+heYT5wXLxGNq3nXZ/kfI6w4di9L5A+PzhElZMZU=
+  - secure: lnTivCA84KSTc7g4AIGLym0h8/LOK3v/WYlUVFKfF0LxQk+aj+udtmsohDII7G86Lwe/c3Ae9BOO3i9EgxJelw7ZsdqV+qzFcOem4MhckkR23ODe3mVZjs0yaqzIA/RAROe6GNLkE4RmXPNPXsLozzsaz+hZ5KNiCTVGsW8HQ0jIyOBdzx8UPwC22fi7cq6PPUZ7w+CXj2fFbRo4+4orOqTgYpNHswz85vV07mWxajHAYGBNV2qs/xV7C5rbFdijfe+ZILnNPXmrYcKAeDWo67TGLNqcNo5Qfp4OPGF2RwNLHcPm71DTGpPlPlEnejY93ZJvtpgtP85mvN6mGypTt6XhQLEIHSzWXWBeEYUEvSg+ORH5IRuC1On9pSAbwb8ZNE/xx47w7euq3vL2bWfS7wHgfAme1s/lb3EO5FbXhOr+V7mp6OMmOFvZxxFHQEBnKUi6xhBb+GSfrC/QEKiiB3G4lpYnMfkHkW6bCpQRWv3CdSusbVwJQOLqEtOXicRYE8tXNXJ/E36aWc+CQCVW9j/EqVea4hJFfas6O7NtnAmoyR3LvnYl7TjY1KLMBj6sQc1PqacafjluSWxNedQjof1mIA9AzrmcEKrHEqG3eWfopGo2VavHXeZQSyV5FLE8pr4H/5Pm2Eg2BZPsn+B0ZeO4Z/JGr19p+QezczH1y3I=
 before_install:
 - |
   echo TRAVIS_PULL_REQUEST $TRAVIS_PULL_REQUEST
@@ -45,6 +46,8 @@ before_install:
     yarn test
   fi
 install: true
-
-# Optimise cache
-# https://www.randomerrata.com/articles/2013/travis-s3/
+notifications:
+  slack: alphabio-workspace:$SLACK_TOKEN
+  on_failure: change
+  on_pull_requests: false
+  on_success: always
