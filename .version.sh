@@ -24,23 +24,29 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   git add .
   git stash
 
+  echo git status
+  git status
+
   # generate new package versions
   # lerna version --amend --no-commit-hooks --conventional-commits --exact --sign-git-tag --yes
 
   lerna version --amend --no-commit-hooks --conventional-commits --exact --yes
-  git status
-
-  # sanity revert change for testing locally
-  git remote set-url origin git@github.com:srobinson/unicode-wiki.git
 
   m=$(git status)
+  c=$(awk '/nothing to commit/' <<< $m)
+
+  echo mmm $m
+  echo ccc $c
 
   # deploy new versions
-  if [[ -z $(awk '/nothing to commit/' <<< $m) ]]; then
+  if [[ -z $c ]]; then
     . ./.deploy.sh
     # update release
     git add .
     git push origin master -f
   fi
+
+  # sanity revert change for testing locally
+  git remote set-url origin git@github.com:srobinson/unicode-wiki.git
 
 fi
