@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/srobinson/unicode-wiki/compare/@uw/search-service@0.2.0...@uw/search-service@0.3.0) (2019-01-08)
+
+
+### Features
+
+* **search:** test travis deploy feat single service ([d8fbdd8](https://github.com/srobinson/unicode-wiki/commit/d8fbdd8))
+
+
+
+
+
 # [0.2.0](https://github.com/srobinson/unicode-wiki/compare/@uw/search-service@0.1.7...@uw/search-service@0.2.0) (2019-01-08)
 
 
