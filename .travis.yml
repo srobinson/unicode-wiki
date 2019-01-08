@@ -47,7 +47,9 @@ before_install:
   fi
 install: true
 notifications:
-  slack: alphabio-workspace:$SLACK_TOKEN
-  on_failure: change
-  on_pull_requests: never
-  on_success: always
+  slack:
+    rooms:
+    - alphabio-workspace:LW3fOW5DinwD7t7gIPsaAF9X#travis
+    on_failure: change
+    on_pull_requests: never
+    on_success: always
