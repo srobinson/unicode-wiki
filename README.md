@@ -58,7 +58,28 @@ This project is very early beta stage and serves as a proof of concept/explorati
 
 ![](assets/psd/deployment-diagram.4k.png?0.36817197259025214 )
 
+The project consists of a web app, 3 core services and an apollo graphql server:
 
+* uw-app: React/Redux/Typescript web app
+* uw-api: Node/Express/Mongo REST API serving unicode meta data
+* uw-search-service: Node/Express/Elasticsearch REST API serving typeahead functionality
+* uw-wiki-service: Node/Express/Wikipedia API integration serving wiki pages and search results
+* uw-api-graph: Apollo Server/GraphQL client - act as an API gateway between client/service service/service
+
+Other packages include:
+
+* uw-components: React component lib
+* uw-containers: Connected redux coontainers
+* uw-domain: Typescript object model
+* uw-hoc: React higher order component lib
+* uw-logging: Common logging lib
+* uw-seed: Parses UCD docs and populages Mongo/Elasticsearch
+* uw-store: Redux store/actions/reducers
+* uw-utils: Common utils lib
+
+Commits are linted pre commit using husky to ensure a consistent messaging. commitizen is used to facilitate generating semantic-versioning commit messages.
+
+PR branches are built/tested on Travis. Merges to master kicks off a versioning process and rolling deployments to GKE.
 
 # Local dev installation
 
