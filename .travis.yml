@@ -33,7 +33,6 @@ before_install:
   if [[ $TRAVIS_PULL_REQUEST == false && $TRAVIS_BRANCH == master ]]; then
     . ./.auth-gcloud.sh
     . ./.version.sh
-    travis_terminate 0
   else
     mkdir -p ~/_uw_data
     mkdir -p ~/_uw_esdata

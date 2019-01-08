@@ -37,14 +37,17 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   new_tag=$(git describe --tags `git rev-list --tags --max-count=1`)
 
   # deploy new versions
-  if [[ $tag != $new_tag ]]; then
+  # if [[ $tag != $new_tag ]]; then
     . ./.deploy.sh
     # update release
     git add .
     git push origin master -f
-  fi
+  # fi
 
   # sanity revert change for testing locally
   git remote set-url origin git@github.com:srobinson/unicode-wiki.git
+
+  travis_terminate 0
+
 
 fi
