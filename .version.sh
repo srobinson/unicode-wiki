@@ -13,8 +13,7 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   # print status
   npx oao status
 
-  # TODO: use personal access tokens for auth
-  git remote set-url origin https://srobinson:${TRAVIS_PASS}@github.com/srobinson/unicode-wiki.git
+  git remote set-url origin https://${TRAVIS_TOKEN}@github.com/srobinson/unicode-wiki.git
 
   # get gpg key
   # openssl aes-256-cbc -K $encrypted_041d00b18b3a_key -iv $encrypted_041d00b18b3a_iv -in all.gpg.enc -out all.gpg -d
@@ -30,13 +29,12 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
 
   # deploy new versions
   . ./.deploy.sh
+
   # update release
   git add .
   git push origin master -f
-]
+
   # sanity revert change for testing locally
   git remote set-url origin git@github.com:srobinson/unicode-wiki.git
-
-  travis_terminate 0
 
 fi

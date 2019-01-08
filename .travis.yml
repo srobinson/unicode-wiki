@@ -6,6 +6,15 @@ branches:
   only:
   - master
   - "/^PR-.+$/"
+cache:
+  if: branch != master
+  name: shared
+  directories:
+  - $HOME/google-cloud-sdk
+  - ~/_uw_data
+  - ~/_uw_esdata
+  - node_modules
+  yarn: true
 services:
 - docker
 git:
@@ -15,7 +24,7 @@ env:
   - CLOUDSDK_CORE_DISABLE_PROMPTS=1
   - CLOUDSDK_COMPUTE_ZONE=$GCLOUD_ZONE
   - CLOUDSDK_CORE_PROJECT=$GCLOUD_PROJECT
-  - secure: hkh92DkZ1zko11+fPcRNPvjq62FtkehQmYfN9O80RjvYUd6oDYKoE2lwdAYpEeM7FqXOQB5ShJrCDxLWyp/7RXbx5UlImYxWYhQgJAjL6zkJ11WmZTnX3kwdTpfn3eABkqLpoMVH9v0dvpjMqTYGXPuzR6K7u9kfiufPSezU2obeh8yKPjV3wxTRth6Tky9abhyFUjTcwzbIWXLiRNrhV9YhZCFu3RdfMcNfW9AXkHMhxaPGUKKjTFJD60rVlwb17of4S7SrjCWPO0KCxP7ERTWosD/LXToE7k7PbIOK821+O3Ze1nEdPDmuK6mkCnsIthnMOSP/4hpje31sz/0pXdktytkFbh4EDl+2nCKYMHLzqIfpbgAwr8wEyToY+G3MkFS/CdlnbhBCIRD3USng47wvFzrka39f7KZ2ycB0IKVbb0GDsfvrsXWBvzMdt/2ZTIwMSB7igzuu5YD7plqgniyB/ffE/L8+J1/X4m0Zjb/KiFeOa0eDDaFx4oOjg8NIJ8FE7tw3kGnxKK9deHbuvLze7Khfz7MFnBc3fB5fNjQKzXwCG9vs7/5/gTzRQw+oxVy2T5+qg+5ECtXj1cGCDz1hGStaMuBmQ9GANW9Zx6QF+RCOVcFiYxJCwee/UbqQ78puRJEjSPWL9Vedj2NC4AcusvivlptgGnskD1tLjhM=
+  - secure: Ho5L+pft+69TcWarsWIgj5tx6i/yyb1l7JQrLD0zZQSwEP4dFyCABbTIAUkXwnc03IWghpvR9taLLX9K/pW/Jkx5cWd1H8Dh9uhb2TDdeJWaa9h4D5rxwWuwOOUJaRA7U0VUYYk1zede6Fjv5D6UHH8lgwx9bEmSobMJ5CbnXSNFhejWU/Dvj9BfS2v5TPCA1wEa8OlX8DybFQB0uvn9dJ+FpVy9fTMTg/qHnTBMpb3cmZ53G2Vqbdu3jvq4yahSULA+V1n4ZWrxahMw9g9cbKBvLXU8ItXMxvDWi0gPJCE3kT1suBS8PfDYcajPBrfA3Mi7tcwHzJeMuEua1CI9fwOY0cpSBNUVfh+VayJgRJ3Tg1NAHtthByAXT9/yvuL+axwz0So6xST1jy4wdLpkamZ/mNqngJB+SwNbudn+J3LVOwFlzDWOg2+VSzEY4cO0oT37kO0p2B74E8nR6ECmdq1q4v8E/qYifL/h9CQD2IPI3yAnVP2/YOBgnSVfxtaAJK2htAwNx9czrTef+EPhsVwYsLFcq0quzjnuhd9cqFxcie77mbYcxzFmlnXRBYZJUKZuHSdYFVgdLjsGVPvWzeS0rq3a9AM62/2Ea+9cirwPU4MAML2kmoB1hmJdZcLkkLA+heYT5wXLxGNq3nXZ/kfI6w4di9L5A+PzhElZMZU=
 before_install:
 - |
   echo TRAVIS_PULL_REQUEST $TRAVIS_PULL_REQUEST
@@ -39,11 +48,3 @@ intall: true
 
 # Optimise cache
 # https://www.randomerrata.com/articles/2013/travis-s3/
-# cache:
-#   name: shared
-#   directories:
-#   - $HOME/google-cloud-sdk
-#   - ~/_uw_data
-#   - ~/_uw_esdata
-#   - node_modules
-#   yarn: true
