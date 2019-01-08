@@ -1,7 +1,7 @@
 {
   "name": "@uw/search-service",
   "private": true,
-  "version": "0.1.7",
+  "version": "0.2.0",
   "license": "MIT",
   "scripts": {
     "prepare": "echo '@uw/search-service' && tsc",

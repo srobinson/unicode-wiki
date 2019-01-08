@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/srobinson/unicode-wiki/compare/@uw/search-service@0.1.7...@uw/search-service@0.2.0) (2019-01-08)
+
+
+### Features
+
+* **search:** test new feat deploy ([7bb3623](https://github.com/srobinson/unicode-wiki/commit/7bb3623))
+
+
+
+
+
 ## [0.1.7](https://github.com/srobinson/unicode-wiki/compare/@uw/search-service@0.1.6...@uw/search-service@0.1.7) (2019-01-07)
 
 **Note:** Version bump only for package @uw/search-service
