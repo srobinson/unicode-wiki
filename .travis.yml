@@ -6,14 +6,6 @@ branches:
   only:
   - master
   - "/^PR-.+$/"
-cache:
-  name: shared
-  directories:
-  - $HOME/google-cloud-sdk
-  - ~/_uw_data
-  - ~/_uw_esdata
-  - node_modules
-  yarn: true
 services:
 - docker
 git:
@@ -47,3 +39,11 @@ intall: true
 
 # Optimise cache
 # https://www.randomerrata.com/articles/2013/travis-s3/
+# cache:
+#   name: shared
+#   directories:
+#   - $HOME/google-cloud-sdk
+#   - ~/_uw_data
+#   - ~/_uw_esdata
+#   - node_modules
+#   yarn: true

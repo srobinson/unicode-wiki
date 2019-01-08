@@ -2,7 +2,8 @@
   "lerna": "3.4.3",
   "command": {
     "publish": {
-      "allowBranch": "master"
+      "allowBranch": "master",
+      "message": "chore(release): publish %v"
     }
   },
   "ignoreChanges": ["**/tests/**", "**/*.md"],

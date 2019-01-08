@@ -2,6 +2,7 @@ import {Request} from "express"
 import {logger} from "./logger"
 import {generateInfoMessage} from "./log-request"
 
+// bump logging
 export class ApiLogger {
   // tslint:disable-next-line:no-any
   private message: any
