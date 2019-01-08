@@ -12,6 +12,7 @@ build
 circle.yaml
 coverage
 dist
+gcloud.p12
 image_history
 lerna-debug.log
 node_modules
