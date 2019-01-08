@@ -25,7 +25,8 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   git stash
 
   # generate new package versions
-  lerna version --amend --no-commit-hooks --conventional-commits --exact --sign-git-tag --yes
+  # lerna version --amend --no-commit-hooks --conventional-commits --exact --sign-git-tag --yes
+  lerna version --amend --no-commit-hooks --conventional-commits --exact --yes
   git status
 
   # sanity revert change for testing locally
