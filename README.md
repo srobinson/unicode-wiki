@@ -30,7 +30,6 @@ References:
 
 ## Core technology used
 
-
 * [apollo-client] (https://github.com/apollographql/apollo-client)
 * [apollo-server] (https://github.com/apollographql/apollo-server)
 * [axios] (https://github.com/axios/axios)
@@ -53,11 +52,13 @@ References:
 ## Disclaimer
 
 
-This project is very early beta stage and serves as a proof of concept/exploration of Lerna monorepos. Should you discover any bugs please do create an issue/pr
+This project is very early beta stage and serves as a proof of concept/exploration of Lerna monorepos and continuous integration with Travis and GKE. Should you discover any bugs please do create an issue/pr.
 
-## Deployment Diagram
+## Deployment Description
 
 ![](assets/psd/deployment-diagram.4k.png?0.36817197259025214 )
+
+
 
 # Local dev installation
 

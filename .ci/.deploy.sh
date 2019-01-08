@@ -3,9 +3,9 @@
 set -e
 
 set -a
-. ../.env.prod
-if [ -e ../.env.prod.secrets ]; then
-  . ../.env.prod.secrets
+. .env.prod
+if [ -e .env.prod.secrets ]; then
+  . .env.prod.secrets
 fi
 set +a
 
