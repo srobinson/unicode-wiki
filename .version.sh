@@ -10,14 +10,6 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   git config branch.${TRAVIS_BRANCH}.remote origin
   git config branch.${TRAVIS_BRANCH}.merge refs/heads/${TRAVIS_BRANCH}
 
-  CHANGES=$(git --no-pager diff --name-only FETCH_HEAD $(git merge-base FETCH_HEAD master))
-  echo CHANGES $CHANGES
-
-  # get latest tage
-  tag=$(git describe --tags `git rev-list --tags --max-count=1`)
-
-  echo latest tag: $tag
-
   # print status
   npx oao status
 
@@ -32,22 +24,21 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   git add .
   git stash
 
-  # push new versions
-  # --amend: generates git artifacts
-  lerna version --amend --no-commit-hooks --conventional-commits --exact --sign-git-tag --yes --push
+  # generate new package versions
+  lerna version --amend --no-commit-hooks --conventional-commits --exact --sign-git-tag --yes
   git status
-
-  # new_version=$(git status)
 
   # sanity revert change for testing locally
   git remote set-url origin git@github.com:srobinson/unicode-wiki.git
 
+  m=$(git status)
+
   # deploy new versions
-  # if [[ $tag != $new_tag ]]; then
-  #   . ./.deploy.sh
-  #   # update release
-  #   git add .
-  #   git push origin master -f
-  # fi
+  if [[ -z $(awk '/nothing to commit/' <<< $m) ]]; then
+    . ./.deploy.sh
+    # update release
+    git add .
+    git push origin master -f
+  fi
 
 fi
