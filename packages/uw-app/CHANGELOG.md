@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0](https://github.com/srobinson/unicode-wiki/compare/@uw/app@0.3.11...@uw/app@1.0.0) (2019-01-08)
+
+
+### Features
+
+* **app:** test breaking change deployment ([776bb28](https://github.com/srobinson/unicode-wiki/commit/776bb28))
+
+
+### BREAKING CHANGES
+
+* **app:** break app
+
+
+
+
+
 ## [0.3.11](https://github.com/srobinson/unicode-wiki/compare/@uw/app@0.3.10...@uw/app@0.3.11) (2019-01-08)
 
 **Note:** Version bump only for package @uw/app

@@ -1,7 +1,7 @@
 {
   "name": "@uw/app",
   "private": true,
-  "version": "0.3.11",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "build:app": "react-scripts-ts build",
