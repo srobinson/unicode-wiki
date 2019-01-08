@@ -29,12 +29,12 @@ before_install:
   echo TRAVIS_PULL_REQUEST $TRAVIS_PULL_REQUEST
   echo TRAVIS_BRANCH $TRAVIS_BRANCH
   yarn global add lerna
+  go get github.com/josephburnett/jd
   if [[ $TRAVIS_PULL_REQUEST == false && $TRAVIS_BRANCH == master ]]; then
     . ./.auth-gcloud.sh
     . ./.version.sh
     travis_terminate 0
   else
-    go get github.com/josephburnett/jd
     mkdir -p ~/_uw_data
     mkdir -p ~/_uw_esdata
     sudo chown -R 999:999 ~/_uw_data
