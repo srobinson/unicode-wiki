@@ -4,6 +4,7 @@ import {composeWithDevTools} from "redux-devtools-extension"
 import {History} from "history"
 import {ApplicationState, coreMiddleware, rootReducer} from "./imports"
 
+// bump store
 export const configureStore = (
   history: History,
   initialState: ApplicationState,

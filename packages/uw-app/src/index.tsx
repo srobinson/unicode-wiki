@@ -7,7 +7,6 @@ import App from "./app"
 import {configureStore} from "@uw/store"
 import "./config"
 
-// test deploy breaking
 const history = createBrowserHistory({
   basename: process.env.PUBLIC_URL,
 })
