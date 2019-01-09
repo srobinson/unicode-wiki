@@ -33,8 +33,6 @@ spec:
       - env:
         - name: http.max_content_length
           value: 500mb
-        - discovery.type:
-          value: single-node
         image: docker.elastic.co/elasticsearch/elasticsearch:6.5.1
         imagePullPolicy: IfNotPresent
         name: elastic-cluster
