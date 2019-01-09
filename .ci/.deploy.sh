@@ -25,12 +25,6 @@ version() {
   fi
 }
 
-pull() {
-  docker pull gcr.io/unicode-wiki/uw-base
-  docker pull gcr.io/unicode-wiki/uw-assets
-  docker pull gcr.io/unicode-wiki/uw-packages
-}
-
 build() {
   if ! gcloud container images list-tags gcr.io/unicode-wiki/uw-$1 | grep -v 'grep' | grep "\s$2[,| ]"; then
 
@@ -95,8 +89,6 @@ if [ $? = 3 ]
 then
   >&2 echo error
 fi
-
-pull
 
 version
 
