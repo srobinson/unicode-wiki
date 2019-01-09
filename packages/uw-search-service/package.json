@@ -1,7 +1,7 @@
 {
   "name": "@uw/search-service",
   "private": true,
-  "version": "0.4.0",
+  "version": "0.4.1",
   "license": "MIT",
   "scripts": {
     "prepare": "echo '@uw/search-service' && tsc",
@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@uw/domain": "1.0.4",
-    "@uw/logging": "2.1.0",
+    "@uw/logging": "2.1.1",
     "@uw/utils": "0.1.7"
   },
   "devDependencies": {

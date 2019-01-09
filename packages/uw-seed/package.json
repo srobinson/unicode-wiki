@@ -1,7 +1,7 @@
 {
   "name": "@uw/seed",
   "private": true,
-  "version": "0.1.17",
+  "version": "0.1.18",
   "scripts": {
     "lint": "tslint 'src/**/*.ts'",
     "prepare": "echo '@uw/seed' && tsc",
@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@uw/domain": "1.0.4",
-    "@uw/logging": "2.1.0",
+    "@uw/logging": "2.1.1",
     "@uw/utils": "0.1.7"
   }
 }
