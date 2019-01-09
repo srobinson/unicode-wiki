@@ -1,6 +1,6 @@
 {
   "name": "unicode-wiki-workspace",
-  "version": "0.0.0-monorepo",
+  "version": "0.0.1",
   "description": "Unicode Explorer workspace home",
   "author": "Stuart Robinson",
   "homepage": "https://unicode.wiki/",
