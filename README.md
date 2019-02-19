@@ -2,8 +2,6 @@
 
 # Unicode browser with wikipedia integration
 
-https://unicode.wiki
-
 ![](assets/psd/screens.png?0.6562068735457673 )
 
 ## Motivation
