@@ -33,7 +33,7 @@ before_install:
   yarn global add lerna
   go get github.com/josephburnett/jd
   if [[ $TRAVIS_PULL_REQUEST == false && $TRAVIS_BRANCH == master ]]; then
-    . ./.ci/.auth-gcloud.sh
+    # . ./.ci/.auth-gcloud.sh
     . ./.ci/.version.sh
   else
     mkdir -p ~/_uw_data
