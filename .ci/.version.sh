@@ -22,8 +22,8 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   echo generate new package versions
   lerna version --loglevel=silly --no-commit-hooks --conventional-commits --exact --yes
 
-  echo deploy new versions
-  . ./.ci/.deploy.sh
+  # echo deploy new versions
+  # . ./.ci/.deploy.sh
 
   # sanity revert change for testing locally
   git remote set-url origin git@github.com:srobinson/unicode-wiki.git
